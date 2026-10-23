@@ -1,8 +1,8 @@
 class Gomplate < Formula
   desc "Command-line Golang template processor"
   homepage "https://gomplate.ca/"
-  url "https://ghfast.top/https://github.com/hairyhenderson/gomplate/archive/refs/tags/v5.3.0.tar.gz"
-  sha256 "57082793307653a7b5189922c0be93da144db281dc478523a480858f6f906985"
+  url "https://ghfast.top/https://github.com/hairyhenderson/gomplate/archive/refs/tags/v5.3.1.tar.gz"
+  sha256 "4f3e313a9eaaa677d5f69406a62adaf1191daf4901a92729d1a6e8b3be954a2a"
   license "MIT"
   head "https://github.com/hairyhenderson/gomplate.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Gomplate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "86c27eb30e8de6d3e24826df544fc2917215ab656ec6d6e11a937a1cc0e0f388"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8168604167f4210c0664e70a82eca375ee18d8c4e0258e8ea1c085267f1f0a9b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "871fbdb8d6a1b77ad428013fab0041c22116f8394197c217f30c0a41bdb49019"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0b82c48194473461cbc569dead859e5ef2f00bb293f45590dbde6fe8a9891bb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8293576433d3ee4e77212d2d3546a18498a4e2965234945db43ed683641b4932"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "469f7426de4c5b5f4de93a728fd79a33ceaec11f22381504563b917088d5d3d9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0766cfce61b28c5ccfc5c907a566b352373e6a6131475eb01e571bb35c57bc2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ef039884459381444e30618ed32c9f3113aa4a2d3e03d5102c100ae42eb3ea28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "796eb8ef0fdc3d4f14c29d90e4f823d430ff2cbff0134641478d4957989d7bf1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f105f054060cd1d8a9e5be2935adb7a60c9a32c57557548c1702f0e7df684a74"
   end
 
   depends_on "go" => :build

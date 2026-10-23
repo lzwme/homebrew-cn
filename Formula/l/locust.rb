@@ -3,17 +3,16 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/c7/09/6487af16b8abaa58259e5f68ab3b72e3140156478af1b02fac5d9a20a9dd/locust-2.46.7.tar.gz"
-  sha256 "cf112214068abe59615d36769db31ffd1430b67c6e5f693b9a23b8510224442b"
+  url "https://files.pythonhosted.org/packages/d2/17/1099f80db4462e93c56619f3aba0c629ea01b08fd143181c2ecfa128f9bd/locust-2.47.0.tar.gz"
+  sha256 "70ffe28cdb7a3224a4efb60b31d585c26343d5679fec8d5b18017ffb6893b423"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "a7d4839346dd2480e0882419b585b4c65a01adc4e0e831efdaff997074a6cd1c"
-    sha256 cellar: :any, arm64_tahoe:       "1681addbd029d950e8ddf8ba716c9d6296881f26a84ac21c0f89a1da0e1c767e"
-    sha256 cellar: :any, arm64_sequoia:     "2d1449cf676aad2b6bbc75905d114ea9e5f71251a5e13a8b14d5d2e7960105f2"
-    sha256 cellar: :any, arm64_linux:       "f1263d8036c23d04cf03792bc5154f8a59e07ca9d357c542743c7a05dae2ddef"
-    sha256 cellar: :any, x86_64_linux:      "be6d8cb81d3423c0035610bfee4e1ea41a4e118ddedbfcd21ef438365128856e"
+    sha256 cellar: :any, arm64_golden_gate: "20742d672f3a48f47340370b4f6895b83f013a4e5e8490ea92608c9ab293909e"
+    sha256 cellar: :any, arm64_tahoe:       "3e030e6001fc66a67f67b930eaf643a644499f41a1a711af65452ed012b00cd4"
+    sha256 cellar: :any, arm64_sequoia:     "c3aad3831dfddaaeaccb1d28474f5ea7ccbb4667b7b4ce02181a13928af7a181"
+    sha256 cellar: :any, arm64_linux:       "aacb50b1138d902de9e1ac9f3afd0dc6ca2b6ee42d34e8daf69be8692376eed9"
+    sha256 cellar: :any, x86_64_linux:      "5a275f24ffa74143aa375c1d59ed03f98534f471b49b448f1161f6c3b5e53a66"
   end
 
   depends_on "cmake" => :build # for pyzmq
@@ -126,8 +125,8 @@ class Locust < Formula
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
-    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+    url "https://files.pythonhosted.org/packages/bf/db/7fc19e6f2dc92a966727031389fc2e08b558f0f25eb7403c1119ad4713cd/pluggy-1.7.0.tar.gz"
+    sha256 "d1eaa46ebb595891b860ab086b4d09c8588af65ebd4361b8e8f4bb8920b90ba8"
   end
 
   resource "psutil" do
@@ -196,8 +195,8 @@ class Locust < Formula
   end
 
   resource "zope-interface" do
-    url "https://files.pythonhosted.org/packages/26/39/a8481b926e42c44a6fcc670904f8251469ec42edbff1ba066719ca1e7fb4/zope_interface-8.6.tar.gz"
-    sha256 "b40ef9b4873afb5d0dec02b8d2dfde1cf18c72337b60c99cb735961e0bac05c0"
+    url "https://files.pythonhosted.org/packages/de/ff/a1f0021a26033da0df223fd05a7455d6d2881b67daf2c6dc897b4fe0a427/zope_interface-8.7.tar.gz"
+    sha256 "0b47b62e8d0d99b24bcdd32f4f2120425e5019c3bee2ad69a0e1d75737487a96"
   end
 
   deny_network_access! :test

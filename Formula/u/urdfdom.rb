@@ -1,8 +1,8 @@
 class Urdfdom < Formula
   desc "Unified Robot Description Format (URDF) parser"
   homepage "https://wiki.ros.org/urdf/"
-  url "https://ghfast.top/https://github.com/ros/urdfdom/archive/refs/tags/6.0.1.tar.gz"
-  sha256 "f34c6b25512fe47a7e4e8806df2b94b166aed13dd19befd6056858be619b6a40"
+  url "https://ghfast.top/https://github.com/ros/urdfdom/archive/refs/tags/6.0.2.tar.gz"
+  sha256 "47e26b6553afe8bb49cc675a5209fb9f2feb91ab9310360f8015d4cb98cc094a"
   license "BSD-3-Clause"
   compatibility_version 2
 
@@ -15,13 +15,11 @@ class Urdfdom < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9fcd9c36c98488321d63c0d5b486d85baefd4ed5cfe01ff1ab5a294bb0d48ad3"
-    sha256 cellar: :any, arm64_tahoe:       "bca0fd656232a2ff6cd02ffaaf701869b992edd22eb9a3f15e8e743623ed2643"
-    sha256 cellar: :any, arm64_sequoia:     "3ecc90f4328abf6302b5bf056ab4a430054d93da4678e24459062a7e41554226"
-    sha256 cellar: :any, arm64_sonoma:      "0368d106db5db441c0d6c9e27ce81037016d6aa96450f1be1151657f7786e66e"
-    sha256 cellar: :any, sonoma:            "0b2f232a485861808f580aa4aab6f9259b2842cf987c3f2876563cbb66e2309a"
-    sha256 cellar: :any, arm64_linux:       "b8e334b779db128002855d3f20fed4d658e4a5321176a6ee19abd3dad0f28e71"
-    sha256 cellar: :any, x86_64_linux:      "022d9bc20e3082edd1dc62f6930a834b4395381215d55d58a307154934ddadbd"
+    sha256 cellar: :any, arm64_golden_gate: "059fafc2c77cd21d7a7f821f7179cd5ccd77baf26c7c53afe96954f6df300c3a"
+    sha256 cellar: :any, arm64_tahoe:       "6514605da36dfe41c75d3cf236e394469b8835eb4cf24dd68c33c4cbf95f1e69"
+    sha256 cellar: :any, arm64_sequoia:     "d836ee6a42f31ca778ab5baf5810ec1af16296cb7460b87444db7e99e09deec1"
+    sha256 cellar: :any, arm64_linux:       "16c6726d59f2a91b2e11d717449f9063aafda7cfe3614c2afc92f540df530266"
+    sha256 cellar: :any, x86_64_linux:      "2663b0b878f77665c65eb59651efaac440e21525ad5b173920df1b57c8a5b039"
   end
 
   depends_on "cmake" => :build

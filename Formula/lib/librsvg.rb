@@ -5,6 +5,7 @@ class Librsvg < Formula
   sha256 "55311c2293612e4a2e38cd9bdb6160a1c85c158adc7c97e423e1e65949afb6a4"
   license "LGPL-2.1-or-later"
   compatibility_version 1
+  head "https://gitlab.gnome.org/GNOME/librsvg.git", branch: "main"
 
   # librsvg doesn't use GNOME's "even-numbered minor is stable" version scheme.
   # This regex matches any version that doesn't have a 90+ patch version, as
@@ -41,6 +42,12 @@ class Librsvg < Formula
     depends_on "freetype"
     depends_on "gettext"
     depends_on "libpng"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

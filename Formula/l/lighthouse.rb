@@ -1,8 +1,8 @@
 class Lighthouse < Formula
   desc "Rust Ethereum 2.0 Client"
   homepage "https://lighthouse.sigmaprime.io/"
-  url "https://ghfast.top/https://github.com/sigp/lighthouse/archive/refs/tags/v8.3.0.tar.gz"
-  sha256 "25795f57bc87fb520196f50c2d83f8ff908a84dbb2604da295cc8dbb5dd9a03e"
+  url "https://ghfast.top/https://github.com/sigp/lighthouse/archive/refs/tags/v8.3.1.tar.gz"
+  sha256 "ad14be3c0ae49c0f910fc1dc2cf26aed52200f81c66fdaa2df67c7cd8fa93392"
   license "Apache-2.0"
 
   livecheck do
@@ -11,11 +11,11 @@ class Lighthouse < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7bce92fbc13f25d9d8ff2b6df477a7c2f83e340aac61f172e388494d55f3203c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "92cf1bb57d56f7c63800b55d989f6ead70e3481865d9406643e01a53669f362e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ba5b8ab77c10a39fb88a29b4e08d3b7f2b28ff57a2e81cc95851d082aefd3cf4"
-    sha256 cellar: :any,                 arm64_linux:       "7b8975412c2ca2d05a380073c4948b64a9dc381929661b6d167cb7a112dea0da"
-    sha256 cellar: :any,                 x86_64_linux:      "05a13769a0a3e53f393de551f4ad45e26f0f13947dcd5175909fdcde1d82b126"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f317c728e6e455ff3c35c4803658d29c87c9a4d49e577d0c8e5c4aa339df3de5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7b0ac24f6df554bd012a0f43178cc7ab0618853370a5456dd97cbe6fcfd3a4e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f3207e4ba322f2de6fbf303d891b14f077e7bd9140ee719f30de8c42b94f225e"
+    sha256 cellar: :any,                 arm64_linux:       "ea3e4b9e2cad6590720f62c6dd4f87c703960486bd9aa4638420378fd8b1c420"
+    sha256 cellar: :any,                 x86_64_linux:      "ff0e37f4479b53e823ef75ad0acb2c225de5f15b20e315040a5bfb3bcde98b06"
   end
 
   depends_on "cmake" => :build

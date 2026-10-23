@@ -21,9 +21,17 @@ class Lakekeeper < Formula
 
   uses_from_macos "llvm" => :build # for libclang
 
+  allow_network_access! :test
+
+  def openssl = deps.map(&:name).find { |d| d.match?(/^openssl(@\d+(\.\d+)*)?$/) }
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix(openssl)
 
     system "cargo", "install", *std_cargo_args(path: "crates/lakekeeper-bin")
   end
@@ -31,8 +39,8 @@ class Lakekeeper < Formula
   test do
     ENV["LC_ALL"] = "C"
 
-    postgresql = Formula["postgresql@18"]
-    pg_ctl = postgresql.opt_bin/"pg_ctl"
+    postgresql = deps.map(&:name).find { |d| d.match?(/^postgresql(@\d+(\.\d+)*)?$/) }
+    pg_ctl = formula_opt_bin(postgresql)/"pg_ctl"
     port = free_port
 
     system pg_ctl, "initdb", "-D", testpath/"test", "-o", "-E UTF-8 -U postgres"

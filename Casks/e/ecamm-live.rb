@@ -1,5 +1,5 @@
 cask "ecamm-live" do
-  version "4.5.13"
+  version "4.6"
   sha256 :no_check
 
   url "https://downloads.ecamm.com/EcammLive.zip"
@@ -30,6 +30,7 @@ cask "ecamm-live" do
   zap trash: [
     "~/Library/Application Support/com.ecamm.EcammLive",
     "~/Library/Application Support/EcammLive",
+    "~/Library/Caches/com.ecamm.EcammLive",
     "~/Library/HTTPStorages/com.ecamm.EcammLive",
     "~/Library/HTTPStorages/com.ecamm.EcammLive.binarycookies",
     "~/Library/Preferences/com.ecamm.EcammLive.plist",

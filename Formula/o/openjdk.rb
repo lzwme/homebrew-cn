@@ -1,8 +1,8 @@
 class Openjdk < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.org/"
-  url "https://ghfast.top/https://github.com/openjdk/jdk27u/archive/refs/tags/jdk-27-ga.tar.gz"
-  sha256 "7b0d39b840e008bd0a8e3d2c93d874d48536ec3e4c13045a7a83179042e2011e"
+  url "https://ghfast.top/https://github.com/openjdk/jdk27u/archive/refs/tags/jdk-27.0.1-ga.tar.gz"
+  sha256 "e97f539ba547ab533b511ce1f937211c1e9795e7c1092321f8ba23c658a11dd9"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
   compatibility_version 2
 
@@ -12,12 +12,11 @@ class Openjdk < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "d99d540259b7b84a72c407bb297dd20d100dac1de96c0093c9ea9643b7f11093"
-    sha256 cellar: :any, arm64_tahoe:       "e705b9d3e07933059ad2f0d71ae68bba009e3a4ed22a6fdc8a85177d19eee58b"
-    sha256 cellar: :any, arm64_sequoia:     "092f285a7132b7344d00f0f142800b70986098752a8ac92deb11c57acfd9ed0b"
-    sha256               arm64_linux:       "d682f5c59644c4522d48bab952b52129687d63cd76ce4ace73c2aa7a826c2e2e"
-    sha256               x86_64_linux:      "9714890e29906234cd392b7ed7f63e6a387ca3fd93e038504253bfe13db952d6"
+    sha256 cellar: :any, arm64_golden_gate: "8e811eda603b5da17599ebed57b6e01c1645a0a39af97d54a97c71f76f648877"
+    sha256 cellar: :any, arm64_tahoe:       "2a9906cfc06974eeb37f6527e2b370671f58c915e84b6ada88a91c19c825ab3a"
+    sha256 cellar: :any, arm64_sequoia:     "d5ce6b2e54adb56c443e6c9fa8083fc4b7d6ea3b494fb7f2ad822cafb271c344"
+    sha256               arm64_linux:       "57030978a35a6b5278d3eebe2d1098827ba14c967b22257f81c1c3d64e1756ed"
+    sha256               x86_64_linux:      "e72a6eec51bc6cc8cddfae3e2520ed6831800b2c1d712e0dff01931c8faa6f24"
   end
 
   keg_only :shadowed_by_macos
@@ -55,23 +54,17 @@ class Openjdk < Formula
   # From https://jdk.java.net/archive/
   resource "boot-jdk" do
     on_macos do
-      on_arm do
-        url "https://download.java.net/java/GA/jdk26.0.2.1/3b8e6c7ec6274148a7aa15e7e7dfb53c/1/GPL/openjdk-26.0.2.1_macos-aarch64_bin.tar.gz"
-        sha256 "3a61f9bbfbf2e09308aa4b1a5c044fcbc82f6ba49e074be49a7b7911e1f00efd"
-      end
-      on_intel do
-        url "https://download.java.net/java/GA/jdk26.0.2.1/3b8e6c7ec6274148a7aa15e7e7dfb53c/1/GPL/openjdk-26.0.2.1_macos-x64_bin.tar.gz"
-        sha256 "5ec3817530ffa1c38f15a55609a2767335bbd0c59ea8ce41aad68d3cd620c0ae"
-      end
+      url "https://download.java.net/java/GA/jdk27/55ce5470a6294008af0057ff4626d0e5/35/GPL/openjdk-27_macos-aarch64_bin.tar.gz"
+      sha256 "ff42134c1bc5ac81c5a91a95fd4df87479db5d0499ba875d6adb5bda5626c3e8"
     end
     on_linux do
       on_arm do
-        url "https://download.java.net/java/GA/jdk26.0.2.1/3b8e6c7ec6274148a7aa15e7e7dfb53c/1/GPL/openjdk-26.0.2.1_linux-aarch64_bin.tar.gz"
-        sha256 "b96b265a4a1a36c02454148891aa58ca63303cbc2d1b7979c33b4fe99e09117b"
+        url "https://download.java.net/java/GA/jdk27/55ce5470a6294008af0057ff4626d0e5/35/GPL/openjdk-27_linux-aarch64_bin.tar.gz"
+        sha256 "da4e9dde1fff90204739e969187bab4751bd59a2a1c479672e1a1810f7dd23ea"
       end
       on_intel do
-        url "https://download.java.net/java/GA/jdk26.0.2.1/3b8e6c7ec6274148a7aa15e7e7dfb53c/1/GPL/openjdk-26.0.2.1_linux-x64_bin.tar.gz"
-        sha256 "a1489256029b389ce6ee52da0de1d01496c5df1776d6870241fe4823b998ea61"
+        url "https://download.java.net/java/GA/jdk27/55ce5470a6294008af0057ff4626d0e5/35/GPL/openjdk-27_linux-x64_bin.tar.gz"
+        sha256 "95fc37eb3a18a27a26d5904c2d89d52bace8dafa9a078ca27f4747fbc4bf070b"
       end
     end
   end

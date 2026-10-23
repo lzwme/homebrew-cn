@@ -1,20 +1,11 @@
 class PariNflistdata < Formula
   desc "Data files for nflist() in PARI/GP"
   homepage "https://pari.math.u-bordeaux.fr/packages.html"
-  url "https://pari.math.u-bordeaux.fr/pub/pari/packages/nflistdata.tgz"
+  # url "https://pari.math.u-bordeaux.fr/pub/pari/packages/nflistdata.tgz"
+  url "http://deb.debian.org/debian/pool/main/p/pari-nflistdata/pari-nflistdata_0.20220729.orig.tar.gz"
   version "20220729"
   sha256 "2c19a3e02afd3bba2af3071a7faa80924a75b00bb9713286c886b7fb460944bc"
   license "GPL-2.0-or-later"
-
-  # The only difference in the `livecheck` blocks for pari-* formulae is the
-  # package name in the regex and they should otherwise be kept in parity.
-  livecheck do
-    url :homepage
-    regex(%r{>\s*nflistdata\.t[^<]+?</a>(?:[&(.;\s\w]+?(?:\),?|,))?\s*([a-z]+\s+\d{1,2},?\s+\d{4})\D}i)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| Date.parse(match.first)&.strftime("%Y%m%d") }
-    end
-  end
 
   no_autobump! because: :incompatible_version_format
 
@@ -22,6 +13,10 @@ class PariNflistdata < Formula
     rebuild 2
     sha256 cellar: :any_skip_relocation, all: "4498f10e0cad3f1a03b38a31d0e50744c586b0dcd0a62902a97f32d7b663d710"
   end
+
+  # Homepage and source URLs are inaccessible
+  deprecate! date: "2026-10-22", because: :repo_removed
+  disable! date: "2026-10-22", because: :repo_removed
 
   depends_on "pari"
 

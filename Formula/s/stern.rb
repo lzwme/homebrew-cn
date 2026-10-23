@@ -1,19 +1,17 @@
 class Stern < Formula
   desc "Tail multiple Kubernetes pods & their containers"
   homepage "https://github.com/stern/stern"
-  url "https://ghfast.top/https://github.com/stern/stern/archive/refs/tags/v1.34.0.tar.gz"
-  sha256 "1cfec22cef9705e68fc46060ba85164af12bd07ede9264bafb67d11400996e71"
+  url "https://ghfast.top/https://github.com/stern/stern/archive/refs/tags/v1.35.0.tar.gz"
+  sha256 "c75ba288b84379a39cffd2e4d27d5cb1d46643f9f7810a391670844727051006"
   license "Apache-2.0"
   head "https://github.com/stern/stern.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ed4eb2d817ea18cbfc19c2e0e73aa5950cccb64782ba43afd6233799defe99bc"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cf87c8b14a3f062463ba7d4608a9472a539d6d3c5812ee0a4f49d3ce28009167"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d50b7ab79b975167e19f75bf68597227ad82881ed46c3ff6a62bb90983748cdb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "6cc2f6e3114eff8a51e4c27be9b561539d6e79395cabc65c3268bdc5fed52d5f"
-    sha256 cellar: :any_skip_relocation, sonoma:            "0fc9084d111eacf45d4cb9b24d4dbdf2f9f1f019215c305391f6f149062f60c9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "74c91eb1456dd62cb71a8eabd41ce94f33856dd2e3b5db0e82a479acc9275ade"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "93c97d2b2b51afe05b8ce55e30e3e415b96981d32fac68ff985a265286425582"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2fe74cbba15cc2c937963f741bb5a1d128d5a7575e4481d0ef9df0a88aa5eba4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d06b2477251a8f9d547f36205b615585c1eefa08a9a373800c3ad7ec325b0dae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "36829a090fbd50a32d63a47e73a438358c3040d8ed050c25352cc78cff7bf90f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b12aaf51669d1cd3f33b645fcab6687e88028b8fca069c005460e01584819859"
+    sha256 cellar: :any,                 x86_64_linux:      "1a5e0c15ff08bc9d6a30849b2a9b125380c479b9452efd269be29ffa410fd782"
   end
 
   depends_on "go" => :build

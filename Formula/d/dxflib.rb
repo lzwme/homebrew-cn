@@ -1,8 +1,9 @@
 class Dxflib < Formula
   desc "C++ library for parsing DXF files"
   homepage "https://www.ribbonsoft.com/en/what-is-dxflib"
-  url "https://www.ribbonsoft.com/archives/dxflib/dxflib-3.26.4-src.tar.gz"
-  sha256 "507db4954b50ac521cbb2086553bf06138dc89f55196a8ba22771959c760915f"
+  # Use Debian source as the upstream removed the source
+  url "https://deb.debian.org/debian/pool/main/d/dxflib/dxflib_3.26.4.orig.tar.gz"
+  sha256 "e7208c9b67f5bc6727a0e3adf2162d8e67d80e0244dcda167fb7535556d944a1"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,29 +12,29 @@ class Dxflib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "cb39ab42dc3c950b5479816487c34e8f3bf2b56515fa720f8a237631b7c19122"
-    sha256 cellar: :any,                 arm64_tahoe:       "3bbe74f4cb179ff9cd5df3e09b664f29033deb63211128b73bab5cf18c6b71a1"
-    sha256 cellar: :any,                 arm64_sequoia:     "a4ba8424bf3cd50726d26445fa590fb069d6dff461324400938a3be82e98ef0c"
-    sha256 cellar: :any,                 arm64_sonoma:      "b82a6721fde448b539b34656cbde8cdd0699373ca2ce134f7d7424d8cdd29c66"
-    sha256 cellar: :any,                 arm64_ventura:     "6807f88414e5cf6c874dd7eebd579298ecc0e99babb950a9a454cc9a55541071"
-    sha256 cellar: :any,                 arm64_monterey:    "7394d8e91ad3daefb69baae95372e86243fa69252aaaff0671aae88c5385b8be"
-    sha256 cellar: :any,                 arm64_big_sur:     "38f73afafa3258b4d298f173064099dac105ab5bc162eae367d76fe326f5fbb8"
-    sha256 cellar: :any,                 sonoma:            "7428941eb92a81ca91bba17c724a82392ad210bd545eba3566d89be9dc028d59"
-    sha256 cellar: :any,                 ventura:           "996710f91cf68315863c2d6b99666295ef2ef91de2c1cda1a2126154547ce89f"
-    sha256 cellar: :any,                 monterey:          "47ebef21d6211ac7b080a8f1ed23dfb154febdf8dfd1a157b14e3c5dccea2812"
-    sha256 cellar: :any,                 big_sur:           "86c60b0cc3b353b3652d6bb819c41fcec1cebc6c2f1f7ae435696bbae757a16f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5c3d6128db7bb1a09a4e280074706cece0535a47ec8db471d4e7ad941dc7e2f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e71a7e5920a5c7d7029edcf188bebf88aea640021d459ba1e2c0fa7266970c3a"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "c67b371ff4e84bea6a59ec51d213c56148f5e92b31f4b90b5e411ffd8160481f"
+    sha256 cellar: :any, arm64_tahoe:       "c67b371ff4e84bea6a59ec51d213c56148f5e92b31f4b90b5e411ffd8160481f"
+    sha256 cellar: :any, arm64_sequoia:     "4d62711de529928930dc1bbd6dc10bfb513ddefe875632c8540924a8a842a388"
+    sha256 cellar: :any, arm64_linux:       "ab93e12ffc9fe907159d34bb89e5414631e5122ee37b3dce441e22636d520664"
+    sha256 cellar: :any, x86_64_linux:      "40bd9ae89bd32661e2903e64e0b800ca4b5b887585804b1eaede390cef271abe"
   end
+
+  # Source and homepage URLs redirect to `https://www.qcad.org/en/` which
+  # has no mention of `dxflib`
+  deprecate! date: "2026-10-21", because: :repo_removed
+  disable! date: "2027-10-21", because: :repo_removed
 
   depends_on "qtbase" => :build
 
   # Sample DXF file made available under GNU LGPL license.
   # See https://people.math.sc.edu/Burkardt/data/dxf/dxf.html.
-  resource "testfile" do
+  resource "testfile", :test do
     url "https://people.math.sc.edu/Burkardt/data/dxf/cube.dxf"
     sha256 "e5744edaa77d1612dec44d1a47adad4aad3d402dbf53ea2aff5a57c34ae9bafa"
   end
+
+  deny_network_access!
 
   def install
     # For libdxflib.a

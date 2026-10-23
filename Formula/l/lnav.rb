@@ -40,6 +40,14 @@ class Lnav < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
+  def fetch
+    cd "src/third-party/lnav-rs-ext" do
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
+
   def install
     system "./autogen.sh" if build.head?
     system "./configure", "--with-sqlite3=#{formula_opt_prefix("sqlite")}",

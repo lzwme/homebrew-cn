@@ -4,6 +4,7 @@ class Ghcitty < Formula
   url "https://ghfast.top/https://github.com/mattlianje/ghcitty/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "13c26d741630d4c5d4dab0c7acc92ff6d9fa2382f25b83b0a4b261e20925a9b2"
   license "Apache-2.0"
+  head "https://github.com/mattlianje/ghcitty.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "97d54da8b7240fb28913190e8298b363381c4e596abdaea7e9c173bdfb6a1557"
@@ -15,6 +16,12 @@ class Ghcitty < Formula
 
   depends_on "rust" => :build
   depends_on "ghc" => :test
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

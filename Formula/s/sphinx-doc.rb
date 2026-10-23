@@ -3,17 +3,17 @@ class SphinxDoc < Formula
 
   desc "Tool to create intelligent and beautiful documentation"
   homepage "https://www.sphinx-doc.org/"
-  url "https://files.pythonhosted.org/packages/fc/73/567727fc8c8d85bc3adc88a246e12937cfda8d565cf1d80e85bceaa61fe5/sphinx-9.1.1.tar.gz"
-  sha256 "48b627f02908f22c601b3ba9c7b17265b4f315dd05c8bc64cd4da41183f44fbc"
+  url "https://files.pythonhosted.org/packages/64/d4/413466f0be8b1cb0e3e43893a148b96d7462d0923d82b4166b21afc5f30c/sphinx-9.2.0.tar.gz"
+  sha256 "90470459f3cab15d9dfed146c71cf77694b0445df17b2e0e69059cb9f7fc9ee4"
   license "BSD-2-Clause"
   head "https://github.com/sphinx-doc/sphinx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "574731819db2b4db3679b4fd054486fb65253f3d57421c81c97ada6bb02e3b63"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1232041a4b0e11bdce466ebdeac561fc62f075dac59422f930a7e914a863286a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "baaa33c292f880c1f0ebc02712ea31df9d91be1dc440c509da0b09248383f0ae"
-    sha256 cellar: :any,                 arm64_linux:       "43d4d6f7656c389870228b684bfcaa07d0f36fd31fbdc39917407eafb2357699"
-    sha256 cellar: :any,                 x86_64_linux:      "186e53f2bc044ab4a2efc29b1c24e607b44b2f70d9b793c2963e18913bcc7a8a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8f64c9383acf03dcfea724f2d41b984afb622cac65427dbe31a973f6f1dd62ce"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2f100fe7fe707ba4b8b9b72db24feab67d1732dbd2ae106c029768278cb3d379"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c36688c0a70497f75a9289b92cd4a0213118de94b407eb95b9eb912832a9aed6"
+    sha256 cellar: :any,                 arm64_linux:       "709e51ce5d3bb3b6f8b14f1b05647a75302063a48ef991dcc474ed61ceeab58a"
+    sha256 cellar: :any,                 x86_64_linux:      "c2f57c70902484c2af17724758024f42ed7a00e7b8711d89077f8f60719f935f"
   end
 
   depends_on "certifi"
@@ -38,8 +38,8 @@ class SphinxDoc < Formula
   end
 
   resource "docutils" do
-    url "https://files.pythonhosted.org/packages/ae/b6/03bb70946330e88ffec97aefd3ea75ba575cb2e762061e0e62a213befee8/docutils-0.22.4.tar.gz"
-    sha256 "4db53b1fde9abecbb74d91230d32ab626d94f6badfc575d6db9194a49df29968"
+    url "https://files.pythonhosted.org/packages/39/a4/5180d9afc57e8fca05601dd652bdff19604c218814037fe90ffc7625a50a/docutils-0.23.tar.gz"
+    sha256 "746f5060322511280a1e50eb76846ed6bf2342984b2ac04dc42caa1a8d78799e"
   end
 
   resource "idna" do
@@ -108,8 +108,8 @@ class SphinxDoc < Formula
   end
 
   resource "sphinxcontrib-jsmath" do
-    url "https://files.pythonhosted.org/packages/b2/e8/9ed3830aeed71f17c026a07a5097edcf44b692850ef215b161b8ad875729/sphinxcontrib-jsmath-1.0.1.tar.gz"
-    sha256 "a9925e4a4587247ed2191a22df5f6970656cb8ca2bd6284309578f2153e0c4b8"
+    url "https://files.pythonhosted.org/packages/59/02/4f334c7fc3e54c51d2364575a41cd2fae6847e7f53001949f0be5f32e18b/sphinxcontrib_jsmath-2.0.0.tar.gz"
+    sha256 "551f780cf9687f9c3c74f0cf9f18aca06e0d6958853453f3803fe4d357c5b924"
   end
 
   resource "sphinxcontrib-qthelp" do

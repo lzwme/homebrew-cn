@@ -1,14 +1,14 @@
 class Newt < Formula
   desc "Library for color text mode, widget based user interfaces"
-  homepage "https://pagure.io/newt"
-  url "https://releases.pagure.org/newt/newt-0.52.25.tar.gz"
+  homepage "https://gitlab.com/newt-ui/newt"
+  url "https://gitlab.com/newt-ui/newt/-/releases/0.52.25/downloads/newt-0.52.25.tar.gz"
   sha256 "ef0ca9ee27850d1a5c863bb7ff9aa08096c9ed312ece9087b30f3a426828de82"
   license "LGPL-2.0-or-later"
   revision 2
 
   livecheck do
-    url "https://releases.pagure.org/newt/"
-    regex(/href=.*?newt[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url :head
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -17,6 +17,16 @@ class Newt < Formula
     sha256 cellar: :any, arm64_sequoia:     "5b85a5aed10e464fcc2c0340ce6307966b67df7f68826e977a5b57e479c82187"
     sha256 cellar: :any, arm64_linux:       "5ed5248d6a95bc52f8c857ee415c8622d0fb8193e55b606498eec0e850c0667b"
     sha256 cellar: :any, x86_64_linux:      "0251a43dc3ea6297353d273300315d92d3c9d2f1c68b50df80cbe39db136d796"
+  end
+
+  head do
+    url "https://gitlab.com/newt-ui/newt.git", branch: "master"
+
+    depends_on "autoconf" => :build
+
+    on_linux do
+      depends_on "gettext" => :build
+    end
   end
 
   depends_on "popt"
@@ -28,6 +38,8 @@ class Newt < Formula
   end
 
   def install
+    system "./autogen.sh" if build.head?
+
     inreplace "Makefile.in" do |s|
       if OS.mac?
         # name libraries correctly

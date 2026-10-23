@@ -3,19 +3,17 @@ class YtDlp < Formula
 
   desc "Feature-rich command-line audio/video downloader"
   homepage "https://github.com/yt-dlp/yt-dlp"
-  url "https://files.pythonhosted.org/packages/1e/e0/832fa4ca334b766a06933a196066edc3dba37cdb6f14cd98d59bcc69a4b4/yt_dlp-2026.8.19.tar.gz"
-  sha256 "9e213e48cea35c66b378e4447903f118f6392a5fa380a2b6d7070ec86f4e0af1"
+  url "https://files.pythonhosted.org/packages/06/13/d2ea252871826205dc4965cb70e6037ab93697fcabf4feda49fe981f6da0/yt_dlp-2026.10.21.tar.gz"
+  sha256 "cbf748d7d17cd37647c4b9f07b6c25f24384bfd4361407ee5ec519e753d22539"
   license "Unlicense"
-  revision 2
   compatibility_version 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8e8ed94760ee7d35e5b39d26e2a1baf11a74e919900672c4429f0976b7136105"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9ef93f5fdbc2b0f061471c05797b6aeb5c46248252205951a2ac35b5b98b7e6c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0d110ce0649bcb289ccf96271e8fb2247b1492890d7b0b242282c6cfb53003d4"
-    sha256 cellar: :any,                 arm64_linux:       "6ad45b5ec0186fa85589b7b2c7256c8edfa5fd1ee7c07cdc87d576a9f0e90363"
-    sha256 cellar: :any,                 x86_64_linux:      "e72e6150ca4156caa870039cd1ea2866d513986e9ba4238b7ad5fc263423a011"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "95ad28db55e74bc78ad86338e834b57144de1f9c87843e742ebe4998466e3243"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "114c8372e2f4e152a97a8ea3b3f2de1688e8b4088970be400f887a73059314da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f08f557f000de51bf26a44209a82ab78af1c753f7035bf71e6ee81cd214f746f"
+    sha256 cellar: :any,                 arm64_linux:       "32bb685d49aff2f75e97591d835c0bf1f69fb787a2c063b52d3b2111628fc9a2"
+    sha256 cellar: :any,                 x86_64_linux:      "7858175bba1926f2b30155b66ead7334d57803f939d5c1ebaccc4d3f1bc04b65"
   end
 
   head do
@@ -59,8 +57,8 @@ class YtDlp < Formula
   end
 
   resource "pycryptodomex" do
-    url "https://files.pythonhosted.org/packages/4c/25/214ea825a9031f5af2c8b2506ee16701a2560d4712165dd00098dd527bcb/pycryptodomex-3.24.0.tar.gz"
-    sha256 "0428f19f13452c6b89bbaf2c530f84f369873811dfa77f0cee0da4f40fb0474f"
+    url "https://files.pythonhosted.org/packages/f4/e7/50e72301e32acb73a314e663c2014e1ddefc019d5f434ff14ec89861d664/pycryptodomex-3.24.1.tar.gz"
+    sha256 "09081666ffc599976c0b8b29caf2cf82212c0f05bed233c8f8ed53e4f6e1d356"
   end
 
   resource "requests" do
@@ -74,8 +72,8 @@ class YtDlp < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/01/89/3f825ab71c242fffb62ea8fe638741c290f62f8d7aadf8125ff897747af3/websockets-17.2.tar.gz"
-    sha256 "36c2fb94c990cc2545143b12690e2de6c16300f9dbe5b4f33fa300cf57dc8792"
+    url "https://files.pythonhosted.org/packages/30/4b/4692be6d5bf739ed049b3813901c42091f8c054df89d5c089343823dea0d/websockets-17.3.tar.gz"
+    sha256 "1c7dd93a1c9f89297471493674b1fc1d9467cafd45374f2172213046bdb3a329"
   end
 
   resource "yt-dlp-ejs" do

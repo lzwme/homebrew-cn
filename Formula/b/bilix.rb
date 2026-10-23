@@ -10,12 +10,12 @@ class Bilix < Formula
   head "https://github.com/HFrost0/bilix.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6fb89b376172821c245a7618d78fd859aadbdd7ecdaf2926fc43c855acde6c70"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9a277045413a762bf98a20f956082ea77d51ccaeb826c2dcb84ceedba46f4aad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dc0bc00149acc36cc823efbd36cf20090fea8811c76c9ee5d394792dffbffa8f"
-    sha256 cellar: :any,                 arm64_linux:       "903519d267104627e6c8c43ee7a36405e605ba26ae96fd971eb9867cbaff0ce8"
-    sha256 cellar: :any,                 x86_64_linux:      "07bb4e7509909c89bc7768056da6dd65f17f1cd0235fce595c3e456005fa4984"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6d61aa37f9b5bcf23d4dece8ede8739b4b75e9a28bf0d0dcefe1a77744211841"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a7a8d696afd26b9e086919e458c42225139217b943e67ec88f85995dd46a17d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9dc7a3b28441d7ef095ba8f6d88613d2a3a9194c8a2f716361b6dee000dc67bd"
+    sha256 cellar: :any,                 arm64_linux:       "69614f1031942e674c6863032b1889b033c760060b97b2dc3b62b98f0d3b6be5"
+    sha256 cellar: :any,                 x86_64_linux:      "ac53167bb68497bf92406cf04bb13415eabc8f103beb853b07e12342034066b3"
   end
 
   depends_on "cmake" => :build # for danmakuc
@@ -167,6 +167,14 @@ class Bilix < Formula
     sha256 "6f241455c6f1940626ed660d97abbcf3eecd3931cca3b6db6acd1f961649b6cb"
     type :unofficial
     resolves "https://github.com/HFrost0/bilix/pull/244"
+  end
+
+  # Fall back to the API when bilibili serves a captcha page instead of the video page
+  patch do
+    url "https://github.com/HFrost0/bilix/commit/f06e8aa90e88c90a38d7f2d80bad6345451525ad.patch?full_index=1"
+    sha256 "540b45643af2961296bbedacde883e6df1b66a0d3b965793cd96d421a9880794"
+    type :unofficial
+    resolves "https://github.com/HFrost0/bilix/pull/255"
   end
 
   def install

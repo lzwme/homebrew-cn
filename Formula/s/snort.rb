@@ -1,8 +1,8 @@
 class Snort < Formula
   desc "Flexible Network Intrusion Detection System"
   homepage "https://www.snort.org"
-  url "https://ghfast.top/https://github.com/snort3/snort3/archive/refs/tags/3.12.2.0.tar.gz"
-  sha256 "43000d6b0e0307bc1a735874d00deb61e8b6a96d074f8cc9b2fe2cde0058720b"
+  url "https://ghfast.top/https://github.com/snort3/snort3/archive/refs/tags/3.12.4.0.tar.gz"
+  sha256 "5bab33f703ca09b74bc2de72d16d8be59c67ebb98dbd45e50c30989b5cdd510f"
   license "GPL-2.0-only"
   head "https://github.com/snort3/snort3.git", branch: "master"
 
@@ -15,12 +15,11 @@ class Snort < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "dafe7c135cd7c22279f55dbb65e7271f23d58abb57482418790d9b2c9bb11bf0"
-    sha256 cellar: :any, arm64_tahoe:       "7c7c722c4743d25cff27ccbea3a61b8a3ace36d0e75a95f3c64248ad33095c1a"
-    sha256 cellar: :any, arm64_sequoia:     "1337f6bc8f092a84d5655a8bd93aaa8dbcbb3f2d0667c9d093fe600e1a77b7a6"
-    sha256 cellar: :any, arm64_linux:       "59f654ffd81a9cda1d350aa318e80ae4836038f0a6c9b0ec6169983696879140"
-    sha256 cellar: :any, x86_64_linux:      "93bdc4b78bf8709e3877f32d4d6250af5a435f883ed5fe6403b945e32d2b3b42"
+    sha256 cellar: :any, arm64_golden_gate: "cc1bdc46cab2d0e8dfe91dbc2b4bc099ad9e9922434289fcfe8a54f6e1a7f077"
+    sha256 cellar: :any, arm64_tahoe:       "ba9d35f0404200941261b2b72ee4fc721d70210cafe11b51e733c9b73c12db0f"
+    sha256 cellar: :any, arm64_sequoia:     "e50af48297095b6d1698460fa90fb159b0a65a26ab93bb7f138cbcf10dc0efcf"
+    sha256 cellar: :any, arm64_linux:       "2a8d037c853d40691dc67dfd1a05a46d60e73a2c8bea5ca9b9903b9a8a271a05"
+    sha256 cellar: :any, x86_64_linux:      "9589d0ea20a7097a7cd557179cae739e3cf411bda149921410c4a4fa4088e762"
   end
 
   depends_on "cmake" => :build

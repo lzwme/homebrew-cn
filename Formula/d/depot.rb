@@ -1,8 +1,8 @@
 class Depot < Formula
   desc "Build your Docker images in the cloud"
   homepage "https://depot.dev/"
-  url "https://ghfast.top/https://github.com/depot/cli/archive/refs/tags/v2.102.25.tar.gz"
-  sha256 "fa9e1b61f038c807098f5814d8b8cc6097269d821774e23b344c73628522a538"
+  url "https://ghfast.top/https://github.com/depot/cli/archive/refs/tags/v2.103.2.tar.gz"
+  sha256 "71264da73c2580126cbf1296966b45b2d751d426d9eb669997f3ab944e0d7730"
   license "MIT"
   head "https://github.com/depot/cli.git", branch: "main"
 
@@ -14,22 +14,14 @@ class Depot < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d425b4a892f806fe376663e1b523db67d451cdd5245820d277660adfbcabb05d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d425b4a892f806fe376663e1b523db67d451cdd5245820d277660adfbcabb05d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d425b4a892f806fe376663e1b523db67d451cdd5245820d277660adfbcabb05d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "831c6ff5d4efc81ed4b651936f156f8c8543a806ff2bd11c6007f2ea4e8ab8b9"
-    sha256 cellar: :any,                 x86_64_linux:      "91adcf4bda203e886f80133d548d7ff9e3210bf47b6c1794a5ffbc3054d442a0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "de581a7e7dad308bb2497546f2ef5fdcbdd455f25e8c5ccf94daeff843322a0d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "de581a7e7dad308bb2497546f2ef5fdcbdd455f25e8c5ccf94daeff843322a0d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "de581a7e7dad308bb2497546f2ef5fdcbdd455f25e8c5ccf94daeff843322a0d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "02f13039ac3d41acbb1bb0296a3179910606fba976ff558bf77f4bb6fa1f78e1"
+    sha256 cellar: :any,                 x86_64_linux:      "2c3ace482c5b6f62f9e12d2e08fd27f05b5fb38aa3e726c11e3e6642dfacbc3c"
   end
 
   depends_on "go" => :build
-
-  # Fix linking on Linux arm64 with Go 1.27, which rejects cpuid 2.0.4's linkname to `runtime.sched_getaffinity`.
-  patch do
-    url "https://github.com/depot/cli/commit/627f8a6dfad7e7f2f33c774d3aa22af9884f0ebb.patch?full_index=1"
-    sha256 "bffa3eaea34bebeeb3c27fb9ed326137b8824a1ded170eeeb2cdd91c30dd48ac"
-    type :unofficial
-    resolves "https://github.com/depot/cli/pull/570"
-  end
 
   deny_network_access!
 

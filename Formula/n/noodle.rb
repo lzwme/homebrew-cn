@@ -4,13 +4,14 @@ class Noodle < Formula
   url "https://ghfast.top/https://github.com/wilfredinni/noodle/archive/refs/tags/v0.10.1.tar.gz"
   sha256 "16f869ec37275e39234e47b7f0c9f27e76530f570b0fa4da031a75a83cd7530b"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 arm64_golden_gate: "9fb7b5f8a6f6434e0eb5ab9f4faa174e1110057d16d72e259cf953ddc031a6e0"
-    sha256 arm64_tahoe:       "77e26f3adc3dffedb11f43eae63036b152213c77af8585924265c5731026160a"
-    sha256 arm64_sequoia:     "d0fc017301e831aec5c9622fdc9d5dc63125c69e9db7d2f3b870b5f26e6d64aa"
-    sha256 arm64_linux:       "33e89c3225490d6fc224564df41ffa3b4e399d520604a2b0f657ab1ffa1c0528"
-    sha256 x86_64_linux:      "d3fec115a4ad338a794106edfe6c65330eccfd4cac34fd62dc08736ec2b27f44"
+    sha256 arm64_golden_gate: "b888425575aa68b81458e9b25b03d0bb10fd69ccadb074fe3fc9854aeac85cd6"
+    sha256 arm64_tahoe:       "14e201f06a3db0d443e3fe63c5146e3c72e5301455806840e5250b1fa842e319"
+    sha256 arm64_sequoia:     "e98a430d3e4578450192deee3a41d1d87855ffdb8316c61c6120ec4cd80a7343"
+    sha256 arm64_linux:       "4045a71055d54f78a4d588967a8d9c2ddd89295de34de68f5d747a6610cc713b"
+    sha256 x86_64_linux:      "49720f76ab80379e23b7bd348e31ed72a3aa0b6d33210075f37145e16c46ba77"
   end
 
   depends_on "bun" => :build

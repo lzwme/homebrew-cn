@@ -2,17 +2,17 @@ class Argo < Formula
   desc "Get stuff done with container-native workflows for Kubernetes"
   homepage "https://argoproj.io"
   url "https://github.com/argoproj/argo-workflows.git",
-      tag:      "v4.1.5",
-      revision: "6c80c7e56ae601bce4a9f042767aa00259eb1f41"
+      tag:      "v4.1.6",
+      revision: "43021573c5a35cbafae009043c132dfcef43a112"
   license "Apache-2.0"
   head "https://github.com/argoproj/argo-workflows.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e0c35f06af5d4a2ea53403af42cac9044e2e720fc404017826fdd00c6bbfede2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "719ecd36d98ce830fee7037f3fa3650b862a788c641af0a9cf66e0a8d8d7d67b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "44af019270f6abc8f637e243e7b839f5740a00fd646e24d4f0d0131a9f4b682a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "99ca48be107cc4f894cbb11057a371747989c759a1772ee4f51857384ed6b52d"
-    sha256 cellar: :any,                 x86_64_linux:      "ce37920ed6622ad5923e0d891118e031082acc64a7d60e417a701f9665397161"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1069f593b933251842f0a5ef3e51c67c76d25d34664aacf2865b5fa66723fad6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9419d62a5004d5f203770cf6c6e5165ecd0f02dbcf0c7b8ca6c46fa44f557729"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6554500170f486fcfc8cca4e95f504c5561407134c2e795a978db54aadf3790b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1c8224f09d46a966cbe9aba41f946aae20db1fbf694d542e5fb30b364b280163"
+    sha256 cellar: :any,                 x86_64_linux:      "bb765a4956029d28eac48af270345808b629480eabd6dec9f3b6c0e4cd1729eb"
   end
 
   depends_on "go" => :build

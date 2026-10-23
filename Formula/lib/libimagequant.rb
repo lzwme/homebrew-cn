@@ -5,6 +5,7 @@ class Libimagequant < Formula
   sha256 "2464a3e922b5a220b633d674062b82f0670114f8f3dd30d1935a621c95965f1b"
   license all_of: ["GPL-3.0-or-later", "HPND"]
   compatibility_version 1
+  head "https://github.com/ImageOptim/libimagequant.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "bc199055cc07090e3b88a54d48ae3d04502ff16dacb5c851846dc2719985cb09"
@@ -18,6 +19,16 @@ class Libimagequant < Formula
 
   depends_on "cargo-c" => :build
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    cd "imagequant-sys" do
+      # `Cargo.lock` is ignored
+      system "cargo", "generate-lockfile"
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
 
   def install
     cd "imagequant-sys" do

@@ -1,8 +1,8 @@
 class Gitoxide < Formula
   desc "Idiomatic, lean, fast & safe pure Rust implementation of Git"
   homepage "https://github.com/GitoxideLabs/gitoxide"
-  url "https://ghfast.top/https://github.com/GitoxideLabs/gitoxide/archive/refs/tags/v0.60.0.tar.gz"
-  sha256 "7414812a006ac67d38a8d7e5fa74ebb2863dac10d50fce6cdc2e0c3ddd419f2e"
+  url "https://ghfast.top/https://github.com/GitoxideLabs/gitoxide/archive/refs/tags/v0.61.0.tar.gz"
+  sha256 "52eef94ef7a4714189fc3c77a0a345a4f61d2e3b5a4dc472ea11115a05c8da40"
   license "Apache-2.0"
   head "https://github.com/GitoxideLabs/gitoxide.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Gitoxide < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "71f521996466298bac404f6d056e8edd3cd9218146d6d29db641f9030f0517ab"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c95fc49d6911d31b7a2a56f59259e7f470f1337b3428513d26c3d0a4bd9b78a6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4043ab496ba5cc2e731a9d6e57bf05f47348f28bfc9165536f9290a9f6ae09e2"
-    sha256 cellar: :any,                 arm64_linux:       "a6e7d4c3164536940a41a20bc307173e3ab6e2725330cf8167560127875d5aac"
-    sha256 cellar: :any,                 x86_64_linux:      "3639fdaf3c44300f95e254350375eac430e295632f48c3cf9275b9337820f7ef"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0067c2179b7c227ff5015ad4c2dd9d2a3177e6cb9e376277513d15df0b6af853"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "adee20a9f820f8b406b8a134f105e1ed7267b5b1f021ed46438810549d3b34bf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6e55a629cdd294c6134d396286b9516911d3aa6e6126d52bc821cd979c4874b3"
+    sha256 cellar: :any,                 arm64_linux:       "ba652bdfb8fbd2b632632dacad05f49b7c1618505b20a7496186128031e5804e"
+    sha256 cellar: :any,                 x86_64_linux:      "be3549eb824b8bedd5fdc67349a455cba300b3a13077637c7fb3b29937afc5ff"
   end
 
   depends_on "pkgconf" => :build

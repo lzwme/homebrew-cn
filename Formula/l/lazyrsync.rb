@@ -1,19 +1,17 @@
 class Lazyrsync < Formula
   desc "Terminal UI for rsync, written in Rust"
   homepage "https://lazyrsync.westpoint.io/"
-  url "https://ghfast.top/https://github.com/westpoint-io/lazyrsync/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "7ddb32c20688c1e56032207a5ed8edd5db09f9aaaad43741de13bef715bc1a4d"
+  url "https://ghfast.top/https://github.com/westpoint-io/lazyrsync/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "e8995ca91c75dc67d88ad4e09f74a2f7863387262b63ee299833a4f9d4c7de3c"
   license "MIT"
   head "https://github.com/westpoint-io/lazyrsync.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b60ecabe63c5e4e4bf0675d09ce0ed98510d9372e6201afb5334210b198bf71a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "30d7de71f22280a95c6284f90772ac0903803d17e6a13f12c8c20db9db0e13bc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6b2ae1b54853ff86369ae4a5d9e2951857874b54dce8c46dd91d551734964a6b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "55fc0b696bc3ff39761a405ce0260c2e026f16bbd3ee527b9ad64b323867976b"
-    sha256 cellar: :any_skip_relocation, sonoma:            "d308c5b510760ca7b2a8591026e8676f53dc0a118e8aa11f4cc5efb8d7b54986"
-    sha256 cellar: :any,                 arm64_linux:       "97600aae368c08e8aa9fdcbd962ad9d7cc7c1b99d5c5246f0309bb10886ead58"
-    sha256 cellar: :any,                 x86_64_linux:      "081d7766296d581960467eccfedd7b5e0c0234d2f8b3aeccb4f9b7d27083e379"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1289bb0c1c943be2d68a3ddd8e4e3750cd4c30b4030d07421418d9a4f62cb294"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0737a2af17f71489ec35ece6ce7e0bee6d22be9ed3c6249c9fae16845ff47ebe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0f602436b219253bd93db59a106d22463055e013ece0c6f22c44cbf5ba222802"
+    sha256 cellar: :any,                 arm64_linux:       "80c062866d5aad2319c2ce1594e61118c43588d4864de74b4c049d051801143a"
+    sha256 cellar: :any,                 x86_64_linux:      "2cb1b95de9c14c4715d4563dc6282692dac7ba062da7189f8eaf88fa5dd80232"
   end
 
   depends_on "rust" => :build

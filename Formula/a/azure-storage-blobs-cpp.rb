@@ -1,8 +1,8 @@
 class AzureStorageBlobsCpp < Formula
   desc "Microsoft Azure Storage Blobs SDK for C++"
   homepage "https://github.com/Azure/azure-sdk-for-cpp/tree/main/sdk/storage/azure-storage-blobs"
-  url "https://ghfast.top/https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-storage-blobs_12.19.0.tar.gz"
-  sha256 "346cf098f055b90b88b380ac08c3e31bfca1578e1186b85ba85be7b436c0ad63"
+  url "https://ghfast.top/https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-storage-blobs_12.19.1.tar.gz"
+  sha256 "2f7af311f5c21b3eaf797d3184b50ac741652e534b3b3d0346a4bb88427c6d06"
   license "MIT"
 
   livecheck do
@@ -11,11 +11,11 @@ class AzureStorageBlobsCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7683ce2a6360b4c5f368db0d1d3663681900e07ab0824bbd1d3285f79173af50"
-    sha256 cellar: :any, arm64_tahoe:       "f0f1d69bebc97d7ad46f8649ef51fa3e3c13f359ba1a092ac434e401f0e7d184"
-    sha256 cellar: :any, arm64_sequoia:     "ae8694928960e7a29d6a4e188213ac2b3b3653156f636bdbe42cf391d80025ba"
-    sha256 cellar: :any, arm64_linux:       "f229fa9481ba5e97f548afa7309f49ceca6caa44c39f46c3114992a03a682789"
-    sha256 cellar: :any, x86_64_linux:      "3319971010161a977746ef7a7354e76e5ec97653f34f0ace790e222c5086df10"
+    sha256 cellar: :any, arm64_golden_gate: "ed45a9d119d79c047bef23b195b26a9b0255ffe2c8c95af47f6ce26b71dcec99"
+    sha256 cellar: :any, arm64_tahoe:       "c1e51cc60ca8da830bc84c388af32f569450bd4bf8d445774c3f9b94ec7be9ef"
+    sha256 cellar: :any, arm64_sequoia:     "8c0a14240cdea8bdf090ccbd6a8c652751323530940892817969f2922ee248e9"
+    sha256 cellar: :any, arm64_linux:       "3140220cc4bf7d14d7e8c7adfc9ab819a83eea27d0e7ad47136e0ec4dbd0b68e"
+    sha256 cellar: :any, x86_64_linux:      "355b2b15130adefa764a655510ef551b5cbb9216fb23535d77e31a9ce11fc62f"
   end
 
   depends_on "cmake" => :build

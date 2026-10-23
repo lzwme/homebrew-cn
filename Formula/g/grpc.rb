@@ -2,14 +2,13 @@ class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
   license "Apache-2.0"
-  revision 2
   compatibility_version 6
   head "https://github.com/grpc/grpc.git", branch: "master"
 
   stable do
     url "https://github.com/grpc/grpc.git",
-        tag:      "v1.84.0",
-        revision: "3252a89f10d8e92997862167ca7d095ecda85973"
+        tag:      "v1.84.1",
+        revision: "b0c0c4f8823ba69e7e43aaaf183c30a43e549924"
 
     # Backport support for OpenSSL 4
     patch do
@@ -32,11 +31,11 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e88aa2947bc6b57b425d8def81a279cf0410b2ded2ef460d067b7464a7e1d440"
-    sha256 cellar: :any, arm64_tahoe:       "37a199b3dc245c275400f32fb80ee8638b5b7b04e849d65c21411756098a0d58"
-    sha256 cellar: :any, arm64_sequoia:     "dc7bcc9876473c5dfe42ee56f9c3022f52bc99dc2ed21d62e69cdb19ba4ca53a"
-    sha256               arm64_linux:       "0d53e5688769b0c2f58c9ec10c01f72ffb825d54ff7a3d546fcd763eb40058af"
-    sha256               x86_64_linux:      "28aac1ab06797ccf316949d7768470adb536205b193ae337ae6ce7ad1aecf6e7"
+    sha256 cellar: :any, arm64_golden_gate: "c5bfb97fc3acfae28f6440c17ccda52f61ecf1ec0baa926117c84a445b09daee"
+    sha256 cellar: :any, arm64_tahoe:       "d371e2af0f0b50d1e9cf8084588bb1d51992e0c175fea8326bfb4705d1714e57"
+    sha256 cellar: :any, arm64_sequoia:     "db1c710f5311c5d4aac35b0960eb83e87fee9f32d278232a5250e74bc291727e"
+    sha256               arm64_linux:       "eaf0369a0aa092eeef4ef1f73df6f0dfee0a7f99f93f980d8a575ef11dc180de"
+    sha256               x86_64_linux:      "59cf58764671937ead9ac309bf6f0d6fbc78c58e98bdbde15926159ef98db5d8"
   end
 
   depends_on "cmake" => :build

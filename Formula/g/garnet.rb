@@ -1,8 +1,8 @@
 class Garnet < Formula
   desc "High-performance cache-store"
   homepage "https://microsoft.github.io/garnet/"
-  url "https://ghfast.top/https://github.com/microsoft/garnet/archive/refs/tags/v2.2.3.tar.gz"
-  sha256 "29fa21790324709a19708871a1a9073a12ce170a9b7bec779f4bf0875aac4dc4"
+  url "https://ghfast.top/https://github.com/microsoft/garnet/archive/refs/tags/v2.2.4.tar.gz"
+  sha256 "84c3efaa16336bf1007981f4dae723ddd537fcc64da71678f5375906db5c438c"
   license "MIT"
 
   livecheck do
@@ -11,11 +11,11 @@ class Garnet < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "15698308e5dfd03189cc0db975fb81890842d255b2dd9f56666fc75335813001"
-    sha256 cellar: :any, arm64_tahoe:       "4180d1d07d1212e12cb82d697413d913a7aafd6884a134d6b8e67e037a18a476"
-    sha256 cellar: :any, arm64_sequoia:     "f26ab2d54faabc63bedd38caeeaa142ac8af740498614b0dbc9931cdf71c260a"
-    sha256 cellar: :any, arm64_linux:       "c97e387416649ebb5490934ae9889ac8a03feaaee82e747dcd98ed7b7349caeb"
-    sha256 cellar: :any, x86_64_linux:      "4ef72ea2518f2fcff5aec08d3183faa83e65b1cb4e18be7941590017b2a21dce"
+    sha256 cellar: :any, arm64_golden_gate: "9925cb49687b397aa64e04c5427e277751172a60ee6e0eb2f85dbc103f1537ef"
+    sha256 cellar: :any, arm64_tahoe:       "6ab81dd5741e4661d56e1f9ada645cc45f19f91399ad3a4ddecddb559299f155"
+    sha256 cellar: :any, arm64_sequoia:     "2da248cefab79c6b38d365fe961d8d8fade244986eb1ae5e5084eb80c1c3755c"
+    sha256 cellar: :any, arm64_linux:       "89857f807e90ce9de11a9a5f39822a9932f0c640f86916c22a3dfcca783b3093"
+    sha256 cellar: :any, x86_64_linux:      "9a350167e3a86fe29e2614a223eb6db1c196146a0b2406fc49961a4174ac0c86"
   end
 
   depends_on "rust" => :build
@@ -28,7 +28,26 @@ class Garnet < Formula
     depends_on "libaio"
   end
 
+  allow_network_access! :test
+
+  def dotnet = deps.find { |d| d.name.match?(/^dotnet(@\d+)?$/) }.to_formula
+
+  def fetch
+    # .NET named mutexes need `XDG_RUNTIME_DIR` (or `USER`) on Linux, which build containers may lack
+    ENV["XDG_RUNTIME_DIR"] = buildpath
+
+    system "dotnet", "restore", "main/GarnetServer/GarnetServer.csproj",
+                                "--use-current-runtime",
+                                "-p:TargetFrameworks=net#{dotnet.version.major_minor}"
+    cd "libs/native/bftree-garnet" do
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
+
   def install
+    # .NET named mutexes need `XDG_RUNTIME_DIR` (or `USER`) on Linux, which build containers may lack
+    ENV["XDG_RUNTIME_DIR"] = buildpath
+
     # Ignore dotnet version specification and use homebrew one
     rm "global.json"
 
@@ -53,7 +72,6 @@ class Garnet < Formula
       end
     end
 
-    dotnet = Formula["dotnet"]
     # .NET 10 flags IL3000 here even though Garnet falls back to AppContext.BaseDirectory.
     args = %W[
       --configuration Release

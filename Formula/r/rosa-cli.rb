@@ -1,8 +1,8 @@
 class RosaCli < Formula
   desc "RedHat OpenShift Service on AWS (ROSA) command-line interface"
   homepage "https://www.openshift.com/products/amazon-openshift"
-  url "https://ghfast.top/https://github.com/openshift/rosa/archive/refs/tags/v1.2.66.tar.gz"
-  sha256 "87098967360fea1e6fcdb3703f1cf6034ca00c57d12e79a97d69bfe5594433a8"
+  url "https://ghfast.top/https://github.com/openshift/rosa/archive/refs/tags/v1.2.67.tar.gz"
+  sha256 "923470271028de4397e416f0aee24dd05be61718869f6a2e0be484110d3b0171"
   license "Apache-2.0"
   head "https://github.com/openshift/rosa.git", branch: "master"
 
@@ -12,11 +12,12 @@ class RosaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a0527e073076f82a7f414720ad7bb2bacc2ed6fb33c937d32c665a75336997e6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3db35dca1087502a64baec8a6a1b5a83ea85fb85c166443aef94bc3f3ee64094"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "906b6100b90893b04346915077c51424f1590327aa94d83fc62383388c5502bb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "fa792bd13890c5868c14ee1126b3caebb0496fca8df1b3926941001792d7a3d4"
-    sha256 cellar: :any,                 x86_64_linux:      "9a5743cff6d2c14383fcd1b8e3103dc1425b2fd6816ddce099da969ddcb461bb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bba40ba31e5e51d75a8d4f2db3c800167e54cb18927b5480defff45a866a4e0f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "60b5fa33b0817c94040b9b7213d58847f9c91c6ded2b5f787874b4daf6f7f219"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "00cd81570c9f781893f8f88604583c30e9ae8cd60bcdac29e43a1e713e600d1e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a44e291caac26033928807f6b4cbefe7ac35ab44e6b6de22aceefa15e8826f1e"
+    sha256 cellar: :any,                 x86_64_linux:      "649fcfbb0e995febcbaa94255e791c34d3b7012b2c5b162a85ecee2f54063cc0"
   end
 
   depends_on "go" => :build
@@ -29,7 +30,11 @@ class RosaCli < Formula
   end
 
   def install
-    system "go", "build", *std_go_args(output: bin/"rosa"), "./cmd/rosa"
+    ldflags = %W[
+      -X github.com/openshift/rosa/pkg/info.DefaultVersion=#{version}
+      -X github.com/openshift/rosa/pkg/info.Build=#{tap.user}
+    ]
+    system "go", "build", *std_go_args(output: bin/"rosa", ldflags:), "./cmd/rosa"
 
     generate_completions_from_executable(bin/"rosa", shell_parameter_format: :cobra)
   end

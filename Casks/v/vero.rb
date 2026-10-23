@@ -1,6 +1,6 @@
 cask "vero" do
-  version "0.20.2549"
-  sha256 "c6205cac40954f3a908fea3948e0e26b717920969c2002de35b3f16071b34cf9"
+  version "0.20.2633"
+  sha256 "c159ade7072b59deaee9d4e3543904c6f56385c165949869fc2468684079d361"
 
   url "https://downloads.vero.co/vero-beta-#{version}.dmg"
   name "VERO"
@@ -17,7 +17,9 @@ cask "vero" do
   app "VERO.app"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/co.vero.desktop.sfl*",
     "~/Library/Application Support/VERO",
+    "~/Library/Logs/VERO",
     "~/Library/Preferences/co.vero.desktop.plist",
     "~/Library/Saved Application State/co.vero.desktop.savedState",
   ]

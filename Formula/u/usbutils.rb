@@ -2,8 +2,8 @@ class Usbutils < Formula
   desc "List detailed info about USB devices"
   # Homepage for multiple Linux USB tools, 'usbutils' is one of them.
   homepage "http://www.linux-usb.org/"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/usbutils-019.tar.gz"
-  sha256 "347c52b65a6aeb22cfe3af8382192004f99725850e1dc5f705336e54cf6d59fc"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/usb/usbutils/usbutils-020.tar.gz"
+  sha256 "fed292b2a3dce83464ce9e96e7eaf301f58b3bf0104872b6a75edac14c907ff2"
   license all_of: [
     "GPL-2.0-only",
     "GPL-2.0-or-later",
@@ -16,13 +16,11 @@ class Usbutils < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "23ed1225015d14d138b5701fa6aa4b3794b48c89f25d4242cdc150ba818a7723"
-    sha256 cellar: :any, arm64_tahoe:       "26e37532e86411091b25054bfc3967d825fd533557c8a59296867caab2fb9c95"
-    sha256 cellar: :any, arm64_sequoia:     "3fd964e13e53ac02a5ab1e3aad9507622a2ca4b950f53a39fc644492c7e0bb25"
-    sha256 cellar: :any, arm64_sonoma:      "625af4354b888ad7fd99c48bd952b0f90191ca0f5212a77a4e5878d8c3336f05"
-    sha256 cellar: :any, sonoma:            "235c82fe47c5faec50df91713b449941b4a89d8895b87c6b5950e78d2e099cb6"
-    sha256               arm64_linux:       "9dd93abd2b124a8d0beb4c155fcd417ec99b837d38db7a7b4f8b82745761d51a"
-    sha256               x86_64_linux:      "7d95c8f655bf97ceb6e232dbdbb27e9ce977dd6590311bff52077f652d0512b0"
+    sha256 cellar: :any, arm64_golden_gate: "54a0c1da8be792d7614a32937d0f9e75172a6e02bacdbd6f000ead2a5d4467bf"
+    sha256 cellar: :any, arm64_tahoe:       "c0b1e16c2f54b573672c30e5e6c077aff58d68f909865e34733246746e0026ca"
+    sha256 cellar: :any, arm64_sequoia:     "791099dc9c3b55360d631a6956983122b8116db79707cd7bc749d209f16fb4ff"
+    sha256 cellar: :any, arm64_linux:       "be51576c1650fcf02881184ccbe647c89042e7e9f452cbc42fcae3e4a4016d79"
+    sha256 cellar: :any, x86_64_linux:      "a99f4203ddbd2372e87a6bde23a32de74d20ff7fc4f5bc1126145c22fff76579"
   end
 
   depends_on "meson" => :build

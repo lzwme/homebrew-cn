@@ -1,8 +1,8 @@
 class OpenjdkAT25 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.org/"
-  url "https://ghfast.top/https://github.com/openjdk/jdk25u/archive/refs/tags/jdk-25.0.5-ga.tar.gz"
-  sha256 "9a850ceee8c2fb2a5cda99fde4bb74a1bc12fbbabbd995273a2febd9206070c4"
+  url "https://ghfast.top/https://github.com/openjdk/jdk25u/archive/refs/tags/jdk-25.0.5.0.2-ga.tar.gz"
+  sha256 "449dbdcf72899fa1a978dfbb7cac73988b389b72b548bcba2c4978bbdff01399"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
   compatibility_version 1
 
@@ -12,11 +12,11 @@ class OpenjdkAT25 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "77ac08a282b499ef95e5fc84a7237f8208c41ff87a915ad1f45eb4c8dc82a60d"
-    sha256 cellar: :any, arm64_tahoe:       "ede7d2491e51c4454d7983a58b8b84ac176e3f6bc81ce0046105518e8f5175e4"
-    sha256 cellar: :any, arm64_sequoia:     "dc3a635094a1e38fb8ed5999fb48be1fc3f4d1b3dddfc83f3b0f52215821349a"
-    sha256               arm64_linux:       "cf89fa9caff67749b65dff210fc443e6b937bae825c471bd6440aad1d24bfdad"
-    sha256               x86_64_linux:      "8610ce17d02fa79b99c33a5d42defbe6395a60dfa4efc6760d22d7ef6c25b72a"
+    sha256 cellar: :any, arm64_golden_gate: "ec367ce6fc3a6194441abe91a01229e544884f612cd1675658dbd52c88913c9c"
+    sha256 cellar: :any, arm64_tahoe:       "7afd90ecd22ede95e32de2c035b5dbfae9c6599f0eecc7a901179708d27c34cd"
+    sha256 cellar: :any, arm64_sequoia:     "c60c1ef052234d29a8326d65a3b331359a7d29fa03b9a1acfff672d85827cb9b"
+    sha256               arm64_linux:       "9c9282efe089b47f9abc41530c7439391f7529cab1e117fe210e422f75f883af"
+    sha256               x86_64_linux:      "9e07ed7b8e7fdcbb30dcf4d0b20f5c9f37c89ccd3be25aa57ec513189ff613d6"
   end
 
   keg_only :versioned_formula

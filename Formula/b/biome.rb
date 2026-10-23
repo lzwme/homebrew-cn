@@ -1,8 +1,8 @@
 class Biome < Formula
   desc "Toolchain of the web"
   homepage "https://biomejs.dev/"
-  url "https://ghfast.top/https://github.com/biomejs/biome/archive/refs/tags/@biomejs/biome@2.5.15.tar.gz"
-  sha256 "0212a8f9e351e2d47580cf8371948dd477ceb01e0fef1a65f81061a2a4a39039"
+  url "https://ghfast.top/https://github.com/biomejs/biome/archive/refs/tags/@biomejs/biome@2.6.2.tar.gz"
+  sha256 "7325c9fef245c55e309bfbf220d0db85d5e9ab5e011f9d20dbd322929e330106"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/biomejs/biome.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Biome < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d4a114410bae6d9da2d891ccd414ab5076eb0ca3aaa767b2f45c19a8a2fd0d8a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8aa06c191178247e15f9a2f821fa95c002bff7dbb1d4967d17a2a549dfcabadc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c80fa1ec83e73bcdd25e78cdc0eb1a8e1acc031b2ed746fc63226fecdc0f325c"
-    sha256 cellar: :any,                 arm64_linux:       "dae57de0ce7f06cf6e10b1d3e6c19ca85e17d5e125c4d889264bc7b7d1a51a6e"
-    sha256 cellar: :any,                 x86_64_linux:      "cb0fbbdaf36e32dcb43f3bba52549be23a9d38987233c65f3074a850444d75c4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fe40db285b8a42a776e1827816b920e8d8dda266d342e5eeec02a6b73848eb76"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f9b530a1a8cb8ba1ccaff64a665a6ca9ccf0108aaec42bb60a83f9bc8bae2db1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "66de7643a0b7848d01729731f39e4011e42fcdce339ae405595b61b6d860e128"
+    sha256 cellar: :any,                 arm64_linux:       "5d980ba93774e9662100d0caf683d38040a314c595a6e3977bf049773dfa6cf8"
+    sha256 cellar: :any,                 x86_64_linux:      "2dec1c6dc1d3b5f0cd37cddc5b50541fd2aa23f005817a6380051b95b7a5cad5"
   end
 
   depends_on "rust" => :build

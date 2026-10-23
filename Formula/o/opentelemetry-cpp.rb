@@ -1,18 +1,17 @@
 class OpentelemetryCpp < Formula
   desc "OpenTelemetry C++ Client"
   homepage "https://opentelemetry.io/"
-  url "https://ghfast.top/https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.29.0.tar.gz"
-  sha256 "63effc2b0aaef32c9543bd95c8c227f1c80da8248392a6d97e8a2c3ffbcf7ea1"
+  url "https://ghfast.top/https://github.com/open-telemetry/opentelemetry-cpp/archive/refs/tags/v1.30.0.tar.gz"
+  sha256 "85aae7a42d7b71d17e510ddebc85db622d9078cc6d29cf9fb7373014b063859f"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/open-telemetry/opentelemetry-cpp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8d36b4b15d5424d5f91a21d42929b810c3f8aea1f09418aab4761b7c6e930272"
-    sha256 cellar: :any, arm64_tahoe:       "16da1ac76628ec127ac6e1aec99784b650dd8f5114b954a857eb8fb8a5f7c921"
-    sha256 cellar: :any, arm64_sequoia:     "948791187f7fc4ccdf33726a7cbd4d7ff8a214ec8b758e2a1142ac8d6357dcb3"
-    sha256               arm64_linux:       "8c38b53e36b00ccb31c60c168b50dafcaad3cb87c09cc35cc11798997e8d4bf4"
-    sha256               x86_64_linux:      "832d557a2ffb9f1c0d720084d506d58408a6c03e5b8e00195eaa148a3da81375"
+    sha256 cellar: :any, arm64_golden_gate: "3cc8f2c439b704bd24b4006478716caed959836744f03a05dceb6b39f7e7a88a"
+    sha256 cellar: :any, arm64_tahoe:       "c309c0120c3fe3262d2546b4b281f384ac24da32493ce43cdba4db7417c54d29"
+    sha256 cellar: :any, arm64_sequoia:     "0146d68692d2cfb135baf1daea623d7b6da463a5e02fec3920358310e098e8ed"
+    sha256               arm64_linux:       "d56d7bfeee7fb428d52cd82cecfea8a8eed24a27947a10bb37ee38edf2548d37"
+    sha256               x86_64_linux:      "b90bbfc97dae396db4e39ee471420fab6b77af6be818208bb6caeaddc7893a33"
   end
 
   depends_on "cmake" => :build
@@ -30,8 +29,8 @@ class OpentelemetryCpp < Formula
   end
 
   resource "opentelemetry-proto" do
-    url "https://ghfast.top/https://github.com/open-telemetry/opentelemetry-proto/archive/refs/tags/v1.10.0.tar.gz"
-    sha256 "52c85df79badc45da7e6a8735e8090b05a961b0208756187e1492a40db2d1f5f"
+    url "https://ghfast.top/https://github.com/open-telemetry/opentelemetry-proto/archive/refs/tags/v1.11.1.tar.gz"
+    sha256 "c0bdd2ff083665e0504a6574923ebe53c60c086ea11836c5aa543683f55a6c32"
   end
 
   def install

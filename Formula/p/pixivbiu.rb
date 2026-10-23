@@ -11,15 +11,26 @@ class Pixivbiu < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ea8f24a573df76ee04dddb2d19b37b7b8b58e651e910d54e6e22050a05528ba0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c050c4da900cf52160b69210e611fc2ac2a0863831832db6026bc0cd3ff02fe6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a493ad468051c5c33086d05d499e1b6a94cb5109f1b868ce76159675ce140c2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7ff4af8a315f159411a8cd68ff6e024be1fbc428870e75b97b21686154e36974"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1aed6d9a0f13d84c18c5083defa405b2bf03980753d6c1986f972f75a78c6e76"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f8687012e2a773c20c37fee1a7110205aed05d663b3d92f6988150d46fdfca9f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "623caa67051af368fa0ca40160aaf9e183e3246e2b1cdbb0019536ffbf0ce95d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "217334546aa4ebeed7510527492eb35547107cdc8d80bdaf630447a87f0f9d0e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7d6a6c07c16b76dd0c7c3abcf4080c3b20a1a859e1620dccbde7e8a1336238b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4bdef2ac350d13ac7b24baa21fd8e93914113ba3eaac6249b50ba635ceca2056"
   end
 
   depends_on "bun" => :build
   depends_on "go" => :build
+
+  # `test do` block queries the health API of a local pixivbiu server
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
+    cd "frontend" do
+      system "bun", "install", "--frozen-lockfile"
+    end
+  end
 
   def install
     system "make", "dist", "VERSION=#{version}"

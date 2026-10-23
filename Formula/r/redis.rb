@@ -23,11 +23,12 @@ class Redis < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c3959d984ae34c3a6454bd9a3636d93c92f75b95eca703a089d77f2db1e62d7d"
-    sha256 cellar: :any, arm64_tahoe:       "bfa3e42f26843f48a2aa934cc943bb6d8f3e4f1383ad044f55f2e70b8aba4af9"
-    sha256 cellar: :any, arm64_sequoia:     "c6067fd35eb174d21b5f77e8f002da2ff841801e29c67930373aa58e64748a37"
-    sha256 cellar: :any, arm64_linux:       "5f5854058876a22cd92b3c050d421008842f1280029e0132f59f06f710a00dc7"
-    sha256 cellar: :any, x86_64_linux:      "72cf0f14a24d0a5e6609bebaa1056d91c5b7b48ef82b6d866f480e72851a6a06"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "da7b1843daf46f283876df1ac40e77f31cc30f58790a690e8d6f2765e447103e"
+    sha256 cellar: :any, arm64_tahoe:       "dceaa39c2157f6654f17430893d452049cf8f08ce3395f56aaf6fb9a0b8b8ed1"
+    sha256 cellar: :any, arm64_sequoia:     "136196e0ed4582a8e950719ab3caa8e445b63ea615cd1eef85c73e483ef505a7"
+    sha256 cellar: :any, arm64_linux:       "aaa76f55e5ba3c70fefb39e82ac0b500ece7793e92b6e33d2e3e460d038ce31f"
+    sha256 cellar: :any, x86_64_linux:      "37db9912d48dc36edb6b8c5b2f6b52d0f7edb96cd6e75e1efce35c1d79ddcc8f"
   end
 
   depends_on "autoconf" => :build
@@ -37,6 +38,7 @@ class Redis < Formula
   depends_on "libtool" => :build
   depends_on "rust" => :build
   depends_on "openssl@4"
+  depends_on "zstd"
 
   uses_from_macos "llvm" => :build
   uses_from_macos "python" => :build
@@ -48,9 +50,6 @@ class Redis < Formula
   conflicts_with "valkey", because: "both install `redis-*` binaries"
 
   def install
-    # RediSearch sets `CMAKE_CXX_STANDARD` inside a function without `PARENT_SCOPE`,
-    # so no `-std` reaches the compile line and the compiler default is used instead.
-    ENV.append "CXXFLAGS", "-std=gnu++20"
     # VectorSimilarity selects its SIMD kernels at runtime via cpu_features.
     ENV.runtime_cpu_detection
     # FIXME: redisbloom's vendored readies has no `OSX_MIN_SDK_VER` past tahoe, leaving `-mmacosx-version-min=` empty
@@ -59,7 +58,7 @@ class Redis < Formula
     inreplace "modules/redisearch/src/CMakeLists.txt",
               "/opt/homebrew/opt/openssl@3", formula_opt_prefix("openssl@4")
     system "gmake", "deploy", "PREFIX=#{prefix}", "CC=#{ENV.cc}", "BUILD_TLS=yes",
-           "REDISEARCH_GENERATE_HEADERS=0", "IGNORE_MISSING_DEPS=1", "LTO=0"
+           "BUILD_COMPRESSION=yes", "REDISEARCH_GENERATE_HEADERS=0", "IGNORE_MISSING_DEPS=1", "LTO=0"
 
     %w[run db/redis log].each { |p| (var/p).mkpath }
 

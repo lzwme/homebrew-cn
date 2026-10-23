@@ -1,21 +1,19 @@
 class Spaceship < Formula
   desc "Zsh prompt for Astronauts"
   homepage "https://spaceship-prompt.sh/"
-  url "https://ghfast.top/https://github.com/spaceship-prompt/spaceship-prompt/archive/refs/tags/v4.22.5.tar.gz"
-  sha256 "2b82500b06efd7bca5c5a104279d247ec24466f90f38df0e65cbfa4509e67fe9"
+  url "https://ghfast.top/https://github.com/spaceship-prompt/spaceship-prompt/archive/refs/tags/v4.22.6.tar.gz"
+  sha256 "02da1413520241668141041f82284410dad5d3b4379a4d21b346ee206ee5f2be"
   license "MIT"
   head "https://github.com/spaceship-prompt/spaceship-prompt.git", branch: "master"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "77ae5d1d7ce1fd543fb0af764655b671265b6af36aa0e7dba2f043bc15dafe88"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3a646af652df5cc0f9b0a727a7b8ce00f315116171ae399f376b8892438676d4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3a646af652df5cc0f9b0a727a7b8ce00f315116171ae399f376b8892438676d4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f11b7507cb3342fee0734cf0f74e8cafb8184d31a5d025c794ab47d22cf045c1"
-    sha256 cellar: :any_skip_relocation, sonoma:            "1ab63848954d69c9a5692aaa49971e00fa6ef9b9cf546c577088f74acee1fff9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "78271d687c2539835dd5cecb577c56430fe099337261598d1d58b36926cbcf7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "78271d687c2539835dd5cecb577c56430fe099337261598d1d58b36926cbcf7e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6e24fdbc475fdae434850d6e8bc3558b2d78e949e92de709731e03023c5641eb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6e24fdbc475fdae434850d6e8bc3558b2d78e949e92de709731e03023c5641eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6e24fdbc475fdae434850d6e8bc3558b2d78e949e92de709731e03023c5641eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0620325a81d139ec31ccbb7948c49b6ad1470821f10e3cf52c41f867035047dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "84cdbdd74a46f6d974edeb8fde461a15ac22e95f3f611a77a413bf8272892f62"
   end
 
   depends_on "zsh-async"
@@ -35,7 +33,9 @@ class Spaceship < Formula
   end
 
   test do
+    # sourcing exits non-zero when `zcompile` cannot write beside the read-only keg, so check the prompt hook instead
     assert_match "SUCCESS",
-      shell_output("zsh -fic '. #{opt_prefix}/spaceship.zsh && (( ${+SPACESHIP_VERSION} )) && echo SUCCESS'")
+      shell_output("zsh -fc '. #{opt_prefix}/spaceship.zsh 2>/dev/null; " \
+                   "(( ${precmd_functions[(I)prompt_spaceship_precmd]} )) && echo SUCCESS'")
   end
 end

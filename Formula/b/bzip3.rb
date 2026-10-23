@@ -1,18 +1,21 @@
 class Bzip3 < Formula
   desc "Better and stronger spiritual successor to BZip2"
   homepage "https://github.com/iczelia/bzip3"
-  url "https://ghfast.top/https://github.com/iczelia/bzip3/releases/download/1.5.4/bzip3-1.5.4.tar.gz"
-  sha256 "89a5e4bf29e4aae98b29bb1ef275addfa2d0806ba1ef60bf8a87263cdb21f581"
+  url "https://ghfast.top/https://github.com/iczelia/bzip3/releases/download/1.5.5/bzip3-1.5.5.tar.gz"
+  sha256 "dc3bd8237178e1a2b99d8dcf1f4aeb3593c723788a9863606e121b40784e596d"
   license "LGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3b053b6ec6f0d95f53821f25515c3a7a5d8dadc04336b9adc3231aa8a0647c00"
-    sha256 cellar: :any, arm64_tahoe:       "ed476ab20e78299627bae28bb0dd902bb768d3ece86b25176eac10479d984f47"
-    sha256 cellar: :any, arm64_sequoia:     "948798834e5f0dc0ad6d208ff24ed9a2e636392d22159faafe3ecaab82ee526e"
-    sha256 cellar: :any, arm64_sonoma:      "6c3d602ca043ec524307b38b43d15865ad28fdefca67b159d46a65835f905171"
-    sha256 cellar: :any, arm64_linux:       "e7ae0b8e3d71d7fb83166b7c6982d0d5b52b70082e298c9448171a740103a12b"
-    sha256 cellar: :any, x86_64_linux:      "579ecd6e7477d9fa72ae9f3041b9c75f543e546780c1703132de2105dbadcd10"
+    sha256 cellar: :any, arm64_golden_gate: "1146acb73885c6b8640bf7517221e34fda1b796327c60724ca69d282e63873ba"
+    sha256 cellar: :any, arm64_tahoe:       "3c44d92972b3d067382d423b1aef224ad0160a3dc6e0d3330d4b486aa3fd5e2e"
+    sha256 cellar: :any, arm64_sequoia:     "f2cfb9f2f5765127c50e9d47cf8fc9898e0782307d1610e04306ba1e161daabc"
+    sha256 cellar: :any, arm64_linux:       "65fca08bdd45e54ac956674290d1de88c9c365e84f1b8785ae4a8a4fcc1f35b4"
+    sha256 cellar: :any, x86_64_linux:      "25701f2f41e90d41121860142053769415ea3b8a088406e975a33de95eec8b0f"
   end
+
+  depends_on "pkgconf" => :build
+
+  deny_network_access!
 
   def install
     system "./configure", "--disable-silent-rules", "--disable-arch-native", *std_configure_args
@@ -20,8 +23,8 @@ class Bzip3 < Formula
   end
 
   test do
-    testfilepath = testpath + "sample_in.txt"
-    zipfilepath = testpath + "sample_in.txt.bz3"
+    testfilepath = testpath/"sample_in.txt"
+    zipfilepath = testpath/"sample_in.txt.bz3"
 
     testfilepath.write "TEST CONTENT"
 

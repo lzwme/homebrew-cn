@@ -1,17 +1,17 @@
 class Sacad < Formula
   desc "Automatic cover art downloader"
   homepage "https://github.com/desbma/sacad"
-  url "https://ghfast.top/https://github.com/desbma/sacad/archive/refs/tags/3.0.3.tar.gz"
-  sha256 "747a2b3847c85ad55f4b8ef53b9a133003c53ad9e3c644e74ed762756b613748"
+  url "https://ghfast.top/https://github.com/desbma/sacad/archive/refs/tags/3.0.4.tar.gz"
+  sha256 "31780c419c4ca14310c8ac7023faf03ecb17a0098013f134af9fa750810d322b"
   license "MPL-2.0"
   head "https://github.com/desbma/sacad.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9c5b59f5701b5984a2f221d29ac801b892e8be69a25f9d4247459a82c49581b4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2b063668dc7680b1964e2aacbd7722a610878f4ab34f8aff5452cc60bae7d1df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6a4d914c68d19da2954d07bc4a43f1d60ef10d54168cd8b00b0018906d5a7fcc"
-    sha256 cellar: :any,                 arm64_linux:       "fa54c383e22d43539e0973e3a5698eb905356d307ddeea04988b7eda3750e785"
-    sha256 cellar: :any,                 x86_64_linux:      "2d3a4ed945173cf6ca988fd75c3813791987124338d6a32b5013f7f5961943fd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "85fe9fefb9abdda3c42ce04cd0b16d559f97503dda0ae934b0f46898970b8341"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3753da68c5c4aaa39b34f97e99e9852da040d5681eb69c0b3496f9b253326454"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "69e938bb1c21e4d9ee568926027577723621964691a0afb5da92636799443379"
+    sha256 cellar: :any,                 arm64_linux:       "790baf7e109be39f3b964ad69ef90ec5deb0042fc5a2b99cc141ea1eeb861536"
+    sha256 cellar: :any,                 x86_64_linux:      "a13151c36c1c2facd478bdc6cf145726abb536b2da7b075f108d8c363120725f"
   end
 
   depends_on "rust" => :build

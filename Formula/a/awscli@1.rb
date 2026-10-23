@@ -3,8 +3,8 @@ class AwscliAT1 < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://files.pythonhosted.org/packages/d9/d7/74b718d668537d85ecef9f908f951827a95f7b1eb32f254bf3b1813edf9e/awscli-1.46.0.tar.gz"
-  sha256 "5c1bd660bd3f967f5754a2267fb54e81edf379374faa27973671561888d39bf6"
+  url "https://files.pythonhosted.org/packages/a0/90/c289657c4d946f615063952a945e19d6acc50f493f42580ff77ebc423a35/awscli-1.46.2.tar.gz"
+  sha256 "43e77f324745e760918dc3c6ffb73eef49e35e9f52a5c39fe4a6de854f7e1121"
   license "Apache-2.0"
 
   livecheck do
@@ -13,12 +13,11 @@ class AwscliAT1 < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_golden_gate: "7a35ba6643440cda5057227270cfe9ebad4fa3b9abd5748fa5fa4596be2f4728"
-    sha256 cellar: :any, arm64_tahoe:       "553793b4a27673b7917c21b27e6336145d0d229b0b3e375ce523f6b99c59df2f"
-    sha256 cellar: :any, arm64_sequoia:     "0ef28df1b73d7e87ed5348abc07164e673f6ab33e0784b60291cbe9e41e07758"
-    sha256 cellar: :any, arm64_linux:       "9078c6a46bfa4df369aa8e46585e99d3b9832e79948e3decdc4423b46e6398d6"
-    sha256 cellar: :any, x86_64_linux:      "71fcf97490bebf10e24eece539cf5a854c2d023247eda31a6eb32f5359b18953"
+    sha256 cellar: :any, arm64_golden_gate: "3f437096cb53653d99a675ba339ab0c6cf8a43b278e817084fcd82653327d7d4"
+    sha256 cellar: :any, arm64_tahoe:       "39efa3d859b7c8989ffde7374d8a3492f7889ae2cab8e286e1485b17e9a415b5"
+    sha256 cellar: :any, arm64_sequoia:     "3e84d38af28ccfbd03642facb8302eaf383cc77903089e625950f8b9d9872b0a"
+    sha256 cellar: :any, arm64_linux:       "b3b1d10f40e8187b0b9fd61166f1f0be12a06d3be71b24439faccf718e297c38"
+    sha256 cellar: :any, x86_64_linux:      "de7877117910720349ce8f22db1aa964d252f5468555930cb1b952907cb1b5dc"
   end
 
   keg_only :versioned_formula

@@ -1,5 +1,5 @@
 cask "almighty" do
-  version "2.13.3"
+  version "2.13.4"
   sha256 :no_check
 
   url "https://almighty-app.s3.amazonaws.com/Almighty.zip"
@@ -21,6 +21,7 @@ cask "almighty" do
     "~/Library/Application Support/Almighty",
     "~/Library/Application Support/com.onmyway133.Almighty",
     "~/Library/Caches/com.onmyway133.Almighty",
+    "~/Library/HTTPStorages/com.onmyway133.Almighty*",
     "~/Library/Preferences/com.onmyway133.Almighty.plist",
     "~/Library/Saved Application State/com.onmyway133.Almighty.savedState",
   ]

@@ -1,8 +1,8 @@
 class Rebar3 < Formula
   desc "Erlang build tool"
   homepage "https://rebar3.org"
-  url "https://ghfast.top/https://github.com/erlang/rebar3/archive/refs/tags/3.27.3.tar.gz"
-  sha256 "2cf3a0d9a37ad9715fdb870b161ff61282048588ddb424362dacc22444c2d1f8"
+  url "https://ghfast.top/https://github.com/erlang/rebar3/archive/refs/tags/3.28.0.tar.gz"
+  sha256 "4a8bdd1fc845742833988db73012b232a3e9fd048011189ae9e0cecf70bdb7a2"
   license "Apache-2.0"
 
   livecheck do
@@ -11,11 +11,11 @@ class Rebar3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "05dd411704c6e27246ffa7014c871879c3566afc85d9d26f164ece11892729c2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "521e4627aa969ddb3b2cdca2d3365dfc5bf399b7dbd1e3494d9f025602872123"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8e38d6115735e142b642d2ba0dad57decb498eb9c1c153ac37d60e43c722e4d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "21899cd36d8de27da44e33a8e69ba9f2b7b07a6d85eebddac63c4cf7922bf4eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "83c72bffb212cd8be582b9fc29ae6f487aab2dc0b5b7cb9ac18aba16ba6e25ed"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "92f7de0659bba61ca985f9c004793c8a85fc4c4839cfa678004bfe7fd7363cd2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0d74270a6f9bfd5f1248b7eddf5d35334a9b205dd1970437010b8131fa4581ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ea808c2254b3b487093f8c3427ac11f25d566d69e79ece86334054d3a86b68f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "89acff2c45406fd8c62ff6be3b6959b26e5fd434d6698ba5184916b7cbe21b69"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "067fd6f364f78de86c2ad8e16c27f0cfca3542c482027c191d42db771663423d"
   end
 
   depends_on "erlang@27" => [:build, :test]

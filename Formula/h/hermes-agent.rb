@@ -3,8 +3,8 @@ class HermesAgent < Formula
 
   desc "Self-improving AI agent that creates skills from experience"
   homepage "https://hermes-agent.nousresearch.com"
-  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v0.22.2.tar.gz"
-  sha256 "77d2c763a3bd5133bfb3e327986c987dba249e14988b92919ef726d389c6b9d2"
+  url "https://ghfast.top/https://github.com/NousResearch/hermes-agent/archive/refs/tags/v0.22.4.tar.gz"
+  sha256 "808464c45097ebc4febaed2d08bb936095262c6997ba7c49ee1a0c4e7f7c593e"
   license "MIT"
   version_scheme 1
   head "https://github.com/NousResearch/hermes-agent.git", branch: "main"
@@ -15,11 +15,11 @@ class HermesAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5a0307b519182d13277514548cbc0e8615e4973a3fb964fc37652c719a4e493d"
-    sha256 cellar: :any, arm64_tahoe:       "2f7da4c2f2f986e5e09fb9aae4b4dcc01bd8e2c47d4b65692852740370654182"
-    sha256 cellar: :any, arm64_sequoia:     "4f7be7114989fff9771e82a3ae1b2566aa113625bba906aa8679782f8aaf3518"
-    sha256 cellar: :any, arm64_linux:       "c78c184e879a5400a19d012ffc0ce19222e0c8845624547da1a1f5db38469bb4"
-    sha256 cellar: :any, x86_64_linux:      "c1562b28088c750b3e3791319e5dd185e10abbd068cb0f498f448fd82f1c978b"
+    sha256 cellar: :any, arm64_golden_gate: "dc0aa3c3dcf0c40b88ed4e631fd8719da833303c29f95e67915c58cd967fa565"
+    sha256 cellar: :any, arm64_tahoe:       "5451e7c87e532fa961951f3f32f65c45cbfc568745f87ae45efaa3776c7aa485"
+    sha256 cellar: :any, arm64_sequoia:     "c9121be3da6713294f8c8328756dd5466f2827d9aaf834780827a1581ec4a4c8"
+    sha256 cellar: :any, arm64_linux:       "3db125a93f6df8844349eef167b830843047f21086eb8b75702a4a23afa24eea"
+    sha256 cellar: :any, x86_64_linux:      "3fae1787e8b0780b27329c3668bf1398b670aa2fe6c3e036f54328a81f041c42"
   end
 
   depends_on "pkgconf" => :build
@@ -244,13 +244,13 @@ class HermesAgent < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/74/33/32d4dff2c95bb5d897c3ef4c83649a08996b17b58f0a326d2495d4c81179/mcp-2.0.0.tar.gz"
-    sha256 "0f440e735c13ece8bb19bc62cf0b86f4313448432fbb77d35e14034f4e050728"
+    url "https://files.pythonhosted.org/packages/9d/8d/e0d339616f4810e9051d4aba6887afab289ab1f81875fe908b606cdfd0e3/mcp-2.3.0.tar.gz"
+    sha256 "8b147a50441cf059dc88c684e0aeed3687f0aa0f39c6cde7b90330effd2b34d8"
   end
 
   resource "mcp-types" do
-    url "https://files.pythonhosted.org/packages/bb/56/9b8e1c152f61f6c6b07c4b5896c88c7d0ae90bac6ee6306f852fcc5c1eb0/mcp_types-2.0.0.tar.gz"
-    sha256 "d7d939b9285c9961ae8866ba75ef85da34d12bafe276efbf4eb6a131786d8379"
+    url "https://files.pythonhosted.org/packages/9e/2d/7c251e34207f6c51000312fc8839111ac45cfe02023f90b44e7f1051dd8e/mcp_types-2.3.0.tar.gz"
+    sha256 "d1e46549edb35ee19a94940fcee6d1addd7e589ab7ea92dda83f5d84781fc362"
   end
 
   resource "mdurl" do
@@ -264,8 +264,8 @@ class HermesAgent < Formula
   end
 
   resource "nemo-relay" do
-    url "https://files.pythonhosted.org/packages/67/6e/80d0dc5a5ae790a36e345d84ba88cfcf352ab1e3abd3c951bfe860cc2270/nemo_relay-0.10.2.tar.gz"
-    sha256 "69a58f1f684fbe4984310b305421201fd7a131e6544b201fddfea4ca8658c148"
+    url "https://files.pythonhosted.org/packages/8d/91/4209e98d391b41a54107d0eef35bfbd62ef7f310b1c6490158202f2a1a4c/nemo_relay-0.10.4.tar.gz"
+    sha256 "604e68570199c238daadefbbbcf6534273a73403567e697c79f9726893cbf6ce"
   end
 
   resource "oauthlib" do
@@ -344,8 +344,8 @@ class HermesAgent < Formula
   end
 
   resource "pyjwt" do
-    url "https://files.pythonhosted.org/packages/3b/81/58d0ac84e1ef3a3843791d6954d94c0b33d526c75eeb1efbce9d0a4c4077/pyjwt-2.13.0.tar.gz"
-    sha256 "41571c89ca91598c79e8ef18a2d07367d4810fbbd6f637794879baf1b7703423"
+    url "https://files.pythonhosted.org/packages/43/ea/5194e52748b0da83d71e082d75496eaec6e58f419f5e184786ded517e6a9/pyjwt-2.15.1.tar.gz"
+    sha256 "4f259e80cdfb6b3fc18a7de51fd1ef9ec79652f25019bae68975ca2468a34df8"
   end
 
   resource "pyparsing" do
@@ -401,6 +401,11 @@ class HermesAgent < Formula
   resource "ruamel-yaml" do
     url "https://files.pythonhosted.org/packages/9f/c7/ee630b29e04a672ecfc9b63227c87fd7a37eb67c1bf30fe95376437f897c/ruamel.yaml-0.18.16.tar.gz"
     sha256 "a6e587512f3c998b2225d68aa1f35111c29fad14aed561a26e73fab729ec5e5a"
+  end
+
+  resource "ruamel-yaml-clib" do
+    url "https://files.pythonhosted.org/packages/ea/97/60fda20e2fb54b83a61ae14648b0817c8f5d84a3821e40bfbdae1437026a/ruamel_yaml_clib-0.2.15.tar.gz"
+    sha256 "46e4cc8c43ef6a94885f72512094e482114a8a706d3c555a34ed4b0d20200600"
   end
 
   resource "six" do
@@ -500,8 +505,8 @@ class HermesAgent < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
-    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
+    url "https://files.pythonhosted.org/packages/69/4a/82d61476a1ccc20d43d0805724c5de4baa4971131a8db1816705ef53fe16/wcwidth-0.9.3.tar.gz"
+    sha256 "dfe7cfbd4cb59db9fe0931bd6091ab4a95b3acc5d56bfb50fa9fef0ccba5dc5c"
   end
 
   resource "websockets" do

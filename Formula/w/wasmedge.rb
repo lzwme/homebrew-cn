@@ -1,17 +1,17 @@
 class Wasmedge < Formula
   desc "Lightweight, high-performance, and extensible WebAssembly runtime"
   homepage "https://WasmEdge.org/"
-  url "https://ghfast.top/https://github.com/WasmEdge/WasmEdge/releases/download/0.18.0/WasmEdge-0.18.0-src.tar.gz"
-  sha256 "c3ef59723d8e5e09021bb9ed7ec55c596b33969b95bc1fbfb0ce1d21075e061e"
+  url "https://ghfast.top/https://github.com/WasmEdge/WasmEdge/releases/download/0.18.1/WasmEdge-0.18.1-src.tar.gz"
+  sha256 "589031c828628fbae8576e9d6ef497ac9888bca964dacacaa79ad9c82f9538bc"
   license "Apache-2.0"
   head "https://github.com/WasmEdge/WasmEdge.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9548f79a45b648137812e1358c9f1bc2f789a3f61f2eacb164a9d62d237083a7"
-    sha256 cellar: :any, arm64_tahoe:       "3cb76e163197b6aa463d70cf0c099cc9407df836e4d939e77c502f466d98a38a"
-    sha256 cellar: :any, arm64_sequoia:     "c8c44ef675c22f2836b227784f4215027f4bcf76106a2553e2a79ccfb7c2de98"
-    sha256 cellar: :any, arm64_linux:       "580c75afe4a9b6e2017579eaa2a8ebffeb2660a8332557fde934aae08b59232c"
-    sha256 cellar: :any, x86_64_linux:      "ff560c0fe6851344dcf8c66b7301debb14824f8ac8575a605c96823118f0eaf3"
+    sha256 cellar: :any, arm64_golden_gate: "4dcf520433551e0c49e882da26ff2d8f0c0197862e28f01e3c7613d65b0eb4a7"
+    sha256 cellar: :any, arm64_tahoe:       "6ed658695e864cf2ca874c2e08f3130c7193c2f38a921595060f404d5b142962"
+    sha256 cellar: :any, arm64_sequoia:     "7760b67945473079962c1e35d305360e4797d3fd5dd2ccfe8cc4a7c12adce26e"
+    sha256 cellar: :any, arm64_linux:       "ab078226432d57bfbbc116ed79534dace8daef2bbc412a4c45cb8dc9bd83236b"
+    sha256 cellar: :any, x86_64_linux:      "ac67af200dda09762b4e099a568409581e57246e2e615c75d327618e97b7f158"
   end
 
   depends_on "cmake" => :build

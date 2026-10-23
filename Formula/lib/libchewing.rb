@@ -4,6 +4,7 @@ class Libchewing < Formula
   url "https://codeberg.org/chewing/libchewing/releases/download/v0.13.1/libchewing-0.13.1.tar.zst"
   sha256 "c897a5d0aadfdeb07784e1411ceac0efef2c97bea8143fb3b1dcde8274e14fc0"
   license "LGPL-2.1-only"
+  head "https://codeberg.org/chewing/libchewing.git", branch: "master"
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "d40f3a8796693535bdc3c78bd9087487d98876bf0ee1dd6f39fff90f274b9777"
@@ -19,6 +20,14 @@ class Libchewing < Formula
   depends_on "texinfo" => :build
 
   uses_from_macos "sqlite"
+
+  deny_network_access!
+
+  def fetch
+    odie "Remove `cargo generate-lockfile`!" if build.stable? && version > "0.13.1"
+    system "cargo", "generate-lockfile"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

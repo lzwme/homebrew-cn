@@ -1,6 +1,6 @@
 cask "ishare" do
-  version "5.0.0"
-  sha256 "dd97cef5bb944f5f7465a0cf8743e820bd7e234579e4879d81267ab718c83108"
+  version "5.1.0"
+  sha256 "d270be3321cbfc09058aae144fe6cb70e383b24dae896522ab6acf45e1983d65"
 
   url "https://ghfast.top/https://github.com/castdrian/ishare/releases/download/v#{version}/ishare.dmg"
   name "ishare"
@@ -18,7 +18,9 @@ cask "ishare" do
 
   zap trash: [
     "~/Library/Application Scripts/dev.adrian.ishare.sharemenuext",
+    "~/Library/Caches/dev.adrian.ishare",
     "~/Library/Containers/dev.adrian.ishare.sharemenuext",
+    "~/Library/HTTPStorages/dev.adrian.ishare",
     "~/Library/Preferences/dev.adrian.ishare.plist",
   ]
 end

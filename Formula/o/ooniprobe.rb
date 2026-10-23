@@ -1,8 +1,8 @@
 class Ooniprobe < Formula
   desc "Network interference detection tool"
   homepage "https://ooni.org/"
-  url "https://ghfast.top/https://github.com/ooni/probe-cli/archive/refs/tags/v3.30.0.tar.gz"
-  sha256 "8ddd7bf5f831e635dada1f8eca2db688f8da9c37e06deed03fa94826d943315b"
+  url "https://ghfast.top/https://github.com/ooni/probe-cli/archive/refs/tags/v3.31.0.tar.gz"
+  sha256 "0c7aab87ef755c5c5454ba81df7fb800249fd3a26d1e7e77043be766e19013a0"
   license "GPL-3.0-or-later"
   head "https://github.com/ooni/probe-cli.git", branch: "master"
 
@@ -12,13 +12,11 @@ class Ooniprobe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b3b060c756dbbb69c785234fd7673e5a8d3707127229efe5470c8d3d4b480bd6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a1d6c03e7ba0affc399243f340b20c0555dbbfe8d35e542460a7c41107012d0e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "55d44d5ac9bd171ad7bce1d4c6f4bd95ddf99983785021d9f9f5935457b6ca40"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "85b4f3c189b5fd9260caf7453dda0a665f0f2f02baf96655aefcaa9ad2102965"
-    sha256 cellar: :any_skip_relocation, sonoma:            "d47276550ae910ef4e4f793b7bbd54299735022ee9d45035c4a2975454daa044"
-    sha256 cellar: :any,                 arm64_linux:       "bbd61c6d9c457821126a7f66af165b8d8ea6301fb5e82a9ab27f3761382425dd"
-    sha256 cellar: :any,                 x86_64_linux:      "a41dbe1e8452e136482caf9f1597369120ae09c01e08fa35e5644257ac022663"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "11e6a463f3481b6d3e3a885cdf68e3d7bbe7bb1e30bb9e07e7b15e7978612de1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "86c390f8b0f456178742ec603be4bfac35be28c10d1edcd447ea9935fd0ab55d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6d4bebb6826d17522ebeeba957b13fe0b6bb362cb322e58d8158c566050f0cc3"
+    sha256 cellar: :any,                 arm64_linux:       "ad6812091a515f89e72eaac66e32ceccbe26995e82a606d1d630ff3c4e9b6720"
+    sha256 cellar: :any,                 x86_64_linux:      "722732095602a21a87de8409723156adeae81fb137c65c386766a23885cc9a25"
   end
 
   depends_on "go" => :build

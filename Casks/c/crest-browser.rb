@@ -1,6 +1,6 @@
 cask "crest-browser" do
-  version "0.8.1"
-  sha256 "88e489ce6003e8274e892491766bff96e4d8d15d5fa010b24494e9eee6fa3d02"
+  version "0.8.50"
+  sha256 "355f4d3a5d2f2441770a77d2a52afc6e4c52fcfd97fb16e0fc3c6f7a6f4d8551"
 
   url "https://ghfast.top/https://github.com/pauljoda/Crest/releases/download/v#{version}/Installer-Crest-#{version}-arm64.dmg"
   name "Crest"
@@ -20,8 +20,12 @@ cask "crest-browser" do
   app "Crest.app"
 
   zap trash: [
+    "~/Library/Application Scripts/com.zack40x.crest.safari",
+    "~/Library/Application Scripts/SA6A94K2Y4.com.zack40x.crest",
     "~/Library/Application Support/Crest",
     "~/Library/Caches/com.pauldavis.crest",
+    "~/Library/Containers/com.zack40x.crest.safari",
+    "~/Library/Group Containers/SA6A94K2Y4.com.zack40x.crest",
     "~/Library/HTTPStorages/com.pauldavis.crest",
     "~/Library/Preferences/com.pauldavis.crest.plist",
     "~/Library/Preferences/com.pauldavis.crest.sync-journal.plist",

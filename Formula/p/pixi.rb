@@ -1,8 +1,8 @@
 class Pixi < Formula
   desc "Package management made easy"
   homepage "https://pixi.sh"
-  url "https://ghfast.top/https://github.com/prefix-dev/pixi/archive/refs/tags/v0.82.1.tar.gz"
-  sha256 "1ce72cd1f93f336ecd767d8aed94ee0662248de8cb973fdbac8377214ea021d7"
+  url "https://ghfast.top/https://github.com/prefix-dev/pixi/archive/refs/tags/v0.83.0.tar.gz"
+  sha256 "ca91a72b045b71356d1a9988c1c117bd74eac1f5505c7efb255199e8d7080d22"
   license "BSD-3-Clause"
   head "https://github.com/prefix-dev/pixi.git", branch: "main"
 
@@ -15,11 +15,11 @@ class Pixi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c069f3ea682c6ef391a5165411a08d0208fafb0f237c9a1681f3d7b48c8fa7a7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "89eb1b18c8841f80346cc2e0e726c37be5f8992a0b360a9ed0b2de666d798d3f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d049b41fbf13dca2166959bee645297fbb729f596236fe79d706ad5706f0c310"
-    sha256 cellar: :any,                 arm64_linux:       "5815ce3fccc9c4ab54f21d5c1b401f6aada24718d5d6b14d1f3c5e15981565ff"
-    sha256 cellar: :any,                 x86_64_linux:      "65dd41ebe303f252a7021d00c0d8ee4d3257e3569d757b00ce56a8a5e1625fe8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "13d2e7fc6bfb3d04cf29b674a09f2500bd18bb7014a64314354ff16caef4ffb2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aeb7b80e8658943ec32da4a7ee7a3f13ed48a02ba63579bebd0b60980d473eda"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "901015fea190fa87d13a65cc2cec4c665b55a17d6e5b301208904d2ed8c61169"
+    sha256 cellar: :any,                 arm64_linux:       "5cb8443ecc58fade687285d07ee94b56d185c1167881ddf01fc1fa980ae4b950"
+    sha256 cellar: :any,                 x86_64_linux:      "a99c1fce58fe9ff7dc66215621c7fd3f147f4a9b207c383851c822400ffe9fca"
   end
 
   depends_on "cmake" => :build

@@ -22,6 +22,12 @@ class GitWorkspace < Formula
   depends_on "rust" => :build
   depends_on "libgit2"
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
 

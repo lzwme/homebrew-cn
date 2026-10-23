@@ -8,11 +8,12 @@ class Pandoc < Formula
   head "https://github.com/jgm/pandoc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d499933a6ef517ba2096e307ec2364a94ff43b445576c09076caf561420ac765"
-    sha256 cellar: :any, arm64_tahoe:       "cb45b113bcb57312e1513a84f295c06ce84b5939ec985742777d5ca1f662f13a"
-    sha256 cellar: :any, arm64_sequoia:     "2834d749c26fff94c0a79ce342c8566abbb376d21963652071e44dfe745b7322"
-    sha256 cellar: :any, arm64_linux:       "d02af409cc41b65112ee07016a3b809a6751756edc175c789d410ead4f522b56"
-    sha256 cellar: :any, x86_64_linux:      "f6fa73a0c40bb3fca16655b5251d910a59141633956d3cc66932ef0c92372019"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "fb21dbddf91dd13030fa6ddf7d3cd82aa980e731866000dff515e78ddb695ad7"
+    sha256 cellar: :any, arm64_tahoe:       "4089a8672e1cbf7cf4db44fbc9565ceeb85774057d2fb391a97a7681cd5f9fe1"
+    sha256 cellar: :any, arm64_sequoia:     "37d956bfa4f582a2759cdf2b343854e5469155edd82d1b05907af63bd928b5be"
+    sha256 cellar: :any, arm64_linux:       "594f03b44422a43e9da5c3878251b74457fa879965842033732355e4d8200c03"
+    sha256 cellar: :any, x86_64_linux:      "584f8506242e45fb2a248f612ed0bc72c4a11a7f1c75be20dcd9aa97e711ae87"
   end
 
   depends_on "cabal-install" => :build
@@ -30,7 +31,7 @@ class Pandoc < Formula
 
   def install
     # Workaround to build aeson with GHC 9.14, https://github.com/haskell/aeson/issues/1155
-    args = ["--allow-newer=base,containers,template-haskell"]
+    args = ["--allow-newer=base,containers,template-haskell", "--constraint=pandoc +http"]
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *args, *std_cabal_v2_args, "pandoc-cli"

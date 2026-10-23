@@ -1,17 +1,17 @@
 class Doppler < Formula
   desc "CLI for interacting with Doppler secrets and configuration"
   homepage "https://docs.doppler.com/docs"
-  url "https://ghfast.top/https://github.com/DopplerHQ/cli/archive/refs/tags/3.77.0.tar.gz"
-  sha256 "bca8aeb766be2df346af72d82b84918872a69afc05c9a7d312040e216985ca3d"
+  url "https://ghfast.top/https://github.com/DopplerHQ/cli/archive/refs/tags/3.77.1.tar.gz"
+  sha256 "5e7aa448e81acb9b9d1d066117853c1ffdb38c417a5db01ed1c8e3fcdec83960"
   license "Apache-2.0"
   head "https://github.com/DopplerHQ/cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f778717cd6fc234b47f7c29b33e9db5c500b95459d0c3792c647466a54a05134"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f778717cd6fc234b47f7c29b33e9db5c500b95459d0c3792c647466a54a05134"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f778717cd6fc234b47f7c29b33e9db5c500b95459d0c3792c647466a54a05134"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7d54e5b20ab552e1e705b683f1e868bc7f2ce91e3f0bd9290a6843ebbb914c68"
-    sha256 cellar: :any,                 x86_64_linux:      "f014c5286460aa416459323aa6078a2cf5a9c4e4cdb77970acbb6f4cbdafc939"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6321653be05af035fc0529b7b40f3386ff40056351a55c3b13b4ff5704f4d74e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6321653be05af035fc0529b7b40f3386ff40056351a55c3b13b4ff5704f4d74e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6321653be05af035fc0529b7b40f3386ff40056351a55c3b13b4ff5704f4d74e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cedeb366d9abbc29de6f483192a17a6d63532ac8f6859b5d6cc1f9d4e8f5cf73"
+    sha256 cellar: :any,                 x86_64_linux:      "cb705f42f491b39510cb122fc93c95f16a520096091c701c64ba33b5eae4edb0"
   end
 
   depends_on "go" => :build

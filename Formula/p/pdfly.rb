@@ -6,15 +6,14 @@ class Pdfly < Formula
   url "https://files.pythonhosted.org/packages/48/ae/70f161c80b3f39d8fe4ff784c78045225820d10375c81c2097c0e85ac0fc/pdfly-0.5.1.tar.gz"
   sha256 "636e9736ca3296ed69ad7e14d997813ea5a662ba7a86c77d155e343494dcc3d7"
   license "BSD-3-Clause"
-  revision 26
+  revision 27
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "030625a8002cafbead6b342bac3f55f9ceb367b8dfcb0cba3da256a14b268448"
-    sha256 cellar: :any, arm64_tahoe:       "ff9d9fcc8fb0713cc3b317a9999773b0c760ab771f3ca124a4b62c713090f664"
-    sha256 cellar: :any, arm64_sequoia:     "9564114a56de581fa3a57d3ebb4866ae407aa14e591b229359d2cd09e8a888ae"
-    sha256 cellar: :any, arm64_linux:       "4c2d393edd792e793d5eaf1c77b163558e4a3a4fa87c53a0046ae010950fb3e4"
-    sha256 cellar: :any, x86_64_linux:      "96267370c99deb2eec1a32636f70611db216194e063e22648edbd6ac04e9ea45"
+    sha256 cellar: :any, arm64_golden_gate: "bcf3c63709d94d3084c330ed3dd2957f5f56404c6173181136f41ef0d31c8bbb"
+    sha256 cellar: :any, arm64_tahoe:       "356eff92a05d2fe618bec1f19630e66e725a2171f1156458ebe6659cc4812aa7"
+    sha256 cellar: :any, arm64_sequoia:     "640e9b353a4273cb50c712d9d4059905245e85bdd072caad402fed2dba2525e3"
+    sha256 cellar: :any, arm64_linux:       "23a6fe784f599693879ce79c3c10d647c920b245796a8600e87402d2fe02238f"
+    sha256 cellar: :any, x86_64_linux:      "d3b05386124f118ef1e32c3774e4296b293495d82888b59cd5a6ca3a95523429"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -31,7 +30,9 @@ class Pdfly < Formula
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
 
-  pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic]
+  # TODO: Remove `endesive<3` once `pdfly` supports the `endesive` v3 `verify` API
+  pypi_packages exclude_packages: %w[certifi cryptography pillow pydantic],
+                extra_packages:   %w[endesive<3]
 
   resource "annotated-doc" do
     url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
@@ -74,8 +75,8 @@ class Pdfly < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/87/b6/126c659ab7e0e03e01a5f5d223abf7b2c0691ae92718085a212a3924a2a3/fonttools-4.66.1.tar.gz"
-    sha256 "64967c6ddb0d4c610dfd8cb1485981b2d27972ddfb7d4bbbd9e199d2a089c450"
+    url "https://files.pythonhosted.org/packages/94/36/102e180f8f5dbaee88b26595b01ca8aa80bf4e62128d9aa94265b3996c96/fonttools-4.67.0.tar.gz"
+    sha256 "3cb57e6600ca77c0b1729cf8adc23bc0652633a37f18cfa934d9c7bc3de25519"
   end
 
   resource "fpdf2" do
@@ -109,8 +110,8 @@ class Pdfly < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/62/93/dcc25d52f49022ae6175d15e6bd751f1acc99b98bc61fc55e5155a7be2e7/paramiko-5.0.0.tar.gz"
-    sha256 "36763b5b95c2a0dcfdf1abc48e48156ee425b21efe2f0e787c2dd5a95c0e5e79"
+    url "https://files.pythonhosted.org/packages/76/cb/b1fde76618d84b1acf54d3d03d2b833ba5878afd12b9899346cc080f209d/paramiko-5.1.0.tar.gz"
+    sha256 "239b5f9b2a53006cd54f83cf8495ee742083708ead947882c8dd2786de79f39b"
   end
 
   resource "pygments" do
@@ -129,13 +130,13 @@ class Pdfly < Formula
   end
 
   resource "pypdf" do
-    url "https://files.pythonhosted.org/packages/45/7e/d08c72b29e89b1ad14acaae817685ca06bac93691bddfd4fac08a703e5b0/pypdf-6.20.0.tar.gz"
-    sha256 "72b1e897fef7f5bbed7f2a93881a4861d98dbf25ae39981c8a023583239edbda"
+    url "https://files.pythonhosted.org/packages/51/e1/32a9c4dbd94618145f8bab5c623bdb0a528f23fc8719afd77ba0278fd377/pypdf-6.21.1.tar.gz"
+    sha256 "2d62c383acd6e0dff0a96322ba8b1135229343b084d73c6f6cfd947fd291afcb"
   end
 
   resource "python-bidi" do
-    url "https://files.pythonhosted.org/packages/ce/e7/f168f2c3151aa05b9f9c9b2f7767bc8e06a133ea822c231ab497d4f36833/python_bidi-0.6.11.tar.gz"
-    sha256 "034090c597af250d699299d7e7f1e83eb016f9e47b3b707bd89ab2bdec77bce0"
+    url "https://files.pythonhosted.org/packages/3d/9d/b7ede7e25102f9e52c6cd5ffcd660eea659c2584001df84a352c76f62d74/python_bidi-0.6.12.tar.gz"
+    sha256 "bef41af9bfd16fc6cfc31d8b72a87023b52b5ebd468d9ff2f331a6843b2dad82"
   end
 
   resource "requests" do

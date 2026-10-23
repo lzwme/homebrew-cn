@@ -18,6 +18,12 @@ class Jnv < Formula
 
   depends_on "rust" => :build
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
@@ -26,11 +32,7 @@ class Jnv < Formula
     assert_match version.to_s, shell_output("#{bin}/jnv --version")
 
     output = pipe_output("#{bin}/jnv 2>&1", "homebrew", 1)
-    expected_output = if OS.mac?
-      "Error: The cursor position could not be read within a normal duration"
-    else
-      "Error: No such device or address"
-    end
+    expected_output = "Error: The cursor position could not be read within a normal duration"
     assert_match expected_output, output
   end
 end

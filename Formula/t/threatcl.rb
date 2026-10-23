@@ -1,17 +1,17 @@
 class Threatcl < Formula
   desc "Documenting your Threat Models with HCL"
   homepage "https://github.com/threatcl/threatcl"
-  url "https://ghfast.top/https://github.com/threatcl/threatcl/archive/refs/tags/v0.6.10.tar.gz"
-  sha256 "f1f37c790822432fa5107ab541dab3e036600652b64e738f34be0e24b9a1e0bf"
+  url "https://ghfast.top/https://github.com/threatcl/threatcl/archive/refs/tags/v0.6.11.tar.gz"
+  sha256 "1ce149d8f7a12802f9a8f8537c87398766fbb9d1fc92f671672cd8904d5dbe96"
   license "MIT"
   head "https://github.com/threatcl/threatcl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3eca2d972941adc236499967a52cca90b23bb27f1b9bc1b54bea500dd41a5c5f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3eca2d972941adc236499967a52cca90b23bb27f1b9bc1b54bea500dd41a5c5f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3eca2d972941adc236499967a52cca90b23bb27f1b9bc1b54bea500dd41a5c5f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "98f3d229d040721ab4a29a73cc3f33cbc3ca285cc0d42bf7d0d0f1b57cfbe72c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5eb307bd9a9cecb223fd7bd941fdd84d55111ffb94305e5d44d188ede90456ec"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e3ebf62e15ca957c29b345e3cd274ce9909d41976f402b316b9ca2fa824145b8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e3ebf62e15ca957c29b345e3cd274ce9909d41976f402b316b9ca2fa824145b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e3ebf62e15ca957c29b345e3cd274ce9909d41976f402b316b9ca2fa824145b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8ba04680f268d42fb2ea12f1639e9306f85ea930251a02663a26e43d4a9d7a3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2d84ebe4e8f87e5631799900ecaa34627e507eb059613f22e9670e8cb95c0d75"
   end
 
   depends_on "go" => :build

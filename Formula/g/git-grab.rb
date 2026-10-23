@@ -4,6 +4,7 @@ class GitGrab < Formula
   url "https://static.crates.io/crates/git-grab/git-grab-4.0.1.crate"
   sha256 "5182ee527d93f15e811d346fb86f3e4c2c24fbc479d4deb57efda6bec065a1c0"
   license any_of: ["Apache-2.0", "MIT"]
+  head "https://codeberg.org/wezm/git-grab.git", branch: "main"
 
   bottle do
     rebuild 1
@@ -17,6 +18,12 @@ class GitGrab < Formula
   end
 
   depends_on "rust" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

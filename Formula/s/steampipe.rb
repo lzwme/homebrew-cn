@@ -1,8 +1,8 @@
 class Steampipe < Formula
   desc "Use SQL to instantly query your cloud services"
   homepage "https://steampipe.io/"
-  url "https://ghfast.top/https://github.com/turbot/steampipe/archive/refs/tags/v2.4.7.tar.gz"
-  sha256 "1c0bf12ef7435a39a74414a23fac1fb155febf7b234a4aa0a01fa60be04c7f41"
+  url "https://ghfast.top/https://github.com/turbot/steampipe/archive/refs/tags/v2.4.8.tar.gz"
+  sha256 "ef7788006b0833509dca9cbd5194e1d0b66678b41cf0dee13b354b121b73cbdd"
   license "AGPL-3.0-only"
   head "https://github.com/turbot/steampipe.git", branch: "develop"
 
@@ -12,11 +12,11 @@ class Steampipe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5c1c41741eb236a229bf996294880a8fa46e0657c2a1b7786f6c110fd7486834"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f8064ad311733047aa6cb97d873a0d88932b1f6bed1b197f328f0da92c32b0c1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "74b3864367fb78412e2ee3e1bf67a3aab49a5280209df86128224ece57a80241"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "bd9f3abdde35e5df8e46d81b3cec8255949b6af6b2a813feebe36862ef5c2468"
-    sha256 cellar: :any,                 x86_64_linux:      "9c30375abc5dc463016dd8fb3ac6ae04346067a25b9b5b5562ce0d19715de1ad"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "402cbc61dc88d0451dc3434148504ddd982ca879fd2d4ac12e6f03a9788fa97d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c827bcbcdf5afc216e131426458ec67ae683f7125856c7fff0b8d66561cbd0c2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "38d0a5eff0a88bb61117972a5ead4a508f204e29cbcc0097cfc51cb0a5e6ed9b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f6480faf500dcd3ad6207e7581500f8f986ebdb15f124bb810ad251ed4f83c86"
+    sha256 cellar: :any,                 x86_64_linux:      "14313fc5fab640f8eb212d4996a228b3f5bf5d74b9c15662e62cc368a3c537ca"
   end
 
   depends_on "go" => :build

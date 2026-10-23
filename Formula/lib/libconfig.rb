@@ -1,20 +1,18 @@
 class Libconfig < Formula
   desc "Configuration file processing library"
   homepage "https://hyperrealm.github.io/libconfig/"
-  url "https://ghfast.top/https://github.com/hyperrealm/libconfig/archive/refs/tags/v1.8.2.tar.gz"
-  sha256 "8e71983761b08c65b15b769b3ec1d980036c461fdfd415c7183378a4b3eac8f4"
+  url "https://ghfast.top/https://github.com/hyperrealm/libconfig/archive/refs/tags/v1.8.3.tar.gz"
+  sha256 "683f723d647befcdb36e1a4a61a83ae8c89dc7959ca872a7407b6c8152104162"
   license "LGPL-2.1-or-later"
   compatibility_version 1
   head "https://github.com/hyperrealm/libconfig.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "29d8ba9881ae66f5fd2c0968e78e6d7a47eb81a0e2730cc776cfa77ea677e73d"
-    sha256 cellar: :any,                 arm64_tahoe:       "c2aba8caea48796a25a27d4096e8815ac2504b89cce8f9d5338b370a59c47986"
-    sha256 cellar: :any,                 arm64_sequoia:     "ebaf461f4cbeec58dceeec947802aff7ad7aa909f8197b0d3441f3a2604d6897"
-    sha256 cellar: :any,                 arm64_sonoma:      "9ffaa431732a3806799bfa22dd3b7270cde21f535987a65a083e408d1e01491d"
-    sha256 cellar: :any,                 sonoma:            "87545a69b32f537dc0e1c3c91009b6266007739e06bdddd3e2de4d3295e708f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1e0bf4cd0d19b56a595c906370f714f71489d3b823399750e7fe2045d186f84f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c8d07d69996141d177790414cdfac85da7c40d714a0d3343475c7748b196ad5f"
+    sha256 cellar: :any, arm64_golden_gate: "3cecf81e99f63923dc8f475656aef0922387d8e0d465e7d79d07cfbeb520bba9"
+    sha256 cellar: :any, arm64_tahoe:       "e328b92ea0251f0c31d2215ff60126398f6f5329fafef8a3d2b08d7e6c4fceff"
+    sha256 cellar: :any, arm64_sequoia:     "89954857881c002763056e8d2c461bcc489f9528ee963bd04f9c5e08f7c00fb3"
+    sha256 cellar: :any, arm64_linux:       "7d4921783cbf9d32de337453d3916f5c967a2041e817d580d0314aea2c35ed90"
+    sha256 cellar: :any, x86_64_linux:      "c627568cc9f75ef47039f0c04f9595367e9051471c15a94d5b77c1ae35571176"
   end
 
   depends_on "autoconf" => :build

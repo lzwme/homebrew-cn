@@ -1,8 +1,8 @@
 class Flowpipe < Formula
   desc "Cloud scripting engine"
   homepage "https://flowpipe.io"
-  url "https://ghfast.top/https://github.com/turbot/flowpipe/archive/refs/tags/v1.2.2.tar.gz"
-  sha256 "140f9a26191f3d309542691234bf8ffcb94fbb273c8001585f29aa17b2b5c30a"
+  url "https://ghfast.top/https://github.com/turbot/flowpipe/archive/refs/tags/v1.2.3.tar.gz"
+  sha256 "5a658b8e4fe9681692376424feb500684629550076038d33f16dd3ff8a3262d0"
   license "AGPL-3.0-only"
   head "https://github.com/turbot/flowpipe.git", branch: "develop"
 
@@ -15,13 +15,11 @@ class Flowpipe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "867459624767da36e963951efb3f830cc51f846ed88ed49a13108c12ea07f437"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9d5b657b21b15c940acec6238e0cd89e895036eb450256ea6752dd2c19da3376"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "01e80c290be97bbf46151c1d42045794513ee105154ff7334386703c490009f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "caa879f469cb72d16e8b273294d389b8dcbe62f1507d88d6cc9213dd8d5dec17"
-    sha256 cellar: :any_skip_relocation, sonoma:            "ea0c62140f48a01c8a04c169db845bd0c43899effad6120dc5d3275c5c9074de"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "6af786a07fd488e106a0af054a1aa2fee1284660c716936765dfe784decb0919"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c71bf954a39d61804ee4d312b4a8bc052f588921f2569f6cd6f9ad9c1e98b136"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9a20a94582b9248e563621840575da44134e7d2668d7e30fd88cba8b7df4824e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "170dc64c328c729ca3af24bf436a2d8ebe9f1d02f91c94d22ae54d1dfa97dee7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c0568a41cbd63a05c7eaac28d05cf00b355bd55b577286ff894af7085eb206f9"
+    sha256 cellar: :any,                 arm64_linux:       "da62d55897224de31f9c60abe7162556cf3b1a6374cabafaf90e3c1530f8b654"
+    sha256 cellar: :any,                 x86_64_linux:      "58950f43f718594b6bf158a2c10ef427eaecdcbff27cbedf9e39b3db22f3f57a"
   end
 
   depends_on "corepack" => :build

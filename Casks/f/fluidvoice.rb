@@ -1,6 +1,6 @@
 cask "fluidvoice" do
-  version "1.6.11"
-  sha256 "a481aef2f1c36ab215671dc0cc20ce9a9cd460d51e75b87b095a83232eec5065"
+  version "1.6.12"
+  sha256 "1560f07ebd986f6315f569c0e7362e425490dd8227364b6c09fbf77426f46d9f"
 
   url "https://ghfast.top/https://github.com/altic-dev/FluidVoice/releases/download/v#{version}/Fluid-oss-#{version}.dmg"
   name "FluidVoice"
@@ -20,10 +20,12 @@ cask "fluidvoice" do
   uninstall quit: "com.FluidApp.app"
 
   zap trash: [
+    "~/Library/Application Support/com.FluidApp.app",
     "~/Library/Application Support/FluidAudio",
     "~/Library/Application Support/FluidVoice",
     "~/Library/Caches/com.FluidApp.app",
     "~/Library/Caches/FluidAudio",
+    "~/Library/HTTPStorages/com.FluidApp.app",
     "~/Library/Logs/Fluid",
     "~/Library/Preferences/com.FluidApp.app.plist",
   ]

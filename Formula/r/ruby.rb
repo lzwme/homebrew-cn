@@ -2,20 +2,19 @@ class Ruby < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
   license "Ruby"
-  revision 1
   compatibility_version 1
 
   stable do
     # TODO: enable default_user_install when updating to Ruby 4.1
-    url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.7.tar.gz"
-    sha256 "911ace20f90d068ca0e4dda6d0e4f0f81e52e52f2dd4f4004c721e253412e82d"
+    url "https://cache.ruby-lang.org/pub/ruby/4.0/ruby-4.0.8.tar.gz"
+    sha256 "0968e2ac4cbd6f1fd85d3092aed66cd3c2d8ba4a5e2493d6e6c6cb0c431897d2"
 
     # Should be updated only when Ruby is updated (if an update is available).
     # The exception is Rubygem security fixes, which mandate updating this
     # formula & the versioned equivalents and bumping the revisions.
     resource "rubygems" do
-      url "https://rubygems.org/rubygems/rubygems-4.0.20.tgz"
-      sha256 "177c816f9952419dbfd1f56ef93e4a9d1fdc60d885c6ca0787283485b0c05408"
+      url "https://rubygems.org/rubygems/rubygems-4.0.23.tgz"
+      sha256 "843f89b1c9c35c28f7ccaf4580cde1e7b00dbd1907b46bcfdcdbc6afa7345e56"
 
       livecheck do
         url "https://rubygems.org/pages/download"
@@ -30,11 +29,11 @@ class Ruby < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "42c252a757b8794b20229dc2f3d4b642bc5c7b293c1e454068047316daf99b70"
-    sha256 arm64_tahoe:       "c5f5264f6b1484a038cfdf0fc444348adc36f8588c11ecfe1dbbeba37b3d426a"
-    sha256 arm64_sequoia:     "b65a871b19ebcedb14e1ba06a3f365f09f3573a56fc2daf5aa413dbb79ef18f9"
-    sha256 arm64_linux:       "0adcca64574f55a9504aaf05f24dc923d67534f590b9ea4a774d9b14e29f345a"
-    sha256 x86_64_linux:      "712b24ac5b6a081e3d0ae59861b0dfdf2586562367bac34876a1b396fccfc8f5"
+    sha256 arm64_golden_gate: "4d8eda94fe114ac9ddf16591911774ac3e4a1d9d3843b1a32fd163d1efa0f60e"
+    sha256 arm64_tahoe:       "f636618a190f60776cf8ce082767e4543297a713e5c5798167c513dd02e7177f"
+    sha256 arm64_sequoia:     "58f5a0354971a25a0e86cd4191a2954e694656c05ced84e338d1fe3b631aad0b"
+    sha256 arm64_linux:       "86ecf4f26fa95b6c4e5f8bd49dfb2a76535460405ed9bd3df1e4d1c9ba8a32e2"
+    sha256 x86_64_linux:      "b547b2f7b5b51c6a0ac3718c3057401f3a90b6c279cc151a94cb36a59c55095a"
   end
 
   head do

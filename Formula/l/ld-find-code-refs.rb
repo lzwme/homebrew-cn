@@ -1,17 +1,17 @@
 class LdFindCodeRefs < Formula
   desc "Build tool for sending feature flag code references to LaunchDarkly"
   homepage "https://launchdarkly.com"
-  url "https://ghfast.top/https://github.com/launchdarkly/ld-find-code-refs/archive/refs/tags/v2.18.3.tar.gz"
-  sha256 "92096763f2a9950b20b3798ed4e2b8613ac77981db18b5e078c505ea341f73af"
+  url "https://ghfast.top/https://github.com/launchdarkly/ld-find-code-refs/archive/refs/tags/v2.18.4.tar.gz"
+  sha256 "0f0da15bd8785de0a75a5876660ddcd12ac21deba176bd40760d65cb2e01af94"
   license "Apache-2.0"
   head "https://github.com/launchdarkly/ld-find-code-refs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fcf697eb5ce18951905e01c903d081cab92a2460cdc91c9958d3c389370838a3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fcf697eb5ce18951905e01c903d081cab92a2460cdc91c9958d3c389370838a3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fcf697eb5ce18951905e01c903d081cab92a2460cdc91c9958d3c389370838a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a17d8472baeb69ea44b3ec5d1240a5b61194c8d19f3c5ac3f7bb795bc177510d"
-    sha256 cellar: :any,                 x86_64_linux:      "950f7c2f33be27f3576e266d407d1e0bd30872b6c054a8dbcf2681d7425605c2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "26acdf803b336880349694719afa1f246b1c8888397bc8a92ebe526b8471e10e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "26acdf803b336880349694719afa1f246b1c8888397bc8a92ebe526b8471e10e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "26acdf803b336880349694719afa1f246b1c8888397bc8a92ebe526b8471e10e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "94bae9a74944ae56c21f1ff7c4cbed864a9a75382208dc982110d129a0d8389d"
+    sha256 cellar: :any,                 x86_64_linux:      "e961cfc1592c7b85707d734df0a5c1bdf290bc47bb855a41e0a7de9b0bdb8259"
   end
 
   depends_on "go" => :build

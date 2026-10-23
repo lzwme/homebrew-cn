@@ -1,5 +1,5 @@
 cask "live-home-3d" do
-  version "5.0.6"
+  version "5.1"
   sha256 :no_check
 
   url "https://belightsoft.s3.amazonaws.com/updates/LiveHome3D.zip"
@@ -18,10 +18,13 @@ cask "live-home-3d" do
 
   zap trash: [
     "~/Library/Application Scripts/com.belightsoft.LiveHome3D.ThumbnailProvider",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.belightsoft.livehome3d.sfl*",
     "~/Library/Application Support/Live Home 3D",
     "~/Library/Caches/com.belightsoft.LiveHome3D",
     "~/Library/Containers/com.belightsoft.LiveHome3D.ThumbnailProvider",
+    "~/Library/HTTPStorages/com.belightsoft.LiveHome3D",
     "~/Library/Preferences/com.belightsoft.LiveHome3D.plist",
     "~/Library/Saved Application State/com.belightsoft.LiveHome3D.savedState",
+    "~/Library/WebKit/com.belightsoft.LiveHome3D",
   ]
 end

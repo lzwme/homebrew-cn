@@ -3,16 +3,16 @@ class AwsElasticbeanstalk < Formula
 
   desc "Client for Amazon Elastic Beanstalk web service"
   homepage "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3.html"
-  url "https://files.pythonhosted.org/packages/9c/22/d5cc7b4dd9b80adc705523fb34f65f435eadf666fd6e5f71bb60ea30891f/awsebcli-3.27.4.tar.gz"
-  sha256 "f3a566a21b716f71b76357770176d52593e2677c8e285d656dfef2eff2227e8f"
+  url "https://files.pythonhosted.org/packages/6f/6a/107f743440e5b906e56cf0862c56b5b07c07c4d66c466401518948e77bb9/awsebcli-3.27.5.tar.gz"
+  sha256 "2a9457ba151226a8462be1b1489b9803e54e0547293930314721d3ef54ba30be"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a267272cdd58dc173794a859d6bee80844bf6a585b66376d0cb4b1b5e450d1b2"
-    sha256 cellar: :any, arm64_tahoe:       "7ab90eb1ed12bd38d978c87476b59e1ceb8964dab0816f9c36dfb30ed74b9505"
-    sha256 cellar: :any, arm64_sequoia:     "69955ca0b9e8fea513fd0c21c65555cbb6d137ec27e1d6e624ff620cb97205d0"
-    sha256 cellar: :any, arm64_linux:       "e683992c31b50fa272450528f8ba49892cdebab954693b7a354ce01f4c824193"
-    sha256 cellar: :any, x86_64_linux:      "9ca12f2c7635774cbfcfda8588ba4bb19b1761dcd2de2d5ec79b4ba9c8abe07e"
+    sha256 cellar: :any, arm64_golden_gate: "79f20a607289438df48967e05f80ec485994c41304ec8bb049b3c9ed3f9f51b3"
+    sha256 cellar: :any, arm64_tahoe:       "7560794c5c881e95ff3f000dfaf226fe43cbad415682570326edeb0a5e83bd86"
+    sha256 cellar: :any, arm64_sequoia:     "0f69110df3973d8250564c28e6e4aa173f0a37d7d696ee340e57c47014cb19a3"
+    sha256 cellar: :any, arm64_linux:       "d4c61fabedce72f1fe37e86ab828fd3254883dbc672d12223887fd3bd975bda7"
+    sha256 cellar: :any, x86_64_linux:      "76aee9f8e7e92488e271ef9fdf0e24ea4e3cbe36fcd5bc9d69f8ea85acc5d83a"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -39,8 +39,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/0e/49/58187bfb510831e4cdafd7ced8e2a748097da81e8b9799d93f8d6ebf9f61/botocore-1.43.112.tar.gz"
-    sha256 "9ce0d70e09fabbb3a2e1126d3ec79ed67d14c88bb3f064e62ab2881d5eaf3c7b"
+    url "https://files.pythonhosted.org/packages/6e/a0/d0a5c44ad6a01f195681ddcb4ce203f06c712811daf1d15f8f8785e8a9f8/botocore-1.43.117.tar.gz"
+    sha256 "71993702832cc37c2495048b9945f2929d306fccb3fb767e9964e437e637fa6c"
   end
 
   resource "cement" do
@@ -94,8 +94,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/62/93/dcc25d52f49022ae6175d15e6bd751f1acc99b98bc61fc55e5155a7be2e7/paramiko-5.0.0.tar.gz"
-    sha256 "36763b5b95c2a0dcfdf1abc48e48156ee425b21efe2f0e787c2dd5a95c0e5e79"
+    url "https://files.pythonhosted.org/packages/76/cb/b1fde76618d84b1acf54d3d03d2b833ba5878afd12b9899346cc080f209d/paramiko-5.1.0.tar.gz"
+    sha256 "239b5f9b2a53006cd54f83cf8495ee742083708ead947882c8dd2786de79f39b"
   end
 
   resource "pathspec" do
@@ -129,8 +129,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "six" do
@@ -154,8 +154,8 @@ class AwsElasticbeanstalk < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/3e/d2/a254a26d8ceaea87e0eee2e89fcfe53ddc1858418647493bb2937549ab6f/wrapt-2.5.0.tar.gz"
-    sha256 "c48cdb6c904dca76d9915a579e4a5fab6b0c25f650c1019ce78a78effaf7a345"
+    url "https://files.pythonhosted.org/packages/04/22/89e2f3bdae5cb34e0cab0cd86d7172dbf418de4b46c9b17b9c7a560dfa44/wrapt-2.5.1.tar.gz"
+    sha256 "f595bb0185aab3e9dc31950c95d914f56ea8278810c3b928f3426e12ed6d27bc"
   end
 
   def install

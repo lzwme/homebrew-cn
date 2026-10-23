@@ -1,19 +1,17 @@
 class Zvbi < Formula
   desc "Vertical Blanking Interval (VBI) decoding library"
   homepage "https://github.com/zapping-vbi/zvbi"
-  url "https://ghfast.top/https://github.com/zapping-vbi/zvbi/archive/refs/tags/v0.2.45.tar.gz"
-  sha256 "e6c954fde2a5a635187f19e1ab870a88c1a982012c5f1b33b8f2513e0ab7a50e"
+  url "https://ghfast.top/https://github.com/zapping-vbi/zvbi/archive/refs/tags/v0.2.46.tar.gz"
+  sha256 "817a26118e2654155ee761cd39414885986a4315fdb6617af5314090ddfffd10"
   license "GPL-2.0-or-later"
   head "https://github.com/zapping-vbi/zvbi.git", branch: "main"
 
   bottle do
-    sha256 arm64_golden_gate: "206d7eed28649dc145848f43c4cbec67b6ad3d6847c23767378405e6fbaf2fca"
-    sha256 arm64_tahoe:       "7a8505a7d69d87fba9b5ed97148c63c46fd02f9860741d82db56eb9dc8420f29"
-    sha256 arm64_sequoia:     "32d17a82f7430faec2967ac3363ce754eaa78725982426e5e5d8673e3a16262a"
-    sha256 arm64_sonoma:      "66900bf5508d5ef6e2e174f32c9c3c6a90126e597efa06649bb320c695ff91c6"
-    sha256 sonoma:            "be8e1fd4322262923fa4d6b522f89885459e43744cb651f711f6dab44eae6fae"
-    sha256 arm64_linux:       "0690cf0aa3367d0a12050b956a0c70c4c58b3a28f6899590db02b97fdcc1606f"
-    sha256 x86_64_linux:      "cabf02e624c57195717629973f1dd6f25e22d5b3ca831a1a0e1a4e6a9c5c7521"
+    sha256 arm64_golden_gate: "155d876fb904681a9a95ab7072c341ae82a0425320078664fe6e95726b21799f"
+    sha256 arm64_tahoe:       "d2bec4ffa3e7835411ec1661dd92ddedacb5b49b2b4aa3537657ff00507d90fb"
+    sha256 arm64_sequoia:     "dd3f630afe948a740915195ef9836aee07893cf1a4e21a8f34939eb372b65697"
+    sha256 arm64_linux:       "63772cf6df5e65fb32d0f3682b924ac4cc28f54f6a6034fd8e8ffa8c6b274a2a"
+    sha256 x86_64_linux:      "055ae4e06020a7103ee3bdcb28a70839900f746516c51f7b0b67c2b0f33bee8f"
   end
 
   depends_on "autoconf" => :build

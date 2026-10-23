@@ -4,6 +4,7 @@ class Qsv < Formula
   url "https://ghfast.top/https://github.com/dathere/qsv/archive/refs/tags/26.0.0.tar.gz"
   sha256 "166d3e9c9133098ba4705671e0dd68644c6daa343dc454f33718a6ba18963eec"
   license any_of: ["MIT", "Unlicense"]
+  revision 1
   head "https://github.com/dathere/qsv.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
@@ -15,11 +16,11 @@ class Qsv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "363cf9f0b7909363422b21bb073fb9906d36d495c7c2143aa6423b64ccf3f9f6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4fad8bee124edfff2cac634ec3643d827878fcfb2a138eab022336d35e0c22a8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8b53b66d45623c608197dc7bd4af1093371d06393d167f9d5a98c06176238f40"
-    sha256 cellar: :any,                 arm64_linux:       "983d653e19d7ef52ff3e6504a8a3ac6b2c340220f831600332946fa6f7bcc772"
-    sha256 cellar: :any,                 x86_64_linux:      "ff80a13a7ac8a49ce0b1ecf9120f2434dc4e170598b746bc0965bac9ddc3bc61"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6f0939534757b5695b696bbaf11abe5d3ad41cf2b4f7a4bc482e2e0648a5882d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "37a0a5fcaa227b44b41fc794edf87356b2d0ddf4c1718dc29071d75b8b49f653"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c9584a12c02872b961b42f50c59152a35100520e19075a130e7327fcbc830463"
+    sha256 cellar: :any,                 arm64_linux:       "11aaee2ed9396c394164573317fc127c2b3fcfe8822940f2bd63d7b17433b1f8"
+    sha256 cellar: :any,                 x86_64_linux:      "88dc2134927eaa449190f2210188faeb8d8708b638d02bfecdd1ea4e9ca23cf3"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys
@@ -28,6 +29,7 @@ class Qsv < Formula
 
   on_linux do
     depends_on "libmagic"
+    depends_on "openssl@4" # native-tls for the `viz_static` webdriver client
   end
 
   def install
@@ -35,13 +37,33 @@ class Qsv < Formula
     # see discussion at https://github.com/briansmith/ring/discussions/2528#discussioncomment-13196576
     ENV.append_to_rustflags "-C target-cpu=apple-m1" if OS.mac? && Hardware::CPU.arm?
 
-    features = %w[apply fetch foreach geocode lens luau to feature_capable]
+    # Work around SIGKILL on arm64 linux runner from fat LTO
+    github_arm64_linux = OS.linux? && Hardware::CPU.arm? &&
+                         ENV["HOMEBREW_GITHUB_ACTIONS"].present? &&
+                         ENV["GITHUB_ACTIONS_HOMEBREW_SELF_HOSTED"].blank?
+    ENV["CARGO_PROFILE_RELEASE_LTO"] = "thin" if github_arm64_linux
+
+    # Build `viz_static` without plotly's build-time webdriver download and default the
+    # runtime driver to the `chromedriver` cask (`WEBDRIVER_PATH` overrides it)
+    inreplace "Cargo.toml", '"plotly/static_export_default", "webdriver-downloader"',
+                            '"plotly/static_export_chromedriver"'
+    ENV["WEBDRIVER_DOWNLOAD_PATH"] = HOMEBREW_PREFIX/"bin/chromedriver"
+
+    features = %w[distrib_features lens]
     system "cargo", "install", *std_cargo_args(features:)
 
     bash_completion.install "contrib/completions/examples/qsv.bash" => "qsv"
     fish_completion.install "contrib/completions/examples/qsv.fish"
     zsh_completion.install "contrib/completions/examples/qsv.zsh" => "_qsv"
     pwsh_completion.install "contrib/completions/examples/qsv.ps1" => "qsv"
+  end
+
+  def caveats
+    <<~EOS
+      `qsv viz` image export (PNG/SVG/PDF) needs Google Chrome and ChromeDriver:
+        brew install --cask google-chrome chromedriver
+      or set WEBDRIVER_PATH to an existing chromedriver binary.
+    EOS
   end
 
   test do

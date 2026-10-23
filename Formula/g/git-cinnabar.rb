@@ -28,6 +28,12 @@ class GitCinnabar < Formula
 
   conflicts_with "git-remote-hg", because: "both install `git-remote-hg` binaries"
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
     bin.install_symlink bin/"git-cinnabar" => "git-remote-hg"

@@ -4,6 +4,7 @@ class Crowdin < Formula
   url "https://ghfast.top/https://github.com/crowdin/crowdin-cli/archive/refs/tags/5.5.0.tar.gz"
   sha256 "bfb363152db668267dd8a79239f9c698113d863e1777464af7cbccca90466185"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,11 +12,11 @@ class Crowdin < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "414bbe3f57fbefefdeac6f18ec0b8b425fce844c2d60945e4be6db67117700fa"
-    sha256 arm64_tahoe:       "7a1eb2a61a3b446895f0a8c78e76b7ad00e8338efcd00230473b718db3fc3e32"
-    sha256 arm64_sequoia:     "6b4b8703880ff556fcc13e4f23fb61053f733ebc977dd73cb6bcaa4d68a75ee4"
-    sha256 arm64_linux:       "6bb9f394831d4d0ecfc549d956476146af77f03c2c1bb99abbf30777c267a783"
-    sha256 x86_64_linux:      "c83b2a472cc2566a7276624f10762db0f3e4654710f4aac4d117cd3b376653a9"
+    sha256 arm64_golden_gate: "2aca679d9e4cf5f8ba6bb09468dba430008491021cebf47f515b490a6350c6f9"
+    sha256 arm64_tahoe:       "01fd7d0d4f4d75fe1ff2047fcdf4bf9940c55c0ec7a5e54f778164297753ac2b"
+    sha256 arm64_sequoia:     "334ce8f0158d882d1d605d3ba1191d693587e4256c83aec77b2679f17d94c3d1"
+    sha256 arm64_linux:       "ddd48f709d6bdbb416ae0a87466004ef944789ce31409a1b409a7e1bf16a4d70"
+    sha256 x86_64_linux:      "0afca575422fc067259237a069dd9465b6a095b7fdcc74fb93123cffa175c993"
   end
 
   depends_on "bun" => :build

@@ -1,17 +1,17 @@
 class Opkssh < Formula
   desc "Enables SSH to be used with OpenID Connect"
   homepage "https://eprint.iacr.org/2023/296"
-  url "https://ghfast.top/https://github.com/openpubkey/opkssh/archive/refs/tags/v0.19.0.tar.gz"
-  sha256 "3094473a2eeefe10d2670537be107d068b7324231ebf031c96ff77e391d6e725"
+  url "https://ghfast.top/https://github.com/openpubkey/opkssh/archive/refs/tags/v0.19.1.tar.gz"
+  sha256 "87d96ceb1658d90d748e63bb18c6432f57e57f0f2f12791fccbe70f4af1fe86f"
   license "Apache-2.0"
   head "https://github.com/openpubkey/opkssh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a3eb7b02a7a408c1d2aaf16fc7b37191aeeb0790456aaa7b9d88763e1a43d11e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a3eb7b02a7a408c1d2aaf16fc7b37191aeeb0790456aaa7b9d88763e1a43d11e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a3eb7b02a7a408c1d2aaf16fc7b37191aeeb0790456aaa7b9d88763e1a43d11e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "ad319620ab05ec01dfae00255a6556e1ca3ba9626f62fb5352f3ad6fd4c9f50a"
-    sha256 cellar: :any,                 x86_64_linux:      "e3e37cee189689f4b0e0c8be338ff2cc77cd8458dcac841109b54faee0c02d0e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8b252065f216d7d72a80137fd1cd51ab2a8afe25856abf9eb0c618ef5fc5a6d3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8b252065f216d7d72a80137fd1cd51ab2a8afe25856abf9eb0c618ef5fc5a6d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8b252065f216d7d72a80137fd1cd51ab2a8afe25856abf9eb0c618ef5fc5a6d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7783414ee8a15849b21e04dff67928292efb49f2f69eecc465257c1fff366a7b"
+    sha256 cellar: :any,                 x86_64_linux:      "92b2f02aea556a2c83d6dde5b49c24a0680615d5ec70d5fe02d88bf2058f78b7"
   end
 
   depends_on "go" => :build

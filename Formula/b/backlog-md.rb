@@ -1,16 +1,16 @@
 class BacklogMd < Formula
   desc "Markdown‑native Task Manager & Kanban visualizer for any Git repository"
   homepage "https://github.com/MrLesk/Backlog.md"
-  url "https://ghfast.top/https://github.com/MrLesk/Backlog.md/archive/refs/tags/v1.55.1.tar.gz"
-  sha256 "f4356cf9ce2f348b555d3ee228366b48a77df67d680ea37b49e2c781ebfb2523"
+  url "https://ghfast.top/https://github.com/MrLesk/Backlog.md/archive/refs/tags/v1.55.2.tar.gz"
+  sha256 "defd47f30b787a69bcf888499ea95ddd0ce6fc352c775a0b12010485b874b6c8"
   license "MIT"
 
   bottle do
-    sha256 arm64_golden_gate: "d78871f60b2860518eedf90542430cc5c6a311f758bbd4294f1738b9fb651764"
-    sha256 arm64_tahoe:       "2e40f85a8376a172da73e6874bee353780ae9add2ced8482878da05f10b79d00"
-    sha256 arm64_sequoia:     "7994d04e4d8f3c29c385bd46ebd7fce44a0d8b75e3ae8a8a6759943792cf8780"
-    sha256 arm64_linux:       "83ce80af778fea79a816159c327585606379f9e119240e8aac23741c72fd6abb"
-    sha256 x86_64_linux:      "1de12b73c0edd7583fc9600910a6feba32dc1b3d6e05e7b2476019e816071882"
+    sha256 arm64_golden_gate: "3dbe5db912a604600b595db4ea5eff9c4bae17d0518d14af566355dbbc21d046"
+    sha256 arm64_tahoe:       "0fec6b716b16c86fcda9052ae79019dd23141d9e8b0837a172ea46058461c671"
+    sha256 arm64_sequoia:     "049bb4b3475eaf936a753690b1d0e5af11018865deb1da8d1bd5bfc863bd6221"
+    sha256 arm64_linux:       "ec488a930eaa285c3d559738a0a4293163d72ad429dec2e721b158e868b81455"
+    sha256 x86_64_linux:      "090f24cdeb0bad75162ae79b37a826cde8bef716d6d856ab482aa22f185a0623"
   end
 
   depends_on "bun" => :build
@@ -20,6 +20,12 @@ class BacklogMd < Formula
     depends_on "icu4c@78"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "bun", "install", "--frozen-lockfile", "--ignore-scripts"
+  end
+
   def install
     if OS.linux?
       bun_icu = Formula["bun"].deps.find { |dep| dep.name.match?(/^icu4c/) }.to_formula
@@ -27,8 +33,6 @@ class BacklogMd < Formula
 
       odie "Update icu4c dependency!" if bun_icu.name != icu.name
     end
-
-    system "bun", "install", "--frozen-lockfile", "--ignore-scripts"
 
     # Upstream injects the version at release time; the tagged `package.json` lags.
     ENV["BACKLOG_BUILD_VERSION"] = version.to_s

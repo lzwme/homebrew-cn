@@ -3,8 +3,8 @@ class Bun < Formula
   homepage "https://bun.com/"
   # Need git checkout to build. Alternatively could set GIT_SHA if we extract the commit.
   url "https://github.com/oven-sh/bun.git",
-      tag:      "bun-v1.4.3",
-      revision: "c6da4a4d3010e5553438c60f6bd76d981976867c"
+      tag:      "bun-v1.4.4",
+      revision: "38afee6c84fcf48c0edb2466aa4b27d287a59c30"
   license all_of: [
     "MIT",
     "LGPL-2.0-or-later", # JavaScriptCore
@@ -26,11 +26,11 @@ class Bun < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "1884cc7d66623250146673e57e2a4ee2a9bbde6db8a7c0d1af80014243912c77"
-    sha256 arm64_tahoe:       "0a8b872558cf06a5acecd6ec7e31bd08af9390212cf70e5f61b8bb8712148696"
-    sha256 arm64_sequoia:     "167bc297590aaeedfe095c18a568b8c41b7b5fdc53fa636e488afc1f63312dd8"
-    sha256 arm64_linux:       "87929e9a7bdf5e31e5ed84cad46ad74dbceb568e3891896ea2562fcfa56dbfea"
-    sha256 x86_64_linux:      "3b04b8447e5bf3944c08528b4ca8c18c4029cec9a3acbef6a72449a7bd260ae8"
+    sha256 arm64_golden_gate: "368adf702a8164e83bc629c998d660a03caadff2d14025cd1225ce51ef550977"
+    sha256 arm64_tahoe:       "5a66e9d593a01a94173b6daf0122a900c7bdac04af370737edf5fb7aff995575"
+    sha256 arm64_sequoia:     "00200c4b9568ffbd0c4d29041ee7743bb11143d91f3b434f3fb760d263901c7e"
+    sha256 arm64_linux:       "649760242b683ee8f180ffd6ea3612bb9fd4925f0612093162907b7726063f5b"
+    sha256 x86_64_linux:      "fee2020e97a76e427cec41514e6c4895842c14f3b6c752428759af3d4d154970"
   end
 
   depends_on "cmake" => :build
@@ -113,7 +113,7 @@ class Bun < Formula
 
   # Based on https://github.com/oven-sh/bun/blob/main/CONTRIBUTING.md#building-webkit-locally--debug-mode-of-jsc
   def install
-    bootstrap_version = File.read("scripts/build/ci-images/spec.ts")[/^\s*bun: \{ version: "(\d+(?:\.\d+)+)" \}/, 1]
+    bootstrap_version = File.read("scripts/build/ci-images/spec.ts")[/^\s*bun: \{\n\s*version: "(\d+(?:\.\d+)+)"/m, 1]
     odie "Update bootstrap to #{bootstrap_version}" if resource("bootstrap").version != bootstrap_version
 
     # Upstream only allows building for specific microarchitectures they support
@@ -182,6 +182,32 @@ class Bun < Formula
 end
 
 __END__
+diff --git a/src/runtime/cli/lint_js.rs b/src/runtime/cli/lint_js.rs
+--- a/src/runtime/cli/lint_js.rs
++++ b/src/runtime/cli/lint_js.rs
+@@ -409,12 +409,21 @@
+ /// Startup state that all VMs share.
+-#[derive(Default)]
+ struct Start {
+     initialize: std::sync::Once,
+     /// Set if the run won't have more than a few VMs. Stays unset if a VM starts before the files are known.
+     is_for_few: AtomicBool,
+     memory: std::sync::OnceLock<usize>,
+ }
+
++impl Default for Start {
++    fn default() -> Self {
++        Self {
++            initialize: std::sync::Once::new(),
++            is_for_few: AtomicBool::new(false),
++            memory: std::sync::OnceLock::new(),
++        }
++    }
++}
++
+ impl Start {
+     /// [`memory_for_engines`]
+     fn memory(&self) -> usize {
 diff --git a/src/collections/lib.rs b/src/collections/lib.rs
 index 57539df..46e4209 100644
 --- a/src/collections/lib.rs

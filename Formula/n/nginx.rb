@@ -3,10 +3,10 @@ class Nginx < Formula
   homepage "https://nginx.org/"
   # Use "mainline" releases only (odd minor version number), not "stable"
   # See https://www.nginx.com/blog/nginx-1-12-1-13-released/ for why
-  url "https://nginx.org/download/nginx-1.31.7.tar.gz"
-  sha256 "89ea8a3dc171511f7325043b50e4c036248d9fad5feb7ec809c0b82d5df42c65"
+  url "https://nginx.org/download/nginx-1.31.8.tar.gz"
+  sha256 "0652b760b3b772d2ec17b47c2fc15d9a95e6fe35cd5b877eadc1a62d9bc75af1"
   license "BSD-2-Clause"
-  compatibility_version 12
+  compatibility_version 13
   head "https://github.com/nginx/nginx.git", branch: "master"
 
   livecheck do
@@ -15,11 +15,11 @@ class Nginx < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "956f0c24358e9ab300dfcb35e30667b1fffade596134cbd0988a7f6af8d3b5fa"
-    sha256 arm64_tahoe:       "b2f27db5d6c71c84a757579a44fee15e46bd7ede9f6ea664dd60603ca8f21be6"
-    sha256 arm64_sequoia:     "d7f2ae8daecc62e22b7f130dd38fc560fa5f91885fe4af4596fedba4d0193311"
-    sha256 arm64_linux:       "23a5e1137a6b220ae1adaadbbaa24f55f63e76fa1da73ecc0bdc8d503d131771"
-    sha256 x86_64_linux:      "406c3e14919a5529fcde6ecc057cf2ca05955c0b9c942e06a66e931580586329"
+    sha256 arm64_golden_gate: "a1b8ce2b8c1d65284174988c16229b55e8954fa375d8fb9b6daaa0678b6bc70b"
+    sha256 arm64_tahoe:       "9fbfb35e4b3465f0a68e2be5cee1c062e0e431f36dcb8439c5e62b5140623bd6"
+    sha256 arm64_sequoia:     "2c39fe5c8c5058fd1d7be43d29c224351050de7042cda568fd23f4ee8e13fa69"
+    sha256 arm64_linux:       "ce016ff047905843f0e98f76be971a783ca6f622658cca1965a852d870ab5b6f"
+    sha256 x86_64_linux:      "f28bf36ad9ab30931be30c86a779d475f3477e30be6a86a5bee50e1ed4591e11"
   end
 
   depends_on "openssl@4"

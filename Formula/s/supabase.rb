@@ -4,6 +4,7 @@ class Supabase < Formula
   url "https://ghfast.top/https://github.com/supabase/cli/archive/refs/tags/v2.121.0.tar.gz"
   sha256 "1333db3d6e3a83526745eb6400e46355f85ed14d46b504dbe87ec5920f2e81ec"
   license "MIT"
+  revision 1
   head "https://github.com/supabase/cli.git", branch: "develop"
 
   livecheck do
@@ -12,11 +13,11 @@ class Supabase < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "92ff916e86e9220cb3540dc573ee202827650d61967599c272d6d9db5a20099c"
-    sha256 arm64_tahoe:       "77889def38f7c9d9c705b33fd95faf62e1ace3f57d119ec2dbae70f45e0de542"
-    sha256 arm64_sequoia:     "d65d319f209bf1b330ab689d8bae27e753bc132e0df3d567e9806e3213423dcc"
-    sha256 arm64_linux:       "d184ef8b30b9934c3fc265aa6b0c5bbf2f0e18fb7618c98d6d7884a3ab50e599"
-    sha256 x86_64_linux:      "74027d34967ff718bdad0d5eb497e01025016cbd1577287a7030e466150d2d53"
+    sha256 arm64_golden_gate: "82d211b07cb051558b4ab79da9a5b287af7534a6975afdc09453fac5e76c0736"
+    sha256 arm64_tahoe:       "1452124bbc8d56e3aab53617c4d8f6f44cbfe73a8ed868ebaed7f8aa374b914a"
+    sha256 arm64_sequoia:     "5985b2c8c72d7796d9e94dbb310767823224090f71c04a973a0490c99a46a451"
+    sha256 arm64_linux:       "3a0a8a0bc9f8645425bde554cfca6c697c8cd111d4f5397116e921e5679302af"
+    sha256 x86_64_linux:      "229fca363dc14ec72da162cb41f49e161579e193b213de8846abd8b06b233187"
   end
 
   depends_on "bun" => :build

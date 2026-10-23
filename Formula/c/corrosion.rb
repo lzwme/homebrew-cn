@@ -4,6 +4,7 @@ class Corrosion < Formula
   url "https://ghfast.top/https://github.com/corrosion-rs/corrosion/archive/refs/tags/v0.6.1.tar.gz"
   sha256 "e9e95b1ee2bad52681f347993fb1a5af5cce458c5ce8a2636c9e476e4babf8e3"
   license "MIT"
+  head "https://github.com/corrosion-rs/corrosion.git", branch: "master"
 
   livecheck do
     url :stable
@@ -22,6 +23,8 @@ class Corrosion < Formula
 
   depends_on "cmake" => [:build, :test]
   depends_on "rust" => [:build, :test]
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

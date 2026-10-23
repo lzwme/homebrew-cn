@@ -1,17 +1,16 @@
 class Aide < Formula
   desc "File and directory integrity checker"
   homepage "https://aide.github.io/"
-  url "https://ghfast.top/https://github.com/aide/aide/releases/download/v0.19.4/aide-0.19.4.tar.gz"
-  sha256 "47ab7c696f0745911479a41f90d7ad99d26536e186d66c4aad093bc72d20ff5f"
+  url "https://ghfast.top/https://github.com/aide/aide/releases/download/v0.19.5/aide-0.19.5.tar.gz"
+  sha256 "6b004557e9493048ceb5fa84fb44b904c16e23bed8850dc21316e7c44247a350"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "10d0d9b4e9d56b8415b6938eca5de367ed25fc491b76f2cc4eeda9ddd8d94b1b"
-    sha256 cellar: :any, arm64_tahoe:       "c92b47bd4c7fddf3ba1851de455927000ea8719595cec515a768458d9601feed"
-    sha256 cellar: :any, arm64_sequoia:     "dc9fd722372390254ee6f6ca4f1dc6c85f07749f64f0454e9e7b5e231c5677a6"
-    sha256 cellar: :any, arm64_sonoma:      "0ef7b9f6613c803f5d02f46dccfb8c4c1cb532366166315443a6db9ec3e9d87d"
-    sha256 cellar: :any, arm64_linux:       "8a3083c66f1d4b4a2a423a4dbd42a6244c74a190d87fdc8339255d341468c691"
-    sha256 cellar: :any, x86_64_linux:      "d41686af88dd8a9ecdff16e22ac7267bf79a460d7d3db8299d7e24eb9d5efd97"
+    sha256 cellar: :any, arm64_golden_gate: "0a5ed63b74a93bfad3ab08d88509e4fcf6bc4f8772048812369d616168b00f58"
+    sha256 cellar: :any, arm64_tahoe:       "f0bc01192335ba42f2a506089bd662604726f0173fb326a5e6751d4074ad9cb1"
+    sha256 cellar: :any, arm64_sequoia:     "c2317720077166aa280cca923c9335322c2eecbeea05aafefdcdb5904020a8f7"
+    sha256 cellar: :any, arm64_linux:       "92d70d69941ce479d3f028b6fd3814f982c6040146dd04f604a1a1a08265c344"
+    sha256 cellar: :any, x86_64_linux:      "0290a68491db40f1145dbe66a0e77912233e08eb30b64bc7b2dc35d2e24edbeb"
   end
 
   head do

@@ -1,19 +1,33 @@
 class Diffle < Formula
   desc "Keyboard-first diff viewer with LSP support and GitHub integration"
   homepage "https://github.com/moritzwilksch/diffle"
-  url "https://registry.npmjs.org/@moritzwilksch/diffle/-/diffle-0.2.10.tgz"
-  sha256 "10b28cbada562c2f0baaa69cc1380149be3390d93627a218d7253bf749f6f590"
+  url "https://ghfast.top/https://github.com/moritzwilksch/diffle/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "2000ef0967d63b46d4560aa11b77a410510070063ee03a552fa8c281aaf6e579"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "68a48d9dc617dddf20248d4bd081fc6d3690cf75c5fad25a8755054d6c97ce18"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0cc84bb95d075987e59bd9bcbbea9ec617be601d2cdb91d46f7aa3ee90dd2b2a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3d67c6e3e464ff4e0b79b1a68490926d611590434ddb01f99d401c4b96ab7502"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c9e9c247f57dbf95ab48cbbceedb479e0bf63e5aada0b546a290d703274b710c"
+    sha256 cellar: :any,                 arm64_linux:       "45b1bb569168e0c42bc62e121fc271b700b4a626390f26e879267ced6dd8e425"
+    sha256 cellar: :any,                 x86_64_linux:      "9e369aee45b556bb3a09f6031ef450a7f2e66c6c87c0ffab5effb62d9638f4fd"
   end
 
-  depends_on "node"
+  depends_on "node" => :build
+  depends_on "rust" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "npm", "ci", "--ignore-scripts", *std_npm_args(prefix: false)
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
-    system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin/*")
+    system "npm", "run", "build"
+    system "cargo", "install", *std_cargo_args(path: "crates/diffle")
+
+    generate_completions_from_executable(bin/"diffle", "completion", "--shell")
   end
 
   test do
