@@ -15,6 +15,15 @@ class Licenseplist < Formula
 
   uses_from_macos "swift" => :build, since: :sonoma # swift 6.0+
 
+  # `test do` block looks up the license of a GitHub repository
+  allow_network_access! :test
+
+  def fetch
+    # SwiftPM tries to apply its own sandbox, which cannot nest inside the
+    # build sandbox; Homebrew's sandbox still confines the whole process.
+    system "swift", "package", "resolve", "--disable-sandbox"
+  end
+
   def install
     system "swift", "build", *std_swift_args
     bin.install ".build/release/license-plist"

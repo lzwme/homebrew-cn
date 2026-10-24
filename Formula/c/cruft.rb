@@ -6,16 +6,15 @@ class Cruft < Formula
   url "https://files.pythonhosted.org/packages/d1/7e/0e20012f2aa156e5d6a70483a8d90accb7ed4966dddb0c58987d9f6eba12/cruft-2.16.0.tar.gz"
   sha256 "184662853fbc1c16c0137fe0e9444e0cbe95e40362f5ebb2d9fae33d9223e73f"
   license "MIT"
-  revision 16
+  revision 17
   head "https://github.com/cruft/cruft.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "cb157a7b1efb64d2ee8e1806692fd3d79407f3fb2c7d883c67aec89ac0cdd2dc"
-    sha256 cellar: :any, arm64_tahoe:       "5396bf7a09f3c6ebac9a4dd629c6fe4ebca133546ccb50d342930e41ebd36aa3"
-    sha256 cellar: :any, arm64_sequoia:     "5975a276eab3d1635943ec45e169358734c90c44bd86bc0ecfafb9f8b8610a1e"
-    sha256 cellar: :any, arm64_linux:       "94099985f5af1f6aa83e955d29a6b3e07e6796cc3dc07f2c817a693c8f059d25"
-    sha256 cellar: :any, x86_64_linux:      "435701b01130fe8877f2a5b202fe96e38507faecb03976f848b15810e58391ea"
+    sha256 cellar: :any, arm64_golden_gate: "9a191f8bc568b4650903c106808cc5d21db9e430b7d2a907a551851846e05242"
+    sha256 cellar: :any, arm64_tahoe:       "5f2571b5d4a8d137056e0f2afd4010aac6210a19989a13acbfea5e64e3f543d2"
+    sha256 cellar: :any, arm64_sequoia:     "f76451d0ed87d8002ef8ff764a943959c04e59b66d4ca9341863480ad3a2967b"
+    sha256 cellar: :any, arm64_linux:       "1f314f0adbfab89bce64a6a841065922d532612dad2c4ef0c53d46315d355583"
+    sha256 cellar: :any, x86_64_linux:      "92f31d4089692c60ffe3c656b11e6fd76d4c37f3458c946b678310b5491283c1"
   end
 
   depends_on "certifi" => :no_linkage
@@ -60,8 +59,8 @@ class Cruft < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/6e/2d/6f6e649818da44d4499604802c89329b8d9799687a124e3a5e467a643336/gitpython-3.2.0.tar.gz"
-    sha256 "fb92310af6844d96adc95ca066ed2e617c00e1dbd146a326626c81e72e18cc2e"
+    url "https://files.pythonhosted.org/packages/c0/ff/fee293f1ec3e1b64db6eb270e00964f29c086d769201474cedb8d1608930/gitpython-3.2.1.tar.gz"
+    sha256 "0f1229ec5c057bdabdeeda8bda4f17bda679ab33dbccc00f24e6a480553c8613"
   end
 
   resource "idna" do
@@ -95,8 +94,8 @@ class Cruft < Formula
   end
 
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
-    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+    url "https://files.pythonhosted.org/packages/0e/df/f15f80383f152452d8985b36d95cb8751f901a3e0ff4cd27f7e118f168e2/python_dateutil-3.0.0.tar.gz"
+    sha256 "7ebcb3c29a92f3ceafe79a7a48a5c45677e9e004bbeec5742ac0bbb00560b7a2"
   end
 
   resource "python-slugify" do

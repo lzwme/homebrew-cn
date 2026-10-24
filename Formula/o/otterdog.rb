@@ -6,15 +6,15 @@ class Otterdog < Formula
   url "https://files.pythonhosted.org/packages/4c/9c/2bcc6edae61778a28333af98d91e60c7216b210326180aaa27fae11d4587/otterdog-1.6.1.tar.gz"
   sha256 "0bfabbceb9c923055a5d4bcb542f11c2ffa37bc73bc1addf22946f3b140c1426"
   license "EPL-2.0"
+  revision 1
   head "https://github.com/eclipse-csi/otterdog.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "4c19192d1ae15ad89dfe8491a7ba7ee66dc1f3b0ac791670f7fd3e2583ded1da"
-    sha256 cellar: :any, arm64_tahoe:       "b5018388ea5fb2a688b98300d70701050303b1bd686688ebaf6e95958f99b8ca"
-    sha256 cellar: :any, arm64_sequoia:     "9ee3ef2567328a67d287fce759faf16f77c5612bcbf9dce6f43bdaa572efae4b"
-    sha256 cellar: :any, arm64_linux:       "a199647f57a1c76f2344df1a696c0b898b445c824316cc8d7e20285af811a877"
-    sha256 cellar: :any, x86_64_linux:      "a41d2fa74360feeb1a66c32557129daf1e654d08f2800ab53bcf1e0aa1706130"
+    sha256 cellar: :any, arm64_golden_gate: "1a5f86434a45bfef44ae488ce5e0decd92b3c092c01f4da1f5017f662ef8fd44"
+    sha256 cellar: :any, arm64_tahoe:       "143748fbd6bf6070a0739ee345b09e26707cb7248816441d9d733d4356002784"
+    sha256 cellar: :any, arm64_sequoia:     "128c0cb15fc59f689daf5dc0119bb21e5206f228b8f87fc05be6290363197fdc"
+    sha256 cellar: :any, arm64_linux:       "0476a185ccd64f055f1d9d92b2d4d33607a23c4ec114d2bc920666c3a50d9eed"
+    sha256 cellar: :any, x86_64_linux:      "9fe90b5d142b06dcf3d998978024eb7e0e0e476832b23f6c8b41b1c7f9d8c637"
   end
 
   depends_on "rust" => :build # for rjsonnet
@@ -123,8 +123,8 @@ class Otterdog < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/6e/2d/6f6e649818da44d4499604802c89329b8d9799687a124e3a5e467a643336/gitpython-3.2.0.tar.gz"
-    sha256 "fb92310af6844d96adc95ca066ed2e617c00e1dbd146a326626c81e72e18cc2e"
+    url "https://files.pythonhosted.org/packages/c0/ff/fee293f1ec3e1b64db6eb270e00964f29c086d769201474cedb8d1608930/gitpython-3.2.1.tar.gz"
+    sha256 "0f1229ec5c057bdabdeeda8bda4f17bda679ab33dbccc00f24e6a480553c8613"
   end
 
   resource "greenlet" do
@@ -198,8 +198,8 @@ class Otterdog < Formula
   end
 
   resource "pyee" do
-    url "https://files.pythonhosted.org/packages/8b/04/e7c1fe4dc78a6fdbfd6c337b1c3732ff543b8a397683ab38378447baa331/pyee-13.0.1.tar.gz"
-    sha256 "0b931f7c14535667ed4c7e0d531716368715e860b988770fc7eb8578d1f67fc8"
+    url "https://files.pythonhosted.org/packages/1d/f1/fdedc2c75c3e31a330659c85e5793bb18b3397981fbf0844c6dee5b18926/pyee-14.0.0.tar.gz"
+    sha256 "76dd0f4314ecd27f02dc73589dea7fd3853f9b6176d8ef9b122860657e3602de"
   end
 
   resource "pygments" do

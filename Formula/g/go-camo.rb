@@ -1,26 +1,20 @@
 class GoCamo < Formula
   desc "Secure image proxy server"
   homepage "https://github.com/cactus/go-camo"
-  url "https://ghfast.top/https://github.com/cactus/go-camo/archive/refs/tags/v3.0.tar.gz"
-  sha256 "c6a09edc5d22f5b5277633db48a36a2dec169f9ae2a392577b3e004943b2c322"
+  url "https://ghfast.top/https://github.com/cactus/go-camo/archive/refs/tags/v3.1.tar.gz"
+  sha256 "255081875bd70918a8f9a72ab6ea06a047cf5fb2eef8618c5c12a259787616bf"
   license "MIT"
   head "https://github.com/cactus/go-camo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f36a96c8838738c99dbd138a5353dbb2245d5842a9c78589511ed1848dd901e6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5f40ea5781c207f1f2a84365eff2d54518217e6119b7842e9544c54020d1d186"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "318fec8473104d36f6576412bb5bab1a3dc08024456a496a828058810b8f2fbc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b1916f7e4ccd48a7ce480db9f304a9696d8dc7cfeb44b3780a486fbf7f256bc7"
-    sha256 cellar: :any,                 x86_64_linux:      "bb5813af65e209c707537c6ab6ee6086ece83f111a8f2b4c4a235bc74dc434e7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "58a649464b802dac0e5c4050fe81711b62615a9544768cd05dba663def3f312f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5ffc650849bbf9725325b120fc17da6dd6d45cc3ab55af252575c23bbe34288f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "eabaadbe864707dd5c80d4db8f23436bb8fe5d6ae56ae27adb3c49008080fff7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "db67533b9e84e55b4f5c925b2e670892f8b23fc38b85b9cdda63919fb04d91fe"
+    sha256 cellar: :any,                 x86_64_linux:      "4e73e9e1e2978502ff7162d6cc6c10e229a22b1d55e2e27b24eafd3a86e1a9cb"
   end
 
   depends_on "go" => :build
-
-  # Fix metrics startup panic, upstream PR ref, https://github.com/cactus/go-camo/pull/90
-  patch do
-    url "https://github.com/cactus/go-camo/commit/d23a95e720114fc85802e4c37200d18cd23f8637.patch?full_index=1"
-    sha256 "4c89ffb3c58626c08fb883fec1e45e99ff86105700a0125ab31cc1ba57269ab6"
-  end
 
   allow_network_access! :test
 

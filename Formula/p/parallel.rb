@@ -19,6 +19,8 @@ class Parallel < Formula
 
   conflicts_with "moreutils", because: "both install a `parallel` executable"
 
+  deny_network_access!
+
   def install
     ENV.append_path "PATH", bin
 

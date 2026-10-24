@@ -10,6 +10,8 @@ class Cowsay < Formula
     sha256 cellar: :any_skip_relocation, all: "345e99255a69e9cb188a5a8e6bd8e6f50c334830c8a72877fc6b504c95e5cbd1"
   end
 
+  deny_network_access!
+
   def install
     system "make", "install", "prefix=#{prefix}"
   end

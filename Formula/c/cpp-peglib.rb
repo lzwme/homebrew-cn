@@ -1,16 +1,16 @@
 class CppPeglib < Formula
   desc "Header-only PEG (Parsing Expression Grammars) library for C++"
   homepage "https://yhirose.github.io/cpp-peglib/"
-  url "https://ghfast.top/https://github.com/yhirose/cpp-peglib/archive/refs/tags/v1.24.0.tar.gz"
-  sha256 "8a82dac0b83882ae808b2678fdb1860dd0924235ce482543c1d9d01fe3a065ed"
+  url "https://ghfast.top/https://github.com/yhirose/cpp-peglib/archive/refs/tags/v1.26.0.tar.gz"
+  sha256 "a80f0f7cff743da505fd72f57b6c1c477d7c811e087841726351484b888a4031"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0e4b38bfebf193d483f3c5e9c89dad9aefd0d5df7b8864625def5c791a180a4f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "67f5f0f2c87033962979689a919e9bc8c82f52665373a5e2e5abb96c08edf65e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0123e185683d9fd3edfa9409532310288750a20d94ec3b429d9a3991d832ab2e"
-    sha256 cellar: :any,                 arm64_linux:       "dc3e93f5495915a2ea2d5196fffe84711e8415129a3da689fe7a3d05b0109737"
-    sha256 cellar: :any,                 x86_64_linux:      "e7d8b99e18d2ec35da7313cfd0a3a60c7d204991758efd5556ac843dcd7bcd6b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4be4242a06f9c307b85af98cce6b89cae592e6704d6f3db903c7d4eaff2097e3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6bde4f2a24e596b86080f1bba9e3e8ffec4e8e40ec0f1df282c04b2f249a18af"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3a16ecf5d6bb4cf67d239f05938f5d52f9dc47f4308d37a47e9cecce3829c765"
+    sha256 cellar: :any,                 arm64_linux:       "a77bd3c8db84406f6db0193e3bbdfb7137930a0c917ba4a4dd1220859a2c9ca6"
+    sha256 cellar: :any,                 x86_64_linux:      "bc5cc72fc36942e222af72dcf1533dfeb9b435cd57530d16b0caadc6c9f77547"
   end
 
   depends_on "cmake" => :build

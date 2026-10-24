@@ -22,6 +22,12 @@ class Apptainer < Formula
   depends_on :linux
   depends_on "squashfs"
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
     ENV["CGO_ENABLED"] = "1" if Hardware::CPU.arm?
 

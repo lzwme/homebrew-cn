@@ -4,6 +4,7 @@ class Monolith < Formula
   url "https://ghfast.top/https://github.com/Y2Z/monolith/archive/refs/tags/v2.11.6.tar.gz"
   sha256 "19390d1032cd2e10a7a589228fd035ab60b07f093a46e8a2bce4fa1c08f5e66b"
   license "CC0-1.0"
+  head "https://github.com/Y2Z/monolith.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0819ad1e672c482fe9ef81de79f2d1ad9f1f9973e62ea747cd9d3fb9704294a7"
@@ -15,6 +16,12 @@ class Monolith < Formula
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

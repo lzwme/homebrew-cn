@@ -1,19 +1,17 @@
 class McpPublisher < Formula
   desc "Publisher CLI tool for the Official Model Context Protocol (MCP) Registry"
   homepage "https://github.com/modelcontextprotocol/registry"
-  url "https://ghfast.top/https://github.com/modelcontextprotocol/registry/archive/refs/tags/v1.8.1.tar.gz"
-  sha256 "e9de5b2fb214a2a7f4da80d4a795d20b5918ca819c441c10b8e3aa109617f004"
+  url "https://ghfast.top/https://github.com/modelcontextprotocol/registry/archive/refs/tags/v1.8.3.tar.gz"
+  sha256 "f17e4f5d8568c2ddb04ab0b35588bcbf71e90c444768ec06ba8b9f6e4ae985f6"
   license "MIT"
   head "https://github.com/modelcontextprotocol/registry.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5d00eb1c791f02e1b9a938074abca08e82d46c0395227e26ec8ce827c3b648e4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c1ab02af45e7054a0104ab6fdfdc682b685aa94c873d3c18e91d9dc561d068c6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c1ab02af45e7054a0104ab6fdfdc682b685aa94c873d3c18e91d9dc561d068c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "c1ab02af45e7054a0104ab6fdfdc682b685aa94c873d3c18e91d9dc561d068c6"
-    sha256 cellar: :any_skip_relocation, sonoma:            "4951d39d8d9476e78206616b639216ab1a5a029357d0b96cb1a784ce0c3efaa2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0306032369607e8ef425fd5461b2e1fae0b8c5151485eaab6844045bf18f81c0"
-    sha256 cellar: :any,                 x86_64_linux:      "ec4115143e7155829f3f8cfea82db317c21b73238c8852234b59a14df7b6e3a1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "50449d8b593c07e885066a55dde785e7b13e7a32933ce700701043112549c9a4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "50449d8b593c07e885066a55dde785e7b13e7a32933ce700701043112549c9a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "50449d8b593c07e885066a55dde785e7b13e7a32933ce700701043112549c9a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a62fe3ed60616e9e1f20b3aaff358a694df48219bda783ff5c9fb7f3af466fbb"
+    sha256 cellar: :any,                 x86_64_linux:      "030e3ddf5a209343cadde43a02daaa39f91e93ff95a3fd2982f6fcafe1707b83"
   end
 
   depends_on "go" => :build

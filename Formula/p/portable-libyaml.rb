@@ -11,6 +11,8 @@ class PortableLibyaml < PortableFormula
     formula "libyaml"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *portable_configure_args,
                           "--disable-dependency-tracking",

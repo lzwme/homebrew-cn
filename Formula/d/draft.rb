@@ -1,17 +1,17 @@
 class Draft < Formula
   desc "Day 0 tool for getting your app on Kubernetes fast"
   homepage "https://github.com/Azure/draft"
-  url "https://ghfast.top/https://github.com/Azure/draft/archive/refs/tags/v0.17.16.tar.gz"
-  sha256 "ba8eaba15bf731e1127747a02a2d899a1f1f1632c3acdf0b51f4268866284d1c"
+  url "https://ghfast.top/https://github.com/Azure/draft/archive/refs/tags/v0.17.17.tar.gz"
+  sha256 "02417432eaa374505829ea2e8d80655f5555436a5f3b737dca1fa19a8e570026"
   license "MIT"
   head "https://github.com/Azure/draft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4d2f8c006c222be7bcfa778397218181e9c1182b306a479fe4ac60c75759ee64"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2b3f2b8f4a8064d591822c34cdafaaca6cb79efbb855c0f7b06589137aa8b8a1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1c45ce598c86af07942d298413286dfb5ae54b0b72f36a2e800b4e80689faa3f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "621a7d89d5df87ff66fc0b07f851d3634d270bbad172f001d9781b4ddb430756"
-    sha256 cellar: :any,                 x86_64_linux:      "cc3d24a14066ada3bf9071acc4d766fa7d86b1196605805f3d077679ae1d86ef"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "65e13fa31e68f6a6c717f128888468c152444758cdfdd1be368c839c78a32c42"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ae7fd37d0b78b09c242df73a0ca7d01a315ab166aca2ad98cfee248e89127b53"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f64fff3811ddf36a8982681e841d02da00e9cf174a6b3a20a47dd2742ed76696"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "eb8258843dc2120d19b4828a63a00143e1ac8716e968deed2fb2d74ff826a9cf"
+    sha256 cellar: :any,                 x86_64_linux:      "86dbb2a3c136387475e5cb796d5daa51cf2548cb9ae4e6abeb3b28a035491a52"
   end
 
   depends_on "go" => :build

@@ -11,11 +11,12 @@ class Ghidra < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1aac5b5a233a97e5cc7aaa485ab3a38204abc003554d5698c47094d7f3991be4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b5b5ef3b2186a796649480b040f8969d9cb6ad10332957765f0f6b65ce6b1916"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "246d0cefdccdaa545577c940f7ac2394af0c54533d18cb33602fa07d521d3afb"
-    sha256 cellar: :any,                 arm64_linux:       "a53fa4a4d316586b48e9963bb020871a30f9875f660c66664eceef2d77e74ddb"
-    sha256 cellar: :any,                 x86_64_linux:      "1baef73145ba57161b5832c180647f90e1d0f6d88250d9c3008c9f527846d195"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f20f3c3ca9eb0a3ce8fa9522b16f251e937f54e33624b8e1e16eabf99a9188e4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cee537edc3ede3db751094a5eb02716250d64c78b8036d0ccc2d5b6f2870f8f5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "42603290241b67c44e61bd05c3c4f17f269c4ef589466d12c0fc6ed32fbcf57c"
+    sha256 cellar: :any,                 arm64_linux:       "a423890ed68d0cec935ff9914090ed47340eb2464d59b0df8d9c41749c251586"
+    sha256 cellar: :any,                 x86_64_linux:      "b1d670605a0d35241a7b3302e8b599fea64a8e46c572f4b0ab85b3d54e0d30d9"
   end
 
   depends_on "gradle" => :build
@@ -42,7 +43,7 @@ class Ghidra < Formula
     (libexec/"GPL/DemanglerGnu/os").children
                                    .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}_#{arch}" }
     (libexec/"Ghidra/Features").glob("{Decompiler,FileFormats}/os/*")
-                               .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+                               .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}_#{arch}" }
   end
 
   test do

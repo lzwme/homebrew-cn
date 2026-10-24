@@ -29,11 +29,19 @@ class Projectable < Formula
   # `cargo update --precise 0.9.114 openssl-sys` for minimum needed to use OpenSSL 4
   patch :DATA
 
+  deny_network_access!
+
+  def openssl = deps.map(&:name).find { |d| d.match?(/^openssl(@\d+(\.\d+)*)?$/) }
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix(openssl)
 
     system "cargo", "install", *std_cargo_args
   end
@@ -61,8 +69,8 @@ class Projectable < Formula
     [
       formula_opt_lib("libgit2")/shared_library("libgit2"),
       formula_opt_lib("libssh2")/shared_library("libssh2"),
-      formula_opt_lib("openssl@4")/shared_library("libcrypto"),
-      formula_opt_lib("openssl@4")/shared_library("libssl"),
+      formula_opt_lib(openssl)/shared_library("libcrypto"),
+      formula_opt_lib(openssl)/shared_library("libssl"),
     ].each do |library|
       assert Utils.binary_linked_to_library?(bin/"prj", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."

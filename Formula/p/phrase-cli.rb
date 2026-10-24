@@ -1,8 +1,8 @@
 class PhraseCli < Formula
   desc "Tool to interact with the Phrase API"
   homepage "https://phrase.com/"
-  url "https://ghfast.top/https://github.com/phrase/phrase-cli/archive/refs/tags/2.70.0.tar.gz"
-  sha256 "268586498e922736199097a41cfa8700a6f05e252eb7e33c7e08e3000311f8a6"
+  url "https://ghfast.top/https://github.com/phrase/phrase-cli/archive/refs/tags/2.71.0.tar.gz"
+  sha256 "8302be1fff596c9d5da0cba82c1a4697dbda38a7140eea1d9238e6f186da282d"
   license "MIT"
 
   livecheck do
@@ -13,11 +13,11 @@ class PhraseCli < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b5c3186af0134fd21914862bbbe045624b570b3a47b19612b6fc9e96577c9304"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b5c3186af0134fd21914862bbbe045624b570b3a47b19612b6fc9e96577c9304"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b5c3186af0134fd21914862bbbe045624b570b3a47b19612b6fc9e96577c9304"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1709f516fcc8c1176c915b2aa164ec48c5dbcedee9c40dabdf31a5017ec08e3e"
-    sha256 cellar: :any,                 x86_64_linux:      "68e762ece360cc2f8c1f8b66dd81f5e7e30188108f3aeb86f2085d9be2ae2b7e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a066d0c1a0052528731bade992114edd8913ea555cf741e22fd8b662c303d1ec"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a066d0c1a0052528731bade992114edd8913ea555cf741e22fd8b662c303d1ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a066d0c1a0052528731bade992114edd8913ea555cf741e22fd8b662c303d1ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8a5702d47941f9f7d671951aa79786c764aa0df1841513a78d69b3eb1e3f2022"
+    sha256 cellar: :any,                 x86_64_linux:      "1b83553ac071364a0566a5f7cba49cf89d507e0a07780f9d299c557f3c6439cd"
   end
 
   depends_on "go" => :build

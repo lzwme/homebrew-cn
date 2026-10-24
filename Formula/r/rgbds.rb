@@ -34,6 +34,14 @@ class Rgbds < Formula
     sha256 "9078bfff174b112efa55fa628cbbddaa2aea740f6b2f75a1debe2f35534f424e"
   end
 
+  deny_network_access!
+
+  def fetch
+    resource("rgbobj").stage do
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
+
   def install
     args = %w[
       -DHOMEBREW_ALLOW_FETCHCONTENT=ON

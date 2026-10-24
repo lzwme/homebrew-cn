@@ -2617,6 +2617,7 @@ Homebrew-homebrew-core/Formula/g/gita.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitbackup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitbatch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitbucket.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gitea-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitea-mcp-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitea-runner.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gitea.rb, Homebrew/homebrew-core, 0
@@ -13462,6 +13463,7 @@ Homebrew-homebrew-cask/Casks/k/keka.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/keka@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kekaexternalhelper.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kern.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/k/kero.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kext-updater.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kextviewr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/key-codes.rb, Homebrew/homebrew-cask, 0
@@ -14333,6 +14335,7 @@ Homebrew-homebrew-cask/Casks/o/omniplan.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/omnipresence.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/omnissa-horizon-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/omniwm.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/omniwm@canary.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/ondesoft-audiobook-converter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/one-switch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/onecast.rb, Homebrew/homebrew-cask, 0
@@ -14574,6 +14577,7 @@ Homebrew-homebrew-cask/Casks/p/pdfsam-basic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pdl.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pearcleaner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pecunia.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/pen.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/penc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pencil.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pencil2d.rb, Homebrew/homebrew-cask, 1
@@ -16324,6 +16328,7 @@ Homebrew-homebrew-cask/Casks/w/wpsoffice.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wrike.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/write.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/writemapper.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/writer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/writerside.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wrkspace.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wsl-manager.rb, Homebrew/homebrew-cask, 1

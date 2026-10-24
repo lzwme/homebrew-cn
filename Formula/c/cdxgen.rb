@@ -1,16 +1,16 @@
 class Cdxgen < Formula
   desc "Creates CycloneDX Software Bill-of-Materials (SBOM) for projects"
   homepage "https://github.com/CycloneDX/cdxgen"
-  url "https://registry.npmjs.org/@cyclonedx/cdxgen/-/cdxgen-12.8.7.tgz"
-  sha256 "df3dfd0c2023f06f800d866ef52dac65255ce14f9b266a8003d0ac8ac2134735"
+  url "https://registry.npmjs.org/@cyclonedx/cdxgen/-/cdxgen-12.9.0.tgz"
+  sha256 "56a4d2b7042620e419617b6620f2b5ac7f61265d296601e5bda41e3a7c672b0f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d1e1fbff242a93a202cf6675cb570fdfaa7d51cbb002309978fa03eb2eba8344"
-    sha256 cellar: :any, arm64_tahoe:       "54116329f904e1c3c655ec3d6587fa046dc9ab3d66524f0a238b6e6164a4efe9"
-    sha256 cellar: :any, arm64_sequoia:     "ce05beae96df6620fc38fade0be8c66be43171f2f60498f702fd122bb1a7cbcf"
-    sha256 cellar: :any, arm64_linux:       "4cb5d0d16f8fd8f3b60e754de39bd20a9516a4bd4fff8754b38d76ecff151709"
-    sha256 cellar: :any, x86_64_linux:      "3916d07172f5c9314d5b83607700815e6a93f64288cc2d4821e18273b554004f"
+    sha256 cellar: :any, arm64_golden_gate: "5cdbe16a499f5290acc0119c9e4276025c4c8481ac8370730c1d5fc34bda88c3"
+    sha256 cellar: :any, arm64_tahoe:       "6e281322418ee75593ec662eac626500d6747e0fa25f30b154adf055c4b177f1"
+    sha256 cellar: :any, arm64_sequoia:     "15adda95fd1ffb18b0b0c21b815b646a6f1159aedbb1bfe8e91b98df51367c19"
+    sha256 cellar: :any, arm64_linux:       "5798cd75473b5cc4fd3898d6a9e869b23e26ce1948c9e6fdfd206cf8c13338c3"
+    sha256 cellar: :any, x86_64_linux:      "805a9d2760ee1899b74ce42600dedc145cceeba17f44081a564fdc7309184f26"
   end
 
   depends_on "dotnet" # for dosai
@@ -20,15 +20,22 @@ class Cdxgen < Formula
   depends_on "trivy"
 
   resource "dosai" do
-    url "https://ghfast.top/https://github.com/owasp-dep-scan/dosai/archive/refs/tags/v3.0.6.tar.gz"
-    sha256 "ab7a4338e2f14f8f357bca95497d086939a396012a3c3a0cbf39266c43668240"
+    url "https://ghfast.top/https://github.com/owasp-dep-scan/dosai/archive/refs/tags/v4.1.0.tar.gz"
+    sha256 "f988bda63f1fd6b648f4bd177bb8b1526b953434735a75d9590b9ebfcaca98f9"
   end
+
+  # For `npm` and `dotnet`
+  allow_network_access! :build
+
+  def dotnet = deps.find { |d| d.name.match?(/^dotnet(@\d+(\.\d+)*)?$/) }.to_formula
+
+  def ruby = deps.map(&:name).find { |d| d.match?(/^ruby(@\d+(\.\d+)*)?$/) }
 
   def install
     # https://github.com/cdxgen/cdxgen/blob/master/lib/managers/binary.js
     # https://github.com/AppThreat/atom/blob/main/wrapper/nodejs/rbastgen.js
     cdxgen_env = {
-      RUBY_CMD:         "${RUBY_CMD:-#{formula_opt_bin("ruby")}/ruby}",
+      RUBY_CMD:         "${RUBY_CMD:-#{formula_opt_bin(ruby)}/ruby}",
       SOURCEKITTEN_CMD: "${SOURCEKITTEN_CMD:-#{formula_opt_bin("sourcekitten")}/sourcekitten}",
       TRIVY_CMD:        "${TRIVY_CMD:-#{formula_opt_bin("trivy")}/trivy}",
     }
@@ -51,7 +58,6 @@ class Cdxgen < Formula
       # .NET named mutexes need `XDG_RUNTIME_DIR` (or `USER`) on Linux, which build containers may lack
       ENV["XDG_RUNTIME_DIR"] = buildpath
       dosai_cmd = "dosai-#{os}-#{arch}"
-      dotnet = Formula["dotnet"]
       args = %W[
         --configuration Release
         --framework net#{dotnet.version.major_minor}
@@ -79,7 +85,7 @@ class Cdxgen < Formula
   end
 
   test do
-    (testpath/"Gemfile.lock").write <<~EOS
+    (testpath/"Gemfile.lock").write <<~LOCK
       GEM
         remote: https://rubygems.org/
         specs:
@@ -90,7 +96,7 @@ class Cdxgen < Formula
         hello
       BUNDLED WITH
         2.4.12
-    EOS
+    LOCK
 
     assert_match "BOM includes 1 components and 2 dependencies", shell_output("#{bin}/cdxgen -p")
 

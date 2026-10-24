@@ -1,19 +1,17 @@
 class Gibo < Formula
   desc "Access GitHub's .gitignore boilerplates"
   homepage "https://github.com/simonwhitaker/gibo"
-  url "https://ghfast.top/https://github.com/simonwhitaker/gibo/archive/refs/tags/v3.0.22.tar.gz"
-  sha256 "1c9432a3bd417709fee9a475b85dc0dbfa10e62676b54e8f3ea4d7c44f6e16b3"
+  url "https://ghfast.top/https://github.com/simonwhitaker/gibo/archive/refs/tags/v3.0.23.tar.gz"
+  sha256 "a529ad07de46728eafe3aecf01612128bee23ec8a856ad6484e94a21c98dd9e8"
   license "Unlicense"
   head "https://github.com/simonwhitaker/gibo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "00bedb3b99f22f9aa382435385eb7d68ce9157537d3c10683e3e10f58e72bd9b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9f36adffec0e7abee1a6b7cdf5553a3fd2413dd515baa7c3917a3ec2900e1c4a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9f36adffec0e7abee1a6b7cdf5553a3fd2413dd515baa7c3917a3ec2900e1c4a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "9f36adffec0e7abee1a6b7cdf5553a3fd2413dd515baa7c3917a3ec2900e1c4a"
-    sha256 cellar: :any_skip_relocation, sonoma:            "4c94c21865d0bf2afc977fd3855f7b22e078838cd72b75048a83597ebf22f241"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "92a77a1c79c79ded4590bfd4974d2ef0e88e9c1c7785de01e6aa89cc1b516df6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "276a77ff12b5b3fe3f401db3993dd21c9d9a5138e926014ee28f81e16107a527"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e0637f449bcff29b242d6fb81905f740e49706936bca9dd525ce16d4a2547fc7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e0637f449bcff29b242d6fb81905f740e49706936bca9dd525ce16d4a2547fc7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e0637f449bcff29b242d6fb81905f740e49706936bca9dd525ce16d4a2547fc7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "932b5dde0328e06cd62112565d321ae7b3fc446a9e3436d1937ab2a9a94c78fc"
+    sha256 cellar: :any,                 x86_64_linux:      "a88ebe4e23e494b5e14270a3a23100783aab87d7ba9834559497d928fa42b1a5"
   end
 
   depends_on "go" => :build

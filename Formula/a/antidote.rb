@@ -11,6 +11,9 @@ class Antidote < Formula
 
   uses_from_macos "zsh"
 
+  # `test do` block clones a plugin from GitHub
+  allow_network_access! :test
+
   def install
     pkgshare.install "antidote"
     pkgshare.install "antidote.zsh"

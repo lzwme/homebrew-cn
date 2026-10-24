@@ -1,8 +1,8 @@
 class Anubis < Formula
   desc "Protect resources from scraper bots"
   homepage "https://anubis.techaro.lol"
-  url "https://ghfast.top/https://github.com/TecharoHQ/anubis/archive/refs/tags/v1.28.1.tar.gz"
-  sha256 "f7de156f566ad3381b6170a8e581e9026656d63407cee7a412474c4a9e8546cf"
+  url "https://ghfast.top/https://github.com/TecharoHQ/anubis/archive/refs/tags/v1.28.2.tar.gz"
+  sha256 "3b20d01efec1cf41ae2df59183fe15841495fe22871b7126028abc6c368be4fd"
   license "MIT"
   head "https://github.com/TecharoHQ/anubis.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Anubis < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b6909231b1b49c8183c09213d758c58169d02797b28d02e0ca7fef18a468bcd9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "61320f48a8e186446868cc1f3fdfb7a342a6584ef0c7ab0c6c2bd4bb9c8b34f8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5ecb8f541f09cbc18a6a94f647672781deaf1a0a8c2bacaaa1606c5f162e45a5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "732e2aef1e395d127882ba3c169ae055e3b4a47adb67da659b2364b6ec9eaf13"
-    sha256 cellar: :any,                 x86_64_linux:      "1ad271b1c4335599fb4c52ca85f44eda1270eb0ebf486b2921e56e1f2919981a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2e0e14ba5ae7c2f87d3b348eb7504d1492d7e7b61b176720b969cf2ac82cc5c8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "befcb52ce0812d942de5b755e43194e34ca88463e3dc825465fc8bac8544a5ea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ee6312e6d5c412be2b8acfd189f58f0877ab9b311ff471028bd6c529f073c6e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "30aeb352cdaf7627fc4726383e99b283c9045fc979c53443a19fad5ea2526fe8"
+    sha256 cellar: :any,                 x86_64_linux:      "3d38fcda6809f576a33239a43a7a61e6c56348414e7c827986b775249b9d8410"
   end
 
   depends_on "brotli" => :build

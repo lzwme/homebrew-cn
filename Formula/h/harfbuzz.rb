@@ -1,25 +1,25 @@
 class Harfbuzz < Formula
   desc "OpenType text shaping engine"
   homepage "https://github.com/harfbuzz/harfbuzz"
-  url "https://ghfast.top/https://github.com/harfbuzz/harfbuzz/releases/download/14.6.0/harfbuzz-14.6.0.tar.xz"
-  sha256 "d07a007327277708a2a73ae437887cdbaf282937f6d03ca5467723e9099af586"
+  url "https://ghfast.top/https://github.com/harfbuzz/harfbuzz/releases/download/15.0.0/harfbuzz-15.0.0.tar.xz"
+  sha256 "968536e9abd782f07f7954044c0c4020199fcdd39b41d221ec42d2a3be4a44df"
   license "MIT"
   compatibility_version 1
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "13527c930cf5dfff2b984ca67fd914346079834bdd06473d9f4be6b37b71987b"
-    sha256 cellar: :any, arm64_tahoe:       "a7dc136cbae7f770873fdcfd938743d3b8095559d35d986ca251ca6c1e10ff59"
-    sha256 cellar: :any, arm64_sequoia:     "cc62ba7fd7ee2b04d81bd5e032cb49af70613039fefe09063c7c47c055da4607"
-    sha256 cellar: :any, arm64_linux:       "7f192d46efdb70559cf9e51465ccfa2f6e6e7778681216743f9264bd33df5414"
-    sha256 cellar: :any, x86_64_linux:      "683512035ebf2fd2e5343bec56a3678828d45492598c9ebbd128f46ebe5d924b"
+    sha256 cellar: :any, arm64_golden_gate: "6d406ba9a599aaf0cda1f57aa1cde191e3e6839b655c374cff08e7d0ccc923fc"
+    sha256 cellar: :any, arm64_tahoe:       "31457bf639bdee6e9d70a8e167f9e4354f60277d02d2a29b8deec7d15ea2b185"
+    sha256 cellar: :any, arm64_sequoia:     "90c783573c9a81fe679751aa9e2f66da7bc4a935aca3482efcc88da07c8a5ccb"
+    sha256 cellar: :any, arm64_linux:       "62d538c3bbafca523a69e25a82ef6632036da8b0583626f079257c6bd88300a9"
+    sha256 cellar: :any, x86_64_linux:      "114c87db7de0376e9180dba598e5f024d0019e8619ffdc843b4125d84bc8c090"
   end
 
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
   depends_on "pygobject3" => :test
   depends_on "cairo"
   depends_on "freetype"

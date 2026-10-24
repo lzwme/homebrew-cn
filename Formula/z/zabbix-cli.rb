@@ -3,19 +3,17 @@ class ZabbixCli < Formula
 
   desc "CLI tool for interacting with Zabbix monitoring system"
   homepage "https://unioslo.github.io/zabbix-cli/"
-  url "https://files.pythonhosted.org/packages/1d/a6/8e6d8fbf6842f2a363807bce5f59ccc7cd97c64b79c282e38af7b5384958/zabbix_cli_uio-3.7.0.tar.gz"
-  sha256 "0f3f923b75a8d4e3b4d57e3d8822177db1dae11ee100f6e4cf9af6cb28fb52bf"
+  url "https://files.pythonhosted.org/packages/73/7e/ea140a7f1f8177025defb394a13c390eeafea6c38dd18dbdafda973ecbd3/zabbix_cli_uio-3.7.1.tar.gz"
+  sha256 "d3c78ee64c7dbcfc8c168a1507241651c9fcc1cef857be33e97ccf271a674ba4"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/unioslo/zabbix-cli.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f6ce055ea01886ece6650c0ab2190910f44aa8adb45cb70a78a6df4a005f09d8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "16a5b42069be8c7cede49dda492c5f92b3e9407d79de3102e32ff2fb7effb814"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "66307a4ae746a8dc4793dd727df1113f9a521e8dd36adf1dee037bd829d39bba"
-    sha256 cellar: :any,                 arm64_linux:       "a93d2e84c8e48311eff0c1f476a15afa3609a0aa88f1dbd3aeeb8f23175a09a6"
-    sha256 cellar: :any,                 x86_64_linux:      "727f116c0795733007c9031a02474cd5412c214aa171cde00e768b5156f10e52"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b38571e82b89c35c658c7d727d8bbde2d7fce48ef733b4ddcd58d9d851eb1d27"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bf7fb9e6b9fb465bafdfd6ed9e9a67df2727d9099394d40148d823d3350f3793"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1c2722ac6f63d991a2369e7bb72fd518a2d0479a2af6c5204aaadaa8cff203c5"
+    sha256 cellar: :any,                 arm64_linux:       "245e40f0c3c7896eb459656a19c3f45678f5a83da307bf2d45749aab3fc9cebc"
+    sha256 cellar: :any,                 x86_64_linux:      "32cf85745d7c2cc5142d77ff7cdcd2b6e15cb45f95122dbcabf81ee22d173826"
   end
 
   depends_on "certifi" => :no_linkage
@@ -76,8 +74,8 @@ class ZabbixCli < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
-    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
+    url "https://files.pythonhosted.org/packages/58/e6/d0abbb256b44e6a05748c6942511ff67db8dbb068de0c35b24bf1b395b09/platformdirs-4.13.5.tar.gz"
+    sha256 "05831adf87d392760f4b5c3a0a95579ab5a10b18b9b9bd43680dcb47544788a0"
   end
 
   resource "prompt-toolkit" do
@@ -136,8 +134,8 @@ class ZabbixCli < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
-    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
+    url "https://files.pythonhosted.org/packages/69/4a/82d61476a1ccc20d43d0805724c5de4baa4971131a8db1816705ef53fe16/wcwidth-0.9.3.tar.gz"
+    sha256 "dfe7cfbd4cb59db9fe0931bd6091ab4a95b3acc5d56bfb50fa9fef0ccba5dc5c"
   end
 
   allow_network_access! :build

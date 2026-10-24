@@ -1,8 +1,8 @@
 class Opensubdiv < Formula
   desc "Open-source subdivision surface library"
   homepage "https://www.opensubdiv.org/"
-  url "https://ghfast.top/https://github.com/PixarAnimationStudios/OpenSubdiv/archive/refs/tags/v3_7_0.tar.gz"
-  sha256 "f843eb49daf20264007d807cbc64516a1fed9cdb1149aaf84ff47691d97491f9"
+  url "https://ghfast.top/https://github.com/PixarAnimationStudios/OpenSubdiv/archive/refs/tags/v3_8_0.tar.gz"
+  sha256 "e5eab30a97c7cce6b5a9905ae488981759c3d86cbce01d58a6c75e1fd9857a2b"
   license "Apache-2.0"
 
   livecheck do
@@ -14,13 +14,11 @@ class Opensubdiv < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "3c2e4c6bbef3c10668f53bdfcb1a20772f6bad5dfb6dce6b56bac5c89f42c09a"
-    sha256 cellar: :any,                 arm64_tahoe:       "0008ddc2f7b700de6b4be9c40e34265cd286eb82e2c8f3dbd5644765c7ba7992"
-    sha256 cellar: :any,                 arm64_sequoia:     "b4330e55e4bc62714863e6d69ad3865e466fa91dd0eff7fab13bddc683c3afae"
-    sha256 cellar: :any,                 arm64_sonoma:      "34a9b873da0935fc9cc0b68c4100c95bd1b23cc60b59672bb299ba2449b6f94f"
-    sha256 cellar: :any,                 sonoma:            "1d441722962464d68ef89db0062fca468ba4e61ecfbb11192054947202aaa268"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b8a10d139e39100f49e3a599fa968a5e3914d93c9e6ac86ba365ea5fe2116ed1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "110adddf9314496f0f21654961e0a173e72bb02c3c18a50152ab7ceeef52b586"
+    sha256 cellar: :any, arm64_golden_gate: "fd9df1b0dd9efd930ff813cb27a9f4ed307226e564f406982c23a60e4465aca9"
+    sha256 cellar: :any, arm64_tahoe:       "17528f2329b0ffd0a2f4291835056536f9357b752e278a44c0930e2eb69f1497"
+    sha256 cellar: :any, arm64_sequoia:     "6a86d1ae248449cd02249da79c79903b955ef759846ef706265a3e1bbbc9e41f"
+    sha256 cellar: :any, arm64_linux:       "b3e947cbc26c44936701ca240271eb8415558e97437ac4e5e610db1fe0a73c10"
+    sha256 cellar: :any, x86_64_linux:      "047da92192493df5cb2cfdcbdac29859e49bcca8ca39e4cd5fc7934683fbc647"
   end
 
   depends_on "cmake" => :build

@@ -1,16 +1,16 @@
 class Morphe < Formula
   desc "Desktop app and CLI for patching Android apps with Morphe"
   homepage "https://github.com/MorpheApp/morphe-desktop"
-  url "https://ghfast.top/https://github.com/MorpheApp/morphe-desktop/archive/refs/tags/v1.18.1.tar.gz"
-  sha256 "31df678274df385132acd241eae844eb2489bf0041d860f2b50a06fa4db60e47"
+  url "https://ghfast.top/https://github.com/MorpheApp/morphe-desktop/archive/refs/tags/v1.19.0.tar.gz"
+  sha256 "b060cb8219aac9e16b0e41d306a321e2f48da3d03dafbf3498cb886d7127a33a"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "744ef756d7a2044b5018b1d60b5ff83600199ff6f92d467cf6aa77941b4cc198"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "744ef756d7a2044b5018b1d60b5ff83600199ff6f92d467cf6aa77941b4cc198"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "744ef756d7a2044b5018b1d60b5ff83600199ff6f92d467cf6aa77941b4cc198"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "14c06eca9d42005c76789f86db2023009ddf3bcc8e0fb40a29b896dc34a53fd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "14c06eca9d42005c76789f86db2023009ddf3bcc8e0fb40a29b896dc34a53fd0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "abb85f59cb8d0428944dfa6ec6a7137ff637fd4786021ae0d727e4d2ef33436d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "abb85f59cb8d0428944dfa6ec6a7137ff637fd4786021ae0d727e4d2ef33436d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "abb85f59cb8d0428944dfa6ec6a7137ff637fd4786021ae0d727e4d2ef33436d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f67ceb96ceb76b7ef74c9937fada912b217aa53a4474a7050b4f914033df2d50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f67ceb96ceb76b7ef74c9937fada912b217aa53a4474a7050b4f914033df2d50"
   end
 
   depends_on "gradle" => :build
@@ -18,8 +18,8 @@ class Morphe < Formula
   depends_on "openjdk"
 
   resource "morphe-patcher" do
-    url "https://ghfast.top/https://github.com/MorpheApp/morphe-patcher/archive/refs/tags/v1.15.1.tar.gz"
-    sha256 "f7accdd98a7b8fb954294f5920bcfce6154b6317af4c824f0677f34274436e91"
+    url "https://ghfast.top/https://github.com/MorpheApp/morphe-patcher/archive/refs/tags/v2.0.0.tar.gz"
+    sha256 "d9ed66136b300a09822f0390b882f8443c3c558ec7affde42dd2b37daa87f5d7"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/MorpheApp/morphe-desktop/refs/tags/v#{LATEST_VERSION}/gradle/libs.versions.toml"
@@ -60,8 +60,11 @@ class Morphe < Formula
     end
     resource("jadb").stage { system "mvn", "--batch-mode", "-Dmaven.test.skip=true", "install" }
 
-    # Use Homebrew's JDK instead of downloading JetBrains Runtime; there are no Java sources to target
-    inreplace "build.gradle.kts", /^ *jvmToolchain \{\n.*?^ *\}\n/m, ""
+    # Keep public dependencies on public repositories; Morphe components are built locally above.
+    inreplace "build.gradle.kts", "credentials {", 'content { includeGroup("app.morphe") }; credentials {'
+
+    # Use Homebrew's JDK instead of downloading a separate toolchain.
+    inreplace "build.gradle.kts", "jvmToolchain(21)", ""
 
     system "gradle", "--no-daemon", "-Pkotlin.jvm.target.validation.mode=ignore", "shadowJar"
 

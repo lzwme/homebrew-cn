@@ -32,6 +32,12 @@ class Qsv < Formula
     depends_on "openssl@4" # native-tls for the `viz_static` webdriver client
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     # Use explicit CPU target instead of "native" to avoid brittle behavior
     # see discussion at https://github.com/briansmith/ring/discussions/2528#discussioncomment-13196576

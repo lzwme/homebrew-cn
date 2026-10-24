@@ -1,6 +1,6 @@
 cask "mesh" do
-  version "3.0.6"
-  sha256 "721f21073dd3ce2a3eca23c7d2a142f4d661b4b6fd315326044feb0be66b062d"
+  version "3.0.7"
+  sha256 "2fe83281dd1668b67bb30da0e2d650c2d6315ac66d5b41daea1e63ae3d9c8b80"
 
   url "https://assets.me.sh/mesh-desktop/mac/Mesh-#{version}-universal.dmg"
   name "Mesh"
@@ -19,6 +19,8 @@ cask "mesh" do
 
   zap trash: [
     "~/Library/Application Support/Clay",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.clay.mac.sfl*",
+    "~/Library/Application Support/com.clay.mac",
     "~/Library/Application Support/Mesh",
     "~/Library/Caches/Clay",
     "~/Library/Caches/Mesh",

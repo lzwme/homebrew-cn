@@ -1,14 +1,14 @@
 class DrawThingsCli < Formula
   desc "Local inference and LoRA training CLI for Draw Things"
   homepage "https://github.com/drawthingsai/draw-things-community"
-  url "https://ghfast.top/https://github.com/drawthingsai/draw-things-community/archive/refs/tags/v26.1014.0.tar.gz"
-  sha256 "5d53f33c8662ce5e1a0e8ffb131d921b565a8010057e2c450bd101f2e9292fb9"
+  url "https://ghfast.top/https://github.com/drawthingsai/draw-things-community/archive/refs/tags/v26.1023.0.tar.gz"
+  sha256 "6d1a04ce4f3669847477a4cd0f46fed4d42cd9f593235a0ad8b20ee5c40cbfee"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "235f6741d450d39c2ba562149c25189085018720f4fe696d599fc9089b94f6fe"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7044e4094833edca8252b76d5267144d152eef55d5c475d96fc69ad2b508ab3c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7222cdf1325cd06d1aebe139b76bce0deb6925c9213ce249b7fad5654c4bd693"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "52e556568bea7821f9825bbefade3e70bde6dee34bd7621b737993b95705de2e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7487d81097d9f43401014ef77837e3879553985b3f7e3f199ac8dbf03bdfe282"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "79411743351a2291f17b56697aadbdb07e09f20c7f4a441f87a15c2f658be9b6"
   end
 
   depends_on xcode: ["26.3", :build]

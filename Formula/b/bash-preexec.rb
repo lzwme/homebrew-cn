@@ -10,6 +10,8 @@ class BashPreexec < Formula
     sha256 cellar: :any_skip_relocation, all: "e11da546f75f80cdba63dafd4c9268d8e646e816e30bf2c254148744321fd326"
   end
 
+  deny_network_access!
+
   def install
     (prefix/"etc/profile.d").install "bash-preexec.sh"
   end

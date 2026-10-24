@@ -27,12 +27,22 @@ class Pdnsrec < Formula
   uses_from_macos "python" => :build
   uses_from_macos "curl"
 
+  deny_network_access!
+
+  def openssl = deps.map(&:name).find { |d| d.match?(/^openssl(@\d+(\.\d+)*)?$/) }
+
+  def fetch
+    cd "rec-rust-lib/rust" do
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
+
   def install
     args = %W[
       --sysconfdir=#{etc}/powerdns
       --disable-silent-rules
       --with-boost=#{formula_opt_prefix("boost")}
-      --with-libcrypto=#{formula_opt_prefix("openssl@4")}
+      --with-libcrypto=#{formula_opt_prefix(openssl)}
       --with-lua
       --without-net-snmp
     ]

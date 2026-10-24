@@ -1,9 +1,20 @@
 class Roapi < Formula
   desc "Full-fledged APIs for static datasets without writing a single line of code"
   homepage "https://roapi.github.io/docs"
-  url "https://ghfast.top/https://github.com/roapi/roapi/archive/refs/tags/roapi-v0.13.0.tar.gz"
-  sha256 "f1941e528efac4c610cc042bff7f03a613d7d7b59e2a7f8c10cea8c478d915ee"
   license "Apache-2.0"
+  head "https://github.com/roapi/roapi.git", branch: "main"
+
+  stable do
+    url "https://ghfast.top/https://github.com/roapi/roapi/archive/refs/tags/roapi-v0.13.0.tar.gz"
+    sha256 "f1941e528efac4c610cc042bff7f03a613d7d7b59e2a7f8c10cea8c478d915ee"
+
+    # Patch to fix build error, remove in next release
+    patch do
+      url "https://github.com/roapi/roapi/commit/c53bfa489011038cb934735451d88dcd9f39dbe2.patch?full_index=1"
+      sha256 "0bdb9950c1f9e69670283f4fb491f2d71ce0f18248345c38869b4a6615ac823e"
+      type :backport
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "544bcb5701f71296b4c30929858503db076e9122841451e49a452cf9ad3b9d1e"
@@ -17,11 +28,10 @@ class Roapi < Formula
 
   depends_on "rust" => :build
 
-  # Patch to fix build error, remove in next release
-  patch do
-    url "https://github.com/roapi/roapi/commit/c53bfa489011038cb934735451d88dcd9f39dbe2.patch?full_index=1"
-    sha256 "0bdb9950c1f9e69670283f4fb491f2d71ce0f18248345c38869b4a6615ac823e"
-    type :backport
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

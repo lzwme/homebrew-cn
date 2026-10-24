@@ -6,16 +6,15 @@ class Safety < Formula
   url "https://files.pythonhosted.org/packages/c2/7b/8e1d580c5178f0736b806b7199827e61e2a2569eec5b49ec75da6273bbdf/safety-3.8.1.tar.gz"
   sha256 "e646123b976bbb6707cfaacae8c926e2f886b744a60e0f410e8610a3a4eaf7be"
   license "MIT"
-  revision 2
+  revision 3
   head "https://github.com/pyupio/safety.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "50a6feb51a79a1a965a2ddebc8334708ea238307796d0da4d70147924ec36fcd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "17db24d939829cad40145e966268d09aad21aca39613444ec9e950c831eb8290"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7e4e7a498bf8735e08f3bb68c4add43f9b7a058879fb56a83c4faacc5298d592"
-    sha256 cellar: :any,                 arm64_linux:       "c0328aa669a55d4f2bddd21efdeb55b414e284249565600e0a88edab43c0e5cc"
-    sha256 cellar: :any,                 x86_64_linux:      "32adf75d788382cbd5c2fe6f07160ebc1418145733065ecc057fcfca36845f7d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8d6c2ce16579e8098ef4fa1a873ccb8166cf0508d493f150267ac970c4280a88"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "898c9d6f7300ae6303b6a5a2a9675083adc6644122290fe2733abebe4e922d17"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "eb9306721181da39035c7fada898bf99b134544957930b054aa0f6278a4310df"
+    sha256 cellar: :any,                 arm64_linux:       "6ef758975ee037c224f583e45db3f618d79f1a53ff6c0684c42776ee86895b4c"
+    sha256 cellar: :any,                 x86_64_linux:      "acd19ca3856a9b5373e2f58fcd1645bf60ff0d547020ea5628a8802c15a567b0"
   end
 
   depends_on "certifi" => :no_linkage
@@ -36,8 +35,8 @@ class Safety < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/f1/51/bc1729d3cfdc214b4935f4e886e4dd443c3065fd8e1e66423fe84b490f81/authlib-1.8.0.tar.gz"
-    sha256 "f3ecd5f1da737262fb53bf1a4d95c4ea1ad9dd509316587a255c99ab1838a4f0"
+    url "https://files.pythonhosted.org/packages/c9/dc/087c08741a98d234c9b98beef8a28d3c309f814d14b6156422c5815bf6d6/authlib-1.9.1.tar.gz"
+    sha256 "5c7d9848f47cac340f060f76ae0bc09b59f5c8e89cc1bb032d4370a0c55b5974"
   end
 
   resource "click" do
@@ -104,8 +103,8 @@ class Safety < Formula
   end
 
   resource "joserfc" do
-    url "https://files.pythonhosted.org/packages/19/94/80fea1514b7c6d7d37804d3fe9ca81455f633347fc98731bd71ffe1faa17/joserfc-1.7.5.tar.gz"
-    sha256 "d5ff536e658e17664f8c1b1ab60dc4aa62aa973fcef1edd33cc44bda45d6f5ea"
+    url "https://files.pythonhosted.org/packages/bd/15/48ff246732232d35ee234228def22b52455fcc55577f06146602399a29b0/joserfc-1.7.7.tar.gz"
+    sha256 "471d0fd12a5a0d1c0942de280f39efe6f597878315033270b504d4d006d25510"
   end
 
   resource "markdown-it-py" do
@@ -129,8 +128,8 @@ class Safety < Formula
   end
 
   resource "nltk" do
-    url "https://files.pythonhosted.org/packages/e0/e6/fe51d2bb1a3b446f59c5c8165999a9fee208bc346af90a7cbf7657bc0d75/nltk-3.10.3.tar.gz"
-    sha256 "bb9327a461c3811c2fa4900e03840401f2126adfb30c0072827c433bd2444ea4"
+    url "https://files.pythonhosted.org/packages/3a/cb/bbaa9be58e95d21729c6b9194376610230e0755f6de0bf38b6acc0dce079/nltk-3.10.4.tar.gz"
+    sha256 "44679f4e9220abfd496d2c8cdb22f8425ccbe557604f9aa5cacb1c44003dabc1"
   end
 
   resource "packaging" do
@@ -174,8 +173,8 @@ class Safety < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
-    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
+    url "https://files.pythonhosted.org/packages/08/72/fc01563df95c189a9f65850096bdc205bc2fe37da6c740cd64afaf18d07e/tomlkit-0.15.2.tar.gz"
+    sha256 "83e32755ba1d20d9340bd069ee97e9f6232ba2346b63ffcba425de01f7e327a6"
   end
 
   resource "tqdm" do
@@ -184,8 +183,8 @@ class Safety < Formula
   end
 
   resource "truststore" do
-    url "https://files.pythonhosted.org/packages/53/a3/1585216310e344e8102c22482f6060c7a6ea0322b63e026372e6dcefcfd6/truststore-0.10.4.tar.gz"
-    sha256 "9d91bd436463ad5e4ee4aba766628dd6cd7010cf3e2461756b3303710eebc301"
+    url "https://files.pythonhosted.org/packages/ee/9f/c5201d42a484c061e528825fc8e2d565f5abd50a4ced6fb7d29c4ec99b2b/truststore-0.10.5.tar.gz"
+    sha256 "30d36967ccaded5cbb38d602c433f53600036c79d502f4533a49b60a03bbefcd"
   end
 
   resource "typer" do

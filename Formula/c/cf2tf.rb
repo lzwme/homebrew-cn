@@ -6,16 +6,15 @@ class Cf2tf < Formula
   url "https://files.pythonhosted.org/packages/7f/c3/a6dfdc4848cfd4fb50e15e9449c439791a009638c2bd06b6fe6982d9afc1/cf2tf-0.9.2.tar.gz"
   sha256 "3fcae8f42f2d1aeb14deb7ef70215cc76c1f1f5cac9b465081e87729498e3ac9"
   license "GPL-3.0-only"
-  revision 10
+  revision 11
   head "https://github.com/DontShaveTheYak/cf2tf.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "bc8315e99d693e6c0780b7cf354547d08a7c49f8044b0eee2c1679659fc0d1c0"
-    sha256 cellar: :any, arm64_tahoe:       "0c717fcad6a78412e468f49ea64ad1b4b0e1fe0ddc2878c95839b619c569608b"
-    sha256 cellar: :any, arm64_sequoia:     "40a4efae81b4b59e6ee60df77de670f6caf782da63762ba26663f9709c43cd01"
-    sha256 cellar: :any, arm64_linux:       "3e82011fc63743fc54c8910bbd4f74fe68fb80c1d11e87343b8eb2e8bb47819d"
-    sha256 cellar: :any, x86_64_linux:      "3fb4f56b8013e93d1b9769b7c28811c9db348a16ccde8f066e325044b6f7ec36"
+    sha256 cellar: :any, arm64_golden_gate: "3b5afe1e4a68bfd9a04f763eeaca22fe5a8ddc0175f4e37a8bf553c83fbee538"
+    sha256 cellar: :any, arm64_tahoe:       "b0e54ceced89096201583986d4ba4eace95a9fe138b15dea1c62fc8c5546600d"
+    sha256 cellar: :any, arm64_sequoia:     "ba869c97666982a758cbd2de4e7f58040d794637ff4cf85f887e9f66c5efecb9"
+    sha256 cellar: :any, arm64_linux:       "1e85fd3cc6600e4f51ea58ddbd5d3262619fb5bec6c99fff8b3f86cab6f37ee9"
+    sha256 cellar: :any, x86_64_linux:      "3265ff6c237897e3e0f325ecce890097773c4ff09861a38a8f1aea291af2cc7a"
   end
 
   depends_on "cmake" => :build
@@ -51,8 +50,8 @@ class Cf2tf < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/6e/2d/6f6e649818da44d4499604802c89329b8d9799687a124e3a5e467a643336/gitpython-3.2.0.tar.gz"
-    sha256 "fb92310af6844d96adc95ca066ed2e617c00e1dbd146a326626c81e72e18cc2e"
+    url "https://files.pythonhosted.org/packages/c0/ff/fee293f1ec3e1b64db6eb270e00964f29c086d769201474cedb8d1608930/gitpython-3.2.1.tar.gz"
+    sha256 "0f1229ec5c057bdabdeeda8bda4f17bda679ab33dbccc00f24e6a480553c8613"
   end
 
   resource "idna" do

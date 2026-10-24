@@ -1,15 +1,10 @@
 class Newlisp < Formula
   desc "Lisp-like, general-purpose scripting language"
   homepage "https://www.newlisp.org/"
-  url "https://www.newlisp.org/downloads/newlisp-10.7.5.tgz"
-  mirror "https://deb.debian.org/debian/pool/main/n/newlisp/newlisp_10.7.5.orig.tar.gz"
+  # url "https://www.newlisp.org/downloads/newlisp-10.7.5.tgz"
+  url "https://deb.debian.org/debian/pool/main/n/newlisp/newlisp_10.7.5.orig.tar.gz"
   sha256 "dc2d0ff651c2b275bc4af3af8ba59851a6fb6e1eaddc20ae75fb60b1e90126ec"
   license "GPL-3.0-or-later"
-
-  livecheck do
-    url "https://www.newlisp.org/index.cgi?Downloads"
-    regex(/href=.*?newlisp[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
 
   bottle do
     sha256 arm64_golden_gate: "38cfdf51233f82d62778d182abe4f7b606bb3a4bb99221893fa5ade61bc3112d"
@@ -26,6 +21,10 @@ class Newlisp < Formula
     sha256 arm64_linux:       "edfae18568fbac79130190be9410e674c4955be13f666e19b5dd5a1782633ea8"
     sha256 x86_64_linux:      "27f5be3e4e9319afe264a0394127ddbfdaf6d4f8da25b790af9b25d559c23c13"
   end
+
+  # Homepage and source URL are inaccessible
+  deprecate! date: "2026-10-22", because: :repo_removed
+  disable! date: "2027-10-22", because: :repo_removed
 
   depends_on "readline"
 

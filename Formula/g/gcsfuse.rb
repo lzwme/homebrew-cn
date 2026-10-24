@@ -20,10 +20,18 @@ class Gcsfuse < Formula
   depends_on "libfuse"
   depends_on :linux # on macOS, requires closed-source macFUSE
 
+  deny_network_access!
+
+  def fetch
+    system "go", "mod", "download"
+  end
+
   def install
-    # Build the build_gcsfuse tool. Ensure that it doesn't pick up any
-    # libraries from the user's GOPATH; it should have no dependencies.
-    ENV.delete("GOPATH")
+    # `build_gcsfuse` builds with its own temporary GOPATH;
+    # keep using the module cache populated in `fetch`.
+    ENV["GOMODCACHE"] = "#{ENV.fetch("GOPATH")}/pkg/mod"
+
+    # Build the build_gcsfuse tool.
     system "go", "build", "./tools/build_gcsfuse"
 
     # Use that tool to build gcsfuse itself.

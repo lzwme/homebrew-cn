@@ -20,7 +20,11 @@ class Tgenv < Formula
   end
 
   test do
-    ret_status = OS.mac? ? 1 : 0
-    assert_match "0.73.6", shell_output("#{bin}/tgenv list-remote 2>&1", ret_status)
+    # `list-remote` caches the version list in `TGENV_ROOT`, by default the read-only keg
+    (testpath/"tgenv").install_symlink libexec
+    ENV["TGENV_ROOT"] = testpath/"tgenv"
+
+    assert_match "0.73.6", shell_output("#{bin}/tgenv list-remote 2>&1")
+    assert_match "0.73.6", (testpath/"tgenv/list_all_versions_offline").read
   end
 end

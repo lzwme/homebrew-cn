@@ -6,16 +6,15 @@ class Mk < Formula
   url "https://files.pythonhosted.org/packages/75/9e/dcc7813d9f7133f8d384eca24a4d4bb0cb056abcc53f1f170b8353084feb/mk-3.0.0.tar.gz"
   sha256 "0a041a3620057165f155b8372469d8ab55ae94dd91d6e27723ab9a7de1aa2086"
   license "MIT"
-  revision 15
+  revision 16
   head "https://github.com/pycontribs/mk.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "af16e041ffcfd65068d18383f18e68422e6fef0ca763127063a78da3bb6e2230"
-    sha256 cellar: :any, arm64_tahoe:       "6d364b83f6f8327c0bc1cb6a63cdb3926d59a8f3c2bc39d4e603f2c84fef5a9b"
-    sha256 cellar: :any, arm64_sequoia:     "a6918b51e9f085e0ce41e5d12bd676b41dd915fd2ae2f93ac72eb1009441c5a6"
-    sha256 cellar: :any, arm64_linux:       "9718b545459bcef1bfd98ade2dd2bfb28cafdb33cd3019536d8853b864874ed3"
-    sha256 cellar: :any, x86_64_linux:      "a22a156508ca337ebc3cd96152fdbaf10e141bae4b05a1c418fc035e6d9de881"
+    sha256 cellar: :any, arm64_golden_gate: "0de03d25d2796dae03d021ad834fcbe2dde3176fdb2e5697521be9c27cce6643"
+    sha256 cellar: :any, arm64_tahoe:       "502b3d42113eb05786faa9ba457126350dfd4a7a7100a99177c445a07f01f13f"
+    sha256 cellar: :any, arm64_sequoia:     "d48f5d65d8a27e724abbf038d426c6e344d3572c7b46c1d7419ba3a6a3039bc0"
+    sha256 cellar: :any, arm64_linux:       "52f6be82f5bec8d7853d52e945b2486c156b4780df0766ffff611db196a8b465"
+    sha256 cellar: :any, x86_64_linux:      "ac9421ea7ad914e1d81ab80a7858905dd287e66894efe1e8a1c4df4b50a55a3b"
   end
 
   depends_on "rust" => :build
@@ -61,8 +60,8 @@ class Mk < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/6e/2d/6f6e649818da44d4499604802c89329b8d9799687a124e3a5e467a643336/gitpython-3.2.0.tar.gz"
-    sha256 "fb92310af6844d96adc95ca066ed2e617c00e1dbd146a326626c81e72e18cc2e"
+    url "https://files.pythonhosted.org/packages/c0/ff/fee293f1ec3e1b64db6eb270e00964f29c086d769201474cedb8d1608930/gitpython-3.2.1.tar.gz"
+    sha256 "0f1229ec5c057bdabdeeda8bda4f17bda679ab33dbccc00f24e6a480553c8613"
   end
 
   resource "id" do
@@ -111,8 +110,8 @@ class Mk < Formula
   end
 
   resource "more-itertools" do
-    url "https://files.pythonhosted.org/packages/de/1d/f4da6f02cdffe04d6362210b807146a26044c88d839208aec273bb0d9184/more_itertools-11.1.0.tar.gz"
-    sha256 "48e8f4d9e7e5878571ecf6f2b4e57634f93cd474cc8cfbd2376f2d11b396e30d"
+    url "https://files.pythonhosted.org/packages/52/b8/c63995bebbb9ac9c059350e0fb8c82c2420c85aeca7d34e40aecf3df9281/more_itertools-11.2.1.tar.gz"
+    sha256 "cbf08fd0af284dc69718b9b76a8e6203df624d70209ea511e4219d350c856f63"
   end
 
   resource "nh3" do
@@ -126,8 +125,8 @@ class Mk < Formula
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
-    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+    url "https://files.pythonhosted.org/packages/bf/db/7fc19e6f2dc92a966727031389fc2e08b558f0f25eb7403c1119ad4713cd/pluggy-1.7.0.tar.gz"
+    sha256 "d1eaa46ebb595891b860ab086b4d09c8588af65ebd4361b8e8f4bb8920b90ba8"
   end
 
   resource "pygments" do
@@ -176,8 +175,8 @@ class Mk < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "shellingham" do
@@ -201,8 +200,8 @@ class Mk < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/16/f7/57713ba479fd405eb76de31404b2c744c289e336b2d999511ebf51e496f7/typer-0.27.2.tar.gz"
-    sha256 "269b7eb9d3c202ca84b4bc9618cb04ebb43d3d4d1e567e4c768607232c05f945"
+    url "https://files.pythonhosted.org/packages/03/51/d33db42cc72ffd8c30777547b42d01f0cbf9d95a770457698d0174b3ed71/typer-0.27.3.tar.gz"
+    sha256 "d0396f770a560ab1b0a8504e13b5f254b728cedb05c61cf0359e944e50ce8901"
   end
 
   resource "typer-config" do

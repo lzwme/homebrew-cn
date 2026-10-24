@@ -22,6 +22,12 @@ class Rustcat < Formula
 
   depends_on "rust" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
   end
@@ -29,11 +35,12 @@ class Rustcat < Formula
   test do
     port = free_port
 
-    r, _, pid = PTY.spawn("#{bin}/rcat listen #{port}")
-    output = r.readline.gsub(/\e\[[0-9;]*m/, "")
-    assert_match "info: Listening on 0.0.0.0:#{port}", output
-  ensure
-    Process.kill("TERM", pid)
-    Process.wait(pid)
+    PTY.spawn("#{bin}/rcat listen #{port}") do |r, _, pid|
+      output = r.readline.gsub(/\e\[[0-9;]*m/, "")
+      assert_match "info: Listening on 0.0.0.0:#{port}", output
+    ensure
+      Process.kill("TERM", pid)
+      Process.wait(pid)
+    end
   end
 end

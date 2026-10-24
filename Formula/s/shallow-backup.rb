@@ -6,23 +6,22 @@ class ShallowBackup < Formula
   url "https://files.pythonhosted.org/packages/16/25/621fbd73cadb2e18f56ea89ae602b2c93d88c77d9858ae16f541c523e9b3/shallow_backup-6.6.tar.gz"
   sha256 "016e85303accffc24b72a64cf589ff48d962298d60a37759d2302b81f7fbb8b3"
   license "MIT"
-  revision 7
+  revision 8
   head "https://github.com/alichtman/shallow-backup.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "90349129364b6860f54827bb95b3d63162c3684f86766f17e8d60b07647a0fd8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "889b715655e0d750fc15bcb3da8dbfb328d63153a836daf186721c882c44417f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8e864381288f540be45ca058a44468e794253907d1456d461f2484800509e4c9"
-    sha256 cellar: :any,                 arm64_linux:       "64b8252069102479284e2008861cdd7d10d7f8fa2679bce60523533bc6411fd3"
-    sha256 cellar: :any,                 x86_64_linux:      "f30f2da048c4496052b69bddf272cd110888915688515dc2c87118414423af50"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4a561c9b13b8c10e8e9235f03a42a14c7577bb9baa98dfeab341681e34824dc9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "53260af6685b84a960eef3404994ff3e265db26a6b45eb0e7016c9315ccb9d71"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a0e8334b6538238725472f5a6a384397c6323b9b14903c8fa3f32bfbd62630c2"
+    sha256 cellar: :any,                 arm64_linux:       "e1a0bbcdafeb3d92e8200fab9118085c3c0be2515d988c0c3d5ef2f5c6bf6a80"
+    sha256 cellar: :any,                 x86_64_linux:      "5b9f480cb50517a06d07fa0bfc6a89697488a999589f96646966684e9c692938"
   end
 
   depends_on "python@3.15"
 
   resource "blessed" do
-    url "https://files.pythonhosted.org/packages/0c/7d/44d82d953d9bbcac57fe26507ea7ffba65ef1ec8f41f2b58da2fb12ef26c/blessed-1.50.0.tar.gz"
-    sha256 "046c9b2a5283a9c5bc340ed23b7d1c1f10ef2d7fb30b14bae13ef7ffc1f3ba56"
+    url "https://files.pythonhosted.org/packages/8f/e3/53462b28d7a06f2fcf820863f951255f4e022e4988981b0a5ca339f7773b/blessed-1.52.0.tar.gz"
+    sha256 "a6f42b2875c7afee78420ac9919699d5c3dce35bfa9ad45bc158b1713fc33d0d"
   end
 
   resource "click" do
@@ -46,8 +45,8 @@ class ShallowBackup < Formula
   end
 
   resource "gitpython" do
-    url "https://files.pythonhosted.org/packages/6e/2d/6f6e649818da44d4499604802c89329b8d9799687a124e3a5e467a643336/gitpython-3.2.0.tar.gz"
-    sha256 "fb92310af6844d96adc95ca066ed2e617c00e1dbd146a326626c81e72e18cc2e"
+    url "https://files.pythonhosted.org/packages/c0/ff/fee293f1ec3e1b64db6eb270e00964f29c086d769201474cedb8d1608930/gitpython-3.2.1.tar.gz"
+    sha256 "0f1229ec5c057bdabdeeda8bda4f17bda679ab33dbccc00f24e6a480553c8613"
   end
 
   resource "inquirer" do
@@ -83,8 +82,8 @@ class ShallowBackup < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
-    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
+    url "https://files.pythonhosted.org/packages/69/4a/82d61476a1ccc20d43d0805724c5de4baa4971131a8db1816705ef53fe16/wcwidth-0.9.3.tar.gz"
+    sha256 "dfe7cfbd4cb59db9fe0931bd6091ab4a95b3acc5d56bfb50fa9fef0ccba5dc5c"
   end
 
   resource "xmod" do

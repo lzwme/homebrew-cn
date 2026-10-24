@@ -72,6 +72,8 @@ class Unzip < Formula
     ]
   end
 
+  deny_network_access!
+
   def install
     # These macros also follow Ubuntu, and are required:
     # - to correctly handle large archives (> 4GB)

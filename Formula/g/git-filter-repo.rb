@@ -15,6 +15,8 @@ class GitFilterRepo < Formula
   uses_from_macos "git"
   uses_from_macos "python"
 
+  deny_network_access!
+
   def install
     rewrite_shebang detected_python_shebang(use_python_from_path: true), "git-filter-repo"
     bin.install "git-filter-repo"

@@ -6,15 +6,14 @@ class Acronym < Formula
   url "https://files.pythonhosted.org/packages/e3/1a/1a364f93053f9ad0d4f38b5c0078637db484bb4c1388ad0234b85c9d2ca8/acronym-2.0.0.tar.gz"
   sha256 "163cc1630b7c65cbca6426f80e267f5253ea787e17a329d1d55517868897bbf1"
   license "MIT"
-  revision 5
+  revision 6
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "aa8d2432b490e61773e2e932e14f10e87ae3ad54e502c8e1ec3299cca58b5c34"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7f484eec17610c529b4ca5b3282f3a62776e982267c15092c759b52855ec254a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "68df424bee636c5ce23c2d70216c17798325d75bb581bdbb8f7a95c09e64c5f1"
-    sha256 cellar: :any,                 arm64_linux:       "90b5a19a7c4783dc374318effc3e892d799a692b15a64ec407a88ab76f4e1cf2"
-    sha256 cellar: :any,                 x86_64_linux:      "8622db05b1c58b290bbad3c925bfe21693a8121fbdb55a0f1c80bcf504da8e4f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c4a6f34070c58dd94f8878cc09af9b731cfa727c1877860da2b80a45a963d242"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b8ab6c66b1b93c3fc914bfcc8fe27b2d8cc68ac41c1978d5d71f838f941aaa64"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9ba340e6cf690a929ad22466884d07e6f8eaa52ea9ac4931a4c2d93d2be4c8b0"
+    sha256 cellar: :any,                 arm64_linux:       "2419cb78742501e7c0dc8cc38f136366cf91c28101abd68c581115771188ffe4"
+    sha256 cellar: :any,                 x86_64_linux:      "eb807b9ec4a9424876563e3e9cbfa56b1e89f0a44ed6ee5f50059cd00a8dfb69"
   end
 
   depends_on "cmake" => :build
@@ -58,8 +57,8 @@ class Acronym < Formula
   end
 
   resource "nltk" do
-    url "https://files.pythonhosted.org/packages/e0/e6/fe51d2bb1a3b446f59c5c8165999a9fee208bc346af90a7cbf7657bc0d75/nltk-3.10.3.tar.gz"
-    sha256 "bb9327a461c3811c2fa4900e03840401f2126adfb30c0072827c433bd2444ea4"
+    url "https://files.pythonhosted.org/packages/3a/cb/bbaa9be58e95d21729c6b9194376610230e0755f6de0bf38b6acc0dce079/nltk-3.10.4.tar.gz"
+    sha256 "44679f4e9220abfd496d2c8cdb22f8425ccbe557604f9aa5cacb1c44003dabc1"
   end
 
   resource "pandas" do
@@ -68,8 +67,8 @@ class Acronym < Formula
   end
 
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
-    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+    url "https://files.pythonhosted.org/packages/0e/df/f15f80383f152452d8985b36d95cb8751f901a3e0ff4cd27f7e118f168e2/python_dateutil-3.0.0.tar.gz"
+    sha256 "7ebcb3c29a92f3ceafe79a7a48a5c45677e9e004bbeec5742ac0bbb00560b7a2"
   end
 
   resource "regex" do
@@ -85,6 +84,11 @@ class Acronym < Formula
   resource "tqdm" do
     url "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz"
     sha256 "cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4"
+  end
+
+  resource "tzdata" do
+    url "https://files.pythonhosted.org/packages/d9/68/f1b440335057bfce71b6e50a9d09445aa2ecbd08359a337976627b8409e7/tzdata-2026.5.tar.gz"
+    sha256 "8cc73c0a0bfca7dbfa59235d60b2eff82231dee33f53d206db1acd9173cfc0a7"
   end
 
   # Although the virtualenv_install_with_resources uses the package resources listed above,

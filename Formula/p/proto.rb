@@ -29,8 +29,16 @@ class Proto < Formula
     depends_on "xz"
   end
 
+  allow_network_access! :test
+
+  def openssl = deps.map(&:name).find { |d| d.match?(/^openssl(@\d+(\.\d+)*)?$/) }
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4") if OS.linux?
+    ENV["OPENSSL_DIR"] = formula_opt_prefix(openssl) if OS.linux?
     system "cargo", "install", *std_cargo_args(path: "crates/cli")
     generate_completions_from_executable(bin/"proto", "completions", "--shell")
 

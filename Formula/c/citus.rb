@@ -1,10 +1,9 @@
 class Citus < Formula
   desc "PostgreSQL-based distributed RDBMS"
   homepage "https://www.citusdata.com"
-  url "https://ghfast.top/https://github.com/citusdata/citus/archive/refs/tags/v14.2.0.tar.gz"
-  sha256 "df221da519cea3740b3a538b846ce0ce5bdc082c5f05321f0361b8f5edc57ff7"
+  url "https://ghfast.top/https://github.com/citusdata/citus/archive/refs/tags/v14.3.0.tar.gz"
+  sha256 "1d024dddcf448e553994b07d8def22d6db30dc27388560c98e602721eb6a63f6"
   license "AGPL-3.0-only"
-  revision 1
   head "https://github.com/citusdata/citus.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
@@ -16,11 +15,11 @@ class Citus < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8bc77538903bd9be8c76f248e7cd7a09b77fda341b28b08a5b57a6add9094ae4"
-    sha256 cellar: :any, arm64_tahoe:       "72d29c2a3a8bd7d489d164df9b1288c2a66cdde3b555af293e97471d1bb2c5e4"
-    sha256 cellar: :any, arm64_sequoia:     "81c1acd2b3a77a78bb80c27e6fb99ea15a4ef60d2c213eb15582ef0cd8a265d2"
-    sha256 cellar: :any, arm64_linux:       "5c0a2d635595cd9a6237fbd9effd9991b98093f0f78ade6cb381790ad6c34ad7"
-    sha256 cellar: :any, x86_64_linux:      "058e394199a8430c1d33d6a29b52e1617a0ea1512f5021dbede09be2d59ffc0f"
+    sha256 cellar: :any, arm64_golden_gate: "ac819d8486fcf4ed4c4f1613fbcb81d2cd8ca671e83a7c6817ec3a2141af21fa"
+    sha256 cellar: :any, arm64_tahoe:       "1d67147c5193c45df3fd0a093991fdbe3db9bf6c12391e588b97cad453baab0e"
+    sha256 cellar: :any, arm64_sequoia:     "9af430e377cc19d6c71bbe03c000d15a63c77fe967c9e0e24a7d5d6ffefda26a"
+    sha256 cellar: :any, arm64_linux:       "1536fcd453b75224d2f112bdbb7093e08252c908cba21c5e00a1db1d695a9955"
+    sha256 cellar: :any, x86_64_linux:      "c30be7c7927a695633fcf592868e7846ff70c7430d99a52026e4eb1b074df20d"
   end
 
   depends_on "postgresql@17" => [:build, :test]

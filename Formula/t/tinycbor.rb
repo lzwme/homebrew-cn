@@ -1,17 +1,17 @@
 class Tinycbor < Formula
   desc "Concise Binary Object Representation (CBOR) Library"
   homepage "https://github.com/intel/tinycbor"
-  url "https://ghfast.top/https://github.com/intel/tinycbor/archive/refs/tags/v7.0.tar.gz"
-  sha256 "8b1b76001b9f987677f2ea7aa814fba1f810ff6cbbffa62ea3bac612c55b1a56"
+  url "https://ghfast.top/https://github.com/intel/tinycbor/archive/refs/tags/v7.1.tar.gz"
+  sha256 "08c0a4c0a983000806f3d8c1599ec07995789ae49e9a23034db4cbfccc81c2e5"
   license "MIT"
   head "https://github.com/intel/tinycbor.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f44713aa4e533fc1d98eb66deb4831ef7e52b23e743df4863b691b7a9456ae49"
-    sha256 cellar: :any, arm64_tahoe:       "7134cf185af770f50043214055e03a195965f64640a2b0105dd431ef1021c9f7"
-    sha256 cellar: :any, arm64_sequoia:     "e7c4a105988b2cabfdd3f96ffaed4461262a08934f5922a522ceaa1a3e1dbbb8"
-    sha256 cellar: :any, arm64_linux:       "b0236b839d3c5f001aa0430187e74795100db22db489e2d7037545a52878692f"
-    sha256 cellar: :any, x86_64_linux:      "91c850008fe081b286515cb7c36b8e2b4074d81246e4a810caae506827888d8a"
+    sha256 cellar: :any, arm64_golden_gate: "69bb0fb4fe8219830f9da5a9ea943b6712a89f0f11cfab53e161c511b55206a9"
+    sha256 cellar: :any, arm64_tahoe:       "9adda5625b21c4893bcfb858dc936594b3581cba54386aadb6b39a72f9afbb55"
+    sha256 cellar: :any, arm64_sequoia:     "65438bea60631c2f6b8f31d672cefbf84d2cfb6246c224078f8d0f3b029ed60c"
+    sha256 cellar: :any, arm64_linux:       "1bfaf2fa31faf745250e52f2229606c363f076a8803653a0d2ec364a8007402b"
+    sha256 cellar: :any, x86_64_linux:      "cc448c9b0c6e2bc2c0c545a869412c54ba36e4c1921f49dab8ddc02acacdf0a4"
   end
 
   depends_on "cmake" => :build

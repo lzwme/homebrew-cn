@@ -4,6 +4,7 @@ class Proxyfor < Formula
   url "https://ghfast.top/https://github.com/sigoden/proxyfor/archive/refs/tags/v0.5.0.tar.gz"
   sha256 "f4e2340dbce232333ce05473b75f3b1eacf27d1699071b52a9cf420a8c47fd96"
   license any_of: ["Apache-2.0", "MIT"]
+  head "https://github.com/sigoden/proxyfor.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "be6e74644f93ced92deccd6c1c53318f4920df521bace175804a50afb60d55ec"
@@ -18,6 +19,12 @@ class Proxyfor < Formula
   end
 
   depends_on "rust" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

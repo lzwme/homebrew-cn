@@ -10,6 +10,8 @@ class Jenv < Formula
     sha256 cellar: :any_skip_relocation, all: "41e433160ef6ac63f3b9d2d07ace490965d38a4125380e65930d8fd5670592c7"
   end
 
+  deny_network_access!
+
   def install
     libexec.install Dir["*"]
     bin.write_exec_script libexec/"bin/jenv"

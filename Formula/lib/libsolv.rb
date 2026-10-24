@@ -1,8 +1,8 @@
 class Libsolv < Formula
   desc "Library for solving packages and reading repositories"
   homepage "https://github.com/openSUSE/libsolv"
-  url "https://ghfast.top/https://github.com/openSUSE/libsolv/archive/refs/tags/0.7.40.tar.gz"
-  sha256 "30f529ad39d23bdc284b81ea3ed29679162011fc5fb9392635db0b4d1c8e3511"
+  url "https://ghfast.top/https://github.com/openSUSE/libsolv/archive/refs/tags/0.7.41.tar.gz"
+  sha256 "38b4ee1924f8bd1ec0f6b2ec147e4c54c6deac132db5f90b4214b43ccd32fdd6"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,11 +11,11 @@ class Libsolv < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e91e7d84e5bd0b42544fbd0070c9066644a3a8e1b3a168bdd8ad20bfe21f3fc0"
-    sha256 cellar: :any, arm64_tahoe:       "1c138aa288008e33c7d9dd1c006dc3248da8d684f92ea11a2ec489168f994889"
-    sha256 cellar: :any, arm64_sequoia:     "1247aaf9aa468e31fa43f173d64ce07b3fbf9e8a0a98f2b6369171d290af8b94"
-    sha256 cellar: :any, arm64_linux:       "960c9f4ee0d7f64ac5f567e229b68819f8e5275fa252cef162a4b163767ac074"
-    sha256 cellar: :any, x86_64_linux:      "fd2baa871032917426101d6d1f369c066934929b06e709aad69c73968b60371f"
+    sha256 cellar: :any, arm64_golden_gate: "d933d98120851fcb1fac9c504692f7cf75b7671d503d1a787bab8609a4c9b984"
+    sha256 cellar: :any, arm64_tahoe:       "dc1d87aa724eabb7ab33863e237780a69df6abbb428d78fe2c87f20f713f13f7"
+    sha256 cellar: :any, arm64_sequoia:     "0811abf8219416237a8844c232b9ca687b6e61e60659bb8a1bf11b24a8fad047"
+    sha256 cellar: :any, arm64_linux:       "80095151a802734054c80f180da6c7684cec7926bfc8f88207f341b1e720c056"
+    sha256 cellar: :any, x86_64_linux:      "bacbac6a30c878bfd1819dcf756f6ce7619fa3533eec3d81c33b391818ff81a4"
   end
 
   depends_on "cmake" => :build

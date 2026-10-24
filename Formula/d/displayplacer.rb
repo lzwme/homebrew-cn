@@ -20,6 +20,8 @@ class Displayplacer < Formula
 
   depends_on :macos
 
+  deny_network_access!
+
   def install
     system "make", "-C", "src"
     bin.install "src/displayplacer"

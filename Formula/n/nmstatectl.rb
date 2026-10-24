@@ -23,6 +23,16 @@ class Nmstatectl < Formula
 
   depends_on "rust" => :build
 
+  allow_network_access! :test
+
+  def fetch
+    cd "rust" do
+      # `rust/Cargo.lock` is ignored
+      system "cargo", "generate-lockfile"
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
+
   def install
     cd "rust" do
       if OS.mac?

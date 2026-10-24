@@ -1,19 +1,17 @@
 class TerraformMcpServer < Formula
   desc "MCP server for Terraform"
   homepage "https://github.com/hashicorp/terraform-mcp-server"
-  url "https://ghfast.top/https://github.com/hashicorp/terraform-mcp-server/archive/refs/tags/v1.3.0.tar.gz"
-  sha256 "6804f0a07c5c3bdf6d24d8c65740c104d543cbabb027f9378abb8ce2aab97af5"
+  url "https://ghfast.top/https://github.com/hashicorp/terraform-mcp-server/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "8c744e2ad553ee37db41b66a0f2dbb6532939c00e17b5f00bd10f5809f6f3990"
   license "MPL-2.0"
   head "https://github.com/hashicorp/terraform-mcp-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c8989b191106074b74f55b6a1d96e1f0b14ad85e100eb5d8e802cfa41e2063fd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "468180403b407351dc1494910f1b3939e88b206c8a66c85e26edaab21acac614"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "468180403b407351dc1494910f1b3939e88b206c8a66c85e26edaab21acac614"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "468180403b407351dc1494910f1b3939e88b206c8a66c85e26edaab21acac614"
-    sha256 cellar: :any_skip_relocation, sonoma:            "740bb8d045cfc08df91c74c3e1feec74b0dd0c0c93730434181f0fa2756bc4ea"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7fc6d0f705fa4624bb0d61ffc3a9a3cd34a22b494b41d292750e23e889f0bf3d"
-    sha256 cellar: :any,                 x86_64_linux:      "0440457e1924118b19b14c364db704ab2c8935b7d5eb32ba084d3446f0710bb1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "43bde70b5a0176e3c97cde0710b392b82cebc7f34028d7e957865e090bd569a1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "43bde70b5a0176e3c97cde0710b392b82cebc7f34028d7e957865e090bd569a1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "43bde70b5a0176e3c97cde0710b392b82cebc7f34028d7e957865e090bd569a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "7e2f08506e098a32a03e8a736f504a61b80f6721e7ad4ede778278c707187337"
+    sha256 cellar: :any,                 x86_64_linux:      "d4c5583d9031f436ecfcc6f68918feeb82bb4941f7c69a1a3cd374d2a3742eb8"
   end
 
   depends_on "go" => :build

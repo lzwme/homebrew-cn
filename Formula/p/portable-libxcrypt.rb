@@ -11,6 +11,8 @@ class PortableLibxcrypt < PortableFormula
     formula "libxcrypt"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *portable_configure_args,
                           *std_configure_args,
@@ -24,7 +26,7 @@ class PortableLibxcrypt < PortableFormula
   end
 
   test do
-    (testpath/"test.c").write <<~EOS
+    (testpath/"test.c").write <<~C
       #include <crypt.h>
       #include <errno.h>
       #include <stdio.h>
@@ -49,7 +51,7 @@ class PortableLibxcrypt < PortableFormula
 
         return 0;
       }
-    EOS
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lcrypt", "-o", "test"
     system "./test"
   end

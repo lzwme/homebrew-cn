@@ -1,8 +1,8 @@
 class GlibNetworking < Formula
   desc "Network related modules for glib"
   homepage "https://gitlab.gnome.org/GNOME/glib-networking"
-  url "https://download.gnome.org/sources/glib-networking/2.90/glib-networking-2.90.0.tar.xz"
-  sha256 "83a75e3d9c36b66ee86d3281c2fc997816101968a5126ba322b2acb9a74dd8c0"
+  url "https://download.gnome.org/sources/glib-networking/2.90/glib-networking-2.90.1.tar.xz"
+  sha256 "ea95636590098355a05e3027579dba1a9a950b05e456b2488ea03d82e4b6c18a"
   license "LGPL-2.1-or-later"
 
   # This regex is intended to avoid the `Gnome` strategy's version filtering
@@ -14,11 +14,11 @@ class GlibNetworking < Formula
   end
 
   bottle do
-    sha256               arm64_golden_gate: "da4332ddddfe5a14ca664b4b851622c6e74899e1c7ec2ceab51017b7628b037a"
-    sha256               arm64_tahoe:       "06c8af940e885e2b499184444d4fd98c7e343ba1dd80ae4c1bcc0e85963d3eb9"
-    sha256               arm64_sequoia:     "9d437295eb3e4af595b0f3722d2733e9659ee764db9fa275004a0b29282112ce"
-    sha256 cellar: :any, arm64_linux:       "716a983f9c64c1f5901754aa2962c53d284ae859ddd3e9ab3822324e59a9a479"
-    sha256 cellar: :any, x86_64_linux:      "4cb5837be1c35bf7b2f59414e67465425f96efa3019b78639fc06543bca4bd1c"
+    sha256               arm64_golden_gate: "d29d9f4eb558298dc6eff44d95783df7729eca49a11ffc79d3e86c8da175d291"
+    sha256               arm64_tahoe:       "91c6c43978f91a348e3e622d117b1f02b46b0ce3ade7d414160819b7d48e67c3"
+    sha256               arm64_sequoia:     "81429551d7888762f6e7fc1d776dd9bbd1b494ca3bea6eae94ff675e06645642"
+    sha256 cellar: :any, arm64_linux:       "a60feae8c630e3c3fa6e7576ff76514c2e816c4856e161febe5dac5d57efb572"
+    sha256 cellar: :any, x86_64_linux:      "d44392d3fe60dd996c2c4b6a955a3f796ad87bd733eb152fcdddb7a405925479"
   end
 
   depends_on "meson" => :build

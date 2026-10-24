@@ -4,6 +4,7 @@ class Patchpal < Formula
   url "https://gitlab.com/patchpal-ai/patchpal-gui/-/archive/v0.8.1/patchpal-gui-v0.8.1.tar.bz2"
   sha256 "3bee167d923999f6a616ab2025d16e73641638d2237565f8f39eb28d35930c8a"
   license "Apache-2.0"
+  head "https://gitlab.com/patchpal-ai/patchpal-gui.git", branch: "main"
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "82e66e49b716dde47a8ee2cefaae6328b26b0ce54e157f05fe0c9e6b71f64eb9"
@@ -33,6 +34,14 @@ class Patchpal < Formula
 
   on_linux do
     depends_on "xorg-server" => :test
+  end
+
+  deny_network_access!
+
+  def fetch
+    # `Cargo.lock` is ignored
+    system "cargo", "generate-lockfile"
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

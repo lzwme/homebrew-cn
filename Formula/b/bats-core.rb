@@ -14,6 +14,8 @@ class BatsCore < Formula
     sha256 cellar: :any_skip_relocation, all: "3ba6d697b92936bcf8730f783b6c49c13666e2d286ec7e7300d58c0dc35ac502"
   end
 
+  deny_network_access!
+
   def install
     system "./install.sh", prefix
   end

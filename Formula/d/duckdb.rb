@@ -5,21 +5,28 @@ class Duckdb < Formula
       tag:      "v2.0.0",
       revision: "d54cbbe3df17e8e5ce68312f483b4155836112aa"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3c85bb18d505e5c8905aaafe1f74911c94cd1cb9703e6a3364e2e92ff64a0758"
-    sha256 cellar: :any, arm64_tahoe:       "8217143ba8685eafe715f601e711caff36093e0ed5aa962fe1812a2ac2de0482"
-    sha256 cellar: :any, arm64_sequoia:     "447dfe5f62d0ceadadd7de1f6375b441ccf41156537bbd4cb6c04079aa4764e7"
-    sha256 cellar: :any, arm64_linux:       "dfc81e2bf27c206c31adec60a1fe02f50ee87f61217c7f1bec90f7f52baa347f"
-    sha256 cellar: :any, x86_64_linux:      "b4dfec2c6ed0cca0f5e6dc841c2542169a18bb5071da6d20b7556347e9084209"
+    sha256 cellar: :any, arm64_golden_gate: "4b006cf962ebd7866ece8785e60ee5851edd903a224bcd83de91ab5d2dec5784"
+    sha256 cellar: :any, arm64_tahoe:       "6144eed8854d78e66c78bc202e69468ff75d3ded241e6bfa2bb141c9f76f8da2"
+    sha256 cellar: :any, arm64_sequoia:     "dc55e876d1c2af3c8a1929dc823979fd0bc06214b89b51d30b3769b7438a7ebd"
+    sha256 cellar: :any, arm64_linux:       "b57d970696ed476287fc7bd002c23646fe6488735ac17ba1bd6550c93d32bbc6"
+    sha256 cellar: :any, x86_64_linux:      "622a11d549e87cfc1746006ee8c7909db6c6c4a9d3370734173251616a2f0cd8"
   end
 
   depends_on "cmake" => [:build, :test]
   uses_from_macos "python" => :build
 
+  deny_network_access!
+
   def install
-    args = %w[
+    # See https://github.com/duckdb/duckdb/blob/v2.0-cyanoptera/.github/workflows/OSX.yml#L24
+    args = %W[
+      -DOVERRIDE_GIT_DESCRIBE=v#{version}
       -DBUILD_EXTENSIONS='autocomplete;icu;parquet;json'
+      -DLINK_CORE_EXTENSIONS=1
+      -DDUCKDB_CAPABILITIES=httplib;loadable_extensions
       -DENABLE_EXTENSION_AUTOLOADING=1
       -DENABLE_EXTENSION_AUTOINSTALL=1
     ]
@@ -34,6 +41,19 @@ class Duckdb < Formula
   end
 
   test do
+    # a release build must report the tagged version, not a -dev build
+    assert_match "v#{version} ", shell_output("#{bin}/duckdb --version")
+    refute_match "-dev", shell_output("#{bin}/duckdb --version")
+
+    # the extensions named in BUILD_EXTENSIONS must be linked in, not merely built
+    linked_sql = "SELECT extension_name FROM duckdb_extensions() " \
+                 "WHERE install_mode = 'STATICALLY_LINKED' " \
+                 "AND extension_name IN ('autocomplete', 'icu', 'json', 'parquet') ORDER BY 1"
+    assert_equal "autocomplete\nicu\njson\nparquet\n",
+                 shell_output("#{bin}/duckdb -csv -noheader -c \"#{linked_sql}\"")
+    autocomplete_sql = "SELECT suggestion FROM sql_auto_complete('SEL')"
+    assert_match "SELECT", shell_output("#{bin}/duckdb -csv -noheader -c \"#{autocomplete_sql}\"")
+
     sql_commands = <<~SQL
       CREATE TABLE weather (temp INTEGER);
       INSERT INTO weather (temp) VALUES (40), (45), (50);

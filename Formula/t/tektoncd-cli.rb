@@ -1,8 +1,8 @@
 class TektoncdCli < Formula
   desc "CLI for interacting with TektonCD"
   homepage "https://github.com/tektoncd/cli"
-  url "https://ghfast.top/https://github.com/tektoncd/cli/archive/refs/tags/v0.46.1.tar.gz"
-  sha256 "3432cf4ea1f0014305d41d4a703f9c0b7910a1d693b32d82191e07ca35b2337d"
+  url "https://ghfast.top/https://github.com/tektoncd/cli/archive/refs/tags/v0.46.2.tar.gz"
+  sha256 "63485a0d3a3c0b59408c09dc0e5515e9ae95e836e18fa92548c21eaad598d359"
   license "Apache-2.0"
 
   livecheck do
@@ -11,11 +11,11 @@ class TektoncdCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "195ac14574137eeda9a836845bcb843cb92649249b574bd98e2e2bd686360e64"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b3bf579cec871e27ffd81cece6ae2ff177c1b8ecac6a0a5fe8a7a17c6cdaa50b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ec46e096c89f372a47b1f7e0feceb07dd4d2ac72a169e0857be25a62ea773d20"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1aa1234e86f5bde2e9b8c24a26e6108eadcc2437e50111b40be25a2134c6f69c"
-    sha256 cellar: :any,                 x86_64_linux:      "10502913769d6cb3bb737909e583f854d12d96b788e1b954b838ee9bc82565cd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a98297736b72e4f91d2f28011c3813b35e71dc2ad5e0cd510027db2bc301b4d3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "621846a5517f10e57fef96186fcc451fde249586f1e7b98e68149c90c2630080"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "90792397a5252c6f5c39a664279e55aa349978ff90f5f180965212577dc14b1a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "38886b115e2e2be91c7583f2a123f28963ac9893352d32f66a282a240423eb12"
+    sha256 cellar: :any,                 x86_64_linux:      "923de021f94f5f62c60b19115d1a66badeace31ffdf6571fb7845e1d7d1dcb6b"
   end
 
   depends_on "go" => :build

@@ -3,18 +3,17 @@ class Scdl < Formula
 
   desc "Command-line tool to download music from SoundCloud"
   homepage "https://github.com/scdl-org/scdl"
-  url "https://files.pythonhosted.org/packages/bb/c9/e15c273fa32c58dcc6b46fe18fd9ced7bec268c92cc2e62bf6eb8eb508ac/scdl-3.0.8.tar.gz"
-  sha256 "75384808dfd017bf4b7a6363eb6d605fd116e125ceb3f86a3c72e1d0d18bc62f"
+  url "https://files.pythonhosted.org/packages/30/17/b1d278074f9f6fc25db768b1e104cf71991fff42f0836b0cdcb3d1ae2c81/scdl-3.0.9.tar.gz"
+  sha256 "bcd594eab2c1a0d1f40ac0253b262e3b81d8ddc35feb7e89306aa8739ede8d6b"
   license "GPL-2.0-only"
   head "https://github.com/scdl-org/scdl.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6c2c8255dea9a001a01d775507dbca430bee406c8ec0e6817bd37eb89afa82ae"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "25cbdcdb875239546a0aaf373057ecb53b927ff8e74a958c8b3c7bba1239efc7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "56a5dc4b45d1ebba7e2fd84c670038ee7d3d1258c49283107cfe6d272389a659"
-    sha256 cellar: :any,                 arm64_linux:       "0d4e23266466239b2785a3246acea20231f6d8d11297864740cb790553ec92bd"
-    sha256 cellar: :any,                 x86_64_linux:      "f717f29b3c25cf788bc41b4685473320ca1aa9cf375b078a4078f46fe9e44295"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d6c6295c78af2cd0d9b0a34d84a7e49fe6b740a8d4fa44fe70583bbfac25910e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "638f36ed6ed4a655cf3fc98f3e96c5d4abb05ca93dc560dfd6bed60e3f13ca4d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d763746d92bceaebaeb6d3b11e841b17cd0be86ea3c1b2397dc027e6cd9f6d32"
+    sha256 cellar: :any,                 arm64_linux:       "2c4d9334eaecee9d59b6c93cec1c4a278e32192831f284607d870dd706937c69"
+    sha256 cellar: :any,                 x86_64_linux:      "9cd7f6af1bd5f1075d77980703078ec60f5d5265ce1fe638d478926397065be9"
   end
 
   depends_on "certifi" => :no_linkage
@@ -60,8 +59,8 @@ class Scdl < Formula
   end
 
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
-    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+    url "https://files.pythonhosted.org/packages/0e/df/f15f80383f152452d8985b36d95cb8751f901a3e0ff4cd27f7e118f168e2/python_dateutil-3.0.0.tar.gz"
+    sha256 "7ebcb3c29a92f3ceafe79a7a48a5c45677e9e004bbeec5742ac0bbb00560b7a2"
   end
 
   resource "rich" do
@@ -79,9 +78,14 @@ class Scdl < Formula
     sha256 "ce6789f5d7966c38939d52c7fcb326197592c06d68d5585859fa0a4f98c095c9"
   end
 
+  resource "tzdata" do
+    url "https://files.pythonhosted.org/packages/d9/68/f1b440335057bfce71b6e50a9d09445aa2ecbd08359a337976627b8409e7/tzdata-2026.5.tar.gz"
+    sha256 "8cc73c0a0bfca7dbfa59235d60b2eff82231dee33f53d206db1acd9173cfc0a7"
+  end
+
   resource "yt-dlp" do
-    url "https://files.pythonhosted.org/packages/1e/e0/832fa4ca334b766a06933a196066edc3dba37cdb6f14cd98d59bcc69a4b4/yt_dlp-2026.8.19.tar.gz"
-    sha256 "9e213e48cea35c66b378e4447903f118f6392a5fa380a2b6d7070ec86f4e0af1"
+    url "https://files.pythonhosted.org/packages/06/13/d2ea252871826205dc4965cb70e6037ab93697fcabf4feda49fe981f6da0/yt_dlp-2026.10.21.tar.gz"
+    sha256 "cbf748d7d17cd37647c4b9f07b6c25f24384bfd4361407ee5ec519e753d22539"
   end
 
   def install

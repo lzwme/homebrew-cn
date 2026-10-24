@@ -14,6 +14,8 @@ class GitFormatStaged < Formula
 
   uses_from_macos "python"
 
+  deny_network_access!
+
   def install
     rewrite_shebang detected_python_shebang(use_python_from_path: true), "git-format-staged"
     inreplace "git-format-staged", "$VERSION", version.to_s

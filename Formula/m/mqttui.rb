@@ -4,6 +4,7 @@ class Mqttui < Formula
   url "https://ghfast.top/https://github.com/EdJoPaTo/mqttui/archive/refs/tags/v0.24.0.tar.gz"
   sha256 "287de6901f43bf1d879be25acffb02f7601e023afc90b11c8e0504e757a6589f"
   license "GPL-3.0-or-later"
+  head "https://github.com/EdJoPaTo/mqttui.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "673cdabe5d9addcc6fe5b081512d6bca6cf2228b45a49ff09b2dd0d17d8ce577"
@@ -16,6 +17,12 @@ class Mqttui < Formula
   end
 
   depends_on "rust" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

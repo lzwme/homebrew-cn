@@ -1,10 +1,19 @@
 class Xmrig < Formula
   desc "Monero (XMR) CPU miner"
   homepage "https://xmrig.com/"
-  url "https://ghfast.top/https://github.com/xmrig/xmrig/archive/refs/tags/v6.26.0.tar.gz"
-  sha256 "5005144e78571f26586410c2b2ede2b0c72afe22f97f1708ea24cfb253c3939b"
   license "GPL-3.0-or-later"
   head "https://github.com/xmrig/xmrig.git", branch: "dev"
+
+  stable do
+    url "https://ghfast.top/https://github.com/xmrig/xmrig/archive/refs/tags/v6.26.0.tar.gz"
+    sha256 "5005144e78571f26586410c2b2ede2b0c72afe22f97f1708ea24cfb253c3939b"
+
+    patch do
+      url "https://github.com/xmrig/xmrig/commit/2c86216a5ce816237c923e6057c5bc9aaa5387c2.patch?full_index=1"
+      sha256 "abbd10046ae5db3df2712072fc49b8569daeff68e797e2b4acd1e382257c52fe"
+      type :backport
+    end
+  end
 
   livecheck do
     url :stable
@@ -12,19 +21,18 @@ class Xmrig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "e23e6ab960024205e463748af2410c559c71ebf6e9f258712bd68cd34ac9eead"
-    sha256 cellar: :any,                 arm64_tahoe:       "692f6ffb157058a5aaa59129c0d89bc74092c983c3b6b3a01af358f6727feb2f"
-    sha256 cellar: :any,                 arm64_sequoia:     "42d39fb1d004624f28b37d5b4b8c83346872bbdb6e3b377b4fcead6a1392d5f3"
-    sha256 cellar: :any,                 arm64_sonoma:      "f5cd258c8fb7cba3df39ee774010fc39a6eb3942a6f57e3e42aa19da9929aeb0"
-    sha256 cellar: :any,                 sonoma:            "174150b95684a5c1028b8e357b1ee237bd6a8f05fe0449272ced4890b052661d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "739a3ddf564aa207c96c05746aeed50a8b7dd9497adf9572e044984f2d5d52b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "eb396eb41ae6942456d4aacef16ae8d0fb7a3e3b348e6406ec36f2cdd3dc8205"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "91fc0ca2c443b2bdde0cc8f6158cb54f498b7a614d7de191715fe989165c0d48"
+    sha256 cellar: :any, arm64_tahoe:       "cce70671130a53d2d89a41c07846fb11fa6c506a87933addae4aa25fcb0b303c"
+    sha256 cellar: :any, arm64_sequoia:     "85303f795b0068bcfab2e29738b284f89641b1fb71b618b4596554cdcb61aca2"
+    sha256 cellar: :any, arm64_linux:       "874fa7484247af7893a72540bb4721367104a8a116305f0d774f5d943ac1a772"
+    sha256 cellar: :any, x86_64_linux:      "8c84e849a137fd3106e0acce83290d0127f0f899adb5e313aa6bccfeb5445846"
   end
 
   depends_on "cmake" => :build
   depends_on "hwloc"
   depends_on "libuv"
-  depends_on "openssl@3" # TODO: OpenSSL 4 PR - https://github.com/xmrig/xmrig/pull/3808
+  depends_on "openssl@4"
 
   def install
     # Use shared OpenSSL on macOS. In cmake/OpenSSL.cmake:

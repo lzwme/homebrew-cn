@@ -22,6 +22,8 @@ class Cliclick < Formula
 
   depends_on :macos
 
+  deny_network_access!
+
   def install
     # Uses obsolete CGWindowListCreateImage and open PR doesn't work
     # Issue ref: https://github.com/BlueM/cliclick/issues/178

@@ -20,6 +20,15 @@ class Xcodes < Formula
 
   uses_from_macos "swift"
 
+  # `test do` block fetches the list of available Xcode versions
+  allow_network_access! :test
+
+  def fetch
+    # SwiftPM tries to apply its own sandbox, which cannot nest inside the
+    # build sandbox; Homebrew's sandbox still confines the whole process.
+    system "swift", "package", "resolve", "--disable-sandbox"
+  end
+
   def install
     system "swift", "build", *std_swift_args
     bin.install ".build/release/xcodes"

@@ -1,18 +1,17 @@
 class SoftServe < Formula
   desc "Mighty, self-hostable Git server for the command-line"
   homepage "https://github.com/charmbracelet/soft-serve"
-  url "https://ghfast.top/https://github.com/charmbracelet/soft-serve/releases/download/v0.12.3/soft-serve-0.12.3.tar.gz"
-  sha256 "87322bb76f691475f2ca1c5787481e738f0eff87f564417019e12333b71591b5"
+  url "https://ghfast.top/https://github.com/charmbracelet/soft-serve/releases/download/v0.12.4/soft-serve-0.12.4.tar.gz"
+  sha256 "5c6d2668ac06aeda8c6e8c0eaf19c4ef33557869426a187ec8e9b6e0350ba400"
   license "MIT"
   head "https://github.com/charmbracelet/soft-serve.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cd6ba5b0d65601554d12fb60a2bcf7336223875539f0bc3173de13b54c4a5882"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "faf41f54c5439d3828db70fcfddc21b0955d8f5a3ef465675b9a6e4559154f6a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cb54ea4504971f6a6dc7f59a51ccf4bf999f1e697a000553a41ec09b0fa131ef"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "fb37fa67fe12d6dfd52412c1fe6f5be4cfb79cd761eefb35d3881b97e0625602"
-    sha256 cellar: :any,                 x86_64_linux:      "dad6677fbfa8ce06563c7cc29757e30cb7163b536211b52bf08f6b31bf27b84b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1596e4fa46f393a685b33319f7cffe2b0fda6effb43f4f6d2bcb0a65e0bb7037"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2cb708ab9c4149c9e9b9ee91a31b337beb1807725b1fbe0fff8ffada3ac80d5b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "879a8193a2f739b7a1d1d84b5660513f8454df7f73960f823f0b53a5c7d9b886"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "d3367920e4fd69d1a8da6ef6f518942b69fd1410c240864068b92c189a5c8981"
+    sha256 cellar: :any,                 x86_64_linux:      "89a9dae030949afaef854735de030aa34bcf216008f60fe2f655d3fb05e73446"
   end
 
   depends_on "go" => :build

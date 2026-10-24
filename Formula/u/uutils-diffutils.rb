@@ -1,19 +1,17 @@
 class UutilsDiffutils < Formula
   desc "Cross-platform Rust rewrite of the GNU diffutils"
   homepage "https://uutils.github.io/diffutils/"
-  url "https://ghfast.top/https://github.com/uutils/diffutils/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "4c05d236ebddef7738446980a59cd13521b6990ea02242db6b32321dd93853ca"
+  url "https://ghfast.top/https://github.com/uutils/diffutils/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "74f9c60ae86a63433bc82190e473b943057153d63f6ad39e646cc84350a3d9fa"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/uutils/diffutils.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9bd533d95769ebd2087968acf32cd3277cba8caf992cec6d9721503a45cf608b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3335444221ff7d6756894ed48088e1a5b1c702699bb903f6631b8141ca384618"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "16b1308ebadbc4934d36a3b2a1a4394abc1534aefa2d7255a18d85d9e6bd7cdd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0a9e4412033cc45d68bd1757e7349199c58c91b585c272386321a475ea5fc0d1"
-    sha256 cellar: :any_skip_relocation, sonoma:            "4d75c01d3d68f9fca442a8586c12d20928d5c7f04996ac3f1d1f23206a746d62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c96ae075a0ecf59313598b7c69f22cc41c3dbfd66b43d76c0813c35eb0a01d1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2d1e9f3d5321efbd029288b90b287d8321ffc29e8dde1dbb203ae8a67db56bbf"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1b99f078a13698d9ed06a58ba269ced21ce3551a7f663ca064b8209054858521"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5689d88d3ec393f1eca17f414d633012cd044fa3da32ea96b3865e6135e2a31b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "63525ac11be40a238d06287094494f56603bb8e64dba9c87dcbd2aef80fe041e"
+    sha256 cellar: :any,                 arm64_linux:       "a2094f9bfcff654710eb30e076aca2921943719f8cc52db2b151d067c1bbbd5b"
+    sha256 cellar: :any,                 x86_64_linux:      "52a32466d9aa4d6c384904133d00ba3efa5a8ce204b162d52fac2e990690aea1"
   end
 
   depends_on "rust" => :build

@@ -25,10 +25,18 @@ class Pkgx < Formula
     depends_on "openssl@4" => :build
   end
 
+  allow_network_access! :test
+
+  def openssl = deps.map(&:name).find { |d| d.match?(/^openssl(@\d+(\.\d+)*)?$/) }
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["LIBSQLITE3_SYS_USE_PKG_CONFIG"] = "1"
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4") if OS.linux?
+    ENV["OPENSSL_DIR"] = formula_opt_prefix(openssl) if OS.linux?
 
     system "cargo", "install", *std_cargo_args(path: "crates/cli")
   end

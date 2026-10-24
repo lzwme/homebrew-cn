@@ -1,8 +1,8 @@
 class AwsIamAuthenticator < Formula
   desc "Use AWS IAM credentials to authenticate to Kubernetes"
   homepage "https://github.com/kubernetes-sigs/aws-iam-authenticator"
-  url "https://ghfast.top/https://github.com/kubernetes-sigs/aws-iam-authenticator/archive/refs/tags/v0.7.23.tar.gz"
-  sha256 "718bda8a0907fe01540733a4b3bf9770b9cd13e6eb2ed8b41cc2aaed6acb8949"
+  url "https://ghfast.top/https://github.com/kubernetes-sigs/aws-iam-authenticator/archive/refs/tags/v0.7.24.tar.gz"
+  sha256 "388d274decebfe44dcea09e00bb3d11d97feb9b6f3fed5f069452a9c6df05754"
   license "Apache-2.0"
   head "https://github.com/kubernetes-sigs/aws-iam-authenticator.git", branch: "master"
 
@@ -16,11 +16,11 @@ class AwsIamAuthenticator < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e6ee8e0fa1cec0c5e86864354d959d8f4884b3353abdb9a20d9025bce8705ebe"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e4ff2e4a2cdef577619a78b5a943b0870a213058d3edaa3bf920b577c6d9095b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6305d93b31b7deea9f99976586d985c6b7bfd07e4bc583b74f7d68cd957d396e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "f88471789f1500b106f36f54e826d0366d7c0980d342ae5c1f23497d6ef12b56"
-    sha256 cellar: :any,                 x86_64_linux:      "7fb049040f6774f41d564b95c96b45100b8c073af46e9f27e9ecc3755bf687a1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "75ae15d50b6c4d41d993ff0431aa43a7f4a05b80ec9a11a1fe657f024c60984d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b01e322a4fa25e1c12d3829f3fdac435eb38b56eef2c2cc5ac3e8d9365557295"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "822e7574ca90f40a35574309a1c9721360d5e9d5be7ca0d8e7090bb709d9d608"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "66cb1f11fda974993f28d83af7fc85abc987e7f2696e761e00f965293a5a9a5d"
+    sha256 cellar: :any,                 x86_64_linux:      "c2a2d2e9fd6dcfe58c996f8306adda54b89a58d9401c6448060cd2e4cd7acc63"
   end
 
   depends_on "go" => :build
