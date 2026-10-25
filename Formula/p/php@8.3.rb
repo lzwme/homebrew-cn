@@ -28,6 +28,7 @@ class PhpAT83 < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
+  revision 1
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -35,11 +36,11 @@ class PhpAT83 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "615bb8ce9e9e6f8671153b021510f6b8250d55f285c8c8479eb75ec176e235e1"
-    sha256 arm64_tahoe:       "e383216d567f46c09a1616704cc858d02184c48fa814eb332f8e76e97fc2fd99"
-    sha256 arm64_sequoia:     "8051a4db1336756a10891b7c168affdef89aa5cf89ca6401de25e554a0a55e30"
-    sha256 arm64_linux:       "760af98c05b22226d39b60953d2c39487a00bf11d886dc8eaa6faf81f2e27ec6"
-    sha256 x86_64_linux:      "640fc495f19eb9eecbcafdb19e43967806aabdd760160febac2ff20be54c2ce6"
+    sha256 arm64_golden_gate: "12dd9ff9f703b9a0f5e3050a0648f04a9801a05cd56a60ea77efba2407493a72"
+    sha256 arm64_tahoe:       "4348bc60340ffebe245477b16b8c7857b26f62326a8a36729e16c3bf32b437cf"
+    sha256 arm64_sequoia:     "ffcecf08196eef8b2e13ebdc3bee15fb1e21f87fead0a92d9b040c44affd43e8"
+    sha256 arm64_linux:       "876c631d3e37b339eeb276d5e0f930596cbfdbf76c770f8acfe8e80b48e138c5"
+    sha256 x86_64_linux:      "51fc6bcc409df9acd83900cb1660c470cf3488042a518952353f37b5d9ce3028"
   end
 
   keg_only :versioned_formula
@@ -60,7 +61,7 @@ class PhpAT83 < Formula
   depends_on "freetds"
   depends_on "gd"
   depends_on "gmp"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "krb5"
   depends_on "libpq"
   depends_on "libsodium"

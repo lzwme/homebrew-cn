@@ -1,17 +1,17 @@
 class Oj < Formula
   desc "JSON parser and visualization tool"
   homepage "https://github.com/ohler55/ojg"
-  url "https://ghfast.top/https://github.com/ohler55/ojg/archive/refs/tags/v1.28.7.tar.gz"
-  sha256 "13eb1f62ff75ba7babaeadf182008d0919fb8332836a6b5b2b96f1aa591cb0cb"
+  url "https://ghfast.top/https://github.com/ohler55/ojg/archive/refs/tags/v1.28.8.tar.gz"
+  sha256 "c14476b4d7b9a71a28e74c7c3b7b09b4a3be472de88d055de412f5744ee55d29"
   license "MIT"
   head "https://github.com/ohler55/ojg.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6967a69f5c11ee75c7172a11a1bffa2ebf88beb594dc3db1af41a174b344f9b3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6967a69f5c11ee75c7172a11a1bffa2ebf88beb594dc3db1af41a174b344f9b3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6967a69f5c11ee75c7172a11a1bffa2ebf88beb594dc3db1af41a174b344f9b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "57e950372b57e2b888184eebf9f2a1584edf199a00fd3de9576d407178009a84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f7cef92828a51da65ee5df878bee6672a24cdcc7ac2d9b8216b6fb5bc1bf90de"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "301658560bcd95d8d4cff304e3de80b371a344fae0968296dca6ce6c52f55bbf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "301658560bcd95d8d4cff304e3de80b371a344fae0968296dca6ce6c52f55bbf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "301658560bcd95d8d4cff304e3de80b371a344fae0968296dca6ce6c52f55bbf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "06fe1dbcca6ee5d57e79bed9024b1983d532e40d91e97a3194cfb11e0823f843"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "76ee74e1c273d3a5c7f675f9ea5a3f45cff01c1644f95f72ceafb90151574489"
   end
 
   depends_on "go" => :build

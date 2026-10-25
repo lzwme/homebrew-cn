@@ -4,14 +4,15 @@ class Gspell < Formula
   url "https://download.gnome.org/sources/gspell/1.14/gspell-1.14.5.tar.xz"
   sha256 "788783b56fc3d03283b3aa29302d0b958aeca88835e10b1ec61f19e0efc7e8a4"
   license "LGPL-2.1-or-later"
+  revision 1
   compatibility_version 1
 
   bottle do
-    sha256               arm64_golden_gate: "c8a3319bbf2bce3f9c0f4c0a2a911a956774e272fca80436c271943171fa77e9"
-    sha256               arm64_tahoe:       "d1d3de757b5073ad648fa1caea8176c23f170f63cc61b4eba1687df695b9c6eb"
-    sha256               arm64_sequoia:     "c6036e4f8920b32e95c8b543e9e9c4d856cb53788646a43ad2727e4661953dc5"
-    sha256 cellar: :any, arm64_linux:       "f4899d992bdc1eb53eaac7b51fd4ff903b1d82449d34d5c6d631f7e0516de771"
-    sha256 cellar: :any, x86_64_linux:      "5c99330509611d825f2e1e6c3a2c7b92dde1711668aa11ad3427d2b02b57522d"
+    sha256               arm64_golden_gate: "1825f93c9c2b5929c5e0bbc4848eb1895b3baffba84fa8f128509f90f2cb701a"
+    sha256               arm64_tahoe:       "940d03396bb9d34e7753109c07ce18c4922ac42c974b55b159c43642c16256b8"
+    sha256               arm64_sequoia:     "6df28d492beac4efcf539251afd028887f8e68bf1bce3792d22555aaeba0a241"
+    sha256 cellar: :any, arm64_linux:       "74ee00300a2897d905b7b4b6a395de80036e60740a20da943a0f8d9604f505ee"
+    sha256 cellar: :any, x86_64_linux:      "aa3f9766d6624c5a3891b0ebd32a474141b52a5470253ad7433d863b3c96a06f"
   end
 
   depends_on "gobject-introspection" => :build
@@ -27,7 +28,7 @@ class Gspell < Formula
   depends_on "glib"
   depends_on "gtk+3"
   depends_on "harfbuzz"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "pango"
 
   on_macos do

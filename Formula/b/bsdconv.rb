@@ -1,25 +1,17 @@
 class Bsdconv < Formula
   desc "Charset/encoding converter library"
   homepage "https://github.com/buganini/bsdconv"
-  url "https://ghfast.top/https://github.com/buganini/bsdconv/archive/refs/tags/11.6.tar.gz"
-  sha256 "e856e24474deb3731ac059a96af0078ba951895f2cb3b31f125148a29cc32b70"
+  url "https://ghfast.top/https://github.com/buganini/bsdconv/archive/refs/tags/11.7.tar.gz"
+  sha256 "c7ce9b7fd5a80f5da36dfbf2b49ca86f67088b006d26f708fcc1112b7c1feafc"
   license "BSD-2-Clause"
   head "https://github.com/buganini/bsdconv.git", branch: "master"
 
   bottle do
-    sha256 arm64_golden_gate: "3467173cc052c4a2682e0b355a2d0f5895b8a62754191fecfbfa711fbd0fb9af"
-    sha256 arm64_tahoe:       "4975475d7d550693334c6abef8a0c8c1ee3f87552e3310f333f6a7e3b1548240"
-    sha256 arm64_sequoia:     "eb27911fad713a1d8d36146105cb0abffcf7a6c78bdd358c09e5ff64c207e3fd"
-    sha256 arm64_sonoma:      "d5f2086f8915426931817985ce3a3b379b4cac7ba2c31ea1b8ba69f46a51ebb2"
-    sha256 arm64_ventura:     "3677f1c3ddd940126cdbaef44ea54ee40e8912572886d490e75139dd1950e268"
-    sha256 arm64_monterey:    "bc26b770aa6622c467bb6adb345593c59cee51d1071211dd5acc913b4f0932c8"
-    sha256 arm64_big_sur:     "92a2e9b7e7389c00556c577f05e2e7d6ff39919d62153fb07dd98df8ba6347ab"
-    sha256 sonoma:            "6577f7dfca8ee141a9817219d6305b3f983ffeb11e2da5a3ab49d1834286356a"
-    sha256 ventura:           "1021dc605aa738c62277f0c5eee99044daeb20111ce08360b827395fd088f779"
-    sha256 monterey:          "1e695c9018c174f1dc39d4205e26a507acd12f789733c5c76608f5ceef92a2b4"
-    sha256 big_sur:           "18fa8aff61b229d34b05516953d49aa807edb4f2231108e84bbe5c4847aac9e0"
-    sha256 arm64_linux:       "2be08396cd20f1a195b1f1322e48fb636b76ab7d484c28790578286dcbaf011d"
-    sha256 x86_64_linux:      "a77ffb5b4b404f82c6dcaa52eb3f63e23931e93782a3b179e873f47628673213"
+    sha256 arm64_golden_gate: "5575183c423948462b572cf268e94ee0017a849807d0f2ee4f50d121343081c6"
+    sha256 arm64_tahoe:       "aac51740b043500e07a2cc52122aa02afa449eea3f015cb4cf1c3ee8ca55c0ba"
+    sha256 arm64_sequoia:     "3d4c10c2d81097ebcdd0b6ce6626fcbcca09e824f4c0233f2ae0287f5c3329e5"
+    sha256 arm64_linux:       "794b8f437ad88d9363545192960d2e330c6454586a5c7620730bc0623f75b7b4"
+    sha256 x86_64_linux:      "15695e87a50300769dc59b25751ddcdb2ecd4289ffbcaccf54229865f39209c2"
   end
 
   def install

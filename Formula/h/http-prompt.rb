@@ -6,16 +6,15 @@ class HttpPrompt < Formula
   url "https://files.pythonhosted.org/packages/bf/e2/bc5b0df107afcac65fde7015df48cbe9b4d877d1d0818203544ed1a41d4c/http-prompt-2.1.0.tar.gz"
   sha256 "eee71a00fed0b8a2a35bb338b269be7a20e8a1a6f6465a65561d76a21521e7f3"
   license "MIT"
-  revision 21
+  revision 22
   head "https://github.com/httpie/http-prompt.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "5b599bf557ae5259888a78bf672c2e570236a7deb458e3197b44c6cd7016f84c"
-    sha256 cellar: :any, arm64_tahoe:       "2bdb02efa05ac69bc6abe38be6a298ce5e2ea212ea415c35f4a6a7d41d8afbde"
-    sha256 cellar: :any, arm64_sequoia:     "2221c387f0fb2acf5ddbf83df0a9b505717e1f7920b2ef42b6f041afc4f5788a"
-    sha256 cellar: :any, arm64_linux:       "5972f533553a3e3c18194acd4f0d73cb39c9ab30e880f00142038d3a858dd3ea"
-    sha256 cellar: :any, x86_64_linux:      "9b3e646c5893c3ec57fd1ffea1900a714329482b565bcf2a1edf295e40636d8b"
+    sha256 cellar: :any, arm64_golden_gate: "cf557ac9e70a76b9acc3fcadac64f959eaeade9ad155927c59cbac646d61c619"
+    sha256 cellar: :any, arm64_tahoe:       "3110e32a38e1f7cf1a97ca03dbccaf198c624f151b8862cbe6d17033589b55e8"
+    sha256 cellar: :any, arm64_sequoia:     "3f9e1624b4a615a25388de78cf4bbe825a4126d9a5d2f0f7c413ab20a8cdc97c"
+    sha256 cellar: :any, arm64_linux:       "49e5c5e45e4c8ef0b0ced6508656671fcf2cf176093bebda9874eeb15e8dd48d"
+    sha256 cellar: :any, x86_64_linux:      "0f236b4b44962c619492989de18d85efaba75fa9fbff72461889fddc59d7486c"
   end
 
   depends_on "certifi" => :no_linkage
@@ -110,8 +109,8 @@ class HttpPrompt < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "six" do
@@ -125,8 +124,8 @@ class HttpPrompt < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
-    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
+    url "https://files.pythonhosted.org/packages/69/4a/82d61476a1ccc20d43d0805724c5de4baa4971131a8db1816705ef53fe16/wcwidth-0.9.3.tar.gz"
+    sha256 "dfe7cfbd4cb59db9fe0931bd6091ab4a95b3acc5d56bfb50fa9fef0ccba5dc5c"
   end
 
   def install

@@ -7,6 +7,11 @@ class Ndpi < Formula
   compatibility_version 1
   head "https://github.com/ntop/nDPI.git", branch: "dev"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(:?\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "06db5ee2b09c176040edca83d1e7ac2d32af4b87404393f43597588af38b11b7"
     sha256 cellar: :any, arm64_tahoe:       "cf86686ce0f370748f00b3de4919977761898452304852d66defdb96e89d05a4"
@@ -23,6 +28,8 @@ class Ndpi < Formula
   depends_on "json-c"
 
   uses_from_macos "libpcap"
+
+  deny_network_access!
 
   def install
     system "./autogen.sh"

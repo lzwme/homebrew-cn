@@ -4,6 +4,7 @@ class Posting < Formula
   desc "Modern API client that lives in your terminal"
   homepage "https://github.com/darrenburns/posting"
   license "Apache-2.0"
+  revision 1
 
   stable do
     url "https://ghfast.top/https://github.com/darrenburns/posting/archive/refs/tags/2.11.2.tar.gz"
@@ -21,11 +22,11 @@ class Posting < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "94bbdbca89ec9b49036e323829991fac296c507da0ee6e96e2dabcbc314ad9c4"
-    sha256 cellar: :any, arm64_tahoe:       "e418ea9903f008cdb4bd2a9c04528c4adc56c31774f6288bdfdf5847eff6a47b"
-    sha256 cellar: :any, arm64_sequoia:     "35338b638b18d6c1da9d25f726e735d26dc0db6d5f972f7571a563a7a712574b"
-    sha256 cellar: :any, arm64_linux:       "3a909fc72b0d4790ac81e6d8a6648cafc3ffc7a190ee1b6e1dcbc4387e05edd2"
-    sha256 cellar: :any, x86_64_linux:      "84edfd72ef6f95d829f2fcac05a1a12d413659618e52d4a825333387b62c087a"
+    sha256 cellar: :any, arm64_golden_gate: "6c38c2876835e54b43bfc9a04afd9e0f1d5c2d88737d53dcc9244255db220e15"
+    sha256 cellar: :any, arm64_tahoe:       "a15cd53648cfeccb72fbdab061b60865f6f3cad3bf10c89c37939af76813d578"
+    sha256 cellar: :any, arm64_sequoia:     "3005489926ed6622294bdcbbfb7e6aafe1050bae6e6b10f63fafc7ca1adfe8d4"
+    sha256 cellar: :any, arm64_linux:       "e439181be3e959e3747619c143b86f6cd672e21ca9e89220148cca2812ab0841"
+    sha256 cellar: :any, x86_64_linux:      "3aad328ac0ba2e1c74cade51b9b45a8c8b8052ac6dd8e99e7bb8afcc48ff458d"
   end
 
   head do
@@ -41,8 +42,8 @@ class Posting < Formula
   end
 
   resource "brotli" do
-    url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
-    sha256 "e310f77e41941c13340a95976fe66a8a95b01e783d430eeaf7a2f87e0a57dd0a"
+    url "https://files.pythonhosted.org/packages/cf/81/1546c983678a9b4e77cb4718eaedd1b2caf24a6cdbf1eb8775938d22aff7/brotli-1.2.1.tar.gz"
+    sha256 "02b2f7b5a83485efe448a44ddf7983def05c3bb1dcf917d4f7154070260e13de"
   end
 
   resource "click" do
@@ -106,8 +107,8 @@ class Posting < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/2e/3b/a5d2294799b53b448319978cfb5bd139d5a9d45e862af91661614f14c922/pydantic_settings-2.16.0.tar.gz"
-    sha256 "5b6c578049ede4db0e2ef3b4eaa4ad4069cfa9211f83fb38df899dfade50a614"
+    url "https://files.pythonhosted.org/packages/05/ca/7817b4bf0c4b15c6a6ab8cdf4cb96c268335a8ca2f525de93b6ebe4c7d28/pydantic_settings-2.16.1.tar.gz"
+    sha256 "aff602a1886338c2df3d1e958e2193a8dc33cec75b91f202e83fd98484b4b0da"
   end
 
   resource "pygments" do

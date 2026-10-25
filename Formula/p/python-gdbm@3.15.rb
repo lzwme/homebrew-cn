@@ -1,8 +1,8 @@
 class PythonGdbmAT315 < Formula
   desc "Python interface to gdbm"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.15.0/Python-3.15.0.tgz"
-  sha256 "438596cac081036d3c1d532ab7e7335eeb35567bc961749a0d5797176db0db68"
+  url "https://www.python.org/ftp/python/3.15.1/Python-3.15.1.tgz"
+  sha256 "133d85e118dc32621cda1d9d1d7d9694fe0c5e82bc339a7d528c109fe8b36387"
   license "Python-2.0"
 
   livecheck do
@@ -10,11 +10,11 @@ class PythonGdbmAT315 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e06f2187e21c0019fe2a0cc168d51c50f2d9bbe27e53878775e529a831d01771"
-    sha256 cellar: :any, arm64_tahoe:       "6c9455d0be8374e0de2b1a479a65e645cf71635409a19844be3796fa45099bd9"
-    sha256 cellar: :any, arm64_sequoia:     "448f24d71800f9336daa9db0f99246997aebf2e1b5732344d549f46553660305"
-    sha256               arm64_linux:       "b8d3b098e2c54d9ad5cfc3447cdd770d1b7e84f79130c673f3be6cd42c105f5e"
-    sha256               x86_64_linux:      "f04a8a7dce5723f58726d7ad84170573bc2768217643f716542f7b670adfa762"
+    sha256 cellar: :any, arm64_golden_gate: "508034f773b2debb7a996e35faa3d128841e0d85ffb2b327a4130fa054bf7cdf"
+    sha256 cellar: :any, arm64_tahoe:       "cbab3d3893dc47a5dfedb8b2b4d2967bef370e071ea5368f241204cdc9f6f362"
+    sha256 cellar: :any, arm64_sequoia:     "702c7f799d3c67e35ea3c4b674f821f668d56cd02493ed17435df917993c4863"
+    sha256               arm64_linux:       "8075fbc93f4a5e998b03ac0d462b4f96b70db8693c440ed698263869dddf38b1"
+    sha256               x86_64_linux:      "56487ecbfc4a7c84123f573531127abb8c24199321a67b08f48b15d86452d9ae"
   end
 
   # https://devguide.python.org/versions/#versions

@@ -34,7 +34,7 @@ class Mdcat < Formula
     system "cargo", "install", *std_cargo_args
 
     # https://github.com/BIRSAx2/mdcat?tab=readme-ov-file#packaging
-    generate_completions_from_executable(bin/"mdcat", "--completions")
+    generate_completions_from_executable(bin/"mdcat", shell_parameter_format: "--completions=")
     system "asciidoctor", "-b", "manpage", "-a", "reproducible", "-o", "mdcat.1", "mdcat.1.adoc"
     man1.install Utils::Gzip.compress("mdcat.1")
   end

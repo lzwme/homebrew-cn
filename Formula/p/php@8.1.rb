@@ -8,12 +8,12 @@ class PhpAT81 < Formula
   license "PHP-3.01"
 
   bottle do
-    rebuild 2
-    sha256 arm64_golden_gate: "d9a81735163dc0a89d8c702ef5b181f2b0054bd4b786fda4e48a5d5a77f5cec1"
-    sha256 arm64_tahoe:       "aee847e46363f982f8d591bc5e67add5421fff2dd6c29e3ac50d82e103ad457f"
-    sha256 arm64_sequoia:     "378fc7e713eae59285201701166b87ce121c938c7fb9a2b44acf574cbbb1f276"
-    sha256 arm64_linux:       "50fb1b6374116b3a451e84e729d78ea482f9954c802ebcb6adcce562cada767c"
-    sha256 x86_64_linux:      "8f5fbe30d94d718c0d846cc50b25cd007c760f2adffd397bf1ed71f5f6ecc9ba"
+    rebuild 3
+    sha256 arm64_golden_gate: "d2e04a9fab7395d83866c9ee7ec0d264627e3d99149078cb063778f8991a4f58"
+    sha256 arm64_tahoe:       "1298460d0d7fe449932e25e39c934f6fd90b7d03c28f268305b944e81b317bd4"
+    sha256 arm64_sequoia:     "2d20b0ab939507fb0dc7d5120561d2bb4703fdc4abaca49a54b2e29f3f327dce"
+    sha256 arm64_linux:       "c0b7491664cb39a9cc17f9920ae8659289a15e189fe792ab1a713a8cacd3725e"
+    sha256 x86_64_linux:      "355a8405fdbb018c10696ecfe3e28f3f7845162a4f499c3b1893a08d2949e375"
   end
 
   keg_only :versioned_formula
@@ -34,7 +34,7 @@ class PhpAT81 < Formula
   depends_on "freetds"
   depends_on "gd"
   depends_on "gmp"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "krb5"
   depends_on "libpq"
   depends_on "libsodium"

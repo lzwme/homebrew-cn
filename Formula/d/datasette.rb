@@ -6,15 +6,15 @@ class Datasette < Formula
   url "https://files.pythonhosted.org/packages/98/4a/75224122c9cc725b6dcc9466fff8a720c99a2d7b67ce866a82c52a5f2141/datasette-0.65.5.tar.gz"
   sha256 "8d16ab1bf9a2753089cd3cb079045885d440f11267973e89e08e7fecf555264a"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/simonw/datasette.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "3e05ab77d7e4291bc47277dba39c2d8e79b48088711234ab5e08ddf364b29050"
-    sha256 cellar: :any, arm64_tahoe:       "8084224fd4f055d917a7b39016ab3494aacfa4ae8a7aea65ba7eaae8304c2a3c"
-    sha256 cellar: :any, arm64_sequoia:     "4cc8cf7c84e2b515a1d9add3a9d8babfda33ee514339fd58750e188958f8303c"
-    sha256 cellar: :any, arm64_linux:       "fe8e264df8df38ba487cecb38b71340023c0253a970a3973ea3ba89fa4071f17"
-    sha256 cellar: :any, x86_64_linux:      "cfe3f1a32eed8e464bb010a72882d71058caf5f989e2e33b94723cdabfe789d7"
+    sha256 cellar: :any, arm64_golden_gate: "372b056e2a789eff03381cf2220f2cf5a1f87c6d8fd5ecee8181e60ad567080a"
+    sha256 cellar: :any, arm64_tahoe:       "ea16d15ad0c9613adb4d26591f44ad11848d2924089970d6fdb0dfb9903b0f5e"
+    sha256 cellar: :any, arm64_sequoia:     "d324fa35ea58fc89ec06dac6b29ae81830d1972738f8a0e3cdad4eb2c78dc974"
+    sha256 cellar: :any, arm64_linux:       "8592e985c6112f83d53e463847f96137ad961eb2b31f6be8a1bc8ddd8ac917de"
+    sha256 cellar: :any, x86_64_linux:      "af755a6420204a6d7966514c0f6b5d49afa1af046aaf07617d4bc2cae81b54f6"
   end
 
   depends_on "certifi" => :no_linkage
@@ -114,13 +114,13 @@ class Datasette < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/90/a1/d5f9002a70298c64a789779077d8dd90c10aa1f47fe40c86802df874f2a6/platformdirs-4.12.4.tar.gz"
-    sha256 "63743c02414e755de4e31b8f68125c1407495b86c5a006e203c01ff8b9924250"
+    url "https://files.pythonhosted.org/packages/58/e6/d0abbb256b44e6a05748c6942511ff67db8dbb068de0c35b24bf1b395b09/platformdirs-4.13.5.tar.gz"
+    sha256 "05831adf87d392760f4b5c3a0a95579ab5a10b18b9b9bd43680dcb47544788a0"
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
-    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+    url "https://files.pythonhosted.org/packages/bf/db/7fc19e6f2dc92a966727031389fc2e08b558f0f25eb7403c1119ad4713cd/pluggy-1.7.0.tar.gz"
+    sha256 "d1eaa46ebb595891b860ab086b4d09c8588af65ebd4361b8e8f4bb8920b90ba8"
   end
 
   resource "python-multipart" do
@@ -134,8 +134,8 @@ class Datasette < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "typing-extensions" do

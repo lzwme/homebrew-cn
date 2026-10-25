@@ -1,9 +1,9 @@
 class OpensslAT4 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl-library.org"
-  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-4.0.3/openssl-4.0.3.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/openssl-4.0.3.tar.gz"
-  sha256 "325b5c806167c13b40b1ffeadfe0248197c00eccc4cf123ec1e28d2d2fd216d9"
+  url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-4.1.0/openssl-4.1.0.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/openssl-4.1.0.tar.gz"
+  sha256 "50c17baf54cb008f6ce42d50deb4b28050a1aad711636cabd4b241c7e90cc2fd"
   license "Apache-2.0"
 
   livecheck do
@@ -12,11 +12,11 @@ class OpensslAT4 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "cfe1f3ee8ddafdb7f19fe4d4dd600e2b84257df4fa09a169ccb7322d38483f90"
-    sha256 arm64_tahoe:       "39fb74d25429fbb9794cf4327530ba458b97d0000406715270d3b0715bd6ba35"
-    sha256 arm64_sequoia:     "e9968c63732a4aa642c6131f120d0a89a119885f7ce3cfec796ae672369b98a6"
-    sha256 arm64_linux:       "5ab5831952c0fd3b0fe948a2068b04495f8c614e70afe4bbc868a618ef129b1e"
-    sha256 x86_64_linux:      "c046045831b56b72198570373a6010bcb14d39c475d4f10e2e26665abc936e34"
+    sha256 arm64_golden_gate: "d239639f77a275caa217707e126790b3f5f5c86e5bc6e2a996e5df7fdaed44a6"
+    sha256 arm64_tahoe:       "382f63e829b116d5fb9a2b186147e489631b5bbbb06ac0089f795a3fed1085c4"
+    sha256 arm64_sequoia:     "6fcbad388ef13f6f9481e91676e2ec1b49f0a3dbd473e838297a3c8850283978"
+    sha256 arm64_linux:       "e76f5b649d8c593a802fc377a52b2d963807b8a1d79e3e256647f35c4fc9088a"
+    sha256 x86_64_linux:      "4818b19c5662c2ec0c699d5bc8ebddb91f92d799fb91420de26a98fac6ca68c3"
   end
 
   depends_on "ca-certificates" => :no_linkage

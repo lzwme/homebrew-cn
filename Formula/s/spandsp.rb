@@ -1,15 +1,10 @@
 class Spandsp < Formula
   desc "DSP functions library for telephony"
-  homepage "https://www.soft-switch.org/"
-  url "https://www.soft-switch.org/downloads/spandsp/spandsp-0.0.6.tar.gz"
+  homepage "https://web.archive.org/web/20260820112501/https://www.soft-switch.org/"
+  url "https://cdn.netbsd.org/pub/pkgsrc/distfiles/spandsp-0.0.6.tar.gz"
   sha256 "cc053ac67e8ac4bb992f258fd94f275a7872df959f6a87763965feabfdcc9465"
   license "LGPL-2.1-only"
   revision 3
-
-  livecheck do
-    url "https://www.soft-switch.org/downloads/spandsp/"
-    regex(/href=.*?spandsp[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "00247851a608530ff025033866d97a472547249c5ff59e6e29993cde7a8c9d87"
@@ -26,6 +21,9 @@ class Spandsp < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:       "ca858d2c651cb3176d0e89acb9350b584f884238fc4e285cf7d3fa69d45ff23b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "e56ef470947c1215482b5155d62c0c5a6c72485bbea7ce74bf6e8f1d629ab1e1"
   end
+
+  deprecate! date: "2026-10-24", because: :unmaintained
+  disable! date: "2027-04-24", because: :unmaintained
 
   depends_on "libtiff"
 

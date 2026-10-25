@@ -1,14 +1,14 @@
 class Container < Formula
   desc "Create and run Linux containers using lightweight virtual machines"
   homepage "https://apple.github.io/container/documentation/"
-  url "https://ghfast.top/https://github.com/apple/container/archive/refs/tags/1.6.0.tar.gz"
-  sha256 "5a5b66eb9ee55890b781d1236b0af807245378a05f082797c2af6400398f756a"
+  url "https://ghfast.top/https://github.com/apple/container/archive/refs/tags/1.6.1.tar.gz"
+  sha256 "29c95aee960d5346452ef314fd3fdcb527c217ea4298a46bdb315221397f28b5"
   license "Apache-2.0"
   head "https://github.com/apple/container.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "12b1f3decf39019ffda1266ad6519ed615cb793234726bbe612978c1dcbb606d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e5729a7300cc616bc75f5b2583ba4ab3e82b95eca77c18e752917a5dbb04ddb2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c8f98c7e68eb3cf3f40a291b627b46f65f3513090f16620ea23f17ac85625e38"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "97858044165d6da449e75863627a73190dd9f206d9f1019d440f8facb63e7aff"
   end
 
   depends_on xcode: ["26.0", :build]
@@ -40,7 +40,7 @@ class Container < Formula
       "container-runtime-linux" => { source: "RuntimeLinux",     entitlements: true  },
       "machine-apiserver"       => { source: "MachineAPIServer", entitlements: false,
                                      resources: ["init"] },
-      "k8s"                     => { source: "K8s",              entitlements: false,
+      "cluster"                 => { source: "Cluster",          entitlements: false,
                                      resources: ["kindnet.yaml"] },
       "build"                   => { source: "ContainerBuild",   entitlements: false,
                                      binary: "container-build" },

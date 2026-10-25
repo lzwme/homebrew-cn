@@ -6,15 +6,15 @@ class Fanficfare < Formula
   url "https://files.pythonhosted.org/packages/92/24/a394ed6de5daf39237ce371cac34a72cd6936608b278d7568a43ef99c288/fanficfare-4.62.0.tar.gz"
   sha256 "eee865d46b0b863cab470c6c7e60d59e102d25d4cea096ca08491337ab81b69e"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/JimmXinu/FanFicFare.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "1291b98eda99c52263ba1d83b7d3cf523fbba5bfe6d349926b49fd56b24615fe"
-    sha256 cellar: :any, arm64_tahoe:       "3c81959855c0c3c60c64ef0e7ae0ed1c8390c50c446967fe25b34bdbb52fba2e"
-    sha256 cellar: :any, arm64_sequoia:     "0ee111db4d1e41fe97dc6a505b4eb99d99597eaeb64afa411af3dfd68ee8c30a"
-    sha256 cellar: :any, arm64_linux:       "b1df7ad87c033aac3e5d47a5a0ca9febc7434d702a8c6f17239bde8abd70a0f1"
-    sha256 cellar: :any, x86_64_linux:      "6bdafa1002391eeac4513a7f1bbfb6026be57786c008d3787c6cbf0dc460677e"
+    sha256 cellar: :any, arm64_golden_gate: "f565016b058b253dffe548e2c1881b7209f452c0327a51284786ad3fbcb0f0a9"
+    sha256 cellar: :any, arm64_tahoe:       "9049970d90bb3f511014372e12d8f38eb3e4a6e6e0c264d81c96a3b85904869e"
+    sha256 cellar: :any, arm64_sequoia:     "cd6f5ce826b3e3247709c4c7f703a5f82255f3561863d7b76ad910dad7d33220"
+    sha256 cellar: :any, arm64_linux:       "e574cf44f024eaff4b95e19ce154f20e58b30c066e5f3a152eb1ae60132dbf27"
+    sha256 cellar: :any, x86_64_linux:      "0f70d666e8fa2784b037007c6292f5db7b32969889fb7d73333c6b41a854968f"
   end
 
   depends_on "pkgconf" => :build
@@ -26,8 +26,8 @@ class Fanficfare < Formula
                 exclude_packages: "certifi"
 
   resource "apsw" do
-    url "https://files.pythonhosted.org/packages/3b/a3/404d93429ad78385158b277ddd4929137eb279b047d892c24b8d75237119/apsw-3.53.4.0.tar.gz"
-    sha256 "4250fab667cc41c55170028ab095a9d4a4ae66363f4bc0720771c20519702625"
+    url "https://files.pythonhosted.org/packages/84/75/be84a7237ea1af8374c67ff7468053bff538e1591526805c6574b2efef4d/apsw-3.54.1.0.tar.gz"
+    sha256 "d9fd64ed76dc0f3d2265d4aeedb74d678c2ac7dffbd4e8ba05bf9a87aa7c34d3"
   end
 
   resource "beautifulsoup4" do
@@ -36,13 +36,13 @@ class Fanficfare < Formula
   end
 
   resource "brotli" do
-    url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
-    sha256 "e310f77e41941c13340a95976fe66a8a95b01e783d430eeaf7a2f87e0a57dd0a"
+    url "https://files.pythonhosted.org/packages/cf/81/1546c983678a9b4e77cb4718eaedd1b2caf24a6cdbf1eb8775938d22aff7/brotli-1.2.1.tar.gz"
+    sha256 "02b2f7b5a83485efe448a44ddf7983def05c3bb1dcf917d4f7154070260e13de"
   end
 
   resource "chardet" do
-    url "https://files.pythonhosted.org/packages/b1/51/cd61c567092a6cec796144510a68aff158ebfc1df82950a45bae65f28413/chardet-7.6.0.tar.gz"
-    sha256 "93d9df6089ded42ed1fe9f57e272c0b74bd0464d45c0c7d50f09f26f31105c3c"
+    url "https://files.pythonhosted.org/packages/47/92/3d893ac5d338b9a9af34c5b517d77492dcea8a10254254eead4215a96f3f/chardet-7.7.0.tar.gz"
+    sha256 "0ba38a05201b0abf7570c12d8af45c30b2af835bd5cc52bfc7105082eda82c1e"
   end
 
   resource "charset-normalizer" do
@@ -112,8 +112,8 @@ class Fanficfare < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/0e/b9/014459776d0be4dd5f0c196fd2c8dc523a4b817a561667fae4f330b04b48/soupsieve-3.0.1.tar.gz"
-    sha256 "713d5c69f90ef84deffec0b9c6244796575e3c9fc9081cefb96091ce1200a308"
+    url "https://files.pythonhosted.org/packages/19/63/0b6bae54546aed98d72f12d09df57b19a287f01c84d22047fa2e23772ab9/soupsieve-3.0.4.tar.gz"
+    sha256 "924fab84ae21604c19e175e1f39815eb6fa83ba23836e09e9de180925e5bc4c0"
   end
 
   resource "typing-extensions" do

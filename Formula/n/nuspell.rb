@@ -6,18 +6,19 @@ class Nuspell < Formula
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3a71166483fe0953861e5fb2f7653e718df4c2690f4fbfa8c22f8cf08e761394"
-    sha256 cellar: :any, arm64_tahoe:       "8624a623a51789c2db48b03905cf2b9504c75d618afc0a6d757b4135c191eb75"
-    sha256 cellar: :any, arm64_sequoia:     "13f8909f12513600e258f93151ba2db4457c00f1e4be1107313f4d272501c0f1"
-    sha256 cellar: :any, arm64_linux:       "dc4dc178ccdf90df09b929fabbfd11f4483083203f885ee36c528675ba49147e"
-    sha256 cellar: :any, x86_64_linux:      "10fae610b93df585dac48c1f73586995a48ab06774e1a834288200f15405ead9"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "6ce5bc25046ec320f50c92381b0a5281acac6065ac4464d7b4f508b4c4fa78c7"
+    sha256 cellar: :any, arm64_tahoe:       "98356bfbd20766ee9c159949bfa28406842f35845533d5f0c967c4686e2fb1f3"
+    sha256 cellar: :any, arm64_sequoia:     "03ff40e178ddeab40c63f112ff0195bcea199de886b85d0321f19e364be53612"
+    sha256 cellar: :any, arm64_linux:       "f74a91a92da4b11bb8cff11b913fce633a81909581b19bccf93d6ceca9ecdecd"
+    sha256 cellar: :any, x86_64_linux:      "ae6971d94579600eb7735f510e7059c7f7975bab497d335e8820597c79f49237"
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pandoc" => :build
   depends_on "pkgconf" => :test
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
 
   deny_network_access!
 

@@ -26,7 +26,7 @@ class Kondo < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "kondo")
-    generate_completions_from_executable(bin/"kondo", "--completions")
+    generate_completions_from_executable(bin/"kondo", shell_parameter_format: "--completions=")
   end
 
   test do

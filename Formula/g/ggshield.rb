@@ -6,14 +6,15 @@ class Ggshield < Formula
   url "https://files.pythonhosted.org/packages/9b/96/f17606e742f65981bac50bf7edcfa5706e145d597010c913f1a55530ea99/ggshield-1.56.0.tar.gz"
   sha256 "1b0e9c6471e357cb570a0c2f6df46acd7fe462881db6a95f1833cf17cacea92d"
   license "MIT"
+  revision 1
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ba8df01b773ab582cb72a80d70dae6508ac18effc209b26d9068dc480c9fce5c"
-    sha256 cellar: :any, arm64_tahoe:       "f256ef074c0daedb0db6334b8fafd1d15dd583b6514fdb915dfb647873ab2d1d"
-    sha256 cellar: :any, arm64_sequoia:     "ec8cdaacbeb50019302cd77cb0b054c559306a4f5be60e0c9a31797758029a25"
-    sha256 cellar: :any, arm64_linux:       "7a5cf3920e1d14a0d2d6bcff4c00bc6a40b8d71711fd4ee1f3268bb790b4bad6"
-    sha256 cellar: :any, x86_64_linux:      "dd016a1d907b2052e3a58ae8b7daecb4dc9aaeeabd351cea2fc025c259559d17"
+    sha256 cellar: :any, arm64_golden_gate: "90062283220f51de1406c125be351b49a6b8aff40c16c5f5453ea646bf716c84"
+    sha256 cellar: :any, arm64_tahoe:       "39c5ddd80d4d3966cbd14d093a851fec3dcca0f17a18f7eb136b3fc680a735c1"
+    sha256 cellar: :any, arm64_sequoia:     "e858f9683e367ce4f33ca3a824862b2f9f3b6817556fc32d601b449fb44d91df"
+    sha256 cellar: :any, arm64_linux:       "17bf610a02d3680cc6e3ba32a5477c5774055ec8c1ca74e200b51dbb75453795"
+    sha256 cellar: :any, x86_64_linux:      "6f5288a06634cd1af9c4745ae99928f507fa68f751ac7b24f9eec71f600da381"
   end
 
   depends_on "pkgconf" => :build # for `rfc3161_client`
@@ -59,8 +60,8 @@ class Ggshield < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/f4/a9/1af41b37c3279712b22cdc63aac78a52432202b6fe1f9666a2a3d2831fb4/filelock-4.2.0.tar.gz"
-    sha256 "7a60906c75227cf04d0c273afadc8219400f11aeb13cc69591d4f6cdc6c8036e"
+    url "https://files.pythonhosted.org/packages/d8/28/3893324bcadf8f89b1616637468d766af3f625008c0735bf704fdfa86617/filelock-4.2.4.tar.gz"
+    sha256 "c6d8663535e1650ee430507b4ffbac7b464dd64b7647ea0112a9f406499d163d"
   end
 
   resource "h11" do
@@ -164,13 +165,8 @@ class Ggshield < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
-    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
-  end
-
-  resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/a4/9a/23310166d960def5897e91fe20e5b724601b02a22e84ba1f94232c0b7f67/pyasn1-0.6.4.tar.gz"
-    sha256 "9c447d8431c947fe4c8febc4ed9e760bc29011a5b01e5c74b67025bd9fb8ce81"
+    url "https://files.pythonhosted.org/packages/58/e6/d0abbb256b44e6a05748c6942511ff67db8dbb068de0c35b24bf1b395b09/platformdirs-4.13.5.tar.gz"
+    sha256 "05831adf87d392760f4b5c3a0a95579ab5a10b18b9b9bd43680dcb47544788a0"
   end
 
   resource "pygitguardian" do
@@ -186,11 +182,6 @@ class Ggshield < Formula
   resource "pyjwt" do
     url "https://files.pythonhosted.org/packages/43/ea/5194e52748b0da83d71e082d75496eaec6e58f419f5e184786ded517e6a9/pyjwt-2.15.1.tar.gz"
     sha256 "4f259e80cdfb6b3fc18a7de51fd1ef9ec79652f25019bae68975ca2468a34df8"
-  end
-
-  resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/3f/e8/7325d258199b159eb2c03fe32107533e2832e70e63f4fb88a6aa00023201/pyopenssl-26.4.0.tar.gz"
-    sha256 "28dfcce0162b9211413e26dfbfdf1d24317fbeba18fc93c12400a1856b2a0bc7"
   end
 
   resource "python-dotenv" do
@@ -234,18 +225,18 @@ class Ggshield < Formula
   end
 
   resource "securesystemslib" do
-    url "https://files.pythonhosted.org/packages/81/d4/f9323507144693d869f30f13694035438ab6642153b94e3057945cf0584f/securesystemslib-1.5.1.tar.gz"
-    sha256 "4b8d00abd93707ead10b69eb2b8582376a1364de3b0a71077de534c2ef4985e0"
+    url "https://files.pythonhosted.org/packages/6c/b7/68ce74b4c3ab753c2de907d035a4102b4510729393184af3c7bdfee04d18/securesystemslib-1.6.0.tar.gz"
+    sha256 "b16e07c32bb41174c2ee2fb18f478ebe0d52e0e7c1fb085ce89c990452a35977"
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "sigstore" do
-    url "https://files.pythonhosted.org/packages/18/e0/279419065e2d7102413605b3456122adbbccbc42e010b499c7b882fc01f8/sigstore-4.5.0.tar.gz"
-    sha256 "020d3e07f622b2916bf453e66ff6ff0711e1fdc5ab69e8bd8902f71d9fcb316f"
+    url "https://files.pythonhosted.org/packages/bb/26/0561ddc1fcda5a12e577b4716f3e345905fc5e98978def96bc78e2d538ce/sigstore-4.5.1.tar.gz"
+    sha256 "14accda8a7d4ef47cb25b4903829fb10f011048c261a5937724a43d073c4f34d"
   end
 
   resource "sigstore-models" do

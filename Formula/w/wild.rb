@@ -1,18 +1,16 @@
 class Wild < Formula
   desc "Very fast linker for Linux"
   homepage "https://github.com/wild-linker/wild"
-  url "https://ghfast.top/https://github.com/wild-linker/wild/archive/refs/tags/0.10.0.tar.gz"
-  sha256 "99ec83404558d4d0cbde9dd44b8c6fa2a511a2f8bb04a31f54c0929ec4491990"
+  url "https://ghfast.top/https://github.com/wild-linker/wild/archive/refs/tags/0.11.0.tar.gz"
+  sha256 "34d0c66c70b3c4744c548b2b821180d2d578b86eb747cb4a9ed1f4b11a95b337"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a540e84fc49d1dd718331bac3f265002c2b3a18db72a7b906f526501842c97e8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9ab41b1dee478c039b6460075d6ce04996821a459d2ca25336e4b3274dba1501"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f2f9e80db085e85dcfc28aa057f776257b817fa7b8ee46979d67ebdea3514b9c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0cf97fa493f4bc9a8ab64dcda39058384adc9fed7337aa9d54d73e9b34a13970"
-    sha256 cellar: :any_skip_relocation, sonoma:            "64e2c75eafd8a76183d9aa80b20f2ac779de1b4e71a2658791b49f0751777b1a"
-    sha256 cellar: :any,                 arm64_linux:       "ba3a468b4493c82c9ebb6ba8da2e6006d3fd864578dcad51e5e43a650d120769"
-    sha256 cellar: :any,                 x86_64_linux:      "7a92cd557a2bc64dbc543f91bbfb6241386f18ed5f34d6ce0a380bbd89e76f12"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b682eb348fd7f24874e98c9937708bca43f9be40f75819f5f1a3d5fd3c23f584"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d5e1cbcd3c265b8b8bf27fd462a6b02b277992bbdf724f31333f7c8cccca673d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "72eb6b6236db908ff3996af57f3ed0b84b66dae822d6f9a7791e6c06b06400df"
+    sha256 cellar: :any,                 arm64_linux:       "bf9973f7762f6291e134f1ed35fcf9e50a30649c0987ea3a795bebe29cf97221"
+    sha256 cellar: :any,                 x86_64_linux:      "6b36947e6718c9c90e99ab7539e837f231cc104dd7432195b35183ad3eac0d6d"
   end
 
   depends_on "rust" => :build

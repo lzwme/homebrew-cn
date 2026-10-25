@@ -1,9 +1,8 @@
 class Librime < Formula
   desc "Rime Input Method Engine"
   homepage "https://rime.im"
-  url "https://github.com/rime/librime.git",
-      tag:      "1.17.0",
-      revision: "33e78140250125871856cdc5b42ddc6a5fcd3cd4"
+  url "https://ghfast.top/https://github.com/rime/librime/archive/refs/tags/1.17.0.tar.gz"
+  sha256 "a60274da5d8b8a7187e6c7e9ba5023334ed7bdd182535e93c4e96de8cf188377"
   license "BSD-3-Clause"
   revision 2
 
@@ -19,7 +18,6 @@ class Librime < Formula
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
-  depends_on "icu4c@78" => :build
   depends_on "pkgconf" => :build
 
   depends_on "capnp"

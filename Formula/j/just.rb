@@ -30,7 +30,7 @@ class Just < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin/"just", "--completions")
+    generate_completions_from_executable(bin/"just", shell_parameter_format: "--completions=")
     (man1/"just.1").write Utils.safe_popen_read(bin/"just", "--man")
   end
 

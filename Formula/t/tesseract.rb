@@ -4,6 +4,7 @@ class Tesseract < Formula
   url "https://ghfast.top/https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.5.3.tar.gz"
   sha256 "9218e62793116d42a9f6d14cd9348518b27f382096eea3d0f2d1a24616bb5884"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
   head "https://github.com/tesseract-ocr/tesseract.git", branch: "main"
 
@@ -13,12 +14,11 @@ class Tesseract < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "0059a0945a6d5ac2ef57b084eb2bf87666df0040d22a2ba8cf0448a3fd6b06a9"
-    sha256 arm64_tahoe:       "5dc22e82f5c9fe0c466830671388866626a076032e7569bbe6ff6d27f1271599"
-    sha256 arm64_sequoia:     "200b865fec2696d87c27a6273aaf2f870fd0796586ad695ac7b138d9db667f17"
-    sha256 arm64_linux:       "9075db5e294c636408738b0e4e7d9b848ee74736a4bec61ce7eef9257d32815c"
-    sha256 x86_64_linux:      "0aab2fc2d381eb44264e2368359fe514aa27f1e1400bec4e8d0de8de4f9641f0"
+    sha256 arm64_golden_gate: "28b1ec8bc20c7ba5ea65221466d923a559ea7545cfb01b49d98755c97c8c21dc"
+    sha256 arm64_tahoe:       "0c8bcbe7f7f01a3efd9e04eb1252c09e3a68beac94ea78ad555720b7c50e25f0"
+    sha256 arm64_sequoia:     "d4356db8fc84e1ebf65c4b5e9d80857f8e346db44c7d5d566dd858450a7ede5d"
+    sha256 arm64_linux:       "bdd30996a3f45cc8110285efa114907498ed173d12da3ad64413f35f38152c4e"
+    sha256 x86_64_linux:      "2c1f05e3f06997ae0468e81a406505a842f979c982a393a5e83953b4a4bf4f38"
   end
 
   depends_on "autoconf" => :build
@@ -29,7 +29,7 @@ class Tesseract < Formula
   depends_on "fontconfig"
   depends_on "glib"
   depends_on "harfbuzz"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "leptonica"
   depends_on "libarchive"
   depends_on "pango"

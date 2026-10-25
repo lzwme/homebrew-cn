@@ -1,24 +1,24 @@
 class Ccusage < Formula
   desc "CLI tool for analyzing Claude Code usage from local JSONL files"
   homepage "https://github.com/ccusage/ccusage"
-  url "https://ghfast.top/https://github.com/ccusage/ccusage/archive/refs/tags/v20.0.42.tar.gz"
-  sha256 "1e210b99a970370912260cdafe64c8320e70712527d6203c5ee6ee5894c0a130"
+  url "https://ghfast.top/https://github.com/ccusage/ccusage/archive/refs/tags/v20.0.44.tar.gz"
+  sha256 "3f3faa51e437b091c3c85e341cc57c85cb852079689bdd1a83658625a532a938"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "df6275e432ee726bc2912bcfe23b89e91ff45d781f9d2757ce20734b51441d4d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cc22b27369994f51b34872abd58ecc331198894b71db162e8e6ff1c08e2f2146"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dc3cb3f952e9a6f9ef5ae4d0e6371a329501760df583768bbb0a3e027f02912d"
-    sha256 cellar: :any,                 arm64_linux:       "9f1a30bf30564fbf2fc5c35327a5b43768094d6d5e84e321a1c6df25a631aeaa"
-    sha256 cellar: :any,                 x86_64_linux:      "a5765b5b1aa9a3aaeb5f0cded0f600db181dd076beb690e42362b1e5997ecb86"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c2f29f7e5ae853c8d952bc3b0405b24dc44a7bf1528577e8a0649228ad0630cb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6b176fe33e5dd3cad6561e3d2b03a4b5d5fcda8d16e37048bb0f60cde418470d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1f49a177f1f957afab4a6e96209a130973deca8efa9c85916fd23130d203bdab"
+    sha256 cellar: :any,                 arm64_linux:       "f3702e9240d55ff0d58b84c66ae7fb6a2dd0bfd4c2b15a6434c02b7c94b0bfa6"
+    sha256 cellar: :any,                 x86_64_linux:      "c123fb67d0cca67cafe4a03a058034ca7c69201982004dcb2e5be7f76c11ccfb"
   end
 
   depends_on "rust" => :build
 
   resource "litellm-pricing-json" do
-    url "https://ghfast.top/https://raw.githubusercontent.com/BerriAI/litellm/f2118fc7670ba3fa736d9b8f4deef9077a45a720/model_prices_and_context_window.json"
-    version "f2118fc7670ba3fa736d9b8f4deef9077a45a720"
-    sha256 "91da1a98e194e0d7c436aaf970800c8e734d70cc78027cfe314d5b27dfaf9a4c"
+    url "https://ghfast.top/https://raw.githubusercontent.com/BerriAI/litellm/1418c1990fcc403d7598d97832f1272f45049299/model_prices_and_context_window.json"
+    version "1418c1990fcc403d7598d97832f1272f45049299"
+    sha256 "7cebbf93cc81f6cf20763782eb0122020c86e1a7ea164bd53ada49d4dc14a773"
 
     # Fetch the latest available resource
     livecheck do

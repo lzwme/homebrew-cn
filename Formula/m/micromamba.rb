@@ -1,10 +1,9 @@
 class Micromamba < Formula
   desc "Fast Cross-Platform Package Manager"
   homepage "https://github.com/mamba-org/mamba"
-  url "https://ghfast.top/https://github.com/mamba-org/mamba/archive/refs/tags/2.9.0.tar.gz"
-  sha256 "57befdcc985b07f95d1a495569ac249a270c71167d111374ff08443154821e1d"
+  url "https://ghfast.top/https://github.com/mamba-org/mamba/archive/refs/tags/2.10.0.tar.gz"
+  sha256 "396cf6c08f16ecbc0a98b45a3f14469911aa2f6dda9c3b4ca98d010cea017835"
   license "BSD-3-Clause"
-  revision 2
   head "https://github.com/mamba-org/mamba.git", branch: "main"
 
   livecheck do
@@ -15,11 +14,11 @@ class Micromamba < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b921e1a4123b5d875f7099d2f0e4a359611fe3e3bc21ff43da85a179d5dba6b5"
-    sha256 cellar: :any, arm64_tahoe:       "1ce647e2d3c7237c4ccb58b7befde80414a8189eac82a6321cbc92c2623b6a54"
-    sha256 cellar: :any, arm64_sequoia:     "b6626d0f00f659172930bd5754ade99da7668d2fd69689aa9b07ce9ca7f0803b"
-    sha256 cellar: :any, arm64_linux:       "a0cba8e8426dfb0aaabc1a830717014c337746d3f222a4ed731b87d1ebe2844e"
-    sha256 cellar: :any, x86_64_linux:      "5bbb59ebaff3bd5f8f0eadb93c50cab5208a520902474bf51b01b30e666c3096"
+    sha256 cellar: :any, arm64_golden_gate: "eb3316a00933c879150edd9cef87d721ee2debc66301724760bd0f7d0fb176db"
+    sha256 cellar: :any, arm64_tahoe:       "2a3efb4486e348d323b1cd238acaa8ec6627ed4b4e23c5df2f23a9de2a8fb27f"
+    sha256 cellar: :any, arm64_sequoia:     "7653622cd7e01aa4f60f0c4a1c630224fd10987ce0bd31a85ba81dd4143799aa"
+    sha256 cellar: :any, arm64_linux:       "20571b70fbe3c1189b350d94f7d0b43d99310df3168cb221768e1ad05eed1313"
+    sha256 cellar: :any, x86_64_linux:      "7795008297fc390dbd307873b5d2b71ec34b78381d91dcf785aee44e8e4ce542"
   end
 
   depends_on "cli11" => :build
@@ -48,6 +47,7 @@ class Micromamba < Formula
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1600
+    depends_on "howard-hinnant-date"
   end
 
   on_linux do
@@ -57,6 +57,11 @@ class Micromamba < Formula
   fails_with :clang do
     build 1600
     cause "Requires C++23 support for `std::ranges::views::join`"
+  end
+
+  fails_with :gcc do
+    version "13"
+    cause "Requires C++20 `std::chrono::parse`"
   end
 
   def install

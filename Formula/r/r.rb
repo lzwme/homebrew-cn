@@ -4,7 +4,7 @@ class R < Formula
   url "https://cran.r-project.org/src/base/R-4/R-4.6.1.tar.gz"
   sha256 "4da6e61d2c0aac5f14a2e7e432cb5fcc269efe83da4293050ba7f03dff4e2cf4"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   compatibility_version 2
 
   livecheck do
@@ -13,11 +13,11 @@ class R < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "bd222dfaf72eb3b8e653f3b67a379b968c1903f12466b4cb92b2ca59808268ab"
-    sha256 arm64_tahoe:       "94b8f684acee56c66fa4aecb8a8d170845aa096dfe1835462f005d8086ad8208"
-    sha256 arm64_sequoia:     "37d9ebde394e9bfb38447f6a825ee116bb0f12506e29d343023e94f1cfa56ee3"
-    sha256 arm64_linux:       "2a8372e11ee3bff16e5d9cd659ed53299ae67912dfd10be2c67b8f829206c3b1"
-    sha256 x86_64_linux:      "155af9771eb4b13e5e5cba72b9558273833897cd7b45590f94504f7e24e71f57"
+    sha256 arm64_golden_gate: "91a0b1d1ecd2e23f26ec05ba5c5a115093c90e59b5f9a4171de9a72059694fa6"
+    sha256 arm64_tahoe:       "3044efaf3dbfb22d7344cb41124b39d0254383751de40a653cb1c578785f81b9"
+    sha256 arm64_sequoia:     "a08fe9c53006cf9bb0d35b220625391289d2fa81405be0f6802c082b909dc964"
+    sha256 arm64_linux:       "c96e06deff504934f6677d3942855ed8dcec69f90924f35553abcd749c6597cf"
+    sha256 x86_64_linux:      "2c38c6ba6e3939b66a5a3be6b4017ebc20f27148d64b82c5ef82ef44d9ee1611"
   end
 
   depends_on "pkgconf" => :build
@@ -37,6 +37,7 @@ class R < Formula
   uses_from_macos "curl"
 
   on_macos do
+    depends_on "brotli"
     depends_on "fontconfig"
     depends_on "freetype"
     depends_on "gettext"
@@ -50,7 +51,7 @@ class R < Formula
 
   on_linux do
     depends_on "glib"
-    depends_on "icu4c@78"
+    depends_on "icu4c@79"
     depends_on "libtirpc"
     depends_on "libxt"
     depends_on "pango"

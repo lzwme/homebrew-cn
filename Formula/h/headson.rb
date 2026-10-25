@@ -30,7 +30,7 @@ class Headson < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin/"hson", "--completions")
+    generate_completions_from_executable(bin/"hson", shell_parameter_format: "--completions=")
   end
 
   test do

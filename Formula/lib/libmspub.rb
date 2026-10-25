@@ -11,19 +11,18 @@ class Libmspub < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "b52daff1db5aea8316708afcae3f3fd746f4c9ff2d467ef5f30adde323afc52f"
-    sha256 cellar: :any,                 arm64_tahoe:       "b2bbfd06fb757e6407bab304e89c6e13e1b526d4f160a9d7813bffe32bc04a45"
-    sha256 cellar: :any,                 arm64_sequoia:     "6cb1feb1b8ba293ced5dade8a157a6a83c777bc3c478cdcb0d791d4220fc73d5"
-    sha256 cellar: :any,                 arm64_sonoma:      "902118dbfa7cd5bc1a348834c5096448a763c8887c2087abd89de69b7eeeeea4"
-    sha256 cellar: :any,                 sonoma:            "115271b70aae5fa2378379fc8c3871718dc7ef7b8d777ba93b5956fd162fec14"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "524663ef471409834261d0d5920f46edc61de1411845bf46087e36db82bd8e19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "461d9554b4892d5180ea97c0709f74b9ba196b702016db58084a6d3e7ec769b1"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "2d2d887b00c5dc3eeefeae2e46d77bf8fe040965b702bc2d5defdbb0a7fb4999"
+    sha256 cellar: :any, arm64_tahoe:       "9edbd5a611b9ed669cda39d9842df08944f786ccccba4155042850a024508df1"
+    sha256 cellar: :any, arm64_sequoia:     "2c27502c0e1bbcceceddf64ed75d918c5478f8455ebb5fc77a1fe3e36c96df15"
+    sha256 cellar: :any, arm64_linux:       "f781d3ab7663805e0040a89735dae80b07ab28f9bee7e92ebb6db9c626872820"
+    sha256 cellar: :any, x86_64_linux:      "a45a555d1b3164fa73178bc062ff9a2e970936d47d363a554e61a92991911327"
   end
 
   depends_on "boost" => :build
   depends_on "libwpg" => :build
   depends_on "pkgconf" => :build
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "librevenge"
   depends_on "libwpd"
 
@@ -34,6 +33,8 @@ class Libmspub < Formula
     # Commit ref: https://git.libreoffice.org/libmspub/+/698bed839c9129fa7a90ca1b5a33bf777bc028d1%5E%21
     patch :DATA
   end
+
+  deny_network_access!
 
   def install
     # icu4c 75+ needs C++17 and icu4c 76+ needs icu-uc

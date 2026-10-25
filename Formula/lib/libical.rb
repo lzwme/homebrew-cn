@@ -12,18 +12,19 @@ class Libical < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f857f38441b912f1155eea2cff2d96b64a52e0ce07d96e02aabab45d903fd66f"
-    sha256 cellar: :any, arm64_tahoe:       "9c6879f94f004d648c00f4013dee56afc7efd3775c3ebef8bb90f4998ad7dda0"
-    sha256 cellar: :any, arm64_sequoia:     "d5411e173a5470fb9f42645cae053fba8bc8ff027d03c8fa87c28f4091a865d8"
-    sha256 cellar: :any, arm64_linux:       "1ea09e18f2d82cb337fea9d23b45a8263e064dd85b2fdfee25c7b5f2020ae625"
-    sha256 cellar: :any, x86_64_linux:      "4093d940dccab0574c7a6080631ccff0892b8a50831d4fd55dae9b745c137869"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "2629f6d51bb6bd7c24c99f7056f0fc4d856e504dc78fa755c9fd8e5f9f5573b5"
+    sha256 cellar: :any, arm64_tahoe:       "fe51d71d63b2c370c86e21c3f5b38cab6bee34cd5d7b7941205a655edcbfad36"
+    sha256 cellar: :any, arm64_sequoia:     "1da40a7df5157e01229b6cf3ecdd9cc90571a059826777ba3fb76d3fa2c4b1e2"
+    sha256 cellar: :any, arm64_linux:       "2f092214ed70c42bd6d17dd826d478809097578a6dee22755c14f0d03f752a71"
+    sha256 cellar: :any, x86_64_linux:      "93f0223faf90bcf0ab98537c186eca6c3c7a5584c2714144cf2a056a030e50c5"
   end
 
   depends_on "cmake" => :build
   depends_on "gobject-introspection" => :build
   depends_on "pkgconf" => :build
   depends_on "glib"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
 
   uses_from_macos "libxml2"
 

@@ -6,14 +6,15 @@ class GalleryDl < Formula
   url "https://files.pythonhosted.org/packages/4e/7e/3ba52253f4edc121c2e5d4cc1bbc613c29822acd3435eecc54e6308157a5/gallery_dl-1.32.17.tar.gz"
   sha256 "7e49b3140d23b88e020ff24049dfac59edd855d6fdfb11bc725ad44b0335bbb6"
   license "GPL-2.0-only"
+  revision 1
   head "https://codeberg.org/mikf/gallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2343bea0d4405b6aa63ff27cab0c544d8bd86d359e345973f2d47d4056b3cf78"
-    sha256 cellar: :any, arm64_tahoe:       "07210af70cf13f08ff430de66880a6933e9094317ba529d4ada16c78cafa70cd"
-    sha256 cellar: :any, arm64_sequoia:     "0d91966dba93929bc6c42a83e7cae2e5151f8b6925d34280570c6ad89caa011d"
-    sha256 cellar: :any, arm64_linux:       "55f7116cf36536f4e617be6560e7be8668ea7778de208df9ef22541fd0c7c896"
-    sha256 cellar: :any, x86_64_linux:      "4dfc4d37bd6a7068b0113e4b9a966401819adbebccd071d36f238a3db7eea292"
+    sha256 cellar: :any, arm64_golden_gate: "0fce7a04190da6a9964b7e9f5cb211e6ed74c390cdcbae6df5c906115dd41fc1"
+    sha256 cellar: :any, arm64_tahoe:       "2cf20a63c986de6cd0bc31f54573f2675533c18d3d78c612f8aa79760c4d4436"
+    sha256 cellar: :any, arm64_sequoia:     "80ce23e17889679a3ae9577b2613c56e387a29307eb6dc58c2489a5d59250ec4"
+    sha256 cellar: :any, arm64_linux:       "d90471dcdc6e9112290d92dcb68edb34641b9d552a2abe0467579990c9b67cc0"
+    sha256 cellar: :any, x86_64_linux:      "46d0fd93f1af3612312b2f31711b5d2fd62b2c886cbc4169ac1f4edb4db7204b"
   end
 
   depends_on "certifi" => :no_linkage
@@ -27,8 +28,8 @@ class GalleryDl < Formula
                 extra_packages:   "secretstorage"
 
   resource "brotli" do
-    url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
-    sha256 "e310f77e41941c13340a95976fe66a8a95b01e783d430eeaf7a2f87e0a57dd0a"
+    url "https://files.pythonhosted.org/packages/cf/81/1546c983678a9b4e77cb4718eaedd1b2caf24a6cdbf1eb8775938d22aff7/brotli-1.2.1.tar.gz"
+    sha256 "02b2f7b5a83485efe448a44ddf7983def05c3bb1dcf917d4f7154070260e13de"
   end
 
   resource "charset-normalizer" do
@@ -97,8 +98,8 @@ class GalleryDl < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/01/89/3f825ab71c242fffb62ea8fe638741c290f62f8d7aadf8125ff897747af3/websockets-17.2.tar.gz"
-    sha256 "36c2fb94c990cc2545143b12690e2de6c16300f9dbe5b4f33fa300cf57dc8792"
+    url "https://files.pythonhosted.org/packages/30/4b/4692be6d5bf739ed049b3813901c42091f8c054df89d5c089343823dea0d/websockets-17.3.tar.gz"
+    sha256 "1c7dd93a1c9f89297471493674b1fc1d9467cafd45374f2172213046bdb3a329"
   end
 
   resource "yt-dlp-ejs" do

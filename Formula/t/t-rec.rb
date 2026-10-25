@@ -4,6 +4,7 @@ class TRec < Formula
   url "https://ghfast.top/https://github.com/sassman/t-rec-rs/archive/refs/tags/v0.8.2.tar.gz"
   sha256 "79ea7cbfe88e45ab913fa9963d74b9b7530cb73e39b686b0d8a692b7a9f331b8"
   license "GPL-3.0-only"
+  head "https://github.com/sassman/t-rec-rs.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9e5018f62254d59ee729dc8f755b8a468eae9f805283b317b568f22e6a2b4fc1"
@@ -17,6 +18,16 @@ class TRec < Formula
 
   depends_on "rust" => :build
   depends_on "imagemagick"
+
+  on_linux do
+    depends_on "libx11"
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

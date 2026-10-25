@@ -4,15 +4,14 @@ class Sile < Formula
   url "https://ghfast.top/https://github.com/sile-typesetter/sile/releases/download/v0.15.13/sile-0.15.13.tar.zst"
   sha256 "5e97c19651aff710687b93292d5361cb411652094bcc8c62c811c19f7a81464b"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_golden_gate: "8f2cc9a1c1e2eed25cfcada436bdec5c60c9da652d03775f43244962a0fb7d0c"
-    sha256 cellar: :any, arm64_tahoe:       "aef6063bd080d98dbe720ef38fa12ca7e73ea30b2a2b97dee8deed3aeca2594f"
-    sha256 cellar: :any, arm64_sequoia:     "5941b9a72ba6beb6171e787dbace80575793fb1ebd4a186c9ba1e35974f2d963"
-    sha256 cellar: :any, arm64_linux:       "3cd11c17826b43a7ca4ac452c0d4db11db0f46bc2ab746e8b89d0749c1a42270"
-    sha256 cellar: :any, x86_64_linux:      "f289240fd0caf4f28de5d38fcfdbe81294978ca47f7c922ca023055aeaebc902"
+    sha256 cellar: :any, arm64_golden_gate: "6baa65b3fcb48d8828020ae75be7734b163b1f0963d042b8cc09d71bb9c58cc0"
+    sha256 cellar: :any, arm64_tahoe:       "4e0c9f6178705ed8f01a737897b6636ef16f8a8394c5664bf3fe51ffee476665"
+    sha256 cellar: :any, arm64_sequoia:     "f9ac136a135208e8efdaef97e73dfafd181358aeeeb492895014e49a3e38e4bd"
+    sha256 cellar: :any, arm64_linux:       "04f08617992212e660ef40372992b8e2a8c7271fd64e352565766b5b48c74d49"
+    sha256 cellar: :any, x86_64_linux:      "8092b516ded548fc5da6e997fa9291d50b4e066a986409f6c6d3be9419f5e3f9"
   end
 
   head do
@@ -29,7 +28,7 @@ class Sile < Formula
 
   depends_on "fontconfig"
   depends_on "harfbuzz"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "libpng"
   depends_on "luajit"
   depends_on "luarocks"
@@ -145,8 +144,13 @@ class Sile < Formula
     sha256 "fcfa781a72b9372c37ee20a5863f98e07112a88efea08c8b15631e911bc2b441"
   end
 
+  # `luarocks unpack` needs network access
+  allow_network_access! :build
+
+  def openssl = deps.map(&:name).find { |d| d.match?(/^openssl(@\d+(\.\d+)*)?$/) }
+
   def install
-    lua = Formula["luajit"]
+    lua = "luajit"
     luaversion = "5.1"
     luapath = libexec/"vendor"
 
@@ -159,8 +163,8 @@ class Sile < Formula
     ENV["LUA_PATH"] = "#{paths.join(";")};;"
     ENV["LUA_CPATH"] = "#{luapath}/lib/lua/#{luaversion}/?.so;;"
 
-    ENV.prepend "CPPFLAGS", "-I#{lua.opt_include}/luajit-2.1"
-    ENV.prepend "LDFLAGS", "-L#{lua.opt_lib}"
+    ENV.prepend "CPPFLAGS", "-I#{formula_opt_include(lua)}/luajit-2.1"
+    ENV.prepend "LDFLAGS", "-L#{formula_opt_lib(lua)}"
 
     if OS.mac?
       zlib_dir = expat_dir = "#{MacOS.sdk_path}/usr"
@@ -172,9 +176,9 @@ class Sile < Formula
     luarocks_args = %W[
       ZLIB_DIR=#{zlib_dir}
       EXPAT_DIR=#{expat_dir}
-      OPENSSL_DIR=#{formula_opt_prefix("openssl@4")}
+      OPENSSL_DIR=#{formula_opt_prefix(openssl)}
       --tree=#{luapath}
-      --lua-dir=#{lua.opt_prefix}
+      --lua-dir=#{formula_opt_prefix(lua)}
     ]
 
     resources.each do |r|
@@ -186,7 +190,7 @@ class Sile < Formula
       end
     end
 
-    configure_args = %w[
+    configure_args = %W[
       FCMATCH=true
       --disable-silent-rules
       --disable-static

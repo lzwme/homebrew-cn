@@ -6,12 +6,13 @@ class MlxLm < Formula
   url "https://files.pythonhosted.org/packages/e1/46/eff1c17019b82912020d4d716527e6fcf4ac392b55cddef03eeb60566ab4/mlx_lm-0.32.2.tar.gz"
   sha256 "1af8a92f6a141c3e2bf5b0369ac4464203a8e2189c47b9e40d3e921e5b3a1fe9"
   license "MIT"
+  revision 1
   head "https://github.com/ml-explore/mlx-lm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ddc37561a33ee96b5f51c95bbf2cbe431733ebe7e98d22c87193c62957cdcd75"
-    sha256 cellar: :any, arm64_tahoe:       "59c12ec2e98330c35e826fa051d45026c261eecceeae76b06b691fb7c7cabb7b"
-    sha256 cellar: :any, arm64_sequoia:     "40196c4099a8b6a77cec00b75baa860cb47249207cb7c2934f506ee1fc9cbe0b"
+    sha256 cellar: :any, arm64_golden_gate: "61e5f54035b63a063e31a682f71305b58f5356fd3724e0d3938e481dc261766b"
+    sha256 cellar: :any, arm64_tahoe:       "9c949619a7809ee588e6a2985a87aa21878120e253a4d8f3ab43d45a5404bb3e"
+    sha256 cellar: :any, arm64_sequoia:     "a8816a4dd760223d2f9893706490ea8f1c53ab0f8e4ede090795e5abad5edc1e"
   end
 
   depends_on "cmake" => :build
@@ -45,8 +46,8 @@ class MlxLm < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/f4/a9/1af41b37c3279712b22cdc63aac78a52432202b6fe1f9666a2a3d2831fb4/filelock-4.2.0.tar.gz"
-    sha256 "7a60906c75227cf04d0c273afadc8219400f11aeb13cc69591d4f6cdc6c8036e"
+    url "https://files.pythonhosted.org/packages/d8/28/3893324bcadf8f89b1616637468d766af3f625008c0735bf704fdfa86617/filelock-4.2.4.tar.gz"
+    sha256 "c6d8663535e1650ee430507b4ffbac7b464dd64b7647ea0112a9f406499d163d"
   end
 
   resource "fsspec" do
@@ -65,13 +66,13 @@ class MlxLm < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/cb/f3/1db7aa2bc2524062192bb0e0323969492d1883152a232fe36eea65f4e35c/httpcore2-2.13.1.tar.gz"
-    sha256 "e0aa977abe17e69a3b820a24542a6fa88702676d83880b8d194dcd18408e5103"
+    url "https://files.pythonhosted.org/packages/c0/61/afa9d6b7452f9eca73f73d45324eb0bb52f098fd5e6049bf6b8263be9b4e/httpcore2-2.16.0.tar.gz"
+    sha256 "c72cd0413563b17e1cd8354677dff887466f8ec2551679759e93126534428643"
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/d5/44/474bef2a0e9d90f1715d32cb98b0738695ca17ba324095fb2497ed7fbd59/httpx2-2.13.1.tar.gz"
-    sha256 "e48744a19e3af5ee48313d0ce5fe941d5422fae5705ea922a4aabf94d7800dfa"
+    url "https://files.pythonhosted.org/packages/43/73/5ca2cedf5e4e50423d1c258877865a6b62793633b561c58499f8aeb33b7e/httpx2-2.16.0.tar.gz"
+    sha256 "0d54c98128e8f2ff7fbbde0fca8c359e5f032edeaaaac443cdb7f31f685bcd7f"
   end
 
   resource "huggingface-hub" do
@@ -160,8 +161,8 @@ class MlxLm < Formula
   end
 
   resource "transformers" do
-    url "https://files.pythonhosted.org/packages/f6/c1/b0365332622b6f609dbb5387d2cd07672286c1840c810a5a80539cb45fd2/transformers-5.20.0.tar.gz"
-    sha256 "d82335f354755ff4dc557fa4080472192d2f19349d59b97e05ab981f4177c679"
+    url "https://files.pythonhosted.org/packages/8c/4e/3cd6f08cc84ee612d40f3cdb1649475e7c997f2d5cbd95ade8780708af62/transformers-5.20.2.tar.gz"
+    sha256 "080871e061546d720be57f5846fce426f46b44d61574907cc7404c2cba49d180"
   end
 
   resource "truststore" do

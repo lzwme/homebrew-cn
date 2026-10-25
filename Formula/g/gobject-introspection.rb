@@ -7,15 +7,15 @@ class GobjectIntrospection < Formula
   url "https://download.gnome.org/sources/gobject-introspection/1.86/gobject-introspection-1.86.0.tar.xz"
   sha256 "920d1a3fcedeadc32acff95c2e203b319039dd4b4a08dd1a2dfd283d19c0b9ae"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
-  revision 5
+  revision 6
   compatibility_version 1
 
   bottle do
-    sha256 arm64_golden_gate: "bf75452655dd860a22248f3cd6f7978015212a7c63d5aee881daaa5de4bdb538"
-    sha256 arm64_tahoe:       "58065fd01aded5a2542e52430cfcc5fbb11f7f51421d12f05402c95f1fe2f375"
-    sha256 arm64_sequoia:     "f8ae7c52e7c71a75d187fab3c4d6e524ad2a33fa80a38f3b4a36989eb8c9b5a8"
-    sha256 arm64_linux:       "7e066ae8f54f1e69f625a6ff0a0599d18f2d03367a7e7799791ee580978ae4b0"
-    sha256 x86_64_linux:      "19ac75340133f5c431233f2741f2cc2f5de0fcee70508952c7eaf90fd0760958"
+    sha256 arm64_golden_gate: "63be135be0568cc8afe5e9ccf1a2a6e4ea80e2697be161f3969bf90be2644327"
+    sha256 arm64_tahoe:       "110ea2facc0e93d90a1d28b21e532bd7d0a716b24c41be62f8f2e3543505dddc"
+    sha256 arm64_sequoia:     "75f33d27b15bd5b9f92c66068a6c8dbe7cb9fc9b9fd62006708b2d86cd2536cc"
+    sha256 arm64_linux:       "e450f8b697ac85b6cd375789277684496457eb8933749ccb6e56d4395db772e1"
+    sha256 x86_64_linux:      "a1a9fa721e8ffabd07325e8d824fbad72bec7e282623323c8d3f8fefe734e760"
   end
 
   depends_on "bison" => :build
@@ -39,8 +39,8 @@ class GobjectIntrospection < Formula
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/f8/4f/700155c8c20d9e655dd0732b5fc3c7614f291b9148da271d7388e50bf774/markdown-3.11.tar.gz"
-    sha256 "180224db6aed87ba9ce1f2781ebcd5826253de8ff637112090e24b84502bbf9f"
+    url "https://files.pythonhosted.org/packages/f4/32/0b4d0297064244f04af4331b65de16237cc3cce07474171ee14222a28981/markdown-3.11.2.tar.gz"
+    sha256 "87bf5d90f2d2882e2c02fcda182c2800456b985bff38913867c49706481514b0"
   end
 
   resource "markupsafe" do
@@ -49,8 +49,8 @@ class GobjectIntrospection < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   # Fix library search path on non-/usr/local installs (e.g. Apple Silicon)

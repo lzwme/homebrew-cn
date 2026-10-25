@@ -24,6 +24,9 @@ class SlintCpp < Formula
     depends_on "freetype"
   end
 
+  # `skia-bindings` crate downloads skia during `:build` phase
+  allow_network_access! :build
+
   def install
     # Optimizations recommended by upstream:
     # https://github.com/slint-ui/slint/blob/master/.github/workflows/cpp_package.yaml

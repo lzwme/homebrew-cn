@@ -3,16 +3,16 @@ class B2Tools < Formula
 
   desc "B2 Cloud Storage Command-Line Tools"
   homepage "https://github.com/Backblaze/B2_Command_Line_Tool"
-  url "https://files.pythonhosted.org/packages/23/87/9a9c521ffca7f09f05655767614e1926cdf6e79e655868455ded244d6b80/b2-5.0.1.tar.gz"
-  sha256 "5ea42c13562d714726df3ad4d815ee0d2a43bacc06a5bb3b5f2e4de0f2f8d168"
+  url "https://files.pythonhosted.org/packages/9e/89/6dfc6338307c1ef0f2e0a1bd505b2065a0637e84bf3b5475b142179442c9/b2-5.0.2.tar.gz"
+  sha256 "c2f6950a9840143f744b25712deefc1ceeba5fec97e28921355d5007961e3787"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c2187f3f11b818f8e53126d51073512aa37044669fcb273f800e12c6d150ad70"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c2187f3f11b818f8e53126d51073512aa37044669fcb273f800e12c6d150ad70"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c2187f3f11b818f8e53126d51073512aa37044669fcb273f800e12c6d150ad70"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d371594558578d50aad10da9c35474ea963acb1f868b782c12f2d5bb72a276ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d371594558578d50aad10da9c35474ea963acb1f868b782c12f2d5bb72a276ea"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3f68464c8f06be20ccb216d790adb30b348a0ec8c900e5f3cde439105e46812c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3f68464c8f06be20ccb216d790adb30b348a0ec8c900e5f3cde439105e46812c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3f68464c8f06be20ccb216d790adb30b348a0ec8c900e5f3cde439105e46812c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "de84761730c29754826d25e543e5888a85afa5c18ffe315570c79f0bd5a62f75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "de84761730c29754826d25e543e5888a85afa5c18ffe315570c79f0bd5a62f75"
   end
 
   depends_on "certifi"
@@ -68,8 +68,8 @@ class B2Tools < Formula
   end
 
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
-    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+    url "https://files.pythonhosted.org/packages/0e/df/f15f80383f152452d8985b36d95cb8751f901a3e0ff4cd27f7e118f168e2/python_dateutil-3.0.0.tar.gz"
+    sha256 "7ebcb3c29a92f3ceafe79a7a48a5c45677e9e004bbeec5742ac0bbb00560b7a2"
   end
 
   resource "requests" do

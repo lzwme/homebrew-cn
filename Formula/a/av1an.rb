@@ -55,7 +55,7 @@ class Av1an < Formula
     ENV["VERGEN_GIT_SHA"] = tap.user
     system "cargo", "install", *std_cargo_args(path: "av1an")
 
-    generate_completions_from_executable(bin/"av1an", "--completions", shells: [:bash, :zsh, :fish, :pwsh])
+    generate_completions_from_executable(bin/"av1an", shell_parameter_format: "--completions=")
   end
 
   test do

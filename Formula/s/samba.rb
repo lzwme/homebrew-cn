@@ -15,11 +15,12 @@ class Samba < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "0a61f14c38631e02eeb720bfb66e8f41a979bf04025c03c7b5d3d127e7f6e886"
-    sha256 arm64_tahoe:       "368d99324e40cb8758f9b5245f5e4736e8b083a348d4c5d09634fc871b7ba9d1"
-    sha256 arm64_sequoia:     "3b3285736a6737c571f17f4af5279e9968cece99200e2d49831f2bb9c1373b2f"
-    sha256 arm64_linux:       "6c824c78ee0eed2de233626aa47f2282631b13ae93a04e9fb2f73b45d4764357"
-    sha256 x86_64_linux:      "4f183c433c8950460a13ae0317c97fd512aa6e9830f8f14e814ed34df920fa0a"
+    rebuild 1
+    sha256 arm64_golden_gate: "a25bfa55d86e95e514ea4c5e9ef29a960d89b185eea0eebd495741c8967c25a3"
+    sha256 arm64_tahoe:       "0cf546d7167ecb38f926b3b9e31cd83d8ffdeaf448d2f17814c571fc3cdb7fca"
+    sha256 arm64_sequoia:     "97ee13a674e073786f2bb1e2c11e70ad0fec9fd38f58b429e31e6db5c7f32380"
+    sha256 arm64_linux:       "3eec920fc7d8fa1add07edb473da6c5f4bd536a59d591156005ac3d56737dc12"
+    sha256 x86_64_linux:      "61b45757185371859bc43afd0032451e2ddc0d03c13c37dd6f60b86f6a8284ac"
   end
 
   depends_on "bison" => :build
@@ -28,7 +29,7 @@ class Samba < Formula
   depends_on "gnutls"
   # icu4c can get linked if detected by pkg-config and there isn't a way to force disable
   # without disabling spotlight support. So we just enable the feature for all systems.
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "krb5"
   depends_on "libtasn1"
   depends_on "lmdb"

@@ -4,7 +4,7 @@ class GnustepBase < Formula
   url "https://ghfast.top/https://github.com/gnustep/libs-base/releases/download/base-1_31_1/gnustep-base-1.31.1.tar.gz"
   sha256 "e7546f1c978a7c75b676953a360194a61e921cb45a4804497b4f346a460545cd"
   license "GPL-2.0-or-later"
-  revision 3
+  revision 4
 
   livecheck do
     url :stable
@@ -18,14 +18,11 @@ class GnustepBase < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_golden_gate: "dcb7db835a9b711b7a24ca586278b163fa154ecd41895e5ef0237d0a4186a3e8"
-    sha256 cellar: :any,                 arm64_tahoe:       "0693816f992adcfc685d2ee8464599a92a51bfb60a8fc428b7a41f77b6657266"
-    sha256 cellar: :any,                 arm64_sequoia:     "ea087ac117a4ddee94f9ab38f7bff0e307b80b2cba871be2009711a234a54d11"
-    sha256 cellar: :any,                 arm64_sonoma:      "23da697180c63dec9c9690536bb3debe66b6d78c19ef0ce507571ab2436c8bac"
-    sha256 cellar: :any,                 sonoma:            "35f3f0a775c9e8f138a46ede7e827b2017dc00f4ff60338da1e2eb433d942a58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0ca2baa3e217b0325cb5a5d8544abda7eda57237c21b50cecf04719c68773a33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c3d1ac8a92a0cfe7ad301988d5018efa6e8f71f2a906723304dab14ba0448a33"
+    sha256 cellar: :any, arm64_golden_gate: "8f9a8d57bc18bb6f2da416deaec2df707e89979a7b73811f7fabc2605c98de5e"
+    sha256 cellar: :any, arm64_tahoe:       "b737d6b89bd089eb3fc35b05fee93a33487768c14c1fe29857e899df95f35e2a"
+    sha256 cellar: :any, arm64_sequoia:     "4b963c6b12be222eb24d90ab874bfce04ae0b8049088c63d423d14165fc8da91"
+    sha256 cellar: :any, arm64_linux:       "387fc3d7f0244c3f3a1e88be1a40432df0fccb5783bdd1f809c8ec9a1113c32e"
+    sha256 cellar: :any, x86_64_linux:      "412706d13d9a42340210cba245e6624e54fa2accc37e6449181b480bae16de40"
   end
 
   depends_on "gnustep-make" => :build
@@ -39,7 +36,7 @@ class GnustepBase < Formula
   uses_from_macos "libxslt"
 
   on_system :linux, macos: :big_sur_or_older do
-    depends_on "icu4c@78"
+    depends_on "icu4c@79"
   end
 
   on_linux do
@@ -50,6 +47,13 @@ class GnustepBase < Formula
 
   fails_with :gcc do
     cause "GCC Objective-C support is insufficient"
+  end
+
+  patch do
+    url "https://github.com/gnustep/libs-base/commit/bace6f54fd5fb882cb3adc79c87cc82d5c6d9c70.patch?full_index=1"
+    sha256 "7b8a8a4465c5807ff6df48a23b9a3085eaa7ff0fef44bf8aeb4c7d9d05df10bf"
+    type :backport
+    resolves "https://github.com/gnustep/libs-base/issues/589"
   end
 
   def install

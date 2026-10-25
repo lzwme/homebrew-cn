@@ -65,11 +65,12 @@ class Agda < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "87d401edaab575cfaa9e28bd357d5ccadfc7ea7e31acbd1be0be7ad863e3ccea"
-    sha256 arm64_tahoe:       "1d163cb056ba37c65662f54668b9bb47a03a31d47aeac950d1daf541188d96f6"
-    sha256 arm64_sequoia:     "e8dbe09a5c55af86c8ab97af359672b99b2d68a41aac1eb4118c6753a778b5e5"
-    sha256 arm64_linux:       "712c575bd41b3af6111feea653bb96662ee79c521f0efc75f84e51020ada4dab"
-    sha256 x86_64_linux:      "9a531c138a9c6cc2c1a856c1018571dac37ad69025836f5742f566d9279ec63e"
+    rebuild 1
+    sha256 arm64_golden_gate: "431d52e45f2a28a93d8bcbe0cdbda69f672da86d51a62489cbea3a6c404f831c"
+    sha256 arm64_tahoe:       "fd94a785f1177731b324c1df0075aa8beb5d58077a4ade1709aea53102e8d622"
+    sha256 arm64_sequoia:     "c09872cbc1abc5eb2229fd44a0cee222f2b258fd67c2fd46f4b93ef4e140802e"
+    sha256 arm64_linux:       "fe64ce95b547d8b00fcf233bd0e7248b292ce731dd7c728288848271cf130040"
+    sha256 x86_64_linux:      "fc9669287b8dce97cb26a69dfde3a9be800eca1fa51e1e486a2c14b5c284ff28"
   end
 
   head do
@@ -110,7 +111,7 @@ class Agda < Formula
   depends_on "pkgconf" => :build
   depends_on "ghc"
   depends_on "gmp"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
 
   uses_from_macos "libffi"
   uses_from_macos "ncurses"

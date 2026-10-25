@@ -1,8 +1,8 @@
 class VrcGet < Formula
   desc "Open Source alternative of Command-line client of VRChat Package Manager"
   homepage "https://github.com/vrc-get/vrc-get"
-  url "https://ghfast.top/https://github.com/vrc-get/vrc-get/archive/refs/tags/v1.9.2.tar.gz"
-  sha256 "669af4b5a546b0991607ebee91f352cea6c5ae430cc7cda7736adafa0cdcb3d8"
+  url "https://ghfast.top/https://github.com/vrc-get/vrc-get/archive/refs/tags/v1.9.3.tar.gz"
+  sha256 "8c5704c7ce48ddb6e3485528edf1b2e9ddabc6872112ef0a07a781867ab2fb9e"
   license "MIT"
   head "https://github.com/vrc-get/vrc-get.git", branch: "master"
 
@@ -12,13 +12,11 @@ class VrcGet < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cd5006b42d207e56061604a88461da98eba3119082d07c5153de3618c18d58b2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "43b765373df7aaf2f0262d8614c0ffa1feb30a678ea6273f322c32459f4cb79c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c12cd0836fedb083500540ecfa9c71b5977cc189cb8585ab182dcb173212afc7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "7315dc588cffe1da2d1290b132a95c24a99b4e0b89e5b9a07e1f549bc53998fd"
-    sha256 cellar: :any_skip_relocation, sonoma:            "3ee10f04f7bd12af38057340ad05ea6822c5c8f722926ba5ca0fd8e7b4dd32bc"
-    sha256 cellar: :any,                 arm64_linux:       "7549a5500553999eef195a0cfc626ca013de515502d527a488dfd248dc312e6a"
-    sha256 cellar: :any,                 x86_64_linux:      "0d789cdb004317cb64c531cfecc014ae3cb8273091f7060da565b6c9795bc98f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9999f458a499216cb7a488b04293fc7e815dfe94e6149e3e34854ecf283c3135"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "abdbc9207bae326637da383349459c44028a8ea2376190050d497c92f0ae8a68"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8d885146c462784b52195129c420f55b0e53e6400388257b9b2de4350729a5a5"
+    sha256 cellar: :any,                 arm64_linux:       "eee6eedc88e7b5b8f1c4eae6ae4c5a650a5fa8c14caaa9c67f2abe8ea94ac738"
+    sha256 cellar: :any,                 x86_64_linux:      "9bbb59e6d9f211d8d4a0ac1c0c6c2f1c740c15724a67de68fd4bcb28f9af26cd"
   end
 
   depends_on "rust" => :build

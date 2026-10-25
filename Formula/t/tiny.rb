@@ -35,6 +35,14 @@ class Tiny < Formula
   # Update to openssl 0.10.78 and openssl-sys 0.9.114 for minimum needed to use OpenSSL 4
   patch :DATA
 
+  deny_network_access!
+
+  def fetch
+    odie "Remove `cargo generate-lockfile`" if build.stable? && version > "0.13.0"
+    system "cargo", "generate-lockfile"
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     # Replace tls-rustls with tls-native
     system "cargo", "install", "--no-default-features", *std_cargo_args(path: "crates/tiny", features: "tls-native")

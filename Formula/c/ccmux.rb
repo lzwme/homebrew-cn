@@ -7,11 +7,12 @@ class Ccmux < Formula
   revision 1
 
   bottle do
-    sha256 arm64_golden_gate: "c156cde086c051602367eb02efc3824e3c1fa64dbd9f3ef29212eb4310480f2b"
-    sha256 arm64_tahoe:       "43335f70343f52d22f6e81f03315f53d0d8be1c0fa8024ab5e7546697ba67216"
-    sha256 arm64_sequoia:     "1d8900d823f8eccb3305b277a0825d638d596b8e107aa49d0ab056afe2fac423"
-    sha256 arm64_linux:       "95fe7911f3d06c780f4c598d17930fd378d42985c899ff902c9de34ae316a386"
-    sha256 x86_64_linux:      "824ea0248b96e75c1f665600a34f43896cd1694b3b90fc1043375aad256dd37a"
+    rebuild 1
+    sha256 arm64_golden_gate: "6eb41629428fe4d0192b9c2349190875e5a9657b05b16bdf85ed9374f1704b9f"
+    sha256 arm64_tahoe:       "8cab1ff82132049391e16a88ce63cde2dbd75817d60dc45b74a17e80d8dc9e7a"
+    sha256 arm64_sequoia:     "678466d6b9716f84cb51ce661666ccef1498f737ad03b871b4a088ee19761f54"
+    sha256 arm64_linux:       "41640b181f84803271622db0801421ca8e9db6ecfb7b6f27fd2c16b3786d2aed"
+    sha256 x86_64_linux:      "a73f3113631a0709a316c45486d054296ba415b052191d8e64a063f73038b23d"
   end
 
   depends_on "bun" => :build
@@ -24,7 +25,7 @@ class Ccmux < Formula
 
   on_linux do
     # `bun build --compile` embeds the runtime, so the output inherits bun's ICU linkage.
-    depends_on "icu4c@78"
+    depends_on "icu4c@79"
   end
 
   deny_network_access!

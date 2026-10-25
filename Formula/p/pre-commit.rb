@@ -6,15 +6,15 @@ class PreCommit < Formula
   url "https://files.pythonhosted.org/packages/3a/c3/6965c2690ddce885ec75121572d065a5b94c5a5d8d3e657927ecda9fd715/pre_commit-4.7.0.tar.gz"
   sha256 "1f3deee12b914c8fa184bd2b5953391c2e4f36763e403d4a23dc9983fa7c6e86"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/pre-commit/pre-commit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "50e0f0595696b57d216539e7a27e8dcf5ddc46c703c4d44dc68b2ef25cb35b2f"
-    sha256 cellar: :any, arm64_tahoe:       "7e389ae736c1952454f2f86d97a774d58dc513a0a7d4e53df5e0f874bb22144c"
-    sha256 cellar: :any, arm64_sequoia:     "dc33f991e683da3f8ebb7aa8d597674e3a286daa6de2edaa2144bc6f7b227cc3"
-    sha256 cellar: :any, arm64_linux:       "6088684d1ee244053059637d5545335deac2dce499f39960241d9d0de55d3e9a"
-    sha256 cellar: :any, x86_64_linux:      "cccc238041861699c5bc1c28d79316a6a7016c172965ff56cbbcbdd663057909"
+    sha256 cellar: :any, arm64_golden_gate: "67c99a5603bb473b5803d43e78c58ca618311f1a16a41d34d1662e9547a8b846"
+    sha256 cellar: :any, arm64_tahoe:       "b23f6c0a81af6944d672f8263a361da002b3a72b96f3718049d92bf4888a0a0a"
+    sha256 cellar: :any, arm64_sequoia:     "937e49297cfbe445437090291b5f917a8e86aa6004855c6a69161d90704d4102"
+    sha256 cellar: :any, arm64_linux:       "7dce83cea30762d18b66c70798fabbc2c58fc0669d6b6329ad9309bae96e7de9"
+    sha256 cellar: :any, x86_64_linux:      "34a55f418c50e1f2d0732af2e64c2c95b7bf5b598ba880bf5f99fef791a7e1dd"
   end
 
   depends_on "libyaml"
@@ -66,8 +66,8 @@ class PreCommit < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/c9/2c/1a69b3346931e9a7db9cc00cc0fa847c843a85fa7cf52a598f57261c68df/virtualenv-21.14.12.tar.gz"
-    sha256 "bbcfb78e36c22ad70c6917c4aecb5e63477d3c138e9f88c946f320e31859c76a"
+    url "https://files.pythonhosted.org/packages/70/aa/bff50daee0488e16d611258a9b6c5a1d0c9e128f8ca424e9f4e1c0444ef2/virtualenv-21.14.13.tar.gz"
+    sha256 "de5307ba4b9a0001d9c8ea02832d38f63ca432880f416c1bface61c4323fd905"
   end
 
   def install

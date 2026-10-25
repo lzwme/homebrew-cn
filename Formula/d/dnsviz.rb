@@ -6,14 +6,14 @@ class Dnsviz < Formula
   url "https://files.pythonhosted.org/packages/50/33/de6ddf145bdb6c94ee25b33bc314af3bdbd15950c5a4647295da224ab58f/dnsviz-0.11.2.tar.gz"
   sha256 "ca136788bd868c03b1f2653575d899ffef41a016711655c0ee65f89c1bea3514"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "9c0fe85faca1c39f39a0f6f095674faaa5e38374887e827aadb1a66e78dfbd9b"
-    sha256 cellar: :any, arm64_tahoe:       "d62abc01ab3f338c19d104ad364ed8b409341baf55695042e33d7e898e380de0"
-    sha256 cellar: :any, arm64_sequoia:     "67f433fbbd71572f0863a2788216f95d5446667478919bec2d3782e086d5e9be"
-    sha256 cellar: :any, arm64_linux:       "283453170a5296c8ce9cee0837a0977ddc6d011ac8f885b2e13fcfe0517cc139"
-    sha256 cellar: :any, x86_64_linux:      "6e8f91c8af7a24a9de3abbe56e70754a3d7a7a5422f6b38d0b5072d82908cf13"
+    sha256 cellar: :any, arm64_golden_gate: "288bd6dd4a23ef0524c623c643ccd19bc2c0288f5a2bff5cc6a289e0b645886e"
+    sha256 cellar: :any, arm64_tahoe:       "361a2750def696f3a4bd1c96f741736f1e940f02b5179374346ac3319646bf31"
+    sha256 cellar: :any, arm64_sequoia:     "992f8d5b598cbdb269d1ad6cdbc1bff7eb4167a7784a030fb90738aa043d9999"
+    sha256 cellar: :any, arm64_linux:       "11a300bc6d2c46ffa97acce2a9ef544401b4e0ea901d9429b42b52bfdcd36214"
+    sha256 cellar: :any, x86_64_linux:      "3c7543027324726eeee7a2714335bce8d313e2d4e7c23f7ad06ed0877438c7eb"
   end
 
   depends_on "bind" => [:build, :test]
@@ -33,13 +33,13 @@ class Dnsviz < Formula
   end
 
   resource "pygraphviz" do
-    url "https://files.pythonhosted.org/packages/01/f7/a82e7f47573168960ce7e2a6c937a084a14d58599fe2a48ea3cde8ca555b/pygraphviz-2.0.3.tar.gz"
-    sha256 "e46818608638959ceabec66a36d2efc1d60b790a845f29705e403feecc7ee0c0"
+    url "https://files.pythonhosted.org/packages/f5/56/92b970deefddb2c31f92a9c8c794db89e4d6562a8a11af93269107cf30d2/pygraphviz-2.0.4.tar.gz"
+    sha256 "510164db9abc5b7ffd79007ed94638958c0190c8206853b07dda05fa1050b829"
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "example-com-probe-auth", :test do

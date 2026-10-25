@@ -4,6 +4,7 @@ class CoreLightning < Formula
   desc "Lightning Network implementation focusing on spec compliance and performance"
   homepage "https://github.com/ElementsProject/lightning"
   license "MIT"
+  revision 1
   head "https://github.com/ElementsProject/lightning.git", branch: "master"
 
   stable do
@@ -39,11 +40,11 @@ class CoreLightning < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "ee50592a25e36387eca12934badc43ed5dc56ffa14b39e3ea83ec5f620b5fe92"
-    sha256 arm64_tahoe:       "9e0a711f1124eb2587a69be1671b2a8326f78a7ffdf9138312c73e0d1be0109a"
-    sha256 arm64_sequoia:     "8c23947e4dbc55bb84cb7cd202ecd76a9a0acfe0973236b6ff01ceac9e239aa4"
-    sha256 arm64_linux:       "be7d8b86a3e792f80a9bf8902371d5969d22b7d649bd57ff6bdad2a61966e2f8"
-    sha256 x86_64_linux:      "a4044c0d0e0fef694876a8582a082c3b341a07375f7ad4aafa506bd03d7fce81"
+    sha256 arm64_golden_gate: "a7b0b04ca9e808c2462367ba4627ae2ef7bd607094187f8f4f0a7de169261848"
+    sha256 arm64_tahoe:       "cbbd3b398f348069ef8bfe08a0abf914b3d97ae38eb35fbdfe1c6be8ce0fbe60"
+    sha256 arm64_sequoia:     "9d4f04fe2dc3f6dfd26c1e44307c2e82aed29bce3a15ce773d720ff7743ec1d2"
+    sha256 arm64_linux:       "a55af05e7a8ff965a63d3212f06f63ac1a89ad3aca097cbc51c1496b97fb7767"
+    sha256 x86_64_linux:      "57c3a56ba582d4bd1e60a483e54cbf88eedd7ec73e563ce2a80bc08ea6c49008"
   end
 
   depends_on "autoconf" => :build
@@ -85,8 +86,8 @@ class CoreLightning < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   def install

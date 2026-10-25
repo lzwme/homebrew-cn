@@ -5,7 +5,7 @@ class Znc < Formula
   mirror "https://deb.debian.org/debian/pool/main/z/znc/znc_1.10.3.orig.tar.gz"
   sha256 "68f3f6641b480c041010c5596e1234043e05c9137eda06233845017603095f5b"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://znc.in/releases/"
@@ -13,12 +13,11 @@ class Znc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "7d56ba643d97ce111f37285a843e895104e3f420fee43e2e456c2f0d1db76a12"
-    sha256 arm64_tahoe:       "7947ed8151d94715a4745285e071ad45d07ac32a3a901fe46a1abee72120db23"
-    sha256 arm64_sequoia:     "c552474ddc59e597bca1588744225576c3bd3ec6fb53c4c6f2fcc60cdabad667"
-    sha256 arm64_linux:       "1feb09519eb7ad832c682c7b5a818093fac86fcc03836ba96eba19cb54a9b8f0"
-    sha256 x86_64_linux:      "ecc44e5e3720123161361c6978f7a28c2b26804ad27b26c82131c2895b12311c"
+    sha256 arm64_golden_gate: "679a9e32470742f87d57f966750719744043696f200fb53bdde0caba2d2237b5"
+    sha256 arm64_tahoe:       "47d26904e4f30b0244626623d2e4913a6b7143c6b232dacebcd4f7591b3aabc8"
+    sha256 arm64_sequoia:     "5123fcb3933cd787a570b66c42ec3bed2f14c4cb02784eba5b6005514433a96a"
+    sha256 arm64_linux:       "9b6bf71c0003770d62caf97affcf9cba0508eea4ee023a9f95243d8809c449b4"
+    sha256 x86_64_linux:      "424535a69668e0741d24b18549ad16774d6214766145382b2f6be75d23126707"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +25,7 @@ class Znc < Formula
   depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "cctz"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "openssl@4"
   depends_on "python@3.15"
 

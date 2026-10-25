@@ -4,14 +4,15 @@ class Freerdp < Formula
   url "https://ghfast.top/https://github.com/FreeRDP/FreeRDP/archive/refs/tags/3.32.2.tar.gz"
   sha256 "9ccb8357bf0188044a460de775c7ea289ca7d2a2a917eca0f0a7c4dc9c8b08ea"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/FreeRDP/FreeRDP.git", branch: "master"
 
   bottle do
-    sha256 arm64_golden_gate: "0aef4cfa585b774e24a7bc03a5db730be082c42daa35145d4a12c2bbb0dd3fc2"
-    sha256 arm64_tahoe:       "cfe9f2a888cd21533e4794d23e2e9998c9ab89c8e491b85bda2b465f91fe2f3b"
-    sha256 arm64_sequoia:     "fa2a36085a4ee4279d6a615b99a630382bf1b2dbaba288f55b0d02e59cfecfa3"
-    sha256 arm64_linux:       "24d129ada36fa8710a1ae25b42783be8806d930761898fc9ad4b27402e65313f"
-    sha256 x86_64_linux:      "d935cc0139f4c2835d186a47835f823f024395ba07bbd745f770043f68110366"
+    sha256 arm64_golden_gate: "af4295631083597b02aa886e27cfd50d8769d662ff65041aa8e57d1ee5112738"
+    sha256 arm64_tahoe:       "07ab1ec85bbec2c32f2725cb0e7e65fc633aaf5a6cccacca7beb1c54e8e2e48e"
+    sha256 arm64_sequoia:     "27975351f6b63753375710ebe68f969a428f381e2038b6e7daad465d13fbb18e"
+    sha256 arm64_linux:       "dd468533dc1d43fab69a34edc4827723729ee4cc0b3ee3356868a5d93590b229"
+    sha256 x86_64_linux:      "1c9d40f9475dcbb79e14fb1c654e1f2547d99ffdf04852196d443c610f3acd16"
   end
 
   depends_on "cmake" => :build
@@ -41,7 +42,7 @@ class Freerdp < Formula
   on_linux do
     depends_on "alsa-lib"
     depends_on "glib"
-    depends_on "icu4c@78"
+    depends_on "icu4c@79"
     depends_on "krb5"
     depends_on "libfuse"
     depends_on "pulseaudio"

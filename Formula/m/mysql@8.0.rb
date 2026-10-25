@@ -15,11 +15,12 @@ class MysqlAT80 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "a00c3dd0f00160709a73b0f11e8ebba58ae2d10c0b62454d81bbd657b3403f82"
-    sha256 arm64_tahoe:       "735e124b63a562fe1ddec901dc20cf88eb22422be0528ce7a446aebcb49838c9"
-    sha256 arm64_sequoia:     "fe3fc887e0a3bd68cfc618bfc08394826e4b94e3aae8d4ea04f74374c4f67697"
-    sha256 arm64_linux:       "e9db4176e00ec4cb2f1cf0bc0b9ae10d9ce277a5d23796b4e12177a0b31c86fb"
-    sha256 x86_64_linux:      "27fc240dec23da0b2c62eeda01e329f6f792641f0899c4e7a6e9fbceeb3be222"
+    rebuild 1
+    sha256 arm64_golden_gate: "cd84509234452aee69c602243d6ae00bc79d4ad51aea67e56dd46b81ba8b815f"
+    sha256 arm64_tahoe:       "4a85d1976fe1daa64777c539b1059267e240de623a83879c0743b8ef90ac632a"
+    sha256 arm64_sequoia:     "4f53425962642e737efaebb71b0a7a00e70cc4b5ef705cdc2d9ed64708211ca7"
+    sha256 arm64_linux:       "286397e7228637dda20a7f98e4e988224072a326a8e21b6b20774cf1d80b5984"
+    sha256 x86_64_linux:      "7313c13d0ad1a4c353fd3a42eec37cd7c579cc2cef7add1cce53a34d5fb5e032"
   end
 
   keg_only :versioned_formula
@@ -31,7 +32,7 @@ class MysqlAT80 < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "abseil"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "libevent"
   depends_on "libfido2"
   depends_on "lz4"

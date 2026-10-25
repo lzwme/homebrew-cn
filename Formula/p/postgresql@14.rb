@@ -12,11 +12,12 @@ class PostgresqlAT14 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "807534e55e779d6b5eff854e03d84411a67e1fa1335abde6e2ce2e662369d94e"
-    sha256 arm64_tahoe:       "51717d32631721b3aef29c3cd7b1cc77d6d35be7e26e42f295d65286ff7255f9"
-    sha256 arm64_sequoia:     "d3e86e1a11ff072ca88bcd9d50e3ce553ab8fa73fa4ed09b7b9230815855b3b0"
-    sha256 arm64_linux:       "4641f92ab704d4e089a8cbc20512c44de0bae602f13167220e4421a17cde6fff"
-    sha256 x86_64_linux:      "78545b277fe40e3a8c02973a6e74aee3139e23face8dbfb08429326af52c5c76"
+    rebuild 1
+    sha256 arm64_golden_gate: "0efb7d4d5adbd1251c27b0dec3ca4e2e5de9a4742a70713777afaaa633ab4f7c"
+    sha256 arm64_tahoe:       "ef64c3ef7212b0a174ec8080f9ef5bbd0b4ed2e9dcd7e82c55b0196298ea5179"
+    sha256 arm64_sequoia:     "78c1df8036542fcec347820346f7bde5d5f5eca890ecff4d928a803160399a1b"
+    sha256 arm64_linux:       "1297a22fd206e81f1803b54ca3d0b423f62fe00247db4a50289fd364a06a5f77"
+    sha256 x86_64_linux:      "823d4c35b7acca235ccb855699ab0dd694969ba42c917d78f9cf6c096666aa5f"
   end
 
   # deprecating one year before the last release,
@@ -25,7 +26,7 @@ class PostgresqlAT14 < Formula
   disable! date: "2026-11-12", because: :unsupported
 
   depends_on "pkgconf" => :build
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
 
   # GSSAPI provided by Kerberos.framework crashes when forked.
   # See https://github.com/Homebrew/homebrew-core/issues/47494.

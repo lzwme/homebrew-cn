@@ -1,14 +1,13 @@
 class Libosinfo < Formula
   desc "Operating System information database"
   homepage "https://libosinfo.org/"
-  url "https://releases.pagure.org/libosinfo/libosinfo-1.12.0.tar.xz"
+  url "https://gitlab.com/libosinfo/libosinfo/-/releases/v1.12.0/downloads/libosinfo-1.12.0.tar.xz"
   sha256 "ad8557ece26793da43d26de565e3d68ce2ee6bfb8d0113b7cc7dfe07f6bfc6b6"
   license "LGPL-2.0-or-later"
   revision 1
 
   livecheck do
-    url "https://releases.pagure.org/libosinfo/?C=M&O=D"
-    regex(/href=.*?libosinfo[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https://gitlab.com/libosinfo/libosinfo.git"
   end
 
   bottle do

@@ -4,6 +4,7 @@ class Sshx < Formula
   url "https://ghfast.top/https://github.com/ekzhang/sshx/archive/refs/tags/v0.4.1.tar.gz"
   sha256 "ab6de41546b849726faa3b964466c1f8bb558bd27ee2452a9758405ff013108f"
   license "MIT"
+  head "https://github.com/ekzhang/sshx.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d4815dba3a254d34f85fbcd66f15d619449dbd81035238f0688cd21ce83738f5"
@@ -19,6 +20,12 @@ class Sshx < Formula
 
   depends_on "protobuf" => :build
   depends_on "rust" => :build
+
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/sshx")

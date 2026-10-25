@@ -15,16 +15,17 @@ class Doltgres < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3c1b9f34fbe0ed9e2f11ef8ad79f1c15275b75d1ca2eae57aa430523dea9ef78"
-    sha256 cellar: :any, arm64_tahoe:       "82d5d92acc97ac83eac45098baee4adcbe611d43507e60ff699ae7b694286f2d"
-    sha256 cellar: :any, arm64_sequoia:     "1dce30cf58b0321dd17b57d2b410a3a2ed2e57cfe56738e589fde962bca4178f"
-    sha256 cellar: :any, arm64_linux:       "25e8821d397ace8496c5e9bc3becd87cfb9fbb5a0a313e90e9ca544c04b3d01b"
-    sha256 cellar: :any, x86_64_linux:      "ac4ad6696dc971b45e48dc3f3e2588ace0df46db4754c766c9a6e27f79542986"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "cfae1e514a493b3ddd9d9e0cb46413ad14c1fd62f20b78a8b70d78d2e1869680"
+    sha256 cellar: :any, arm64_tahoe:       "1561ecbc8457474e1d2bc0e39bbaf3ec748ff1bed1bae164ab91d28f77977698"
+    sha256 cellar: :any, arm64_sequoia:     "e55faad385e2755cbf25d98c21b6b626e3bb4bcad2c0ccefe2362d7833a11693"
+    sha256 cellar: :any, arm64_linux:       "adfeb5535e6275dae55f5e38be381b7dfde1eb1c1236d5b0524b97dc693ad24b"
+    sha256 cellar: :any, x86_64_linux:      "97b0b9e26add26cf357d714b8078932edd8c3385125ea65e76a545adf6809e16"
   end
 
   depends_on "go" => :build
   depends_on "libpq" => :test
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
 
   allow_network_access! :test
 

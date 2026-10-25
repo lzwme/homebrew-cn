@@ -6,16 +6,15 @@ class Ccm < Formula
   url "https://files.pythonhosted.org/packages/f1/12/091e82033d53b3802e1ead6b16045c5ecfb03374f8586a4ae4673a914c1a/ccm-3.1.5.tar.gz"
   sha256 "f07cc0a37116d2ce1b96c0d467f792668aa25835c73beb61639fa50a1954326c"
   license "Apache-2.0"
-  revision 6
+  revision 7
   head "https://github.com/apache/cassandra-ccm.git", branch: "trunk"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "a36db15b07cbbaf04ddaf5777e3bd68557349c25ca8bf96997198c9d9bd4272c"
-    sha256 cellar: :any, arm64_tahoe:       "8ad9d0dd645885a99d1d34192dbcb7d0d4228c26adeb02ea6ecb34cb227745cf"
-    sha256 cellar: :any, arm64_sequoia:     "8aa02394c7ea97b739c35f85ae6224819ade3ba6a11ebe459071ad45a0c521dd"
-    sha256 cellar: :any, arm64_linux:       "b3d957ddaa8058ac27d59e01b16122babf205998f39170d3660705aa348d3871"
-    sha256 cellar: :any, x86_64_linux:      "878ccebb83f15fbc7c49c82c88e383036dfa029b97bc7fb3bde866104694a2be"
+    sha256 cellar: :any, arm64_golden_gate: "d1439ee18b4c4e0af62d20c8d9709d5f60d5579d307701d5352ad1d07f7458b3"
+    sha256 cellar: :any, arm64_tahoe:       "397938735aaab4d961fec58eea4bdfa26b68d55389495bef2af62e676dbf1631"
+    sha256 cellar: :any, arm64_sequoia:     "c1a724c99f52ec87adcad0e91adf36bf983a2e8d4f7a5afa29227846cc51cb1c"
+    sha256 cellar: :any, arm64_linux:       "68f9b06ccf90333ebcf6b4acb16bd9488d60bd0559258bafa61ae3e63437ad21"
+    sha256 cellar: :any, x86_64_linux:      "2245ca836007487cf59e8a5df38c400d1858b9e014619669b308248df9514e24"
   end
 
   depends_on "libev"
@@ -50,8 +49,8 @@ class Ccm < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "six" do
@@ -60,8 +59,8 @@ class Ccm < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/3e/d2/a254a26d8ceaea87e0eee2e89fcfe53ddc1858418647493bb2937549ab6f/wrapt-2.5.0.tar.gz"
-    sha256 "c48cdb6c904dca76d9915a579e4a5fab6b0c25f650c1019ce78a78effaf7a345"
+    url "https://files.pythonhosted.org/packages/04/22/89e2f3bdae5cb34e0cab0cd86d7172dbf418de4b46c9b17b9c7a560dfa44/wrapt-2.5.1.tar.gz"
+    sha256 "f595bb0185aab3e9dc31950c95d914f56ea8278810c3b928f3426e12ed6d27bc"
   end
 
   # Drop `pkg_resources`, removed in setuptools 81+; backport of upstream

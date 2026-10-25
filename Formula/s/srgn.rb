@@ -27,7 +27,7 @@ class Srgn < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin/"srgn", "--completions")
+    generate_completions_from_executable(bin/"srgn", shell_parameter_format: "--completions=")
   end
 
   test do

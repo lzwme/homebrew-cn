@@ -1,8 +1,8 @@
 class XCmd < Formula
   desc "Bootstrap 1000+ command-line tools in seconds"
   homepage "https://x-cmd.com"
-  url "https://ghfast.top/https://github.com/x-cmd/x-cmd/archive/refs/tags/v0.10.12.tar.gz"
-  sha256 "f33a29e2232570e117bb96285fe3fcb7a39536f920fba07dfd06b345745d48d6"
+  url "https://ghfast.top/https://github.com/x-cmd/x-cmd/archive/refs/tags/v0.10.13.tar.gz"
+  sha256 "7ac52d518a4424a6149cb15d14a322ce809575c210629068912cfba4942ee6c5"
   license all_of: ["Apache-2.0", "MIT", "BSD-3-Clause"]
   head "https://github.com/x-cmd/x-cmd.git", branch: "X"
 
@@ -12,11 +12,11 @@ class XCmd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d7ee61eedef9b76b25ea600a2b2045e9318d5bfd9884d191a84153bb399e980f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d7ee61eedef9b76b25ea600a2b2045e9318d5bfd9884d191a84153bb399e980f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d7ee61eedef9b76b25ea600a2b2045e9318d5bfd9884d191a84153bb399e980f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "28ae9d449643298d73dddd444acc7e5983b931e379a2d3c874a02879e38e9cd4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "28ae9d449643298d73dddd444acc7e5983b931e379a2d3c874a02879e38e9cd4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c12a539e11540adb3b7d04d962db359ed129d70de8ff2c88459cdc7f492503e6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c12a539e11540adb3b7d04d962db359ed129d70de8ff2c88459cdc7f492503e6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c12a539e11540adb3b7d04d962db359ed129d70de8ff2c88459cdc7f492503e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f31616625d492334fc1c63f99abc62d81c966b239335bf3178a056d68acfd864"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f31616625d492334fc1c63f99abc62d81c966b239335bf3178a056d68acfd864"
   end
 
   def install

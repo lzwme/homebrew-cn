@@ -4,6 +4,7 @@ class Scooter < Formula
   url "https://ghfast.top/https://github.com/thomasschafer/scooter/archive/refs/tags/v0.10.0.tar.gz"
   sha256 "724b874f11814d02bf08f4dc74d47251ef7ec5b93ecc855b663c2def8e1ccef5"
   license "MIT"
+  head "https://github.com/thomasschafer/scooter.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "593d4dc23f8bc5be85ccc1fda95a3f3910b7f881128b3331ee22a149e5ded48d"
@@ -14,6 +15,12 @@ class Scooter < Formula
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "scooter")

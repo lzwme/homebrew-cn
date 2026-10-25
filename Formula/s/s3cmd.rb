@@ -6,16 +6,11 @@ class S3cmd < Formula
   url "https://files.pythonhosted.org/packages/b3/9c/ad4cd51328bd7a058bfda6739bc061c63ee3531ad2fbc6e672518a1eed01/s3cmd-2.4.0.tar.gz"
   sha256 "6b567521be1c151323f2059c8feec85ded96b6f184ff80535837fea33798b40b"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/s3tools/s3cmd.git", branch: "master"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "78fa12d0f20fe81efb0eb9233033b75983fc32d2a045710ed75604468991e25c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "78fa12d0f20fe81efb0eb9233033b75983fc32d2a045710ed75604468991e25c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "78fa12d0f20fe81efb0eb9233033b75983fc32d2a045710ed75604468991e25c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1670eec2c668d970663ad7cbc13280d4a02b720b94de7f299d008164f75b982c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1670eec2c668d970663ad7cbc13280d4a02b720b94de7f299d008164f75b982c"
+    sha256 cellar: :any_skip_relocation, all: "1631a1bb7891333d5ecce1b16c49e861aea505efcbb21d660408819593565ae8"
   end
 
   depends_on "libmagic" => :no_linkage # for python-magic
@@ -37,7 +32,10 @@ class S3cmd < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources
+
+    # Build an `:all` bottle
+    inreplace venv.site_packages/"magic/loader.py", "/opt/homebrew", HOMEBREW_PREFIX
   end
 
   test do

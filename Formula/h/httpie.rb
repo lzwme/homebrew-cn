@@ -6,16 +6,15 @@ class Httpie < Formula
   url "https://ghfast.top/https://github.com/httpie/cli/archive/refs/tags/3.2.4.tar.gz"
   sha256 "b185cd8d81325f97c773582e50f1c5e047c2d8575b53d676469c9daf2a52f341"
   license "BSD-3-Clause"
-  revision 12
+  revision 13
   head "https://github.com/httpie/cli.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d2f7cc5d09d7467cdf548981d6372f79f9cd7e546d9c0b2e60a16fcc5d6e6545"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "783fc4a871555c5a5e1c976a8b8bdb5161b8a30f821db100ed6d040751f4f1b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2dd86a488c6fc075780d3911e4caa7533364e2fb373240570bc3ce88259be6a2"
-    sha256 cellar: :any,                 arm64_linux:       "a47b5ae577c9bf168f6f632615c90adc27841a718c216189ff7e97a6c0183459"
-    sha256 cellar: :any,                 x86_64_linux:      "4956b24e6d5a3915540b8df53c4da2d3b78e8284012a249a0232c214aca03661"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e306852d0a5e75a218431613da34abf665372884bdd8b494a42360a505f1ba3f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ed55babbf4a59a7d7049de97a814e74a1bc627111b6c94093f1ce00b284fc405"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c324153c25c231d37d45893e53ed46311829edad9e7338a43f6f2f2278817757"
+    sha256 cellar: :any,                 arm64_linux:       "990b148e13bde74e2755beacde75a9de3bb48bcd1f7e9945649955595254b02f"
+    sha256 cellar: :any,                 x86_64_linux:      "d83af621c353dee7dc7862b07fcdb23ed0e13e0c75be9f0506307feb708e3668"
   end
 
   depends_on "certifi"
@@ -50,8 +49,8 @@ class Httpie < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/c4/64/642465a4827331a98ba4ae29f97658be25d1bdcb868872a2f78f7482b507/multidict-7.0.0.tar.gz"
-    sha256 "a7fcd089a0af2e0ef053c0d39c22c9ebf2434dddcb91034fd2f59ec99623788e"
+    url "https://files.pythonhosted.org/packages/f9/79/84ddb5ba16c4eb2c69c71db76ae3c579fe546e511f7170c7e27eedbab7c1/multidict-7.1.0.tar.gz"
+    sha256 "61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec"
   end
 
   resource "pygments" do
@@ -80,8 +79,8 @@ class Httpie < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "urllib3" do

@@ -4,6 +4,7 @@ class Webkitgtk < Formula
   url "https://webkitgtk.org/releases/webkitgtk-2.54.2.tar.xz"
   sha256 "a76345b391bef6211fb5ab6cfab2e86b285d18cda17cbb9ade595f1252b86065"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https://webkitgtk.org/releases/"
@@ -11,8 +12,8 @@ class Webkitgtk < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "2faaa9b4cda52b60cce756ba589f87fb58ecf59c563bb9570816ace9f5f1a414"
-    sha256 x86_64_linux: "143cc00933263861e1cb70858bdb82035863ed154ea74b1e2a56c1a5fee01292"
+    sha256 arm64_linux:  "b00cb79e9c43adf36c1409db2002f4d2fd6619f4573c6c0f9f7d37a37a2105be"
+    sha256 x86_64_linux: "6dde3cba126dc03bad79a35ae350f7e8e6fad4031173a6a8c357366fbff24d29"
   end
 
   depends_on "cmake" => :build
@@ -36,7 +37,7 @@ class Webkitgtk < Formula
   depends_on "gstreamer"
   depends_on "gtk+3"
   depends_on "harfbuzz"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "jpeg-turbo"
   depends_on "jpeg-xl"
   depends_on "libavif"

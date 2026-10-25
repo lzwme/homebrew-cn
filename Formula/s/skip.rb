@@ -1,17 +1,17 @@
 class Skip < Formula
   desc "Tool for building Swift apps for Android"
   homepage "https://skip.dev"
-  url "https://ghfast.top/https://github.com/skiptools/skipstone/archive/refs/tags/1.9.18.tar.gz"
-  sha256 "f2cad2cab96d2db4c7c241280f7ee04177271c2738a35af3da8d5df6aa5d3445"
+  url "https://ghfast.top/https://github.com/skiptools/skipstone/archive/refs/tags/1.9.19.tar.gz"
+  sha256 "87e2531b8d7818b2afcf752485675b4e22e80b5d7f646f37ac73542af8855abc"
   license "AGPL-3.0-only"
   head "https://github.com/skiptools/skipstone.git", branch: "main"
 
   bottle do
-    sha256 arm64_golden_gate: "856c7d7bfc0253046ae93ab84d675a4ed36a2276103571019af662bf85c28bcf"
-    sha256 arm64_tahoe:       "8bc115338995188c3a2124d46bfd2e3ca53247ae54a5d3a0c37311c9e5bba8fd"
-    sha256 arm64_sequoia:     "561c781b2ddf9ce7ef85c421397768dc369f55261de24c41ab4fcda6309abe6a"
-    sha256 arm64_linux:       "0911103971c181cd8a2ff328e714a3284e2693c961072e6f533b9bdf07c9db30"
-    sha256 x86_64_linux:      "89128e897f1cf0b88dba143f06428f0349632bc6acd1448919dea91aa7be24cc"
+    sha256 arm64_golden_gate: "581d2e99fb397c40df6100ad981450954a1600eedcb14d9d44e3149ef8ddf566"
+    sha256 arm64_tahoe:       "7397c8014f1965b6a767f66cba2466967522dc7ea0dbf20d1d414f7b437c5fc7"
+    sha256 arm64_sequoia:     "3d9e0e7506349b67727502e7137e1d8dcd824ff198f1eed16d3af3e22753104e"
+    sha256 arm64_linux:       "69aed3e46bbe2e2b07c7ee1fac9f189320adcba1c80bfb4d7cb49e3273a89d29"
+    sha256 x86_64_linux:      "40bf238eda5b520980d32f95ac1382387aa39b33845acabf09ec74b0b7368433"
   end
 
   depends_on "gradle"
@@ -32,8 +32,8 @@ class Skip < Formula
   end
 
   resource "skipsubmodule" do
-    url "https://ghfast.top/https://github.com/skiptools/skip/archive/refs/tags/1.9.18.tar.gz"
-    sha256 "307536039cde604e557f068e904f7fbbcd71034758f2ec46357b3e56d03219b0"
+    url "https://ghfast.top/https://github.com/skiptools/skip/archive/refs/tags/1.9.19.tar.gz"
+    sha256 "820ec8a3c8aeb20c7f1b2081e66ca8eae1d4cffc27e0469c8574754b27dfb94d"
 
     livecheck do
       formula :parent

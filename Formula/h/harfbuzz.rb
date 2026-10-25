@@ -4,15 +4,16 @@ class Harfbuzz < Formula
   url "https://ghfast.top/https://github.com/harfbuzz/harfbuzz/releases/download/15.0.0/harfbuzz-15.0.0.tar.xz"
   sha256 "968536e9abd782f07f7954044c0c4020199fcdd39b41d221ec42d2a3be4a44df"
   license "MIT"
+  revision 1
   compatibility_version 1
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6d406ba9a599aaf0cda1f57aa1cde191e3e6839b655c374cff08e7d0ccc923fc"
-    sha256 cellar: :any, arm64_tahoe:       "31457bf639bdee6e9d70a8e167f9e4354f60277d02d2a29b8deec7d15ea2b185"
-    sha256 cellar: :any, arm64_sequoia:     "90c783573c9a81fe679751aa9e2f66da7bc4a935aca3482efcc88da07c8a5ccb"
-    sha256 cellar: :any, arm64_linux:       "62d538c3bbafca523a69e25a82ef6632036da8b0583626f079257c6bd88300a9"
-    sha256 cellar: :any, x86_64_linux:      "114c87db7de0376e9180dba598e5f024d0019e8619ffdc843b4125d84bc8c090"
+    sha256 cellar: :any, arm64_golden_gate: "474e9c051ca409ef2cca1c24db98816809d0dd50ae216838508a3e5be1062f85"
+    sha256 cellar: :any, arm64_tahoe:       "e465d30dc1fc03012d5bff48ce6452c4cc411392de11830d4743ebc739ef02e5"
+    sha256 cellar: :any, arm64_sequoia:     "a6286d242e42731cef8f3e4ad20bff6e45146c4235693cbfc0db73242ca9cc7e"
+    sha256 cellar: :any, arm64_linux:       "a2eeaf19441ac36affb2aa7f986df5993be4e94900145613755cf4864e5927c8"
+    sha256 cellar: :any, x86_64_linux:      "5389ca68e50532aeddbf7b831c4d1f4ae78ed33a7ec39f4a517033193206da6b"
   end
 
   depends_on "gobject-introspection" => :build
@@ -25,7 +26,7 @@ class Harfbuzz < Formula
   depends_on "freetype"
   depends_on "glib"
   depends_on "graphite2"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "libpng"
 
   on_linux do

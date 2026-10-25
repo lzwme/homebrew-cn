@@ -2,6 +2,7 @@ class Freeciv < Formula
   desc "Free and Open Source empire-building strategy game"
   homepage "https://freeciv.org/"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/freeciv/freeciv.git", branch: "main"
 
   stable do
@@ -27,12 +28,11 @@ class Freeciv < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "875e8ad2d7d9a699a4d76dfab31414f5acf636f579b5c7421adda2082bc9cbe7"
-    sha256 arm64_tahoe:       "7be9340d5ebbffcb1f17c4c36e68ccefc04938878d7d817d39af0a3515f0fff7"
-    sha256 arm64_sequoia:     "709df87f487030ce374381e87fbfce8190fb59729d0cb18ec16132bd8fdd9d1f"
-    sha256 arm64_sonoma:      "49151c65b32eae9e15a7731d32c9ef7e1a4c957d03d2097bc3e3885caeb3f859"
-    sha256 arm64_linux:       "e7c84f78d381f18e0f50b2c9406707405ea887612d6f795b8c6d5481caf659ad"
-    sha256 x86_64_linux:      "67b2f95aa037eacf5618daba18916104f41f407f424f9fbee6ff169cb0dbd65b"
+    sha256 arm64_golden_gate: "55a6b9a129dbd02541eebc97c2c756bee277da597a89ad55dc4160a1b363ec5f"
+    sha256 arm64_tahoe:       "4fd1bd5686ac72f798a202b81535440e7cd75e76fe63ee8c4190c8ce0c2be15c"
+    sha256 arm64_sequoia:     "28d9b6dbf5405a6b0ee7c5b119c14356da94055cf417d463e75b47a3e65f81e8"
+    sha256 arm64_linux:       "551ce01c721324c066d360c5b0792bba649fed5d73c6c188d04a60fbfe02e281"
+    sha256 x86_64_linux:      "f28819b1a0ed582a5294f9bff80fe629e0caf37579936bec28ae61d64174803c"
   end
 
   depends_on "meson" => :build
@@ -43,7 +43,7 @@ class Freeciv < Formula
   depends_on "gdk-pixbuf"
   depends_on "glib"
   depends_on "gtk4"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "lua"
   depends_on "pango"
   depends_on "readline"

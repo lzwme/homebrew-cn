@@ -1,20 +1,20 @@
 class PhpAT70Debug < Formula
   desc "General-purpose scripting language"
   homepage "https://secure.php.net/"
-  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/76d932fdc0b984a1a8d9bd42bd04fb386e36135f.tar.gz"
+  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/67a075e9b509891ae7b95e8ff48e73c16f63a19d.tar.gz"
   version "7.0.33"
-  sha256 "c7363edcfbae285748026db1e4dc70d119fead29f49c13fc42a0067d1b093241"
+  sha256 "29b56e2126d94f5f8fa848194fb4073f33c30ce1f484c94dd52f77de668fe850"
   license "PHP-3.01"
   revision 19
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 1
-    sha256 arm64_golden_gate: "98780738604025e1fdbd0534e3164c5da75a6573dcfd95c9fe393e5b39ab809b"
-    sha256 arm64_tahoe:       "9f32474faa6acdf4461c2bc2f46be5e3718ef9859c26dd66d13f79daa0739ff0"
-    sha256 arm64_sequoia:     "934d24b631a691cc2f0f6c16e793382d24ba06cfdb9199755a1d756a5492bc6f"
-    sha256 arm64_linux:       "f00a995047502f6b736e136c561654143099ef4dc18513823703fe075a91821f"
-    sha256 x86_64_linux:      "9572485037be1fba9174310a6746144ed8770c83ecaafeebde2af0e45087ce62"
+    rebuild 2
+    sha256 arm64_golden_gate: "c631ba84f68f39ec327f110dd18861b64f5166029a772a6895a22446728a3e49"
+    sha256 arm64_tahoe:       "2ab9f7cf94c7a60288625c888fc33c734f410552e3e62e1f174b7177783b34c8"
+    sha256 arm64_sequoia:     "c05edfb8d8e6e2367848f17f52bc0f6813fb137cda6a897080e19fbfa101ea52"
+    sha256 arm64_linux:       "644571f454eae3c2852e6f353fc4819d094717140131a4b09617d44e9944949c"
+    sha256 x86_64_linux:      "1e76a7b467a4a8dc21a09036caa2932eeba1782228d303c0d9708977336dea8f"
   end
 
   keg_only :versioned_formula

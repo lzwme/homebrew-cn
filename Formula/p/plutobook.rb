@@ -4,13 +4,14 @@ class Plutobook < Formula
   url "https://ghfast.top/https://github.com/plutoprint/plutobook/archive/refs/tags/v0.20.0.tar.gz"
   sha256 "439758ab506d4578518bc1427c4ea4eed8e654d9e01cea327267156a83428310"
   license "MPL-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b75effcb0b7ac4af2c64f46830cbc58e2b2508d06b7b3db32b01efe84c4efd46"
-    sha256 cellar: :any, arm64_tahoe:       "cf24df0bcc1e2c1b397bab183fad79bf6559b925f803aed09b1b81ee76fe1ff0"
-    sha256 cellar: :any, arm64_sequoia:     "ef51c93663e0b3d9153381685edf68a421a568b7e8760daaa82a0c7ede0b843d"
-    sha256 cellar: :any, arm64_linux:       "490c1b740d155c1108d39d94e038d58b4e1a6709c09fa69af66b7f6371434fbb"
-    sha256 cellar: :any, x86_64_linux:      "bd8faf5bd4f858e4df17871cd6fa1ea2631cb246685043deb7125ac66c2c2139"
+    sha256 cellar: :any, arm64_golden_gate: "4fd715d512a456b6c7be15c149bc4a55eaaeea7c7e1afd609593d64e7d1bdda5"
+    sha256 cellar: :any, arm64_tahoe:       "acd15ee010203e39db43c6d492e6734af921d3e95176f3cb8c5e9e60e77c8515"
+    sha256 cellar: :any, arm64_sequoia:     "b6432537261d55e71f12f375787411c3ce2f5d37ceeba967f0b1d0c46ce6bbdf"
+    sha256 cellar: :any, arm64_linux:       "4865af9d65751df506a3803e3e7df683a13ac3e92f67425460f84f795dcab14c"
+    sha256 cellar: :any, x86_64_linux:      "381ad95d9310c2abf70f9e74717f6db7c4f81d06060cd6aa8d4d339cb9baaf4c"
   end
 
   depends_on "meson" => :build
@@ -20,7 +21,7 @@ class Plutobook < Formula
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "harfbuzz"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "jpeg-turbo"
   depends_on "libidn2"
   depends_on "webp"

@@ -22,9 +22,16 @@ class Stgit < Formula
   uses_from_macos "curl"
   uses_from_macos "git" # needs git >= 2.2.0. Consider using system git on Linux once RHEL 7 ELS ends
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
-    system "make", "prefix=#{prefix}", "install-bin", "install-man"
+    system "cargo", "install", *std_cargo_args
+    system "make", "prefix=#{prefix}", "install-man"
     system "make", "prefix=#{prefix}", "-C", "contrib/vim", "install"
     generate_completions_from_executable(bin/"stg", "completion")
   end

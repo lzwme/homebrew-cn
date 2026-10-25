@@ -24,6 +24,9 @@ class Tinymist < Formula
 
   depends_on "rust" => :build
 
+  # `tinymist` uses `cargo_metadata` in build script, which fetches `crates.io` data
+  allow_network_access! :build
+
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/tinymist-cli")
     generate_completions_from_executable(bin/"tinymist", "completion", shells: [:bash, :zsh, :fish, :pwsh])

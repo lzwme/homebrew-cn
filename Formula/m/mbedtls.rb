@@ -1,6 +1,7 @@
 class Mbedtls < Formula
   desc "Cryptographic & SSL/TLS library"
   homepage "https://www.trustedfirmware.org/projects/mbed-tls/"
+  # TODO: undeprecate if upstream finds new maintainers to continue development
   url "https://ghfast.top/https://github.com/Mbed-TLS/mbedtls/releases/download/mbedtls-4.2.0/mbedtls-4.2.0.tar.bz2"
   sha256 "2bed9d713b4668f76553b097e72b8aa30bc8f112a940d7ae228d524bbde6ffea"
   license "Apache-2.0"
@@ -21,6 +22,10 @@ class Mbedtls < Formula
     sha256 cellar: :any, arm64_linux:       "5ce5e9e48b1610b58604b80d3deb594f4cfd27ad5eb53fb04726b28d9beb0d56"
     sha256 cellar: :any, x86_64_linux:      "ed76153a02aa91fa411c67ec1b6ccaa59417b7da9c4ac9974c3de39f77b36939"
   end
+
+  # https://lists.trustedfirmware.org/archives/list/mbed-tls@lists.trustedfirmware.org/thread/YPIGCB7WN6GCHOGEGKOJXUYAP7OK527W/
+  deprecate! date: "2027-04-01", because: :unmaintained
+  disable! date: "2028-04-01", because: :unmaintained
 
   depends_on "cmake" => :build
 

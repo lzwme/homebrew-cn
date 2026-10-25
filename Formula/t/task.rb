@@ -33,6 +33,9 @@ class Task < Formula
 
   conflicts_with "go-task", because: "both install `task` binaries"
 
+  # Needed for CMake's `corrosion_add_cxxbridge`
+  allow_network_access! :build
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DSYSTEM_CORROSION=ON", *std_cmake_args
     system "cmake", "--build", "build"

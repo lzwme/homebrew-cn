@@ -6,21 +6,22 @@ class Py7zr < Formula
   url "https://files.pythonhosted.org/packages/d6/31/d5469ec310b57c730785068c227caf2263391be846ae5e99488f69b394eb/py7zr-1.1.4.tar.gz"
   sha256 "7674697559bd06b697bf6e8249985cee6dc704a4b07b8e11f24d0b1695707c3e"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/miurahr/py7zr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bf1e66ce13f5015342666ebe0fee3fc8ce061fcea63d43873f281bcd0b2d886c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6d133c53a16c1f45cf35f344b2c63b6c3edb28fda3d396910090e7877d321d49"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0166f521ff9822300eae45ca010b1989578adf0adf66985cedc0134adb0469f7"
-    sha256 cellar: :any,                 arm64_linux:       "fa72d91dbc535048b7d91b3a9ffc750c86016671f8ca31b490c67ac60ebcd3e2"
-    sha256 cellar: :any,                 x86_64_linux:      "8546ad3e682a00ec8e90ddb090009b10fd11659333a1127d1626071b377f4719"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3fc40d3821676e4258cf6f4aa25b530a194c64a7e83fea7f788a1ab1bd089cde"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8c851f016a5d219506dd234f22f3d2e2fac03ba403a586d425b59447b11e4f8c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7c559fd0fd37ec78e1be22747f598255e67ab963f8088ea17edc3863035e7ec2"
+    sha256 cellar: :any,                 arm64_linux:       "66974bbdabd725f686af36b5efcba39d693dff14cb1f53cf0fb9fc96e5422c93"
+    sha256 cellar: :any,                 x86_64_linux:      "bd6c352204448d0b47fe67680852a05c3f05db50b5aa5d104c271f4d48975f66"
   end
 
   depends_on "python@3.15"
 
   resource "brotli" do
-    url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
-    sha256 "e310f77e41941c13340a95976fe66a8a95b01e783d430eeaf7a2f87e0a57dd0a"
+    url "https://files.pythonhosted.org/packages/cf/81/1546c983678a9b4e77cb4718eaedd1b2caf24a6cdbf1eb8775938d22aff7/brotli-1.2.1.tar.gz"
+    sha256 "02b2f7b5a83485efe448a44ddf7983def05c3bb1dcf917d4f7154070260e13de"
   end
 
   resource "inflate64" do
@@ -54,8 +55,8 @@ class Py7zr < Formula
   end
 
   resource "texttable" do
-    url "https://files.pythonhosted.org/packages/72/c8/c926b35a849405ae0cb21956f8d7bd5e4f2c277c211784ed7d441df1b807/texttable-1.7.1.tar.gz"
-    sha256 "ce71fc5928ede6cd7a60dbe3cb2845e6df8f5598fe435252ea1b31722415fda7"
+    url "https://files.pythonhosted.org/packages/03/19/9590fd39a668ea0a0869493441fe65852246a3ec67616877baad98bcb039/texttable-1.7.2.tar.gz"
+    sha256 "dc16ea6b35fbf5291ba6ef79d79e37d9b3ca6acd7bae3ca3450488d7c2e19c99"
   end
 
   def install

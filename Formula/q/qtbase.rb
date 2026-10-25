@@ -7,7 +7,7 @@ class Qtbase < Formula
     "BSD-3-Clause", # *.cmake
     "GFDL-1.3-no-invariants-only", # *.qdoc
   ]
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://code.qt.io/qt/qtbase.git", branch: "dev"
 
@@ -41,11 +41,11 @@ class Qtbase < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "cb6651ad22e6b506eb324d5f6b4d46ef85575ebb16c8ccb8721c99e1c37d6709"
-    sha256 cellar: :any, arm64_tahoe:       "116817e685a0f632be562632f199c621e9b1f85f5077ded56728a5f257873ae1"
-    sha256 cellar: :any, arm64_sequoia:     "9e8b2784e064475ee943a3a2dbbdbcdb99c4ae248a820f0acfcca17e8c9caa35"
-    sha256 cellar: :any, arm64_linux:       "a8bfddd97e4ec22fabbcf25428c921c0ebc6a9cb4dd71c1d22a4899f845ccb2b"
-    sha256 cellar: :any, x86_64_linux:      "0a8e461e254509d87594d7d81393510d2aeeb1dd004c0f23e6b75ef2b746e7f5"
+    sha256 cellar: :any, arm64_golden_gate: "178ff42e7d82f5ed7c6164f6c7c4e8b735e03a4b61bd96eb970341f7329214fb"
+    sha256 cellar: :any, arm64_tahoe:       "27e5c88a59fa45e3b8b5628d739d64a7bbd57c384db9501936ddefaf6352e08a"
+    sha256 cellar: :any, arm64_sequoia:     "78614b676f994884c49c04f304fabb9320221adbb6769f64b02c3e5cca788edc"
+    sha256 cellar: :any, arm64_linux:       "89245deeafff3534c572db16a65f594d63b91d8c2ddf6157b1194272feb3389b"
+    sha256 cellar: :any, x86_64_linux:      "9e9e6d80b450c24ea3d924543016d50d59936e6d7803c200ea2b044de1d4dda0"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -59,7 +59,7 @@ class Qtbase < Formula
   depends_on "freetype"
   depends_on "glib"
   depends_on "harfbuzz"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "jpeg-turbo"
   depends_on "libb2"
   depends_on "libpng"

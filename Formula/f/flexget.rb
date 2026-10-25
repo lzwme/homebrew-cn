@@ -6,13 +6,14 @@ class Flexget < Formula
   url "https://files.pythonhosted.org/packages/88/6e/aaf87a19e706366a4e7ccb831fecd04941c7da82c9e1e725cf6f6ac78d72/flexget-3.22.6.tar.gz"
   sha256 "03bb4f6d213c75ef540bfd8cf1dfdfb280aa1233800108f4cb5570e9c505005b"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6828cb07f46fe5aa41d1f7a2b3a9f8611387e56904ec4f43f2ffa8c01ce03edd"
-    sha256 cellar: :any, arm64_tahoe:       "2b81c37d16cb1637262d0deef39c6c21145166714436606ec16c230f56114b5b"
-    sha256 cellar: :any, arm64_sequoia:     "682e8185c06da6fd1dda7b2ee216df5f83f082afcdc9d4953caab32dc62da443"
-    sha256 cellar: :any, arm64_linux:       "312c451a02940075a9d2ef6ec2e2ef49ea73f52de92f2bebbc8b06bc3a307585"
-    sha256 cellar: :any, x86_64_linux:      "08b4b46d8278ec9a2afee69f8c17147aa5a1d4f0b391e16e7f8dff9695b4bcab"
+    sha256 cellar: :any, arm64_golden_gate: "afdb82da2679690e262628613461b072edeaa7c687e98faea4737ad0add6a205"
+    sha256 cellar: :any, arm64_tahoe:       "ce8efec8a302a0b9754970760472e9714d75667ba10c6bc0085b5f2e0242dc45"
+    sha256 cellar: :any, arm64_sequoia:     "119a9a323a5dc89ed3b677ed68ccc5f48019cbe821da547bf54c054ead1cc855"
+    sha256 cellar: :any, arm64_linux:       "a028cd558345e3ab251a9cdc9fdcd30b393d67b909c9dc2168a16d86c55f1067"
+    sha256 cellar: :any, x86_64_linux:      "49e4f7994e3dabed6f007fcde78a913445f0ac26ce6b5b7297b448cc7fe2d88b"
   end
 
   depends_on "rust" => :build
@@ -62,8 +63,8 @@ class Flexget < Formula
   end
 
   resource "brotli" do
-    url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
-    sha256 "e310f77e41941c13340a95976fe66a8a95b01e783d430eeaf7a2f87e0a57dd0a"
+    url "https://files.pythonhosted.org/packages/cf/81/1546c983678a9b4e77cb4718eaedd1b2caf24a6cdbf1eb8775938d22aff7/brotli-1.2.1.tar.gz"
+    sha256 "02b2f7b5a83485efe448a44ddf7983def05c3bb1dcf917d4f7154070260e13de"
   end
 
   resource "charset-normalizer" do
@@ -313,8 +314,8 @@ class Flexget < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/63/40/e2c41d00a4bfea5548c31420a74c6cf149cc0e7c36b45c4c82202ce867aa/setuptools-84.2.0.tar.gz"
-    sha256 "6f445ca2ce864605f81e223f262b4c94ffcb9a4a63473bae0ed7be5aab0291da"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "shellingham" do
@@ -328,13 +329,13 @@ class Flexget < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/5e/77/2dcfa996b01702ab8fd0763d84098f6a640d6162a328f1c04c2697579a1a/soupsieve-3.0.3.tar.gz"
-    sha256 "7dcf6022eed0399eb9934a75e020148f7a2024c37b7dfcd3cf2c5505d69c364e"
+    url "https://files.pythonhosted.org/packages/19/63/0b6bae54546aed98d72f12d09df57b19a287f01c84d22047fa2e23772ab9/soupsieve-3.0.4.tar.gz"
+    sha256 "924fab84ae21604c19e175e1f39815eb6fa83ba23836e09e9de180925e5bc4c0"
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/08/bb/28e3106ee586e5b2f5ecf211eec1348055f0f926314b13fe23b9cffa9039/sqlalchemy-2.1.5.tar.gz"
-    sha256 "0df76cf1ca680ad745bd378a6299a058611a8a784eeaeb4ed78ad4a0b7ce2003"
+    url "https://files.pythonhosted.org/packages/36/dc/9addbf490110b5727380059ee542ad8353bdcee45a37ba6a5e0976966ae0/sqlalchemy-2.1.6.tar.gz"
+    sha256 "499eae5c9051efe96cb9a73ec2fbde8ffa4186f102b9094ebab8fcc9d3b99f52"
   end
 
   resource "tempora" do
@@ -368,8 +369,8 @@ class Flexget < Formula
   end
 
   resource "tzlocal" do
-    url "https://files.pythonhosted.org/packages/81/5b/879b2f932adfa7a053c360d50bc896c977fa6426109185f7c12ebdd0cb9d/tzlocal-5.4.4.tar.gz"
-    sha256 "8dbb8660838688a7b6ba4fed31d18dedf842afb4d47ca050d6d891c2c15f3be4"
+    url "https://files.pythonhosted.org/packages/d8/89/2bd035df331499589fc92e59375c17c6cea6a500453b2c5f6a6ec9572825/tzlocal-5.4.5.tar.gz"
+    sha256 "ba976898bad27945178c9ca25c222c19e322b30c10342b9f40b46714f70d2d5f"
   end
 
   resource "urllib3" do

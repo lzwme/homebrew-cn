@@ -4,6 +4,7 @@ class Zebra < Formula
   url "https://ftp.indexdata.com/pub/zebra/idzebra-2.2.11.tar.gz"
   sha256 "f8a2745425967d6dd133a55b9e8431484e50b0d62f6c90b7bca37399bd528dec"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://ftp.indexdata.com/pub/zebra/"
@@ -11,18 +12,16 @@ class Zebra < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "f5b0a773749440eec6111d1efb4aec13a8002491a1618ad83f59dcfac1559d49"
-    sha256 arm64_tahoe:       "a9dc199e6eda7f988acc9aa56c77ee8375c2f9a2fd5dba0c71549438c9fee673"
-    sha256 arm64_sequoia:     "37b94ad46aa43a46f06941e2854e6d30f7e54006a9a5af5237b43e141086895c"
-    sha256 arm64_sonoma:      "eff491efc8f14581f610db4c42b9cf829736dff9a65785401f09544b62f7ee35"
-    sha256 sonoma:            "12f6eecd7d7428099b2905e4e4cf4cdf5d3e4a371681eb9f3f6fc23dc46b4222"
-    sha256 arm64_linux:       "060db00fbe4eee714ca1ef2b2c3a307a8f36ef400d23b9fdcbf6bbe7456ef480"
-    sha256 x86_64_linux:      "cad3e1f50abfa72fa4de40e462c4bdf2a24cd0ca90d34885ab36c866a9170415"
+    sha256 arm64_golden_gate: "e75de204bccfd984aa544ac7be99337ee2e0c4f97bcb8794e15d0a22cdfb30e8"
+    sha256 arm64_tahoe:       "6f2d39bb8881559788a41d4aa0983818a8a46ae07b30b05df33a67f8dc2533c8"
+    sha256 arm64_sequoia:     "45666b5a6246de532ffa5387733b1bf735d3826ce512f178d054ee3617114db6"
+    sha256 arm64_linux:       "5b4ddb1aedd0fc2ecd193be7b474afd9482066be0fc8b91ed22d57aef881f655"
+    sha256 x86_64_linux:      "c4f77d2e56ca41e3594b308047ecc106b334b3580634d2c8519c226d0fe7f2ab"
   end
 
   depends_on "pkgconf" => :build
 
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "yaz"
 
   uses_from_macos "bzip2"

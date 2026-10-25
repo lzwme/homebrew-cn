@@ -1,17 +1,19 @@
 class Hellwal < Formula
   desc "Fast, extensible color palette generator"
   homepage "https://github.com/danihek/hellwal"
-  url "https://ghfast.top/https://github.com/danihek/hellwal/archive/refs/tags/1.0.8.tar.gz"
-  sha256 "53f629f22bd80c95150fa8510c4c5f4969beec06bfd01ad33a5fdad3d56a357e"
+  url "https://ghfast.top/https://github.com/danihek/hellwal/archive/refs/tags/v1.0.9.tar.gz"
+  sha256 "f708cbe7326299ac14a9a39869f5a833d58668ec7bbc679fea8b24915b307864"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c878b9620f231a54aebc76e61fd70d8e86f56d52adb9624c5698d4ce5cdd6c44"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bf4242ff50905d089417461d5d5736fd017b089ea457dbe8b71804216b0c993b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5490782b0e56972fe9b0aeb3e0d2d182a644012f93ee777a99f151335752ab4c"
-    sha256 cellar: :any,                 arm64_linux:       "b124d10fb5b5bd860b33fb44bd44ee9495f59acf48e20797ede02c642a965db9"
-    sha256 cellar: :any,                 x86_64_linux:      "432792a355394a09a0f26bf0a2f1d07bb9e306bf587aaa8ca0a8bb6c37856942"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "73c42183853342a619ad62d146619ca992325adbc96a7959f10d3025b70b93bd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bb34f50c33798fb23e15b178bcff244744199e147b4aadfe8cfb9394d845f3d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9b728f3d510f7919680a2ac779e4b148e2fb5b7eea2199202829d0e4894ef985"
+    sha256 cellar: :any,                 arm64_linux:       "b52d11f7d04d3482589e1a6a1a1d2ef0f5abb2e1be59deddcf336aac4067c352"
+    sha256 cellar: :any,                 x86_64_linux:      "ab5393bf8906a565866ea561ae8166fe8cf11409ec63a5d265e9c0ce7e8cb96d"
   end
+
+  deny_network_access!
 
   def install
     system "make", "install", "DESTDIR=#{bin}"

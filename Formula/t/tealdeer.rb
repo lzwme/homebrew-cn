@@ -1,25 +1,22 @@
 class Tealdeer < Formula
   desc "Very fast implementation of tldr in Rust"
   homepage "https://tealdeer-rs.github.io/tealdeer/"
-  url "https://ghfast.top/https://github.com/tealdeer-rs/tealdeer/archive/refs/tags/v1.9.0.tar.gz"
-  sha256 "1387a04ddba714668ff0925377a2de0d0ab14533d44dd0766d673fbbd71e3119"
+  url "https://ghfast.top/https://github.com/tealdeer-rs/tealdeer/archive/refs/tags/v1.9.1.tar.gz"
+  sha256 "78e7dbfcc2c8975c143a9746b073a3af875cdee72819bc383fbd411bae2c553c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/tealdeer-rs/tealdeer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bc966189fa9af7f65d8b608535a309a5857e9e766ddf52e2770b2e6fc2a7392e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c3e2109975d3039ec3945ba16dae5267cb0373151d84b6ed88a961a5dccdc08c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9fbf3479e61e34797f4e0efec70f80ed5b24d7efd7da61d99869e704121f6baf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2c8a304fb5ebdd0981b3835e468015999af4cce43fd0a92549a6bebb1efaee61"
-    sha256 cellar: :any_skip_relocation, sonoma:            "59f1baf546aa410a1c2372be9d019a1863400b746aa2a417d5e1eed98cd69507"
-    sha256 cellar: :any,                 arm64_linux:       "4a0563dead5e04f640bc5cca2fc48faed46caea0a570dabaf0dfb1f360fa8722"
-    sha256 cellar: :any,                 x86_64_linux:      "ad9e54703902ed0445daa4faf1559550f49310c0161e14d483ce0a64dc77f6a9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0484a48458699481e077219fe8853741375707358bbc48f03db3c7847cfa0294"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aa27939498be34ee09fcfb9e82faf022df9bdf5cd8a27ccb79e8ed484ba60895"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "58947a0d7b708b657b51b59319e95b05350eb7ea43697ca1e8ae6ff09d3eeb87"
+    sha256 cellar: :any,                 arm64_linux:       "53d756ef58fdc2997046a183c76dd4ea188899ea36ffbce9b381ad101295b864"
+    sha256 cellar: :any,                 x86_64_linux:      "1ad9546e9ec87d7353b4c499e14d69caf50f6a998eefb1ab84da985f4e8b9c7f"
   end
 
   depends_on "rust" => :build
 
   conflicts_with "tlrc", because: "both install `tldr` binaries"
-  conflicts_with "tldr", because: "both install `tldr` binaries"
 
   # `test do` block downloads the tldr pages cache
   allow_network_access! :test

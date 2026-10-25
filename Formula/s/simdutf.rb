@@ -4,6 +4,7 @@ class Simdutf < Formula
   url "https://ghfast.top/https://github.com/simdutf/simdutf/archive/refs/tags/v9.3.2.tar.gz"
   sha256 "d92a0a4ce216dcebf18af20fed7ea7279fa535683f790fdaeed39827a234f567"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   compatibility_version 7
   head "https://github.com/simdutf/simdutf.git", branch: "master"
 
@@ -13,16 +14,16 @@ class Simdutf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2f2f09ccee21e6b73a3c2a6d37a4228a1a26fdd2904d63f3bf59bfbab5e2428b"
-    sha256 cellar: :any, arm64_tahoe:       "d5d3c3cc35bcca3961ff5ad2515c84fc3310e8d69bb047a9403d97b8b919ce2c"
-    sha256 cellar: :any, arm64_sequoia:     "f9e43522d4d1993441aa14a7ddf9aa303bd85f9f5993fcdfd84af681052a4ae3"
-    sha256 cellar: :any, arm64_linux:       "552cfd43ccbfe02710b8d8d303c8f2260aa3b84cf63e03422d5a3f444102cabe"
-    sha256 cellar: :any, x86_64_linux:      "cb8505d258329c509158f75f64bbb36bdccd75af12b894cd207ab06dbd49ca21"
+    sha256 cellar: :any, arm64_golden_gate: "ea02e459d2107976603360a08d0ae3a267430588ebd9bc4fc7f6107255f66eba"
+    sha256 cellar: :any, arm64_tahoe:       "1986c6b992a3f97a4c44eb44a0c227fd54ac247515e59f2bdcb2d95b122f5d5d"
+    sha256 cellar: :any, arm64_sequoia:     "19a0c05574ce252a9864e4d68d4f633741e8194456dce240791573c012367c66"
+    sha256 cellar: :any, arm64_linux:       "e2bffc98d4297d9d6e968a4cd54bad8b8bc1d9e4178d5bcd0c0e74bd49a0440d"
+    sha256 cellar: :any, x86_64_linux:      "c2bccbd6568e70db47fea43243d1e11e5ef813564b9894721b1e10599d685003"
   end
 
   depends_on "aklomp-base64" => :build
   depends_on "cmake" => :build
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
 
   uses_from_macos "python" => :build
 

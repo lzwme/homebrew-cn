@@ -24,7 +24,7 @@ class Dufs < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin/"dufs", "--completions")
+    generate_completions_from_executable(bin/"dufs", shell_parameter_format: "--completions=")
   end
 
   test do

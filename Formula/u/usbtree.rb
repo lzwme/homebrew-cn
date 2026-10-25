@@ -4,6 +4,7 @@ class Usbtree < Formula
   url "https://ghfast.top/https://github.com/gnomeria/usbtree/archive/refs/tags/v0.1.1.tar.gz"
   sha256 "a315eeeb559911fffb1c2a17b6ebd418143168c888db5d3b737b05d8c34b3486"
   license "MIT"
+  head "https://github.com/gnomeria/usbtree.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "60a001a6fa36995eb0999993123c1d8b94224204a3b567f57637be4e4786c2d6"
@@ -16,6 +17,12 @@ class Usbtree < Formula
   end
 
   depends_on "rust" => :build
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

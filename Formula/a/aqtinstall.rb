@@ -6,16 +6,15 @@ class Aqtinstall < Formula
   url "https://files.pythonhosted.org/packages/76/19/24a588de6c25d43169d172dab47e63a63cd0d8f90e98cf86487acbf00ac7/aqtinstall-3.3.0.tar.gz"
   sha256 "9c7d85fbe7258be2d7d23fda33f8aff2e8b7536817255eaeaaf4226da8546a31"
   license "MIT"
-  revision 10
+  revision 11
   head "https://github.com/miurahr/aqtinstall.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "53418836da9a4176fc20b73a6760df98ed45fdbb6f3d7ad09e68b4a9a556a07e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "982736dfac32f2ff981fd213f7512f07714aea6e612185182209b7d26367bd81"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d3e84f3680a5142a6be898c89de85936fb2a311183e48165b98ee54206fc7d02"
-    sha256 cellar: :any,                 arm64_linux:       "78eb403bb257ce465b67cf2bc99de984572d9d86bc139996aa8e480183c2b306"
-    sha256 cellar: :any,                 x86_64_linux:      "1e22894ffe36e2a71e9511971d1d8dace2edac0cd1150a88034e07c6f3ad0797"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b0e7c860f3b18f378dae9748bafe015ea440054d799e49aa24fc8ef8890013a7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8e262041b8c147049f7de349943024b28c74d30f03bfa1edef3a03f3c77e361b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "47cfd2fa75c13aeb45cd7948ce0f8d9e2a6161cbbd6ea606b9caccb6cb33e86f"
+    sha256 cellar: :any,                 arm64_linux:       "b21341543497d1b90eaf9c10a2fef32459955ddf11adfca20b9aed31fb4341c8"
+    sha256 cellar: :any,                 x86_64_linux:      "6fa802df0f0b5926a6a39bd7b069d7917f755d22714451cbc8d199d250738f88"
   end
 
   depends_on "certifi" => :no_linkage
@@ -29,8 +28,8 @@ class Aqtinstall < Formula
   end
 
   resource "brotli" do
-    url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
-    sha256 "e310f77e41941c13340a95976fe66a8a95b01e783d430eeaf7a2f87e0a57dd0a"
+    url "https://files.pythonhosted.org/packages/cf/81/1546c983678a9b4e77cb4718eaedd1b2caf24a6cdbf1eb8775938d22aff7/brotli-1.2.1.tar.gz"
+    sha256 "02b2f7b5a83485efe448a44ddf7983def05c3bb1dcf917d4f7154070260e13de"
   end
 
   resource "bs4" do
@@ -79,8 +78,8 @@ class Aqtinstall < Formula
   end
 
   resource "py7zr" do
-    url "https://files.pythonhosted.org/packages/59/3f/ac248f25f3901d3d6cf80ac99d5bac6fd1e5e6543c1812c79b02b6074c60/py7zr-1.1.3.tar.gz"
-    sha256 "8d51894abb38355bf14881088bb97f01fe4cb5b14ebe22f66d6297668c7e1a74"
+    url "https://files.pythonhosted.org/packages/d6/31/d5469ec310b57c730785068c227caf2263391be846ae5e99488f69b394eb/py7zr-1.1.4.tar.gz"
+    sha256 "7674697559bd06b697bf6e8249985cee6dc704a4b07b8e11f24d0b1695707c3e"
   end
 
   resource "pybcj" do
@@ -89,8 +88,8 @@ class Aqtinstall < Formula
   end
 
   resource "pycryptodomex" do
-    url "https://files.pythonhosted.org/packages/4c/25/214ea825a9031f5af2c8b2506ee16701a2560d4712165dd00098dd527bcb/pycryptodomex-3.24.0.tar.gz"
-    sha256 "0428f19f13452c6b89bbaf2c530f84f369873811dfa77f0cee0da4f40fb0474f"
+    url "https://files.pythonhosted.org/packages/f4/e7/50e72301e32acb73a314e663c2014e1ddefc019d5f434ff14ec89861d664/pycryptodomex-3.24.1.tar.gz"
+    sha256 "09081666ffc599976c0b8b29caf2cf82212c0f05bed233c8f8ed53e4f6e1d356"
   end
 
   resource "pyppmd" do
@@ -109,13 +108,13 @@ class Aqtinstall < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/71/c3/1b817965ac12dc002d7c9cd7dfffdd7d4fbf9b45763ef2ffe7b86ee94670/soupsieve-2.10.tar.gz"
-    sha256 "49e9380d7d2905463583bafe285e818c7366a9ed7b3aee221c1ac79c905d8bc0"
+    url "https://files.pythonhosted.org/packages/19/63/0b6bae54546aed98d72f12d09df57b19a287f01c84d22047fa2e23772ab9/soupsieve-3.0.4.tar.gz"
+    sha256 "924fab84ae21604c19e175e1f39815eb6fa83ba23836e09e9de180925e5bc4c0"
   end
 
   resource "texttable" do
-    url "https://files.pythonhosted.org/packages/1c/dc/0aff23d6036a4d3bf4f1d8c8204c5c79c4437e25e0ae94ffe4bbb55ee3c2/texttable-1.7.0.tar.gz"
-    sha256 "2d2068fb55115807d3ac77a4ca68fa48803e84ebb0ee2340f858107a36522638"
+    url "https://files.pythonhosted.org/packages/03/19/9590fd39a668ea0a0869493441fe65852246a3ec67616877baad98bcb039/texttable-1.7.2.tar.gz"
+    sha256 "dc16ea6b35fbf5291ba6ef79d79e37d9b3ca6acd7bae3ca3450488d7c2e19c99"
   end
 
   resource "typing-extensions" do

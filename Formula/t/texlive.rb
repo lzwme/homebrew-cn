@@ -8,7 +8,7 @@ class Texlive < Formula
   mirror "https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2026/texlive-20260301-source.tar.xz"
   sha256 "cb120d314d3ceb23ac608af17ddd2c623afcf02331f400a0f25eead5b8ac1d70"
   license :cannot_represent
-  revision 2
+  revision 3
   compatibility_version 1
   head "https://github.com/TeX-Live/texlive-source.git", branch: "trunk"
 
@@ -37,11 +37,11 @@ class Texlive < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_golden_gate: "aa269d1f84bd4a176bafc835f90e5e5f311f24b9f3cc6c55127ab03d42f93403"
-    sha256 arm64_tahoe:       "c1aec161730a0402d95eb03692cfaa55c57931373361ae334c6f2476d06fa669"
-    sha256 arm64_sequoia:     "0e457cce9dbffbf1f9c370560c702f920ca498d9aed0a51a57d20c8e996022df"
-    sha256 arm64_linux:       "02d3f1ff8b28d1c4da9df84d46195028687f54b52fc70745ca6dcbc557aed439"
-    sha256 x86_64_linux:      "8f3e068824f8014f22d7cf89dd70dc8ad989d27e5760a75932a39ebacf873633"
+    sha256 arm64_golden_gate: "4394bb142b9cb8e05708228a5c21e425cbf74427328420ce553241df6893e814"
+    sha256 arm64_tahoe:       "e9dd7a6d98b2bbbc239eed82b6a3a8174e7b007569cbaf609a1ca00758f245f4"
+    sha256 arm64_sequoia:     "892d54c876ae8ead0923cada788757e6d1c3a9f09e15a05b09a1c48c57b0958a"
+    sha256 arm64_linux:       "cfe7b62337e2e0023b846217a16294e6f2f98a2f235ba0cbd2176506bed3a6a1"
+    sha256 x86_64_linux:      "d6ea7c43229edba186d71779c8e6014e38dd3dd8de54baf56731e90be1a677c7"
   end
 
   depends_on "pkgconf" => :build
@@ -54,7 +54,7 @@ class Texlive < Formula
   depends_on "gmp"
   depends_on "graphite2"
   depends_on "harfbuzz"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "libx11"

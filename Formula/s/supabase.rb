@@ -12,11 +12,12 @@ class Supabase < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "809df2217f5b16d94286cd64a908fc60ed6d1d3ac4839b6c55daf0b2ecc7409b"
-    sha256 arm64_tahoe:       "09a39a8843570f57bc88675adde017648baac9650ba656b78cbb3b26db8dd9f9"
-    sha256 arm64_sequoia:     "54071b94bbc5795004c52e3281724226867f41a991c70945dba3eb9af3361a94"
-    sha256 arm64_linux:       "d02fef7bd96e13a6f48fb9bb9c221760437185f982ea25fb0cecde4fd325dc53"
-    sha256 x86_64_linux:      "0e620f3afd9be54463306abde7fc7fc961c869da22bcd9472a78d3170c2eb783"
+    rebuild 1
+    sha256 arm64_golden_gate: "0b9f04b4d9fbeb2693c14e910e7d61368a8a7183c5d1ba1dbc96383baa534a6f"
+    sha256 arm64_tahoe:       "b86c8c19c914b8d2ffd3c4f9433354677fce683d8ac2b4813bb3fd51945dff3e"
+    sha256 arm64_sequoia:     "93648a15b41a22297cfa22710479b23e3dfaaafb9086376d4f61cc78e2fbe918"
+    sha256 arm64_linux:       "410cc544e9d3ea8308adb6a8c8a5eb7c7344047ed6912caf96b7dc6fa2173fb6"
+    sha256 x86_64_linux:      "487576c0fde9b06a828390457dd2b438c68c5725cb964c15bc322c1040e9b894"
   end
 
   depends_on "bun" => :build
@@ -25,7 +26,7 @@ class Supabase < Formula
   depends_on "pnpm" => :build
 
   on_linux do
-    depends_on "icu4c@78"
+    depends_on "icu4c@79"
   end
 
   deny_network_access!

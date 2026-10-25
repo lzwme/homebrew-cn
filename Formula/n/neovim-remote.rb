@@ -6,16 +6,15 @@ class NeovimRemote < Formula
   url "https://files.pythonhosted.org/packages/69/50/4fe9ef6fd794929ceae73e476ac8a4ddbf3b0913fa248d834c9bb72978b7/neovim-remote-2.5.1.tar.gz"
   sha256 "4b3cc35463544c5747c895c52a0343cfdbba15d307647d7f57f1cce0c6a27d02"
   license "MIT"
-  revision 5
+  revision 6
   head "https://github.com/mhinz/neovim-remote.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "612df699c8c642cc6d79b49775848204fe60039cf3a466a00bdae02708751b23"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d5ac199e591e1e1a6048dfec74b89236e879f5926953d824068f68f271e0f30a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "226d62d0feebc6f551db155877641ae69b3d790d038b83b5fc4b972b85812525"
-    sha256 cellar: :any,                 arm64_linux:       "a09e857f19c7dd990ac7b45c3e0c1ab7ba23dab2bc223e563065742d34f052a9"
-    sha256 cellar: :any,                 x86_64_linux:      "2a9dc5d14783fb91cb847082e7fbc6cdd11e1a3d2316a99e23e028527fcd5251"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e274bbbdd1ed9c021169f57fe24f736dafa21ec75bc7fda50f018c33b4e37bb7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "45959030f1ca38d71c6a99994f17d6056a6ed41d4216cbb08729ee67b6f4bf18"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "79dd0fec95d39b071daef4dd4747169ae59449f9a8cc89fd85a39ed0acd3b4c9"
+    sha256 cellar: :any,                 arm64_linux:       "99ab9669331ecab54444aff43d19693c87bccdceaf095bc230a59bc9be071b50"
+    sha256 cellar: :any,                 x86_64_linux:      "a1c25531daba51adfac94e4234e6fcf593bd0b3da3e8440dabdf244260c18d3c"
   end
 
   depends_on "neovim"
@@ -42,8 +41,8 @@ class NeovimRemote < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   def install

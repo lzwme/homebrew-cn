@@ -46,8 +46,8 @@ class SnxRs < Formula
     # snxctl exposes completions via a `completions` subcommand;
     # snx-rs and snx-rs-gui via a `--completions` flag.
     generate_completions_from_executable(bin/"snxctl", "completions")
-    generate_completions_from_executable(bin/"snx-rs", "--completions")
-    generate_completions_from_executable(bin/"snx-rs-gui", "--completions")
+    generate_completions_from_executable(bin/"snx-rs", shell_parameter_format: "--completions=")
+    generate_completions_from_executable(bin/"snx-rs-gui", shell_parameter_format: "--completions=")
   end
 
   service do

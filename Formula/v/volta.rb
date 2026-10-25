@@ -28,6 +28,12 @@ class Volta < Formula
 
   uses_from_macos "bzip2"
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args
     generate_completions_from_executable(bin/"volta", "completions")

@@ -4,6 +4,7 @@ class Soar < Formula
   url "https://ghfast.top/https://github.com/pkgforge/soar/archive/refs/tags/v0.13.4.tar.gz"
   sha256 "571b4735fa0c9d612ad4b3a3a34dc80047cb7b4d14f69c49607e3508d6ed5582"
   license "MIT"
+  head "https://github.com/pkgforge/soar.git", branch: "main"
 
   livecheck do
     url :stable
@@ -18,12 +19,18 @@ class Soar < Formula
   depends_on "rust" => :build
   depends_on :linux
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/soar-cli")
   end
 
   test do
     system bin/"soar", "defconfig", "-c", "test.toml"
-    assert_match 'default_profile = "default"', shell_output("cat test.toml")
+    assert_match 'default_profile = "default"', (testpath/"test.toml").read
   end
 end

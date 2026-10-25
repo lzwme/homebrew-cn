@@ -7,11 +7,12 @@ class Couchdb < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9952c668b91962ae2743dd704ef7abc4aada7cd28ebaa7dad25ab6cf17e9265b"
-    sha256 cellar: :any, arm64_tahoe:       "e66fcdbda6684cd8142cb435c1d5dc94fd387feecbbaa234195b4ecb3b6c29ec"
-    sha256 cellar: :any, arm64_sequoia:     "c78e0c26298f64fb210f16104b4456624a9b6c940047ffa8cb70668061abfcae"
-    sha256 cellar: :any, arm64_linux:       "2327bf89d8f59fc72e22ce7f1f29b17c117a6b2e5d9e1c273a197b0ebd6364a8"
-    sha256 cellar: :any, x86_64_linux:      "1c0574939ea368405c804452ef130c1eb3ddc571230d0b784a96bfb1100cdc28"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "eec8fe14f6f743f5b551e2dbf09946696adb8970509b15ba72c3a08665475f75"
+    sha256 cellar: :any, arm64_tahoe:       "1dea58d449cb9c9b3234d4e6a2c6d72562e9cfaefb7838753db8d0a0a345adce"
+    sha256 cellar: :any, arm64_sequoia:     "a7e95e7bdbe02a677770a13c6dde80c2b980661099f36c15631aa92a4b7a65f3"
+    sha256 cellar: :any, arm64_linux:       "3317caffd81f179654d2cc0947a5b675c70f13b90baa6dd7e3ecffbd950771f3"
+    sha256 cellar: :any, x86_64_linux:      "7a2e721ec0436589826c4953143e043a6981c90d6f572b20b95341707365feb1"
   end
 
   depends_on "autoconf" => :build
@@ -20,7 +21,7 @@ class Couchdb < Formula
   depends_on "erlang@28" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "openssl@4"
 
   uses_from_macos "ncurses"

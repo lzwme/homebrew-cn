@@ -31,16 +31,17 @@ class ClickhouseOdbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2b0508a0c8af676e8e6968694fd1125893027789d47b933cddfb7d39c38264b2"
-    sha256 cellar: :any, arm64_tahoe:       "a2daf7258dd9f94650416baf9f87d97e111a0dd9218674a42bf75f45b5a09f3c"
-    sha256 cellar: :any, arm64_sequoia:     "ab38670fcd910adbd0f2342d03f459a8a937b420c6384184f72655f78298c5d4"
-    sha256 cellar: :any, arm64_linux:       "85e3276f6cd2b4adc5560cc0f4ff890202a8aedf3e8cdc654471cca5ecbe1e77"
-    sha256 cellar: :any, x86_64_linux:      "0a2d5af1d2a5c4625ea10d06faf4fd053de9b75b9c4295ec931ac750c7d43f11"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "ee1d2d878c93126733f2f9425a66e17277b4bd31efcd97c36b8bece2c83d7609"
+    sha256 cellar: :any, arm64_tahoe:       "da15332d079fba7b0f876608029a9b4cf9f966cb185b4e98e2bd1c3fd818c5e3"
+    sha256 cellar: :any, arm64_sequoia:     "1a1fa9c852905cd6589305006ada854d4c19703baa83be6623c7fd55f84b829c"
+    sha256 cellar: :any, arm64_linux:       "e5f769296a16aba4d9a088599460d2276558be534fcfee3dfc838f3d1485c1c2"
+    sha256 cellar: :any, x86_64_linux:      "f6c4925130452e292555f886df0bae09d6c6f6d75c157a6737b49edd2a6e76a4"
   end
 
   depends_on "cmake" => :build
   depends_on "folly" => :build
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "openssl@4"
   depends_on "poco"
   depends_on "unixodbc"

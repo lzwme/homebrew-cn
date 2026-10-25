@@ -4,6 +4,7 @@ class Tabiew < Formula
   url "https://ghfast.top/https://github.com/shshemi/tabiew/archive/refs/tags/v0.15.1.tar.gz"
   sha256 "20d2c3e83b0f27fbe48c9ac0be95533361d29897bff1e3c5ce498ff46ae84580"
   license "MIT"
+  head "https://github.com/shshemi/tabiew.git", branch: "main"
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "8318867603e95b6d694a2c23f432055c5b37e7d1a9dfb8602d74883ccfda467e"
@@ -20,8 +21,16 @@ class Tabiew < Formula
 
   conflicts_with "watcher", because: "both install `tw` binaries"
 
+  deny_network_access!
+
+  def openssl = deps.map(&:name).find { |d| d.match?(/^openssl(@\d+(\.\d+)*)?$/) }
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix(openssl)
     system "cargo", "install", *std_cargo_args
 
     man1.install "target/manual/tabiew.1" => "tw.1"

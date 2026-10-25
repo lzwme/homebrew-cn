@@ -1,12 +1,24 @@
 class Gpac < Formula
   desc "Multimedia framework for research and academic purposes"
   homepage "https://gpac.io/"
-  url "https://ghfast.top/https://github.com/gpac/gpac/archive/refs/tags/v26.07.0.tar.gz"
-  sha256 "57822c1a74dcb83d76ff1f671e1b4fae2e7614e8194a5adb9f20661e0e9421dd"
   license "LGPL-2.1-or-later"
   revision 2
   compatibility_version 1
   head "https://github.com/gpac/gpac.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/gpac/gpac/archive/refs/tags/v26.07.0.tar.gz"
+    sha256 "57822c1a74dcb83d76ff1f671e1b4fae2e7614e8194a5adb9f20661e0e9421dd"
+
+    # Fix builds with FFmpeg 9, which removed the deprecated `AVCodec` capability
+    # arrays in favour of `avcodec_get_supported_config`.
+    # Issue ref: https://github.com/gpac/gpac/issues/3850
+    patch do
+      url "https://gitlab.archlinux.org/archlinux/packaging/packages/gpac/-/raw/270a935296832d1daba2e459354a654e60f0fa68/ffmpeg-9.patch"
+      sha256 "d1867a638ac3dd83df1c11e46467b96cec13b757317af1bbb9003da926fd8fc7"
+      type :unofficial
+    end
+  end
 
   livecheck do
     url :stable
@@ -45,15 +57,6 @@ class Gpac < Formula
     depends_on "libxv"
     depends_on "pulseaudio"
     depends_on "zlib-ng-compat"
-  end
-
-  # Fix builds with FFmpeg 9, which removed the deprecated `AVCodec` capability
-  # arrays in favour of `avcodec_get_supported_config`.
-  # Issue ref: https://github.com/gpac/gpac/issues/3850
-  patch do
-    url "https://gitlab.archlinux.org/archlinux/packaging/packages/gpac/-/raw/270a935296832d1daba2e459354a654e60f0fa68/ffmpeg-9.patch"
-    sha256 "d1867a638ac3dd83df1c11e46467b96cec13b757317af1bbb9003da926fd8fc7"
-    type :unofficial
   end
 
   def install

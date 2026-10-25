@@ -4,23 +4,21 @@ class Libkiwix < Formula
   url "https://ghfast.top/https://github.com/kiwix/libkiwix/archive/refs/tags/14.2.1.tar.gz"
   sha256 "cff1eb06d62ab42e1720a49f473b7d9364f02ee77a8a455c9adb26db419e0fff"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "f4a2d35728c0e2afae87f76563ca97ba244cf901c753c8a4dc2eb0c765f15b3b"
-    sha256 cellar: :any, arm64_tahoe:       "1a163b339857896a25e7ca137ea5b89b9e694b373504ff96e4c0ce54571cb415"
-    sha256 cellar: :any, arm64_sequoia:     "39923d9fa6b7814243a0f16bde23b4748f8a22d6700b1b3e60a522e603bd2a53"
-    sha256 cellar: :any, arm64_sonoma:      "f1459f38b2a666ee732745d1b3f721387effe6eabac795d9032787268f29255a"
-    sha256 cellar: :any, sonoma:            "36b65cfdc8f4a14eec5306166e155ad619ae44daa3fe82d55294978fd7e0b221"
-    sha256               arm64_linux:       "7136c54709fc11a9c35aa4ad5ca1935eb99decbb4cbc534ab09ce9a9d0935378"
-    sha256               x86_64_linux:      "6757a377743d2dd7fc5a7a51872dad662f04e2448d5ad313a2e46bf883f44024"
+    sha256 cellar: :any, arm64_golden_gate: "3e1d04dffbd54f59317d6da825cd0d61f59c212fde33a53e8bae3576bfc78d1c"
+    sha256 cellar: :any, arm64_tahoe:       "f32925d681d9b06efcc3294fc75589aecf814500c111f3fa734b7f05f6fc2934"
+    sha256 cellar: :any, arm64_sequoia:     "930af927b39e421dca7198e4321af5c1ab046ccd2153b7149231f828d0033ffd"
+    sha256 cellar: :any, arm64_linux:       "6d08d70889893f69ed0ce636bd4f6d96ff48fcab00cd08fda2dc87206d3206ac"
+    sha256 cellar: :any, x86_64_linux:      "790ec4d64537b29fde3d13bfed4f39d7833812602536600c6aa5c478d11ded64"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
 
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "libmicrohttpd"
   depends_on "libzim"
   depends_on "pugixml"
@@ -97,7 +95,7 @@ class Libkiwix < Formula
       }
     CPP
 
-    icu4c = Formula["icu4c@78"]
+    icu4c = Formula["icu4c@79"]
     system ENV.cxx, "test.cpp", "-std=c++17", "-o", "test", "-I#{include}", "-I#{icu4c.opt_include}",
                     "-L#{lib}", "-L#{icu4c.opt_lib}", "-lkiwix"
 

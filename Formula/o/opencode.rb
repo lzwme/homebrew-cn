@@ -1,8 +1,8 @@
 class Opencode < Formula
   desc "AI coding agent, built for the terminal"
   homepage "https://opencode.ai"
-  url "https://ghfast.top/https://github.com/anomalyco/opencode/archive/refs/tags/v2.1.3.tar.gz"
-  sha256 "b7eae27a223b8b1c41d65bb90676f90b80811c3b1012b307b6a2e63c7eb8ffa5"
+  url "https://ghfast.top/https://github.com/anomalyco/opencode/archive/refs/tags/v2.1.4.tar.gz"
+  sha256 "eb16e1b9c504fff1e7d8679d7a88421967a403a7bb223e8993879a46735ff61f"
   license "MIT"
 
   livecheck do
@@ -12,11 +12,12 @@ class Opencode < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "10318d5b711794fb90edc005f8e2aa706dfaeb558c483084fce45f40c745da9e"
-    sha256 arm64_tahoe:       "e8a4ea744a2fa675a00efb9a45234681e4d5fa97bb5ce49ed4e12bdaa77c59ab"
-    sha256 arm64_sequoia:     "bb9499bc0c50e1ac40a87a04d0913136a3d9a5bdd43748ba8167f80f6eec2107"
-    sha256 arm64_linux:       "454b33d2dbcc851b9d91d87c6d8cee2036640af8bb623b2a51d38fdd3c766350"
-    sha256 x86_64_linux:      "19454134dd147faa70c8387af1cb2ed8d1d67929dd1a86df1646d21f77bd7eda"
+    rebuild 1
+    sha256 arm64_golden_gate: "fe028bd6ed6f2b4865c8d1974bf77a8fe3dc77a0213ce950b9d8a6cda0605af0"
+    sha256 arm64_tahoe:       "52fd8af89e77e55da18b10dabb9e3cc6be26a1d96db0cd55e227ee734e0cedba"
+    sha256 arm64_sequoia:     "61b63601216b068eb8dd66a38132fe5cba6d8bc3d6806e5bfe9b394f18bdffbb"
+    sha256 arm64_linux:       "7870ed2af167898340e23c81d9535f8226266d1f6b99d3d47d0e533373d0fd3e"
+    sha256 x86_64_linux:      "c18fcf6d73c112798b0f792aae2c3a29b821963d89b56bc98fd4555b9f13a19a"
   end
 
   depends_on "bun" => :build
@@ -26,7 +27,7 @@ class Opencode < Formula
   depends_on "ripgrep"
 
   on_linux do
-    depends_on "icu4c@78"
+    depends_on "icu4c@79"
   end
 
   resource "opencode-pty" do
@@ -63,10 +64,20 @@ class Opencode < Formula
     end
   end
 
+  # Ghostty's `translate_c` dependency pins this archive in its build.zig.zon.
+  # Zig fails to fetch it on macOS CI with `HttpHeadersOversize`.
+  resource "aro" do
+    url "https://ghfast.top/https://github.com/vancluever/arocc/archive/ecbc5c799574e0da2758a961b12efa586007f03c.tar.gz"
+    sha256 "aa54487bd727e8fa36744ff0a824dedb2f4ca45f4c2d4d9d2437cf5fd3d0ad1a"
+  end
+
   def install
     # Build the persistent PTY helper from source instead of embedding the prebuilt npm binary
     (buildpath/"ghostty").install resource("ghostty")
     ENV["GHOSTTY_SOURCE_DIR"] = buildpath/"ghostty"
+    cd "ghostty" do
+      system "zig", "fetch", resource("aro").cached_download
+    end
     resource("opencode-pty").stage do
       system "cargo", "install", *std_cargo_args(root: buildpath/"opencode-pty")
     end
@@ -87,7 +98,7 @@ class Opencode < Formula
       bin.install Pathname.pwd.glob("dist/cli-*/bin/opencode").first
     end
 
-    generate_completions_from_executable(bin/"opencode", "--completions")
+    generate_completions_from_executable(bin/"opencode", shell_parameter_format: "--completions=")
   end
 
   test do

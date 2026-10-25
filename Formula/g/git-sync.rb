@@ -1,24 +1,23 @@
 class GitSync < Formula
   desc "Clones a git repository and keeps it synchronized with the upstream"
   homepage "https://github.com/kubernetes/git-sync"
-  url "https://ghfast.top/https://github.com/kubernetes/git-sync/archive/refs/tags/v4.7.1.tar.gz"
-  sha256 "e575e37581869cd31d4752f50365fc0a94c3f9f95fb70c8b2f98262776077a3c"
+  url "https://ghfast.top/https://github.com/kubernetes/git-sync/archive/refs/tags/v4.8.0.tar.gz"
+  sha256 "8c6bee1f131434546e6202fe544ebc116b3227ed3af4ab75eee15337c209b308"
   license "Apache-2.0"
   head "https://github.com/kubernetes/git-sync.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "80b703b59def66443ee27753647679f53d56fdea5308630b54058c68326a5025"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a4e283aa56077bc853b222d9f8c3c7f7ac2ffe678d2bb6b22fcc7be159625e1f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a4e283aa56077bc853b222d9f8c3c7f7ac2ffe678d2bb6b22fcc7be159625e1f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "a4e283aa56077bc853b222d9f8c3c7f7ac2ffe678d2bb6b22fcc7be159625e1f"
-    sha256 cellar: :any_skip_relocation, sonoma:            "a035af0121164e42c185c8a08ed37cb92a84623919d25edfbb7e7c20fe3d181d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a3ba5a9807350a7be72097c63c7c4c56d5d46e8051e211d90f71b5f30795dccb"
-    sha256 cellar: :any,                 x86_64_linux:      "533b05e1e9bac73ec0f7d7fceb2ce3138cb92d8ac6fbdd9818632d1303134b64"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5e0a1317eb9127f6a60b678ad9723261ba3f18c792eab45c267a824c7575d7cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5e0a1317eb9127f6a60b678ad9723261ba3f18c792eab45c267a824c7575d7cf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5e0a1317eb9127f6a60b678ad9723261ba3f18c792eab45c267a824c7575d7cf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "af1656f1d074d57ebd2ce5a0be9cd779035359283601b0e87ceaa3752a656327"
+    sha256 cellar: :any,                 x86_64_linux:      "4ea9224f87f5aabcebc4c8d62adb4044212df12acea85583f1df3a6697e32170"
   end
 
   depends_on "go" => :build
 
   depends_on "coreutils"
+  depends_on "git" # needs `git config list` (git 2.46+)
 
   conflicts_with "git-extras", because: "both install `git-sync` binaries"
 

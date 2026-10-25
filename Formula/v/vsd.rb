@@ -4,6 +4,7 @@ class Vsd < Formula
   url "https://ghfast.top/https://github.com/clitic/vsd/archive/refs/tags/vsd-0.5.0.tar.gz"
   sha256 "d47092ce89c22d36d0fd976bd558fa9f895384025cb98e568adbf9793134d7dc"
   license "MIT"
+  head "https://github.com/clitic/vsd.git", branch: "main"
 
   livecheck do
     url :stable
@@ -28,8 +29,16 @@ class Vsd < Formula
     depends_on "openssl@4"
   end
 
+  allow_network_access! :test
+
+  def openssl = deps.map(&:name).find { |d| d.match?(/^openssl(@\d+(\.\d+)*)?$/) }
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4") if OS.linux?
+    ENV["OPENSSL_DIR"] = formula_opt_prefix(openssl) if OS.linux?
 
     # Replace rustls + aws-lc with our preferred native TLS backend
     features = %w[capture license native-tls]
@@ -43,6 +52,6 @@ class Vsd < Formula
 
     system bin/"vsd", "save", test_url, "-o", output
     assert_path_exists output
-    assert_operator output.size, :>, 0
+    assert_predicate output.size, :positive?
   end
 end

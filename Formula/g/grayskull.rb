@@ -6,16 +6,15 @@ class Grayskull < Formula
   url "https://files.pythonhosted.org/packages/89/45/abdddfb30303923b3abb01f21d2da114d582f2df299b71124687dac9b7c7/grayskull-3.2.0.tar.gz"
   sha256 "467bb43a7de610fc8719e520c9e9049f597a28d9e72c0ff047127b5340569ddb"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/conda/grayskull.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "60611eb6040b5c18a5569f54343e565c18b80d56ce51eec2477ae23c023719f2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "634fc70613a1fcf8758eb6a576bc3d495e6d399233e4ec33b859efc7ad445359"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "614deb14d92abcd3dfb7073db9f59373d7e5d83682e9e9661869cd5ad8c46d34"
-    sha256 cellar: :any,                 arm64_linux:       "d02e29e4d739776a254768d8be0e27a4496173439aa9219fe7a9894c40c73b62"
-    sha256 cellar: :any,                 x86_64_linux:      "3a3398d4f09f73ca60878e68479fcb4b436d0951194f73977da6e5ea72ff0b7d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fa3733597697c2f494d41d5d2aeec052e0589182657e840b21b76a0f07da2b18"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a2382bedfee50796de7f99e72e805d00ef49031ac7e1ef07c4958531c31f0065"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "238003751173eca820718e8f35879430e9c549d2f9c4d6e7b31875e23f86e267"
+    sha256 cellar: :any,                 arm64_linux:       "3e7ec0b5f68cbd5ba7f0a3dbaa50a87be73bc8b6824f80e8902decc8083b2bd2"
+    sha256 cellar: :any,                 x86_64_linux:      "ac2b99d616eda795f872bac1c40bf704d149a235e46420b63aca8d9780ba607c"
   end
 
   depends_on "cmake" => :build
@@ -57,8 +56,8 @@ class Grayskull < Formula
   end
 
   resource "pkginfo" do
-    url "https://files.pythonhosted.org/packages/3e/ad/97538d5a1041d8d3ba155075b0b35248cf8538e1f1ec764f1d117962b01d/pkginfo-1.13.tar.gz"
-    sha256 "4f70471c643f71fe84a06230c0e33c5c5b12a33b2fd21bff14ddaef5a974adb1"
+    url "https://files.pythonhosted.org/packages/3e/25/5ebd69526479b3684e210f441b05d2d68ce38a4a8c26788bd238cbb0ef54/pkginfo-1.13.3.tar.gz"
+    sha256 "ad74cc8184b28b77b06cccc49361fd0fdc56fd87e307425ce1c2b7596dbe3185"
   end
 
   resource "progressbar2" do
@@ -67,8 +66,8 @@ class Grayskull < Formula
   end
 
   resource "python-utils" do
-    url "https://files.pythonhosted.org/packages/8f/dd/fdc08309ce1122e77e5ebc3908aa6f4e2dfed3e08f6987ae650c2591ee0c/python_utils-4.1.0.tar.gz"
-    sha256 "218518ac7ba34a7d8ea66d19274e5246cd5de122efeedcf2e5b6c00965b969b7"
+    url "https://files.pythonhosted.org/packages/c9/e7/064880019d2f205b837e5c463eb472b36e220d380e5733e49911975f7072/python_utils-4.1.4.tar.gz"
+    sha256 "a8c01f8c0b5a113fa1ab663308bb8a4773afec3cc8f9e6baeb756ac97377f8ce"
   end
 
   resource "rapidfuzz" do
@@ -92,13 +91,13 @@ class Grayskull < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/71/c3/1b817965ac12dc002d7c9cd7dfffdd7d4fbf9b45763ef2ffe7b86ee94670/soupsieve-2.10.tar.gz"
-    sha256 "49e9380d7d2905463583bafe285e818c7366a9ed7b3aee221c1ac79c905d8bc0"
+    url "https://files.pythonhosted.org/packages/19/63/0b6bae54546aed98d72f12d09df57b19a287f01c84d22047fa2e23772ab9/soupsieve-3.0.4.tar.gz"
+    sha256 "924fab84ae21604c19e175e1f39815eb6fa83ba23836e09e9de180925e5bc4c0"
   end
 
   resource "stdlib-list" do

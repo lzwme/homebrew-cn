@@ -6,14 +6,15 @@ class Pdm < Formula
   url "https://files.pythonhosted.org/packages/c9/e2/fefd8876732a9c04ad2cb25ef2c8effde72aa02e6a6914a3785158e020f5/pdm-2.29.3.tar.gz"
   sha256 "320df1661a60a4e29ce813992dcd5c8c5583c1bf27d36b713895cf38f4c49e9e"
   license "MIT"
+  revision 1
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "68cf61e005098fa91d339147b4ced3da90eb3aab1101b622c2072104f91078c8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3e29e5e8bdf4eb573fc9d19ff9a191fe78280fbcff976e1b39c6cd55c5c0fdd0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "849b78af8ea4f8da773878124876633295bbd9ee586f5c72f5773c85688ea2c4"
-    sha256 cellar: :any,                 arm64_linux:       "5951d61b2a421c41e43c9b05784c96aab817774e51f860f32932bcab32170bfa"
-    sha256 cellar: :any,                 x86_64_linux:      "24f6189fcb288fbc6e7577ca1ba698e0eaffdea2560e84332f4f488d05e22a6e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2102ef4b935355f8534b289f8c77c7e6954f9dddcc3adea0f16b29e96db752bf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e19e50e903c34710daef713df426ad2a1acd6984b78d57da8749ac246b6359fb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "83234a69684a842b689691dd393d7dca1fd7818fe21b150ad9945c6b5422ae92"
+    sha256 cellar: :any,                 arm64_linux:       "843d22293f4af3e77c75eeaa7dc3954f2bece665ecc644bfd9824f277053d08d"
+    sha256 cellar: :any,                 x86_64_linux:      "3cace4ce9135b1f7b324d2f441ac0e8d6abe2d559bf1d7f2c735526cde9e68f1"
   end
 
   depends_on "certifi" => :no_linkage
@@ -117,8 +118,8 @@ class Pdm < Formula
   end
 
   resource "pbs-installer" do
-    url "https://files.pythonhosted.org/packages/24/1b/b2b08b3ad0958e400449812056b64f530614da45af8819dcfa8860dd89f8/pbs_installer-2026.10.13.tar.gz"
-    sha256 "888654540e18a358f0dd1d20838fa7231f47a2b11dd803f457148cda88cabe6a"
+    url "https://files.pythonhosted.org/packages/d7/7e/7de0076e3e6f2182dfefa556f641146b55840c9e1256521be258212501d0/pbs_installer-2026.10.21.tar.gz"
+    sha256 "265c46b81ecc7ffddcc4607be0b87c0797c91911e1492325a563428f569a20c5"
   end
 
   resource "platformdirs" do
@@ -200,8 +201,8 @@ class Pdm < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/7f/be/4d1d59d309db76b5808fcfd78bd5996f4e7241366691c38fc331a3136398/virtualenv-21.14.11.tar.gz"
-    sha256 "593052d8477ea8c55a842387ce111bd08c72618f0c1133c302cafe335e570a57"
+    url "https://files.pythonhosted.org/packages/70/aa/bff50daee0488e16d611258a9b6c5a1d0c9e128f8ca424e9f4e1c0444ef2/virtualenv-21.14.13.tar.gz"
+    sha256 "de5307ba4b9a0001d9c8ea02832d38f63ca432880f416c1bface61c4323fd905"
   end
 
   def install

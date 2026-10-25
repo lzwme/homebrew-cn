@@ -34,7 +34,7 @@ class Watchexec < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "crates/cli")
 
-    generate_completions_from_executable(bin/"watchexec", "--completions")
+    generate_completions_from_executable(bin/"watchexec", shell_parameter_format: "--completions=")
     man1.install "doc/watchexec.1"
   end
 

@@ -27,6 +27,12 @@ class Termusic < Formula
     depends_on "alsa-lib"
   end
 
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
     server_features = %w[rusty-libopus rusty-simd rusty-soundtouch]
     system "cargo", "install", *std_cargo_args(path: "tui")

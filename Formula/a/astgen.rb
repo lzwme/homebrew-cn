@@ -13,17 +13,18 @@ class Astgen < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "09f8dd625dc35136a4e9d374a82c789e6a79c38f4906ce2fbd1090f1dae5698d"
-    sha256 arm64_tahoe:       "bf9f1ebeb16e9d53a7508198601c6b612fd9b851470fd411141a7479f260b7dd"
-    sha256 arm64_sequoia:     "8dbb7c7026b4271811e090ffcd10413f7be50cbcc1bdf4acff1e04ba8db7f3ef"
-    sha256 arm64_linux:       "2d163de22924a02697a564e85a184b35f2f3431f061be2ca04c289a2a884a01f"
-    sha256 x86_64_linux:      "0e7c4bb606c5f550f066d3c4eba6c1e1aa5e32e1f87187bc2fb19c0a2186731b"
+    rebuild 1
+    sha256 arm64_golden_gate: "b59135404d101e0de6e2813b9d3fb75edbae944e75204b30c29ec7f925c56721"
+    sha256 arm64_tahoe:       "de740da0d6a53ef950aba70b4c0dd83d61a8ec2b892f0597512a14c55c7ee09c"
+    sha256 arm64_sequoia:     "886dd3e61be5cd73ed610098808a3a10fcddf3bafc32c0ca1171c7d56a320c60"
+    sha256 arm64_linux:       "26463015aec2360b386f9836d8f82c3c62ac6f28798ba4345f9f0e785caf9086"
+    sha256 x86_64_linux:      "eebc1f0837bae9112ec9405ce868dbc4d633dd68e8c117b1a72b8cce10b6f91a"
   end
 
   depends_on "bun" => :build
 
   on_linux do
-    depends_on "icu4c@78"
+    depends_on "icu4c@79"
   end
 
   deny_network_access!

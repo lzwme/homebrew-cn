@@ -19,6 +19,7 @@ class Bun < Formula
     "Zlib",              # zlib-ng
     "Apache-2.0" => { with: "LLVM-exception" }, # __cxa_thread_atexit
   ]
+  revision 1
 
   livecheck do
     url :stable
@@ -26,11 +27,11 @@ class Bun < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "368adf702a8164e83bc629c998d660a03caadff2d14025cd1225ce51ef550977"
-    sha256 arm64_tahoe:       "5a66e9d593a01a94173b6daf0122a900c7bdac04af370737edf5fb7aff995575"
-    sha256 arm64_sequoia:     "00200c4b9568ffbd0c4d29041ee7743bb11143d91f3b434f3fb760d263901c7e"
-    sha256 arm64_linux:       "649760242b683ee8f180ffd6ea3612bb9fd4925f0612093162907b7726063f5b"
-    sha256 x86_64_linux:      "fee2020e97a76e427cec41514e6c4895842c14f3b6c752428759af3d4d154970"
+    sha256 arm64_golden_gate: "d981e4819b919a82ba31c4bd99886618147611891196bfddba1b7b1ea5e86c07"
+    sha256 arm64_tahoe:       "040e2cad4ffa635a17f79f513a8a9648e484db77da281bec277fc93f2165e9ca"
+    sha256 arm64_sequoia:     "c6c0f34c89aae77baa9f67bff67b7f52dd1bacee8c50e2065611cffe04f9504e"
+    sha256 arm64_linux:       "5233d6f3912d69bb260625d38a11bfc0f583fe627651db5108ef11bd347facc9"
+    sha256 x86_64_linux:      "2cdbd6f703b13288d7c78e865b26c0defc0d9a0daf4592cf3f8ea7bbac8088fd"
   end
 
   depends_on "cmake" => :build
@@ -46,7 +47,7 @@ class Bun < Formula
 
   on_linux do
     depends_on "lld" => :build
-    depends_on "icu4c@78"
+    depends_on "icu4c@79"
   end
 
   on_intel do

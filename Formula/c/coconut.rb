@@ -6,15 +6,14 @@ class Coconut < Formula
   url "https://files.pythonhosted.org/packages/06/f4/38f315a1d8568257a74fe482e925368a2ef4bccc9b1d5751f003570bccc5/coconut-3.2.0.tar.gz"
   sha256 "0c64554deef3a35b2688368315cc2087dd8244e1b13d6b869fe5c2e679d6a0ad"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1ef2e403670abf41e85c6f616d6951ed2925f1747e538ff2d66c99efebab6a30"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3bedf8b29dc4927e95d75a93f60b1e19366d6eaac35ddeeb21924480c000044b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4ea5f1312d3cf8daf99adef877bc7b71070c45d88a3c6cd2dbd27d5af8adb2b8"
-    sha256 cellar: :any,                 arm64_linux:       "85d1bbe17311ee0af80aaef475550dc537cd22045fdaea7938f9f46417435a3c"
-    sha256 cellar: :any,                 x86_64_linux:      "8f1cd4c44e624cd602a1f70e93eedeafe2847490897754c6e417c6e62cbbaee2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "69bb75faa0d17adbcdede9b3b5dd61f6431584bb49f0adcb1de8268134121cc3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "30506434e84de574edb173ae77d56d24a58401ba7f4f7143498f6776b9c571b4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fd6dc8fcb05ab81b665f03f956c7340ebf4ff416462b56d9bfd8f09feb7909ff"
+    sha256 cellar: :any,                 arm64_linux:       "046ec68a9226676814f7ea21680ec15aa1f038370f27ebf45511c8596217f527"
+    sha256 cellar: :any,                 x86_64_linux:      "0d6362a4d8e0df67da4280512c3b0699fdd5676c06a51e7d0a2d7da60fe257d3"
   end
 
   depends_on "python@3.15"
@@ -55,8 +54,8 @@ class Coconut < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "tstr" do
@@ -70,8 +69,8 @@ class Coconut < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
-    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
+    url "https://files.pythonhosted.org/packages/69/4a/82d61476a1ccc20d43d0805724c5de4baa4971131a8db1816705ef53fe16/wcwidth-0.9.3.tar.gz"
+    sha256 "dfe7cfbd4cb59db9fe0931bd6091ab4a95b3acc5d56bfb50fa9fef0ccba5dc5c"
   end
 
   def install

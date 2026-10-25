@@ -4,22 +4,21 @@ class Libzim < Formula
   url "https://ghfast.top/https://github.com/openzim/libzim/archive/refs/tags/9.8.2.tar.gz"
   sha256 "38f8e2139a089f00196f288f52f2d0677a6becc218f380b54ca70b6f162398bd"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "dc7c8f7eb2ed3093b4f3efb08750c34925cac5cde462f6e24de3e711359ca82e"
-    sha256 cellar: :any, arm64_tahoe:       "71a53670c33594c27b97466972f43e6a44ee14b83f10b383b54f4a25ca5e70af"
-    sha256 cellar: :any, arm64_sequoia:     "4f2304e9fdda5597b4c0b54b4ca8de80ea46d2f22f90f731d07e036f7e5ad606"
-    sha256 cellar: :any, arm64_sonoma:      "0582de4b08ce46e0af4e824f48df4e15ce80691c6366fbeb2760bcaa829266e4"
-    sha256 cellar: :any, sonoma:            "38078e1e029ff58954ae8aa1757a29279f221a80e8b97c3dabd3575e8f54f862"
-    sha256               arm64_linux:       "5249cd9c9155a9cc7a436919b31d196179ae82ef12be38c0576bba798cffa600"
-    sha256               x86_64_linux:      "4a57f4e1fac71920051beaaefeeee8e1adcdba63a44a0098dfdca1d79b99eb60"
+    sha256 cellar: :any, arm64_golden_gate: "0db912894c4387fe3b132a639247bb16e1f3ee86b13e5374d4189bde99eb2b46"
+    sha256 cellar: :any, arm64_tahoe:       "2985000cf5aededc859768d588463139f7a38149984c0d7059114dbb3975f1a1"
+    sha256 cellar: :any, arm64_sequoia:     "eba12048cdf92f2f6582b2f541b45911bd36e68498e56809f8f2719b6daad3b7"
+    sha256 cellar: :any, arm64_linux:       "d1667f97783814bab1f781293f37f3ab8bd8d265770cc6e0a28f27cca0821ca6"
+    sha256 cellar: :any, x86_64_linux:      "93b6d3cb64bfe6a2668226760e9229ab5eed25189321712b27711e2115bacf2c"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
 
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "xapian"
   depends_on "xz"
   depends_on "zstd"

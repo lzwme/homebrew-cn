@@ -21,10 +21,16 @@ class Swc < Formula
 
   depends_on "rust" => :build
 
-  def install
+  deny_network_access!
+
+  def fetch
     # `-Zshare-generics=y` flag is only supported on nightly Rust
     rm ".cargo/config.toml"
 
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
+  def install
     system "cargo", "install", *std_cargo_args(path: "crates/swc_cli_impl")
   end
 

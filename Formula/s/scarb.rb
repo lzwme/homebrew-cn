@@ -25,14 +25,17 @@ class Scarb < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # `scarb-build-metadata` crate uses `cargo_metadata`, which requires network access
+  allow_network_access! :build
+
   def install
     %w[
       scarb
       extensions/scarb-cairo-language-server
       extensions/scarb-cairo-test
       extensions/scarb-doc
-    ].each do |f|
-      system "cargo", "install", *std_cargo_args(path: f)
+    ].each do |path|
+      system "cargo", "install", *std_cargo_args(path:)
     end
 
     generate_completions_from_executable(bin/"scarb", "completions", shell_parameter_format: :clap)

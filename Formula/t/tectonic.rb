@@ -4,6 +4,7 @@ class Tectonic < Formula
   url "https://ghfast.top/https://github.com/tectonic-typesetting/tectonic/archive/refs/tags/tectonic@0.17.0.tar.gz"
   sha256 "30adda98f67dd5389844f6023adeeb54b5475c17a54b777900644468fbc9765d"
   license "MIT"
+  revision 1
   head "https://github.com/tectonic-typesetting/tectonic.git", branch: "master"
 
   # As of writing, only the tags starting with `tectonic@` are release versions.
@@ -15,12 +16,11 @@ class Tectonic < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "cd5a512ed939507f6792f2e762a0135e47bcef6b92a972bc1d10222376f8d511"
-    sha256 cellar: :any, arm64_tahoe:       "c29a2920a91b0a4db3f3d70026d45ff62e9328dc003df2399bddf2f3beadfdfc"
-    sha256 cellar: :any, arm64_sequoia:     "37afa7011a76f2f2a44701c439f08593dba885a6d77c613ca1d8d1e0e4e13aa2"
-    sha256 cellar: :any, arm64_linux:       "43f2d25a37bfff6e5911ff2c543b9943e7915d207c695d59f3eb40d8df7b7451"
-    sha256 cellar: :any, x86_64_linux:      "17173ccaee1130ee6c92151bbddca0417e79e0e8d326f871cb76885f919ac805"
+    sha256 cellar: :any, arm64_golden_gate: "33c055a3a94b0b37f747dca29d57df64874fa874541c77ae889fdbde6ae37df6"
+    sha256 cellar: :any, arm64_tahoe:       "306cae677bbe62d270d3a774dc0311726619c08765782493755e61f32f9a1804"
+    sha256 cellar: :any, arm64_sequoia:     "b12e7b8260d56a20e726e7a17bd1b9d0df1497e08b4e389fd09c41d00ecd1cc7"
+    sha256 cellar: :any, arm64_linux:       "c5078e4c8e721b4f61c603f6c182b871dc5bc77d0733a4f02709e77c9f91f48a"
+    sha256 cellar: :any, x86_64_linux:      "68b31b599b77c5effd6eab4eaace8ccb4d6d4ad409fd830be985e978ee3a5296"
   end
 
   depends_on "pkgconf" => :build
@@ -28,7 +28,7 @@ class Tectonic < Formula
   depends_on "freetype"
   depends_on "graphite2"
   depends_on "harfbuzz"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "libpng"
 
   on_linux do

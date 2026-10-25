@@ -7,14 +7,12 @@ class Urweb < Formula
   revision 13
 
   bottle do
-    rebuild 2
-    sha256 arm64_golden_gate: "cf151e162228bf54730ee52cfcb2d7a8f8570a87a17dda9d3f152f9b832d073e"
-    sha256 arm64_tahoe:       "4596096f381a91507e713b114253fcc5bff15db870b8cc7f1e85b8a51557b25f"
-    sha256 arm64_sequoia:     "bb906be787129114f6f59ee8007188a3b5a06643a4608c030190bc72c992c554"
-    sha256 arm64_sonoma:      "2d5bfd7421944c17f97e71c29a0c2c077ce367ac5ed5e6af83606b29e4655547"
-    sha256 sonoma:            "8c4f241c187e23f5b1100d222a75a0edcd1128f505ac3e01ad8d6ba5ba4896c4"
-    sha256 arm64_linux:       "feee221fe5c5de761321e93f605f3086b0826d34b324331cc093d208a4e640c0"
-    sha256 x86_64_linux:      "48ad3234ce16bdaeef9e731818321c939c00db72f9f4cd76607ace6859231c04"
+    rebuild 3
+    sha256 arm64_golden_gate: "85fe75f9c21273edbc5bfb1f496d229826dd87b2d97e9d63d7897ce2980ed1fc"
+    sha256 arm64_tahoe:       "79dfe35abdcaf3f9be1986272952f8c09e02ebf0c0a1caa632592666259aa71c"
+    sha256 arm64_sequoia:     "84d7b02b05ddcae5bfeb4c0c48cf973aebbf58e43ef62ba8fbec8a199ae3969b"
+    sha256 arm64_linux:       "57976ec45c07ca3d1098d2012452c106d430fff21eba36ac924304000a918a81"
+    sha256 x86_64_linux:      "38d159c35a80ea70441e2c6109d709a690ee69bd926ae85be545b6db1c24b3fc"
   end
 
   depends_on "autoconf" => :build
@@ -22,7 +20,7 @@ class Urweb < Formula
   depends_on "libtool" => :build
   depends_on "mlton" => :build
   depends_on "gmp"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "openssl@4"
 
   # Patch to fix build for icu4c 68.2

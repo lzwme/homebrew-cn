@@ -3,16 +3,16 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/af/42/12fef91cbde60702d543bf5e868d9a4a61ca9a817b38990b59791aef8a3e/fastapi-0.160.0.tar.gz"
-  sha256 "dba76bd82ed8fcd6b8d6db5103f5c2e12d01dd1a0087966362c96e63732a861a"
+  url "https://files.pythonhosted.org/packages/e9/eb/2cf8c80abf09b2800aef0a83b41066fbfda8ee5495b7a08b9d1af40f7046/fastapi-0.162.0.tar.gz"
+  sha256 "6a22c1e2e6e32e0633ee7e170f00009a29b8228b16feb219ee42f32fd8d88a8f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0afb65a593de35f325b65e84bbc1ac48b5c54e57ff07b1ec6aa5b05ea1d2ef00"
-    sha256 cellar: :any, arm64_tahoe:       "97b55eb984344134586c4e74777107cf47b47e4cf21035d525cc506238678820"
-    sha256 cellar: :any, arm64_sequoia:     "f5067a3e704c1ed0031f9063e5bb7f5b672c4b0e4b099fd6f2e07af2f979115e"
-    sha256 cellar: :any, arm64_linux:       "721c2677c65cb15ea81923a57ecad64102a83b24541b6c3046faf3fb666bc1ed"
-    sha256 cellar: :any, x86_64_linux:      "5e4a336b7f57cd8396f619a5f62014228cdbe2e5ff7cb29d47e000ae0384cb65"
+    sha256 cellar: :any, arm64_golden_gate: "b0a33523f68aac1ec86457f75d8c446dd90a0f93a97ae9972cb910b49fda4a45"
+    sha256 cellar: :any, arm64_tahoe:       "ff2d696b9470f1c70340726cca1ffba58b4ce448fe6f209b01f3802057f0eea9"
+    sha256 cellar: :any, arm64_sequoia:     "922ee2832e6ee800b072748d5d9bd5568c01a18f6367f6c4adcd7aa6e800b8b1"
+    sha256 cellar: :any, arm64_linux:       "149954a30f57e45862e2f71386fb01dae89e11424e08ba83658b70bb0d93e5e2"
+    sha256 cellar: :any, x86_64_linux:      "7c530edb5515420bf1e9c1dec044026617fdb541be7c586252f0824c9ecb9242"
   end
 
   depends_on "rust" => :build # for annotated-doc
@@ -80,8 +80,8 @@ class Fastapi < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/8d/2b/6ce81972d5c8cab9705fddce3153be63222d9e12fd96f8baba5038a744dd/googleapis_common_protos-1.75.5.tar.gz"
-    sha256 "c7a866fc34ed29a3b10af627a4b9b1dc2433313ca6e959f0ae4feb132047ed72"
+    url "https://files.pythonhosted.org/packages/62/b6/bc095b23a3e0d978e75c8c18cabe4c11f791837410670e4486f0d539bfba/googleapis_common_protos-1.76.0.tar.gz"
+    sha256 "71db0e44a1d4c2dd024ebad44ca67129cc1e2892e4861df466764749d5ef8642"
   end
 
   resource "h11" do

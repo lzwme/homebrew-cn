@@ -1,8 +1,8 @@
 class Openlist < Formula
   desc "New AList fork addressing anti-trust issues"
   homepage "https://doc.oplist.org/"
-  url "https://ghfast.top/https://github.com/OpenListTeam/OpenList/archive/refs/tags/v4.2.7.tar.gz"
-  sha256 "5d2201596a81e85146eb8aec4028f66aacff65945fef5936193cbd41fc7e68b5"
+  url "https://ghfast.top/https://github.com/OpenListTeam/OpenList/archive/refs/tags/v4.2.8.tar.gz"
+  sha256 "9b3ecb32ab23ecc79a0d471cff3e62a50a93a52fa79245cb6cfc38994546a606"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -11,11 +11,11 @@ class Openlist < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bc47431fab1f256c76ffcf35df435b8a05167f42941d9719e8f751af28c384f1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bf43fe3eea333c678b8a069a5c37261520267917ee2601b8ac03834ee8e8f2b7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "19e8064ae19c6dd6b06ff409a76192986ccdda4a435f82dc35084b6e77906ae1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "517dfb2e0a0667b5be44f95bf2be10db27bff5681a88dae6c60d72b680d5dedc"
-    sha256 cellar: :any,                 x86_64_linux:      "d11b63adbbd48ae7fa614cf99ff4886ecf13d18a1ec5d20f7559578b7254d147"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c4a89a567eee82236d660c57f06dc159baf4b18a2fda8b9b8e1d881cabf246aa"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d452ac621d05f6cddc526fb5d9a58520e9644468de477de7ed326ae3b9c80afb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9604f7ebd274e085e59231f6bc70604243af769ca561c55227db5372d23badf5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "97fa0b6b78cad7a89e5321cb66cd8ac3341b5d1c9416db0d5745ffa1bc237b0c"
+    sha256 cellar: :any,                 x86_64_linux:      "6c0631c557ff7c6b3601fd86e08d051ac28f497255d75ee270de4e512480ab1e"
   end
 
   depends_on "go" => :build
@@ -27,8 +27,8 @@ class Openlist < Formula
   end
 
   resource "frontend" do
-    url "https://ghfast.top/https://github.com/OpenListTeam/OpenList-Frontend/archive/refs/tags/v4.2.7.tar.gz"
-    sha256 "f3d7618aba5af38709b61f59ae5e98594527734575ae6dd5bee9d5fc8db79e29"
+    url "https://ghfast.top/https://github.com/OpenListTeam/OpenList-Frontend/archive/refs/tags/v4.2.8.tar.gz"
+    sha256 "69d16c6f14309e81f38932cfe8e1532f2f988e791f0ff3b6beacb0ff53d1aacc"
 
     livecheck do
       formula :parent
@@ -36,8 +36,8 @@ class Openlist < Formula
   end
 
   resource "i18n" do
-    url "https://ghfast.top/https://github.com/OpenListTeam/OpenList-Frontend/releases/download/v4.2.7/i18n.tar.gz"
-    sha256 "cb8c996b8fb3109025cb4d4cd78d105741b8e76b4362c19bb3c10a5ce4a63109"
+    url "https://ghfast.top/https://github.com/OpenListTeam/OpenList-Frontend/releases/download/v4.2.8/i18n.tar.gz"
+    sha256 "d9dc86471f559257bc1eeaa9c74bcef895836f6d5d3bad0f773e71e47633d75c"
 
     livecheck do
       formula :parent

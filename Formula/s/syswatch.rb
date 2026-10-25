@@ -4,6 +4,7 @@ class Syswatch < Formula
   url "https://ghfast.top/https://github.com/matthart1983/syswatch/archive/refs/tags/v0.14.4.tar.gz"
   sha256 "390c0bf558e8c1859ffb77e05dcce47f7af073b26a38fc8800129c2d550ff44a"
   license "MIT"
+  head "https://github.com/matthart1983/syswatch.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5662b621595ea2ca0331e9c2dc1ef87785f98446bbaac0199bbcd613868d8875"
@@ -17,6 +18,12 @@ class Syswatch < Formula
 
   on_macos do
     depends_on arch: :arm64 # test fails on Intel macOS
+  end
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
   end
 
   def install

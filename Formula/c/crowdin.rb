@@ -12,17 +12,18 @@ class Crowdin < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "2aca679d9e4cf5f8ba6bb09468dba430008491021cebf47f515b490a6350c6f9"
-    sha256 arm64_tahoe:       "01fd7d0d4f4d75fe1ff2047fcdf4bf9940c55c0ec7a5e54f778164297753ac2b"
-    sha256 arm64_sequoia:     "334ce8f0158d882d1d605d3ba1191d693587e4256c83aec77b2679f17d94c3d1"
-    sha256 arm64_linux:       "ddd48f709d6bdbb416ae0a87466004ef944789ce31409a1b409a7e1bf16a4d70"
-    sha256 x86_64_linux:      "0afca575422fc067259237a069dd9465b6a095b7fdcc74fb93123cffa175c993"
+    rebuild 1
+    sha256 arm64_golden_gate: "c1a97a7f8fac98c42486464d9d871b0aeaa8afd1fa60f653b1a92fa13f042f4e"
+    sha256 arm64_tahoe:       "f412879b759b91e87ddcf8c8efc4548318b73f17e84172d4fee90c124330a418"
+    sha256 arm64_sequoia:     "c106b4016bbbc0d2213d2892aef6f6288a937088f6c1bbd775c31a8a90264d0b"
+    sha256 arm64_linux:       "f0642cdefc217ad4cd50ab5c4770485c3b004d0485e18264c861fa1eadcd11e8"
+    sha256 x86_64_linux:      "e687c27505fa603cff733c9e221d9041cb764045df6c92a9f69dcbc50ecbcece"
   end
 
   depends_on "bun" => :build
 
   on_linux do
-    depends_on "icu4c@78"
+    depends_on "icu4c@79"
   end
 
   deny_network_access! :test

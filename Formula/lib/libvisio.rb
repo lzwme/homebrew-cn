@@ -11,22 +11,23 @@ class Libvisio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "5541def31c19d0bdeed2338a498c2df095ba94346810ab505b386663672bf34c"
-    sha256 cellar: :any,                 arm64_tahoe:       "abb91d81b72750126191fb3a554cbce3acc3d818a40fa486ac63a24ad006fc5c"
-    sha256 cellar: :any,                 arm64_sequoia:     "3867b68556bba12e953a1a6e09beb68ad9431c8a66222ce8dc1f152b62537c55"
-    sha256 cellar: :any,                 arm64_sonoma:      "523315829cb4aff25a06d1863a6e16602c7fdeaeeda94056f26e1b60bc222d6c"
-    sha256 cellar: :any,                 sonoma:            "9d6d4f6ede6d71b76fb8d57195129927429c0d77b6ce1eeb433d974efb614c81"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "569b4e56d3341421f740f3677036961235fbe9d9cfc044d344cc23aa161480b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "eb5d2b1e7fef85b28cabbbe070360b116d75ed5219a916a14374a9f8a4c1e38a"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "f6c46631395a9695cf7240e38290ebe11e4932ae6f569d1ebf0925e888d64f6d"
+    sha256 cellar: :any, arm64_tahoe:       "536572b5add38a100515efc8e55de85eaedfba4736a9121eaa7307bd52891a5c"
+    sha256 cellar: :any, arm64_sequoia:     "7b612c0a6c487ac18f4665d020a5df3c2f62f5b4414d1daf65f80f3e94a17557"
+    sha256 cellar: :any, arm64_linux:       "209a7ab01a37b20cc8067759e0cc3ad150826a7dbecb18ddcaa643d15b25ce03"
+    sha256 cellar: :any, x86_64_linux:      "b4ef239f44233e716211b36fc5eebb8d5abb664edcee44d12734f80ed2b17e66"
   end
 
   depends_on "boost" => :build
   depends_on "pkgconf" => :build
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "librevenge"
 
   uses_from_macos "gperf" => :build
   uses_from_macos "libxml2"
+
+  deny_network_access!
 
   def install
     # icu4c 75+ needs C++17

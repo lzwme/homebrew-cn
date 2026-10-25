@@ -1,18 +1,17 @@
 class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https://sing-box.sagernet.org"
-  url "https://ghfast.top/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.14.3.tar.gz"
-  sha256 "9a8e3712a5f611ad95f1d16874bbdcdffbd3b8eed16dae2d71ce7042a33c3386"
+  url "https://ghfast.top/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.14.4.tar.gz"
+  sha256 "0958ccd23b1ea9a141d715d15478b1e040fd04bcca19d8ff5529636b1b753e18"
   license "GPL-3.0-or-later"
   head "https://github.com/SagerNet/sing-box.git", branch: "testing"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "11f1a8aae4492a19c67e3ccda1e0f31adb990585377b6901a15023bcf7ebfbe6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "59e406755f0171fc95337afc9a51d22cb80c798531acf6724c8168730c075702"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "781ce4d99d5e755a25fcc925354770bc0e0091820faf360a01aaee7f8459acdf"
-    sha256 cellar: :any,                 arm64_linux:       "1f4df3f9502dc03fdd199fa5bc495260210303e0a3b6001ea698079223c71406"
-    sha256 cellar: :any,                 x86_64_linux:      "1298b232dcfbce1e40b17ebc32ffa4afc33ce24ef9c28ef6b4fc37258d021869"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "db6f00ae1349bcfcce6320fd1f97b970f378efbe06b1dc977b6281e668ef83d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b691c04cf8b6810a5a542e3d56f3523bc2572bac264e508fb6ebcf1ee28cb239"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2158055f2f9a71aa16e3899a7511a5eb8d99d8a79bc0ee075de9bee37db5ad96"
+    sha256 cellar: :any,                 arm64_linux:       "73121a57707a046a8a459253e6ef13ef787705a36b261c5a67e4d8176af70c13"
+    sha256 cellar: :any,                 x86_64_linux:      "1f0de4a7e86f79e6b04552a9a1e586de03d9d73c402667f6d54a092107c9479a"
   end
 
   # TODO: unpin go@1.26 when sing-box supports go 1.27

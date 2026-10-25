@@ -6,11 +6,12 @@ class Lfk < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d7b969f789aa63a345b6b5a1186c0fc86310fd27a55aeeba443d691dc8e4cb93"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d7b969f789aa63a345b6b5a1186c0fc86310fd27a55aeeba443d691dc8e4cb93"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d7b969f789aa63a345b6b5a1186c0fc86310fd27a55aeeba443d691dc8e4cb93"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9ad93389dc10187645d63dd5e963201cc1aacee5cc78bcf32a33f7fb1e97cca5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ff232c3d4f5cb752fabbf40b7724a34475e16eab12283abf809951d0b85821f5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9e7c20e47da5b55df219eae15b42308ad9792f2c6faadba9b15b84dcaf13bd06"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9e7c20e47da5b55df219eae15b42308ad9792f2c6faadba9b15b84dcaf13bd06"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9e7c20e47da5b55df219eae15b42308ad9792f2c6faadba9b15b84dcaf13bd06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8e1e78b789bd8e9e670ed0b81ecca2e36eb445746631d919dd859a897a5830f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "73003e24871a9ce8e193af25e1ab0fa31d22a61411ff49e69671baf479dd221d"
   end
 
   depends_on "go" => :build
@@ -28,6 +29,7 @@ class Lfk < Formula
       -X github.com/janosmiko/lfk/internal/version.BuildDate=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:)
+    generate_completions_from_executable(bin/"lfk", shell_parameter_format: :cobra)
   end
 
   test do

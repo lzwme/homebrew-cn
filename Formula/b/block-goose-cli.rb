@@ -1,8 +1,8 @@
 class BlockGooseCli < Formula
   desc "Open source, extensible AI agent that goes beyond code suggestions"
   homepage "https://goose-docs.ai/"
-  url "https://ghfast.top/https://github.com/aaif-goose/goose/archive/refs/tags/v1.55.0.tar.gz"
-  sha256 "1f8159f4ce1ee544e120543a5e0a9dbbc4fa9c6bdadd4a1f9d8ae76462c2167e"
+  url "https://ghfast.top/https://github.com/aaif-goose/goose/archive/refs/tags/v1.56.0.tar.gz"
+  sha256 "ac1723ba25393fe44ca3a83c14093b3f7c105e8b91547bea702beb03339b6d5a"
   license "Apache-2.0"
   head "https://github.com/aaif-goose/goose.git", branch: "main"
 
@@ -12,11 +12,11 @@ class BlockGooseCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "553aee520e803ae86779d66786500b20b43b3479df6cd7c9af88ab0c1da9012d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f0134551645f3c9e88015e26119c370f4f808328041166a203eec1fc3529786b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e66c45272013e6061f0683003dc5aeb4488765398e48acb3f6781f0edc1a0009"
-    sha256 cellar: :any,                 arm64_linux:       "6429e2478e147c5c435e3da22ebca36803d8fdd639a12396d3c5b2409475b2ee"
-    sha256 cellar: :any,                 x86_64_linux:      "f73284e93f6e80c6392bf86c9272d1686479027eeb64341c46888a9d756908c7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7e6011381ccb921522ca2f6605f20c3a859f7fc2f993b91f8c731edf595c0854"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "280c5a55f1517a3e63be364668f815f21e2d61f8db4be9e87b039f9b985d3b72"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e8817a6621eb0238c676010cce552635b065d7690e630840d0676c1f5f18d452"
+    sha256 cellar: :any,                 arm64_linux:       "b9230ec92981b91a3e1d5b532201312817939a468ad9dd051429afd9ac7fec29"
+    sha256 cellar: :any,                 x86_64_linux:      "257cf560eaf8cbe2cff68612548754d83939fe6ac2ac9b72f7ea9c7ac6964d88"
   end
 
   depends_on "cmake" => :build
@@ -37,10 +37,25 @@ class BlockGooseCli < Formula
   # Remove when goose's `llama-cpp-sys-2` pin ships cpp-httplib >= 0.43.1
   resource "llama-cpp-sys-2" do
     url "https://static.crates.io/crates/llama-cpp-sys-2/llama-cpp-sys-2-0.1.146.crate"
+    version "0.1.146"
     sha256 "9b291e4bc2d10c43cd8dec16d49b6104cb3cb125f596ec380a753a5db1d965dd"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+    resource("llama-cpp-sys-2").stage do
+      system "cargo", "fetch", *std_cargo_fetch_args
+    end
+  end
+
   def install
+    llama_cpp_sys_2_version = Utils.safe_popen_read("cargo", "tree", "-p", "llama-cpp-sys-2", "--depth", "0")
+                                   .lines
+                                   .first
+                                   .match(/^llama-cpp-sys-2 v(\d+(:?\.\d+)*)$/)[1]
+    odie "Check if `llama-cpp-sys-2` resource can be removed!" if llama_cpp_sys_2_version != "0.1.146"
     # Backport https://github.com/yhirose/cpp-httplib/commit/02d38251495ed7795305ad5bf34b3e20b9b52156 for OpenSSL 4
     resource("llama-cpp-sys-2").stage(buildpath/"llama-cpp-sys-2")
     inreplace "llama-cpp-sys-2/llama.cpp/vendor/cpp-httplib/httplib.cpp",

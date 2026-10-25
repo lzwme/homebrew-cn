@@ -22,13 +22,12 @@ class PerconaServerAT80 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "c4f0cc48b5cf2b574d9e8100183405631bca32c6c910fd77aeb41abf943c1df7"
-    sha256 arm64_tahoe:       "7dbdefce759675d7c4ba887cce8bca497e26c6c28f422a32c6d76fbf810b981a"
-    sha256 arm64_sequoia:     "1da65c56489717d417a16f087764696088a91a9101f006901ac855126b3ff135"
-    sha256 arm64_sonoma:      "37e3d848c139355ad5772547ad971d25d5e1bad433a41b0aa65d0c1957e1bfbf"
-    sha256 sonoma:            "6caf0adb3b488f8d0ea2513d5dab3870fcae99e86275e8d42d47222465e84dd6"
-    sha256 arm64_linux:       "48ef9e61d5903f0dd7f780fe5b613fdc1d4bb2001ac11e5159bdbfffbc24408a"
-    sha256 x86_64_linux:      "e0e25d3f8aa9909a78833ce458d9f3745da874574341ffb398d2e07294537785"
+    rebuild 1
+    sha256 arm64_golden_gate: "de0f269c7f5f087d904eb8004f45df3e5bc343bdfcb5414adfd6ee2728c3fb0c"
+    sha256 arm64_tahoe:       "d7cc84f9508091a3b226ef4cd40065314a9c6eca67dc8babf6fbd6aafe8f74f3"
+    sha256 arm64_sequoia:     "82d22a628cdfa7737d883e4d5cbfe0f356af0194e005fe53057f02d4200e054f"
+    sha256 arm64_linux:       "35d70a9e6cf5819e6dbe8c5be8ff04695b8eec7342b01882f5eee89c86d596ba"
+    sha256 x86_64_linux:      "2819edd53fa239bec07cdb0f4c8dc45a8678e1a5c7a598270c90d672096280a7"
   end
 
   keg_only :versioned_formula
@@ -40,7 +39,7 @@ class PerconaServerAT80 < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "abseil"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "libevent"
   depends_on "libfido2"
   depends_on "lz4"

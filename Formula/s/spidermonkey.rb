@@ -5,6 +5,7 @@ class Spidermonkey < Formula
   version "140.17.0"
   sha256 "4d6ed3b18b2069c55bab12d8ba95da6013ac0b036d8a031df8b9f39a25d05c33"
   license "MPL-2.0"
+  revision 1
   compatibility_version 1
   head "https://hg.mozilla.org/mozilla-central", using: :hg
 
@@ -16,18 +17,18 @@ class Spidermonkey < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "bc46d71f60f529928d13aac4bff8a1bef68e00873937b226fabe64a26fe57512"
-    sha256 cellar: :any, arm64_tahoe:       "d8ba23d2d0a11d20fea69bc99f001cda910c75dc58f476266ceab19af1aaed85"
-    sha256 cellar: :any, arm64_sequoia:     "3c41d10ee0e84c34fb59f5563e69bb8ce51000cb75d286dd5096f33d9ea1cca8"
-    sha256               arm64_linux:       "288699c66c00ea7d4e2e43d2cd0248ab1cb8ac5e482e81659780a8e7358eb119"
-    sha256               x86_64_linux:      "a013d8b2c399eb57b192d9c2327bc1e5bf09594c05a0497082bf805532821c12"
+    sha256 cellar: :any, arm64_golden_gate: "cf8ee6210f82f51bf6030481200e290047c30c40f424e913f9ab94ad95e8461c"
+    sha256 cellar: :any, arm64_tahoe:       "fe7c36820c44d3596bf6ccf0be1f780f10c7d45b2733cc19384c1c5027b4f750"
+    sha256 cellar: :any, arm64_sequoia:     "300c9e96e7e7af78e900adcb7981ac103aac6567f38be89f744d0ec3c46c3d8b"
+    sha256               arm64_linux:       "c93cbe80d436dbcabeb66911873cccc9e81dacb2b55aaa9a78c60c005ee1b7f9"
+    sha256               x86_64_linux:      "e769c6bb279709ef91d701e89fc9625bf84491efa43bbe5992279f683ff3ac2f"
   end
 
   depends_on "cbindgen" => :build
   depends_on "pkgconf" => :build
   depends_on "python@3.15" => :build
   depends_on "rust" => :build
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "nspr"
   depends_on "readline"
 

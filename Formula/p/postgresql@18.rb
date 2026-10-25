@@ -12,11 +12,12 @@ class PostgresqlAT18 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "c03f8a2999453ed0c4f0290daba750f25602e3f32ab694d99830c7d252868137"
-    sha256 arm64_tahoe:       "3705effacf678f48b2667b323959d267b705e01da51ef832f10d861eba3a11a6"
-    sha256 arm64_sequoia:     "11a75fdf64bdef7786c9890fca9f194cde0961fc158648509f7e8c3ffaf75275"
-    sha256 arm64_linux:       "5b623e23a4a49822e8da64b982cb177592db2ac254050b1a30aa89acc9e7e873"
-    sha256 x86_64_linux:      "42e9b0986f98cc8704f6d1e40730abb67c5e20b083b5a4000bb09cb5c9ad4867"
+    rebuild 1
+    sha256 arm64_golden_gate: "7c9814acf03d4d34dacea7bc981497d5899d0c7ba792ee601d78421577fd27e9"
+    sha256 arm64_tahoe:       "e6c7545334800b831d919f2bf77bbf426b1d2025591378afa1489cde3c9a0ea3"
+    sha256 arm64_sequoia:     "c863e4c2ce1189608379f0df66cce388f24f30e0ed179a967ca397aaea4f6642"
+    sha256 arm64_linux:       "79b4a79460cc0d54c2993b5890a029fad840b194f3fa38128e96b21f99d13217"
+    sha256 x86_64_linux:      "9aa30c4eab0b29e3106d65c2b163227b5da3c26eca9a0939c6e9f2ed8d72470b"
   end
 
   keg_only :versioned_formula
@@ -29,7 +30,7 @@ class PostgresqlAT18 < Formula
   depends_on "docbook-xsl" => :build
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   # GSSAPI provided by Kerberos.framework crashes when forked.
   # See https://github.com/Homebrew/homebrew-core/issues/47494.
   depends_on "krb5"

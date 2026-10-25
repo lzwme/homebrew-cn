@@ -12,16 +12,17 @@ class Zk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3bc5ab5a67dee41d60cd3357b1b0051246a183722d4772ad17fbb1cfd5bf0dcd"
-    sha256 cellar: :any, arm64_tahoe:       "86dea1eeb6c635caad1c0ef7a8db5405c2214195149ca45d50db28d80ace37ff"
-    sha256 cellar: :any, arm64_sequoia:     "a2797887ab6d8d0298fd184d896c0d7e8b63060cf9f7dca57f89cdeadb0bf449"
-    sha256 cellar: :any, arm64_linux:       "d271c4cd35b8dc7f46638b833588d6996292a8ffe89d94dbf00921d94de5b621"
-    sha256 cellar: :any, x86_64_linux:      "4ae991a44ee7a26e1141212d194b4a756b6e083e0194557db76e08e64274fa5d"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "17a307b11212fbbb7a5c189ba5ef1ae9bdc40b7482636dc14bd7ab59d7c19667"
+    sha256 cellar: :any, arm64_tahoe:       "a9262d927cd99f23408ba2e2c099790b6c85e88b439cfcfaefa386ac91833ee0"
+    sha256 cellar: :any, arm64_sequoia:     "1dc6aeee97969369c46a43c08003c0b700e0b892f049232114b6a96f6e19bf41"
+    sha256 cellar: :any, arm64_linux:       "15b415f05cd374d72d696f8dbc427952714604a7295246906d8e7e00da3bac27"
+    sha256 cellar: :any, x86_64_linux:      "6f294a27742322ff5c74023be48de9408dfd3517b09efa4d7b592f993f641f80"
   end
 
   depends_on "go" => :build
 
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   uses_from_macos "sqlite"
 
   deny_network_access!

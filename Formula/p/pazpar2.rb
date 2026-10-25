@@ -4,7 +4,7 @@ class Pazpar2 < Formula
   url "https://ftp.indexdata.com/pub/pazpar2/pazpar2-1.14.1.tar.gz"
   sha256 "9baf590adb52cd796eccf01144eeaaf7353db1fd05ae436bdb174fe24362db53"
   license "GPL-2.0-or-later"
-  revision 10
+  revision 11
 
   livecheck do
     url "https://ftp.indexdata.com/pub/pazpar2/"
@@ -12,13 +12,11 @@ class Pazpar2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "67a6caddc21eae0bf0e0e84fa3d6a9202270b5a859cbf09681629634c3eedc47"
-    sha256 cellar: :any,                 arm64_tahoe:       "4185debb82ea7516fdd544cf8a7f0509cf018fe83adc7c60434fbf7b31710dff"
-    sha256 cellar: :any,                 arm64_sequoia:     "672d6de49b46f8aedaabb96210d47e490889528e3d75588bbd164ccbcb4eab89"
-    sha256 cellar: :any,                 arm64_sonoma:      "f87a262cb03fd2f25bcef92c949f94eb27bc1dec9e7cbcb4ed9a38e82192bdfc"
-    sha256 cellar: :any,                 sonoma:            "d6fad2c51dc9f9a91944ea537d6882bb8c8bfeacf207525decf241c0c8de5cf3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "bfdde53eaffee03dda9094a5e2d53ad6a3804381b51c6aedf99135f83822fdcf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0e7655016434cf9e1d7d6a4ca97cb3272a255c07f51bb087ca80e0f06eca1023"
+    sha256 cellar: :any, arm64_golden_gate: "02e692e93c7935ef8f470bf2d59aff3d18539a1853c001ba2910152a8bd490dc"
+    sha256 cellar: :any, arm64_tahoe:       "c80a77317285e1e6a8137c764b37e8d6021a7a7cec5ccde762c0ecd4bfd88a92"
+    sha256 cellar: :any, arm64_sequoia:     "0a65a902f7174f8d2a350808d37a7abddded46dbd7336b132a6e6fcfc80f0051"
+    sha256 cellar: :any, arm64_linux:       "15ee2ebdea60cf5475cf8178ac8eff23ab0fd4becceb18f7e54f2833aac0dd19"
+    sha256 cellar: :any, x86_64_linux:      "ada341c49d3408eb6ced92202fa3727b4785179613c0abcf476c58d2e82b1435"
   end
 
   head do
@@ -30,7 +28,7 @@ class Pazpar2 < Formula
 
   depends_on "pkgconf" => :build
 
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "yaz"
 
   uses_from_macos "libxml2"

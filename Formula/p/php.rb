@@ -29,6 +29,7 @@ class Php < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
+  revision 1
   compatibility_version 1
 
   livecheck do
@@ -37,11 +38,11 @@ class Php < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "22e0312d63efe38476ff58fc802974d56e93248d53f6d774b02884149675f1bc"
-    sha256 arm64_tahoe:       "c788492700c97405f18194c77f8d16f3a1ca8bd3cc843a2652cf937e4d7dba82"
-    sha256 arm64_sequoia:     "5cff6d1815187b2c18a381de0f6dc24fa7d3039ca7761bbc3f482e8b1ed5c8cb"
-    sha256 arm64_linux:       "fc2c9e8b95c0eb62a0a3a6dbba28a49b3bb7f123e18ce782938ac44f45c7bf31"
-    sha256 x86_64_linux:      "5ffa5011f2a4a8154162d7d5781e7bf3a47d63e07d8a8832a7a6f11f4b004acb"
+    sha256 arm64_golden_gate: "a006f7d2db97ee5dc04d78aa89c0af4eb2ea9ec6cd7d80e41eb60fc39f24b8a5"
+    sha256 arm64_tahoe:       "4f694b2ea3c64b0fe85b253c0066f92b238540c9e984b0aebf2204ad19b36c89"
+    sha256 arm64_sequoia:     "a0f7e41f86b1f166cdd618799e66c2c5d00ae1e4cda1637ec368c347a0fe80e5"
+    sha256 arm64_linux:       "0cdb1f88d3d8626eda805b0b13a38b0c3184d62781b537e09ee8b0a38e734e05"
+    sha256 x86_64_linux:      "6da48164a7e9730b746b66d1882cc0155e4421747ff65990f33933e5ee639040"
   end
 
   head do
@@ -61,7 +62,7 @@ class Php < Formula
   depends_on "freetds"
   depends_on "gd"
   depends_on "gmp"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "libpq"
   depends_on "libsodium"
   depends_on "libzip"
