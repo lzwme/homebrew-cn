@@ -4,7 +4,7 @@ class Blogc < Formula
   url "https://ghfast.top/https://github.com/blogc/blogc/releases/download/v0.20.1/blogc-0.20.1.tar.xz"
   sha256 "d1289367362b7b11b438670fe703ff2c751e795393c06e1999d6b9a6e438fdd8"
   license "BSD-3-Clause"
-  head "https://github.com/blogc/blogc.git", branch: "master"
+  head "https://github.com/blogc/blogc.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "79b272eced508909371ec86729c67a438ceb22dce869062261cea5ecc709c98f"
@@ -21,6 +21,8 @@ class Blogc < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:       "dbf177c5bfece6942cd368cee01aec2fa762f4ecc02178441d3f35d26974c03b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "5188455011d94f56149adb535c9a159e925eba66e28ab4362639ebb3e72ba5ba"
   end
+
+  deny_network_access!
 
   def install
     system "./configure", "--disable-tests",

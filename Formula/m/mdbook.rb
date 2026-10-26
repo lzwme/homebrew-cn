@@ -4,7 +4,7 @@ class Mdbook < Formula
   url "https://ghfast.top/https://github.com/rust-lang/mdBook/archive/refs/tags/v0.5.4.tar.gz"
   sha256 "107614330c35c77d53b6f6ce7826c50eed087650efe5646a4d0a16ca6bf5544b"
   license "MPL-2.0"
-  head "https://github.com/rust-lang/mdBook.git", branch: "master"
+  head "https://github.com/rust-lang/mdBook.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "91b30b5aa7efe77c57928527397142b2657f9dc8fcbbbe05eafb2a0f664a9a96"

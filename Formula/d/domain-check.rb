@@ -1,17 +1,17 @@
 class DomainCheck < Formula
   desc "CLI tool for checking domain availability using RDAP and WHOIS protocols"
   homepage "https://github.com/saidutt46/domain-check"
-  url "https://ghfast.top/https://github.com/saidutt46/domain-check/archive/refs/tags/v1.2.0.tar.gz"
-  sha256 "eb7fd0a42fe85efd220ac40123ea3629ca5e6b32aeaf3318dedfc9b2e66b2974"
+  url "https://ghfast.top/https://github.com/saidutt46/domain-check/archive/refs/tags/v1.2.1.tar.gz"
+  sha256 "175e738e72042bd6d6175f7a29b3ca69fca382560f98fd6a6429409d5a86a811"
   license "Apache-2.0"
   head "https://github.com/saidutt46/domain-check.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ee1be2abdab3e4ce4aca8f0f8db9cd4814a16ed4c4eaf15ad2e6fb43e1fbb2d9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2c696697b5d548942d9c7a13e4df38edc20724ac9558f4626eff5ffd5a64f72a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e83fb3cef05e04ee1e6cb76df7a34d26a4b72a7f45e4d00f6eb83dd6181dfc14"
-    sha256 cellar: :any,                 arm64_linux:       "7f37c5cbaa7cdcc16fe5b0dcb9b4a0a5f1e11c2a1637717cac640c67e609d387"
-    sha256 cellar: :any,                 x86_64_linux:      "c88c0552413b778f00247e08790de5f70f8712c7e5dfdfbb5c12073da536ce4e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c3141987f2defe531925977d9c04542513c88f8afb227cf711fd4625f7e29b88"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c21f777d0a5bb22c766e927c047ea45bd98329ed149982027070505d00ca289b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ac1a0e5fa22dc5bbb29b1014d8f0375058e150f270089d157185e5a5c4ad4d16"
+    sha256 cellar: :any,                 arm64_linux:       "3816ad65c085a2c9577af0a42cf86855838550104a84152e4b1e092e4fb181bd"
+    sha256 cellar: :any,                 x86_64_linux:      "4b46bbc27a845659cb95baebd4b7e4c2741d73377c89493f96b7e36368cee1ea"
   end
 
   depends_on "rust" => :build

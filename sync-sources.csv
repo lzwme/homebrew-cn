@@ -1474,7 +1474,7 @@ Homebrew-homebrew-core/Formula/d/darklua.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/darkstat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dart-sass.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dart-sdk.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/dartaotruntime.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dartaotruntime.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dartsim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dasel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dash-mpd-cli.rb, Homebrew/homebrew-core, 1
@@ -5255,6 +5255,7 @@ Homebrew-homebrew-core/Formula/n/nfd2nfc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nfdump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nfpm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nftables.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/ng-log.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nghttp2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nginx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/ngircd.rb, Homebrew/homebrew-core, 0
@@ -7063,6 +7064,7 @@ Homebrew-homebrew-core/Formula/s/slint-compiler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slint-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slirp4netns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slither-analyzer.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/slivar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sloc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sloccount.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sloth-cli.rb, Homebrew/homebrew-core, 1
@@ -7205,6 +7207,7 @@ Homebrew-homebrew-core/Formula/s/spice-server.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spicedb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spicetify-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spidermonkey.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/spidermonkey@140.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spiffe-helper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spigot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spim.rb, Homebrew/homebrew-core, 0
@@ -8330,6 +8333,7 @@ Homebrew-homebrew-core/Formula/w/wordnet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wordplay.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/workmux.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/worktrunk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/worldmonitor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/worm-scraper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wormhole-william.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/woxi.rb, Homebrew/homebrew-core, 1
@@ -13811,6 +13815,7 @@ Homebrew-homebrew-cask/Casks/m/maestro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/magicavoxel.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/magicplot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/magicquit.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/magpie.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mail-assistant.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mailbird.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mailbutler.rb, Homebrew/homebrew-cask, 0
@@ -16221,6 +16226,7 @@ Homebrew-homebrew-cask/Casks/w/wavebox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/waveforms.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/waves-central.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wavesurfer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/wblock.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wch-ch34x-usb-serial-driver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wd-security.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/weakauras-companion.rb, Homebrew/homebrew-cask, 1

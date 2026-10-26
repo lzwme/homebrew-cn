@@ -23,6 +23,8 @@ class Conman < Formula
 
   depends_on "freeipmi"
 
+  allow_network_access! :test
+
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules", "--sysconfdir=#{etc}"
     system "make", "install"

@@ -7,15 +7,15 @@ class Redex < Formula
   url "https://ghfast.top/https://github.com/facebook/redex/archive/refs/tags/v2026.09.09.tar.gz"
   sha256 "9bea5953cd1e06f6c32ec913c79c11893624caf621a62f3b4d065a6c77e0988e"
   license "MIT"
+  revision 1
   head "https://github.com/facebook/redex.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "1ed1cce33a7d67f4ec10ecaf6a40ea17699855ae79bb02f122350d8d97e47bbd"
-    sha256 cellar: :any, arm64_tahoe:       "a973c777f52ab4049df67c5632f7867eb9c0ce0f8453b624fbcc9ef07889935b"
-    sha256 cellar: :any, arm64_sequoia:     "ad5494a08728627a58a8e69d183abbc48eb1116a41203424c81e87718529d434"
-    sha256 cellar: :any, arm64_linux:       "1157ff91dc3973c1fc1a27b186f9ff56679d6f3c74f10f186dd1fd8ab2751552"
-    sha256 cellar: :any, x86_64_linux:      "388f6cfd23f1c2b9f2cef7b707e47b33797543fd151da84230a531da8a4309be"
+    sha256 cellar: :any, arm64_golden_gate: "20a063c4644e2531248458e23c1b6a3001de8fef0e2873f2ee3699210bad3dd1"
+    sha256 cellar: :any, arm64_tahoe:       "35d57c0731d2e992dcf7239194a2cdebc2ebf72bb071bd694ad0086593a7633b"
+    sha256 cellar: :any, arm64_sequoia:     "12cb20a278dea9becf6315273bf333ddb0f671513db1752d4b1424c19cd54c2a"
+    sha256 cellar: :any, arm64_linux:       "d94f1c627bca1a8e875fcca1a31b796531684943a263bd37d7ec2680a58f1525"
+    sha256 cellar: :any, x86_64_linux:      "6ae288548ccd9ba4fc9a148cd6599a55278810aaaf703338ba82f5c2a159a73b"
   end
 
   depends_on "cmake" => :build
@@ -38,8 +38,8 @@ class Redex < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "homebrew-test_apk", :test do

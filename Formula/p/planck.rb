@@ -2,7 +2,7 @@ class Planck < Formula
   desc "Stand-alone ClojureScript REPL"
   homepage "https://planck-repl.org/"
   license "EPL-1.0"
-  revision 4
+  revision 5
   head "https://github.com/planck-repl/planck.git", branch: "master"
 
   stable do
@@ -19,13 +19,11 @@ class Planck < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "15312160f296c470e753ce95989e3d1497adc4d33b4a3392fb0fbb7bc7ae423b"
-    sha256 cellar: :any, arm64_tahoe:       "8ae97ba5cca0b1d7393afeebb403e25821a75a1e3ab054313a6031ac9b3530e4"
-    sha256 cellar: :any, arm64_sequoia:     "5ccf43cd6bcffc657596beddd703a69d6aabc4437b3e5945a20cb88f55f1999d"
-    sha256 cellar: :any, arm64_sonoma:      "c7c752a3b624660fd894e37e4bf7e37c2b4e69b399fe82849a9c68e2d8bb6fb5"
-    sha256 cellar: :any, arm64_linux:       "317b3cac73e97f287c4643983c9caa62f99dec3cdbeb535e156b1472339f1db2"
-    sha256 cellar: :any, x86_64_linux:      "7b58c81a2330e003de4ee7329a0cfe6f83811e83bdbd0dc51e9c82bbac8079cb"
+    sha256 cellar: :any, arm64_golden_gate: "8680de65eaa4ae9d6622a37254168939549193657754f2a2d32eae62f6fed3d6"
+    sha256 cellar: :any, arm64_tahoe:       "e43ad145117248b4182265bb0adc006af4fa7ae9ebb66f4959a47989083264a3"
+    sha256 cellar: :any, arm64_sequoia:     "2a364731985dee22c1bc8f8436f52a651618156bc9c5c8fe34ac1ee24c52f14d"
+    sha256 cellar: :any, arm64_linux:       "291ff04509917b0b371a7ec7a35a17271e0e9c08035f7616a813fbb9e81e3248"
+    sha256 cellar: :any, x86_64_linux:      "a897d5a6ac698f9c64ab82c4803577cf86b96015101f5f28cac9d65c3954bdd4"
   end
 
   deprecate! date: "2026-02-21", because: :unmaintained
@@ -34,7 +32,7 @@ class Planck < Formula
   depends_on "clojure" => :build
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "libzip"
 
   uses_from_macos "vim" => :build # for xxd

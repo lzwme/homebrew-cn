@@ -18,6 +18,8 @@ class Execstack < Formula
   depends_on "elfutils"
   depends_on :linux
 
+  deny_network_access!
+
   def install
     args = ["--disable-silent-rules"]
     args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arch == :arm64

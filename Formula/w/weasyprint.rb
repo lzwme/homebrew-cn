@@ -6,14 +6,14 @@ class Weasyprint < Formula
   url "https://files.pythonhosted.org/packages/8d/0e/461aeb736762862b511034933d5b98d68f812431b7393b026d9ace5f6b42/weasyprint-70.0.tar.gz"
   sha256 "c263abf0e86c747b12af678b67f85f4abbfb97d18a20503031e7ba94e4b8cf8c"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "19590af9f409b34191dcc6852ff1fbf56f9d03e1a8c65c3e06b08ba1e951aed1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ed84b5ebc627bf4dcf86599b2d4f54427178b1cdb41e0226a7a8cd05b792a1e7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cae166a73db87eb2cdb677affe66698acc5b3693443b16aa8804ed62b6a43eb9"
-    sha256 cellar: :any,                 arm64_linux:       "3baca13cb4f2231a0ff48512231a0ac8b65f8ebc807698e83e5ceba8cee392a7"
-    sha256 cellar: :any,                 x86_64_linux:      "d5242679a0be62eb7f89ed9b6e1ab5276e4ce66c754f580a688e7520d124805c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e2f3ca5ef535806e5ff5cb05d601129d9ae0220d4e09554ca3e0b8493ee3e4e7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b386a8eeb59a00ee8f9025edcd8fe156baf4d6461f5feac859bf758d16be6ca0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c93b1e4548b86ef1c555682303956111f13775e4effa7ca9b4b27fdca72cd042"
+    sha256 cellar: :any,                 arm64_linux:       "7655055d9a1aec93a24eb9d46e92b997b99ff3d288e3dce9b0327ec0de06c6ea"
+    sha256 cellar: :any,                 x86_64_linux:      "4f2b0bdbffb02c1cb15de9df4cddb9789ff1ebfc2a9848751514d415dc59e22d"
   end
 
   depends_on "cffi" => :no_linkage
@@ -26,8 +26,8 @@ class Weasyprint < Formula
   pypi_packages exclude_packages: %w[cffi pillow]
 
   resource "brotli" do
-    url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
-    sha256 "e310f77e41941c13340a95976fe66a8a95b01e783d430eeaf7a2f87e0a57dd0a"
+    url "https://files.pythonhosted.org/packages/cf/81/1546c983678a9b4e77cb4718eaedd1b2caf24a6cdbf1eb8775938d22aff7/brotli-1.2.1.tar.gz"
+    sha256 "02b2f7b5a83485efe448a44ddf7983def05c3bb1dcf917d4f7154070260e13de"
   end
 
   resource "cssselect2" do
@@ -36,13 +36,13 @@ class Weasyprint < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/87/b6/126c659ab7e0e03e01a5f5d223abf7b2c0691ae92718085a212a3924a2a3/fonttools-4.66.1.tar.gz"
-    sha256 "64967c6ddb0d4c610dfd8cb1485981b2d27972ddfb7d4bbbd9e199d2a089c450"
+    url "https://files.pythonhosted.org/packages/94/36/102e180f8f5dbaee88b26595b01ca8aa80bf4e62128d9aa94265b3996c96/fonttools-4.67.0.tar.gz"
+    sha256 "3cb57e6600ca77c0b1729cf8adc23bc0652633a37f18cfa934d9c7bc3de25519"
   end
 
   resource "pydyf" do
-    url "https://files.pythonhosted.org/packages/36/ee/fb410c5c854b6a081a49077912a9765aeffd8e07cbb0663cfda310b01fb4/pydyf-0.12.1.tar.gz"
-    sha256 "fbd7e759541ac725c29c506612003de393249b94310ea78ae44cb1d04b220095"
+    url "https://files.pythonhosted.org/packages/67/1f/3a10f8d2d106bb68330c43a5cd0faf922d1816f65a1581f35015ac654a79/pydyf-0.13.0.tar.gz"
+    sha256 "3c1bd536c7161d9f472b82a8aaa27d3359a9058ec12de15302d92b3690dae7f5"
   end
 
   resource "pyphen" do

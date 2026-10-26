@@ -33,6 +33,8 @@ class Exif < Formula
   depends_on "libexif"
   depends_on "popt"
 
+  deny_network_access!
+
   def install
     args = %w[
       --disable-silent-rules

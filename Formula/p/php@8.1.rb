@@ -72,7 +72,8 @@ class PhpAT81 < Formula
     type :backport
   end
 
-  allow_network_access! :test
+  # Allow network access during `:postinstall` and `:test` phases
+  deny_network_access! :build
 
   def install
     # Backport fix for libxml2 >= 2.13

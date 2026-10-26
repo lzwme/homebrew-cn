@@ -6,20 +6,21 @@ class Tox < Formula
   url "https://files.pythonhosted.org/packages/63/6e/677274ae411fa13f5c2ea5c633a6abfa0886e949bd2ef53c7e564a0b0b2e/tox-4.67.1.tar.gz"
   sha256 "a68602f64421b199016127364ee47347b958391d19c2b2e53fe95673a8fe98e9"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1039afcbcc162cd6d4786c1263fc076385f4bad297d4b8e2c25d29aa26b1b602"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1039afcbcc162cd6d4786c1263fc076385f4bad297d4b8e2c25d29aa26b1b602"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1039afcbcc162cd6d4786c1263fc076385f4bad297d4b8e2c25d29aa26b1b602"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "283db365420d1dcd37b3561f532184eeeaa152c5d815852804fe4436e8fc2be8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "283db365420d1dcd37b3561f532184eeeaa152c5d815852804fe4436e8fc2be8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3becc0fd96304de217808b6062fe6ee797040e71d7cb1204ce8096a86e703dd4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3becc0fd96304de217808b6062fe6ee797040e71d7cb1204ce8096a86e703dd4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3becc0fd96304de217808b6062fe6ee797040e71d7cb1204ce8096a86e703dd4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cfa15c90e482686fceaae223d1f5ee1a49731c141f9137be9b9aa782fff4fe0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "cfa15c90e482686fceaae223d1f5ee1a49731c141f9137be9b9aa782fff4fe0c"
   end
 
   depends_on "python@3.15"
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/09/88/27fe0785c7a9aa285c753db0b4ea967adbf76128fede66379c35a4b8d054/cachetools-7.2.3.tar.gz"
-    sha256 "e6fafd06de4a5bd915ff7d247588ea497e28c9a568c62db8678d9a5f11515a9a"
+    url "https://files.pythonhosted.org/packages/3a/5d/15ea0494ebcb9062c7ca79bf026cbba380a50538ae73753fb40bdffa79e2/cachetools-7.2.4.tar.gz"
+    sha256 "e0203b04b75fe13e62098eeb5b2018c4eb1a14c04e2b5b450e70db3ee7e92ec5"
   end
 
   resource "colorama" do
@@ -33,8 +34,8 @@ class Tox < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/d4/08/d8f81287742010e38daf3632380c8d80ede7b4df2716f8ca3d0a2b087d44/filelock-4.2.2.tar.gz"
-    sha256 "b29ff2ae9140bb17b3bc77c648dc4f010d9ac0955eccabff4f2b01dde859f787"
+    url "https://files.pythonhosted.org/packages/d8/28/3893324bcadf8f89b1616637468d766af3f625008c0735bf704fdfa86617/filelock-4.2.4.tar.gz"
+    sha256 "c6d8663535e1650ee430507b4ffbac7b464dd64b7647ea0112a9f406499d163d"
   end
 
   resource "packaging" do
@@ -43,8 +44,8 @@ class Tox < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/b7/89/dfd269de936e76319cf27787d9eaaca513491f635d49b0fbe7cdb6d3bf6f/platformdirs-4.13.4.tar.gz"
-    sha256 "dd96496961684a7f42041923f842ec7494e09f5e87aded99117e1109cd40570e"
+    url "https://files.pythonhosted.org/packages/58/e6/d0abbb256b44e6a05748c6942511ff67db8dbb068de0c35b24bf1b395b09/platformdirs-4.13.5.tar.gz"
+    sha256 "05831adf87d392760f4b5c3a0a95579ab5a10b18b9b9bd43680dcb47544788a0"
   end
 
   resource "pluggy" do
@@ -58,8 +59,8 @@ class Tox < Formula
   end
 
   resource "python-discovery" do
-    url "https://files.pythonhosted.org/packages/fc/54/fad125f5c48f7821644ee6f223ebfcedc4e23597c1a16eeb13d33aa4a91a/python_discovery-1.6.3.tar.gz"
-    sha256 "a62b301d96cf5489cb96ab023b32e068421867fdd5df2e42eece877869047fa2"
+    url "https://files.pythonhosted.org/packages/f3/ee/cf608372c88ce2c136ee13c69ab6f667dbc0d0c1176af188b4ddc8853e66/python_discovery-1.6.4.tar.gz"
+    sha256 "bc70d31f0ec5de11eda13d4d64c16e24b3506a65984684f2b6c98cb83b2ea9df"
   end
 
   resource "tomli-w" do
@@ -68,8 +69,8 @@ class Tox < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/7f/be/4d1d59d309db76b5808fcfd78bd5996f4e7241366691c38fc331a3136398/virtualenv-21.14.11.tar.gz"
-    sha256 "593052d8477ea8c55a842387ce111bd08c72618f0c1133c302cafe335e570a57"
+    url "https://files.pythonhosted.org/packages/70/aa/bff50daee0488e16d611258a9b6c5a1d0c9e128f8ca424e9f4e1c0444ef2/virtualenv-21.14.13.tar.gz"
+    sha256 "de5307ba4b9a0001d9c8ea02832d38f63ca432880f416c1bface61c4323fd905"
   end
 
   def install

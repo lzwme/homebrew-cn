@@ -6,14 +6,15 @@ class YtDlp < Formula
   url "https://files.pythonhosted.org/packages/06/13/d2ea252871826205dc4965cb70e6037ab93697fcabf4feda49fe981f6da0/yt_dlp-2026.10.21.tar.gz"
   sha256 "cbf748d7d17cd37647c4b9f07b6c25f24384bfd4361407ee5ec519e753d22539"
   license "Unlicense"
+  revision 1
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "95ad28db55e74bc78ad86338e834b57144de1f9c87843e742ebe4998466e3243"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "114c8372e2f4e152a97a8ea3b3f2de1688e8b4088970be400f887a73059314da"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f08f557f000de51bf26a44209a82ab78af1c753f7035bf71e6ee81cd214f746f"
-    sha256 cellar: :any,                 arm64_linux:       "32bb685d49aff2f75e97591d835c0bf1f69fb787a2c063b52d3b2111628fc9a2"
-    sha256 cellar: :any,                 x86_64_linux:      "7858175bba1926f2b30155b66ead7334d57803f939d5c1ebaccc4d3f1bc04b65"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eac4270f1c4f8cef92f89d02bc97437ee7dde7f0d3b8dc303830effbdb82883e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3f395f99badf3d67b481c257e09b9159c4bac7073225089501d969979ce46e4d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9080d3bcc403343eb0b4880395203fc09146731f61d185ea1d7a203315a15ddc"
+    sha256 cellar: :any,                 arm64_linux:       "ce9ed2c596b9199035779dc5789085441efc38f32a9aeca71271552bd86bdac3"
+    sha256 cellar: :any,                 x86_64_linux:      "3175cd9d44cd6cb313ee7c224f5872dacc471770fb90b96e06792eaa706cc973"
   end
 
   head do
@@ -32,8 +33,8 @@ class YtDlp < Formula
                 exclude_packages: %w[certifi cffi pycparser]
 
   resource "brotli" do
-    url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
-    sha256 "e310f77e41941c13340a95976fe66a8a95b01e783d430eeaf7a2f87e0a57dd0a"
+    url "https://files.pythonhosted.org/packages/cf/81/1546c983678a9b4e77cb4718eaedd1b2caf24a6cdbf1eb8775938d22aff7/brotli-1.2.1.tar.gz"
+    sha256 "02b2f7b5a83485efe448a44ddf7983def05c3bb1dcf917d4f7154070260e13de"
   end
 
   resource "charset-normalizer" do

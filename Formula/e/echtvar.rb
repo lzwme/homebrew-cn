@@ -6,22 +6,34 @@ class Echtvar < Formula
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_golden_gate: "cb43da7beb5cec375582901a362420e496216c705bd5eaf79a2606cb9f302665"
-    sha256 cellar: :any, arm64_tahoe:       "fcab74c9936cc1ab9df9caaf55de71874806f415acc052e33d9d74afaa3f0855"
-    sha256 cellar: :any, arm64_sequoia:     "61155b5559826f1bae9d78090a0885528aafe6ce7c34307e9be3a6c77f533e7f"
-    sha256 cellar: :any, arm64_linux:       "278794dce2a6315d3e2982e1424dfcf0a2a5968db8add141c38bb69dacb55670"
-    sha256 cellar: :any, x86_64_linux:      "d3bcf5b3fc9a3e7f743673396ebbc6f349c762b1447a507198d87ebd1989c14a"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "54fc2342877ecfd3d574aaa7b0cff67d24ded69196d3a1c848b6469e41e5c326"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3fe2aea1deeab2ceaa2fbcc917d73b5d655244193a96ccc4d1461ae884eb7c93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "498c3506736f3e62511db5b0bb5cc3c9122de0b93cb4327741bab82e2695e57a"
+    sha256 cellar: :any,                 arm64_linux:       "826d7f12acf0cc484b033d88412e7264e8d888775496cb7abfd8bf1266ca5675"
+    sha256 cellar: :any,                 x86_64_linux:      "470f5a5b37d81b6ce1bef2748d3fdb57eb63c65fcceca0f4ffcd55982232b478"
   end
 
-  depends_on "cmake" => :build
+  depends_on "openssl@4" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "python@3.15" => :test
-  depends_on "openssl@4"
 
+  uses_from_macos "bzip2" => :build
   uses_from_macos "llvm" => :build # for `libclang`, used by `hts-sys` bindgen
-  uses_from_macos "bzip2"
+  uses_from_macos "xz" => :build
+  uses_from_macos "curl"
+
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
+
+  # Resource to avoid building bundled curl, xz and zlib-ng
+  # Issue ref: https://github.com/rust-bio/hts-sys/issues/23
+  resource "hts-sys" do
+    url "https://static.crates.io/crates/hts-sys/hts-sys-2.2.1.crate"
+    sha256 "fc7e68eb880b02c80cfb41e8dc7904062a3ea7e27b7c4556e88d648dd2f038da"
+  end
 
   # Fix build with hts-sys 2.2.1 bindings (no lockfile upstream)
   patch do
@@ -37,7 +49,15 @@ class Echtvar < Formula
     ENV["RUSTC_BOOTSTRAP"] = "1" if Hardware::CPU.intel?
     ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm") if OS.linux?
 
-    system "cargo", "install", *std_cargo_args
+    # Use system curl and zlib instead of building bundled curl, OpenSSL, xz and zlib-ng
+    resource("hts-sys").stage("hts-sys")
+    inreplace "hts-sys/Cargo.toml" do |s|
+      s.gsub!(/^features = \[\n\s*"static-curl",\n\s*"static-ssl",/, "features = [")
+      s.gsub!(/^features = \["static"\]$/, "")
+      s.gsub!(/^features = \[\n\s*"zlib-ng",\n\s*"static",\n\]$/, "")
+    end
+
+    system "cargo", "install", "--config", 'patch.crates-io.hts-sys.path="hts-sys"', *std_cargo_args
     pkgshare.install "tests"
   end
 

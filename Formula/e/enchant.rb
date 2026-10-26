@@ -29,6 +29,8 @@ class Enchant < Formula
     depends_on "groff" => :build
   end
 
+  deny_network_access!
+
   def install
     # mandoc is only available since Ventura, but groff is available for older macOS
     inreplace "src/Makefile.in", "groff ", "mandoc " if !OS.mac? || MacOS.version >= :ventura

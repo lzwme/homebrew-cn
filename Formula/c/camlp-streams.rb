@@ -4,14 +4,14 @@ class CamlpStreams < Formula
   url "https://ghfast.top/https://github.com/ocaml/camlp-streams/archive/refs/tags/v5.0.1.tar.gz"
   sha256 "ad71f62406e9bb4e7fb5d4593ede2af6c68f8b0d96f25574446e142c3eb0d9a4"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
-  revision 8
+  revision 9
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "66cf6c6e906ebb2eeec62c375bfcf5ebfa3d5cc0625290818c89f1cbba13f7ce"
-    sha256 cellar: :any, arm64_tahoe:       "4b27a1600ecf72abd834014cc1a0468123a43deb552b11be0f2b82590dee0ada"
-    sha256 cellar: :any, arm64_sequoia:     "73488f091ea0410e729fac0a9f4ec29ca3cfd6ecd9044b3b4425e1ac6be77cbe"
-    sha256 cellar: :any, arm64_linux:       "ff202f7479a469d8d010c053420e5391b67742e760e4f721b76fdff7109dc919"
-    sha256 cellar: :any, x86_64_linux:      "50f38409c827ecd178f56c167e2e64bc9d4cdf87effd918202301a2f54a4412b"
+    sha256 cellar: :any, arm64_golden_gate: "9ebe9ddfd875fb22f45f25ff0709fa92b5e3074068ac0726e0590bf3e48318cc"
+    sha256 cellar: :any, arm64_tahoe:       "a5c519c377b6436f0d1c2936eb7ffd60508528e7b84cfcc16f439fbf5c9a6b6c"
+    sha256 cellar: :any, arm64_sequoia:     "c70602c608ec248880aebee12d42f4aeb69403b6ce62137adc78e0953500c70b"
+    sha256 cellar: :any, arm64_linux:       "78e283cd0b41018d1a1fdc2fdd676a800090300133982ed3d9a20605da586a20"
+    sha256 cellar: :any, x86_64_linux:      "9ee5e440faa3f86571c01e8d8035f003fbf3ca7949ff6082edca8a5d6f1e68c8"
   end
 
   depends_on "dune" => :build

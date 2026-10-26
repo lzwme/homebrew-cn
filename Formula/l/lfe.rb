@@ -19,6 +19,8 @@ class Lfe < Formula
   depends_on "emacs" => :build
   depends_on "erlang"
 
+  deny_network_access!
+
   def install
     # Each `.beam` rule re-runs `install -d ebin`, which races itself under `make -j`
     ENV.deparallelize

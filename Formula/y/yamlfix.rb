@@ -6,16 +6,20 @@ class Yamlfix < Formula
   url "https://files.pythonhosted.org/packages/93/1d/b60d4411ff495de9b7598cc041e29c661e8e2f9d476a8a09bad1f54c1bce/yamlfix-1.19.1.tar.gz"
   sha256 "05f6add13959637564f278e9237f6e201ff75e061a0a4cb9fc06fa95c3001a22"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
+  head "https://github.com/lyz-code/yamlfix.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "932398d2bb2cd749ad3ce648bb274bfaefc2a9cc447fa6f66f9d118a16cfbe14"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "932398d2bb2cd749ad3ce648bb274bfaefc2a9cc447fa6f66f9d118a16cfbe14"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "932398d2bb2cd749ad3ce648bb274bfaefc2a9cc447fa6f66f9d118a16cfbe14"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "62d43f63ec330c60050d95608fbe3b078e9968940f493f96db373536fa1b72a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "62d43f63ec330c60050d95608fbe3b078e9968940f493f96db373536fa1b72a6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e48609d764baabfe99ac4b0e9c536ad056453965ea6840fb9fa8fb9e06bb71c8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e48609d764baabfe99ac4b0e9c536ad056453965ea6840fb9fa8fb9e06bb71c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e48609d764baabfe99ac4b0e9c536ad056453965ea6840fb9fa8fb9e06bb71c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3d4d0a675ba30ddc9be9cb5194292ded9d5bd40fff3af71744d3f014ce4573d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3d4d0a675ba30ddc9be9cb5194292ded9d5bd40fff3af71744d3f014ce4573d9"
   end
+
+  # https://github.com/lyz-code/yamlfix/issues/272
+  deprecate! date: "2026-10-25", because: :unmaintained
+  disable! date: "2027-10-25", because: :unmaintained
 
   depends_on "pydantic" => :no_linkage
   depends_on "python@3.15"
@@ -58,8 +62,8 @@ class Yamlfix < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
-    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
+    url "https://files.pythonhosted.org/packages/58/e6/d0abbb256b44e6a05748c6942511ff67db8dbb068de0c35b24bf1b395b09/platformdirs-4.13.5.tar.gz"
+    sha256 "05831adf87d392760f4b5c3a0a95579ab5a10b18b9b9bd43680dcb47544788a0"
   end
 
   resource "pygments" do
@@ -78,8 +82,8 @@ class Yamlfix < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "shellingham" do

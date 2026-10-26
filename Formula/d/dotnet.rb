@@ -2,6 +2,7 @@ class Dotnet < Formula
   desc ".NET Core"
   homepage "https://dotnet.microsoft.com/"
   license "MIT"
+  revision 1
   version_scheme 1
   compatibility_version 8
 
@@ -46,6 +47,14 @@ class Dotnet < Formula
         type :backport
         resolves "https://github.com/dotnet/runtime/pull/135534"
       end
+
+      # Avoid OpenSSL APIs missing from the shim with OpenSSL 4.1
+      patch do
+        file "Patches/dotnet/openssl-4.1-ocsp-bio.patch"
+        directory "src/runtime"
+        type :unofficial
+        resolves "https://github.com/dotnet/runtime/pull/136435"
+      end
     end
 
     resource "1xx-manifest" do
@@ -76,11 +85,11 @@ class Dotnet < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e3c3efaa46339913021eb1abb74f33d198171bec9c907a34158a6b6e44fdb6d4"
-    sha256 cellar: :any, arm64_tahoe:       "a299e2f2be8471de612f38714df0e263656a7ce3703103c26e9f11b4d591be7a"
-    sha256 cellar: :any, arm64_sequoia:     "b538fc24b1495b45745c34f9e04c14e722de5a03a0cc50f7b472347dddc47515"
-    sha256 cellar: :any, arm64_linux:       "c3a1fc62e2ba6d05c9ed7acc1857e75493bfbde069ab40229a2a95c4909dd6ab"
-    sha256 cellar: :any, x86_64_linux:      "ff52bc6f41ec4db478d5c5532b3f5edced3d3b864eafffce3bdfe3a71568b7ad"
+    sha256 cellar: :any, arm64_golden_gate: "c0b43def53372026d05a6c4d2f4fa14c74fcaaf2cc7468a81d7747ed1c01d316"
+    sha256 cellar: :any, arm64_tahoe:       "05b53b3d4cda5dc00085da97b78007db3116ab6f951c4b623f689769c31cd6c3"
+    sha256 cellar: :any, arm64_sequoia:     "c5c6198f4184f497a62adec1f4a238861f02d2fd70992a5498f30232c2387549"
+    sha256 cellar: :any, arm64_linux:       "422a3638a3ba22e7f846bde16cf1f7e2c69cc5accc4ce7caf89f2a3dcf5c71c2"
+    sha256 cellar: :any, x86_64_linux:      "2c9755de5569e91272bef54180dd54cd10be4ee0362a21a430330f6dc35b0e47"
   end
 
   head do
@@ -98,7 +107,7 @@ class Dotnet < Formula
   depends_on "pkgconf" => :build
   depends_on "rapidjson" => :build
   depends_on "brotli"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "openssl@4"
 
   uses_from_macos "cpio" => :build

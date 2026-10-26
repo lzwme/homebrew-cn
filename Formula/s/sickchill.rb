@@ -6,15 +6,15 @@ class Sickchill < Formula
   url "https://ghfast.top/https://github.com/SickChill/sickchill/archive/refs/tags/2026.10.8.tar.gz"
   sha256 "52b8d786ccfb6870da996bf9b62530dd80d01e818470d8340967c3a8d006cdbb"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/SickChill/SickChill.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "068f51d360f667b1160e292976c90dc9314b6eaa3a46450cc3021d5ae41fff65"
-    sha256 cellar: :any, arm64_tahoe:       "ae760daba45d20c4b3d0d206fac181ea8547cd9ab62d78d44934f236e8c63d48"
-    sha256 cellar: :any, arm64_sequoia:     "e68f0f688b2f0bf90816ae65146bfc63e3fb6331efa1f911a1ac24bdfc884fcb"
-    sha256 cellar: :any, arm64_linux:       "9f738b3970b5a9dde431f197878ec124c0b1018ebda56a32ff0dd4b2b80cbbab"
-    sha256 cellar: :any, x86_64_linux:      "56644aa5fefb5780482c49a28a1b23addbf4ddd489246079ab31dc35dfd518e1"
+    sha256 cellar: :any, arm64_golden_gate: "6d8894f48b674228763109c0acc52b9a42987434e611e6309a2901aa942cf48e"
+    sha256 cellar: :any, arm64_tahoe:       "67d237c880abbd4aa642790c48c70afe8abafb9fd5c64670c003a6120ef9134c"
+    sha256 cellar: :any, arm64_sequoia:     "b50ac1f7c69615971b8c2ffa001f283a4835385613a54eaf6fb76e2ade5ff9ed"
+    sha256 cellar: :any, arm64_linux:       "cbef6219898cd0c31d930c713d827f65a8de8d2a0c10e6e8bc8dc9c0dd20b3b3"
+    sha256 cellar: :any, x86_64_linux:      "016129acef96569d97d44338e954c4c4a3577a8f7c5d2ec3d751feba7c77cc7d"
   end
 
   depends_on "rust" => :build # for cachecontrol
@@ -60,8 +60,8 @@ class Sickchill < Formula
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/93/98/aff05e8a35f5bb9f6648c6056ecff02a2bd4540ad70a89215db8a0cae758/botocore-1.43.116.tar.gz"
-    sha256 "00b1fbfc1c024b56633538385628a1bbc7ab15aca0b5b53e5fe188841d96c8ce"
+    url "https://files.pythonhosted.org/packages/d4/b8/3e55154ddaf1a6d1d4ddda85c0e5983205a3b7657edacd8ebba8c6fd774c/botocore-1.43.118.tar.gz"
+    sha256 "7f3f9d88cc9e847587690f82a42e3c3c292c3026c92c1e60d68a9310018e003f"
   end
 
   resource "cachecontrol" do
@@ -371,13 +371,13 @@ class Sickchill < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/5e/77/2dcfa996b01702ab8fd0763d84098f6a640d6162a328f1c04c2697579a1a/soupsieve-3.0.3.tar.gz"
-    sha256 "7dcf6022eed0399eb9934a75e020148f7a2024c37b7dfcd3cf2c5505d69c364e"
+    url "https://files.pythonhosted.org/packages/19/63/0b6bae54546aed98d72f12d09df57b19a287f01c84d22047fa2e23772ab9/soupsieve-3.0.4.tar.gz"
+    sha256 "924fab84ae21604c19e175e1f39815eb6fa83ba23836e09e9de180925e5bc4c0"
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/08/bb/28e3106ee586e5b2f5ecf211eec1348055f0f926314b13fe23b9cffa9039/sqlalchemy-2.1.5.tar.gz"
-    sha256 "0df76cf1ca680ad745bd378a6299a058611a8a784eeaeb4ed78ad4a0b7ce2003"
+    url "https://files.pythonhosted.org/packages/36/dc/9addbf490110b5727380059ee542ad8353bdcee45a37ba6a5e0976966ae0/sqlalchemy-2.1.6.tar.gz"
+    sha256 "499eae5c9051efe96cb9a73ec2fbde8ffa4186f102b9094ebab8fcc9d3b99f52"
   end
 
   resource "srt" do
@@ -416,8 +416,8 @@ class Sickchill < Formula
   end
 
   resource "tornado" do
-    url "https://files.pythonhosted.org/packages/06/61/53d562a57b28c08eda40b258c0f975e360541943ad7c7bef897a40caafda/tornado-6.5.10.tar.gz"
-    sha256 "a6b1ccd08c04b4a06fb5aeb381be99de5ad1e5375c1785e31d78c880feb57687"
+    url "https://files.pythonhosted.org/packages/d0/02/5f549b1ad5da6267ed1e1fac2eef69257b1979cc812497002499b7895ff9/tornado-6.6.tar.gz"
+    sha256 "34c4aa916d7f2b2d5cadee2c6850f5a4a7f3d688cbf58399ea9bd3057af4abd5"
   end
 
   resource "trakit" do
@@ -441,8 +441,8 @@ class Sickchill < Formula
   end
 
   resource "tzlocal" do
-    url "https://files.pythonhosted.org/packages/81/5b/879b2f932adfa7a053c360d50bc896c977fa6426109185f7c12ebdd0cb9d/tzlocal-5.4.4.tar.gz"
-    sha256 "8dbb8660838688a7b6ba4fed31d18dedf842afb4d47ca050d6d891c2c15f3be4"
+    url "https://files.pythonhosted.org/packages/d8/89/2bd035df331499589fc92e59375c17c6cea6a500453b2c5f6a6ec9572825/tzlocal-5.4.5.tar.gz"
+    sha256 "ba976898bad27945178c9ca25c222c19e322b30c10342b9f40b46714f70d2d5f"
   end
 
   resource "unidecode" do
@@ -461,8 +461,8 @@ class Sickchill < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/c9/2c/1a69b3346931e9a7db9cc00cc0fa847c843a85fa7cf52a598f57261c68df/virtualenv-21.14.12.tar.gz"
-    sha256 "bbcfb78e36c22ad70c6917c4aecb5e63477d3c138e9f88c946f320e31859c76a"
+    url "https://files.pythonhosted.org/packages/70/aa/bff50daee0488e16d611258a9b6c5a1d0c9e128f8ca424e9f4e1c0444ef2/virtualenv-21.14.13.tar.gz"
+    sha256 "de5307ba4b9a0001d9c8ea02832d38f63ca432880f416c1bface61c4323fd905"
   end
 
   resource "webencodings" do

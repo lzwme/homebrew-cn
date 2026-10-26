@@ -1,10 +1,9 @@
 class Rtabmap < Formula
   desc "Visual and LiDAR SLAM library and standalone application"
   homepage "https://introlab.github.io/rtabmap"
-  url "https://ghfast.top/https://github.com/introlab/rtabmap/archive/refs/tags/0.23.8.tar.gz"
-  sha256 "990029f1021e3c124c3accc7baf25b6c762c49537b9ae326965ff50b395afb11"
+  url "https://ghfast.top/https://github.com/introlab/rtabmap/archive/refs/tags/0.24.2.tar.gz"
+  sha256 "96cca356c37d50609d7e1bc6379ce0ff3f66ecbd153583669bd0ba23b91ba969"
   license "BSD-3-Clause"
-  revision 3
   head "https://github.com/introlab/rtabmap.git", branch: "master"
 
   # Upstream doesn't create releases for all tagged versions, so we use the
@@ -15,23 +14,18 @@ class Rtabmap < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4b443ec695bcba8876db0a860d5e9a650be34b74c2b06add4a78184cb0772e24"
-    sha256 cellar: :any, arm64_tahoe:       "6af2dd0708d261cabd2cdff67558cf8c632c165f8ebdc05235bb59a91a0c3cf3"
-    sha256 cellar: :any, arm64_sequoia:     "7746776093a35f1fb73beebba31d5e313364de609420cf623d48c4975c980599"
-    sha256 cellar: :any, arm64_sonoma:      "f064255f50196f936fa95477d8e1b9f20d06f493b128914f7ebca4534cccdc47"
-    sha256               sonoma:            "38e4569e7057bcdfd009581a4bec1ef0c630016b9a8d45c8852c1c0027fe0994"
-    sha256 cellar: :any, arm64_linux:       "a4669d7444ee9e6a3c36452d7ab5508c35b328d438da2fa5e05584af6da916ed"
-    sha256 cellar: :any, x86_64_linux:      "a2b65104f99801ddfb16fd1675a5e50612bb28bf9ce56dfdcdc247017d8040bf"
+    sha256 cellar: :any, arm64_golden_gate: "3f4094fe44665450b63f32eb792f27904f14b8db09436d8ff9ad6803ad08e27f"
+    sha256 cellar: :any, arm64_tahoe:       "dc07127e81e6f1717e4fcfb928695ad4ce5aafb1d091f381137427cada1ef058"
+    sha256 cellar: :any, arm64_sequoia:     "be6a56f4a47ec2316c09df3607ff0836652200a924bccf275d80d313da89be89"
+    sha256 cellar: :any, arm64_linux:       "b6a86c165f8954e4147be0a9853e570f2b964842a20864c52c783bbee10d9821"
+    sha256 cellar: :any, x86_64_linux:      "3de08205dea3eadce14f222f4a9b3fa9021b11cd4ce42abacdbb987f94b0b554"
   end
-
-  deprecate! date: "2026-10-09", because: :unsupported
-  disable! date: "2027-07-09", because: :unsupported
 
   depends_on "cmake" => [:build, :test]
   depends_on "g2o"
   depends_on "librealsense"
   depends_on "octomap"
-  depends_on "opencv@4"
+  depends_on "opencv"
   depends_on "pcl"
   depends_on "pdal"
   depends_on "qtbase"
@@ -65,13 +59,8 @@ class Rtabmap < Formula
     system "cmake", "--install", "build"
 
     # Replace reference to OpenCV's Cellar path
-    opencv = Formula["opencv@4"]
+    opencv = Formula["opencv"]
     inreplace lib.glob("rtabmap-*/RTABMap_coreTargets.cmake"), opencv.prefix.realpath, opencv.opt_prefix
-
-    # opencv@4 is keg-only, so pin its CMake dir for RTABMapConfig consumers
-    inreplace lib.glob("rtabmap-*/RTABMapConfig.cmake"),
-              "find_dependency(OpenCV ",
-              "set(OpenCV_DIR \"#{formula_opt_lib("opencv@4")}/cmake/opencv4\")\nfind_dependency(OpenCV "
 
     return unless OS.mac?
 

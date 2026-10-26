@@ -23,6 +23,8 @@ class Elixir < Formula
 
   depends_on "erlang"
 
+  deny_network_access!
+
   def install
     # Set `Q=` for verbose `make` output
     system "make", "Q=", "PREFIX=#{prefix}", "install"

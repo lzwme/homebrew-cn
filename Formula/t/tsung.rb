@@ -24,6 +24,8 @@ class Tsung < Formula
   depends_on "erlang"
   depends_on "gnuplot"
 
+  allow_network_access! :test
+
   def install
     system "./configure", *std_configure_args
     system "make"

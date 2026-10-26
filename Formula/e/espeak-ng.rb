@@ -26,6 +26,8 @@ class EspeakNg < Formula
 
   conflicts_with "espeak", because: "both install `espeak` binaries"
 
+  deny_network_access!
+
   def install
     touch "NEWS"
     touch "AUTHORS"

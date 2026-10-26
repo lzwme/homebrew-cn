@@ -24,6 +24,8 @@ class Syntaxerl < Formula
   depends_on "rebar3" => :build
   depends_on "erlang"
 
+  deny_network_access!
+
   def install
     system "make", "REBAR3=#{which("rebar3")}"
     bin.install "_build/default/bin/syntaxerl"

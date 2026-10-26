@@ -10,12 +10,8 @@ class Showcert < Formula
   head "https://github.com/yaroslaff/showcert.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b5e78ff3be637a7848faf8ec737758d011b6b148c872c84f4d84602875c43ffe"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b5e78ff3be637a7848faf8ec737758d011b6b148c872c84f4d84602875c43ffe"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b5e78ff3be637a7848faf8ec737758d011b6b148c872c84f4d84602875c43ffe"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "077390664e84bf144caa4a58c036ae7c7af1ed0a5d1729e89e57f3673cd73084"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "077390664e84bf144caa4a58c036ae7c7af1ed0a5d1729e89e57f3673cd73084"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "7795613d06188f3ca5580d076b4a8531ad72af9ff9ee55c6b05f575502a73310"
   end
 
   depends_on "certifi" => :no_linkage
@@ -41,7 +37,10 @@ class Showcert < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources
+
+    # Build an `:all` bottle
+    inreplace venv.site_packages/"magic/loader.py", "/opt/homebrew", HOMEBREW_PREFIX
   end
 
   test do

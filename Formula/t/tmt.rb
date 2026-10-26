@@ -3,17 +3,16 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https://tmt.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/93/c6/582f9e74b702240ce224f227aadc2e0a34485b7e67cfef21461a38f0cd19/tmt-1.79.0.tar.gz"
-  sha256 "c94f11b5593a02cdabfd585af4798f9bbe38943be0369cf058a128bb3d6c225f"
+  url "https://files.pythonhosted.org/packages/5b/d7/03b86441447940b86f59c814d9bdc7f21ab5d8ed010ec220700b2cd9f497/tmt-1.80.0.tar.gz"
+  sha256 "92decab8ae98c740b37b04cce13234dd4938b0692ee492ff6c22bf7137b96f59"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9dd327eea767f2fe75e29b2012c6e2b56a08bc2fce8bfcb87ed700ad3b2ca54d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "64d93af536b70f6123b98f924fef5ad7f56b2bc81dce1c2145df4a95af5ffd77"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e93f3148849733f44a7243615677920ef0991f81d4ba6afebdc84a0cd7577c8e"
-    sha256 cellar: :any,                 arm64_linux:       "abe87b152729cbb54de931da0df428a81401e15efa34a3e523e66cf94b1d4a67"
-    sha256 cellar: :any,                 x86_64_linux:      "1f9e023ec74ea49c6d1d310ed4a62b34cfa931ac8e4fa2300eec04e908f9ef27"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1e445c9585d385a0b563c06c47c52c8fca35f35cdd3921ef10ead5c07b96ea6e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d69ef0468279c25830b7c3625f1f3c3758c604cd1b5fff3a36bf263c61709364"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dfea0e64b0dc12d781748e332d16bc09e431f27ff33e5064830b1549a7e48780"
+    sha256 cellar: :any,                 arm64_linux:       "befeabbb73a1ca84884d2c87d3bac5c2ffd2e3fbec531242e58c0f831bfd8934"
+    sha256 cellar: :any,                 x86_64_linux:      "5c694bc6122f00dd65f22130130948a3d897f2a8bf45ecb966cf86516ce0df14"
   end
 
   depends_on "beakerlib"
@@ -45,8 +44,8 @@ class Tmt < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/35/c8/1d457d9150ff948f2ce6ada7715e0eeebbe5d3b58a45271a1e222474bcd3/filelock-4.1.1.tar.gz"
-    sha256 "7ba0927482c5a814b0a7f391d029ccdb8010f576f0a74c0dcde1811e8bc4c1b6"
+    url "https://files.pythonhosted.org/packages/d8/28/3893324bcadf8f89b1616637468d766af3f625008c0735bf704fdfa86617/filelock-4.2.4.tar.gz"
+    sha256 "c6d8663535e1650ee430507b4ffbac7b464dd64b7647ea0112a9f406499d163d"
   end
 
   resource "flexcache" do
@@ -95,13 +94,13 @@ class Tmt < Formula
   end
 
   resource "pint" do
-    url "https://files.pythonhosted.org/packages/9f/bc/2c38c32e0fb1f966d3695f4493a3f3ce2cc0cca1bbe7c958b92261b31af9/pint-0.26.1.tar.gz"
-    sha256 "1bbde36eae57a5a289cd05081c6405618a5899814940752064ce351cd0204f71"
+    url "https://files.pythonhosted.org/packages/d3/b0/cef9c8913ebe959d97b2d57b1fc2a77a4291c4f2bd4dc3fe4d3313c938ea/pint-0.26.2.tar.gz"
+    sha256 "391e5d2fc01fdb121c113b8eb47386688575542c1f5144c465ff318bf5133573"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
-    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
+    url "https://files.pythonhosted.org/packages/58/e6/d0abbb256b44e6a05748c6942511ff67db8dbb068de0c35b24bf1b395b09/platformdirs-4.13.5.tar.gz"
+    sha256 "05831adf87d392760f4b5c3a0a95579ab5a10b18b9b9bd43680dcb47544788a0"
   end
 
   resource "pygments" do
@@ -122,11 +121,6 @@ class Tmt < Formula
   resource "ruamel-yaml" do
     url "https://files.pythonhosted.org/packages/c7/3b/ebda527b56beb90cb7652cb1c7e4f91f48649fbcd8d2eb2fb6e77cd3329b/ruamel_yaml-0.19.1.tar.gz"
     sha256 "53eb66cd27849eff968ebf8f0bf61f46cdac2da1d1f3576dd4ccee9b25c31993"
-  end
-
-  resource "ruamel-yaml-clib" do
-    url "https://files.pythonhosted.org/packages/ea/97/60fda20e2fb54b83a61ae14648b0817c8f5d84a3821e40bfbdae1437026a/ruamel_yaml_clib-0.2.15.tar.gz"
-    sha256 "46e4cc8c43ef6a94885f72512094e482114a8a706d3c555a34ed4b0d20200600"
   end
 
   resource "urllib3" do

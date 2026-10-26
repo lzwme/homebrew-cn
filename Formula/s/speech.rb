@@ -1,15 +1,15 @@
 class Speech < Formula
   desc "On-device speech toolkit for Apple Silicon: ASR, TTS, VAD, diarization"
   homepage "https://soniqo.audio"
-  url "https://ghfast.top/https://github.com/soniqo/speech-swift/archive/refs/tags/v0.0.28.tar.gz"
-  sha256 "c3172d617383c1a595ee13dab66a418fdc7d6baac300c563e83da7ecd871d16d"
+  url "https://ghfast.top/https://github.com/soniqo/speech-swift/archive/refs/tags/v0.0.29.tar.gz"
+  sha256 "304466e66ba6f96d42abbbc20868f270470059a84158a97e563931692e810776"
   license "Apache-2.0"
   head "https://github.com/soniqo/speech-swift.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f2ced1a4885f7a70f93ee7380ef4f7a10e24eeb70454262fcfb3e275d0edf97d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c73be5c601632e62a1c204963b063606c2e6c8d19f2e714af54d28f7b0af5f9a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bd78cb202a47a562d80970b2776b920c0f0f8604ca7c5b004625019bbfa73227"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9e8fa366318fb8953cde3f6b2b3e9da5e9553d96385e1d3001f96e0725a29111"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0cdcf6fcc4b9e37b1bb7f6596aaa29973070674526a32a91cf5206627ce2560f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3606b12c020baa348519083803d38e6900a5b1cc7c89d53327ef5687a27be133"
   end
 
   depends_on xcode: ["16.3", :build]

@@ -1,17 +1,17 @@
 class Dekit < Formula
   desc "Process manager for dev and prod"
   homepage "https://dekit.run"
-  url "https://ghfast.top/https://github.com/pvolok/dekit/archive/refs/tags/v0.10.2.tar.gz"
-  sha256 "6acfd19444a371ce04557af1a755accc4735c64e650704ae257aaf9f2e1168ba"
+  url "https://ghfast.top/https://github.com/pvolok/dekit/archive/refs/tags/v0.10.3.tar.gz"
+  sha256 "175467fb30195c084df4bd38bf2000fad80f7e03b1e3488c29e3b114f3587ca9"
   license "MIT"
   head "https://github.com/pvolok/dekit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4f0ac5fa01bd4e8c44b1cefdda90883bbe3ad421136fc2dcd21c225b42e962a6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "436ac14df953d0942447c29fac1e06cdda3f9c24c523ac787e61fa5914ca1a57"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6f917630c922dd8d17aa4b2f7a0d8ab4d766dfe11f9bd00b67ff24219d49c42a"
-    sha256 cellar: :any,                 arm64_linux:       "01143400623346d4e1d199a5e285befeb4697a438218170ff71f9aeb796a98d9"
-    sha256 cellar: :any,                 x86_64_linux:      "a79471a9e40fdb05a026d5ef6460ad7a82948fef6b3ed6901e7cfece3d1b4706"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8419898240bc8a5758aaaacae90cb3440762e4da4c495ac92e2f6aa8294dd50b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3f97d29329ced8fb3335a48881f06183aff2b9b0fdccfbfd94b0b590a25db1ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "64f0a7eddb055b3d0dce0407f851e78c917ef068c54e5d3659660000fa4601d2"
+    sha256 cellar: :any,                 arm64_linux:       "00f3afef623b98e2cc74ac1b99315db0057b95d2c9ec62b5e4a15d88b9ea878c"
+    sha256 cellar: :any,                 x86_64_linux:      "329625bb18156e92cd67286a9e9b7a774cd7de7c072b4c1624788db09d4766f9"
   end
 
   depends_on "rust" => :build

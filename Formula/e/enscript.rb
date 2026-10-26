@@ -38,6 +38,8 @@ class Enscript < Formula
     resolves "https://savannah.gnu.org/bugs/?64307"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args
     system "make", "install"

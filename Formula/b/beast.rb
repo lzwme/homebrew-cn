@@ -4,7 +4,7 @@ class Beast < Formula
   url "https://ghfast.top/https://github.com/beast-dev/beast-mcmc/archive/refs/tags/v10.5.0.tar.gz"
   sha256 "6287ebbe85e65e44f421b7e9ec3fd17d9a736ff909dfa3b4ab6b1b1fd361b52b"
   license "LGPL-2.1-or-later"
-  head "https://github.com/beast-dev/beast-mcmc.git", branch: "master"
+  head "https://github.com/beast-dev/beast-mcmc.git", branch: "main"
 
   livecheck do
     url :stable

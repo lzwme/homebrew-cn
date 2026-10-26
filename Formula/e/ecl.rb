@@ -46,6 +46,8 @@ class Ecl < Formula
     type :backport
   end
 
+  deny_network_access!
+
   def install
     ENV.deparallelize
 

@@ -22,6 +22,8 @@ class Eprover < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "9938d476044c8d9a8733cd3e0417f42aecdb488ce719f3c2eabf32d151dbd6ba"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--prefix=#{prefix}",
                           "--man-prefix=#{man1}"

@@ -29,7 +29,7 @@ class Udunits < Formula
   end
 
   head do
-    url "https://github.com/Unidata/UDUNITS-2.git", branch: "master"
+    url "https://github.com/Unidata/UDUNITS-2.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build

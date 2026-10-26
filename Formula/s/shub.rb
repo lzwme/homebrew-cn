@@ -6,16 +6,15 @@ class Shub < Formula
   url "https://files.pythonhosted.org/packages/41/c0/e4cd695b5335dab990dafe0e773382f509d6d8cf77124ca523a66e928439/shub-2.18.1.tar.gz"
   sha256 "4ede0607380bad7df43160dcd0401b47eee309a37fdaf098d6a4621bbfe76a2b"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
   head "https://github.com/scrapinghub/shub.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "77e6fe20efaf4d32eb1183872540aaf65ae856fc4dff054b41b3e882836156b5"
-    sha256 cellar: :any, arm64_tahoe:       "0c90fc93486d14e0cbb4b64e12bf75775496ae49d4de0924901a59fa39aaf80a"
-    sha256 cellar: :any, arm64_sequoia:     "f6eebc6e9d9f4fe7edd4ad71301bc286d0d9d164b161590b15dc074ff6499781"
-    sha256 cellar: :any, arm64_linux:       "4427a984b56dc73932576175c07a1e5d8b798a9ea2d3ba9a27dcccc8ec911d56"
-    sha256 cellar: :any, x86_64_linux:      "5ff6ebd803970305aac6dc9f7b032add12e401c6c81430ed5d2381471392539e"
+    sha256 cellar: :any, arm64_golden_gate: "7f46bd1bede4980dc8caccfe48b6f71204941771cb22127325a2110ab85de400"
+    sha256 cellar: :any, arm64_tahoe:       "cd9ff0011163011b29e85e9c302a78c9a45a5017924c9ed77627154b7f7c6521"
+    sha256 cellar: :any, arm64_sequoia:     "4d71fbb076a90c20fad7aebbada1eabd6ea0c986d7810ece95147fad74a12c38"
+    sha256 cellar: :any, arm64_linux:       "93f0ee7e0752d0affded3f0689c811063623e8c095a47f9319ffedec1d1498e1"
+    sha256 cellar: :any, x86_64_linux:      "94f89911d8cb1a51d19201cb73e4aebf60ab4dd3a3962158cd367bc108f92757"
   end
 
   depends_on "certifi" => :no_linkage
@@ -75,8 +74,8 @@ class Shub < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "six" do

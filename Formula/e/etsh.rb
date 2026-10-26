@@ -30,6 +30,8 @@ class Etsh < Formula
   conflicts_with "oils-for-unix", "omake", because: "both install `osh` binaries"
   conflicts_with "teleport", because: "both install `tsh` binaries"
 
+  deny_network_access!
+
   def install
     system "./configure"
     # The `tshall` target is not supported on Ubuntu 16.04 (https://etsh.nl/blog/ubuntu-16/)

@@ -6,14 +6,14 @@ class Virtualenvwrapper < Formula
   url "https://files.pythonhosted.org/packages/97/0b/1f6daec2e0bd25275953256f83f98fb337b78b9d03d44b7eb9619b72b046/virtualenvwrapper-6.1.1.tar.gz"
   sha256 "112e7ea34a9a3ce90aaea54182f0d3afef4d1a913eeb75e98a263b4978cd73c6"
   license "MIT"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "864e463036509e705ef985673c772013cc739417d9dff1bbb199e6267ae70c01"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "864e463036509e705ef985673c772013cc739417d9dff1bbb199e6267ae70c01"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "864e463036509e705ef985673c772013cc739417d9dff1bbb199e6267ae70c01"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "af53d8cfddcb4ae6ad5376459034303520967c7c2be637755c70bbc7f078bd55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "af53d8cfddcb4ae6ad5376459034303520967c7c2be637755c70bbc7f078bd55"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1d76065757e7c0321d0a397663da7590d74e2617d499e7fa6e97640315c7778c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1d76065757e7c0321d0a397663da7590d74e2617d499e7fa6e97640315c7778c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1d76065757e7c0321d0a397663da7590d74e2617d499e7fa6e97640315c7778c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "867d19699d413f573a50e000414556633f2dc2530e9acf8a322a93f1c9e399d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "867d19699d413f573a50e000414556633f2dc2530e9acf8a322a93f1c9e399d9"
   end
 
   depends_on "python@3.15"
@@ -49,8 +49,8 @@ class Virtualenvwrapper < Formula
   end
 
   resource "virtualenv" do
-    url "https://files.pythonhosted.org/packages/c9/2c/1a69b3346931e9a7db9cc00cc0fa847c843a85fa7cf52a598f57261c68df/virtualenv-21.14.12.tar.gz"
-    sha256 "bbcfb78e36c22ad70c6917c4aecb5e63477d3c138e9f88c946f320e31859c76a"
+    url "https://files.pythonhosted.org/packages/70/aa/bff50daee0488e16d611258a9b6c5a1d0c9e128f8ca424e9f4e1c0444ef2/virtualenv-21.14.13.tar.gz"
+    sha256 "de5307ba4b9a0001d9c8ea02832d38f63ca432880f416c1bface61c4323fd905"
   end
 
   resource "virtualenv-clone" do

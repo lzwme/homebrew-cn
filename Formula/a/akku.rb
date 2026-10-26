@@ -1,10 +1,10 @@
 class Akku < Formula
   desc "Package manager for Scheme"
   homepage "https://akkuscm.org/"
-  url "https://gitlab.com/akkuscm/akku/uploads/819fd1f988c6af5e7df0dfa70aa3d3fe/akku-1.1.0.tar.gz"
-  sha256 "12decdc8a2caba0f67dfcd57b65e4643037757e86da576408d41a5c487552c08"
+  url "https://gitlab.com/-/project/6808260/uploads/44040730f50c8a202e8d39b2c3a8f377/akku-1.2.0.tar.gz"
+  sha256 "4ed046a5d08ee05d4c3f246e7a890485fc93d4fec25dd0600ed64a303e1183b2"
   license "GPL-3.0-or-later"
-  head "https://gitlab.com/akkuscm/akku.git", branch: "master"
+  head "https://gitlab.com/akkuscm/akku.git", branch: "main"
 
   livecheck do
     url "https://gitlab.com/api/v4/projects/6808260/releases"
@@ -15,30 +15,17 @@ class Akku < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "863bddcad05bf7c4a84067eef957f92d2b3e82cfc17621019b1a8e6cf9e506c1"
-    sha256 arm64_tahoe:       "525ddcc47892beb6922d45852f96cd4cdb3b7981605acf5d415216a2e728b44e"
-    sha256 arm64_sequoia:     "0f13478e5f6f3b41e6e75beac905b2aaae1df9d9a1eb7d600bf0f6bf70b076f0"
-    sha256 arm64_sonoma:      "565a1f1bba15ccfbe640704c86b1752a03fe8935b86fefe5c02f946d51cf6b0a"
-    sha256 arm64_ventura:     "dac9e5f8e17d8b88899acb8fcd0678e863c028737aa921c07ad982804c3ab656"
-    sha256 arm64_monterey:    "a0a5fc11cd13c9ebb25ad4d8e46c607a67b061852e4d3ef17ec1ace4758d8962"
-    sha256 arm64_big_sur:     "4bdac89c45742a59172e3e2653ef27dd1234d0c8a4483eccdb978e4ece15222c"
-    sha256 sonoma:            "ca9a81689b78a05f3d8679810825438d3617e3195c4a1c4831219949ec78b73e"
-    sha256 ventura:           "f77236380b87ec9fac32323c1aa339e8d2aa90c5613ba90bf5b33b449a6ba601"
-    sha256 monterey:          "a1de5fe0cd475fcdd4b5c91762dfbeb0d681fa59bcba9472972dbec356b517d6"
-    sha256 big_sur:           "85a186c3e7502ceafc16741ade1c34601e713538f2dc080c6c0a01cfc0e109f2"
-    sha256 arm64_linux:       "e01b75b5ae763d756faf1c9e6ac2c308a99d0d639c324726b92b46cbc2bbc7e5"
-    sha256 x86_64_linux:      "23a1841305dd2e17051dc12c0e0c10e17420c432a0fca409ece365558a5cce4f"
+    sha256 arm64_golden_gate: "37e126f095dc67e5b18a65b47b7a355469bc342162cfe3ef887d127483033326"
+    sha256 arm64_tahoe:       "457250776255ad2fb9c09e9c6f1359e1abf0a27c2149f79ee2b22905c181ce6c"
+    sha256 arm64_sequoia:     "b0bb1fc129fb8dc57b718a680b48ba47ba06b9355292ba58fcae8e63a20c2881"
+    sha256 arm64_linux:       "63236c2d35f1582bc778671f52cd94bee6a6877b4271d41c84416fb958f1086d"
+    sha256 x86_64_linux:      "5ecb9b8fb57b0a716f77474c94ac92c4bebcdee9647e8a91db5bc5a5169cf4d5"
   end
 
   depends_on "pkgconf" => :build
   depends_on "guile"
 
-  # Backport the Guile 3.0.11 workaround for `define-values` temporaries being left unbound
-  patch do
-    file "Patches/akku/1.1.0-guile-3.0.11.patch"
-    type :backport
-    resolves "https://gitlab.com/akkuscm/akku/-/commit/73acf1ff4f3ee77028d954d051a2c852e6b8a620"
-  end
+  uses_from_macos "curl"
 
   deny_network_access!
 

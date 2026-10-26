@@ -34,6 +34,8 @@ class ErofsUtils < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     # Link to liblzma from brew rather than system
     ENV.append "LDFLAGS", "-L#{formula_opt_lib("xz")}"

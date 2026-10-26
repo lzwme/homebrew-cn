@@ -1,19 +1,17 @@
 class Tfmigrate < Formula
   desc "Terraform/OpenTofu state migration tool for GitOps"
   homepage "https://github.com/minamijoyo/tfmigrate"
-  url "https://ghfast.top/https://github.com/minamijoyo/tfmigrate/archive/refs/tags/v0.4.5.tar.gz"
-  sha256 "306c8d14bfbe86a532c85fffca2c4ea2cca6412bcbc4016680f81643d0d630e9"
+  url "https://ghfast.top/https://github.com/minamijoyo/tfmigrate/archive/refs/tags/v0.4.6.tar.gz"
+  sha256 "877b778ef2512a24623c3b96b00c883378b281bbcb2db6f2d106463883f9a145"
   license "MIT"
   head "https://github.com/minamijoyo/tfmigrate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6a5a1cbcef49a1e142b5c936812f069db52e47b0a2313bc442384db6a2f1e3fb"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "527a0a2f6adf35b6c7af46b767adb0606bd8fcf22c2e3bdeab9eb9974e87bcea"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "527a0a2f6adf35b6c7af46b767adb0606bd8fcf22c2e3bdeab9eb9974e87bcea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "527a0a2f6adf35b6c7af46b767adb0606bd8fcf22c2e3bdeab9eb9974e87bcea"
-    sha256 cellar: :any_skip_relocation, sonoma:            "1c9c2184db05b3284d109c0012e0147bae72b55e13bec559331fc229a29e0c56"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "430636bf6fc4ec275637decd04b44abee2df45d46f978ceb9456e6e5e8ed3f34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "11ece0b32824bd5a6b518816eed3b236921014d8a3e535aea7b9998289abf057"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fcdf0d825c18afec4c69ee35b9eb3c703bb94fa42f330ebf1f918d154bd6eedd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fcdf0d825c18afec4c69ee35b9eb3c703bb94fa42f330ebf1f918d154bd6eedd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fcdf0d825c18afec4c69ee35b9eb3c703bb94fa42f330ebf1f918d154bd6eedd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "a6124225b046f4f93b341eed5dbd25e75046f8191cd69d9d20838bd407d54c8c"
+    sha256 cellar: :any,                 x86_64_linux:      "e4f8c139e611603338636066dc8c63ab5169c835c15ccbebb12efcf92f38a5b1"
   end
 
   depends_on "go" => :build

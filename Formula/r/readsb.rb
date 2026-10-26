@@ -1,16 +1,16 @@
 class Readsb < Formula
   desc "ADS-B decoder swiss knife"
   homepage "https://github.com/wiedehopf/readsb"
-  url "https://ghfast.top/https://github.com/wiedehopf/readsb/archive/refs/tags/v3.16.18.tar.gz"
-  sha256 "20bb57db3e3650a212f32f8ca7a4a9d296e7ce6f05b8f8d0688ef12ef30496af"
+  url "https://ghfast.top/https://github.com/wiedehopf/readsb/archive/refs/tags/v3.16.19.tar.gz"
+  sha256 "944d2a84f389f5a6a32aeae9e22c7d7261db8bfd335b46b25c0de0e3e322df5c"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b8ca44b90bebab152fb92d3055f444d93babd4b6c2b98342761fda728ede38dd"
-    sha256 cellar: :any, arm64_tahoe:       "bf018785600da0215c263defcd450e5f2e1a23614fb6e03e9b66946fda5cf8dc"
-    sha256 cellar: :any, arm64_sequoia:     "60ff87b94bc380fbb0055630b3772fb31a6e7d6923134bc9aefcd7c1fd440a49"
-    sha256 cellar: :any, arm64_linux:       "cb9ce29b182891b322315a23cb8e218b03e8887b43211d735f41db5ab7aef3a8"
-    sha256 cellar: :any, x86_64_linux:      "b48ef1a0f9454c90e6202b16ddfb19756da209cef618d42964ac187fd08aa75b"
+    sha256 cellar: :any, arm64_golden_gate: "9482f3e9a4c16de32a071f0acd0983fb7548f37bbd0bae574108bfe64c4e5747"
+    sha256 cellar: :any, arm64_tahoe:       "f695eb6c7e94c653512e3ebc48c7d5ef58ae8be73b54e73cbaea2dea7a3212f1"
+    sha256 cellar: :any, arm64_sequoia:     "4a4f10faa731c7e181da726a31f21a2e5ef4b0ee57014f60f5b8570ddb3bf846"
+    sha256 cellar: :any, arm64_linux:       "a3e3ebeb3e2b5d12df6dd24dfd017d599ff3363cc0885a07c76b9171740afc4d"
+    sha256 cellar: :any, x86_64_linux:      "458adb8f3be52dadf0baf5797c106c5a46e294d152a9e903322b5875612251a7"
   end
 
   depends_on "pkgconf" => :build

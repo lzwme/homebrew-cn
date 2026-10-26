@@ -1,8 +1,8 @@
 class Z3 < Formula
   desc "High-performance theorem prover"
   homepage "https://github.com/Z3Prover/z3"
-  url "https://ghfast.top/https://github.com/Z3Prover/z3/archive/refs/tags/z3-5.3.1.tar.gz"
-  sha256 "c007089dd8d92298d2a7d14105b14e8dddfbb540062ce471c3111e0741edd8da"
+  url "https://ghfast.top/https://github.com/Z3Prover/z3/archive/refs/tags/z3-5.3.2.tar.gz"
+  sha256 "df91b87822f5f8b6710af1f2419ba98758cd647dee3a8f0d070f128b47024dbe"
   license "MIT"
   compatibility_version 5
   head "https://github.com/Z3Prover/z3.git", branch: "master"
@@ -14,11 +14,11 @@ class Z3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e476fd1664d2a3303ba3b6b07efbd9dd5a76a0df61ee78918755a9d1b6580064"
-    sha256 cellar: :any, arm64_tahoe:       "71608b10f9abefecfe5f2f023442f0820a253e62b3e1980c0adef9f749948709"
-    sha256 cellar: :any, arm64_sequoia:     "5436cd3b3c2a314525e5190e9d0bf57d0c90103db9f4828c646a3c8a647165ee"
-    sha256 cellar: :any, arm64_linux:       "566aeecb07d1fc926573efddd9b61d0b1753af0323f81b7f50b963fe0e569e4a"
-    sha256 cellar: :any, x86_64_linux:      "e242396095397d21baf385a0e233c4debe8b6110743c95919939c5fdbd533497"
+    sha256 cellar: :any, arm64_golden_gate: "d4648a8cfb418cdd3f884b0af952b950b08f3fc21277fbd3642178285c789487"
+    sha256 cellar: :any, arm64_tahoe:       "5533f25d0d271eed699c5ea730e0b1d72d4aec1c4e8a52fa6365092e178c4be9"
+    sha256 cellar: :any, arm64_sequoia:     "b6f90fe3d2d1110656675771eba3019a28bd1c3cc3861baa40fb9d4ef8bc1ec5"
+    sha256 cellar: :any, arm64_linux:       "96b46232484bbd95e96d83366dfdfb696863ca5c25d4a070087f523b3125cd03"
+    sha256 cellar: :any, x86_64_linux:      "67fdde3c80322b8429bfb9884e1dff0fdfe153d68fb3bd8901f4af70ed4449b8"
   end
 
   depends_on "cmake" => :build

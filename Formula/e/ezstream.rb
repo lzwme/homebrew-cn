@@ -46,6 +46,8 @@ class Ezstream < Formula
     resolves "https://gitlab.xiph.org/xiph/ezstream/-/issues/2270"
   end
 
+  deny_network_access!
+
   def install
     system "autoreconf", "--verbose", "--install", "--force" if build.head?
     system "./configure", *std_configure_args

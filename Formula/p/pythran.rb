@@ -6,11 +6,11 @@ class Pythran < Formula
   url "https://files.pythonhosted.org/packages/bb/a3/03098a8a5d2c9f801c227cf941d85976934f5f47307ef3d819734370acdc/pythran-0.19.0.tar.gz"
   sha256 "18a096daa8b4bbe3ace06ce5d7325be5ff57aec4cf67b91834cf1b757b3e5392"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/serge-sans-paille/pythran.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "785b62344900c458f82eb0c48aa25124f698358fb760762dc371860c9a013b71"
+    sha256 cellar: :any_skip_relocation, all: "4df21debe48d1f89f3a16f361c91dc908572339671f2ae9cba1ba205969d458a"
   end
 
   depends_on "gcc" => :test
@@ -38,8 +38,8 @@ class Pythran < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   def install

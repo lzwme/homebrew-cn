@@ -4,6 +4,7 @@ class Ledit < Formula
   url "https://ghfast.top/https://github.com/chetmurthy/ledit/archive/refs/tags/2.08.tar.gz"
   sha256 "0f10f70bcdde68ce6514d4eedeb0774653322385a642d1ee696438b5594050f1"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -14,11 +15,11 @@ class Ledit < Formula
   end
 
   bottle do
-    sha256                               arm64_golden_gate: "4d9be2b4f721cbba9b6ad2d14f10262539d74766c7e4a097605c031efee81b04"
-    sha256                               arm64_tahoe:       "17679f5216e8689bd781e33abcb408f27880e578275feadd966868a12a2829a9"
-    sha256                               arm64_sequoia:     "83b1292aa5da89a37a2fa0735d23569ee01c40cc88de3c802989c502478603dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "837f200c1b5d0b4adba5468d8d2a9f5c57c08a3470cc156e4c4f10bb00c3abdc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "837f200c1b5d0b4adba5468d8d2a9f5c57c08a3470cc156e4c4f10bb00c3abdc"
+    sha256                               arm64_golden_gate: "991855179eac253440d7e9286c46839ea9ce0fea6475ee1a9462120a14ab14ab"
+    sha256                               arm64_tahoe:       "4588fe36e65c0dc2aceac049ce08b4896dbc68c3937894f973c9b3302efd7400"
+    sha256                               arm64_sequoia:     "d5591770d02fd1dbd69441274604e91269742865c2ac64dedeb95cd3f8cdabc4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "35264e3ace14f2b900d145b92577cc47ae4ae4208ba1cf01e6e2b1ed4618153e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "35264e3ace14f2b900d145b92577cc47ae4ae4208ba1cf01e6e2b1ed4618153e"
   end
 
   depends_on "ocaml-findlib" => :build

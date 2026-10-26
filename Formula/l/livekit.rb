@@ -1,8 +1,8 @@
 class Livekit < Formula
   desc "Scalable, high-performance WebRTC server"
   homepage "https://livekit.io"
-  url "https://ghfast.top/https://github.com/livekit/livekit/archive/refs/tags/v1.13.10.tar.gz"
-  sha256 "d1b93ced314b14654faceeb99627a79114b8ebe002bb5d620be4a185db83a4b2"
+  url "https://ghfast.top/https://github.com/livekit/livekit/archive/refs/tags/v1.13.11.tar.gz"
+  sha256 "c8d9b7ba9d66c8b5f314a438c0c2493815e7e70085e37706b888cab3c4ab8f8d"
   license "Apache-2.0"
   head "https://github.com/livekit/livekit.git", branch: "master"
 
@@ -15,11 +15,11 @@ class Livekit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3bc2788e239e88ff9c3d2732af4f29d2d2733f206257a0001e70b7dee4952c22"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "037f1a28b30c8e321e3b32e437aaeddf34deebce932ac21f4ebf5ba6c6a82af3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fe0cd865ccad6f74ef5e3f69f3c8c63ab0bdb06979af2c80b42e6e628ea03c5e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0178dab9fceda9720b1a642e3361d60f6f258cee252f80a6660df01ad4fc553c"
-    sha256 cellar: :any,                 x86_64_linux:      "3def75ac6f2d927b3409ffb0e2a6c76490f130337b6b7ad59ba438fb06263be6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "daf3423e06b1ce7881dd4a9d476d4bfea72855bd235e2c8f8acb3160d10a4478"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ba586eebd42a04aa93caf13f2ec639226e7b7b80687ebe1a581d48a43714c339"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1268330c7264fcc1626f673f5abb8cb1a1691344ac171f1941014c45fe4da214"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "48d8393509b82aeb5155918242520140929733210f93a6b94eb297d051691f1a"
+    sha256 cellar: :any,                 x86_64_linux:      "c521d05c4efe11b138d35cbf609b900cc3a4d5e47d0729bee978c7004cdd7f40"
   end
 
   depends_on "go" => :build

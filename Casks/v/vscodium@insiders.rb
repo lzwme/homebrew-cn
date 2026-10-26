@@ -1,14 +1,14 @@
 cask "vscodium@insiders" do
   arch arm: "arm64", intel: "x64"
 
-  sha256 arm:   "8e9a0cc1cede7d695f3579c66e8ad532df7b1674302257a4e096539bc0a36620",
-         intel: "7dc0e1b8ed41627d9b0f42b0e3493b3e723f325e3988e966f8ca647f5bbbc1d5"
+  sha256 arm:   "ac146e7dc94794974b0a7419fdf854de3fc7e68fe022bc433708a4fe246d7a4b",
+         intel: "46e7e3d5034600d3995b213dba831a065f6d8f3ea29bfa38164f8d1fa521f763"
 
   on_arm do
-    version "1.143.17140-insider"
+    version "1.143.17171-insider"
   end
   on_intel do
-    version "1.143.17140-insider"
+    version "1.143.17171-insider"
   end
 
   url "https://ghfast.top/https://github.com/VSCodium/vscodium-insiders/releases/download/#{version}/VSCodium-darwin-#{arch}-#{version}.zip"

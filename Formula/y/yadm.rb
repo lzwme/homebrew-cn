@@ -4,7 +4,7 @@ class Yadm < Formula
   url "https://ghfast.top/https://github.com/yadm-dev/yadm/archive/refs/tags/3.5.0.tar.gz"
   sha256 "2a15ed91238dd2f15db9905eb56702272c079ad9c37c505dfee69c6b5e9054b6"
   license "GPL-3.0-or-later"
-  head "https://github.com/yadm-dev/yadm.git", branch: "master"
+  head "https://github.com/yadm-dev/yadm.git", branch: "develop"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "323e01bb5b2d4578628cf24afdd1446f6b858927b62cc461da626339f5c053f0"

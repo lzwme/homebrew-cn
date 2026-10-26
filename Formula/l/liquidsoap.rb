@@ -5,7 +5,7 @@ class Liquidsoap < Formula
   head "https://github.com/savonet/liquidsoap.git", branch: "main"
 
   stable do
-    url "https://ghfast.top/https://github.com/savonet/liquidsoap/archive/refs/tags/v2.4.6.tar.gz"
+    url "https://ghfast.top/https://github.com/savonet/liquidsoap-release-assets/releases/download/v2.4.6/liquidsoap-2.4.6.tar.gz"
     sha256 "a88da89382147d5d5923426e07b24b15197a5aaf8424ecf6fc58034d6c6839c2"
 
     # Remove bytes compat library reference (part of stdlib since OCaml 4.07)

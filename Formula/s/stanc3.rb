@@ -7,12 +7,12 @@ class Stanc3 < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dfe53612ffae4cf72094cd4265d3e2492a03f6bb34b0d0a1486d06eb8569ff5b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0c7b77a3cb300ca440fe6282f8e403fd79c04f243c5199f8888926e137626a51"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "08bfe3a11b10e0c6dcb3a72037a4a510c176eb0d2b315a8d6aa362070bc1267d"
-    sha256                               arm64_linux:       "b600d142ba784335f89a054dbeba5822babf856d94f1c5acf994a613e9e2ca14"
-    sha256                               x86_64_linux:      "2d5d18812a525f078226bdfbf2b003bb99e831f34da8428f09f16c1c3dc886c4"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8362ae6dd79629b93881fdbc40a4703ca5cad38465677f52fb55f7107faf8f6d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "688c52bc95aa7193e6e7bf88735e2744f3d5e19a457b5a4f28f467f34e14c030"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f9a0e754136b9f6377f4b8e9f4c328cfff3e6b20c39b8bf4b5a05df5b59b50d5"
+    sha256                               arm64_linux:       "8ce8ffa68f0223ffcd047f88dec02f4710915ef5a53ae4988f7732847335fd51"
+    sha256                               x86_64_linux:      "cc823a4d9674fd493e389edea82d8f8a4a4120bcee68537e27eb08320264970f"
   end
 
   depends_on "ocaml" => :build
@@ -25,23 +25,16 @@ class Stanc3 < Formula
     sha256 "44e66f05cc7be4d0e0a942b3de03aed1a2c2abd93dbd5607542051d9d6ae2a0b"
   end
 
-  # Update pinned OCaml to 5.5.1
-  patch do
-    url "https://github.com/stan-dev/stanc3/commit/a580643374c9390e7c7a9ec3db014ebb65f0e7bc.patch?full_index=1"
-    sha256 "4f6489e6144dbada19046eda03b66ad4d120ca8e659b7c7187aa65fc13264807"
-    type :backport
-    resolves "https://github.com/stan-dev/stanc3/pull/1707"
-  end
-
   deny_network_access!
 
   def fetch
     system "opam", "init", "--compiler=ocaml-system", "--disable-sandboxing", "--no-setup"
-    system "opam", "install", ".", "--deps-only", "--download-only"
+    # Upstream pins an exact OCaml version, so build against ours instead
+    system "opam", "install", ".", "--deps-only", "--download-only", "--ignore-constraints-on=ocaml"
   end
 
   def install
-    system "opam", "install", ".", "--deps-only"
+    system "opam", "install", ".", "--deps-only", "--ignore-constraints-on=ocaml"
     system "opam", "exec", "--", "dune", "subst"
     system "opam", "exec", "--", "dune", "build", "@install"
 

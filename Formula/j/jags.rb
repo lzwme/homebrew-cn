@@ -1,8 +1,8 @@
 class Jags < Formula
   desc "Just Another Gibbs Sampler for Bayesian MCMC simulation"
   homepage "https://mcmc-jags.sourceforge.io"
-  url "https://downloads.sourceforge.net/project/mcmc-jags/JAGS/5.x/Source/JAGS-5.0.0.tar.gz"
-  sha256 "64fcd4883b8a8ee907722f49366cc9f277477a0647ada61356f17568f84ffff8"
+  url "https://downloads.sourceforge.net/project/mcmc-jags/JAGS/5.x/Source/JAGS-5.0.1.tar.gz"
+  sha256 "0888571b1812c8ce076ad6326c66f96a0ae7762497c346cd7eb32d35a62105d4"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,13 +11,11 @@ class Jags < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9d44815ad147c243d3adc007693335a6060bf621f2dc65e89dc25272411b5b98"
-    sha256 cellar: :any, arm64_tahoe:       "031acca06681a15654d1e92e4cbae86bda74afdf7bca008bbba477e9891b1e16"
-    sha256 cellar: :any, arm64_sequoia:     "dada1c0551217fb5a2350025aebcb39a0f614f111bd8e790f52171f8e8b771c8"
-    sha256 cellar: :any, arm64_sonoma:      "e06b69576431f91a3c5019969775c85b1edc42ae8810bc60c9b3be1cc3166aea"
-    sha256 cellar: :any, sonoma:            "b2baa11013a652ea6589d7090f7bc1f0c3076b14aebc60f6c8dd0b75c243382b"
-    sha256 cellar: :any, arm64_linux:       "eda1429c3030a4b4b5c2d09abe0a0dabcfabec545d780e96efa9562054825094"
-    sha256 cellar: :any, x86_64_linux:      "6979dfcf2e6fe33b3728bb2ec145fff22a4a28431241c85a7fcbf638e2d79b33"
+    sha256 cellar: :any, arm64_golden_gate: "e5158a007a1c28d0469d29ea32a97377ea1fa9c85f91ee85447274e4e9673387"
+    sha256 cellar: :any, arm64_tahoe:       "fc1b94f196773844fae0c4447653ea9795c2d53af57636431286bc971c18346e"
+    sha256 cellar: :any, arm64_sequoia:     "a60d2a3e289b45a694e402b4774696558546f51980c13500716398fe3efdfae3"
+    sha256 cellar: :any, arm64_linux:       "6cc4fc64a63d61b678ca1e4b2b6da50121dd983166a2d58af591db52e1a4e751"
+    sha256 cellar: :any, x86_64_linux:      "7960338f0de0e165d39490a66de7e6da052a669a1ee6948137711e34c9f7371b"
   end
 
   depends_on "pkgconf" => :build

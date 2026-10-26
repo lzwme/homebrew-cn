@@ -1,8 +1,8 @@
 class Opendht < Formula
   desc "C++17 Distributed Hash Table implementation"
   homepage "https://github.com/savoirfairelinux/opendht"
-  url "https://ghfast.top/https://github.com/savoirfairelinux/opendht/archive/refs/tags/v4.4.0.tar.gz"
-  sha256 "6b52bf081f3539536a93f442e0ea56d0a871eb5b7c06619740c5460c5e338a18"
+  url "https://ghfast.top/https://github.com/savoirfairelinux/opendht/archive/refs/tags/v4.4.2.tar.gz"
+  sha256 "0d88f16c3173b799815a39743df3fb1e1f4da76604b9f6fb391d6af41017bd02"
   license "MIT"
 
   # There can be a notable gap between when a version is tagged and a
@@ -14,12 +14,11 @@ class Opendht < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f34c3f5903ffe6f7008de68cdfc6dbd41ce9350bace437ae5b6ee66fe5911d5c"
-    sha256 cellar: :any, arm64_tahoe:       "3f74a08c7151a27bbe96d93dece8c909aaccb047e950b7d7038ffe330691091c"
-    sha256 cellar: :any, arm64_sequoia:     "ac58f4c0c4ffacff87ee4f3c93b4e50ff7f897c734f05076c31dfcb764dd5ce5"
-    sha256 cellar: :any, arm64_sonoma:      "0989b9e4696885eecc975fdeef548d55a798b058edf1a38cf0d1ab3a7c10c434"
-    sha256 cellar: :any, arm64_linux:       "7d7e90d569d14db9edf04fec75438db2f678e1d7e10e55100d3a8f6e2224f41a"
-    sha256 cellar: :any, x86_64_linux:      "4f591682f73adcb384f5bde72184a4e66ef5fcd6e26734aa1402ab1c03d00f1b"
+    sha256 cellar: :any, arm64_golden_gate: "b8bfccd9a2a4add58a338cba78fb4b9038f77070480feb4a1f40edb7954fb714"
+    sha256 cellar: :any, arm64_tahoe:       "84d53a0045df8178a8b159aa3c8287713c78c0c599eedb1bb498dec1fe6349f6"
+    sha256 cellar: :any, arm64_sequoia:     "a7ab83e0a0ae4a38d225a771a0270804a4e32aea08531446adfb8bc8bf713eea"
+    sha256 cellar: :any, arm64_linux:       "c5d0a3e2cb3b22e5d5ef94c5f5f0ee28c032edaa71149f529f657d5c7e7ae146"
+    sha256 cellar: :any, x86_64_linux:      "84b4a132abefd4cf8acb36790dcc2b578d6727d0af431b6593621d1c18914b05"
   end
 
   depends_on "cmake" => :build

@@ -16,6 +16,8 @@ class Enca < Formula
     sha256 x86_64_linux:      "4ee249a13bafbc6ac78d69fbfd642546b73b68757a89d7e21d54ecd9172eec4a"
   end
 
+  deny_network_access!
+
   def install
     ENV.append "LIBS", "-liconv" if OS.mac?
 

@@ -6,15 +6,14 @@ class Sail < Formula
   url "https://files.pythonhosted.org/packages/1c/64/2af3a1a9dfa005dc91a22535a29071e9255efeacf7e61dbefee920d01571/sailed_io-0.10.9.tar.gz"
   sha256 "cae38b97fada34a7681872661342c82b317d877eab882830c59610734eb53bdf"
   license "GPL-3.0-only"
-  revision 3
+  revision 4
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "9f1ef917a6f04b093c852c7f8fa76a3fe00aa73372c4a965aab4c797a38d025b"
-    sha256 cellar: :any, arm64_tahoe:       "017eee0950a149b3292fc249ad78dc538e74c32e0641a74e204d90ff1cc1afd4"
-    sha256 cellar: :any, arm64_sequoia:     "8dae1b8049366d5fceebaf50e88eee6e5985cbe4b108f7deef41c58205c07739"
-    sha256 cellar: :any, arm64_linux:       "428413f0043aa1fe77818b41b9812c9bcdf70aab611adabdd18071cad8520c68"
-    sha256 cellar: :any, x86_64_linux:      "19195164710329b704c739c283b1d46194b3de06c87a0a69820543f0fdcf05e6"
+    sha256 cellar: :any, arm64_golden_gate: "eaa8be2f39900040a5f880ba7bd34a9b12e63fc625705ee5ac238d9df4f17321"
+    sha256 cellar: :any, arm64_tahoe:       "2c3262e029123976d44d6272e9b990a8f97e9c1d6159c6ad2dbc32467d0babbe"
+    sha256 cellar: :any, arm64_sequoia:     "7dfff695ea5060dffdb7bcbae43b782ac5c288dca16dcc41f1da384f0ab0fb5a"
+    sha256 cellar: :any, arm64_linux:       "4fdad04dbf6504128b59aaa9a94c92fb0d8448f0ad0b0f9190069824c6301c98"
+    sha256 cellar: :any, x86_64_linux:      "95bf4dbc5324a3601cc679782f91b906f5d647ae79efae629b519e99e43f305d"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -61,8 +60,8 @@ class Sail < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/35/c8/1d457d9150ff948f2ce6ada7715e0eeebbe5d3b58a45271a1e222474bcd3/filelock-4.1.1.tar.gz"
-    sha256 "7ba0927482c5a814b0a7f391d029ccdb8010f576f0a74c0dcde1811e8bc4c1b6"
+    url "https://files.pythonhosted.org/packages/d8/28/3893324bcadf8f89b1616637468d766af3f625008c0735bf704fdfa86617/filelock-4.2.4.tar.gz"
+    sha256 "c6d8663535e1650ee430507b4ffbac7b464dd64b7647ea0112a9f406499d163d"
   end
 
   resource "idna" do
@@ -81,8 +80,8 @@ class Sail < Formula
   end
 
   resource "jsonpickle" do
-    url "https://files.pythonhosted.org/packages/d7/65/8b589546fe473fd262aebdfead994c7ba237caaa8fa4ca8855d0888933b7/jsonpickle-4.1.3.tar.gz"
-    sha256 "de234c1d1ed2c5313833e608e2a2467202f48ae24ea7a2afa2d238d8999aa4b5"
+    url "https://files.pythonhosted.org/packages/c2/37/95fb728a57b0b17864041daea006bbedd9765e8030755e4ca84ba20ae137/jsonpickle-4.1.4.tar.gz"
+    sha256 "8adf24cca611809b55ff5ed2ace850e1a3e4370dad5d363df71569b8f46c9645"
   end
 
   resource "markupsafe" do
@@ -136,8 +135,8 @@ class Sail < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/3e/d2/a254a26d8ceaea87e0eee2e89fcfe53ddc1858418647493bb2937549ab6f/wrapt-2.5.0.tar.gz"
-    sha256 "c48cdb6c904dca76d9915a579e4a5fab6b0c25f650c1019ce78a78effaf7a345"
+    url "https://files.pythonhosted.org/packages/04/22/89e2f3bdae5cb34e0cab0cd86d7172dbf418de4b46c9b17b9c7a560dfa44/wrapt-2.5.1.tar.gz"
+    sha256 "f595bb0185aab3e9dc31950c95d914f56ea8278810c3b928f3426e12ed6d27bc"
   end
 
   def install

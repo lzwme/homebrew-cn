@@ -1,9 +1,9 @@
 class Dartaotruntime < Formula
   desc "Command-line tool for running AOT-compiled snapshots of Dart code"
   homepage "https://dart.dev/tools/dartaotruntime"
-  # NOTE: Using a placeholder file because the build source is fetched by gclient
-  url "https://ghfast.top/https://raw.githubusercontent.com/dart-lang/sdk/refs/tags/3.13.7/README.md"
-  sha256 "ff4301ec8e5c1259c5778c4abc947e303308cd31af30acd55575f5ca7ed6f405"
+  url "https://github.com/dart-lang/sdk.git",
+      tag:      "3.13.7",
+      revision: "416e33b0ffaef062a60ec966bb8c82ed2b83f128"
   license "BSD-3-Clause"
   compatibility_version 3
 
@@ -22,7 +22,6 @@ class Dartaotruntime < Formula
   depends_on "ninja" => :build
   depends_on "dart-sdk" => :test
 
-  uses_from_macos "curl" => :build
   uses_from_macos "python" => :build
   uses_from_macos "xz" => :build
 
@@ -42,8 +41,13 @@ class Dartaotruntime < Formula
     end
   end
 
-  def install
-    resource("depot-tools").stage(buildpath/"depot-tools")
+  allow_network_access! :test
+
+  def fetch
+    (buildpath/"sdk-src").install buildpath.children
+    (buildpath/"depot-tools").install resource("depot-tools")
+    mv "sdk-src", "sdk"
+
     ENV["DEPOT_TOOLS_UPDATE"] = "0"
     ENV.append_path "PATH", buildpath/"depot-tools"
 
@@ -51,9 +55,11 @@ class Dartaotruntime < Formula
     # TODO: Remove when upstream rolls clang past that commit, see https://github.com/dart-lang/sdk/issues/64264
     system "gclient", "config", "--name", "sdk",
            "--custom-var", 'clang_version="git_revision:07d67299a15ce03b053736e2d31a668ee0576987"',
-           "https://dart.googlesource.com/sdk.git@#{version}"
+           "file://#{buildpath}/sdk"
     system "gclient", "sync", "--no-history"
+  end
 
+  def install
     cd "sdk" do
       arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
       out = OS.mac? ? "xcodebuild" : "out"

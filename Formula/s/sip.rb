@@ -6,11 +6,11 @@ class Sip < Formula
   url "https://files.pythonhosted.org/packages/0d/d6/4108ef066e4a8452b393d5acd03fed176d7178c0512b2ecf564dc8dcf796/sip-6.17.1.tar.gz"
   sha256 "34e2c1389e25394f5ba3c6b9d999d04373baf8d7161410536d444f48226d2f50"
   license "BSD-2-Clause"
+  revision 1
   head "https://github.com/Python-SIP/sip.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "7c2f94bb2a11ee8ea21a05c604490cd1fdaf83b0e82cac7746bc9bd23783fcce"
+    sha256 cellar: :any_skip_relocation, all: "e3d8d0f26c276aa8eaef451a48fb8a0793d93148adcdf63d67a987e023a63019"
   end
 
   depends_on "python@3.15"
@@ -21,8 +21,8 @@ class Sip < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   def install

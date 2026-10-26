@@ -12,11 +12,12 @@ class NodeAT24 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "20e6d44c583d8e884b91b05486bb4e8486798925dc6d76999cff5cf5a88c29bf"
-    sha256 arm64_tahoe:       "a2b5e8f4da38e3a6b2b4d051629ced3eabc255f9dcaf6f324802ef22132bcfa6"
-    sha256 arm64_sequoia:     "1e1863a1e9c3c1eb1308c929eba8d04c82f9128a0dc3ee502b91e504c21ce62e"
-    sha256 arm64_linux:       "899808f9f11618e172b211987c7507e7a09c532b75b0b414c757eb0b78706963"
-    sha256 x86_64_linux:      "d88cc667019c5a4b2e6b6a25db50a19aca47fa192c83b9bef5691f1bdc0d3ba8"
+    rebuild 1
+    sha256 arm64_golden_gate: "01e6c1a262e3766fc9d23bab5808c69dbf99242dfb8da57fbc620bea97422e17"
+    sha256 arm64_tahoe:       "ff2fea0ccc8861843817a8ce71aca6143ac6e8e4ee3699db041a21bd388d7a41"
+    sha256 arm64_sequoia:     "be87643df531ff6128e5a0f6aaf51a4a164406729ebed8a7cc56c8cb9cf0210f"
+    sha256 arm64_linux:       "7da4a2336ed4a16bcf6be2601ae58a8c1719f1b377579ff9f6803ddf1b83fb57"
+    sha256 x86_64_linux:      "70d4c20e43d3f56366802d58a83dbb39b16113c38e082a28e98bd250ff2795f9"
   end
 
   keg_only :versioned_formula
@@ -31,7 +32,7 @@ class NodeAT24 < Formula
   depends_on "brotli"
   depends_on "c-ares"
   depends_on "hdrhistogram_c"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "libnghttp2"
   depends_on "libnghttp3"
   depends_on "libngtcp2"
@@ -63,6 +64,13 @@ class NodeAT24 < Formula
   fails_with :gcc do
     version "11"
     cause "needs GCC 12 or newer"
+  end
+
+  # https://github.com/v8/v8/commit/f607706154eabc4a949628a88b38dbe95cd2274c
+  patch do
+    file "Patches/node/icu4c-79.patch"
+    directory "deps/v8"
+    type :unofficial # cherry-picked from V8 but not in node yet
   end
 
   def install

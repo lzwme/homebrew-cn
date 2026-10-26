@@ -6,16 +6,15 @@ class Theharvester < Formula
   url "https://ghfast.top/https://github.com/laramies/theHarvester/archive/refs/tags/4.11.1.tar.gz"
   sha256 "73a931f6e346972939203a82ae38fed24570b3137bfce5d1ae5517e8284df6df"
   license "GPL-2.0-only"
-  revision 3
+  revision 4
   head "https://github.com/laramies/theHarvester.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "a2f91259dc72f04c1a588b0180b9b7bd12b406ac081746878877e237cfcd259e"
-    sha256 cellar: :any, arm64_tahoe:       "1bdfd0306db701dd8b51bf25f9431b78fa945711726b86c36267b694f5e5896a"
-    sha256 cellar: :any, arm64_sequoia:     "249d27b9b1a75d8e077e49087fbfe2ad0638c9deae02e3441928b1f5a46506d8"
-    sha256 cellar: :any, arm64_linux:       "c28fcb68b81ec2d6e926ca8814c8eb2d7cf082f506fa2966b16b96750be78a73"
-    sha256 cellar: :any, x86_64_linux:      "219d994b06f4d3e89c2744e6c86c0188468c6a5ecfc6dd81200dd9ee8b4d628d"
+    sha256 cellar: :any, arm64_golden_gate: "cea880c35962ce2286e05d4d454c5df9d4a828f4bc31e168bde139689462a3c1"
+    sha256 cellar: :any, arm64_tahoe:       "0fe7f25e5e3e0667d7740655eaabccfe98a843e214e7f5c86363d41f5eed18ab"
+    sha256 cellar: :any, arm64_sequoia:     "bfd93caacdbe9259d50bba6fe19db3975651239836d40b7b1db1655f2cec067a"
+    sha256 cellar: :any, arm64_linux:       "df45c9df0b8801c052efbaf37f7179a4f9db2d69a1887d523c657d737f3b6571"
+    sha256 cellar: :any, x86_64_linux:      "8229c9bfe9ff3f1e65aa7f9c74a4bbc19f5950689bf171c1c51adcecf05cb709"
   end
 
   depends_on "cmake" => :build
@@ -154,8 +153,8 @@ class Theharvester < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/d8/9c/925c4f62920e4200d573d2bfe5cfd1b993134c3aee5f9bd3b7c55e20297e/filelock-4.0.11.tar.gz"
-    sha256 "9dc453a1edd25626a6fc97c2cb1bd9f7e46345843d40b3181c071761fb9a5f7a"
+    url "https://files.pythonhosted.org/packages/d8/28/3893324bcadf8f89b1616637468d766af3f625008c0735bf704fdfa86617/filelock-4.2.4.tar.gz"
+    sha256 "c6d8663535e1650ee430507b4ffbac7b464dd64b7647ea0112a9f406499d163d"
   end
 
   resource "frozenlist" do
@@ -229,8 +228,8 @@ class Theharvester < Formula
   end
 
   resource "pycares" do
-    url "https://files.pythonhosted.org/packages/df/a0/9c823651872e6a0face3f0311de2a40c8bbcb9c8dcb15680bd019ac56ac7/pycares-5.0.1.tar.gz"
-    sha256 "5a3c249c830432631439815f9a818463416f2a8cbdb1e988e78757de9ae75081"
+    url "https://files.pythonhosted.org/packages/c9/f3/4df974f2f902fdcec81087773f37eaedc7c8308291fb3f15da7ff21a5b88/pycares-5.2.1.tar.gz"
+    sha256 "3e89edc56a3745046676207958bf3dbf2971c5df0d64de9f7a893eba8bf255b4"
   end
 
   resource "pyee" do
@@ -294,13 +293,13 @@ class Theharvester < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/71/c3/1b817965ac12dc002d7c9cd7dfffdd7d4fbf9b45763ef2ffe7b86ee94670/soupsieve-2.10.tar.gz"
-    sha256 "49e9380d7d2905463583bafe285e818c7366a9ed7b3aee221c1ac79c905d8bc0"
+    url "https://files.pythonhosted.org/packages/19/63/0b6bae54546aed98d72f12d09df57b19a287f01c84d22047fa2e23772ab9/soupsieve-3.0.4.tar.gz"
+    sha256 "924fab84ae21604c19e175e1f39815eb6fa83ba23836e09e9de180925e5bc4c0"
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/7b/2b/3850dc6bf7ef71b088962eba31dafc6cffd2f96e577ebb0bb316df96da3e/starlette-1.7.0.tar.gz"
-    sha256 "c79f74ea63cff761804fbbfb182f1e0b440c2d07b164d24700c5a1bab5d6ff5d"
+    url "https://files.pythonhosted.org/packages/ad/eb/4e197bf26b023abafc5e9043ec8710d7de0fcb032d0969045236d72aa0b1/starlette-1.9.0.tar.gz"
+    sha256 "3d931de246ed870e35ce605974440816ef895e592f255d1396cfdf191d4c4318"
   end
 
   resource "tldextract" do
@@ -329,13 +328,13 @@ class Theharvester < Formula
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/3e/d2/a254a26d8ceaea87e0eee2e89fcfe53ddc1858418647493bb2937549ab6f/wrapt-2.5.0.tar.gz"
-    sha256 "c48cdb6c904dca76d9915a579e4a5fab6b0c25f650c1019ce78a78effaf7a345"
+    url "https://files.pythonhosted.org/packages/04/22/89e2f3bdae5cb34e0cab0cd86d7172dbf418de4b46c9b17b9c7a560dfa44/wrapt-2.5.1.tar.gz"
+    sha256 "f595bb0185aab3e9dc31950c95d914f56ea8278810c3b928f3426e12ed6d27bc"
   end
 
   resource "xlsxwriter" do
-    url "https://files.pythonhosted.org/packages/46/2c/c06ef49dc36e7954e55b802a8b231770d286a9758b3d936bd1e04ce5ba88/xlsxwriter-3.2.9.tar.gz"
-    sha256 "254b1c37a368c444eac6e2f867405cc9e461b0ed97a3233b2ac1e574efb4140c"
+    url "https://files.pythonhosted.org/packages/93/f2/98b45e52bc0330256bd4bb039cc44b28f838ad85602ce4f358f355d501bb/xlsxwriter-3.3.0.tar.gz"
+    sha256 "0a6bf2e4dcec8b29dd9b86d1e622132134c48bb6fd10f925fdfb229f0447199a"
   end
 
   resource "yarl" do

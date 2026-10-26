@@ -4,7 +4,7 @@ class Committed < Formula
   url "https://ghfast.top/https://github.com/crate-ci/committed/archive/refs/tags/v1.1.11.tar.gz"
   sha256 "416aab32bf0cc2012259ee3ba264f3db0493164272694c6c4bef15e9258d4244"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/crate-ci/committed.git", branch: "master"
+  head "https://github.com/crate-ci/committed.git", branch: "main"
 
   bottle do
     rebuild 1

@@ -6,13 +6,12 @@ class Ratarmount < Formula
   url "https://files.pythonhosted.org/packages/a5/80/f7f628af7652a89b7f400b23fea17395dd6b27949ae8a45b6e81d69bd810/ratarmount-1.3.0.tar.gz"
   sha256 "9e96f0f887db67a3ea68c4ecc625c05a3636cd8f29d80491eb170d934d3caa00"
   license "MIT"
-  revision 1
+  revision 2
   head "https://github.com/mxmlnkn/ratarmount.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_linux:  "235ef1772f3f5f3a4c21a936fdc9c75b227061a25fdbde9aa2a1d08fb6edecb8"
-    sha256 cellar: :any, x86_64_linux: "7c4f8bb5389c2a95633b90480c6759cade77dcb2ffb3a99215e5d846bebc5d3a"
+    sha256 cellar: :any, arm64_linux:  "37cc093abd33d83ebbc5b2563dae1eb84ed449a106f967726ef0ff77a1232fe1"
+    sha256 cellar: :any, x86_64_linux: "b1514e23dfbd7d6e47cb25e06a61ff9fd05a7ba7f932346cae801edd0f2b9f88"
   end
 
   depends_on "libfuse" => :no_linkage
@@ -22,8 +21,8 @@ class Ratarmount < Formula
   depends_on "zstd"
 
   resource "brotli" do
-    url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
-    sha256 "e310f77e41941c13340a95976fe66a8a95b01e783d430eeaf7a2f87e0a57dd0a"
+    url "https://files.pythonhosted.org/packages/cf/81/1546c983678a9b4e77cb4718eaedd1b2caf24a6cdbf1eb8775938d22aff7/brotli-1.2.1.tar.gz"
+    sha256 "02b2f7b5a83485efe448a44ddf7983def05c3bb1dcf917d4f7154070260e13de"
   end
 
   resource "fast-zip-decryption" do
@@ -37,8 +36,8 @@ class Ratarmount < Formula
   end
 
   resource "indexed-zstd" do
-    url "https://files.pythonhosted.org/packages/de/c8/ccd92a94357bc84528adc7237561e5926e752709bfa707c4e4e42703ad16/indexed_zstd-1.7.1.tar.gz"
-    sha256 "0eca6a4f5e6b905eaa1acd3d97b1ade34078a829483a43839f5cf2efe97150f4"
+    url "https://files.pythonhosted.org/packages/fa/e8/ea4b66faf498e3712f5d2723151b892238789a17a093a21c685e3184f139/indexed_zstd-1.7.2.tar.gz"
+    sha256 "36ab8a43026a3c3594e0d96786994c3f9b4c04039d952df2fadc1fd54a6597b0"
   end
 
   resource "inflate64" do
@@ -67,8 +66,8 @@ class Ratarmount < Formula
   end
 
   resource "py7zr" do
-    url "https://files.pythonhosted.org/packages/59/3f/ac248f25f3901d3d6cf80ac99d5bac6fd1e5e6543c1812c79b02b6074c60/py7zr-1.1.3.tar.gz"
-    sha256 "8d51894abb38355bf14881088bb97f01fe4cb5b14ebe22f66d6297668c7e1a74"
+    url "https://files.pythonhosted.org/packages/d6/31/d5469ec310b57c730785068c227caf2263391be846ae5e99488f69b394eb/py7zr-1.1.4.tar.gz"
+    sha256 "7674697559bd06b697bf6e8249985cee6dc704a4b07b8e11f24d0b1695707c3e"
   end
 
   resource "pybcj" do
@@ -77,8 +76,8 @@ class Ratarmount < Formula
   end
 
   resource "pycryptodomex" do
-    url "https://files.pythonhosted.org/packages/4c/25/214ea825a9031f5af2c8b2506ee16701a2560d4712165dd00098dd527bcb/pycryptodomex-3.24.0.tar.gz"
-    sha256 "0428f19f13452c6b89bbaf2c530f84f369873811dfa77f0cee0da4f40fb0474f"
+    url "https://files.pythonhosted.org/packages/f4/e7/50e72301e32acb73a314e663c2014e1ddefc019d5f434ff14ec89861d664/pycryptodomex-3.24.1.tar.gz"
+    sha256 "09081666ffc599976c0b8b29caf2cf82212c0f05bed233c8f8ed53e4f6e1d356"
   end
 
   resource "pyppmd" do
@@ -107,8 +106,8 @@ class Ratarmount < Formula
   end
 
   resource "texttable" do
-    url "https://files.pythonhosted.org/packages/1c/dc/0aff23d6036a4d3bf4f1d8c8204c5c79c4437e25e0ae94ffe4bbb55ee3c2/texttable-1.7.0.tar.gz"
-    sha256 "2d2068fb55115807d3ac77a4ca68fa48803e84ebb0ee2340f858107a36522638"
+    url "https://files.pythonhosted.org/packages/03/19/9590fd39a668ea0a0869493441fe65852246a3ec67616877baad98bcb039/texttable-1.7.2.tar.gz"
+    sha256 "dc16ea6b35fbf5291ba6ef79d79e37d9b3ca6acd7bae3ca3450488d7c2e19c99"
   end
 
   def install

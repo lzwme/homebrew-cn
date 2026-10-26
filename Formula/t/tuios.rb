@@ -1,17 +1,17 @@
 class Tuios < Formula
   desc "Terminal UI OS (Terminal Multiplexer)"
   homepage "https://tuios.dev/"
-  url "https://ghfast.top/https://github.com/Gaurav-Gosain/tuios/archive/refs/tags/v0.10.1.tar.gz"
-  sha256 "91af8abe671c5c79d0eac7b2b045ca61ef9023241edefd4d636becbedcc0ec0f"
+  url "https://ghfast.top/https://github.com/Gaurav-Gosain/tuios/archive/refs/tags/v0.11.0.tar.gz"
+  sha256 "a3e30b56ad0b299fcd94eac3b79cab528d46a56d35a09af3a191398c0d6afc90"
   license "MIT"
   head "https://github.com/Gaurav-Gosain/tuios.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "91b278a1f7f3574751118534365ecd630b8e0950d86cf121c9bb55e82df104f4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "04f8e3baf1debdca2eb7919587f9619fcd94dfe9e5349dffb10296298f905a00"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "034f22190c9780c700fc8eb5a89e503b6fceec51e6136fd2ee4cd12ce6590b92"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "bce3085c93ee397d2e49643dcbb21c7f4e103d0fb24175fc711d2cf7c4b53c47"
-    sha256 cellar: :any,                 x86_64_linux:      "24096eb3afedb99ccbb1f5a81a7d2ac27cb33201101ba890031fa8a4a1f51dbd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bea9bbfcb7abb07cd076301b07eaa5bc8117c9701fbde9e5ab94c574f61b070b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "acc72601829e35f247bf5903697efdd759da8bf091828fd13714e9cef51b01af"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c6def8fc62b75cc43a60eea59869d0490261ed3cb4e2521f7beae3b070964389"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4119f6d2cdbb9eb0355ed3834fe0d75836f1df1bf00dbc4c9e3f68bbffcf29b1"
+    sha256 cellar: :any,                 x86_64_linux:      "37d523ba203cb54aa0b18d5213db1deba58d11655dea6df8537191f1c810c697"
   end
 
   depends_on "go" => :build

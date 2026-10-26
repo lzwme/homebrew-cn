@@ -4,7 +4,7 @@ class Zplug < Formula
   url "https://ghfast.top/https://github.com/zplug/zplug/archive/refs/tags/2.4.2.tar.gz"
   sha256 "82a51e8c388844acbfb64196623bede07eee2384f1fc30966eac880373aa9030"
   license "MIT"
-  head "https://github.com/zplug/zplug.git", branch: "master"
+  head "https://github.com/zplug/zplug.git", branch: "main"
 
   bottle do
     rebuild 1

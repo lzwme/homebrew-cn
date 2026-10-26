@@ -61,6 +61,8 @@ class Erlang < Formula
     end
   end
 
+  allow_network_access! :test
+
   def install
     ex_doc_url = (buildpath/"make/ex_doc_link").read.strip
     odie "`ex_doc` resource needs updating!" if ex_doc_url != resource("ex_doc").url

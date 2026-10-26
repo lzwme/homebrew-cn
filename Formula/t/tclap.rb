@@ -1,8 +1,8 @@
 class Tclap < Formula
   desc "Templatized C++ command-line parser library"
   homepage "https://tclap.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/tclap/tclap-1.2.5.tar.gz"
-  sha256 "bb649f76dae35e8d0dcba4b52acfd4e062d787e6a81b43f7a4b01275153165a6"
+  url "https://downloads.sourceforge.net/project/tclap/v1.6.0/tclap-1.6.0.tar.gz"
+  sha256 "2ed4bb7655cb4feb7a0432311f1194875bf2d61d6624bf3e513fa101cb0bcb10"
   license "MIT"
 
   livecheck do
@@ -11,16 +11,19 @@ class Tclap < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "1067d4df91f61b3a6af2efd80c62b4359cc7f1f9088892ad9443d13be791bc0a"
+    sha256 cellar: :any_skip_relocation, all: "8e5c1727caf71a057232bc1248acbedae6eac6b1fe752da419d533fafcf26d76"
   end
 
+  depends_on "cmake" => :build
+
   def install
-    system "./configure", *std_configure_args
-    system "make"
-    # Installer scripts have problems with parallel make
-    ENV.deparallelize
-    system "make", "install"
+    args = %w[
+      -DBUILD_EXAMPLES=OFF
+      -DBUILD_DOC=OFF
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -49,7 +52,7 @@ class Tclap < Formula
         cout << name;
       }
     CPP
-    system ENV.cxx, "test.cpp", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++20", "-o", "test"
     assert_equal "werbemoH", shell_output("./test -r -n Homebrew")
   end
 end

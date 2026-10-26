@@ -1,34 +1,48 @@
 class Pymupdf < Formula
+  include Language::Python::Virtualenv
+
   desc "Python bindings for the PDF toolkit and renderer MuPDF"
   homepage "https://pymupdf.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/a3/fb/b6761fa2d5266f2cdb24c3b91f4023070ab7848381417678e7a289a1d52a/pymupdf-1.28.2.tar.gz"
-  sha256 "5e0be7908a715aa20333caddd73f1d6f01e4cd0c26e869fa2dd0b7f344da2249"
+  url "https://files.pythonhosted.org/packages/b0/23/3575cf6652171bba33fd4b41d34ab92c7ee75bb5e5790f5a2a044b9ba49b/pymupdf-2.0.tar.gz"
+  sha256 "7733136f626fffe98677daa53c906eb45f2eb486a6450dbcfd652cbbd760f1e2"
   license "AGPL-3.0-only"
-  revision 4
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e8a6bb005a77df7854f36861ec0f4fb1894a6e4e0e9b10cc7d234c2991a67564"
-    sha256 cellar: :any, arm64_tahoe:       "717e8a060a9ecc62e422257259debd066e4f513b271e0b33e5f621e7eef0ceba"
-    sha256 cellar: :any, arm64_sequoia:     "863c6b90d3d3bdc5849defa454e15955f4bc45cdcd4911b58514697e26b59165"
-    sha256 cellar: :any, arm64_linux:       "a51daa6deccd2797ec86157369952e252789824a549dd891ced76196f4746654"
-    sha256 cellar: :any, x86_64_linux:      "f61306fa70cbe91fb092e5a1001c8b67e00c26fba589deee43a52292287fce35"
+    sha256 cellar: :any, arm64_golden_gate: "b0fed251ae621bc71fa438bbe76335134f1e31cea3fb6603a97b3857a8b4ddd6"
+    sha256 cellar: :any, arm64_tahoe:       "1cd5778f6e625ab842e012d3d91b16b49ed4ccff670b80f959ece77151a4641c"
+    sha256 cellar: :any, arm64_sequoia:     "c314fa8e603d3729b90a19ec4c4ae4c92ce5381453c64fa7da7177ed4dec4e1c"
+    sha256 cellar: :any, arm64_linux:       "d13eb47a04d59a4f6fabf46ae90e4b5413d738418e922d07c8219e9d40e9376b"
+    sha256 cellar: :any, x86_64_linux:      "3fc06fa08c0b44e5ee47f743120b891421ad211458dcf1a46a118cd312597619"
   end
 
   depends_on "freetype" => :build
-  depends_on "python-setuptools" => :build
   depends_on "swig" => :build
   depends_on "mupdf"
   depends_on "python@3.15"
 
-  # Stop using the Python 2 C API macros that swig 4.5 no longer defines
+  resource "pipcl" do
+    url "https://files.pythonhosted.org/packages/1c/9d/d797318cf82fff625670bbbf88a722d87299c9d8f3fc8372603713ac0af4/pipcl-13.tar.gz"
+    sha256 "286aba9785463c83659a565210a82a77896195d3303bff0542e825479b56daf2"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"
+    sha256 "94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79"
+  end
+
+  # Fix system MuPDF library paths, upstream PR ref, https://github.com/pymupdf/PyMuPDF/pull/5197
   patch do
-    url "https://github.com/pymupdf/PyMuPDF/commit/7f419a5bed7b257416f6837580dc4325e240e625.patch?full_index=1"
-    sha256 "5b809a94ea89bedd215f4424c501c2e0b7800b460a8d1641ac910d88f57ae4bf"
+    url "https://github.com/pymupdf/PyMuPDF/commit/4b4139e40fa68cd69e20e23c0f6360f818594f83.patch?full_index=1"
+    sha256 "5eb995985cdf7a0ca7b09d4652d8b284d4988d2cdc4014ed8dd904fa593f6482"
     type :unofficial
-    resolves "https://github.com/pymupdf/PyMuPDF/pull/5072"
+    resolves "https://github.com/pymupdf/PyMuPDF/pull/5197"
   end
 
   def install
+    venv = virtualenv_create(buildpath/"build-deps", python3)
+    venv.pip_install resources
+    ENV.prepend_path "PYTHONPATH", venv.site_packages
+
     # Makes setup skip build stage for mupdf
     # https://github.com/pymupdf/PyMuPDF/blob/1.20.0/setup.py#L447
     ENV["PYMUPDF_SETUP_MUPDF_BUILD"] = ""
@@ -39,7 +53,8 @@ class Pymupdf < Formula
     ENV["PYMUPDF_MUPDF_LIB"] = mupdf_libpath
     ENV.append "LDFLAGS", "-Wl,-rpath,#{mupdf_libpath}" if OS.mac?
 
-    system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
+    # The core bindings are built as pymupdf-lite in 2.x, without the optional layout/LLM components.
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do

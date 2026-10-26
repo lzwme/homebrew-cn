@@ -4,6 +4,7 @@ class Camlp5 < Formula
   url "https://ghfast.top/https://github.com/camlp5/camlp5/archive/refs/tags/8.05.03.tar.gz"
   sha256 "a56ef4afe3eb81ab3d8371f887779f8c0cee3b82c0ada7e066b723e51590f78c"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/camlp5/camlp5.git", branch: "master"
 
   livecheck do
@@ -12,11 +13,11 @@ class Camlp5 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "99e85bac786bb540bd73105cfb703ea0a1a46734259a0d9dd21c5a16c10c6a91"
-    sha256 arm64_tahoe:       "789503d1d9345ab13719ba047bed3f41911b224035342cbe72154b43a3b810b4"
-    sha256 arm64_sequoia:     "e28c4966ab9e27084522315b4d97a5308e1d122f41ef08ff3cddc434d6e70725"
-    sha256 arm64_linux:       "debd2e916b4f885d9f879efc88045728a151b6517ab6489904e75d2e54e5cab7"
-    sha256 x86_64_linux:      "1bab0d02c10a8963968e448245106fcb7b8b04319a84de214e206e6747e08522"
+    sha256 arm64_golden_gate: "76e3889c55d2ad70e7b3fadfaaf5c1a114096549ee3fb4abdcebaad3ba4a6dc5"
+    sha256 arm64_tahoe:       "7745ebec965e8f9d8795f65f1253ce935a1beeb9fe2b88fe3bc65fb0a14d44cd"
+    sha256 arm64_sequoia:     "1c0ba5a0d5db137231c5f6c00f63912e8e8d0699b1312b65b1c53b26f99ca0f3"
+    sha256 arm64_linux:       "57d77263deebf9ca46ed294b765257310e2acf6d12d2fa26cfd8edf86656ad26"
+    sha256 x86_64_linux:      "f20d5e33d74d003a6b8f8e4629fc5c1b58820c3377faf2b06b34df354862579c"
   end
 
   depends_on "ocaml-findlib" => :build

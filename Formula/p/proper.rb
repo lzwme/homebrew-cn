@@ -20,6 +20,8 @@ class Proper < Formula
   depends_on "rebar3" => :build
   depends_on "erlang"
 
+  deny_network_access!
+
   def install
     system "make"
     prefix.install Dir["_build/default/lib/proper/ebin", "include"]

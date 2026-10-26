@@ -16,6 +16,11 @@ class GnuApl < Formula
     depends_on "automake" => :build
     depends_on "libtool" => :build
 
+    on_golden_gate :or_newer do
+      # https://lists.gnu.org/archive/html/bug-apl/2026-09/msg00010.html
+      depends_on "llvm@21" => :build
+    end
+
     # Apply Debian patch to move integral.py
     patch do
       url "https://salsa.debian.org/debian/gnu-apl/-/raw/9553c1ebcfa46cdfe3717378ede5f37dcaceaf0f/debian/patches/0008-move-integral.py.patch"
@@ -58,10 +63,6 @@ class GnuApl < Formula
     depends_on "pango"
   end
 
-  on_golden_gate :or_newer do
-    depends_on "llvm@21" => :build
-  end
-
   on_sequoia do
     # https://developer.apple.com/documentation/xcode-release-notes/xcode-16_4-release-notes (149025504)
     depends_on xcode: ["16.4", :build]
@@ -69,7 +70,8 @@ class GnuApl < Formula
 
   def install
     # FIXME: Work around newer clang producing a broken binary
-    if OS.mac? && MacOS.version >= :golden_gate
+    if OS.mac? && MacOS.version >= :golden_gate && build.stable?
+      odie "Remove llvm@21 workaround!" if version > "2.0"
       ENV["CC"] = formula_opt_bin("llvm@21")/"clang"
       ENV["CXX"] = formula_opt_bin("llvm@21")/"clang++"
     end

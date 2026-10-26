@@ -1,9 +1,9 @@
 class Zigmod < Formula
   desc "Package manager for the Zig programming language"
   homepage "https://nektro.github.io/zigmod/"
-  url "https://ghfast.top/https://github.com/nektro/zigmod/archive/refs/tags/r106.tar.gz"
-  version "r106"
-  sha256 "faea9f58a0cf9f582d51ebd7252b624e062c1bb6e41ea98bddbe4592005999ae"
+  url "https://ghfast.top/https://github.com/nektro/zigmod/archive/refs/tags/r107.tar.gz"
+  version "r107"
+  sha256 "605717096ebe830591aad10a1dd590bbb0dc2d2ea76fd37840adaeee08fba5d9"
   license "MIT"
   version_scheme 1
 
@@ -13,11 +13,11 @@ class Zigmod < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "48f1354039c373af7484e8c01d708e8a4a4b9cef3a79d6638e4e3388b9be8799"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a8f569311a51a5a7aa1c9a5e8724f8343588750593fe9acef4f5f5681ab9393c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "15f5993924de3b66fa1d7730c850b500ac35ed8e4307df16b7ed32028a9d8f76"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "029e185a8e67b79bf24d1450efbc0b5d27bf9971546b6584bfd9105369291c7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d04a4f7e7db74ba760cf6bef4866b38b5c024a0643fe6f40b0387a7a5d7b2994"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "566f26869092260bbad93032711fbfca01d0c4e415d100b488fc3cd4d207f6d1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "61bdccd7913c453c2edc27ef7ccc7ed308801908b55ae3893f614a79a613b1e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d1c7323a3e78481e79801d875d5e87b90537daa8a6b6848fa8c7ca5a55abc0eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "520766208b32b76ca67a2eedacd7c01a5d3bc67675aeb88b5b56e896afaccd3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ae5622a497b30880ea2a015fdc59cc6bbcbaab9f10d10fba1f06c7c8d091b5f6"
   end
 
   depends_on "git" => :build # `zig build fetch` runs `git clone --revision` (git 2.49+)

@@ -1,8 +1,8 @@
 class ShairportSync < Formula
   desc "AirTunes emulator that adds multi-room capability"
   homepage "https://github.com/mikebrady/shairport-sync"
-  url "https://ghfast.top/https://github.com/mikebrady/shairport-sync/archive/refs/tags/5.6.1.tar.gz"
-  sha256 "48d2ac1afa52d86766bc328694fa5d2d5f13a674f3e980f00d95d957453e5ee1"
+  url "https://ghfast.top/https://github.com/mikebrady/shairport-sync/archive/refs/tags/5.6.2.tar.gz"
+  sha256 "0747706e19a64ec550ec8a6a5c26bf8e231a4d032de31644f5a5daa0632c41c4"
   license "MIT"
   head "https://github.com/mikebrady/shairport-sync.git", branch: "master"
 
@@ -12,11 +12,11 @@ class ShairportSync < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "d7caaf88bc84f19abbf6a6e5735075b1e1c7aa37aaeb6fb96db256663fa32041"
-    sha256 arm64_tahoe:       "9881840e11514c84d2babf193da5025dfe198edaefe4f92e572cf70892c11dfc"
-    sha256 arm64_sequoia:     "993a31b6d7ab7338c33137c5ff91941a497c4a1830dc03dd2f9680a6116e7647"
-    sha256 arm64_linux:       "6fa8ff98f3be660d60a34cfa8e885785f9185a6cad8614205f155a8bf42072a4"
-    sha256 x86_64_linux:      "c1bfd414fe7f1f2fe07c92b5032cd3105fe62a5f79347cf540512de2afb592c2"
+    sha256 arm64_golden_gate: "c4b0cb8134e0d2159d6c78b24b1e487d3b895c98c84a627e204bf15a920cbc45"
+    sha256 arm64_tahoe:       "4110ab7bc8738cd3b345ca78971a016c38709f02251b1213f6b2ab64a4f68370"
+    sha256 arm64_sequoia:     "34b380138b158ad2fbc1c4337b3756ffec9b56d9a239f3657e3116f442cc6cc1"
+    sha256 arm64_linux:       "da88a44c4f1cb90790522fb9f6e01547f82fb12c3c87a69262afff968ec2714e"
+    sha256 x86_64_linux:      "b13b9aee250428c959a87c7ed16554f291e430b8feb141b2e1b05b20f7d8ef59"
   end
 
   depends_on "autoconf" => :build

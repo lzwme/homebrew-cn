@@ -4,7 +4,7 @@ class Elvish < Formula
   url "https://ghfast.top/https://github.com/elves/elvish/archive/refs/tags/v0.21.0.tar.gz"
   sha256 "3a4b93c3c99fe2f9847de35d64be24e2d4b9c12d429cd9831b4571993a66bb7a"
   license "BSD-2-Clause"
-  head "https://github.com/elves/elvish.git", branch: "master"
+  head "https://github.com/elves/elvish.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "945fcd395bfe6904f582e8e544736ce2465657e360403c681fcc370b30c8eba8"

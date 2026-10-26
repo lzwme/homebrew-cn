@@ -1,19 +1,17 @@
 class Amass < Formula
   desc "In-depth attack surface mapping and asset discovery"
   homepage "https://owasp.org/www-project-amass/"
-  url "https://ghfast.top/https://github.com/owasp-amass/amass/archive/refs/tags/v5.1.1.tar.gz"
-  sha256 "5aeb5fa23070fbd3aa365757e2bc9bd294f78456c4d391bc077769adbd1dbe0a"
+  url "https://ghfast.top/https://github.com/owasp-amass/amass/archive/refs/tags/v5.1.3.tar.gz"
+  sha256 "9f2023027ed418e49ff0a7d941dae050db0f73b948fefe997aef416876cfb416"
   license "Apache-2.0"
   head "https://github.com/owasp-amass/amass.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4d10c7bab807cea15073c5358e01c1181415ec2c4882bbff499c118f220c822f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0858e9a8b7d99e76652642969d4ec85caea00169b6f55cff2793e2e0d50bd592"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0858e9a8b7d99e76652642969d4ec85caea00169b6f55cff2793e2e0d50bd592"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0858e9a8b7d99e76652642969d4ec85caea00169b6f55cff2793e2e0d50bd592"
-    sha256 cellar: :any_skip_relocation, sonoma:            "4748b5419556f2afb8c22d9b58da675eab66a4320a5904ac0647f8161ab975c8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "fd1da4421acfbfde4f85ebfc0bd338844d4b44d37db16855c2c6571a3cb5288a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "d8d71769197d1f6c9f503bd52306e26ab3484c64a5528f0c147416ee5d4bcb21"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "48f97158e2dfbaa19515ee25121d5544c50d78217e631761a51d96dcbcec8388"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "48f97158e2dfbaa19515ee25121d5544c50d78217e631761a51d96dcbcec8388"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "48f97158e2dfbaa19515ee25121d5544c50d78217e631761a51d96dcbcec8388"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1aa38aaf84268c4f6a611738f2de94502c6a8359475e73660e6b007062bda12e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ab4312afc237c520b92785e0c28136cf056eb0aaad1b8f6b143b9cf6e1459f6c"
   end
 
   depends_on "go" => :build

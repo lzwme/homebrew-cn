@@ -1,25 +1,19 @@
 class OsinfoDbTools < Formula
   desc "Tools for managing the libosinfo database files"
   homepage "https://libosinfo.org/"
-  url "https://releases.pagure.org/libosinfo/osinfo-db-tools-1.12.0.tar.xz"
+  url "https://gitlab.com/libosinfo/osinfo-db-tools/-/releases/v1.12.0/downloads/osinfo-db-tools-1.12.0.tar.xz"
   sha256 "f3315f675d18770f25dea8ed04b20b8fc80efb00f60c37ee5e815f9c3776e7f3"
   license "GPL-2.0-or-later"
   revision 1
-
-  livecheck do
-    url "https://releases.pagure.org/libosinfo/?C=M&O=D"
-    regex(/href=.*?osinfo-db-tools[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
+  head "https://gitlab.com/libosinfo/osinfo-db-tools.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "8e2627515b3dd82164b650ee98301b21d157b282057e58cdaa1525b732cccd44"
-    sha256 arm64_tahoe:       "5613764761db0551e4dd70012bf9088d11d03b38a3ab30af568d5b92cfac2b36"
-    sha256 arm64_sequoia:     "4db19ac55829b9c4c19e6e8f20c1c0e9078d3c8dd25bd6335be2a275e2c7c2c6"
-    sha256 arm64_sonoma:      "02f32ab481a672e983fe9fdbff99bd4979ffbd9b178bad7f07a18bcb0c0fbd3e"
-    sha256 sonoma:            "197d84a4fa2c29c46477f2140366dff49d33050d1dfbe270c37777df1a0aaf20"
-    sha256 arm64_linux:       "298c576ca5746eb674c6c9bce5d51e6f1e4fcdcdd47367e50c74a6f7b4442e0f"
-    sha256 x86_64_linux:      "5432275a5e7c855af96a4eee2c464566ed2b46c379ad81fe86feb1f9f940fd49"
+    rebuild 2
+    sha256 arm64_golden_gate: "b0fac1abd622023d38a5c7cb0f062ae69fecc7a6eaf023249801bf4b7f0eafc6"
+    sha256 arm64_tahoe:       "520fac157eeaa4b2700c01b2912f7cda755e936feacd628f09ce3b459665629d"
+    sha256 arm64_sequoia:     "f5951365a1e4ccc19c8e462cd054dcf818bbd6b8a60f4f283e86387c6bc398bb"
+    sha256 arm64_linux:       "9224cf3cd6c335d04f66d9d6a818ed2ecdf5b8e25707bcf8e4baa9876d1edc2a"
+    sha256 x86_64_linux:      "ffe0645893cb43a88f0071f8cd4258f3fc64dafd2d8276cebd039546b623514c"
   end
 
   depends_on "gettext" => :build

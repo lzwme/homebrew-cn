@@ -19,11 +19,12 @@ class MariadbAT114 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "b0bf6459c5803f73dbe365da9fa3447f96e583d085901611177e2e88bcf90be0"
-    sha256 arm64_tahoe:       "e99a0e623825e6fef5b0f07377b37feeba58595f253d60258ed7c55e753fe236"
-    sha256 arm64_sequoia:     "892d596f51aefcef94ee892a149f15fcfa77ae42066239a6189c6dd115a517b6"
-    sha256 arm64_linux:       "f06499f3695f9909fe96b6b011425d9021bbb57cf3e70d586db5a07c2f99505f"
-    sha256 x86_64_linux:      "bf08faa8104f217a90dcec42073850b5d1aad5daa59b39ce2c4508b8a18ab4a9"
+    rebuild 1
+    sha256 arm64_golden_gate: "5eb95f65d410f271922810629791994c22c1bd6381da0c5a1b9334070e57835b"
+    sha256 arm64_tahoe:       "657774fde934cd822f30fcffeda7c942b2adf7ba473e9553571d581ba1663f19"
+    sha256 arm64_sequoia:     "5475fee24c5381083a47f51a44123910464dbea5e3af1e25499fdd0dad864fcc"
+    sha256 arm64_linux:       "21ed2d1cba69c086be97cbd1074eaf6a91575604a7e738028f0dc66e883644a0"
+    sha256 x86_64_linux:      "d9608e8a650512e023dd61cc6684d7bc45ff881672608c850b67bfe648f2a7fd"
   end
 
   keg_only :versioned_formula
@@ -60,14 +61,12 @@ class MariadbAT114 < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # Apply open PR to fix issue when using OpenSSL 4. This has been applied by
-  # Debian Forky / Ubuntu Stonking since Aug/Sep 2026. MariaDB may end up merging
-  # https://github.com/MariaDB/server/pull/5652 instead but it doesn't cleanly apply.
+  # Backport for OpenSSL 4
   patch do
-    url "https://github.com/MariaDB/server/commit/5ca4ab639ad5f99d74f794b54ba1b4d6182ec2a9.patch?full_index=1"
-    sha256 "a0cc83631f63368457f8880626a18bb791409dfe02a672989b94b205c2cefaef"
-    type :unofficial
-    resolves "https://github.com/MariaDB/server/pull/5029"
+    url "https://github.com/MariaDB/server/commit/fb641b0cd1810e7d148d6b4d70f915c06c2c0f9e.patch?full_index=1"
+    sha256 "bfc517ae33842539d9c8d02b6336476cb339b73b80c12dd2b5f873953228ef7e"
+    type :backport
+    resolves "https://github.com/MariaDB/server/pull/5652"
   end
 
   allow_network_access! :test

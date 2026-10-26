@@ -4,7 +4,7 @@ class BwmNg < Formula
   url "https://ghfast.top/https://github.com/vgropp/bwm-ng/archive/refs/tags/v0.6.3.tar.gz"
   sha256 "c1a552b6ff48ea3e4e10110a7c188861abc4750befc67c6caaba8eb3ecf67f46"
   license "GPL-2.0-or-later"
-  head "https://github.com/vgropp/bwm-ng.git", branch: "master"
+  head "https://github.com/vgropp/bwm-ng.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "08122297520a55cb2f529490a4f03d604a79212c19655baa30839553a81b4c16"
@@ -24,6 +24,8 @@ class BwmNg < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+
+  deny_network_access!
 
   def install
     ENV.append "CFLAGS", "-std=gnu89"

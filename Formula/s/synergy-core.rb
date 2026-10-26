@@ -4,17 +4,6 @@ class SynergyCore < Formula
   url "https://ghfast.top/https://github.com/symless/synergy/archive/refs/tags/v1.22.2.tar.gz"
   sha256 "c80a1bc6c0e40fe60e8614e88e988d34ccf5a04b57d3560de946989282d526c9"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
-  head "https://github.com/symless/synergy.git", branch: "master"
-
-  # This repository contains old 2.0.0 tags, one of which uses a stable tag
-  # format (`v2.0.0-stable`), despite being marked as "pre-release" on GitHub.
-  # The `GithubLatest` strategy is used to avoid these old tags without having
-  # to worry about missing a new 2.0.0 version in the future.
-  livecheck do
-    url :stable
-    regex(/[^"' >]*?v?(\d+(?:\.\d+)+)[^"' >]*?/i)
-    strategy :github_latest
-  end
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "21a13214c2e342729826c304cec3a1a2972315c0af7cbeca78e5011ccb5060f3"
@@ -23,6 +12,10 @@ class SynergyCore < Formula
     sha256 cellar: :any, arm64_linux:       "07007e3721635b03b0e9e2577782327e4c0589006307db6d4a71175ada0d0387"
     sha256 cellar: :any, x86_64_linux:      "b4a7916ce6bdec0b9db009ed39786cf08012b9ef7312b210cb7647a8c064efa5"
   end
+
+  # Upstream replaced the source repository with a signpost: https://github.com/symless/synergy
+  deprecate! date: "2026-10-25", because: :repo_removed
+  disable! date: "2027-10-25", because: :repo_removed
 
   depends_on "cmake" => :build
   depends_on "qttools" => :build

@@ -1,16 +1,16 @@
 class Promptfoo < Formula
   desc "Test your LLM app locally"
   homepage "https://promptfoo.dev/"
-  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.124.1.tgz"
-  sha256 "be3fe4dd4cd78e61a2fc81a8bcaaad1c8f29b63ebed16f08e629a5856f0c270f"
+  url "https://registry.npmjs.org/promptfoo/-/promptfoo-0.125.1.tgz"
+  sha256 "2db2ed847568f1e8f2f2391cb7cdfad901d20bf16a40f207933ad3c2ba0b49e9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "27e2a7bcbaf490f44e0425e36f2b2d033beb40df284d40fabdd793855590ae7f"
-    sha256 cellar: :any, arm64_tahoe:       "f4af3bb74839a01b962bee63ca95a68f627bfa1e8544c48f37bf391e4d1f4fbf"
-    sha256 cellar: :any, arm64_sequoia:     "082bf000c14e3b79015410b90b2cd9eb78e25767a054ed3ee0885c0e0f871f40"
-    sha256 cellar: :any, arm64_linux:       "689c853a0deb58ecdd9386305e701f32dc81ef35411b6434828e2191b34f60d9"
-    sha256 cellar: :any, x86_64_linux:      "a235ba8cceda33a6ab9d094437c3c1a63a0f3d738db1eb7ae9108c33a7a3d58e"
+    sha256 cellar: :any, arm64_golden_gate: "a19ac4da839942c8ec93b1ac8ca058e7ff90a7bbd1cf86e4c10c798f71b6bb75"
+    sha256 cellar: :any, arm64_tahoe:       "cd2c07dac51238819838590e72e984629f02263732ee3abf44e16b2363ce21c6"
+    sha256 cellar: :any, arm64_sequoia:     "fddb12e665e21f9d315bd435d0f362ba9648a2e6f3331f1d5a13cc676f28f1a2"
+    sha256 cellar: :any, arm64_linux:       "300fd1b04277268966bd9522db102769b6f34db865d07769d100723bd88c27a6"
+    sha256 cellar: :any, x86_64_linux:      "516b2b3c337cc97b666bd1cf6dce8a7aabced393c7b27b11145a3c6e2aaac936"
   end
 
   depends_on "cmake" => :build # for `libsql-js` > `libsql-ffi`
@@ -20,6 +20,11 @@ class Promptfoo < Formula
   resource "libsql-js" do
     url "https://ghfast.top/https://github.com/tursodatabase/libsql-js/archive/refs/tags/v0.5.29.tar.gz"
     sha256 "e7ccf7f0ade06158bac3f5fffe69d9707741940678aadec75319713e21b57c21"
+
+    livecheck do
+      url :url
+      regex(/^v?(\d+(:?\.\d+)+)$/i)
+    end
   end
 
   def install
@@ -28,6 +33,8 @@ class Promptfoo < Formula
     # install and then symlink it using `brew link`.
     (libexec/"promptfoo").install buildpath.children
     cd libexec/"promptfoo" do
+      # openai 7.41+ declares a `google-auth-library <11` peer that conflicts with promptfoo's `^11`
+      inreplace "package.json", '"openai": "^7.20.0"', '"openai": "7.40.0"'
       system "npm", "install", "--omit=dev", "--omit=optional", *std_npm_args(prefix: false)
 
       resource("libsql-js").stage do

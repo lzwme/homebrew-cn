@@ -2,8 +2,8 @@ class DotnetAT9 < Formula
   desc ".NET Core"
   homepage "https://dotnet.microsoft.com/"
   # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-  url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v9.0.122.tar.gz"
-  sha256 "2e55d8e6c56813253d2dcb1c8c99c61517f0178ec42ca4ed705f5be46eb4bfbf"
+  url "https://ghfast.top/https://github.com/dotnet/dotnet/archive/refs/tags/v9.0.123.tar.gz"
+  sha256 "3efd44c23bfd86305ea5a9484c5cc637f74c12f1eb914c497307109d5b528ed7"
   license "MIT"
   compatibility_version 1
 
@@ -13,11 +13,11 @@ class DotnetAT9 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f4324540a50e222eb1ca636ac8fdc2b96f67af4003833c034364f3536b990aec"
-    sha256 cellar: :any, arm64_tahoe:       "ec2c087fd852d698826de2d12f249d87eec8d25456823fead86d2b63a3541ef0"
-    sha256 cellar: :any, arm64_sequoia:     "bb8b7599841935c38829b2b1de3f4da60d05a19e473fcb5dc07ae088ec04428d"
-    sha256 cellar: :any, arm64_linux:       "a70f620b1fd687217c8e35891c17c55d2ec34565ba5c4f8a673681d35f99ff3b"
-    sha256 cellar: :any, x86_64_linux:      "237932f6c9de0475350d7d45169caca042899fe647926c72e85a6372d11b860d"
+    sha256 cellar: :any, arm64_golden_gate: "dac3302dd20041e45a0802ccb39125434162d688a326f86f3274e934c2c414b1"
+    sha256 cellar: :any, arm64_tahoe:       "1df264506c67b96f5c9df34f841e47315994b0900691fe35660b17c350e34050"
+    sha256 cellar: :any, arm64_sequoia:     "066800689451c11022680986e6ddb8714c550cf5e9b426d1c27d91491e078a64"
+    sha256 cellar: :any, arm64_linux:       "8756185c095877dc36d5ad0f95103a8d7a022524bb3690c6ddc463d43bf87758"
+    sha256 cellar: :any, x86_64_linux:      "e60fccc21993253868127524f69196ac0d8fb3e98ef740cf7fca4b9521c4ba05"
   end
 
   keg_only :versioned_formula
@@ -30,7 +30,7 @@ class DotnetAT9 < Formula
   depends_on "pkgconf" => :build
   depends_on "rapidjson" => :build
   depends_on "brotli"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "openssl@3"
 
   uses_from_macos "python" => :build
@@ -56,8 +56,8 @@ class DotnetAT9 < Formula
   end
 
   resource "release.json" do
-    url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v9.0.122/release.json"
-    sha256 "137fd3f6548649402b91c33916d28fb666c5fd8d2e4ae549ae188a6c172d6335"
+    url "https://ghfast.top/https://github.com/dotnet/dotnet/releases/download/v9.0.123/release.json"
+    sha256 "2029e2cf03b317733645004c85c103ac3a9cb3ecc48a7227e2f0dc48f39b8d3f"
 
     livecheck do
       formula :parent

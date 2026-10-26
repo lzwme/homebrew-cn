@@ -28,6 +28,8 @@ class Elfutils < Formula
   depends_on "zlib-ng-compat"
   depends_on "zstd"
 
+  deny_network_access!
+
   def install
     args = %w[
       --disable-silent-rules

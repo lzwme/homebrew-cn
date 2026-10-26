@@ -4,14 +4,14 @@ class Libpeas < Formula
   url "https://download.gnome.org/sources/libpeas/2.2/libpeas-2.2.1.tar.xz"
   sha256 "589eca89b437006edf3755478df037c740a2a84cfa5d202dbad6095e828e2488"
   license "LGPL-2.1-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 arm64_golden_gate: "c616b3255f727c1d04dab6475c5d174c148ce7fa8d5b58dec120e36580edd3ee"
-    sha256 arm64_tahoe:       "e2992808cb570a6bba919f11fad5e2cf2027bce5495bd92ac22fd51beb0d65c6"
-    sha256 arm64_sequoia:     "c925354d393ee085efcda3a350029dbf0b516c2c09be3c528a85e97dd4351fa1"
-    sha256 arm64_linux:       "c0a08be5c5fee64d3a97157521cf5eaac73348bbb97c86fede2ff5b37145183c"
-    sha256 x86_64_linux:      "fd47c091b58ef63b30860bb64a4fd1e76635fcd112c6c4c0fd4a987e34baaaa7"
+    sha256 arm64_golden_gate: "89673f946c510b1d959d2e20212461961f7ffd76e070d3b45e7a2bf6b4053a3d"
+    sha256 arm64_tahoe:       "9441f8a9568cbfc562b0c65e9a4ecb88cac6e9cb6335e4896c608d80cfdb9704"
+    sha256 arm64_sequoia:     "3ce3c7be74bcfc806d5fbad7cd6a9782c59744c48d6847a97b35fcf453d11eed"
+    sha256 arm64_linux:       "bbc7d25e0ca0eb92277e334d2ef1dc80fccbf292bd7ff1d502c1e33c11ee06bd"
+    sha256 x86_64_linux:      "1e0b06e97a4c7aab7498bb8f3ea852a57203e2f95f31bf45d28fb18e88351dd4"
   end
 
   depends_on "meson" => :build
@@ -24,7 +24,7 @@ class Libpeas < Formula
   depends_on "gtk+3"
   depends_on "pygobject3"
   depends_on "python@3.15"
-  depends_on "spidermonkey"
+  depends_on "spidermonkey@140"
 
   on_macos do
     depends_on "gettext"

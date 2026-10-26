@@ -26,6 +26,8 @@ class Enet < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "e4f47239030ad6e2af53bb52c6a040f0bb46424ffd3909819c190e939a63a8a3"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"

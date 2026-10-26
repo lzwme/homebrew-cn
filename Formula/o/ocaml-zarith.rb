@@ -4,14 +4,14 @@ class OcamlZarith < Formula
   url "https://ghfast.top/https://github.com/ocaml/Zarith/archive/refs/tags/release-1.14.tar.gz"
   sha256 "5db9dcbd939153942a08581fabd846d0f3f2b8c67fe68b855127e0472d4d1859"
   license "LGPL-2.0-only"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d6f17210cfd7e55ea7b586b16e62bf7e95cb37cc2deb8210e92da20318142ab1"
-    sha256 cellar: :any, arm64_tahoe:       "e78850010ac01002146fc3027fb407cec34ea975e9ad33ba269a33ec6948f479"
-    sha256 cellar: :any, arm64_sequoia:     "e601fe3a657d9ca87e2f3c0749444352ee0854c60df4257f4e524f4da1a51411"
-    sha256 cellar: :any, arm64_linux:       "7acf38bc8394ff77c6e865c0c4a4bc01e3ca57473f6bc07860a2910f525595e4"
-    sha256 cellar: :any, x86_64_linux:      "0bee0df8f82b281850059def01b744d68759ea29e0b879cce7ca1aa421e0896a"
+    sha256 cellar: :any, arm64_golden_gate: "2796d9feedfae5f9cf45b4742d4eee43c5062b4d6ec765d879be7a2f7021fc14"
+    sha256 cellar: :any, arm64_tahoe:       "4b0d2155bccf49bd37725767aa82e1d28bb889423aaaaa180def10dcb3f748b8"
+    sha256 cellar: :any, arm64_sequoia:     "00dc5230b27e5cec0baffc31c4177c2216c5061bcf16e8c24cf0ff045257e21e"
+    sha256 cellar: :any, arm64_linux:       "a55453e9852a3d2c02a957a6af8d6e8d35e4c3b6c7d9f0979e7d2547d87a0c0f"
+    sha256 cellar: :any, x86_64_linux:      "f5c977b53e4226694a0fe5ec3ea78f0e18e195f1c9f461fadaa4e7b446522bc9"
   end
 
   depends_on "ocaml-findlib" => :build

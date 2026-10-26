@@ -28,7 +28,7 @@ class Speex < Formula
   end
 
   head do
-    url "https://gitlab.xiph.org/xiph/speex.git", branch: "master"
+    url "https://gitlab.xiph.org/xiph/speex.git", branch: "main"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build

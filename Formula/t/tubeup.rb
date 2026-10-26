@@ -6,15 +6,14 @@ class Tubeup < Formula
   url "https://files.pythonhosted.org/packages/7e/44/6deb75f6d3a553fe3f8dfbd7c0fdea15f31b67272808efad98303803cca7/tubeup-2026.5.8.tar.gz"
   sha256 "4c75423a429493bddaf78ede0031947938b3eb35435847ee6597b49a4be76ad7"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ed547557c67b0fd609a68705b149e9fe3f47ae3b9e789c4ad60117c9cd7f8e10"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3d8633a7283a30c915d8b0ccc3add9f49568ceea4a4fde45b1abafc696455feb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "af5673feb1b1af9077d8fd27fae9ba7ca391ab72d77db7b3d4a95611b359e477"
-    sha256 cellar: :any,                 arm64_linux:       "ca5806b1bc8d18ebe289b5cf036ba9916392d63fdb2e2ef12ce4bf903b0a2eec"
-    sha256 cellar: :any,                 x86_64_linux:      "4674e37e0e3b1821a183fe35fd9182626fe31aa7002bf4811f0abd5b2ff411b8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f3c97bb5ad286010905db69e9088cf8dbed7f788c7f450fcd84af86c197cb88c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "52ec32dde267a6b5b4d71e1fa7f237be9b863dc4be98fa49b2bd27cfbb73e7f5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f110f568b590461c5d7235fcb9dcbe876d9e73ac52c6effa0553d9650419445e"
+    sha256 cellar: :any,                 arm64_linux:       "93038067c961f273b19cc179bbbb4197b7d209406ede52c061bc736633a3f5e5"
+    sha256 cellar: :any,                 x86_64_linux:      "331aa02cebf59bc76548740f29b5e1122ef228d516afc5c71a3f073097ab560e"
   end
 
   depends_on "node" => :build
@@ -28,8 +27,8 @@ class Tubeup < Formula
   pypi_packages exclude_packages: %w[certifi cffi pycparser]
 
   resource "brotli" do
-    url "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz"
-    sha256 "e310f77e41941c13340a95976fe66a8a95b01e783d430eeaf7a2f87e0a57dd0a"
+    url "https://files.pythonhosted.org/packages/cf/81/1546c983678a9b4e77cb4718eaedd1b2caf24a6cdbf1eb8775938d22aff7/brotli-1.2.1.tar.gz"
+    sha256 "02b2f7b5a83485efe448a44ddf7983def05c3bb1dcf917d4f7154070260e13de"
   end
 
   resource "charset-normalizer" do
@@ -53,18 +52,18 @@ class Tubeup < Formula
   end
 
   resource "internetarchive" do
-    url "https://files.pythonhosted.org/packages/99/f7/86a84bfdc32c0b3d3fafe90a299a131d2aa661b57cab3d14a506f42405db/internetarchive-5.11.1.tar.gz"
-    sha256 "2ae0a529ffe4195c5294a0277e0a9afb83fc00fee5695c6597f65c64e95da44a"
+    url "https://files.pythonhosted.org/packages/a5/e5/6299a3f04c085c9d3582840e2a086a3845e89b2ae5058fb817fca0a99795/internetarchive-5.12.1.tar.gz"
+    sha256 "fa9589c463a8a64e1c194f19f40bac680e2db9b493a0d9722cf7d30754cde65b"
   end
 
   resource "jsonpatch" do
-    url "https://files.pythonhosted.org/packages/df/f8/48a6033ebdd5013a58b5a79402eacb15ffb6e208f244c1c17f6f1e3b29c2/jsonpatch-1.35.tar.gz"
-    sha256 "679ad08672b4663c7ef1e5f3331d940f5e7786661b9acc1530104be1638e7a4f"
+    url "https://files.pythonhosted.org/packages/8e/39/c534bb172e9318400d5631074b1eda6c78b7c918d0f04233b50caa8e2c10/jsonpatch-1.36.tar.gz"
+    sha256 "7e110cb3c5a1c8768f7170bf8fb9887c4aa575fba74c95239e868b494bd9a522"
   end
 
   resource "jsonpointer" do
-    url "https://files.pythonhosted.org/packages/33/a2/c92f0a7ed439c490d2c8ad712fdb074c311afa4f77870987826a3b1483ba/jsonpointer-3.2.1.tar.gz"
-    sha256 "47c846513b3a4ec46eecef1105207fba075e2a3659048e362bd7daff0fc33342"
+    url "https://files.pythonhosted.org/packages/52/77/9be5cce647fa4d7afa9047c0c1029bc73292c27430e64fc9d2393ccf6727/jsonpointer-3.4.tar.gz"
+    sha256 "e57015ae65af3821c6a3976069860789cf326103f38b22b2178d41d021adad25"
   end
 
   resource "mutagen" do
@@ -93,13 +92,13 @@ class Tubeup < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/01/89/3f825ab71c242fffb62ea8fe638741c290f62f8d7aadf8125ff897747af3/websockets-17.2.tar.gz"
-    sha256 "36c2fb94c990cc2545143b12690e2de6c16300f9dbe5b4f33fa300cf57dc8792"
+    url "https://files.pythonhosted.org/packages/30/4b/4692be6d5bf739ed049b3813901c42091f8c054df89d5c089343823dea0d/websockets-17.3.tar.gz"
+    sha256 "1c7dd93a1c9f89297471493674b1fc1d9467cafd45374f2172213046bdb3a329"
   end
 
   resource "yt-dlp" do
-    url "https://files.pythonhosted.org/packages/1e/e0/832fa4ca334b766a06933a196066edc3dba37cdb6f14cd98d59bcc69a4b4/yt_dlp-2026.8.19.tar.gz"
-    sha256 "9e213e48cea35c66b378e4447903f118f6392a5fa380a2b6d7070ec86f4e0af1"
+    url "https://files.pythonhosted.org/packages/06/13/d2ea252871826205dc4965cb70e6037ab93697fcabf4feda49fe981f6da0/yt_dlp-2026.10.21.tar.gz"
+    sha256 "cbf748d7d17cd37647c4b9f07b6c25f24384bfd4361407ee5ec519e753d22539"
   end
 
   resource "yt-dlp-ejs" do

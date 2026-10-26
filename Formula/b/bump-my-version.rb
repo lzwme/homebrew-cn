@@ -3,17 +3,17 @@ class BumpMyVersion < Formula
 
   desc "Version bump your Python project"
   homepage "https://callowayproject.github.io/bump-my-version/"
-  url "https://files.pythonhosted.org/packages/30/4a/c8d1330dd23349ee3f1a0f0ae2fb9ffb8f8e8e3f1a6cfc8511edcced2b12/bump_my_version-1.6.3.tar.gz"
-  sha256 "a886d5b8a86b439bb1119eecc3625a940c545e8e7b093ae5fd52a754c904c165"
+  url "https://files.pythonhosted.org/packages/a9/65/338597a14c53ae2b9d004031dbcb61a0641484b20469b5b7bd5250a37a34/bump_my_version-1.6.5.tar.gz"
+  sha256 "0fd40347bca359bdee9999c93e101d2ad4612cf10319bc5e81181e57fc313e0d"
   license "MIT"
   head "https://github.com/callowayproject/bump-my-version.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4df8f7185bf7eb593486a065196ba862e9bc5fcd1f02e41dbfd645ecc942824a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "38d3e13ef0be046755282ee77e4578bebf1d60eb4a7b7ccafde680c6c4a2d2f1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "91c7c1b93dfaaa9b0dd155d8a6318619afa3a3f26b9cfd4c34b22c5aa4dbc850"
-    sha256 cellar: :any,                 arm64_linux:       "44f9a67f0e90abd91bbe7515992a6bc0e4a7727caaef1ed789d3508e12359f11"
-    sha256 cellar: :any,                 x86_64_linux:      "365301cb04264bf15ab7bf6012b86ebf9035681c6fbbc21fb55c4f6e351a7847"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c993276904ae70ff5e489f3aa449b80392df772cf0777d0416612ac87a09691f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b42c2db20436171fcf7c22ce3fb086336a430ac112f461d92dd9ae72c0b7ca62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cd3ea8e6966ebbec886af1762ba48f3e92be8b9d217c88d7600bfd01428710d8"
+    sha256 cellar: :any,                 arm64_linux:       "7d95634eff965ca51d0df4f2dad252bdc5d75dd09c3b35877ed1e09009a1e959"
+    sha256 cellar: :any,                 x86_64_linux:      "b5665700b1d5811936e97ff2d5d970ac5035064882f1d48daa77df175a5627f9"
   end
 
   depends_on "certifi" => :no_linkage
@@ -28,8 +28,8 @@ class BumpMyVersion < Formula
   end
 
   resource "bracex" do
-    url "https://files.pythonhosted.org/packages/e1/60/e2a6409041cb3f8ce7ac3d6917b5b30c39f81a0a5b2d414ec30f36fd96bf/bracex-3.1.tar.gz"
-    sha256 "35c69fc105f08d77c02722e8ae707c656ff298dd4d26c89bcb3c98fca8bc3614"
+    url "https://files.pythonhosted.org/packages/fb/37/adf8dd2cde958c2d086bdd87fc36b532fd824bf38f10be6348d65da0c8f9/bracex-3.2.tar.gz"
+    sha256 "0a3d40bfae4caae4d3bfd0ea715874799fab711c38fd4012cc35343e815405cd"
   end
 
   resource "click" do
@@ -43,13 +43,13 @@ class BumpMyVersion < Formula
   end
 
   resource "httpcore2" do
-    url "https://files.pythonhosted.org/packages/30/ff/b53af1b49bb2cb5fa97c92215614b173ca5c1a99ded80e2d52f15a94fa6d/httpcore2-2.14.0.tar.gz"
-    sha256 "4f57a1a8249fe6af589d935cfd456f1d13bbdcb0f0fc72af9142368fc94811d7"
+    url "https://files.pythonhosted.org/packages/c0/61/afa9d6b7452f9eca73f73d45324eb0bb52f098fd5e6049bf6b8263be9b4e/httpcore2-2.16.0.tar.gz"
+    sha256 "c72cd0413563b17e1cd8354677dff887466f8ec2551679759e93126534428643"
   end
 
   resource "httpx2" do
-    url "https://files.pythonhosted.org/packages/e8/67/58353f1848b4ba568e1ec22ea1e0d8e039f0bca5fde7e2d1f07739fd83e7/httpx2-2.14.0.tar.gz"
-    sha256 "47ad61a3c40282cd8d0dc96311531f00f5bfc71a066c6fe3b36d8f63fb9e4f6e"
+    url "https://files.pythonhosted.org/packages/43/73/5ca2cedf5e4e50423d1c258877865a6b62793633b561c58499f8aeb33b7e/httpx2-2.16.0.tar.gz"
+    sha256 "0d54c98128e8f2ff7fbbde0fca8c359e5f032edeaaaac443cdb7f31f685bcd7f"
   end
 
   resource "idna" do
@@ -73,8 +73,8 @@ class BumpMyVersion < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/2e/3b/a5d2294799b53b448319978cfb5bd139d5a9d45e862af91661614f14c922/pydantic_settings-2.16.0.tar.gz"
-    sha256 "5b6c578049ede4db0e2ef3b4eaa4ad4069cfa9211f83fb38df899dfade50a614"
+    url "https://files.pythonhosted.org/packages/05/ca/7817b4bf0c4b15c6a6ab8cdf4cb96c268335a8ca2f525de93b6ebe4c7d28/pydantic_settings-2.16.1.tar.gz"
+    sha256 "aff602a1886338c2df3d1e958e2193a8dc33cec75b91f202e83fd98484b4b0da"
   end
 
   resource "pygments" do
@@ -113,13 +113,13 @@ class BumpMyVersion < Formula
   end
 
   resource "wcmatch" do
-    url "https://files.pythonhosted.org/packages/78/cd/0e028d8b7d906d51acdac537334fbe85f8284f2a8147d48bc9403af77a0d/wcmatch-11.1.tar.gz"
-    sha256 "f2b6f0fad6f5e2571498723fcb3c8facdd0fba0dcc139f31d32f592eb648153e"
+    url "https://files.pythonhosted.org/packages/bd/07/b7a9162a804bc0f7d03fe84c93e374d3e1c4d828043d5f9b797f7d4e30e0/wcmatch-11.2.tar.gz"
+    sha256 "1605bde546fbde4c063628c7d89eda486909fd4337e51d73a873987fbcb2554c"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
-    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
+    url "https://files.pythonhosted.org/packages/69/4a/82d61476a1ccc20d43d0805724c5de4baa4971131a8db1816705ef53fe16/wcwidth-0.9.3.tar.gz"
+    sha256 "dfe7cfbd4cb59db9fe0931bd6091ab4a95b3acc5d56bfb50fa9fef0ccba5dc5c"
   end
 
   def install

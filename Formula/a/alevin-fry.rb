@@ -1,16 +1,16 @@
 class AlevinFry < Formula
   desc "Efficient and flexible tool for processing single-cell sequencing data"
   homepage "https://github.com/COMBINE-lab/alevin-fry"
-  url "https://ghfast.top/https://github.com/COMBINE-lab/alevin-fry/archive/refs/tags/v0.18.3.tar.gz"
-  sha256 "ec36543dd23041f46ffdbe9f0207c1301f72e6c03f4e017d5cde18be626868d7"
+  url "https://ghfast.top/https://github.com/COMBINE-lab/alevin-fry/archive/refs/tags/v0.19.0.tar.gz"
+  sha256 "033ab877f00b01ae226bf3c20756883c8f97d1e44e682cea1a30723769d79cbc"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e9a36b05d95406546dff2f4e3cc3502e01c4f28ac42205ca15c0699a151ab3a5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "34d63792fa533fc61d84d262a7510e56366af8e384488bcc0313914494959166"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6a5798f5800a54be0ad3e0dd939660d2e2197a0731f5a9f4a1cd1d682c71d85b"
-    sha256 cellar: :any,                 arm64_linux:       "c4622736ad83a3a79442ef566c3f5c79c4a0d6b1d11cf3801750d431934d7adf"
-    sha256 cellar: :any,                 x86_64_linux:      "a7a21d1d36459da062b8f0e7a18be2f0433b1d5dd4eda11cadf00d1da98990dc"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3c07f204da2d05f7cb001ccaf12fa4fc76e86cf53bb6a20cae2ed8db835b1406"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ed347d8ddebe01bb425cc2b3135ae48a6611c684cf9139a87b45a246d1fc3dce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d90bd1c323ce9995bd29873fe5e80e0a6eba8f7090f124546923ec32d574ce04"
+    sha256 cellar: :any,                 arm64_linux:       "f4287662145b193a04b24f03ecc7e69b5e45ed1e45d4f9567d8fcce2ed918ca1"
+    sha256 cellar: :any,                 x86_64_linux:      "a49227111f374185df3b44aafc1f20a9c17f2862ebcef49082b1d677db6acb34"
   end
 
   depends_on "cmake" => :build

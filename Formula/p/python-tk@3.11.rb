@@ -1,8 +1,8 @@
 class PythonTkAT311 < Formula
   desc "Python interface to Tcl/Tk"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.11.17/Python-3.11.17.tgz"
-  sha256 "53cdee63ac4bf12387b7b33a53d3b1f8f4941cad73807a7b4fe91bb001ef004a"
+  url "https://www.python.org/ftp/python/3.11.18/Python-3.11.18.tgz"
+  sha256 "5f62711b12470fd435f83f1451c1b1ef4a179aebc715c716874b0967567d814e"
   license "Python-2.0"
 
   livecheck do
@@ -10,11 +10,11 @@ class PythonTkAT311 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "72890c619c3f7831ebb30fb619523b1b8096b296e18891e2dd9f09130795cb5d"
-    sha256 cellar: :any, arm64_tahoe:       "24459641d8caf7542ba26e9e49a35b034450b0923def0ed2603cdda80a55fc68"
-    sha256 cellar: :any, arm64_sequoia:     "466331c85c87a058e37c02dd694acd4cdc4bbe3db33b9542038c8f27ad3de082"
-    sha256 cellar: :any, arm64_linux:       "8d8f4accd32a955c1ea58cf51dec63a3d449eedf6acbe6d283f324d045f248c4"
-    sha256 cellar: :any, x86_64_linux:      "6b80fa3ad951164bc74ef5d23c00da343669f6108ba53c063750d555de5e3ffd"
+    sha256 cellar: :any, arm64_golden_gate: "cb4202773715dda8429c5ce723fa5f292a32502a523b878c8140e25aaf10ddb5"
+    sha256 cellar: :any, arm64_tahoe:       "bc181cbc818961014ee0e6906d67d84b2cf086409a9477496f782da59db00635"
+    sha256 cellar: :any, arm64_sequoia:     "6d68dccdfff1141d7bfd3c445f14ce66c9e75592b58c0f19027a3d6a1e35edc6"
+    sha256 cellar: :any, arm64_linux:       "7cfcee8dee34bef04cadd191be307c6da497cf32094de9f5072f42ba64c256ca"
+    sha256 cellar: :any, x86_64_linux:      "fbcbd7b4aa26755a82f6e280ffd2401355a8df87429fe7e4b8346954427b5cc8"
   end
 
   # https://devguide.python.org/versions/#versions

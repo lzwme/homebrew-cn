@@ -7,16 +7,15 @@ class Rawdog < Formula
   url "https://files.pythonhosted.org/packages/3c/ab/eaae3e0f2fac4a717d632990795fd6a560efaf9e54a1741e842234dec1cb/rawdog_ai-0.1.6.tar.gz"
   sha256 "1fc37d0e3336e87568ae9ee5dde5e7c68c1af652efd0956ee0c62281ddf14b41"
   license "Apache-2.0"
-  revision 27
+  revision 28
   head "https://github.com/granawkins/rawdog.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_golden_gate: "1dd4a03903b1937596359ae40fa1b49a92e365e00fa5644d344e17aa0f9134dc"
-    sha256 cellar: :any, arm64_tahoe:       "fda50d5a2bd3c66e528b0bd770fef722c6de5801a76b98f8f70795d4df75dde2"
-    sha256 cellar: :any, arm64_sequoia:     "7116a94a6484a6c56cbb97588a3bdd6c30462c2eb93645c080c2555a90f83d2d"
-    sha256 cellar: :any, arm64_linux:       "27d5b53e05d094206aa5a47a093ba98d411bec2c278e9d12ac008a117103fd77"
-    sha256 cellar: :any, x86_64_linux:      "74791e3e6a0e90a0a9f6311805c2f3fae6f84916dc7e082e4fcd3a0f148b6686"
+    sha256 cellar: :any, arm64_golden_gate: "5fac9b5d04a51dc4345805d020ec96fea0d947f0bfc90111f9e2c74a3e2418dd"
+    sha256 cellar: :any, arm64_tahoe:       "855f657e83d3b2e8971e98791a681a1440a102d03c9e0b7c1bdbec49a2b193c4"
+    sha256 cellar: :any, arm64_sequoia:     "2415d277f0c1c0a9503a62bd8104b64c33f74307c7395aff776591fe4e61ac3b"
+    sha256 cellar: :any, arm64_linux:       "1addc6453f820c2739f661732395d652addf2848fc85b005de2bf1139ee4bda8"
+    sha256 cellar: :any, x86_64_linux:      "f9d5bc83fa3a2324f6bde8943185ff88413751b20f9e76963e1b2de0ed2da83d"
   end
 
   depends_on "pkgconf" => :build
@@ -85,8 +84,8 @@ class Rawdog < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/4c/58/6fd434bec86eff7c38a3168454cb132b762b2bea9b3ac094101a2f7bc32a/filelock-4.1.0.tar.gz"
-    sha256 "ad7f724afef953e731b1cc39bcd3a09166d72ed7fcdf29e6e88b1c3235c6715d"
+    url "https://files.pythonhosted.org/packages/d8/28/3893324bcadf8f89b1616637468d766af3f625008c0735bf704fdfa86617/filelock-4.2.4.tar.gz"
+    sha256 "c6d8663535e1650ee430507b4ffbac7b464dd64b7647ea0112a9f406499d163d"
   end
 
   resource "frozenlist" do
@@ -140,8 +139,8 @@ class Rawdog < Formula
   end
 
   resource "jiter" do
-    url "https://files.pythonhosted.org/packages/9c/1f/8176d92e001f86505424b41664032ae26a882bc9ca41a32c803f373f9195/jiter-0.17.0.tar.gz"
-    sha256 "03e432f226a453851079fb84cd17c6da9991eab723e28d716f14ae3d906e0c12"
+    url "https://files.pythonhosted.org/packages/63/5b/f68319f4fe624311a744a33d10fdbcac4c971991e348223cba60d31780b2/jiter-0.18.0.tar.gz"
+    sha256 "a0ca63fd9450a212e4e658d4cfe0ab4977c4f9b0003c68828b843c65e27662ff"
   end
 
   resource "jsonschema" do
@@ -270,8 +269,8 @@ class Rawdog < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/dc/23/655a1802fe8041302c959774ca7c80b53bc24737ff3ef45cb50ef11bd96c/zipp-4.1.1.tar.gz"
-    sha256 "7ebb7a44c021b29fd8dbd7cce6812d0d7b5b454521f93cc71af6ccd155aaa70b"
+    url "https://files.pythonhosted.org/packages/18/05/ba1458dee0ac485b2a01071c1b88f5199fe878a485df482e10e1ef2205cc/zipp-4.1.2.tar.gz"
+    sha256 "cf474b90b07ea932637e17c6b9479de2b2882900b0d311bdaf4f5c000a15a97f"
   end
 
   def install

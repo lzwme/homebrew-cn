@@ -4,6 +4,9 @@ class Gjs < Formula
   url "https://download.gnome.org/sources/gjs/1.90/gjs-1.90.1.tar.xz"
   sha256 "05ceaa80f48e3782e5c44938572fad863e02b8c4a6c55657a99aa81db8ce9efa"
   license all_of: ["LGPL-2.0-or-later", "MIT"]
+  # TODO: Move to latest `spidermonkey` once gjs supports mozjs-153.
+  # Also set deprecation date on `spidermonkey@140`.
+  revision 1
   head "https://gitlab.gnome.org/GNOME/gjs.git", branch: "master"
 
   # This regex is intended to avoid the `Gnome` strategy's version filtering
@@ -15,11 +18,11 @@ class Gjs < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "386c6340c513c7ff05acf0282d39330793df58f13b8e99b54f213832b95e4a6d"
-    sha256 arm64_tahoe:       "9a202cc21bdb9962b6f889b75c96d621b4a674105d4d4034e68cdc64e75d8606"
-    sha256 arm64_sequoia:     "c9eb5977fb3bcb94198f4315f38cb7f753ad29cbf9a4a4f9982276e203d1acca"
-    sha256 arm64_linux:       "5e4310c8cefd0168118c6b8817acb572a4b9f0dfb697a737cb8ce2dc9219a0f9"
-    sha256 x86_64_linux:      "583b88ece09c64dd81685eadf68beb33c4f80fe0eebb05bddd373574fb56fde6"
+    sha256 arm64_golden_gate: "f93b65ca60e52b8833344bda506df19997c32d8a34e422548748bde277c89788"
+    sha256 arm64_tahoe:       "a9e1b42017122494a80d4fce0d44f77cd88bf222bba5e179228228ffef1c3957"
+    sha256 arm64_sequoia:     "4c7508614bf734d99e4cfab1c4f70869e871f641dd63de0761dd835e443db2d0"
+    sha256 arm64_linux:       "b9e5d298a3204a855d54e3fac66c4a7e51cce1174c0043940e139581081b838f"
+    sha256 x86_64_linux:      "81109de506c5915ba9e6884037aae5e25421bdf464b2d6220863917c89824172"
   end
 
   depends_on "gobject-introspection" => :build # for generate_gir
@@ -31,7 +34,7 @@ class Gjs < Formula
   depends_on "glib"
   depends_on "libx11"
   depends_on "readline"
-  depends_on "spidermonkey"
+  depends_on "spidermonkey@140"
 
   uses_from_macos "libffi"
 

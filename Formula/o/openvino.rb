@@ -15,18 +15,19 @@ class Openvino < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9209c10a5f0b6a15a6b1d06cdad7a24c5021fcd3636b889fb2050fd63a623525"
-    sha256 cellar: :any, arm64_tahoe:       "98daf1613ed8c342294903f4f37042360c3ae3f1ec5cdbb7934c582b3031fbb4"
-    sha256 cellar: :any, arm64_sequoia:     "746feb262a779aff182d34b3586bc4a30e775bc3a383bdbe282d94bca91454b5"
-    sha256               arm64_linux:       "b1bc0da7956e469b58879f1b10b3636c56d7e8825661b9789389095e0244fc68"
-    sha256               x86_64_linux:      "2042ec60ab0a83f3bb5b59598ac323bbacf714a958266c2670c113ad40382406"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "bba2087a097ef23ec6a58e170801237b66f812b41f5488ab77351400e6d63bcf"
+    sha256 cellar: :any, arm64_tahoe:       "782dac2200a720cbec5d8c4574a28a1adf56997de8bb9db43b3f678d45f6e5d6"
+    sha256 cellar: :any, arm64_sequoia:     "b8d16f1e2d74a103bc21c41127bc841919f13b6b50e476950a74127e5685192b"
+    sha256               arm64_linux:       "665cbf2ff641a2303f075e0d0547f309b6b1b6c19b2222894b0fd75c8fca58ce"
+    sha256               x86_64_linux:      "9084b9d40121d38337fd3fa83519c2ba9e24bf51cfb8f44b3817a7d2df86c48a"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "flatbuffers" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "pybind11" => :build
-  depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
   depends_on "abseil"
   depends_on "nlohmann-json"
   depends_on "numpy"

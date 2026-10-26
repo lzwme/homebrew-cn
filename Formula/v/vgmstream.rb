@@ -2,11 +2,10 @@ class Vgmstream < Formula
   desc "Library for playing streamed audio formats from video games"
   homepage "https://vgmstream.org"
   url "https://github.com/vgmstream/vgmstream.git",
-      tag:      "r2117",
-      revision: "71e2361042531fe767fb98300cf8c1ee95e539a0"
-  version "r2117"
+      tag:      "r2168",
+      revision: "d9875b1fff307e4759dfb85e49e3d5e6fb196f7c"
+  version "r2168"
   license "ISC"
-  revision 1
   version_scheme 1
   head "https://github.com/vgmstream/vgmstream.git", branch: "master"
 
@@ -17,13 +16,11 @@ class Vgmstream < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "feec60929538026bb46e98a3f86b1b489529733c501bb0e75eedafe0e8b5af6b"
-    sha256 cellar: :any, arm64_tahoe:       "cc16494090e481166eebd827eba42172321e9d85987897aa2a2e14272215105e"
-    sha256 cellar: :any, arm64_sequoia:     "280620bd9a157326fe31cce0bf7575887147a7399a78dcc9950039181b40fa4b"
-    sha256 cellar: :any, arm64_sonoma:      "276590e9e0fb52abccb2ba01d0224308a1b7eaaf06931026024d0fea6a75cec0"
-    sha256 cellar: :any, sonoma:            "48bac949ab508a2070b580a1d273579a1e8ac0f679e40c672b1ee946a12aea8b"
-    sha256 cellar: :any, arm64_linux:       "befa92702eb318b44fbcf4ed8052cbb6541676b45db9f60e47d3fc8a2152b400"
-    sha256 cellar: :any, x86_64_linux:      "cc96639cbdb0e56a3eadf2ff9c6969d52537e961de9cfc9e620c3577ad33b101"
+    sha256 cellar: :any, arm64_golden_gate: "2296b09690a0387667869efeb119ff81f7a3d5a9a671afaf4f76a77d91391cd9"
+    sha256 cellar: :any, arm64_tahoe:       "2cae5223272efd3168247e4a51d997e48504cce6e6e7e044cb5f8f9e31be1490"
+    sha256 cellar: :any, arm64_sequoia:     "ce92928dd88d7614f902cdfdd6940c1bb5e0c61198ecabf2f1fb9505988163de"
+    sha256 cellar: :any, arm64_linux:       "3d588f7dabae5d7eef47e49fa7c9523e374f3df665fc0a8a1d462308610a8d67"
+    sha256 cellar: :any, x86_64_linux:      "fee5af67a1581ce64a20a000ffa892a007672db3f7ba7cd355987c6119530d23"
   end
 
   depends_on "cmake" => :build

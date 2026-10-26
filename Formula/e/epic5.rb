@@ -27,10 +27,14 @@ class Epic5 < Formula
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
 
+  allow_network_access! :test
+
+  def openssl = deps.map(&:name).find { |d| d.match?(/^openssl(@\d+(\.\d+)*)?$/) }
+
   def install
     system "./configure", "--mandir=#{man}",
                           "--with-ipv6",
-                          "--with-ssl=#{formula_opt_prefix("openssl@4")}",
+                          "--with-ssl=#{formula_opt_prefix(openssl)}",
                           *std_configure_args
     system "make"
     system "make", "install"
@@ -39,6 +43,7 @@ class Epic5 < Formula
   test do
     connection = spawn bin/"epic5", "irc.freenode.net"
     sleep 5
+  ensure
     Process.kill("TERM", connection)
     Process.wait(connection)
   end

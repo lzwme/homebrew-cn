@@ -34,6 +34,8 @@ class Epsilon < Formula
   depends_on "libtool" => :build
   depends_on "popt"
 
+  deny_network_access!
+
   def install
     # None of our patches apply, so regenerate `configure` to fix the `-flat_namespace` bug.
     system "autoreconf", "--force", "--install", "--verbose"

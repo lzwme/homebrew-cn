@@ -3,18 +3,17 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https://commitizen-tools.github.io/commitizen/"
-  url "https://files.pythonhosted.org/packages/c4/ad/ad4e6fafa0627f38ebd3c65ad63767f3f07e0b33b72cbff0d3cadddf6ecb/commitizen-4.19.2.tar.gz"
-  sha256 "af0fb25f2fb60956b9d64eecd6e3ec7b710c2f9b012ce8728cb32c728c2c5a8a"
+  url "https://files.pythonhosted.org/packages/f4/bc/294ceb7ba99f83dca2bf62942dd325ffca86e504aa41cc42c2982350bd2b/commitizen-4.19.3.tar.gz"
+  sha256 "db77b1d521b5b9a16231a4fd5093d09ca519c5f170938806a784309b81938419"
   license "MIT"
   head "https://github.com/commitizen-tools/commitizen.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "d494db3edf823e13f234f19d6e14f330467b9ce164be33cf715c78390fac7b05"
-    sha256 cellar: :any, arm64_tahoe:       "fa37aee9ed4da2c9e0d0f9783deb4881c3c3989ac235c7ace8f3356f33030082"
-    sha256 cellar: :any, arm64_sequoia:     "213327bf957b985d1f4692d089d91ff94faeb0b3af649a505cd0963a167b9cb7"
-    sha256 cellar: :any, arm64_linux:       "6f1bc3c66b619bb2884fe5e631b0cdfcb1506791d5ff633c4cd2e14a11709ea8"
-    sha256 cellar: :any, x86_64_linux:      "bc0e8b11d47232c7dd38ad8e570f67b26e93b7e072a7219fadca1309b204800e"
+    sha256 cellar: :any, arm64_golden_gate: "cdf9f13b556405577d4910af8afc67898e061aa1b85d0ec3a264864c7d7be71c"
+    sha256 cellar: :any, arm64_tahoe:       "e0194cc099b1510d176ab809fcbcf0f209e11508f59df5414b45fb7f5aff7578"
+    sha256 cellar: :any, arm64_sequoia:     "8ef960e2e0318c48a72fe7a0fd9fc7430fa9449fa5414805963e82d3f510934b"
+    sha256 cellar: :any, arm64_linux:       "6033ce13d31afbfe4f6d0c165a224cfddf5a73ae3a365b25e2572a3ccecb0bac"
+    sha256 cellar: :any, x86_64_linux:      "5223fdd80e7acfa0a3608fef5baf65751426429a22a3319026c46dac1dd30b09"
   end
 
   depends_on "rust" => :build
@@ -82,18 +81,18 @@ class Commitizen < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
-    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
+    url "https://files.pythonhosted.org/packages/08/72/fc01563df95c189a9f65850096bdc205bc2fe37da6c740cd64afaf18d07e/tomlkit-0.15.2.tar.gz"
+    sha256 "83e32755ba1d20d9340bd069ee97e9f6232ba2346b63ffcba425de01f7e327a6"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
-    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
+    url "https://files.pythonhosted.org/packages/69/4a/82d61476a1ccc20d43d0805724c5de4baa4971131a8db1816705ef53fe16/wcwidth-0.9.3.tar.gz"
+    sha256 "dfe7cfbd4cb59db9fe0931bd6091ab4a95b3acc5d56bfb50fa9fef0ccba5dc5c"
   end
 
   resource "wrapt" do
-    url "https://files.pythonhosted.org/packages/3e/d2/a254a26d8ceaea87e0eee2e89fcfe53ddc1858418647493bb2937549ab6f/wrapt-2.5.0.tar.gz"
-    sha256 "c48cdb6c904dca76d9915a579e4a5fab6b0c25f650c1019ce78a78effaf7a345"
+    url "https://files.pythonhosted.org/packages/04/22/89e2f3bdae5cb34e0cab0cd86d7172dbf418de4b46c9b17b9c7a560dfa44/wrapt-2.5.1.tar.gz"
+    sha256 "f595bb0185aab3e9dc31950c95d914f56ea8278810c3b928f3426e12ed6d27bc"
   end
 
   def install

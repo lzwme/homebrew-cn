@@ -1,17 +1,17 @@
 class Leetgo < Formula
   desc "CLI tool for LeetCode"
   homepage "https://github.com/j178/leetgo"
-  url "https://ghfast.top/https://github.com/j178/leetgo/archive/refs/tags/v1.5.1.tar.gz"
-  sha256 "0bcd0b22ec53e527f06d9a12aa8540f0dfa97ba5ff0c5aa0a095002ff7c90c42"
+  url "https://ghfast.top/https://github.com/j178/leetgo/archive/refs/tags/v1.5.2.tar.gz"
+  sha256 "d196b7daa0f5ecd49a9dfb735650d7ff8f4ab2df4ce8e3b4d0ec1cd00a457c61"
   license "MIT"
   head "https://github.com/j178/leetgo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c29e5af6f6c0a5141973e2ebb47c16b81f89c81dc79fc5b4d5c21cc71de3c759"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7f2f1d64e6ea8cb561d3dbc45f7d5967c31e3a0e749512bf36d8e7827fd28044"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e1e9022f107c4b5f4afc726d3bc42790ca6209373994b159aae20f8a9a9ed5d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "50d738ae70d3a3f98ab4dd3f15ef4e79e24afbf1a8b00f6e1556cdd9c68bd240"
-    sha256 cellar: :any,                 x86_64_linux:      "6f879bfc111fba845fd6644a267c0608c962d20ed92749708d456394ead09b04"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ccd2f3d722fae5a3724b2b21dde7ca0763b080fb9f6832ade261e7f98e2f8340"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9d6791f18f2bc8fa5eb8c7602b0e365fd61e33c33e87e123558b203fd41745a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3cd3f961c6f8aa4c9aaa6a586f08635930a94052d9ca8b9d0247eef8bbcf1ce5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "db51ef3d2d1b5852c8639d0fa0d075b6162ecd10ead1d2c23ec04a5acde6a3c7"
+    sha256 cellar: :any,                 x86_64_linux:      "3f557ad6a9cd57eb779dfd4c490f6614dc3d2f7aa8fd35158510b3f5a574b397"
   end
 
   depends_on "go" => :build

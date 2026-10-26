@@ -5,14 +5,10 @@ class DjlServing < Formula
   sha256 "f91e90522f38a8c86172c34620d88202e7222233804a240f05d10c51b72085c0"
   license "Apache-2.0"
 
-  # `djl-serving` versions aren't considered released until a corresponding
-  # release is created in the main `deepjavalibrary/djl` repository.
+  # DJL Serving releases independently of the main DJL project.
   livecheck do
-    url "https://docs.djl.ai/versions.json"
+    url :homepage
     regex(/^v?(\d+(?:\.\d+)+)$/i)
-    strategy :json do |json, regex|
-      json.map { |item| item["version"]&.[](regex, 1) }
-    end
   end
 
   bottle do

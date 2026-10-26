@@ -3,18 +3,16 @@ class MkdocsMaterial < Formula
 
   desc "Material Design theme for MkDocs"
   homepage "https://squidfunk.github.io/mkdocs-material/"
-  url "https://files.pythonhosted.org/packages/f1/cd/c05d3a530ba7934f144fb45f7203cd236adc25c7bdcc34673d202f4b0278/mkdocs_material-9.7.7.tar.gz"
-  sha256 "c0649c065b1b0512d60aad8c10f947f8e455284475239b364b610f2deb4d0855"
+  url "https://files.pythonhosted.org/packages/b9/02/3c0df248819286810d8479b3a72d9531db0cc36c042fe1ab3985f137c664/mkdocs_material-9.8.0.tar.gz"
+  sha256 "1ed4c5edaf405a3fb62e55288b8fdff592971729361548b1ffa757bf9849fb81"
   license "MIT"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "38f5f7ce3e258c08839db740eac551eda4b6089824f618b4bc4c9e21ef586d0d"
-    sha256 cellar: :any, arm64_tahoe:       "463f922c807b698d8212bd11a08e43292e8f2208f5b8786d1f4fac63034e77c7"
-    sha256 cellar: :any, arm64_sequoia:     "58d80ca9ed58449b53f80844f24c4db355677901f8ee89e134bc61cd69c5d5d7"
-    sha256 cellar: :any, arm64_linux:       "49ce2e31f85285330acdd3d7ff062a70565766811ee2c2949e40252a2543760e"
-    sha256 cellar: :any, x86_64_linux:      "8595d5ef7b6d447ec58ce44ca88e8c8b42362300e21eb6a8cda27bb49f9d84ba"
+    sha256 cellar: :any, arm64_golden_gate: "95ac208be9135b4d133a86aa5fd9c27aaf4ff365976f14a00dad18d13b8a3898"
+    sha256 cellar: :any, arm64_tahoe:       "356810bea06c89a975455035293bdd31883aa4a40c60def2ae2235557f0b31cd"
+    sha256 cellar: :any, arm64_sequoia:     "1dec40b7bb6ec13b345a86c11ebfdde40ca9d06340eecb2d2e562d6399dab91e"
+    sha256 cellar: :any, arm64_linux:       "2706c4a831310c56e9c570062a1b844e14fce496d56699c9edd7f5e717c774d3"
+    sha256 cellar: :any, x86_64_linux:      "0df9eb8b681fefd17d232a208b3a4bb17c37b715ad5a9060d1a3310b1580c395"
   end
 
   depends_on "certifi" => :no_linkage
@@ -31,8 +29,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "backrefs" do
-    url "https://files.pythonhosted.org/packages/ec/56/4744bcd0c82184e80c52b0ac4076c261a8ffa1f1b343ff2f6e89ce0e1cef/backrefs-8.0.tar.gz"
-    sha256 "b556cd7d36c3a3a2f256b89590b176b8eddfb73bcfaee3a3ddd84ea66d21ce50"
+    url "https://files.pythonhosted.org/packages/68/bc/c4b75b0279b2cf9e208c7dea5755a452d158a32abe1b7330824ff1127e86/backrefs-8.1.tar.gz"
+    sha256 "f86d9312df3ebae1241758af80809a319cafa1d8f32189edfb242c9aa55573b6"
   end
 
   resource "charset-normalizer" do
@@ -66,8 +64,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/f8/4f/700155c8c20d9e655dd0732b5fc3c7614f291b9148da271d7388e50bf774/markdown-3.11.tar.gz"
-    sha256 "180224db6aed87ba9ce1f2781ebcd5826253de8ff637112090e24b84502bbf9f"
+    url "https://files.pythonhosted.org/packages/f4/32/0b4d0297064244f04af4331b65de16237cc3cce07474171ee14222a28981/markdown-3.11.2.tar.gz"
+    sha256 "87bf5d90f2d2882e2c02fcda182c2800456b985bff38913867c49706481514b0"
   end
 
   resource "markupsafe" do
@@ -111,8 +109,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/90/a1/d5f9002a70298c64a789779077d8dd90c10aa1f47fe40c86802df874f2a6/platformdirs-4.12.4.tar.gz"
-    sha256 "63743c02414e755de4e31b8f68125c1407495b86c5a006e203c01ff8b9924250"
+    url "https://files.pythonhosted.org/packages/58/e6/d0abbb256b44e6a05748c6942511ff67db8dbb068de0c35b24bf1b395b09/platformdirs-4.13.5.tar.gz"
+    sha256 "05831adf87d392760f4b5c3a0a95579ab5a10b18b9b9bd43680dcb47544788a0"
   end
 
   resource "pygments" do
@@ -121,13 +119,13 @@ class MkdocsMaterial < Formula
   end
 
   resource "pymdown-extensions" do
-    url "https://files.pythonhosted.org/packages/2a/94/858e0163cb4d83d6d8234018a01792c749a56daee41794cac7d6c46661e8/pymdown_extensions-12.1.tar.gz"
-    sha256 "fdb8f47f5d7fd069d10ef2a7d8908e613d7865ff0419d544a0ffd3984e884f11"
+    url "https://files.pythonhosted.org/packages/f3/fe/ac50ee24a80a1b344e643f6fb626063cc7041b978cd1dd9a7f9963ae1cd1/pymdown_extensions-12.3.tar.gz"
+    sha256 "a7f2a4e0bc60c6e6babfa7922cfb3b01cd640eb00fb208f3c582e12bae00ea67"
   end
 
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
-    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+    url "https://files.pythonhosted.org/packages/0e/df/f15f80383f152452d8985b36d95cb8751f901a3e0ff4cd27f7e118f168e2/python_dateutil-3.0.0.tar.gz"
+    sha256 "7ebcb3c29a92f3ceafe79a7a48a5c45677e9e004bbeec5742ac0bbb00560b7a2"
   end
 
   resource "pyyaml" do
@@ -148,6 +146,11 @@ class MkdocsMaterial < Formula
   resource "six" do
     url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
+  end
+
+  resource "tzdata" do
+    url "https://files.pythonhosted.org/packages/d9/68/f1b440335057bfce71b6e50a9d09445aa2ecbd08359a337976627b8409e7/tzdata-2026.5.tar.gz"
+    sha256 "8cc73c0a0bfca7dbfa59235d60b2eff82231dee33f53d206db1acd9173cfc0a7"
   end
 
   resource "urllib3" do

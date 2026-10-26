@@ -8,11 +8,12 @@ class AnsibleLint < Formula
   license all_of: ["MIT", "GPL-3.0-or-later"]
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "64c3485c97c01a08036ac0e5875b407989a6ae8393e2e162b95423707b4056fe"
-    sha256 cellar: :any, arm64_tahoe:       "a70e3ac007ddc64f6d5102df7c9ea0c4e5c8cd772135d69a5c81d5948fe8de60"
-    sha256 cellar: :any, arm64_sequoia:     "e57769f239422ef34095f0244e7b317a1c9f499f7c89379419db411171b5f98d"
-    sha256 cellar: :any, arm64_linux:       "96ff3c8bf88505683fb0f2c1e13dd12858ff91bb4cb83815b01f592741265e0d"
-    sha256 cellar: :any, x86_64_linux:      "b68c7468ade77c5b0182e863fd3e686d39f9bbb9585f69fa3a6cf286266cde45"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "02be0fda16aa7f3990a0bc5488979b1aae7c843041f2e1192c89e301bb32b30d"
+    sha256 cellar: :any, arm64_tahoe:       "82004779e06068434eb201e4a983bd3163683fb5ccee505fc58f1787b830d61e"
+    sha256 cellar: :any, arm64_sequoia:     "c0be2431cf10a7521feb31d4f0724dd1479adffe565ca9b59cf3af1c1d7b8468"
+    sha256 cellar: :any, arm64_linux:       "c42024db2dd5109e7c87c409c8e7c7e2e68b919016dcc3d34eef2766e40d5115"
+    sha256 cellar: :any, x86_64_linux:      "d43d358f546fee136d98c4381c858f9169421784f63fbe4b5c2123d2fb32d02d"
   end
 
   depends_on "pkgconf" => :build
@@ -20,7 +21,7 @@ class AnsibleLint < Formula
   depends_on "ansible" => :test
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
 
   pypi_packages exclude_packages: ["cryptography", "rpds-py"]
@@ -33,6 +34,14 @@ class AnsibleLint < Formula
   resource "ansible-core" do
     url "https://files.pythonhosted.org/packages/0b/27/d02c3f75e9f1468b5efbe49667574f68331b17e8a9f2bb99e1d18be70052/ansible_core-2.21.5.tar.gz"
     sha256 "65bb3148c58ebb843cd5074004c805f404f152114d98476dd823324616c9c6cb"
+
+    # Python 3.15 startup fix, upstream PR ref, https://github.com/ansible/ansible/pull/86976
+    patch do
+      url "https://github.com/ansible/ansible/commit/ee5c59156c61bc1f452a61846138e0d40427aeab.patch?full_index=1"
+      sha256 "d3d25e65af572af49e2c75d4096eba6ca3b97ce2b75f06977e2b6d189e2451c8"
+      type :backport
+      resolves "https://github.com/ansible/ansible/issues/87677"
+    end
   end
 
   resource "attrs" do

@@ -5,7 +5,6 @@ class Nmap < Formula
   sha256 "0c12660eddbf7eabeff6996cb0c044a4eadf2bb0c6fbcb340d6cf72b1caee402"
   license :cannot_represent
   compatibility_version 1
-  head "https://svn.nmap.org/nmap/"
 
   livecheck do
     url "https://nmap.org/download"
@@ -18,6 +17,12 @@ class Nmap < Formula
     sha256 arm64_sequoia:     "e3fbe5d32fee8255873112ea0b334370e69dd06d2cdc67ae4595e61aa015066f"
     sha256 arm64_linux:       "c2aed414bec25d82ed498b9f66cae486a8e586cd75ab4dd5af50a3dfe22d6830"
     sha256 x86_64_linux:      "3fe32360824e60cd1f0ed7da590edeaf1ffe629a3a14e2dffab1f32794992f28"
+  end
+
+  head do
+    url "https://svn.nmap.org/nmap/"
+
+    depends_on "autoconf" => :build
   end
 
   depends_on "python-setuptools" => :build

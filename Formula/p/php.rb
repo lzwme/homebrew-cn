@@ -90,7 +90,8 @@ class Php < Formula
     depends_on "zlib-ng-compat"
   end
 
-  allow_network_access! :test
+  # Allow network access during `:postinstall` and `:test` phases
+  deny_network_access! :build
 
   def install
     system "./buildconf", "--force" if build.head?

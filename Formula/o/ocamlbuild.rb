@@ -4,7 +4,7 @@ class Ocamlbuild < Formula
   url "https://ghfast.top/https://github.com/ocaml/ocamlbuild/archive/refs/tags/0.16.1.tar.gz"
   sha256 "2ba6857f2991b7f69368e8db818b163d31cf5a367f15f5953bf8f01a77b3d4fc"
   license "LGPL-2.0-only" => { with: "OCaml-LGPL-linking-exception" }
-  revision 2
+  revision 3
   head "https://github.com/ocaml/ocamlbuild.git", branch: "master"
 
   livecheck do
@@ -13,11 +13,11 @@ class Ocamlbuild < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "00c40f3ff05ff224beddef09dd5bfe2052b8473cdad244f3af894250992acdcf"
-    sha256 arm64_tahoe:       "8b8baa86b4c4fd8d800937c3f82566a65dcaca3c2c03c382f9c74e089c7704d4"
-    sha256 arm64_sequoia:     "b61d6af332d1e8d087cae5eed2b5d5fbe8c41dd0a18f99a4fd22f1376fa70623"
-    sha256 arm64_linux:       "36c2e39997ef8991ab31691ac6007840628b587422c7792bcd71b5f53230d3d5"
-    sha256 x86_64_linux:      "109e4856e2c458d99166e0462dd7e8456d46cc554759d08405da38b1f75a17ac"
+    sha256 arm64_golden_gate: "5722643be1d3d928c86f2f582bcf95aea02330fb8149d23a12726da276ee7918"
+    sha256 arm64_tahoe:       "a2aa01c207e970539ce7f2e9ae047ad76d7ff346cd5ba5e1146ef426973bb982"
+    sha256 arm64_sequoia:     "5baf9dc4ff8bd8c48873bfc67dd45ad68d889ef488096c7166fc1d575e9c09af"
+    sha256 arm64_linux:       "927b17d05056fc02775cf3799ed31bbf34600a5d94b1e0ecda9d011e28f654f2"
+    sha256 x86_64_linux:      "ad8116990ff7f3db73e0480822e1d97aea2178385719d73fb46b37d1f6d7574d"
   end
 
   depends_on "ocaml"

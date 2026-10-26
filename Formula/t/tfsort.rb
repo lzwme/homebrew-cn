@@ -1,17 +1,17 @@
 class Tfsort < Formula
   desc "CLI to sort Terraform variables and outputs"
   homepage "https://github.com/AlexNabokikh/tfsort"
-  url "https://ghfast.top/https://github.com/AlexNabokikh/tfsort/archive/refs/tags/v0.7.4.tar.gz"
-  sha256 "689434eacb8a020a3194b8e897b0f34daca1aa4820a2cfd9bb0f8b558bdc4858"
+  url "https://ghfast.top/https://github.com/AlexNabokikh/tfsort/archive/refs/tags/v0.7.5.tar.gz"
+  sha256 "abd7b505e02f595d328fd675ceb8d782481fb8a5073dfd9a51a4e09516c9206a"
   license "Apache-2.0"
   head "https://github.com/AlexNabokikh/tfsort.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bf0f38384d1c8c1aa483d2077cf125a3931874e7870cc2c58f7418cb1e1b2e99"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bf0f38384d1c8c1aa483d2077cf125a3931874e7870cc2c58f7418cb1e1b2e99"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bf0f38384d1c8c1aa483d2077cf125a3931874e7870cc2c58f7418cb1e1b2e99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b54ad921476b49a3c389fa288d17d6ff7fbe67f133e0718b364df3d3cf63aabf"
-    sha256 cellar: :any,                 x86_64_linux:      "19654bf787c357d974637d2a228a877d1a4da3b997f55e411f6ade75fe15ad62"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ae02861966697f33cbffa601b67694a2323c2cf92f6fc6bf1283f632f97c564e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ae02861966697f33cbffa601b67694a2323c2cf92f6fc6bf1283f632f97c564e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ae02861966697f33cbffa601b67694a2323c2cf92f6fc6bf1283f632f97c564e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c05793344f09bd39e72908a00a02bd909257dc2ac98cc583cfe9fd47809bc64e"
+    sha256 cellar: :any,                 x86_64_linux:      "d2ea6f9c401e1393a221fba81b6e44d89a086dcd9b2cc54791c923e02f123a33"
   end
 
   depends_on "go" => :build

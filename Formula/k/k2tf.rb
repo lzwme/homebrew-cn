@@ -4,7 +4,7 @@ class K2tf < Formula
   url "https://ghfast.top/https://github.com/sl1pm4t/k2tf/archive/refs/tags/v0.8.0.tar.gz"
   sha256 "9efdac448a99dbdda558eb93b63ed0b3ccabbac43c14df21ef3ba9bd402a4003"
   license "MPL-2.0"
-  head "https://github.com/sl1pm4t/k2tf.git", branch: "master"
+  head "https://github.com/sl1pm4t/k2tf.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9c62d961aacc54f15e26def3f930fb825eb1c99bdb591bea8df2cfdb880a668a"

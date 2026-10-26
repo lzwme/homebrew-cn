@@ -11,15 +11,19 @@ class CreateDmg < Formula
 
   depends_on :macos
 
+  deny_network_access!
+
   def install
     system "make", "install", "prefix=#{prefix}"
   end
 
   test do
-    File.write(testpath/"Brew-Eula.txt", "Eula")
-    (testpath/"Test-Source").mkpath
+    assert_match version.to_s, shell_output("#{bin}/create-dmg --version")
+
+    # The test sandbox blocks `hdiutil resize`/`attach`, so stop at the existing output check before imaging
     (testpath/"Test-Source/Brew.app").mkpath
-    system bin/"create-dmg", "--sandbox-safe", "--eula",
-           testpath/"Brew-Eula.txt", testpath/"Brew-Test.dmg", testpath/"Test-Source"
+    touch testpath/"Brew-Test.dmg"
+    output = shell_output("#{bin}/create-dmg --sandbox-safe #{testpath}/Brew-Test.dmg #{testpath}/Test-Source", 1)
+    assert_match "Output file already exists", output
   end
 end

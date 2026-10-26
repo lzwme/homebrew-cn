@@ -1,17 +1,17 @@
 class Httm < Formula
   desc "Interactive, file-level Time Machine-like tool for ZFS/btrfs"
   homepage "https://github.com/kimono-koans/httm"
-  url "https://ghfast.top/https://github.com/kimono-koans/httm/archive/refs/tags/0.51.0.tar.gz"
-  sha256 "4c83d3a54aa2b4089e8009049dcf61f501ede0d5b6d03691b8d783bd43bb960b"
+  url "https://ghfast.top/https://github.com/kimono-koans/httm/archive/refs/tags/0.51.1.tar.gz"
+  sha256 "4c7e8947d41478f6f995046987614a1903e35766fe8a1a8e0847de7a7b805b24"
   license "MPL-2.0"
   head "https://github.com/kimono-koans/httm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "937e9536209a61f1bc629ab7ca6a4d10ae4e1b3c39154f8014b7536970aab060"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "06a9a1e96371482a45cf87044cebc8ca7df154362673525db291f44dc515d957"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2f72e1d233cefe264f1a4f9618792dba605955e80ca7e0bf31077387b5a42eaf"
-    sha256 cellar: :any,                 arm64_linux:       "8c8093a9c667079555b12ef32d26dfd2bf4036874e8f96e8320d81dd7e75d420"
-    sha256 cellar: :any,                 x86_64_linux:      "bde98379a2230dca7f38433924b97ae71789bbe806feb1506d2acd9dd023e14d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e3d65f41ccaaf9d42e59bb8411426f38615db96752cbb674e6219ba507b3e88e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f093959bdae23e8ecee8df9b8bd3c5998dce40740d53b8c8a30b01df85fe3c49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f3a761da79e41be6c9f49ab7d7afc9f8cab9570bb6344618fe1694fbeceb8fb4"
+    sha256 cellar: :any,                 arm64_linux:       "fb72b77786d49a55b94596b8a2ba7c03046554ddba1c98b6255af046493cfde2"
+    sha256 cellar: :any,                 x86_64_linux:      "4600d73a9dd8a9b781666b487c3f8f0bb56b235a742d1028de45b123326547c9"
   end
 
   depends_on "rust" => :build

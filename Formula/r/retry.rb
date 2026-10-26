@@ -1,20 +1,16 @@
 class Retry < Formula
   desc "Repeat a command until the command succeeds"
   homepage "https://github.com/minfrin/retry"
-  url "https://ghfast.top/https://github.com/minfrin/retry/releases/download/retry-1.0.6/retry-1.0.6.tar.bz2"
-  sha256 "b5bbdaee16436fabae608fbc58f47df9726b87b945c9eca1524648500b9afdf3"
+  url "https://ghfast.top/https://github.com/minfrin/retry/releases/download/retry-1.0.7/retry-1.0.7.tar.bz2"
+  sha256 "eb96b60244e09f407db9eb32cb9ad52361aaef4d19ca84817a6f88f577b60d6b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e7674074b66a5fca43ae2f063df497ac8dcfe4308819f402e6b4b264068c747b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "77c76b42cc0cf87c1df0336f794ed29b0daf828d3c43dc2465df8936260f2040"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b67d9e7e3b419a6369f651a9eea7c56342004e9aecfea372c8551fd024a45b97"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "91d9191c2224348d123ab4b8e5763ec2337c4846f3d8d391aba99bbe3a6c9898"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:     "e7ef82f7765062f44a5ff5b4ba8bee756c3e55d380bc0b0b99622f78b7740ce3"
-    sha256 cellar: :any_skip_relocation, sonoma:            "3c3f927459a0efd10619ecf2b412a1380c148dcc796e9f9e7e174eb0499fdc12"
-    sha256 cellar: :any_skip_relocation, ventura:           "7f24158fe4cccb03dca7bc286df3744f4fbabf78cf2af266d3269a31e06466a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0e11ae4779ffb1e810dea7f628d0820ed8ee798b268441bdcc3f12baee7deec1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "259bb647677bf0520f8341216056f6e6f1be2cddacc822b729932f38f9449d74"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "da33a5e97f32fc809d45071ccf84d230b9647c14092eb7ce36b415df2b8b8c34"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "60acf30cd8124a07ca056a042cc970d73801333d61358e57a63c6b04d2fdc896"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c52292ebe19072bb8aa91d19d49e5741d17839166b309c37fe130e22c7f545bc"
+    sha256 cellar: :any,                 arm64_linux:       "6b45ef0a3bbb613e1268d4305586dff4dafbf65b8e392651c43ca2ef26cc192c"
+    sha256 cellar: :any,                 x86_64_linux:      "eb370252234a39ee8886942351dc1a1193d7dd0eb272bd1ffd2d223d5d7a39e5"
   end
 
   def install
@@ -23,20 +19,22 @@ class Retry < Formula
   end
 
   test do
-    require "socket"
-    port = free_port
-    args = %W[--delay 1 --until 0,28 -- curl --max-time 1 telnet://localhost:#{port}]
-    Open3.popen2e(bin/"retry", *args) do |_, stdout_and_stderr|
-      sleep 3
-      assert_match "curl returned 7", stdout_and_stderr.read_nonblock(1024)
+    (testpath/"retry.sh").write <<~SH
+      attempt=0
+      if [ -f attempts ]; then
+        read -r attempt < attempts
+      fi
+      attempt=$((attempt + 1))
+      echo "$attempt" > attempts
+      [ "$attempt" -eq 3 ] || exit 1
+      echo success
+    SH
 
-      TCPServer.open(port) do |server|
-        session = server.accept
-        session.puts "Hello world!"
-        session.close
-      end
+    assert_equal "success\n", shell_output("#{bin}/retry --quiet --delay 0 --times 3 -- sh retry.sh")
+    assert_equal "3\n", (testpath/"attempts").read
 
-      assert_match "Hello world!", stdout_and_stderr.read
-    end
+    (testpath/"attempts").unlink
+    shell_output("#{bin}/retry --quiet --delay 0 --times 2 -- sh retry.sh", 1)
+    assert_equal "2\n", (testpath/"attempts").read
   end
 end

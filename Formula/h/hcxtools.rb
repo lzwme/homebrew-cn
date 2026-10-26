@@ -1,18 +1,17 @@
 class Hcxtools < Formula
   desc "Utils for conversion of cap/pcap/pcapng WiFi dump files"
   homepage "https://github.com/ZerBea/hcxtools"
-  url "https://ghfast.top/https://github.com/ZerBea/hcxtools/archive/refs/tags/7.1.2.tar.gz"
-  sha256 "c726b93df32efd3298874b324f820d93cb08a4dae03d9144b0d5062c003fd77f"
+  url "https://ghfast.top/https://github.com/ZerBea/hcxtools/archive/refs/tags/8.0.0.tar.gz"
+  sha256 "4cc9dfe7ab2c7d5cc5f39f887741499b146ee14d0a50bda8113025a0041b3c1e"
   license "MIT"
-  revision 1
   head "https://github.com/ZerBea/hcxtools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b5f01178ab5387a809deeedc4197aa5f7e97e01dd7c312c1ee2e7f2972965c01"
-    sha256 cellar: :any, arm64_tahoe:       "9e01f404748137c27638c3464800c31f4dea874205be7af2c70eeb439db55946"
-    sha256 cellar: :any, arm64_sequoia:     "948b82734d6251902c54d3397525ea88667ab287c8e33c2a9657a668594fb713"
-    sha256 cellar: :any, arm64_linux:       "cab3a33d7881a68af1e80e1ddd8862616ac2ce99d93f03e139f0030367f4ba4a"
-    sha256 cellar: :any, x86_64_linux:      "4209db6ddbfa401e969326c7a6e364d00fab66d938d7d0be8d909c9bf0dfc949"
+    sha256 cellar: :any, arm64_golden_gate: "98183e96545a092ed009d64af62b20a816596237508f25db979d2da8af3bb86b"
+    sha256 cellar: :any, arm64_tahoe:       "e4c48db281a4b647b10e3caf618616a387b4c930b760004c0add9300b8412627"
+    sha256 cellar: :any, arm64_sequoia:     "a8089fea0f570e9a3e88c29d4b50f32dd47da0eb264b674e78a3b0a4b5eb6e9f"
+    sha256 cellar: :any, arm64_linux:       "16f91834b3818bb58d7997798e3ee50878b43f0bb8a7fc94ef07f09fbc08a62a"
+    sha256 cellar: :any, x86_64_linux:      "784ee30bcf3f39ebe59054c25a3719187391ecd3d734dfd8d64e7071038d32cc"
   end
 
   depends_on "pkgconf" => :build

@@ -8,11 +8,12 @@ class Rasterio < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "086c2059b0c3ddada92a80412f2e33cb94d8e94a9788f8e8b8bc967d76132425"
-    sha256 cellar: :any, arm64_tahoe:       "4bd0cf8616b5d4a49ef34a5d07a864fc27ad7560b4eda820b6046618668f5ba3"
-    sha256 cellar: :any, arm64_sequoia:     "dc57ce0f611a49d0ad8a341a0fa98ce0c650f0a941e350401dafe6184787f1da"
-    sha256 cellar: :any, arm64_linux:       "4b32288d2d867f47f4bd5299c4ea4f15117d4764775ee688c10fc2bfe9461467"
-    sha256 cellar: :any, x86_64_linux:      "28794166c990e7ac3582782ebfabc4a3f52625998c41bfa9617e169b26a828b6"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "de60db45f209fce6cf75514631ea76903b8275b561a018fc63bc1dabcb1ce277"
+    sha256 cellar: :any, arm64_tahoe:       "994f0dedeca6f9e441d56b1b7b191e736a7923392006ae9c70fc847d55fa4f0d"
+    sha256 cellar: :any, arm64_sequoia:     "91be3a8993cb05942c3921d96b5d66d4ae608ec39f9db7cd3c99ee0a0b046b51"
+    sha256 cellar: :any, arm64_linux:       "465191dec3c6aff205ffac5faae6cc03b167a848de54419ae6e0dcc0de822886"
+    sha256 cellar: :any, x86_64_linux:      "24f007355c3b4aea243790754e7e9d1c5d965da0578d8816d93205b0c09d267d"
   end
 
   depends_on "cmake" => :build
@@ -21,7 +22,7 @@ class Rasterio < Formula
   depends_on "certifi" => :no_linkage
   depends_on "gdal"
   depends_on "numpy"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   on_linux do
     depends_on "patchelf" => :build

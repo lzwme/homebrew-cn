@@ -42,6 +42,8 @@ class E2fsprogs < Formula
     depends_on "util-linux"
   end
 
+  deny_network_access!
+
   def install
     # Enforce MKDIR_P to work around a configure bug
     # see https://github.com/Homebrew/homebrew-core/pull/35339

@@ -72,6 +72,8 @@ class EasyTag < Formula
     type :unofficial
   end
 
+  deny_network_access!
+
   def install
     inreplace "src/tags/gio_wrapper.cc" do |s|
       s.gsub! "ulong", "unsigned long"

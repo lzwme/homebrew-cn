@@ -1,19 +1,16 @@
 class Elm < Formula
   desc "Functional programming language for building browser-based GUIs"
   homepage "https://elm-lang.org"
-  url "https://ghfast.top/https://github.com/elm/compiler/archive/refs/tags/0.19.2.tar.gz"
-  sha256 "745b1edfea2f8e3b36cf6f77ae3b59fd86e8e397d427971f6d903f9fce6163a5"
+  url "https://ghfast.top/https://github.com/elm/compiler/archive/refs/tags/0.19.3.tar.gz"
+  sha256 "e051f8700578a0920024ba9eb3496df6336119058ef996579b1b4a574b8313fa"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "231d411a000db37349b34bbe11a478aea5aa2c242121648ededddc8703e32c69"
-    sha256 cellar: :any, arm64_tahoe:       "bc5a95d3d5f3a03667fa07c79eb064a657b42953eb737a98014932ecef3230a8"
-    sha256 cellar: :any, arm64_sequoia:     "2a8c28d024de7baeb84a85ca1039317f0973c04270ee4368fa38e5c181a17029"
-    sha256 cellar: :any, arm64_sonoma:      "8c368c94379d704f5c3cb0de16ff3e55623b3b2538bde8da581bb228f32b2d5c"
-    sha256 cellar: :any, sonoma:            "e6533b03db2f6918fb74b40948c2172206f491ba29450cf320f671ac379aeade"
-    sha256 cellar: :any, arm64_linux:       "35ec2376f0ec9a4aa933d58c6a10ee6efb36f2aebe733c09889ba2dc622ef514"
-    sha256 cellar: :any, x86_64_linux:      "f4cb28e29d93cbaa9aa31895bf3ca71dba4a93259425693bd7da91d0f24fcd90"
+    sha256 cellar: :any, arm64_golden_gate: "58aab6f16a5900cad12eb45300f7d80ca00cbf4ab993cda6b4a7ec0ef98963ad"
+    sha256 cellar: :any, arm64_tahoe:       "d7269573de9e73adb8940893d7009eca38c008236e8738119ab02e9f5c77d057"
+    sha256 cellar: :any, arm64_sequoia:     "71ef1668e5f6c738e40bbd154cf72e94f0c4e2616b295c5694b2319e943235ee"
+    sha256 cellar: :any, arm64_linux:       "6baa8a969d9e526575606ff040499e3e13be19c11e8dc5914f4a9af6920aaf3d"
+    sha256 cellar: :any, x86_64_linux:      "4fb7148cfee2d86353a61e0e78b9534ce79c8d84154d3cf4f8365cf0182aca5b"
   end
 
   depends_on "cabal-install" => :build
@@ -26,6 +23,10 @@ class Elm < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  # The reactor frontend is compiled by Template Haskell, which downloads Elm packages,
+  # so this cannot use an offline `fetch` phase; `elm make` in the test downloads them too.
+  allow_network_access! [:build, :test]
 
   def install
     # Following the process from the Dockerfile for building elm binaries here:

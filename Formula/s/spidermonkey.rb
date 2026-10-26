@@ -1,11 +1,10 @@
 class Spidermonkey < Formula
   desc "JavaScript-C Engine"
   homepage "https://spidermonkey.dev"
-  url "https://archive.mozilla.org/pub/firefox/releases/140.17.0esr/source/firefox-140.17.0esr.source.tar.xz"
-  version "140.17.0"
-  sha256 "4d6ed3b18b2069c55bab12d8ba95da6013ac0b036d8a031df8b9f39a25d05c33"
+  url "https://archive.mozilla.org/pub/firefox/releases/153.5.1esr/source/firefox-153.5.1esr.source.tar.xz"
+  version "153.5.1"
+  sha256 "c6888848f90e7ebeacad38725b9bbbfe7c9bea7078098d47a2cf2c1ff3e18b83"
   license "MPL-2.0"
-  revision 1
   compatibility_version 1
   head "https://hg.mozilla.org/mozilla-central", using: :hg
 
@@ -17,11 +16,11 @@ class Spidermonkey < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "cf8ee6210f82f51bf6030481200e290047c30c40f424e913f9ab94ad95e8461c"
-    sha256 cellar: :any, arm64_tahoe:       "fe7c36820c44d3596bf6ccf0be1f780f10c7d45b2733cc19384c1c5027b4f750"
-    sha256 cellar: :any, arm64_sequoia:     "300c9e96e7e7af78e900adcb7981ac103aac6567f38be89f744d0ec3c46c3d8b"
-    sha256               arm64_linux:       "c93cbe80d436dbcabeb66911873cccc9e81dacb2b55aaa9a78c60c005ee1b7f9"
-    sha256               x86_64_linux:      "e769c6bb279709ef91d701e89fc9625bf84491efa43bbe5992279f683ff3ac2f"
+    sha256 cellar: :any, arm64_golden_gate: "a878cdc3d06e6543f366b0322ac3017f0002119b62845142b7e99aa29141893f"
+    sha256 cellar: :any, arm64_tahoe:       "6f688fc366292c96a8ba09adffa92774237175a85db1c1fbbcbef8a63b7dfea8"
+    sha256 cellar: :any, arm64_sequoia:     "6d4f50836d9d27c92c76829bb97c2e2dd85a22ba8f96a9a02dba80926254442a"
+    sha256               arm64_linux:       "255d2a86d885b5b5b345b6dc94f9d8244fb9baa41234bf0e272a2c237f36cc5a"
+    sha256               x86_64_linux:      "1d270a2eb1199bf626bf5080c4e935f2b2fbb73fa9517ca7427b112f58cbdd7f"
   end
 
   depends_on "cbindgen" => :build
@@ -73,35 +72,9 @@ class Spidermonkey < Formula
     resolves "https://bugzilla.mozilla.org/show_bug.cgi?id=1973994"
   end
 
-  # Backport support for Python 3.14
-  patch do
-    url "https://github.com/mozilla-firefox/firefox/commit/d497aa4f770ca02f6083e93b94996a8fe32c2ff4.patch?full_index=1"
-    sha256 "026f91a56cd60907a87c62dd4143eac8300d6fc7433b94888229c632a43c34bf"
-    type :backport
-    resolves "https://bugzilla.mozilla.org/show_bug.cgi?id=1969769"
-  end
-
-  # Fix Rust target detection for OpenEmbedded Linux.
-  # TODO: Check resolution in https://bugzilla.mozilla.org/show_bug.cgi?id=2068494
-  # Fixes:
-  # checking for rust host triplet...
-  # ERROR: Don't know how to translate x86_64-pc-linux-gnu for rustc
-  patch :DATA
-
   def install
     ENV.runtime_cpu_detection
     ENV.O3 if DevelopmentTools.clang_build_version >= 1500 # lld doesn't support -Os
-
-    # Vendored encoding_rs 0.8.35 fails to build with rust 1.95 (Mask::select moved
-    # to a trait method). Use cargo's `[patch.crates-io]` to redirect to the upstream
-    # commit that fixes it (https://github.com/hsivonen/encoding_rs/pull/130).
-    File.open(".cargo/config.toml.in", "a") do |f|
-      f.puts <<~TOML
-
-        [patch.crates-io]
-        encoding_rs = { git = "https://github.com/hsivonen/encoding_rs", rev = "dc06d71cb14390433bcd5a78975cbe7a29e47333" }
-      TOML
-    end
 
     if OS.mac?
       inreplace "build/moz.configure/toolchain.configure" do |s|
@@ -112,28 +85,32 @@ class Spidermonkey < Formula
       end
     end
 
-    mkdir "brew-build" do
-      args = %W[
-        --prefix=#{prefix}
-        --enable-hardening
-        --enable-optimize
-        --enable-readline
-        --enable-release
-        --enable-rust-simd
-        --enable-shared-js
-        --disable-bootstrap
-        --disable-debug
-        --disable-jemalloc
-        --with-intl-api
-        --with-system-icu
-        --with-system-nspr
-        --with-system-zlib
-      ]
+    # https://firefox-source-docs.mozilla.org/js/build.html
+    ENV["MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE"] = "none"
+    ENV["MOZCONFIG"] = mozconfig = buildpath/"mozconfig"
+    mozconfig.write <<~EOS
+      # Build the JS shell and shared library
+      ac_add_options --enable-project=js
+      ac_add_options --enable-shared-js
+      ac_add_options --prefix=#{prefix}
 
-      system "../js/src/configure", *args
-      ENV.deparallelize { system "make" }
-      system "make", "install"
-    end
+      # Features, optimisations, etc.
+      ac_add_options --disable-bootstrap
+      ac_add_options --disable-debug
+      ac_add_options --disable-jemalloc
+      ac_add_options --enable-hardening
+      ac_add_options --enable-optimize
+      ac_add_options --enable-readline
+      ac_add_options --enable-release
+      ac_add_options --enable-rust-simd
+      ac_add_options --with-intl-api
+      ac_add_options --with-system-icu
+      ac_add_options --with-system-nspr
+      ac_add_options --with-system-zlib
+    EOS
+
+    system "./mach", "build"
+    system "./mach", "install"
 
     rm(lib/"libjs_static.ajs")
 
@@ -141,9 +118,8 @@ class Spidermonkey < Formula
     bin.install_symlink "js#{version.major}" => "js"
 
     # Avoid writing nspr's versioned Cellar path in js*-config
-    inreplace bin/"js#{version.major}-config",
-              Formula["nspr"].prefix.realpath,
-              formula_opt_prefix("nspr")
+    nspr_prefix = formula_opt_prefix("nspr")
+    inreplace bin/"js#{version.major}-config", nspr_prefix.realpath, nspr_prefix
   end
 
   test do
@@ -153,36 +129,3 @@ class Spidermonkey < Formula
     assert_equal "hello", shell_output("#{bin}/js #{path}").strip
   end
 end
-
-__END__
-diff --git a/build/moz.configure/rust.configure b/build/moz.configure/rust.configure
---- a/build/moz.configure/rust.configure
-+++ b/build/moz.configure/rust.configure
-@@ -410,7 +410,14 @@ def detect_rustc_target(
-             return narrowed[0].rust_target
-
--        # Finally, see if the vendor can be used to disambiguate.
--        narrowed = [c for c in candidates if c.target.vendor == host_or_target.vendor]
-+        # Finally, see if the vendor can be used to disambiguate. Autoconf uses
-+        # "pc" where Rust uses "unknown" for generic targets.
-+        vendor_aliases = {"unknown": ("pc",)}
-+        narrowed = [
-+            c
-+            for c in candidates
-+            if c.target.vendor == host_or_target.vendor
-+            or host_or_target.vendor in vendor_aliases.get(c.target.vendor, ())
-+        ]
-         if len(narrowed) == 1:
-             return narrowed[0].rust_target
-
-diff --git a/python/mozbuild/mozbuild/test/configure/test_toolchain_configure.py b/python/mozbuild/mozbuild/test/configure/test_toolchain_configure.py
---- a/python/mozbuild/mozbuild/test/configure/test_toolchain_configure.py
-+++ b/python/mozbuild/mozbuild/test/configure/test_toolchain_configure.py
-@@ -1881,6 +1881,7 @@ def gen_invoke_rustc(version, rustup_wrapper=False):
-                 "x86_64-fortanix-unknown-sgx",
-                 "x86_64-fuchsia",
-                 "x86_64-linux-android",
-+                "x86_64-oe-linux-gnu",
-                 "x86_64-pc-nto-qnx710",
-                 "x86_64-pc-solaris",
-                 "x86_64-pc-windows-gnu",

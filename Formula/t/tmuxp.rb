@@ -3,17 +3,16 @@ class Tmuxp < Formula
 
   desc "Tmux session manager. Built on libtmux"
   homepage "https://tmuxp.git-pull.com/"
-  url "https://files.pythonhosted.org/packages/78/96/6493430a31ecb2c6e36292b758be70655e01802575008d0de77d728f271e/tmuxp-1.74.0.tar.gz"
-  sha256 "9e0480ea012999602635887e0461d395c2d8aa6e36a85b5a6d1d65dcd6c7809c"
+  url "https://files.pythonhosted.org/packages/59/4f/8ce51b546f6d528003e7cc20024b394b6db1261a954d4a757bbb0901da9a/tmuxp-1.76.0.tar.gz"
+  sha256 "aedad329c5934e9380eecf43e4a9372f4f87cab640c9695105e1e91c9daec96f"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "fa959dc7799708913214eff13c8a772ebb5e3ad27feb37e7df967edf7396994b"
-    sha256 cellar: :any, arm64_tahoe:       "1e62fd7fb024ecd0ee4326e44abee84078e574fb083d2ddae2e763160f4ee4fe"
-    sha256 cellar: :any, arm64_sequoia:     "01d21349d338bf70361ac1176136ff4b711ea1b711c374fbdd984fbb665da0d2"
-    sha256 cellar: :any, arm64_linux:       "192c2bcc002c9f09ce65b12746a08b1e71d90cdc55e8556eb2f18463028ad528"
-    sha256 cellar: :any, x86_64_linux:      "2a7d3b9df4048207820b483eb21981cd1476e7aa596b22a0f1ca4b493845d850"
+    sha256 cellar: :any, arm64_golden_gate: "816561b8fc51e06d1534f0760f871efb1752e58b00925695c6b73a1359ddb814"
+    sha256 cellar: :any, arm64_tahoe:       "0032f1f5f4908b34d3e4514ae1c2f2c556e5427f90b6e9057ec043691e06c941"
+    sha256 cellar: :any, arm64_sequoia:     "5c3ae769f968b9e5a80345a25bc8095b33afa26d0d91fa3968a0ae6868fd91c1"
+    sha256 cellar: :any, arm64_linux:       "6989e47f0961bd3c483b400ac32643377f870d96cf699cde9344e608b4459fcb"
+    sha256 cellar: :any, x86_64_linux:      "a51857582e37e31c0122f19949ba7f6fbb83dbc8af7791e59e2a5cf544eee451"
   end
 
   depends_on "libyaml"
@@ -21,20 +20,13 @@ class Tmuxp < Formula
   depends_on "tmux"
 
   resource "libtmux" do
-    url "https://files.pythonhosted.org/packages/72/c2/6abbac4420c35b3f1140c72607117236b160173f74fd86941f99b28375d5/libtmux-0.61.0.tar.gz"
-    sha256 "2d6081081a629b9236a36a64f874667533811d2ce5a1b0caa9c821f4d9d2e618"
+    url "https://files.pythonhosted.org/packages/0c/b8/0410c8487f7673926d141a5aaaf60133984a564b3c90eb4f3f99e92e7740/libtmux-0.62.0.tar.gz"
+    sha256 "41e9e80602b2656fd119b13253b27bad46af5cfef32099be53cdd391e2936b61"
   end
 
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
-  end
-
-  # Fix help formatter shadowing `argparse.HelpFormatter._theme` on Python 3.15
-  patch do
-    url "https://github.com/daeho-ro/tmuxp/commit/d952c0b952c9b60767305d650e3c27be02861dc0.patch?full_index=1"
-    sha256 "850b251caa765f7fe6771ce1a1c713c8fffecbedb66ac1368bd8c5ddde5ac50e"
-    type :unofficial
   end
 
   def install

@@ -57,8 +57,10 @@ class Samba < Formula
   conflicts_with "puzzles", because: "both install `net` binaries"
 
   resource "Parse::Yapp" do
-    url "https://cpan.metacpan.org/authors/id/W/WB/WBRASWELL/Parse-Yapp-1.21.tar.gz"
-    sha256 "3810e998308fba2e0f4f26043035032b027ce51ce5c8a52a8b8e340ca65f13e5"
+    on_linux do
+      url "https://cpan.metacpan.org/authors/id/W/WB/WBRASWELL/Parse-Yapp-1.21.tar.gz"
+      sha256 "3810e998308fba2e0f4f26043035032b027ce51ce5c8a52a8b8e340ca65f13e5"
+    end
   end
 
   # Give macOS libraries `@rpath` install names so installed files don't reference the build tree
@@ -75,8 +77,7 @@ class Samba < Formula
     # Skip building test that fails on ARM with error: initializer element is not a compile-time constant
     inreplace "lib/ldb/wscript", /\('test_ldb_comparison_fold',$/, "\\0 enabled=False," if Hardware::CPU.arm?
 
-    # avoid `perl module "Parse::Yapp::Driver" not found` error on macOS 10.xx (not required on 11)
-    if !OS.mac? || MacOS.version < :big_sur
+    if OS.linux?
       ENV.prepend_create_path "PERL5LIB", buildpath/"lib/perl5"
       ENV.prepend_path "PATH", buildpath/"bin"
       resource("Parse::Yapp").stage do
