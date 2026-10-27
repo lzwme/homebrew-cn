@@ -37,6 +37,8 @@ class Darkstat < Formula
     file "Patches/darkstat/clock_gettime.patch"
   end
 
+  deny_network_access!
+
   def install
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *std_configure_args

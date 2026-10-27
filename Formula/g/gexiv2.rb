@@ -39,9 +39,6 @@ class Gexiv2 < Formula
   end
 
   test do
-    openssl = runtime_formula_dependencies.find { |f| f.name.start_with?("openssl@") }
-    ENV.prepend_path "PKG_CONFIG_PATH", openssl.opt_lib/"pkgconfig"
-
     (testpath/"test.c").write <<~C
       #include <gexiv2/gexiv2.h>
       int main() {

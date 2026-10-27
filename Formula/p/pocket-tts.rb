@@ -9,11 +9,12 @@ class PocketTts < Formula
   head "https://github.com/kyutai-labs/pocket-tts.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "938988cf961db46eb26cca110c4ce577f101f98fe003f7d86f18469ee9b4c8b9"
-    sha256 cellar: :any, arm64_tahoe:       "4e40ac756d91faf57207638db7054405d47059e62018ce43b86bb15c92741d32"
-    sha256 cellar: :any, arm64_sequoia:     "f9bc5561512f23b6e87c9194122a3eae123941c57bd89989cc1c02f5ba313dae"
-    sha256 cellar: :any, arm64_linux:       "4d570eaba17ca66ff4852399a31473d02abaed3fd69c0b4743c77674353ee96f"
-    sha256 cellar: :any, x86_64_linux:      "b44d15c53ebf7fd7292b61424d6e227e04725bce3dcfe63304f9cf4b83508d0d"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "5cb18ae2f8193b7ed0e72568c9723ef5cce4cac2fdc3817e70e8cc5b0dd48eab"
+    sha256 cellar: :any, arm64_tahoe:       "fc0f3418f2765f2a77fb7942fdb90d0540b6aff631d085556459446ae4a982c6"
+    sha256 cellar: :any, arm64_sequoia:     "0ed0105139276b6bc588e5961fd500890b91568ddcbc14b1ff14bcefbe51d7de"
+    sha256 cellar: :any, arm64_linux:       "eecbd2730f901eeeb5b26e7accc5de1145fa57d9824ab6dbf9e4da55005470be"
+    sha256 cellar: :any, x86_64_linux:      "3d21ee68a1bf194656d81eccc6ecf8174aa6303e058c54229d2322d865760d39"
   end
 
   depends_on "cmake" => :build
@@ -25,12 +26,13 @@ class PocketTts < Formula
   depends_on "python@3.15"
   depends_on "pytorch"
   depends_on "scipy" => :no_linkage
+  depends_on "sentencepiece"
 
   on_linux do
     depends_on "openssl@4" # for hf-xet
   end
 
-  pypi_packages exclude_packages: %w[certifi pydantic scipy torch]
+  pypi_packages exclude_packages: %w[certifi pydantic scipy sentencepiece torch]
 
   resource "annotated-doc" do
     url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
@@ -142,11 +144,6 @@ class PocketTts < Formula
     sha256 "fabaf3e0f18a6618d9b36560682562157f77c2b71fcffc7b432be2baed9d753d"
   end
 
-  resource "sentencepiece" do
-    url "https://files.pythonhosted.org/packages/cc/33/ea3cb3839607eb175da835244a798f797f478c5ddf0e8ecdf57ea85a4c70/sentencepiece-0.2.2.tar.gz"
-    sha256 "3d2b5e824b5622038dc7b490897efe05ebbbb9e7350fc142f3ecc8789ef9bdf6"
-  end
-
   resource "shellingham" do
     url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
     sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
@@ -188,41 +185,33 @@ class PocketTts < Formula
   end
 
   def install
-    # Work around superenv breaking aws-lc-sys `-O0` needed to build CPU Jitter RNG
-    ENV["AWS_LC_SYS_NO_JITTER_ENTROPY"] = "1"
-
     # `tokenizers` builds a PyO3 extension through maturin.
     ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup"
 
     # Allow Python 3.15
     inreplace "pyproject.toml", 'requires-python = ">= 3.10,<3.15"', 'requires-python = ">= 3.10"'
 
-    venv = virtualenv_install_with_resources(without: ["hf-xet", "sentencepiece"])
+    venv = virtualenv_install_with_resources(without: "hf-xet")
 
     resource("hf-xet").stage do
-      # Use native-tls instead since building bundled aws-lc is tricky to do indirectly within superenv.
-      # Can consider switching if system copy is supported https://github.com/aws/aws-lc-rs/issues/936
-      inreplace "xet_client/Cargo.toml", 'default = ["rustls-tls"]', 'default = ["native-tls"]'
-
-      venv.pip_install Pathname.pwd
-    end
-
-    resource("sentencepiece").stage do
-      # Bundled abseil aliases libc++ types introduced in macOS 10.13 but upstream targets 10.9
-      inreplace "setup.py", "'-mmacosx-version-min=10.9'", "'-mmacosx-version-min=#{MacOS.version}'" if OS.mac?
+      # Use native-tls rather than needing to build another rustls + aws-lc
+      inreplace %w[xet_client/Cargo.toml xet_data/Cargo.toml xet_pkg/Cargo.toml],
+                'default = ["rustls-tls"]', 'default = ["native-tls"]'
       venv.pip_install Pathname.pwd
     end
 
     # We depend on pytorch, but that's a separate formula, so install a `.pth` file to link them.
     # NOTE: This is an exception to our usual policy as building `pytorch` is complicated
     site_packages = Language::Python.site_packages(venv.root/"bin/python3")
-    pth_contents = "import site; site.addsitedir('#{formula_opt_libexec("pytorch")/site_packages}')\n"
-    (venv.site_packages/"homebrew-pytorch.pth").write pth_contents
+    (venv.site_packages/"homebrew-pytorch.pth").write "#{formula_opt_libexec("pytorch")/site_packages}\n"
 
     generate_completions_from_executable(bin/"pocket-tts", shell_parameter_format: :typer)
   end
 
   test do
+    # Make sure all dependencies use same Python and have compatible version
+    system libexec/"bin/python", "-m", "pip", "check"
+
     assert_match "Results written in ./tts_output.wav",
       shell_output("#{bin}/pocket-tts generate 2>&1")
   end

@@ -9,14 +9,15 @@ class OscCli < Formula
   revision 15
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "1bbe0cf2379bc4fc9eaed98284fbea22ea9d0803983cdc108030aef66ce8ddf4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "c302da506def984034f833df3da284ebdfcf8ada9fcfe34569efc142ca3a3b2b"
   end
 
   deprecate! date: "2026-07-17", because: :deprecated_upstream, replacement_formula: "octl"
   disable! date: "2027-01-17", because: :deprecated_upstream, replacement_formula: "octl"
 
   depends_on "certifi" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: "certifi"
 
@@ -46,8 +47,8 @@ class OscCli < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "termcolor" do

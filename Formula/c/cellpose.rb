@@ -6,20 +6,21 @@ class Cellpose < Formula
   url "https://files.pythonhosted.org/packages/0c/e4/3d4606883a5489b86fa6ab5f65b9d0a243810f64efb934033fe425089d5a/cellpose-4.2.1.1.tar.gz"
   sha256 "229eedea3977184202b2c87b3bd41c609facd742c7203bb4ad3cebd7b6bc6839"
   license "BSD-3-Clause"
+  revision 1
   head "https://github.com/MouseLand/cellpose.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c2ccb3cddaaee0dd9b1de68e6e6fc37fc2febc489847bc97aed5ba7e88296035"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b176b8026c933c76f8ba2c30005d3ed487cfb80b0431ee09e77e5e17b979b1ec"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "217ba5e52dab60115a9ce40372e2fd74b466ef968240130dee37c66f5906a8f8"
-    sha256                               arm64_linux:       "4d9e998bd9c8becffa485c91272af3e3a6d5ead630296b517d20123694d4bb1c"
-    sha256                               x86_64_linux:      "3f73bb1d2b32bdd1da0fb8c8f7d2ae2a58cdb06d6a3f57fc21a46d82d4500829"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a2433696b247e1250707c1a33c53a4f8896bdf5a5a911baf74b7a3505062b401"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "20bd8234e4d0d50e3cfde93f68efc194f681fcdf926e8ef1ecabbee083e2a7ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "adabc3ab263295b0b00e4fb2d83a89058473a1c17a939c33b8c3479f565ba6f3"
+    sha256                               arm64_linux:       "eba826abe031d8a449415afb908a1e899abfc8c6dcd6d2e32162cd9ed7f4defa"
+    sha256                               x86_64_linux:      "668f5c4a519c0d1dd186405ecd6811177f31167a23cb614406ebc5255f88483c"
   end
 
   depends_on "python-setuptools" => :build
   depends_on "numpy"
   depends_on "opencv"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "pytorch"
   depends_on "scipy"
   depends_on "torchvision"

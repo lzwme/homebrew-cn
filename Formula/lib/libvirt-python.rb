@@ -25,6 +25,8 @@ class LibvirtPython < Formula
   depends_on "python@3.15" => [:build, :test]
   depends_on "libvirt"
 
+  deny_network_access!
+
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.match?(/^python@\d\.\d+$/) }

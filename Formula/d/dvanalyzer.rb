@@ -25,6 +25,8 @@ class Dvanalyzer < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     cd "ZenLib/Project/GNU/Library" do
       args = ["--disable-debug",

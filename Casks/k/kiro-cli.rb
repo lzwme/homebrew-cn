@@ -1,6 +1,6 @@
 cask "kiro-cli" do
-  version "2.34.0"
-  sha256 "110bb7630571190659d5bf4ad0359c8dee40fcff14ac7501b0d3f68957238765"
+  version "2.34.2"
+  sha256 "a795ca95ff3fce535a8fcdea32bced5194b4459525f78079bf6c200ac9fe28a3"
 
   url "https://desktop-release.q.us-east-1.amazonaws.com/#{version}/Kiro%20CLI.dmg"
   name "Kiro CLI"

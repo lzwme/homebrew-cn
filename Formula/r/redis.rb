@@ -1,8 +1,8 @@
 class Redis < Formula
   desc "Persistent key-value database, with built-in net interface"
   homepage "https://redis.io/"
-  url "https://download.redis.io/releases/redis-8.10.2.tar.gz"
-  sha256 "b9ffee226b5eecdba98a679260dad764b2a4ebd90dce4ad5ac9e9f3eef9c02b3"
+  url "https://download.redis.io/releases/redis-8.10.3.tar.gz"
+  sha256 "edde778f6bdee7581e42fc139ca9e07e2822212092f7501f99989656e3629d02"
   license all_of: [
     "AGPL-3.0-only", # modules: VectorSimilarity, LibMR
     "Apache-2.0", # modules: ScalableVectorSearch, cpu_features, friso, cndict
@@ -13,7 +13,6 @@ class Redis < Formula
     { any_of: ["CC0-1.0", "BSD-2-Clause"] }, # deps/hdr_histogram
     any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"], # modules: phonetics
   ]
-  revision 1
   compatibility_version 1
   head "https://github.com/redis/redis.git", branch: "unstable"
 
@@ -23,12 +22,11 @@ class Redis < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "da7b1843daf46f283876df1ac40e77f31cc30f58790a690e8d6f2765e447103e"
-    sha256 cellar: :any, arm64_tahoe:       "dceaa39c2157f6654f17430893d452049cf8f08ce3395f56aaf6fb9a0b8b8ed1"
-    sha256 cellar: :any, arm64_sequoia:     "136196e0ed4582a8e950719ab3caa8e445b63ea615cd1eef85c73e483ef505a7"
-    sha256 cellar: :any, arm64_linux:       "aaa76f55e5ba3c70fefb39e82ac0b500ece7793e92b6e33d2e3e460d038ce31f"
-    sha256 cellar: :any, x86_64_linux:      "37db9912d48dc36edb6b8c5b2f6b52d0f7edb96cd6e75e1efce35c1d79ddcc8f"
+    sha256 cellar: :any, arm64_golden_gate: "db851530b19202d1b50530c36128656acbbe8cb1ca612aa4abc76c77a9ec1b25"
+    sha256 cellar: :any, arm64_tahoe:       "44874ce5ce9d799b185b1b5fe635b5b02d94e3b7e457d21181f2bdd7252876d5"
+    sha256 cellar: :any, arm64_sequoia:     "525e115d143cc4750aded54af1f131aae75193cb81e5073cc2d7887f10fd7859"
+    sha256 cellar: :any, arm64_linux:       "fa0458a46a96c824be288b73a43a15ab1211851084394031d578f3ae8678e29f"
+    sha256 cellar: :any, x86_64_linux:      "91f873084654203ae87b25e8d954927fe2d92b5ca8c46ec3511a4b5df348ffeb"
   end
 
   depends_on "autoconf" => :build

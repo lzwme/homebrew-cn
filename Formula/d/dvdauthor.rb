@@ -31,6 +31,8 @@ class Dvdauthor < Formula
 
   uses_from_macos "libxml2"
 
+  deny_network_access!
+
   def install
     system "./configure", "--mandir=#{man}", *std_configure_args
     system "make"

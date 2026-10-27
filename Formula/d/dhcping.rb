@@ -27,6 +27,8 @@ class Dhcping < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "dad6d3c832c13d4199c87f8afb9bd93641b7145990edd3d0747612d3546b70cc"
   end
 
+  allow_network_access! :test
+
   def install
     args = ["--mandir=#{man}"]
     # Help old config scripts identify arm64 linux

@@ -28,6 +28,8 @@ class DiffPdf < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
     wxwidgets = deps.find { |dep| dep.name.match?(/^wxwidgets(@\d+(\.\d+)*)?$/) }.to_formula
     wx_config = wxwidgets.opt_bin/"wx-config-#{wxwidgets.version.major_minor}"

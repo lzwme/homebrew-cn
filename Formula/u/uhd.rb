@@ -6,7 +6,7 @@ class Uhd < Formula
   url "https://ghfast.top/https://github.com/EttusResearch/uhd/archive/refs/tags/v4.11.0.0.tar.gz"
   sha256 "1e53faec13ea2be9dd8f765956157d1434f41fa0a124fac8f7b2340f8445b026"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0"]
-  revision 2
+  revision 3
   compatibility_version 1
   head "https://github.com/EttusResearch/uhd.git", branch: "master"
 
@@ -16,12 +16,11 @@ class Uhd < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "847ca0ec5b746785f4705eaa4c20cb69c9adba076ff58f30caa5091a718d5499"
-    sha256 arm64_tahoe:       "81e042315eecde9fcedb3dba3bb7004cc44e10a2056fff72cdf10f740ad9a56e"
-    sha256 arm64_sequoia:     "bbc1bdd55eedbcdf6144a37541338f2105056ae7b5354792aae0de9ef15f4df5"
-    sha256 arm64_linux:       "bd8da91511fbcf52ffa73a33ac5cf7876c6b709f8c3f651d3c4923e9a23a838e"
-    sha256 x86_64_linux:      "9a07f4a5d353299fd565f15e80178a3751b200a33462b2f033d98ecaf9770a54"
+    sha256 arm64_golden_gate: "3f9a2be41637f7310590acc4ca1187a88a4897446267b515e851e0760d8bfc31"
+    sha256 arm64_tahoe:       "b6a6a97ed3d54e0e3e4b9f5b480c8c47aa355e97b356b55a88eab895db909c3e"
+    sha256 arm64_sequoia:     "8dfbb0019f854b0c780cc2541587ff7ba5bd543ba7673c4fd97390a2142801dc"
+    sha256 arm64_linux:       "91939f92f13f3472fe619b915a7aafae385001e6de5613542478c4601346bd14"
+    sha256 x86_64_linux:      "9772e85eee707c0386424b6a884ee55f2562649bc27f90d3c5ac043a292d00a9"
   end
 
   depends_on "cmake" => :build

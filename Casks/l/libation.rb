@@ -1,9 +1,9 @@
 cask "libation" do
   arch arm: "arm64", intel: "x64"
 
-  version "14.2.2"
-  sha256 arm:   "477945c4d4145689d45d769086fc1a77230eae45e3ad2ed5aebf323c5be1057e",
-         intel: "b93764e93de4bbf686feb55f3c5ee9b3eb2e27c22f610db9d4ef64c495dd2ca5"
+  version "14.2.4"
+  sha256 arm:   "28f86a785a595ac187bfa1d6b3590ea64eb6dee8a2b3211bb991921cfcbc7435",
+         intel: "7c8966c559ba7c961ab961f9fee0d3a68af3f3f856bbc137d00dfe40383da28a"
 
   url "https://ghfast.top/https://github.com/rmcrackan/Libation/releases/download/v#{version}/Libation.#{version}-macOS-chardonnay-#{arch}.dmg"
   name "Libation"

@@ -1,8 +1,8 @@
 class PythonAT315 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.15.1/Python-3.15.1.tgz"
-  sha256 "133d85e118dc32621cda1d9d1d7d9694fe0c5e82bc339a7d528c109fe8b36387"
+  url "https://www.python.org/ftp/python/3.15.2/Python-3.15.2.tgz"
+  sha256 "f74e1db0eabd651cd01e4e2a00201bd41866abe74869ab716f9bf33cbbaa0943"
   license "Python-2.0"
 
   livecheck do
@@ -11,11 +11,11 @@ class PythonAT315 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "a0e08f75874f305fd6a320c33e39f08e265555e7584fabc786a3ca890aa95293"
-    sha256 arm64_tahoe:       "310db221f0c8ff5933f82c3571a796b3af4118ee27f47d361725d5cdd9875155"
-    sha256 arm64_sequoia:     "e4d57c8ff56e86ed559c7e07e5740707fb549c684b09238d18c76d67004d3844"
-    sha256 arm64_linux:       "7fbd3c8e5d169c6b679a43832faee58ef57c7fb05beb6216079addef52663e6b"
-    sha256 x86_64_linux:      "ca11745278ae3a33f88da405a31211014c860da0af5bc1d4db4704319b660efc"
+    sha256 arm64_golden_gate: "3b1247250932fb08290f3dd05f2e476a958b09600ac9a6e18ff6ab3695cab4ba"
+    sha256 arm64_tahoe:       "f8927deb45d5d8d6261b514879d9a9750ddaa74ad034514cfd8f89fd8d03dd71"
+    sha256 arm64_sequoia:     "3b82ce3572a5aa75a3c0c33da828c1ede71812d7078b9752ed2224c8b02fa871"
+    sha256 arm64_linux:       "6de55bfd498fe213099d2e39cbe5eb506aa3071b79d6a4f9282f1a08b6e44cf7"
+    sha256 x86_64_linux:      "417a51e9c3eb37e23af5779c404bf7cdad283436bdf01ba2464d53562d589a6e"
   end
 
   # https://devguide.python.org/versions/#versions

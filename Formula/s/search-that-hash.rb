@@ -10,14 +10,15 @@ class SearchThatHash < Formula
   head "https://github.com/Jayy001/Search-That-Hash.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3e46e9d470cebc59d695ce59a874abbda79e012142cc6e899e033203ef19576f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "34a9dda22a41c9ec0c276c3640293eb5067255af37f865f0b98ce920be28b283"
   end
 
   deprecate! date: "2026-05-23", because: :unmaintained
   disable! date: "2027-05-23", because: :unmaintained
 
   depends_on "certifi" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   pypi_packages exclude_packages: "certifi"
 

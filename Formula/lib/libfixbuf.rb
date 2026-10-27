@@ -57,7 +57,6 @@ class Libfixbuf < Formula
       }
     C
 
-    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
     flags = shell_output("pkgconf --cflags --libs libfixbuf").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"

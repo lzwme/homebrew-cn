@@ -5,6 +5,7 @@ class Ollama < Formula
       tag:      "v0.40.11",
       revision: "675150d6ad2747df1e218ef59de9194bc4a7e538"
   license "MIT"
+  revision 1
   head "https://github.com/ollama/ollama.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -16,11 +17,11 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e8d14c209a23915663ed26e4b0ed2e4659bcb9d51ea374180592ad363b0927d3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cb1322dbeee14be3e89f76888c5b2e6f46cf2ec5a91a624698321e6b92336f85"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d163cfb314e4e709e120554cfc98f7973728401379a5fdc49e068153a62bf04e"
-    sha256 cellar: :any,                 arm64_linux:       "c578bca0045b94258ef38ba3a07502c9b846676639b53de100ca75817b73b7a8"
-    sha256 cellar: :any,                 x86_64_linux:      "23e953048f7c5870a3ffc4e8dabaf768182b6969a827c929b2596f3a17d25ae7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fb565e34835742039ccef59b4510916348fd6457f215ae3e70c5dfe95755478a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "15bd35c11ac1b909b3ef3ee893103d11b79702a9ec6e7b21e001bf29ee419a71"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ba304ea974419df7a33bff753108601605d0e2e0270da97270c7f9a405c06d44"
+    sha256 cellar: :any,                 arm64_linux:       "c1cd210e9ec49840d5434f3d7d9cd4137e07ea612ac9ea6c392467ae1ef8b9ae"
+    sha256 cellar: :any,                 x86_64_linux:      "44328b4022dcb07e9e26e209d0ac06ea7e0e269e29dbfc746b40b1f7b7f87f38"
   end
 
   depends_on "ccache" => :build
@@ -30,14 +31,6 @@ class Ollama < Formula
   on_macos do
     on_arm do
       depends_on "mlx-c" => :no_linkage
-
-      # Build with the mlx-c 0.7.0 bindings for tagged MLX 0.32.3. Upstream targets a later MLX commit:
-      # https://github.com/ollama/ollama/commit/0bb09259203ff8f6d361faae1d40c4f83d2a99f7
-      # `mlx_gather_qmm` has no `global_scale` in mlx-c 0.7.0, so always use the wrapper fallback:
-      # https://github.com/ollama/ollama/blob/v0.34.1/mlx/compat/0001-mlx-c-qmm-global-scale.patch
-      # `mlx_fast_gated_delta_update` is not in mlx-c 0.7.0, so always use Ollama's own kernel:
-      # https://github.com/ollama/ollama/blob/v0.34.4/mlx/compat/mlx-c/0002-fast-gated-delta-update.patch
-      patch :DATA
     end
   end
 
@@ -199,92 +192,3 @@ class Ollama < Formula
     end
   end
 end
-
-__END__
-diff --git a/mlx/fast.go b/mlx/fast.go
-index 7d5506b3..e9301514 100644
---- a/mlx/fast.go
-+++ b/mlx/fast.go
-@@ -30,38 +30,6 @@ type LayerNorm struct {
- 	Bias   *Array `weight:"bias"`
- }
- 
--// fastGatedDeltaUpdate applies MLX's gated-delta recurrence and returns its
--// per-token outputs and final float32 state. state and mask may be nil.
--func fastGatedDeltaUpdate(q, k, v, gates, beta, state, mask *Array) (y, nextState *Array) {
--	outVec := mlxCheck(C.mlx_vector_array_new())
--	defer freeVectorArray(outVec)
--
--	var stateCtx, maskCtx C.mlx_array
--	if state != nil {
--		stateCtx = state.ctx
--	}
--	if mask != nil {
--		maskCtx = mask.ctx
--	}
--
--	mlxCheck(C.mlx_fast_gated_delta_update(
--		&outVec,
--		q.ctx,
--		k.ctx,
--		v.ctx,
--		gates.ctx,
--		beta.ctx,
--		stateCtx,
--		maskCtx,
--		DefaultStream().ctx))
--
--	y = New("FAST_GATED_DELTA_Y")
--	nextState = New("FAST_GATED_DELTA_STATE")
--	mlxCheck(C.mlx_vector_array_get(&y.ctx, outVec, C.size_t(0)))
--	mlxCheck(C.mlx_vector_array_get(&nextState.ctx, outVec, C.size_t(1)))
--	return y, nextState
--}
--
- func (r *LayerNorm) Forward(x *Array, eps float32) *Array {
- 	out := New("FAST_LAYERNORM")
- 	mlxCheck(C.mlx_fast_layer_norm(&out.ctx, x.ctx, r.Weight.ctx, r.Bias.ctx, C.float(eps), DefaultStream().ctx))
-diff --git a/mlx/gated_delta.go b/mlx/gated_delta.go
-index 77a7ea94..8e6324eb 100644
---- a/mlx/gated_delta.go
-+++ b/mlx/gated_delta.go
-@@ -299,10 +299,6 @@ func gatedDeltaRecurrenceGraph(q, k, v, g, beta, state *Array) (y, nextState *Ar
- // directly.
- func gatedDeltaRecurrence(q, k, v, g, beta, state *Array) (y, nextState *Array) {
- 	if dims, ok := resolveGatedDeltaRecurrenceDims(q, k, v, g, beta, state); ok {
--		// MLX's fast update casts the decay gate to the query dtype.
--		if supportsFastGatedDeltaUpdate(dims) && g.DType() == q.DType() {
--			return fastGatedDeltaUpdate(q, k, v, g, beta, state, nil)
--		}
- 		outs := gatedDeltaRecurrenceKernel.run(gpuLaunch{
- 			dtypes: []gpuDTypeArg{{"InT", q.DType()}, {"StT", state.DType()}},
- 			ints:   []gpuIntArg{{"Dk", dims.Dk}, {"Dv", dims.Dv}, {"Hk", dims.Hk}, {"Hv", dims.Hv}},
-diff --git a/mlx/ops_extra.go b/mlx/ops_extra.go
-index 9aff3248..caa3084c 100644
---- a/mlx/ops_extra.go
-+++ b/mlx/ops_extra.go
-@@ -133,7 +133,7 @@ func GatherQMM(x, w, scales *Array, biases, lhsIndices, rhsIndices *Array, trans
- 	optGroupSize := C.mlx_optional_int{value: C.int(groupSize), has_value: true}
- 	optBits := C.mlx_optional_int{value: C.int(bits), has_value: true}
- 
--	var b, lhs, rhs, gs C.mlx_array
-+	var b, lhs, rhs C.mlx_array
- 	if biases != nil {
- 		b = biases.ctx
- 	}
-@@ -145,13 +145,10 @@ func GatherQMM(x, w, scales *Array, biases, lhsIndices, rhsIndices *Array, trans
- 	}
- 	// The wrapper fallback needs rhs indices to map output rows to experts;
- 	// without them the native path reports the unsupported combination.
--	applyWrapperScale := globalScale != nil && !MetalIsAvailable() && rhsIndices != nil
--	if globalScale != nil && !applyWrapperScale {
--		gs = globalScale.ctx
--	}
-+	applyWrapperScale := globalScale != nil
- 
- 	out := New("GATHER_QMM")
--	mlxCheck(C.mlx_gather_qmm(&out.ctx, x.ctx, w.ctx, scales.ctx, b, lhs, rhs, C.bool(transpose), optGroupSize, optBits, cMode, gs, C.bool(sortedIndices), DefaultStream().ctx))
-+	mlxCheck(C.mlx_gather_qmm(&out.ctx, x.ctx, w.ctx, scales.ctx, b, lhs, rhs, C.bool(transpose), optGroupSize, optBits, cMode, C.bool(sortedIndices), DefaultStream().ctx))
- 	if applyWrapperScale {
- 		out = mulGatherQMMGlobalScale(out, globalScale, rhsIndices)
- 	}

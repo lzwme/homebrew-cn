@@ -23,6 +23,8 @@ class DnscryptWrapper < Formula
   depends_on "libevent"
   depends_on "libsodium"
 
+  allow_network_access! :test
+
   def install
     # Workaround for arm64 macOS, https://github.com/cofyc/dnscrypt-wrapper/issues/177
     inreplace "compat.h", "#define HAVE_BACKTRACE 1", "" if OS.mac? && Hardware::CPU.arm?

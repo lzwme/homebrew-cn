@@ -136,7 +136,6 @@ class Curl < Formula
     assert_path_exists testpath/"certdata.txt"
 
     ENV["PKG_CONFIG_PATH"] = lib/"pkgconfig"
-    ENV.append_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
     system "pkgconf", "--cflags", "libcurl"
   end
 end

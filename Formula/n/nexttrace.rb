@@ -1,8 +1,8 @@
 class Nexttrace < Formula
   desc "Open source visual route tracking CLI tool"
   homepage "https://www.nxtrace.org/"
-  url "https://ghfast.top/https://github.com/nxtrace/NTrace-core/archive/refs/tags/v1.7.4.tar.gz"
-  sha256 "62adaafbaf263dde37b3e464f6ee8285123a0214be92a056591a02bd6463bdee"
+  url "https://ghfast.top/https://github.com/nxtrace/NTrace-core/archive/refs/tags/v1.7.5.tar.gz"
+  sha256 "b53fe4af76fde3c4726625e97fb27acb62ce1fe4f7208dd9f2a2166c5e9b7cc4"
   license "GPL-3.0-only"
   head "https://github.com/nxtrace/NTrace-core.git", branch: "main"
 
@@ -14,11 +14,11 @@ class Nexttrace < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "268e3a1ad283e73d4eecaba611760a785ca36c6c60452216fc9be2156222796d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "da7355775c661aed298da74cdb46383bc19f5aeba6abf2a831ee28bd419989a0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "839afd1575a75461f5b53afe67da61baece78c72196299c1c14137efe8db98b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a2bc5d05f67cd031697023f5b30a678ae711ae2d8ebafa09697af61f741bf2dd"
-    sha256 cellar: :any,                 x86_64_linux:      "2e4cbc42bc700784a74f8e2e1d917be4b79bd80e286eb7a1dbf6124f6697b21f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ca22935d5d82f0b2262c8d727ee9bfef022856a9c8ce3f9f18196020dc03c08f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a22b0cf4aa2c3f89aec13b5e7145776dc22c2f7a71c6cd9840b05663575c5325"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d48a09de0c9c088902593e63e81e62df8814e219122ed452e69fc89c7ddb0473"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "637fac418be9e8773d138808d473b1eba51529acde6549cff34a73854f95d056"
+    sha256 cellar: :any,                 x86_64_linux:      "30826d80e7762e6062b2d6b19d58b1173ee54d1ea2068ef1d7a57f55a7bc25b4"
   end
 
   depends_on "go" => :build

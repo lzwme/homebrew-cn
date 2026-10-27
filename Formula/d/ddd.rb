@@ -53,6 +53,8 @@ class Ddd < Formula
     depends_on "gdb" => :test
   end
 
+  deny_network_access!
+
   def install
     # Use GNU sed due to ./unumlaut.sed: RE error: illegal byte sequence
     ENV.prepend_path "PATH", formula_opt_libexec("gnu-sed")/"gnubin" if OS.mac?

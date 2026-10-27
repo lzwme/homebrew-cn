@@ -31,6 +31,8 @@ class Dvdbackup < Formula
     resolves "https://bugs.launchpad.net/dvdbackup/+bug/1869226"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--mandir=#{man}",
                           "--prefix=#{prefix}"

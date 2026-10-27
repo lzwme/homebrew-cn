@@ -34,6 +34,8 @@ class Dwarfutils < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     system "sh", "autogen.sh" if build.head?
     system "./configure", "--enable-shared", *std_configure_args

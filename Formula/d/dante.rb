@@ -30,6 +30,8 @@ class Dante < Formula
     type :unofficial
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-debug",
                           "--disable-silent-rules",

@@ -27,6 +27,8 @@ class Djvulibre < Formula
   depends_on "jpeg-turbo"
   depends_on "libtiff"
 
+  deny_network_access!
+
   def install
     system "./autogen.sh"
     # Don't build X11 GUI apps, Spotlight Importer or Quick Look plugins

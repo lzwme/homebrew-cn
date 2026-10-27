@@ -1,8 +1,8 @@
 class GitSpice < Formula
   desc "Manage stacked Git branches"
   homepage "https://abhinav.github.io/git-spice/"
-  url "https://ghfast.top/https://github.com/abhinav/git-spice/archive/refs/tags/v0.32.0.tar.gz"
-  sha256 "5a7a20433c830b290f974b58fb3c7b800a3369f7ba8a2dab6c3861f0a823da5f"
+  url "https://ghfast.top/https://github.com/abhinav/git-spice/archive/refs/tags/v0.33.0.tar.gz"
+  sha256 "a14e45062a068aba6228dabaa94ffcd907ec522587d1ca2222a391d3cd545705"
   license "GPL-3.0-or-later"
   head "https://github.com/abhinav/git-spice.git", branch: "main"
 
@@ -14,11 +14,11 @@ class GitSpice < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "11b5416b83a28f982fc5cd79698d9c7dc502766d0f6879f145417e1046b55c4b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "11b5416b83a28f982fc5cd79698d9c7dc502766d0f6879f145417e1046b55c4b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "11b5416b83a28f982fc5cd79698d9c7dc502766d0f6879f145417e1046b55c4b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "37c23ad17b8c16b30fcf2b50c046732af050837b19169ed5b42925aff587dbdd"
-    sha256 cellar: :any,                 x86_64_linux:      "14b49a76545301cbfeec45f4d47e7b58b57ee2a358416eace22ee60562496d9c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "731c4a4fd9d507881ae09d1296622da18a199f9c94b1ad61a43a5b937f7032cc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "731c4a4fd9d507881ae09d1296622da18a199f9c94b1ad61a43a5b937f7032cc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "731c4a4fd9d507881ae09d1296622da18a199f9c94b1ad61a43a5b937f7032cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e4509faf1f4cb04ef626471e88a5d25e21dcdde9dddd563ffb6cbe0934b87d32"
+    sha256 cellar: :any,                 x86_64_linux:      "3742536a1d6b6e0d487a590a919a47cdcdb46dcfdd719e6703a263bf6cc2dc2b"
   end
 
   depends_on "go" => :build

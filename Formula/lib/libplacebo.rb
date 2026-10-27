@@ -3,20 +3,18 @@ class Libplacebo < Formula
 
   desc "Reusable library for GPU-accelerated image/video processing primitives"
   homepage "https://code.videolan.org/videolan/libplacebo"
-  url "https://code.videolan.org/videolan/libplacebo/-/archive/v7.360.1/libplacebo-v7.360.1.tar.bz2"
-  sha256 "937aa5eeea596798b3274d362de2e3bd32bc537a66d149dd85043349c74dffb6"
+  url "https://code.videolan.org/videolan/libplacebo/-/archive/v7.387.0/libplacebo-v7.387.0.tar.bz2"
+  sha256 "14ceeeb14d1c08fcdb1a782a06129da11f842c6fddbf3a43c1c4061406ad03d2"
   license "LGPL-2.1-or-later"
-  compatibility_version 1
+  compatibility_version 2
   head "https://code.videolan.org/videolan/libplacebo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7762d0013a485ae66471ff299ec6c3d6d8413f7f42f68be40e133cf2374782a3"
-    sha256 cellar: :any, arm64_tahoe:       "6575f7e22f75c946f5c831d2ff130b89aa275a2cdd4dbe7a0204590513b87b25"
-    sha256 cellar: :any, arm64_sequoia:     "1fd6531a9de50d0121d1ff4ec67163dfb1dcb8c682d96c6587b960f04be0fe34"
-    sha256 cellar: :any, arm64_sonoma:      "8b89e9ee2c276bded52d69bbfc3b645625c975e9edc3ba93873c18d661ef241c"
-    sha256 cellar: :any, sonoma:            "a6a5f1fefe34a81d3fde35cdab8481899afc47b90efff12b912b0b1675f90861"
-    sha256               arm64_linux:       "b87acf6094dc3a89d9a942259ae453fec22a770aa3fab05dba2e3c2c71702558"
-    sha256               x86_64_linux:      "145b3ac56e39a1a925671872f5ec1176c568d518c643cf689ae66f33494d43b7"
+    sha256 cellar: :any, arm64_golden_gate: "0e9ea5b942841c88eb8941ea2a38a5cafddd7a1210a482adf18196db40bd99f3"
+    sha256 cellar: :any, arm64_tahoe:       "ef19764cff218aade9c8cfadb88c9899efaac51c701b756cadb83d79164a8ce9"
+    sha256 cellar: :any, arm64_sequoia:     "a96048b194f3423ef6fc5c888fa349ea70979fb3135719b8c5290889ff6e44cd"
+    sha256 cellar: :any, arm64_linux:       "fc08a0bf041c5aa11c06a8e0802448f0f96292b372a45a41b9426f3ff5dec0bf"
+    sha256 cellar: :any, x86_64_linux:      "894e1ba117e487d7edabdd5b1e05a6ce38f07efbd39859c2c3239214b2adc864"
   end
 
   depends_on "fast_float" => :build

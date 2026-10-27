@@ -10,9 +10,10 @@ class MlxLm < Formula
   head "https://github.com/ml-explore/mlx-lm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "61e5f54035b63a063e31a682f71305b58f5356fd3724e0d3938e481dc261766b"
-    sha256 cellar: :any, arm64_tahoe:       "9c949619a7809ee588e6a2985a87aa21878120e253a4d8f3ab43d45a5404bb3e"
-    sha256 cellar: :any, arm64_sequoia:     "a8816a4dd760223d2f9893706490ea8f1c53ab0f8e4ede090795e5abad5edc1e"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "1abba3420eaa10fa5ecf7d1cb7ac10674865c30d4e1ec295ed069507634970d3"
+    sha256 cellar: :any, arm64_tahoe:       "84ffd9d912a7af49d270540bd56c6d61baf4a972e6beb2f252f5d289e6183072"
+    sha256 cellar: :any, arm64_sequoia:     "bf2494bddc333750fb00e330135b343e5b70601b6c1a785f4309c814b27103f7"
   end
 
   depends_on "cmake" => :build
@@ -28,7 +29,7 @@ class MlxLm < Formula
   depends_on "python@3.15"
   depends_on "sentencepiece"
 
-  pypi_packages exclude_packages: %w[certifi mlx numpy]
+  pypi_packages exclude_packages: %w[certifi mlx numpy sentencepiece]
 
   resource "annotated-doc" do
     url "https://files.pythonhosted.org/packages/5a/8e/38aa427ed5402449e226975b649c5dc73ccadfefeb95e6aecb8f8ea4b6b6/annotated_doc-0.0.5.tar.gz"
@@ -76,8 +77,8 @@ class MlxLm < Formula
   end
 
   resource "huggingface-hub" do
-    url "https://files.pythonhosted.org/packages/12/47/6858d63643e66fb4f6585c3cfd4029c0b2bc1ae21688cee9b3335f20a10d/huggingface_hub-2.2.0.tar.gz"
-    sha256 "5d1b47537394e4215cb858aa12fd493d0f7ef7f58990f5dcd24bc173107b2871"
+    url "https://files.pythonhosted.org/packages/46/dd/585639d95f6a987c0bdfb9045f050f4ad67240775644ba7a4fdc5aca3a3b/huggingface_hub-2.3.0.tar.gz"
+    sha256 "0b783b37f200f1d25bef2344a997c7d410f4437fbe9d8fd965f958e75cec7aef"
   end
 
   resource "idna" do
@@ -140,11 +141,6 @@ class MlxLm < Formula
     sha256 "fabaf3e0f18a6618d9b36560682562157f77c2b71fcffc7b432be2baed9d753d"
   end
 
-  resource "sentencepiece" do
-    url "https://files.pythonhosted.org/packages/cc/33/ea3cb3839607eb175da835244a798f797f478c5ddf0e8ecdf57ea85a4c70/sentencepiece-0.2.2.tar.gz"
-    sha256 "3d2b5e824b5622038dc7b490897efe05ebbbb9e7350fc142f3ecc8789ef9bdf6"
-  end
-
   resource "shellingham" do
     url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
     sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
@@ -184,18 +180,12 @@ class MlxLm < Formula
     # `tokenizers` and `hf-xet` build PyO3 extensions through maturin.
     ENV.append_to_rustflags "-C link-arg=-Wl,-undefined,dynamic_lookup"
 
-    venv = virtualenv_install_with_resources(without: ["hf-xet", "sentencepiece"])
+    venv = virtualenv_install_with_resources(without: "hf-xet")
 
     resource("hf-xet").stage do
       # Use native-tls rather than needing to build another rustls + aws-lc
       inreplace %w[xet_client/Cargo.toml xet_data/Cargo.toml xet_pkg/Cargo.toml],
                 'default = ["rustls-tls"]', 'default = ["native-tls"]'
-      venv.pip_install Pathname.pwd
-    end
-
-    resource("sentencepiece").stage do
-      # Bundled abseil aliases libc++ types introduced in macOS 10.13 but upstream targets 10.9
-      inreplace "setup.py", "'-mmacosx-version-min=10.9'", "'-mmacosx-version-min=#{MacOS.version}'" if OS.mac?
       venv.pip_install Pathname.pwd
     end
   end
@@ -209,6 +199,9 @@ class MlxLm < Formula
   end
 
   test do
+    # Make sure all dependencies use same Python and have compatible version
+    system libexec/"bin/python", "-m", "pip", "check"
+
     port = free_port
     pid = spawn bin/"mlx_lm.server", "--port=#{port}"
     begin

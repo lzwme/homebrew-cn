@@ -54,7 +54,8 @@ class Pydantic < Formula
     pythons.each do |python3|
       resources.each do |r|
         r.stage do
-          system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
+          build_isolation = r.name != "pydantic-core"
+          system python3, "-m", "pip", "install", *std_pip_args(build_isolation:), "."
         end
       end
 

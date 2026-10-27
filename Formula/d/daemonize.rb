@@ -21,9 +21,10 @@ class Daemonize < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "ccae89928e0e598a4b36e6077c509bb4a36020519b4aa49aa3bd58b42de2a3ce"
   end
 
+  deny_network_access!
+
   def install
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make"
     system "make", "install"
   end

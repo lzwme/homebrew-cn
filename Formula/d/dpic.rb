@@ -20,6 +20,8 @@ class Dpic < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "cee392ae39ad1e121ea9f5a96b5fabbb157db774051e2fdd6c99eb2a5a9a3416"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args
     system "make"

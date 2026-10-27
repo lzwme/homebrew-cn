@@ -5,6 +5,7 @@ class Powershell < Formula
       tag:      "v7.6.9",
       revision: "bf5fc434120666e5f1a8d1dfd6ecac7efc17a4be"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,11 +13,11 @@ class Powershell < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7b3ae7b6ed96a6e6179efe970eca2844fa6ca3cfcb063910f2a871db16f838a8"
-    sha256 cellar: :any, arm64_tahoe:       "40eb077a7d5108bef16a79ff8b06f4596d8b25a64c5611dd6b0309855cf01b90"
-    sha256 cellar: :any, arm64_sequoia:     "e9da588ac34f4b426eb35f790ea3ea0b225217fbfc069196f7a18ca8f8ca69e0"
-    sha256 cellar: :any, arm64_linux:       "08c900d48a119b8c58dd157662ec26dbcbb2ed05c8409371ba3bf35d800da06a"
-    sha256 cellar: :any, x86_64_linux:      "23c239943ce5e613a8d8dcc431f9005f3d304b62e682e3c090c921f5ce65e943"
+    sha256 cellar: :any, arm64_golden_gate: "216d4ce7e7a6699cf11234e9e60d3f824197d10d2a93f73426e6d452cd092109"
+    sha256 cellar: :any, arm64_tahoe:       "249ef884eb83aabfea5f75dbac91bf2bfb0df03ed476e37cff708953af3a99e1"
+    sha256 cellar: :any, arm64_sequoia:     "6f3212289afd3b0723e1bc21e8ff280ed7d8d3afb5b53524a9825e5c3de6015f"
+    sha256 cellar: :any, arm64_linux:       "b1b5cbbe6cfc41b24375e5af55a73f93dd88bbe5006a0e47204762d8db109566"
+    sha256 cellar: :any, x86_64_linux:      "71c7a7058e074066ea5d13f688decd80d0b88302f1f6d0f327ffbf16beb249cb"
   end
 
   depends_on "dotnet"

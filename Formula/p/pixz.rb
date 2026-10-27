@@ -31,8 +31,9 @@ class Pixz < Formula
 
   uses_from_macos "libxslt"
 
+  deny_network_access!
+
   def install
-    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("libarchive")/"pkgconfig"
     system "./configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"

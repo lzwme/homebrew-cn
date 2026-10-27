@@ -2,8 +2,8 @@ class BareosClient < Formula
   desc "Client for Bareos (Backup Archiving REcovery Open Sourced)"
   homepage "https://www.bareos.com/"
   # TODO: Switch to openssl@4 in 26.0.0 - https://github.com/bareos/bareos/milestone/16
-  url "https://ghfast.top/https://github.com/bareos/bareos/archive/refs/tags/Release/25.1.1.tar.gz"
-  sha256 "158aba5941fcd1921292d2fe283bce1fe9122b5c81106267cb352678f76af83b"
+  url "https://ghfast.top/https://github.com/bareos/bareos/archive/refs/tags/Release/25.1.2.tar.gz"
+  sha256 "adb393484d4b808f5f9b6321c7474f0d256c3fb472e2ff538af2645f4f5f132c"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -12,12 +12,11 @@ class BareosClient < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "46b05620a62979cfb1dcd2945b6044559e21613db510bcd2ccd07fe43d03770d"
-    sha256 arm64_tahoe:       "0ba3b439d35d6f31e17bd023a05037add87ecd314a455f4285dde9c16c0b37b1"
-    sha256 arm64_sequoia:     "0fd15bd4147f8bb27618ce68277ef184e9e5b123158114bd2a5104eb4340b404"
-    sha256 arm64_sonoma:      "54018b0d88edbf6057b1920a8a854c1932edfe72c234473f598468ccac20a654"
-    sha256 arm64_linux:       "6e42ac0b846ed8cc4d7232ed9c73ff25d4fa2229c9892663a3bdb5f6c8c89fe0"
-    sha256 x86_64_linux:      "a82a3525625a5f90822d40fb8a7ed7cd3cb4503034ef47694252dbdc26dc3e73"
+    sha256 arm64_golden_gate: "57018722bef53776dc455e0603e3fa415e2bce143ed644a0f00acf0e766d56b5"
+    sha256 arm64_tahoe:       "40c5aa57636874a384d06b020ba1d3139c99083f90e3696a612a151b20debcab"
+    sha256 arm64_sequoia:     "80677ad50f57e4c244b9c00a0613aadb275f4a5923dcb1986b754abbbd55f535"
+    sha256 arm64_linux:       "be07c2b5014850060aa8bfb54c3d00b83b997183adc00cb502b701b402ffbf51"
+    sha256 x86_64_linux:      "d687f13b737805c57dbad2c6ad4c214ed77c155481056810d153e1bf50bebcf5"
   end
 
   depends_on "cli11" => :build

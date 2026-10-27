@@ -1,17 +1,17 @@
 class Asyncapi < Formula
   desc "All in one CLI for all AsyncAPI tools"
   homepage "https://www.asyncapi.com/tools/cli"
-  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-6.2.1.tgz"
-  sha256 "cfd5d684d9960d4252f01ba8ba88221be641f961157674c911e79d21f15ac685"
+  url "https://registry.npmjs.org/@asyncapi/cli/-/cli-6.2.2.tgz"
+  sha256 "03ea50b112007fa0b07a97518cd99ac39bf134ce33f7dcca504aed41df4c04fb"
   license "Apache-2.0"
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9e92c415cc9231cc48bf6bb773f233fbe09561c4ff5887186c86abad3f72d5d4"
-    sha256 cellar: :any, arm64_tahoe:       "9e92c415cc9231cc48bf6bb773f233fbe09561c4ff5887186c86abad3f72d5d4"
-    sha256 cellar: :any, arm64_sequoia:     "9e92c415cc9231cc48bf6bb773f233fbe09561c4ff5887186c86abad3f72d5d4"
-    sha256 cellar: :any, arm64_linux:       "a593dd1b8fe57c7d4e008cc62f6f6d82a1af22c0e757bf822afe244a3be8399d"
-    sha256 cellar: :any, x86_64_linux:      "32185fbc311fb95b19f8666d46b07a10c2b8ff06c3908489f3e04b3c26a7ecb4"
+    sha256 cellar: :any, arm64_golden_gate: "9ff298c824d0b9b0bcc964c91bcd6b7034ead4dbc955b3dde490a08a807de4f4"
+    sha256 cellar: :any, arm64_tahoe:       "9ff298c824d0b9b0bcc964c91bcd6b7034ead4dbc955b3dde490a08a807de4f4"
+    sha256 cellar: :any, arm64_sequoia:     "9ff298c824d0b9b0bcc964c91bcd6b7034ead4dbc955b3dde490a08a807de4f4"
+    sha256 cellar: :any, arm64_linux:       "1fdc0f75930d4d2a2e534d5b0431b63b6d93bf68eaf9dbd435669d70259f879e"
+    sha256 cellar: :any, x86_64_linux:      "e25fedd51ce9bff097be40d42f7e89a7c1bd665642c8fe7cad23fdd410cbd4eb"
   end
 
   depends_on "node"

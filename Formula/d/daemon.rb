@@ -26,6 +26,8 @@ class Daemon < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "861a0eb58cced7a2c88edb3309eef07521084b317725b9fe4f67acf71b83f331"
   end
 
+  deny_network_access!
+
   def install
     system "./configure"
     system "make"

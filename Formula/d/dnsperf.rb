@@ -25,6 +25,8 @@ class Dnsperf < Formula
   depends_on "libnghttp2"
   depends_on "openssl@4"
 
+  deny_network_access!
+
   def install
     system "./configure", "--prefix=#{prefix}"
     system "make"

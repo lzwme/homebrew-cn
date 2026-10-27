@@ -2,7 +2,7 @@ class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https://opencv.org/"
   license "Apache-2.0"
-  revision 11
+  revision 12
   compatibility_version 2
 
   stable do
@@ -25,12 +25,11 @@ class Opencv < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "8bd01cf556280d8502fc165fed77eb630d4965dee6d50d874e05eec14de01aca"
-    sha256 arm64_tahoe:       "82623a069a62ae58bdb128b90cbcf03889387b983b705778a4db120ffb8bc3bf"
-    sha256 arm64_sequoia:     "1cd40a1ba11bdf9a33d97fc2a5c0cae62fb6281c967ba012053e22e9f0505658"
-    sha256 arm64_linux:       "53fe905a223ceb31b1b5f9f638c386c14d1c3f261b0f60af75a3e5029efffad8"
-    sha256 x86_64_linux:      "912886fa3fd8418758c1de7c843b2f1e6bb30a565458a6974b53aec66a7e8314"
+    sha256 arm64_golden_gate: "ccbb8bd78158190148c71eb0a240e6c2ad509961d9a8d0a035ab7d5ab6542b8d"
+    sha256 arm64_tahoe:       "6ceb6151229e97923224fe300668250bb8d6da3512f8d9850f3eef833b6bbcc7"
+    sha256 arm64_sequoia:     "6667d5349381bba291b055e8151a444bcd8a3747f0b7b207f31277eefc2fe0dd"
+    sha256 arm64_linux:       "bdd11db46cb51a406ef2d7cfbdb2846e92d9533c6ef048dcdb57b9b987e88135"
+    sha256 x86_64_linux:      "ee60ec4d65e059349279cb1ae3dcc8cf2bb0fd7f4d6adf6f88d615a0ff64a5a1"
   end
 
   head do
@@ -63,7 +62,7 @@ class Opencv < Formula
   depends_on "openjpeg"
   depends_on "openvino"
   depends_on "protobuf"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "tbb"
   depends_on "tesseract"
   depends_on "vtk"

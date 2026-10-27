@@ -64,6 +64,8 @@ class Duti < Formula
     type :backport
   end
 
+  deny_network_access!
+
   def install
     # Patch out the hard limit on macOS version. Don't set `-arch` which is dropped by superenv
     inreplace "aclocal.m4", "AC_MSG_ERROR([${host_os} is not a supported system])", 'macosx_arches=""'
@@ -76,7 +78,6 @@ class Duti < Formula
   end
 
   test do
-    # Handlers cannot be found within the sandbox
-    assert_match "no handlers", shell_output("#{bin}/duti -l public.text 2>&1", 1)
+    assert_match "com.apple.TextEdit", shell_output("#{bin}/duti -l public.text 2>&1")
   end
 end

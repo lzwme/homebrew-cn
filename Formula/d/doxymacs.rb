@@ -28,6 +28,8 @@ class Doxymacs < Formula
 
   uses_from_macos "libxml2"
 
+  deny_network_access!
+
   def install
     # https://sourceforge.net/p/doxymacs/support-requests/5/
     ENV.append "CFLAGS", "-std=gnu89"

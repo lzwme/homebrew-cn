@@ -1,17 +1,17 @@
 class Falcoctl < Formula
   desc "CLI tool for working with Falco and its ecosystem components"
   homepage "https://github.com/falcosecurity/falcoctl"
-  url "https://ghfast.top/https://github.com/falcosecurity/falcoctl/archive/refs/tags/v0.14.2.tar.gz"
-  sha256 "2ac3bd90913933e7fb6f9a722e1b8999dedaaab158c1ea073405d28c491112c1"
+  url "https://ghfast.top/https://github.com/falcosecurity/falcoctl/archive/refs/tags/v0.14.3.tar.gz"
+  sha256 "c9cf5bc0959e282a178ef2adbf96eb42532a6bf47569f74a923411df334606ca"
   license "Apache-2.0"
   head "https://github.com/falcosecurity/falcoctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "12f12bf7f8d762be10cd901a89f56abad7e6ff1e660e2e16faea814e2d15ed56"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f5a871b93c661294256750f84811e8cdb6b892514ffeb048d4a5a843887fdaef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4155396efebc714e73e314e11b5e47d2ccf983bba1bfebd0d68845cd0e77cae3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "16a482c1d2f4a10778c7fd7dfc21299e58d4cc90f4a290ec861a0b5211b32825"
-    sha256 cellar: :any,                 x86_64_linux:      "60ed8e1240a2d4fc21ad09dc6dbdc3a92f01cd5a62ecc85d87ac889d3bc17cc3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0744e56b024fb92e89925d4e10031dbbcd299cc28c253a6d67ca564daf76af69"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ffe85cfee40b9950209a31eea3b744d535553f51207df03186299816921aa21e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7387c8f93b980b48fc7b49792c0a8be9948ac963bc5069f314bd09ea26accb40"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ee336256998066832dfc6fa13e6cc95f1c8d5187b2233fea8c7caf7f005b6231"
+    sha256 cellar: :any,                 x86_64_linux:      "89aa850b1f37e1fa129faac65a7efff9f4758c1769f7861360b3b02938c21254"
   end
 
   depends_on "go" => :build

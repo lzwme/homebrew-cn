@@ -1,10 +1,9 @@
 class Freetds < Formula
   desc "Libraries to talk to Microsoft SQL Server and Sybase databases"
   homepage "https://www.freetds.org/"
-  url "https://www.freetds.org/files/stable/freetds-1.5.19.tar.bz2"
-  sha256 "0dc2df2fea9934e3a99e00d417f3d192e9897572f6aff3905bd48f2507d16dff"
+  url "https://www.freetds.org/files/stable/freetds-1.5.20.tar.bz2"
+  sha256 "399a8680f77164ff06bec57aeefdff4bb160406e509cd7cc304743d27eafbb23"
   license "GPL-2.0-or-later"
-  revision 1
   compatibility_version 1
 
   livecheck do
@@ -13,11 +12,11 @@ class Freetds < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "cab9c7bb5b3612f23e92022fd4669c34848e4d2fe85b1e8fba38c777e3462eab"
-    sha256 arm64_tahoe:       "dcb36b94451805b1fb5f114766ae22ad7088748d42510df31688becbe5378214"
-    sha256 arm64_sequoia:     "a2f7136be85c9197685c90cc8f65a537a093613aaef4ae87e33707d3f0cc7c32"
-    sha256 arm64_linux:       "318f9e88bc4bcfc00c9985ace0976ff7305511c8d79ce1d339a27626c65e539f"
-    sha256 x86_64_linux:      "d350e66fad5101a51f27ac20e5c216b9a9714740070c1dd41d141fa58d3493b2"
+    sha256 arm64_golden_gate: "0e0c6ea54ceea8192e34ecdef5abf9b29c78a078079c0fec63108b5cfba3d58f"
+    sha256 arm64_tahoe:       "3b8d6614cb468258f662d7bcc2a53fb819365745e4dd8c07e7a7db7f167e83cb"
+    sha256 arm64_sequoia:     "5d3164b003333871e04f8312068fc6f6f335e4ce7013cb9e0442b4055dc0ad39"
+    sha256 arm64_linux:       "ea0552d2a40087c760165287762876e35a99850e3bb094d4e338c0a239d4c220"
+    sha256 x86_64_linux:      "f65ed11d5d91cf605454339db7307f613c321518468fc670f5903044d54910c6"
   end
 
   head do

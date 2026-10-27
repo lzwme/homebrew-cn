@@ -21,6 +21,8 @@ class DeviceMapper < Formula
   depends_on "libaio"
   depends_on :linux
 
+  deny_network_access!
+
   def install
     # https://github.com/NixOS/nixpkgs/pull/52597
     ENV.deparallelize

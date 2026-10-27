@@ -1,8 +1,8 @@
 class Gnuplot < Formula
   desc "Command-driven, interactive function plotting"
   homepage "http://www.gnuplot.info/"
-  url "https://downloads.sourceforge.net/project/gnuplot/gnuplot/6.0.5/gnuplot-6.0.5.tar.gz"
-  sha256 "73237f37f03306d68bfae133a9a50d5e9341384e198d5ab37eeca9ab534deed8"
+  url "https://downloads.sourceforge.net/project/gnuplot/gnuplot/6.0.6/gnuplot-6.0.6.tar.gz"
+  sha256 "9d39d8499c9533550144092375aac45ba8bf0c18c9cee50897fe411b6d93004e"
   license "gnuplot"
   compatibility_version 1
 
@@ -12,13 +12,11 @@ class Gnuplot < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "e08a56d2b8b630a00e858b01205502f2bdd38e9a69d39a0f18c122c4c5932025"
-    sha256 arm64_tahoe:       "a153d761ec3f1cdae50e78d877fd03cb4f4ecc3116e5797649d97f9b1afab4ed"
-    sha256 arm64_sequoia:     "3d8efad2b1ce4cd0c1b450e879eb5eec1f4e0faed7d49e0c966f457d70153eb1"
-    sha256 arm64_sonoma:      "96dbce83ca48877b9ba0b150e44bde0dce1f6d4e579f0c26a38c921ebd134bb5"
-    sha256 sonoma:            "9797e19149b8cbeadce635e323996a5db07b9a8449a16c5b639ce0b5b1f8ee93"
-    sha256 arm64_linux:       "b39ea1e52915400931003a9aa108d53b852bbb7edad46be7118c0f6bdc4fc5e4"
-    sha256 x86_64_linux:      "d5d06f7e58bac89c438d57c31df65248ecc23d40b4ffad276afc30c201409917"
+    sha256 arm64_golden_gate: "2fd945496dc795654ebf62ecb365fcfb6fd7b37b5eed6561ccbc885e8dca2849"
+    sha256 arm64_tahoe:       "b4699393b6588be003f891e0fd87836a10024d11e10b3cff71cdb9aabd53ac1f"
+    sha256 arm64_sequoia:     "5359d6afc0ddef2ed2f1f283f9ca50b66d6acca3f72b8976ea6b8008e098d293"
+    sha256 arm64_linux:       "93d755518376d97d006c73a8fffe249d66eb7fcb19ab3fe13bad0e6f402dfc4d"
+    sha256 x86_64_linux:      "971767f481066ec6d1842eaf86cc2cdd99ce2f2ad3ba545942d8ad9522e9d07d"
   end
 
   head do

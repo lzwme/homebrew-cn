@@ -1,17 +1,17 @@
 class RustlsFfi < Formula
   desc "FFI bindings for the rustls TLS library"
   homepage "https://github.com/rustls/rustls-ffi"
-  url "https://ghfast.top/https://github.com/rustls/rustls-ffi/archive/refs/tags/v0.15.6.tar.gz"
-  sha256 "f56aecad524653138c1e46b90b3dcb65403716ce48db7b7954bdf0a14a051a86"
+  url "https://ghfast.top/https://github.com/rustls/rustls-ffi/archive/refs/tags/v0.15.7.tar.gz"
+  sha256 "7dc4335663bc904a5eae4d2a1099dff476873152b1859da16570e766a701a3bb"
   license any_of: ["Apache-2.0", "MIT", "ISC"]
   head "https://github.com/rustls/rustls-ffi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "56de745159348daf69cc0e52b93bb6a0b80ec624f7e94f62d924f09511db1327"
-    sha256 cellar: :any, arm64_tahoe:       "eb9d7193e22bace053ec70b1ea986a5d3267f303ed5366a7591cdd04127fe00f"
-    sha256 cellar: :any, arm64_sequoia:     "47d5b6219a702d56f7056679ea3c88582c0bdc332d59307e4593112641f3727c"
-    sha256 cellar: :any, arm64_linux:       "ac573d33803317f8168016e3e4de13f907b6a85f716925bd6601a1eaad0726ff"
-    sha256 cellar: :any, x86_64_linux:      "9a1fc55357f229ffa9979cdbef788cb1a39a7cca657f6861a021ec4440ed664a"
+    sha256 cellar: :any, arm64_golden_gate: "962d4869e7a62c838fa28932b70dde8c5439f18612647c63c8801b146e4eaf2a"
+    sha256 cellar: :any, arm64_tahoe:       "383c8baedbbedbb1b790bdeb05c236a31ee61790619c48d3fb193633db31d65a"
+    sha256 cellar: :any, arm64_sequoia:     "39b67c1c8eea59f81bf81394c799206c1a0d4a8b9ba1f6cf3bb3794858790d24"
+    sha256 cellar: :any, arm64_linux:       "f6822afe6a7b20c6e4c6b6c79b79a66cc938a70e2332fa1efc7e84813432a3bd"
+    sha256 cellar: :any, x86_64_linux:      "7685134d0a89ba1705f464b12ec244da4b3e6169df95a6834e3da0a707cf7d37"
   end
 
   depends_on "cargo-c" => :build
@@ -34,7 +34,7 @@ class RustlsFfi < Formula
       #include <stdio.h>
       int main(void) {
         struct rustls_str version = rustls_version();
-        printf("%s", version.data);
+        printf("%.*s", (int)version.len, version.data);
         return 0;
       }
     C

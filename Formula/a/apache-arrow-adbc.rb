@@ -1,8 +1,8 @@
 class ApacheArrowAdbc < Formula
   desc "Cross-language, Arrow-native database access"
   homepage "https://arrow.apache.org/adbc"
-  url "https://www.apache.org/dyn/closer.lua?path=arrow/apache-arrow-adbc-24/apache-arrow-adbc-24.tar.gz"
-  sha256 "2b4b420937f62f7ae56f46dbd6951a5e4ef0da43158080a58cb44cdd09a8b2e0"
+  url "https://www.apache.org/dyn/closer.lua?path=arrow/apache-arrow-adbc-25/apache-arrow-adbc-25.tar.gz"
+  sha256 "de2910f951eeb3c57d882e621a32d133580cc6b0ad01ac25056f4ac709b8b2c0"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/apache/arrow-adbc.git", branch: "main"
@@ -13,13 +13,11 @@ class ApacheArrowAdbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "55a5da334a9cc5a5017e65a0266010839b0055b4349267894de48db0acb5dc7f"
-    sha256 cellar: :any, arm64_tahoe:       "5f6de2cd522f1f1d2524591be801b25bf805138ab6f83d68e5125123f0f16c7f"
-    sha256 cellar: :any, arm64_sequoia:     "045de67546f16a3e1afae952546c1f9b2e6c945cd19d49ec27d9a03f00f99471"
-    sha256 cellar: :any, arm64_sonoma:      "02c30b7ba52015e6d4c8ca7fcd047d1585f7e5e319ed666d47776e948322122c"
-    sha256 cellar: :any, sonoma:            "05d07245c24167fb78bdcc71c47e0a7f8a74b5ff866cedfc26857ebb099f5141"
-    sha256 cellar: :any, arm64_linux:       "2d895b72f7ac881ab337525863787124e64ab7aa47543b37cc407680516758c2"
-    sha256 cellar: :any, x86_64_linux:      "d7dc3df9a38610e5173a3630e88abfb6ddedb540ef4565d2a2dddaa453027b38"
+    sha256 cellar: :any, arm64_golden_gate: "913d51d369ae668e04cb14bc178ace59798107324769c76495e1320b272ee6e1"
+    sha256 cellar: :any, arm64_tahoe:       "a7497abc5c44788a6fb95b4152b09d38f58bb387771ec3e27a229aaa829e8c51"
+    sha256 cellar: :any, arm64_sequoia:     "361a3dd8ad3ace591f31a16157d754e8bde3635680f184ab0003dc87cf5c6e71"
+    sha256 cellar: :any, arm64_linux:       "339cbc94d9a79077c26c94998c9ab36ea9da0a4065fffb742c6d3d03e700268a"
+    sha256 cellar: :any, x86_64_linux:      "1df214b730bf0302fab407434c504aecd2164e55293007ff15c38f3d21c1596e"
   end
 
   depends_on "cmake" => :build

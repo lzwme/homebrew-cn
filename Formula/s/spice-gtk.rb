@@ -101,7 +101,6 @@ class SpiceGtk < Formula
         return spice_session_new() ? 0 : 1;
       }
     CPP
-    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
     ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("icu4c")/"pkgconfig"
     ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("systemd")/"pkgconfig" if OS.linux?
     system ENV.cc, "test.cpp",

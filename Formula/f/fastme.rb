@@ -30,6 +30,8 @@ class Fastme < Formula
     depends_on "libomp"
   end
 
+  deny_network_access!
+
   def install
     if OS.mac?
       ENV["OPENMP_CFLAGS"] = "-Xpreprocessor -fopenmp"

@@ -103,7 +103,6 @@ class ApacheSerf < Formula
       }
     C
 
-    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib(openssl)/"pkgconfig"
     if OS.mac?
       ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("apr")/"pkgconfig"
       ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("apr-util")/"pkgconfig"

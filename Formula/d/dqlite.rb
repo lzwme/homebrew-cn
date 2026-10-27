@@ -25,6 +25,8 @@ class Dqlite < Formula
     sha256 "302890eb50419e7fee4d8c5dc27a77353ed7e9d9047f65e872def971fd3ef178"
   end
 
+  allow_network_access! :test
+
   def install
     ENV["CGO_ENABLED"] = "1" if Hardware::CPU.arm?
 

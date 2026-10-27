@@ -47,23 +47,17 @@ class Dpkg < Formula
 
   patch :DATA
 
+  deny_network_access!
+
   def install
     # We need to specify a recent gnutar, otherwise various dpkg C programs will
     # use the system "tar", which will fail because it lacks certain switches.
-    ENV["TAR"] = if OS.mac?
-      formula_opt_bin("gnu-tar")/"gtar"
-    else
-      formula_opt_bin("gnu-tar")/"tar"
-    end
+    ENV["TAR"] = formula_opt_bin("gnu-tar")/(OS.mac? ? "gtar" : "tar")
 
     # Since 1.18.24 dpkg mandates the use of GNU patch to prevent occurrences
     # of the CVE-2017-8283 vulnerability.
     # https://www.openwall.com/lists/oss-security/2017/04/20/2
-    ENV["PATCH"] = if OS.mac?
-      formula_opt_bin("gpatch")/"gpatch"
-    else
-      formula_opt_bin("gpatch")/"patch"
-    end
+    ENV["PATCH"] = formula_opt_bin("gpatch")/(OS.mac? ? "gpatch" : "patch")
 
     # Theoretically, we could reinsert a patch here submitted upstream previously
     # but the check for PERL_LIB remains in place and incompatible with Homebrew.

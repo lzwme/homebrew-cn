@@ -20,6 +20,8 @@ class Diffstat < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "87b0292cacd262fa0c5d9d55394c97665322d44c0e01227cc9215a924e6ac868"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",

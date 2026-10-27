@@ -25,6 +25,8 @@ class Datamash < Formula
     depends_on "gettext" => :build
   end
 
+  deny_network_access!
+
   def install
     system "./bootstrap" if build.head?
     system "./configure", *std_configure_args, "--disable-silent-rules"

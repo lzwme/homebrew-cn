@@ -21,6 +21,8 @@ class Dbacl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "27ddb0fca1dfb2cc615befe472927ff657b689dad255e26913ce118f7d83dfcb"
   end
 
+  deny_network_access!
+
   def install
     args = []
     if OS.linux?

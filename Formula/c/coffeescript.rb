@@ -1,14 +1,13 @@
 class Coffeescript < Formula
   desc "Unfancy JavaScript"
   homepage "https://coffeescript.org/"
-  url "https://registry.npmjs.org/coffeescript/-/coffeescript-2.7.0.tgz"
-  sha256 "590e2036bd24d3b54e598b56df2e0737a82c2aa966c1020338508035f3b4721f"
+  url "https://registry.npmjs.org/coffeescript/-/coffeescript-2.7.1.tgz"
+  sha256 "895be18c82b7310075571dfc1a032aaed36ecc1bf9a1803007bd6bd6e0c59b40"
   license "MIT"
   head "https://github.com/jashkenas/coffeescript.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "8b60f70c34df82c6fb506f905b11ecf0cda8421c03fb775e19ac0a2e9f348edf"
+    sha256 cellar: :any_skip_relocation, all: "290c9308c48324c3b433bfc3f60f1f006f3e806c34f16f80dfdb2567c3c9ffa9"
   end
 
   depends_on "node"

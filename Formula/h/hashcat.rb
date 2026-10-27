@@ -1,9 +1,9 @@
 class Hashcat < Formula
   desc "World's fastest and most advanced password recovery utility"
   homepage "https://hashcat.net/hashcat/"
-  url "https://hashcat.net/files/hashcat-7.1.2.tar.gz"
-  mirror "https://ghfast.top/https://github.com/hashcat/hashcat/archive/refs/tags/v7.1.2.tar.gz"
-  sha256 "9546a6326d747530b44fcc079babad40304a87f32d3c9080016d58b39cfc8b96"
+  url "https://hashcat.net/files/hashcat-8.0.0.tar.gz"
+  mirror "https://ghfast.top/https://github.com/hashcat/hashcat/archive/refs/tags/v8.0.0.tar.gz"
+  sha256 "d6a7533e1e250a236a8b99d0b725cdd76d8fdce744c7eeacb2bf42210fe4761b"
   license all_of: [
     "MIT",
     "LZMA-SDK-9.22", # deps/LZMA-SDK/
@@ -18,12 +18,11 @@ class Hashcat < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 arm64_golden_gate: "cc3fc40438facc4020562175bc2b93b73c0243828aefb7a21f7bcc0aaf3bc59e"
-    sha256 arm64_tahoe:       "9660281ddadbd08f981600044f9ab8a77bb94251709b5465904c545ad8bdbc31"
-    sha256 arm64_sequoia:     "5b76d2a56bcb712905529d4ee1cbc5f8e16b7cdcfbc1f7a79812e4124bae9258"
-    sha256 arm64_linux:       "edf1ba68b54f13e2bfa8f5e7414eb8d5ca30d7397e07d05ad210b104772537cd"
-    sha256 x86_64_linux:      "41ce78c2f40c40e00421b5706eace1feec56624fcce3cfef94432617cacf16a9"
+    sha256 arm64_golden_gate: "38a531805276812b858abe2b15995e5a9c5141ed81a2abce41a2802878689333"
+    sha256 arm64_tahoe:       "f10544272c35b63688c259cb2a86da8c57dc42a13d6946888b05c1b64346ecbc"
+    sha256 arm64_sequoia:     "93fbe0438776d0d0763f103f86b74a6c4f5464f332ac1c002cad03125386e44c"
+    sha256 arm64_linux:       "276913be2c7c5043bab207c731df894147b8aed3e06f38306af7e5e6dd8332af"
+    sha256 x86_64_linux:      "95612765d78ff6b467a7812c3fd12a71e1b939bdce5aceef175d5d5c0208e18b"
   end
 
   depends_on "minizip"
@@ -47,8 +46,9 @@ class Hashcat < Formula
     (buildpath/"deps").each_child do |dep|
       rm_r(dep) if %w[OpenCL-Headers unrar xxHash zlib].include?(dep.basename.to_s)
     end
+    # The ZC706 bootloader is board firmware, so retain its redistribution notices.
     (buildpath/"docs/license_libs").each_child do |dep|
-      rm(dep) unless %w[SSE2NEON LZMA].any? { |dep_name| dep.basename.to_s.start_with?(dep_name) }
+      rm(dep) unless %w[SSE2NEON LZMA XILINX_FSBL].any? { |dep_name| dep.basename.to_s.start_with?(dep_name) }
     end
 
     args = %W[

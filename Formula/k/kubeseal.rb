@@ -2,8 +2,8 @@ class Kubeseal < Formula
   desc "Kubernetes controller and tool for one-way encrypted Secrets"
   homepage "https://github.com/bitnami/sealed-secrets"
   url "https://github.com/bitnami/sealed-secrets.git",
-      tag:      "v0.41.1",
-      revision: "f845e8f80a1ff6d112e2116d552f4670bf22895c"
+      tag:      "v0.41.2",
+      revision: "51799eb6dd970239e356c1ccffd354fe74408700"
   license "Apache-2.0"
   head "https://github.com/bitnami/sealed-secrets.git", branch: "main"
 
@@ -13,11 +13,11 @@ class Kubeseal < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5d6d03f6adfe324c3e7359d1edb53dd4603c662a04d58eb609286a53903455f7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "13898dbd3db39bf271695e038ae69f091108f775ebb4ab12d1e1e4a9fe08192e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7fd61f5720992d518644d5fdcead13fedb6d07982091b36e6f744fe70596a267"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "53a94bd1ace4c61ef7b023c5fc6d42cc63be92b6e34a985d6ab0d352bcddaa3d"
-    sha256 cellar: :any,                 x86_64_linux:      "45963b145e72bf6f1eb1102d424a05b71a4a61e871a11438a38a24a25e498e14"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6d227e2c5c127da29836f8ce23f90b44b7cc52df8d82efd097cec84d6ad90a0e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e144a53b4e6992d1bf17ed85aaf9918c4e097fd136a6cfd13ae1da6ef6106630"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ae410afc9a28dc28cc2925304b6548eb5d88c7fc969ea5ba2518f8b347ac94ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cfb1b6fbd18fcaa49da1ac3300785ed4dab4c05f52751ba702c8073861ac0ab3"
+    sha256 cellar: :any,                 x86_64_linux:      "7cf02a2c8b746211b465273b67c398213f2a98adcfe0ebcf6d799ded791f2791"
   end
 
   depends_on "go" => :build

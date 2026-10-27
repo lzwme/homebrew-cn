@@ -36,6 +36,7 @@ class Openjdk < Formula
 
   on_macos do
     depends_on xcode: :build # for metal
+    depends_on arch: :arm64
   end
 
   on_linux do

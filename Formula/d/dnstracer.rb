@@ -34,6 +34,8 @@ class Dnstracer < Formula
   # Fix to error: conflicting types for 'res_9_getlong', 'res_9_getshort'
   patch :DATA if DevelopmentTools.clang_build_version >= 1700
 
+  allow_network_access! :test
+
   def install
     ENV.append "LDFLAGS", "-lresolv"
 

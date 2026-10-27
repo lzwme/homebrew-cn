@@ -26,6 +26,8 @@ class Daemonlogger < Formula
 
   uses_from_macos "libpcap"
 
+  deny_network_access!
+
   def install
     args = []
     # Help old config scripts identify arm64 linux

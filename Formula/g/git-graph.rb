@@ -6,6 +6,11 @@ class GitGraph < Formula
   license "MIT"
   head "https://github.com/git-bahn/git-graph.git", branch: "master"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "91e9379cb3b24b9862e559323c8779590262e957677e330c8719413326d03742"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2f91298b2e466ef7d4b2d598601af50af6bcedf28199b50d70719fc0d38885c7"

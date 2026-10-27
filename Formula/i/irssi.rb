@@ -36,8 +36,6 @@ class Irssi < Formula
   deny_network_access!
 
   def install
-    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
-
     perl_vendorarch = Utils.safe_popen_read("perl", "-MConfig", "-e", "print $Config{vendorarch}")
 
     args = %W[

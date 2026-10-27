@@ -27,6 +27,8 @@ class DfuProgrammer < Formula
 
   depends_on "libusb"
 
+  deny_network_access!
+
   def install
     system "./bootstrap.sh" if build.head?
     system "./configure", "--disable-silent-rules", *std_configure_args

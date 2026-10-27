@@ -173,6 +173,14 @@ class Pdm < Formula
       type :backport
       resolves "https://github.com/sethmlarson/socksio/pull/61"
     end
+
+    # Fix for flit-core>=5
+    patch do
+      url "https://github.com/sethmlarson/socksio/commit/504f7e51682b9526d3ecc7ea893338af1fedfb2d.patch?full_index=1"
+      sha256 "b0c327c4e8fa722669dc372263d735f429015587e02935e2e8cb2b22028c0bfb"
+      type :backport
+      resolves "https://github.com/sethmlarson/socksio/pull/66"
+    end
   end
 
   resource "tomlkit" do
@@ -206,19 +214,8 @@ class Pdm < Formula
   end
 
   def install
-    venv = virtualenv_install_with_resources(without: "socksio")
-    resource("socksio").stage do
-      # Cap flit-core below 4 as socksio's legacy `[tool.flit.metadata]`
-      # pyproject table is no longer supported since flit-core 4
-      inreplace "pyproject.toml", "flit_core >=2", "flit_core >=2,<4"
-      venv.pip_install Pathname.pwd
-    end
+    virtualenv_install_with_resources
     generate_completions_from_executable(bin/"pdm", "completion")
-
-    # Build an `:all` bottle by replacing homebrew prefix on the comment block
-    inreplace venv.site_packages/"findpython-#{resource("findpython").version}.dist-info/METADATA",
-              "/opt/homebrew",
-              "/usr/local"
   end
 
   test do

@@ -32,6 +32,8 @@ class Dsh < Formula
     depends_on "gnu-sed" => :build
   end
 
+  deny_network_access!
+
   def install
     # Use GNU sed on macOS to avoid this build failure:
     # sed: RE error: illegal byte sequence

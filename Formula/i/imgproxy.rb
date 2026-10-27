@@ -1,17 +1,17 @@
 class Imgproxy < Formula
   desc "Fast and secure server for resizing and converting remote images"
   homepage "https://imgproxy.net"
-  url "https://ghfast.top/https://github.com/imgproxy/imgproxy/archive/refs/tags/v4.0.19.tar.gz"
-  sha256 "16b980edde124fe394446d1e356ba406a0ca5de0dbe46dc98763f683147fcdba"
+  url "https://ghfast.top/https://github.com/imgproxy/imgproxy/archive/refs/tags/v4.0.20.tar.gz"
+  sha256 "74b0abd1c817c6927da372b187ea638671d2bb46d330ebe5558e8790a99212c7"
   license "Apache-2.0"
   head "https://github.com/imgproxy/imgproxy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5dbc845dffefe68a86b9b691db6a97f21b399a35ad4732f737fc794c0fb6c50f"
-    sha256 cellar: :any, arm64_tahoe:       "dab3ab85522a58b270620747b65e66d27136b6bc6f8576d4dca72c6b890c22f2"
-    sha256 cellar: :any, arm64_sequoia:     "773527b9ef4dfa3af6de3d7822bcf32b9802031192746d7da4dfd407d5675ee1"
-    sha256 cellar: :any, arm64_linux:       "742ae737e7d796a3600ccb176eea9734ada2c6020d1f98cfe862fc41eec0e64b"
-    sha256 cellar: :any, x86_64_linux:      "5b69ee23c2f769a84dc44ebf1fc5eeffd9bf115f8a5e08f3642a9eba6f49f23b"
+    sha256 cellar: :any, arm64_golden_gate: "36e87b0f7614bb5da939f8af347cb8d83d5cbcc02838a8cd7c97c7a3ffd4cf47"
+    sha256 cellar: :any, arm64_tahoe:       "f17b1778a15a3d04ff39bcfd936bc4aa58dbf7853e301093a6771eb2ae896f63"
+    sha256 cellar: :any, arm64_sequoia:     "e6789740270a9ecf650cc7e9e45adab084f8168bbab1d461bb99e3bd5ec59821"
+    sha256 cellar: :any, arm64_linux:       "5dbdf368d7f96bbad9cc32c0b96545f4cce0da8f9c62b984bdf00a3443f54698"
+    sha256 cellar: :any, x86_64_linux:      "4646af5358c0b01aff12d5cd7c136c42b5c028c8363ab31863073dbf8f631da8"
   end
 
   depends_on "go" => :build

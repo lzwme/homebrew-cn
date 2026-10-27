@@ -1,17 +1,17 @@
 class Cotp < Formula
   desc "TOTP/HOTP authenticator app with import functionality"
   homepage "https://github.com/replydev/cotp"
-  url "https://ghfast.top/https://github.com/replydev/cotp/archive/refs/tags/v1.11.0.tar.gz"
-  sha256 "8ef923c82397e1ce82b07cb1ac901a82c680d20cfd211d2f79b68a338006da08"
+  url "https://ghfast.top/https://github.com/replydev/cotp/archive/refs/tags/v1.11.1.tar.gz"
+  sha256 "649119c3d49a16a1fd439949485763f242614ec05dc6d9f84df0d22120988d2e"
   license "GPL-3.0-only"
   head "https://github.com/replydev/cotp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "68d1b25c6d5ec926d68d1f36b5b2d08c08700161fb5fe2e8ef841b653aa35ce8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e6dfe12d41d465cc450bfdcf2798c90149841951d7b1a8c3c2467e0885e9035a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a80e1c0e9b9d3c434b32e6b6df638893d417ab07986af72ac06da3083f5bd60b"
-    sha256 cellar: :any,                 arm64_linux:       "7f5444e5adce066e154b1a394106aecaf205bab507bb5c7e0c58478fa126d82a"
-    sha256 cellar: :any,                 x86_64_linux:      "b71cbf3e4ec227d46ae3b209486d3ac164377bb6876abffcc4e64c77b50a6254"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b235fa29dc499605456c62985db76f3ec093298374fcffa4462552552d16ede7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "323ba01cd4f7a723bb17c22e58a28e724bda23b89630583a8cd72cc8c291a315"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8b1e7e2a4076c12ec69c76cb6b8c3a46c18ba9d5fcba951273b0dd44118cd881"
+    sha256 cellar: :any,                 arm64_linux:       "95534c092fc5a947995ba57180f00891b4601e3a762ac8dd148530390c2e4d39"
+    sha256 cellar: :any,                 x86_64_linux:      "82eb9fe23641497563ed85f99a0495d79a7ed181e03739512d0da153d8f0e912"
   end
 
   depends_on "rust" => :build

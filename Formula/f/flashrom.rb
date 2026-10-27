@@ -35,7 +35,6 @@ class Flashrom < Formula
   end
 
   def install
-    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
     ENV["CONFIG_RAYER_SPI"] = "no"
     ENV["CONFIG_ENABLE_LIBPCI_PROGRAMMERS"] = "no"
 

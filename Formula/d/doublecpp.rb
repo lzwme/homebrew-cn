@@ -25,6 +25,8 @@ class Doublecpp < Formula
   # Patch submitted to author by email.
   patch :DATA
 
+  deny_network_access!
+
   def install
     args = []
     # Help old config scripts identify arm64 linux

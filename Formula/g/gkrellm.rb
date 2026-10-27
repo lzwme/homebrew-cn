@@ -47,8 +47,6 @@ class Gkrellm < Formula
   allow_network_access! :test
 
   def install
-    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
-
     args = []
     args << "-Dx11=disabled" if OS.mac?
     system "meson", "setup", "build", *args, *std_meson_args

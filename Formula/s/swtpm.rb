@@ -47,7 +47,6 @@ class Swtpm < Formula
   allow_network_access! :test
 
   def install
-    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
     system "./autogen.sh", "--disable-tests", "--with-openssl", *std_configure_args
     system "make"
     system "make", "install"

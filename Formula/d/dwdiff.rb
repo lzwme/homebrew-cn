@@ -28,6 +28,8 @@ class Dwdiff < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
     if OS.mac?
       ENV.append "LDFLAGS", "-L#{formula_opt_lib("gettext")}"

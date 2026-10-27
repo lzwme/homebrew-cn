@@ -2138,7 +2138,7 @@ Homebrew-homebrew-core/Formula/f/fetch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fetchmail.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ffc.h.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/ffe.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/ffe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffmate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ffmpeg-full.rb, Homebrew/homebrew-core, 0
@@ -2536,7 +2536,7 @@ Homebrew-homebrew-core/Formula/g/gist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gistit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-absorb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-annex-remote-rclone.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/git-annex.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/git-annex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/git-appraise.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-archive-all.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-big-picture.rb, Homebrew/homebrew-core, 0
@@ -8326,7 +8326,7 @@ Homebrew-homebrew-core/Formula/w/wolfssl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/woob.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/woodpecker-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/woof-doom.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/w/woof.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/woof.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wordgrinder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wordle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wordnet.rb, Homebrew/homebrew-core, 0
@@ -9773,6 +9773,7 @@ Homebrew-homebrew-cask/Casks/d/digital.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dingtalk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dintch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/direqual.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/diri.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/discord.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/discord@canary.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/discord@development.rb, Homebrew/homebrew-cask, 0
@@ -13486,6 +13487,7 @@ Homebrew-homebrew-cask/Casks/k/keyboard-cowboy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/keyboard-maestro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/keyboardcleantool.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/keyboardholder.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/k/keyboop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/keycastr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/keychron-assistant.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/keyclu.rb, Homebrew/homebrew-cask, 1
@@ -14591,6 +14593,7 @@ Homebrew-homebrew-cask/Casks/p/pdfsam-basic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pdl.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pearcleaner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pecunia.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/peel.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pen.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/penc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pencil.rb, Homebrew/homebrew-cask, 0
@@ -14819,6 +14822,7 @@ Homebrew-homebrew-cask/Casks/p/proxygen-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/proxyman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/prudent.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/prusaslicer.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/prusaslicer@preview.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/psi-plus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/psi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/psiphon-conduit.rb, Homebrew/homebrew-cask, 1

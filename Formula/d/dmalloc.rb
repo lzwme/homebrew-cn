@@ -26,6 +26,8 @@ class Dmalloc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "c170666de851ea2229c7c7e5dbd2d45960d8033bae31ceffd7eaf5289c1c7aba"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--enable-threads", "--prefix=#{prefix}"
     system "make", "install", "installth", "installcxx", "installthcxx"

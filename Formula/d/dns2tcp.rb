@@ -26,6 +26,8 @@ class Dns2tcp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "44282da4806ffc130f6a3326925e708d70379c9c44ec735b251010927d5b920e"
   end
 
+  deny_network_access!
+
   def install
     # Work around failure from GCC 10+ using default of `-fno-common`
     # multiple definition of `debug'; rr.o:(.bss+0x0): first defined here

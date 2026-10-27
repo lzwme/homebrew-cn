@@ -1,17 +1,17 @@
 class Upterm < Formula
   desc "Instant terminal sharing"
   homepage "https://upterm.dev"
-  url "https://ghfast.top/https://github.com/owenthereal/upterm/archive/refs/tags/v0.39.0.tar.gz"
-  sha256 "896f2185f02cbf9821002a7eea864572f25cbcc52358975bcfee137418c1343a"
+  url "https://ghfast.top/https://github.com/owenthereal/upterm/archive/refs/tags/v0.40.0.tar.gz"
+  sha256 "586a5f0c1912661c95fd47ede54d1e942490034d038fd5619059bf5689c86d8b"
   license "Apache-2.0"
   head "https://github.com/owenthereal/upterm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b1cafa8efc081744cd93253aca9ee57634d9b36912684111f2fb486c35f50b08"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7983f94593826048fb1885541cea8c3701042945e1f56d0e6b702adde5da0430"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "674f1d74af63c4fb161e96661daa1bffadbcf324a10a5a2f2d13376e5506cb80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "ebee77a4f36eda298de37f70ead0e664e6f71d0c1a1b21698b13dcabe48ef8a2"
-    sha256 cellar: :any,                 x86_64_linux:      "9af8a65f99798c0225f1f55266e09075b322dd105f4e91462a81a725ecd3b569"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e53439fa5171ca55239e8683fd76e6b35cf2272179d659ac7bd0b5d332122167"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9989804be88d04cfd137c93bece730ea28c37fb8c0f75ee849a2fdf5aa546f6c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "22622463bcd0867160a64266a401cf650a0327d7708a0500e40ccec963b89ec0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f5eb438a3b671238e971fd2a3b070cd6c3ca189cc9cfc00fb2e6787d509fcaf3"
+    sha256 cellar: :any,                 x86_64_linux:      "329afca255a5a8e014256a5c91ece4a6a33479f3b39d6b5ceec3c69f54ce51da"
   end
 
   depends_on "go" => :build

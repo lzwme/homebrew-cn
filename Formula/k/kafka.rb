@@ -1,9 +1,9 @@
 class Kafka < Formula
   desc "Open-source distributed event streaming platform"
   homepage "https://kafka.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=kafka/4.3.1/kafka_2.13-4.3.1.tgz"
-  mirror "https://archive.apache.org/dist/kafka/4.3.1/kafka_2.13-4.3.1.tgz"
-  sha256 "f118328b2d053497350d5befd82c08db7ffd710327ff52943dd5caaa1b25db21"
+  url "https://www.apache.org/dyn/closer.lua?path=kafka/4.4.0/kafka_2.13-4.4.0.tgz"
+  mirror "https://archive.apache.org/dist/kafka/4.4.0/kafka_2.13-4.4.0.tgz"
+  sha256 "5d46df16e8dbd228fed83c3e6fc4306916cf3d9156184a7fc2462e9ad9711a7d"
   license "Apache-2.0"
 
   livecheck do
@@ -12,14 +12,7 @@ class Kafka < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9621e8b9efdfcc29d602d8aa7038be29d2a8c4760c01dde7c5edf1cf2175169a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
-    sha256 cellar: :any_skip_relocation, sonoma:            "ae6e70b0289c5b3428193e366dac966e91bbb52cce3d3b418899121a0094c6e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "662d21cb0fe569996ba5fefb88fe9cac09a58571a2ed9de96ea0c3a0155aefa1"
+    sha256 cellar: :any_skip_relocation, all: "c50c944f3a17752f275a34eff7d86092b6920a33e528cb33e92c835a6aeabe3a"
   end
 
   depends_on "openjdk"

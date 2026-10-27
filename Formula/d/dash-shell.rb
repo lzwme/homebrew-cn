@@ -27,6 +27,8 @@ class DashShell < Formula
 
   uses_from_macos "libedit"
 
+  deny_network_access!
+
   def install
     ENV["ac_cv_func_stat64"] = "no" if OS.mac? && Hardware::CPU.arm?
     system "./autogen.sh" if build.head?

@@ -15,10 +15,13 @@ class Dateutils < Formula
 
   head do
     url "https://github.com/hroptatyr/dateutils.git", branch: "master"
+
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
   end
+
+  deny_network_access!
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?

@@ -1,8 +1,8 @@
 class PythonFreethreading < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.15.1/Python-3.15.1.tgz"
-  sha256 "133d85e118dc32621cda1d9d1d7d9694fe0c5e82bc339a7d528c109fe8b36387"
+  url "https://www.python.org/ftp/python/3.15.2/Python-3.15.2.tgz"
+  sha256 "f74e1db0eabd651cd01e4e2a00201bd41866abe74869ab716f9bf33cbbaa0943"
   license "Python-2.0"
 
   livecheck do
@@ -10,11 +10,11 @@ class PythonFreethreading < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "a132a71770ddc9cf7886b7629eec98ae13152832dffb7161d23dc3d461c6cd58"
-    sha256 arm64_tahoe:       "336f3541e15aeadf96aa9b35425631146f82bba8d0729e0f51348c7e657ce88a"
-    sha256 arm64_sequoia:     "40c68784e464ec4c6eee1045a1b63f82e0066f6236558019fa122eaf0599ad1a"
-    sha256 arm64_linux:       "09af016a48d7aa409bf0b76978b4336591929c874470b2a68834be0efb67ebee"
-    sha256 x86_64_linux:      "4980d282f08f5c2352b2429f2458bbf89c446db622313ef40b9afe4d2658eb00"
+    sha256 arm64_golden_gate: "228972f878e65d12da8aa23f6346366c91e4b0bfd856e23e1be99811f295b6af"
+    sha256 arm64_tahoe:       "e436f9ab36a0493cc1a84ddeb78c96b713aa2c8946b5bda87d989f71d988d77b"
+    sha256 arm64_sequoia:     "a980fa806f1f154e714cc4c09b6a111698bf8e7125c7d1c42b55177596ae78ad"
+    sha256 arm64_linux:       "369cfb59a7661b4ced014c5428be94d50b10f6e62fffd43b11a86a2cb2d4916d"
+    sha256 x86_64_linux:      "e1bf7df5f30718fc3e831925e118c33e13098715c7dd23c500145189b9cc1b9f"
   end
 
   depends_on "pkgconf" => :build

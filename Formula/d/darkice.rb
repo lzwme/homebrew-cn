@@ -54,6 +54,8 @@ class Darkice < Formula
     resolves "https://github.com/rafael2k/darkice/pull/216"
   end
 
+  deny_network_access!
+
   def install
     # TODO: Remove when source is back to the release tarball
     cd "darkice/trunk" do

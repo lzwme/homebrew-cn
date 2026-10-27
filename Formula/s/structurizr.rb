@@ -1,16 +1,16 @@
 class Structurizr < Formula
   desc "Software architecture models as code"
   homepage "https://structurizr.com/"
-  url "https://ghfast.top/https://github.com/structurizr/structurizr/archive/refs/tags/v2026.09.19.tar.gz"
-  sha256 "bcf0f09ecd3209c931cce0211f87b914991870364f4321a83c59cf4ecbe40d94"
+  url "https://ghfast.top/https://github.com/structurizr/structurizr/archive/refs/tags/v2026.10.26.tar.gz"
+  sha256 "cf841dec442e4cb4970ce3bb692eacc55e8e29cb755a4e557091d8d5e575beea"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f9e26d16c758e796922c3ab737acf4e37f678c3005df9b1eb698b4965a6b9d9b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "af3ecdd8b21f22eaf62294bfd17a23d1feccb983e0db3cbccac7c4736137d873"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d478a5e40da067427ae043a479b59a0dac7be4ff86ba8216bac6e037ba972162"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "31517d44a930333a1f0990855fbb404c7471814a7b504084607c3d4d5bb6610e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9f280a928fd68d8a03a5662b6ea5212654f12b011e3377cafdca07ccb34bc30a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d90e0bc830044703d251452daa61d0574c01d326f2baaf4d0b5664db38094cf4"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d90e0bc830044703d251452daa61d0574c01d326f2baaf4d0b5664db38094cf4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d90e0bc830044703d251452daa61d0574c01d326f2baaf4d0b5664db38094cf4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e29af0bab627d6a7e2d1f6a6fe30f86481ee390ac5fccf9596eb1835000b3da7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e29af0bab627d6a7e2d1f6a6fe30f86481ee390ac5fccf9596eb1835000b3da7"
   end
 
   depends_on "maven" => :build

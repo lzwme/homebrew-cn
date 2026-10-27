@@ -1,17 +1,10 @@
 class Av1an < Formula
   desc "Cross-platform command-line encoding framework"
   homepage "https://github.com/rust-av/Av1an"
+  url "https://ghfast.top/https://github.com/rust-av/Av1an/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "f58096a084456acf66f2be273b6c70e05cb53831b2a8a5006569f08a5a7b575a"
   license "GPL-3.0-only"
-  revision 3
   head "https://github.com/rust-av/Av1an.git", branch: "master"
-
-  stable do
-    url "https://ghfast.top/https://github.com/rust-av/Av1an/archive/refs/tags/v0.5.2.tar.gz"
-    sha256 "58eba4215ffaf07a58065e78fb4aec8df9ebda48e9d996621d559f3024b3538b"
-
-    # Workaround for VapourSynth 74+ until new release
-    patch :DATA
-  end
 
   # Differentiate v-prefixed tags from old version schemes
   livecheck do
@@ -20,13 +13,11 @@ class Av1an < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f79bdb7a8964dea022165a087cef1a281c156696d9342387f83d19d8c39bf46d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6408b362fc09ef34a7d5518b4e963f975fbfcab9686605be0aff8b971e9f8ded"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "940cbc4f300478586beeed81b3cbfd1cf8e13e799ab2ce66d1397c8d57ddd72a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "1af81225e8802d91363c75c58cfd492308710819c4e9b778db02b2fb612ff45c"
-    sha256 cellar: :any_skip_relocation, sonoma:            "1cbb38b5c91e2c114fbc06f49ef3c7693e49447efbdff876a151624e5db8275a"
-    sha256 cellar: :any,                 arm64_linux:       "c200efae60ac1c56f75b277546d1ebe8cfbb0d54ca683830480d351c0b288223"
-    sha256 cellar: :any,                 x86_64_linux:      "cc0d5d979af9062de3ae2d2031749b38e49e3393158385f429732b8a1151fb9b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cac6c7ed1af8cd38f2a55af4605ea995af7b72c0ef6dbd9c2c33ea8bcc7a58a0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6b336020ed3ba0b195b825dc5aaed6d3573ad1720b341b99999a4b5a418fc16e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "13b90634026f8e4058a6007fe1bf34f3ad8ff847bcd5114096d253f4b39fadf1"
+    sha256 cellar: :any,                 arm64_linux:       "ff0b12473a72a9f2ceafdce673bc16ed0ca8a405b96f7a23aa493cf6445b29ad"
+    sha256 cellar: :any,                 x86_64_linux:      "3e1fd76ca1a8d3888d8fdb3640e42e5000b3cc3a270c2f259877e93e6172229a"
   end
 
   depends_on "rust" => :build
@@ -36,12 +27,6 @@ class Av1an < Formula
 
   on_intel do
     depends_on "nasm" => :build
-  end
-
-  # Fix compatibility with FFmpeg 9.
-  patch do
-    url "https://github.com/rust-av/Av1an/commit/9bbd829c480e58625842d43b7c8f54962914e9a6.patch?full_index=1"
-    sha256 "78a74c9f236141bbc35e1a7e039b5f3b45d730ad7bb7bda62b337b95daf50e55"
   end
 
   deny_network_access!
@@ -66,51 +51,3 @@ class Av1an < Formula
     assert_path_exists testpath/"test.av1.mkv"
   end
 end
-
-__END__
---- a/Cargo.lock
-+++ b/Cargo.lock
-@@ -1030,6 +1030,16 @@ dependencies = [
-  "pkg-config",
- ]
- 
-+[[package]]
-+name = "libloading"
-+version = "0.9.0"
-+source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "754ca22de805bb5744484a5b151a9e1a8e837d5dc232c2d7d8c2e3492edc8b60"
-+dependencies = [
-+ "cfg-if",
-+ "windows-link 0.2.1",
-+]
-+
- [[package]]
- name = "libz-sys"
- version = "1.1.23"
-@@ -2042,9 +2052,9 @@ checksum = "ba73ea9cf16a25df0c8caa16c51acb937d5712a8429db78a3ee29d5dcacd3a65"
- 
- [[package]]
- name = "vapoursynth"
--version = "0.5.1"
-+version = "0.5.6"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "f817dd2eca0813092eecb84c916acef69419da39ee8563d9aeb25118bc927a71"
-+checksum = "413b994d9955202f99298ef502dec6d84f1be7603483d19158a365f9fdb8f128"
- dependencies = [
-  "anyhow",
-  "thiserror",
-@@ -2053,9 +2063,12 @@ dependencies = [
- 
- [[package]]
- name = "vapoursynth-sys"
--version = "0.5.0"
-+version = "0.6.0"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "0dc01f455bc7ef73678bbcab5332fbe745892fa9466ccefe086de52a32fbce19"
-+checksum = "4ef47dc5817613dbe0251eadbe2cea0443edebbb3a551be7b6728314ff44e12e"
-+dependencies = [
-+ "libloading",
-+]
- 
- [[package]]
- name = "vcpkg"

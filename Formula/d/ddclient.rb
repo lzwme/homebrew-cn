@@ -24,6 +24,8 @@ class Ddclient < Formula
 
   uses_from_macos "perl"
 
+  deny_network_access!
+
   def install
     system "./autogen" if build.head?
     system "./configure", "--sysconfdir=#{etc}", "--localstatedir=#{var}", "CURL=curl", *std_configure_args

@@ -62,7 +62,6 @@ class Sylpheed < Formula
   end
 
   def install
-    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
     system "./configure", "--disable-updatecheck", *std_configure_args
     system "make", "install"
   end

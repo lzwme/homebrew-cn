@@ -25,6 +25,8 @@ class Dc3dd < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
     # Fix to error: call to undeclared function 'strtod_l';
     if OS.mac? && DevelopmentTools.clang_build_version >= 1700

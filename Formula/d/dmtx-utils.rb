@@ -47,6 +47,8 @@ class DmtxUtils < Formula
     resolves "https://github.com/dmtx/dmtx-utils/pull/16"
   end
 
+  deny_network_access!
+
   def install
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *std_configure_args

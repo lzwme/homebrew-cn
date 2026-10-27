@@ -6,19 +6,17 @@ class DvrScan < Formula
   url "https://files.pythonhosted.org/packages/47/84/a3256473a827f0c17e3e724c409a33146a26d6515f87df38c3a649547b7d/dvr_scan-1.8.2.1.tar.gz"
   sha256 "e424eaa8f2502a773588c97722bfe163f1317129e6e7073c25c4282bcf5f8e40"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
   head "https://github.com/Breakthrough/DVR-Scan.git", branch: "main"
 
   no_autobump! because: "macOS resources cannot be updated on linux CI"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e4417eae32550a60bdf8bc040dc1b0d6e3d368224c548c78555fd29021b17a91"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1b985d7e3d7cd0d6bf7b017d924ef09919d93256cba4142f0c5d87ed9c5bd2b7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7d272ee38eacaf36292a93d6c9705cfb3b0713a691a21c44476a70c101e34022"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "f7940a7b39c42c3cef65925e26c7168d4d67bfe8921149363340b156595ccd75"
-    sha256 cellar: :any_skip_relocation, sonoma:            "9267191144d62a235c0a6c2e01cc4bb61389a9f6aae7051295052c4acb8ca77d"
-    sha256 cellar: :any,                 arm64_linux:       "0958b7913a4500f9519a958ec0a11ff2ded19dd9776fd281683cf7068ce4b69e"
-    sha256 cellar: :any,                 x86_64_linux:      "fa4334f8c940bdd4abf258a2ae39f597506901404b9e12760a638a0fac153875"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ee4a23161c4bc02f2ab6aeee61941e2cb443746be78d13126f34dd1dcca657fc"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0d01ba2db412426cdbe4e3bb40d8ede869d629b7884179b10208be642ba636a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e67893dd34d7300145a2d0479ef3824322ebce8c0b7931b2315fddadcba8f099"
+    sha256 cellar: :any,                 arm64_linux:       "0dc0d499bffd89c714f87cf19d933650b8742e107f21205d06a3837346778438"
+    sha256 cellar: :any,                 x86_64_linux:      "c244e33457c291546898ed21e1f704592df536955308b5e5d994fc2e1f4c62b8"
   end
 
   depends_on "cmake" => :build
@@ -27,7 +25,7 @@ class DvrScan < Formula
   depends_on "numpy"
   depends_on "opencv"
   depends_on "pillow" => :no_linkage
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   on_macos do
     depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
@@ -47,23 +45,23 @@ class DvrScan < Formula
   end
 
   resource "cython" do
-    url "https://files.pythonhosted.org/packages/91/85/7574c9cd44b69a27210444b6650f6477f56c75fee1b70d7672d3e4166167/cython-3.2.4.tar.gz"
-    sha256 "84226ecd313b233da27dc2eb3601b4f222b8209c3a7216d8733b031da1dc64e6"
+    url "https://files.pythonhosted.org/packages/a9/d8/4981ef716ad0e3ff0d3ef383aefc6b03c4a88dee33b272bf8e0d833001ca/cython-3.3.0.tar.gz"
+    sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/9f/4a/0883b8e3802965322523f0b200ecf33d31f10991d0401162f4b23c698b42/platformdirs-4.9.6.tar.gz"
-    sha256 "3bfa75b0ad0db84096ae777218481852c0ebc6c727b3168c1b9e0118e458cf0a"
+    url "https://files.pythonhosted.org/packages/58/e6/d0abbb256b44e6a05748c6942511ff67db8dbb068de0c35b24bf1b395b09/platformdirs-4.13.5.tar.gz"
+    sha256 "05831adf87d392760f4b5c3a0a95579ab5a10b18b9b9bd43680dcb47544788a0"
   end
 
   resource "pyobjc-core" do
-    url "https://files.pythonhosted.org/packages/b8/b6/d5612eb40be4fd5ef88c259339e6313f46ba67577a95d86c3470b951fce0/pyobjc_core-12.1.tar.gz"
-    sha256 "2bb3903f5387f72422145e1466b3ac3f7f0ef2e9960afa9bcd8961c5cbf8bd21"
+    url "https://files.pythonhosted.org/packages/a5/78/abc4ce5920305780aeb36b4067a86253378b36e29ba96673a3deb02eb03a/pyobjc_core-12.2.2.tar.gz"
+    sha256 "3906452339cd06a3bb07df103c2511d4cb0f7a22d8771c0b802eba15d9a642b6"
   end
 
   resource "pyobjc-framework-cocoa" do
-    url "https://files.pythonhosted.org/packages/02/a3/16ca9a15e77c061a9250afbae2eae26f2e1579eb8ca9462ae2d2c71e1169/pyobjc_framework_cocoa-12.1.tar.gz"
-    sha256 "5556c87db95711b985d5efdaaf01c917ddd41d148b1e52a0c66b1a2e2c5c1640"
+    url "https://files.pythonhosted.org/packages/75/76/49c6da2c6a831020b4854ba20079d5a1030474bffc776b7b73c2eeff8c15/pyobjc_framework_cocoa-12.2.2.tar.gz"
+    sha256 "c96c0ef69a71afbbb0e6a7d594b455c5fe47d62e0db376ee7a2b4b828c16ace9"
   end
 
   resource "scenedetect" do
@@ -77,8 +75,8 @@ class DvrScan < Formula
   end
 
   resource "tqdm" do
-    url "https://files.pythonhosted.org/packages/09/a9/6ba95a270c6f1fbcd8dac228323f2777d886cb206987444e4bce66338dd4/tqdm-4.67.3.tar.gz"
-    sha256 "7d825f03f89244ef73f1d4ce193cb1774a8179fd96f31d7e1dcde62092b960bb"
+    url "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz"
+    sha256 "cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4"
   end
 
   resource "sample-vid", :test do

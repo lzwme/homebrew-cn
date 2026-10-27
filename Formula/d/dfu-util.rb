@@ -32,6 +32,8 @@ class DfuUtil < Formula
   depends_on "pkgconf" => :build
   depends_on "libusb"
 
+  deny_network_access!
+
   def install
     system "./autogen.sh" if build.head?
     system "./configure", *std_configure_args

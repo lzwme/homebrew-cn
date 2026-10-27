@@ -44,6 +44,8 @@ class Dirac < Formula
     file "Patches/dirac/1.0.2.patch"
   end
 
+  deny_network_access!
+
   def install
     # BSD cp doesn't have '-d'
     inreplace "doc/Makefile.in", "cp -dR", "cp -R"

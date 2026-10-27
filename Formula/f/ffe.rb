@@ -1,31 +1,30 @@
 class Ffe < Formula
   desc "Parse flat file structures and print them in different formats"
-  homepage "https://ff-extractor.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/ff-extractor/0.3.9a/0.3.9a.tar.gz"
-  version "0.3.9a"
-  sha256 "3f3433c6e8714f9756826279e249bcf7f7ab8c45b5686003764e44f63eb225e7"
+  homepage "https://github.com/igitur/ffe"
+  url "https://ghfast.top/https://github.com/igitur/ffe/archive/refs/tags/v0.4.1d.tar.gz"
+  version "0.4.1d"
+  sha256 "2a5914de7779b9021031810ccafbcb8c15d47b17662559e976b304478c3d949c"
   license "GPL-2.0-or-later"
-
-  livecheck do
-    url :stable
-    regex(%r{url=.*?/(?:ffe[._-])?v?(\d+(?:\.\d+)+(?:-\d+)?[a-z]?)\.t}i)
-  end
+  head "https://github.com/igitur/ffe.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "aa4f3e7ed241fd6a79b2c9ec24be22af78672b537ef7097de9602048373e9e65"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "83fd52f2c29e71aa022e6be65813c2da6385204d65bd9f74e7568a5e6222068a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2434c37d7cd7a87491c114df6bda210f02931bea75a31f9dd5291124d3da0f11"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "22ac6a47505e5c5daea19a9e916141a3882896d1218815d8fb5d43fd90f75181"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:     "a7b77078513e21ac6d077c228a3fc51dc31dcdbb707e9807764b7438e6630146"
-    sha256 cellar: :any_skip_relocation, sonoma:            "3cd2f309d44bbc5d7a429d078f6cec664e4ec170e08b8993477000e7d843605c"
-    sha256 cellar: :any_skip_relocation, ventura:           "8e2a4fd7ab7bd26bcd4b562eb90e7ae78987bbd5c0ff387cac15e6dcf45fd0ce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8a4528a12f9748f4fae9cc5d1157a49662cea7dc3df9b9d26da970ab900e8fed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "95cd58d701bdd204a70498b668326d01679493ccb77d8b84b517472d9838df0b"
+    sha256 cellar: :any, arm64_golden_gate: "886ec4521d356473de7d394b239edc09b36516e623538c2ce73edfd91e87f02d"
+    sha256 cellar: :any, arm64_tahoe:       "80a23795b378c141a9850dbd8908a02d30321da235c6419758ffbd497f21fd46"
+    sha256 cellar: :any, arm64_sequoia:     "e829feae034fdba3f88975d915cdafc8e2a54b847daf586ee5001bda05cbb16f"
+    sha256 cellar: :any, arm64_linux:       "2928e6b1ae568b415c7cd82f426b09ff44a3bf86789bd83e92ef86696f94a893"
+    sha256 cellar: :any, x86_64_linux:      "c30b449da5e23a74842bf10f9d48dd38e849d82b10ba7dc46a60182f384e4413"
   end
+
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "texinfo" => :build
+  depends_on "libgcrypt"
+
+  deny_network_access!
 
   def install
     ENV.append "CFLAGS", "-std=gnu89" if DevelopmentTools.clang_build_version >= 1500
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end

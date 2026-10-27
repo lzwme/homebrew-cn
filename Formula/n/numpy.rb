@@ -3,7 +3,9 @@ class Numpy < Formula
   homepage "https://www.numpy.org/"
   url "https://files.pythonhosted.org/packages/95/b0/c7453d0b6e2073c3264468b106ee1563750cecc910965e67357e3698c83e/numpy-2.5.4.tar.gz"
   sha256 "9a94cf751c9ad8ebaa835bcd3d40dacf8534ad086b88c38029b65123c7999d2a"
-  license "BSD-3-Clause"
+  # TODO: Remove Zlib from license when release includes
+  # https://github.com/numpy/numpy/commit/3d065710eee404a34788deb8f05f977a88879b20
+  license all_of: ["BSD-3-Clause", "0BSD", "MIT", "Zlib", "CC0-1.0"]
   compatibility_version 1
   head "https://github.com/numpy/numpy.git", branch: "main"
 

@@ -25,6 +25,8 @@ class DejaGnu < Formula
     depends_on "expect" # TODO: switch to uses_from_macos if undeprecated
   end
 
+  deny_network_access!
+
   def install
     ENV.deparallelize # Or fails on Mac Pro
     system "autoreconf", "--force", "--install", "--verbose" if build.head?

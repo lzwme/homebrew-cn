@@ -21,6 +21,8 @@ class Duff < Formula
     sha256                               x86_64_linux:      "d2e177f7c17a8dad92be2c7597844a572e4db8a8c4bba5db934843325c5edc90"
   end
 
+  deny_network_access!
+
   def install
     args = ["--mandir=#{man}"]
     # Help old config scripts identify arm64 linux

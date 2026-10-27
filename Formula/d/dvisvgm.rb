@@ -32,6 +32,8 @@ class Dvisvgm < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     args = [
       "--disable-silent-rules",

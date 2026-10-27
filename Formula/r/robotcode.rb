@@ -3,17 +3,16 @@ class Robotcode < Formula
 
   desc "Ultimate Robot Framework Toolset"
   homepage "https://robotcode.io"
-  url "https://files.pythonhosted.org/packages/b5/0f/d2d20377b7835eec1c53f9b51bd1ed839c34f2d326864dbb02c601bcca1f/robotcode-2.7.0.tar.gz"
-  sha256 "c07031d5103affc0de98a474a584b27f7dc2589bc908e0b908ca10969e617421"
+  url "https://files.pythonhosted.org/packages/32/8d/ec077aa7a3f843a19db1bfdf438f62b635571f104e68fc7bf2d51a286c7a/robotcode-2.8.0.tar.gz"
+  sha256 "da7e84dd7216a4c01b67168b5b299a0964c062a8a812adfc044ae1720e34f773"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "3982cffd2bad7ace4dad33e7b136d7ecdf5939f565634101bc988641ed14af1c"
-    sha256 cellar: :any, arm64_tahoe:       "02c68863ec2f5ff93504e1fdf7f2af4b78f2924489d7d793b02aaa756d01348b"
-    sha256 cellar: :any, arm64_sequoia:     "c61a3b4caad9b151297eedb4ade6d47c1c2bdbbf638e9511d3cf1be8ebbe8522"
-    sha256 cellar: :any, arm64_linux:       "4a0b7ae1db899b2f7f822472ae6b9fa377f44dcd6d13a3f686be4edb6143288c"
-    sha256 cellar: :any, x86_64_linux:      "c6718fff0640e8c10277b189796346faffb26289f4b5a01b659f654db646db75"
+    sha256 cellar: :any, arm64_golden_gate: "33b61e981d171a07a984e549b5a44403d52f7fffe9a73ce47575572e3ef7a2e1"
+    sha256 cellar: :any, arm64_tahoe:       "66cbe35468c73dbd6ac996b4a5869b1cf1ded43630e11ec34075d47c88e77ceb"
+    sha256 cellar: :any, arm64_sequoia:     "f3949cc0ecf675b9be9da4c8139b03397df8cdc96e07fcf7f873e00726fc1007"
+    sha256 cellar: :any, arm64_linux:       "65ef3c3d19f94bb9bfc02aca1bddf753d9f58c801c517a8df565b0849052294e"
+    sha256 cellar: :any, x86_64_linux:      "34cdfb02ccf6e03c70fd15dfd635a672d541d2075e05a467e5ca2933a5cbc84c"
   end
 
   depends_on "libyaml"
@@ -72,13 +71,13 @@ class Robotcode < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
-    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
+    url "https://files.pythonhosted.org/packages/58/e6/d0abbb256b44e6a05748c6942511ff67db8dbb068de0c35b24bf1b395b09/platformdirs-4.13.5.tar.gz"
+    sha256 "05831adf87d392760f4b5c3a0a95579ab5a10b18b9b9bd43680dcb47544788a0"
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/f9/e2/3e91f31a7d2b083fe6ef3fa267035b518369d9511ffab804f839851d2779/pluggy-1.6.0.tar.gz"
-    sha256 "7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3"
+    url "https://files.pythonhosted.org/packages/bf/db/7fc19e6f2dc92a966727031389fc2e08b558f0f25eb7403c1119ad4713cd/pluggy-1.7.0.tar.gz"
+    sha256 "d1eaa46ebb595891b860ab086b4d09c8588af65ebd4361b8e8f4bb8920b90ba8"
   end
 
   resource "prompt-toolkit" do
@@ -102,58 +101,58 @@ class Robotcode < Formula
   end
 
   resource "robotcode-analyze" do
-    url "https://files.pythonhosted.org/packages/5e/d0/fcbb84216a9cd840b95c81c3537148926c1b96d78590fa2266b7472c0987/robotcode_analyze-2.7.0.tar.gz"
-    sha256 "073e472152321072e43eb80cb540357a0edfc8c9af09977dc9575b0fb4bdcf31"
+    url "https://files.pythonhosted.org/packages/2c/29/78f824beebb1c43ba0a910a5c0463afe57f75c7b5ad9a032e31380020db7/robotcode_analyze-2.8.0.tar.gz"
+    sha256 "3ad7c1fc65298903154865583879a4be42b14ac3a72eee30a69cb817b5b95678"
   end
 
   resource "robotcode-core" do
-    url "https://files.pythonhosted.org/packages/a9/6e/0588918df4efd5340d7616e3712f6b3caffc9e2fd80da3cd12bace7d8aef/robotcode_core-2.7.0.tar.gz"
-    sha256 "39d493ef4c3c4c6721e9487135c8b5d2256588a3d1b8947ff1bacaf73dc0149c"
+    url "https://files.pythonhosted.org/packages/12/ea/477274ba4e6a26b0b2258ba989d75d624c9d6a8bcd4ea8b3108e28c7009f/robotcode_core-2.8.0.tar.gz"
+    sha256 "31b5a38edba888adbd31ab1bd54d5cab9a5c049a0f124b5c9f379ba6db99be43"
   end
 
   resource "robotcode-debugger" do
-    url "https://files.pythonhosted.org/packages/14/4e/09ef5b227e7ccef7c6b406dcd082700d8e95216dd93d3a9e87f21adcd940/robotcode_debugger-2.7.0.tar.gz"
-    sha256 "7a6b31ad801caa3de9c37ca6ad25a7a104ac142d06099a58d2b2c25f081b9214"
+    url "https://files.pythonhosted.org/packages/cd/c6/d2a1eff9e6de6ab11399a42050df5e6622e7e728d44f112ed861330c228b/robotcode_debugger-2.8.0.tar.gz"
+    sha256 "e7ddb923c1281327b85bb21ef11efc8a3086ec14fef1010d0056911efce9444b"
   end
 
   resource "robotcode-jsonrpc2" do
-    url "https://files.pythonhosted.org/packages/51/3f/ef17bfcd7649d365e1c89c4825241b16295583624ffdbca5f96f1bc33917/robotcode_jsonrpc2-2.7.0.tar.gz"
-    sha256 "cb4301739c33989698099f51bc913b473ef1e2347c2fa5dfb5ff3e6462e9ddee"
+    url "https://files.pythonhosted.org/packages/3f/ea/13eb1a99b2c2491e74092d63a20d523bea702821547a9f582f9c904daddb/robotcode_jsonrpc2-2.8.0.tar.gz"
+    sha256 "05c9e86e0745ed45a7ff12563134a4a52b4575e8708d60bf3c8f8c79ae6fa3b2"
   end
 
   resource "robotcode-language-server" do
-    url "https://files.pythonhosted.org/packages/f2/ae/1526491abe8742d1089dba06521046b89d763a81785262dee591e71a2010/robotcode_language_server-2.7.0.tar.gz"
-    sha256 "de5839055dc67973d0706aa8a4d77cda06fa2dc6e9e3a478bc853549930036cf"
+    url "https://files.pythonhosted.org/packages/e1/c0/5b2c9869e1295d2516fdb610e7b153ce4c9b5d82121becf55d09291fc6bc/robotcode_language_server-2.8.0.tar.gz"
+    sha256 "3938b3c5a00008cef6db642d0f605d19fb26cddd5b4cae834069544be3b7bb87"
   end
 
   resource "robotcode-modifiers" do
-    url "https://files.pythonhosted.org/packages/9d/42/d655c03da401d7b7f8f2019e7acb0196f476a763d7df07110ce18ec2be40/robotcode_modifiers-2.7.0.tar.gz"
-    sha256 "86414abd296be9509449210028b2c698aa7213f55b8ced740de0b2fcb6fa4e15"
+    url "https://files.pythonhosted.org/packages/e3/8b/2d7bcc3b9b4af0073440cf18bf92d5b0d62da1c1c3c9d7bea26a31c6ac9d/robotcode_modifiers-2.8.0.tar.gz"
+    sha256 "667eb5253e3bad6207a6655dfccd05830a09a99c6cb742ad7ec72d8d1fb1caf0"
   end
 
   resource "robotcode-plugin" do
-    url "https://files.pythonhosted.org/packages/fd/cf/7267f03a8c46e8cd2b2a33cf3957c1fa4917e0ca23ac47b7e8e2f49fc71d/robotcode_plugin-2.7.0.tar.gz"
-    sha256 "1e0f5c40f09c8868ae768f23f4d9bb838ecd1db6a50bf470304acec4cf185800"
+    url "https://files.pythonhosted.org/packages/eb/ba/64279b9533afdc310247da11ac76c6c905bc5007b355555c71a9398940a2/robotcode_plugin-2.8.0.tar.gz"
+    sha256 "7e62970534ad01a126546d132f4cc6fb613a75840a7a2b0bffc408b460a94ba5"
   end
 
   resource "robotcode-repl" do
-    url "https://files.pythonhosted.org/packages/0b/b5/20b65d673d31e42c1c44f0b3e298707402f2f2602ec8e381b87ece1f190d/robotcode_repl-2.7.0.tar.gz"
-    sha256 "a5ebabf3fe8a12a140a7b45a9d2fe270b01ed25d27a6ff0eb2c99e2f991beb6f"
+    url "https://files.pythonhosted.org/packages/19/b1/b4a9cfdae11fbbd6a4d836a66362e20f21581416506c71305a32e8223e15/robotcode_repl-2.8.0.tar.gz"
+    sha256 "cec9bf6b0560a2b806a90e9c27a63071779fdf810c8ba0f0894e8c1d7323a81d"
   end
 
   resource "robotcode-repl-server" do
-    url "https://files.pythonhosted.org/packages/7b/9d/dd2df90adfc4080957bc0587f1e41ac1760c316f17270126e708dd95b04b/robotcode_repl_server-2.7.0.tar.gz"
-    sha256 "a203a13b64f52f8f3fd4774e85ed41d6171f42ed8e7f2154845d5db919050918"
+    url "https://files.pythonhosted.org/packages/44/4b/3ba0f9f3556dfb5020c31e768b72404cb90c685395e2f8dd8b00e6cb897c/robotcode_repl_server-2.8.0.tar.gz"
+    sha256 "623b39cb3f51ab1d663e5df4b80bac7d7e2dab18f8bc3190fa348f817ebff0dd"
   end
 
   resource "robotcode-robot" do
-    url "https://files.pythonhosted.org/packages/75/ec/e40cf80eaf630c6b321252bf85783d08d72a86e0e8c44ab1356eda873eca/robotcode_robot-2.7.0.tar.gz"
-    sha256 "f2976b2ef5f38ac26c7769b8f65a063b197f7642f4cc5e449e72b03858943744"
+    url "https://files.pythonhosted.org/packages/0b/92/2605eabc70b037e284e8abeecd5137391aadb43ceb6eab2420d5fc631e20/robotcode_robot-2.8.0.tar.gz"
+    sha256 "438376896040757429f5be40b1de58f54286f1769e41229c93213912183a8031"
   end
 
   resource "robotcode-runner" do
-    url "https://files.pythonhosted.org/packages/a5/8a/3d0d41c63be6445a103ca73afaa0e7de2cbfb3551f2382b2a3216098486b/robotcode_runner-2.7.0.tar.gz"
-    sha256 "3c2899f91857eb6b14ee50b71d92dfe0878075103ea99516188fb1b88d510035"
+    url "https://files.pythonhosted.org/packages/49/60/c9436ed4b30e6b99dd1496eca0ac816dea58fa016fa7cf810c0cebd41147/robotcode_runner-2.8.0.tar.gz"
+    sha256 "62b1fad01bb71c8e2db7787c36a07b45066c8479fa494d0b8e39c67aedc5a91e"
   end
 
   resource "robotframework" do
@@ -162,8 +161,8 @@ class Robotcode < Formula
   end
 
   resource "robotframework-robocop" do
-    url "https://files.pythonhosted.org/packages/21/a6/3dee138281a211bb44cff4f3e88a48a1a0e0b782f1746a46b2da1970fa87/robotframework_robocop-9.1.0.tar.gz"
-    sha256 "1204a8645a48eaba0a7779035a8af3419a681fa3d511b875f57856e5357fe749"
+    url "https://files.pythonhosted.org/packages/24/90/248070b2def441f19f8f936024c62ebbdb90c1a610f5b5470f0ea1118d9c/robotframework_robocop-9.1.2.tar.gz"
+    sha256 "ce93c6a46434bd5e2a40f6fec81514cb9fe1c9ee4fa97db03d1d3bed541688b3"
   end
 
   resource "shellingham" do
@@ -187,8 +186,8 @@ class Robotcode < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
-    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
+    url "https://files.pythonhosted.org/packages/ea/01/e5ac23733628a6bbb91913a765fcf55ee8070d8d991bc88fdaaf805052c7/wcwidth-0.9.4.tar.gz"
+    sha256 "fd8d57d3cdfe570e3265c8fab1885c24e34ef40889c0759c0c304a19e9835954"
   end
 
   def install

@@ -51,6 +51,8 @@ class Docbook2x < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     if OS.linux?
       ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"

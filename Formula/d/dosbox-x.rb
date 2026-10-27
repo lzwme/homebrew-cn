@@ -52,6 +52,8 @@ class DosboxX < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     # Set `LDFLAGS` to link against the Metal and QuartzCore frameworks on macOS Ventura and later
     # during ./configure to detect the Metal framework

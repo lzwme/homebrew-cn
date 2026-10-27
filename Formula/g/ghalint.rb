@@ -1,8 +1,8 @@
 class Ghalint < Formula
   desc "GitHub Actions linter"
   homepage "https://github.com/suzuki-shunsuke/ghalint"
-  url "https://ghfast.top/https://github.com/suzuki-shunsuke/ghalint/archive/refs/tags/v1.5.6.tar.gz"
-  sha256 "1188047b654a86390d49b776153c1a7b3eddde30ebcc0d024dfab9585785b02b"
+  url "https://ghfast.top/https://github.com/suzuki-shunsuke/ghalint/archive/refs/tags/v1.5.7.tar.gz"
+  sha256 "09a49e6f19de361444e6e5bf4ccc522a03b37fd9f6d317fd55f0316f2d11aa32"
   license "MIT"
   head "https://github.com/suzuki-shunsuke/ghalint.git", branch: "main"
 
@@ -12,13 +12,11 @@ class Ghalint < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "909bb4d090a3901631654264e7a8e1ba326c90319b129355eb7f2b8209a7bb93"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dc6245ebb383c63ad0be81107c0a6d6082bd049c8733a488ce7f8750fca1a087"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dc6245ebb383c63ad0be81107c0a6d6082bd049c8733a488ce7f8750fca1a087"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "dc6245ebb383c63ad0be81107c0a6d6082bd049c8733a488ce7f8750fca1a087"
-    sha256 cellar: :any_skip_relocation, sonoma:            "fa7695f943362c7bc2c992a4193116a24b4b067eb95748118e4ddb6e4239ba6c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e3ae564117778a881047c0bc57755a117a6e6666e9d63d0a2c1964528f755605"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "92b02ec283b1788992a002e459295dc3c6303f3c3b8f60d1206537c2aefe5bee"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "21c2dbc1b734ae53fffdf4c3b542de262dcc8e35eb1edcbd3fbc80ba2a460341"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "21c2dbc1b734ae53fffdf4c3b542de262dcc8e35eb1edcbd3fbc80ba2a460341"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "21c2dbc1b734ae53fffdf4c3b542de262dcc8e35eb1edcbd3fbc80ba2a460341"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "979bcc3a4299849ba4ea0079ab594cab34cb312078d4a0de6621944a1f55f299"
+    sha256 cellar: :any,                 x86_64_linux:      "1fbf835bc4f3b307fedc0fb1f737417f550c4d5a8c10ddd1194c1e77e3e330d3"
   end
 
   depends_on "go" => :build

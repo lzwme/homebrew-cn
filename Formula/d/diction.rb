@@ -22,6 +22,8 @@ class Diction < Formula
     sha256 x86_64_linux:      "fa36156d5d431720a8bc0c8b05a1681e9231cfce822b2b012c602fa1a8e3e159"
   end
 
+  deny_network_access!
+
   def install
     args = []
     # Help old config scripts identify arm64 linux

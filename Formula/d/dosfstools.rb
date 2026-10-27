@@ -38,6 +38,8 @@ class Dosfstools < Formula
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build
 
+  deny_network_access!
+
   def install
     # Workaround for https://github.com/dosfstools/dosfstools/pull/218
     ENV.append_path "ACLOCAL_PATH", Formula["gettext"].pkgshare/"m4"

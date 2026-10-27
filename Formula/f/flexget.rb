@@ -3,17 +3,16 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/88/6e/aaf87a19e706366a4e7ccb831fecd04941c7da82c9e1e725cf6f6ac78d72/flexget-3.22.6.tar.gz"
-  sha256 "03bb4f6d213c75ef540bfd8cf1dfdfb280aa1233800108f4cb5570e9c505005b"
+  url "https://files.pythonhosted.org/packages/b7/73/ff4111cf27aac4f1dd78f1d694a773cd2ae590e770b446b5a0a9b9b2e7ff/flexget-3.22.7.tar.gz"
+  sha256 "a62d2b1518126f34379a08c5f09d1780cd3ae4e6fa943da59e7b0cd6fef0979b"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "afdb82da2679690e262628613461b072edeaa7c687e98faea4737ad0add6a205"
-    sha256 cellar: :any, arm64_tahoe:       "ce8efec8a302a0b9754970760472e9714d75667ba10c6bc0085b5f2e0242dc45"
-    sha256 cellar: :any, arm64_sequoia:     "119a9a323a5dc89ed3b677ed68ccc5f48019cbe821da547bf54c054ead1cc855"
-    sha256 cellar: :any, arm64_linux:       "a028cd558345e3ab251a9cdc9fdcd30b393d67b909c9dc2168a16d86c55f1067"
-    sha256 cellar: :any, x86_64_linux:      "49e4f7994e3dabed6f007fcde78a913445f0ac26ce6b5b7297b448cc7fe2d88b"
+    sha256 cellar: :any, arm64_golden_gate: "033c166cd921d03c5809d381062dbed8789f2f7c0cb3225d6c3040aefac0cc3d"
+    sha256 cellar: :any, arm64_tahoe:       "7f0fe80b0a907d23edd23dc7e7ca0f704d2049768cdd90b464740270cc6196b6"
+    sha256 cellar: :any, arm64_sequoia:     "483e14a14e7d3bd3e13cfc1e3c15babf2d35a691f52f06dfa7b6cc477feee070"
+    sha256 cellar: :any, arm64_linux:       "7d32b35664b8031d4571b2c4e5bf25be20aed486dbee823ce0f28f3258f7346a"
+    sha256 cellar: :any, x86_64_linux:      "6e249ce280efdbd980bd87555c257a1c086b099e7dc9bac3e8165c17012c4ca1"
   end
 
   depends_on "rust" => :build
@@ -68,8 +67,8 @@ class Flexget < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e5/3f/143b048436775b0f76ac3eec145c019e8173ccc2885c8f20319b996d5e83/charset_normalizer-3.5.1.tar.gz"
-    sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
+    url "https://files.pythonhosted.org/packages/33/1c/f41d4e74c28ab327ff3acd36053f7ea506c55872d7a90b0fa71aa3ab0c89/charset_normalizer-3.5.2.tar.gz"
+    sha256 "39de2a259fc954455c57274dc94c79d5842774e1247a016aff30bc0efed0f4ef"
   end
 
   resource "cheroot" do

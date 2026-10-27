@@ -3,17 +3,17 @@ class BumpMyVersion < Formula
 
   desc "Version bump your Python project"
   homepage "https://callowayproject.github.io/bump-my-version/"
-  url "https://files.pythonhosted.org/packages/a9/65/338597a14c53ae2b9d004031dbcb61a0641484b20469b5b7bd5250a37a34/bump_my_version-1.6.5.tar.gz"
-  sha256 "0fd40347bca359bdee9999c93e101d2ad4612cf10319bc5e81181e57fc313e0d"
+  url "https://files.pythonhosted.org/packages/2f/ea/5ce9d814fbd532d8a5d8344bff688170c031f16ef11370b14b42fd3f8e7f/bump_my_version-1.6.7.tar.gz"
+  sha256 "ca21d720a4d951eb26354c9b62776a5481468c2319bd253c3494faf489f49c34"
   license "MIT"
   head "https://github.com/callowayproject/bump-my-version.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c993276904ae70ff5e489f3aa449b80392df772cf0777d0416612ac87a09691f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b42c2db20436171fcf7c22ce3fb086336a430ac112f461d92dd9ae72c0b7ca62"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cd3ea8e6966ebbec886af1762ba48f3e92be8b9d217c88d7600bfd01428710d8"
-    sha256 cellar: :any,                 arm64_linux:       "7d95634eff965ca51d0df4f2dad252bdc5d75dd09c3b35877ed1e09009a1e959"
-    sha256 cellar: :any,                 x86_64_linux:      "b5665700b1d5811936e97ff2d5d970ac5035064882f1d48daa77df175a5627f9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "11b809b350664e22a96d7bc55471a9779e197d0d58f802201277a9fd26b86b5f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cb5b3ce5ad5af6d60fe4549a0c3e97de0ce00c8823707646b53ff56c8dbcd761"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b6d835b9ee3e0130d843e4acda40f76c540e69e67c0a2c349c80561f4db41d1b"
+    sha256 cellar: :any,                 arm64_linux:       "4e6a66338373d6f9c363677da3c690be580cd8fb914904b64f53d3d08778a6f5"
+    sha256 cellar: :any,                 x86_64_linux:      "c8a0180f1234b8c16314c6d8b191eaf532ab4dc772f72f2de0ce751d15db6995"
   end
 
   depends_on "certifi" => :no_linkage
@@ -118,8 +118,8 @@ class BumpMyVersion < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/69/4a/82d61476a1ccc20d43d0805724c5de4baa4971131a8db1816705ef53fe16/wcwidth-0.9.3.tar.gz"
-    sha256 "dfe7cfbd4cb59db9fe0931bd6091ab4a95b3acc5d56bfb50fa9fef0ccba5dc5c"
+    url "https://files.pythonhosted.org/packages/ea/01/e5ac23733628a6bbb91913a765fcf55ee8070d8d991bc88fdaaf805052c7/wcwidth-0.9.4.tar.gz"
+    sha256 "fd8d57d3cdfe570e3265c8fab1885c24e34ef40889c0759c0c304a19e9835954"
   end
 
   def install

@@ -32,6 +32,8 @@ class Dopewars < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
     inreplace "src/Makefile.in", "$(dopewars_DEPENDENCIES)", ""
     inreplace "src/Makefile.in", "chmod", "true"

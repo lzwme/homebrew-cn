@@ -1,17 +1,17 @@
 class Tuicr < Formula
   desc "Code review TUI with vim keybindings"
   homepage "https://tuicr.dev/"
-  url "https://ghfast.top/https://github.com/agavra/tuicr/archive/refs/tags/v0.27.0.tar.gz"
-  sha256 "420f72b7ffc6e40db50383719dbec162fa712130c7a7d83c21cd07d504dd59e7"
+  url "https://ghfast.top/https://github.com/agavra/tuicr/archive/refs/tags/v0.28.0.tar.gz"
+  sha256 "f8b877dae2bb7af49f807698c14d55451856fc2099ff011b97aa53977bb4e22a"
   license "MIT"
   head "https://github.com/agavra/tuicr.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "cc27030a5efe726a31251f8c69412c31e455361cb3d11279181b861342e823a6"
-    sha256 cellar: :any, arm64_tahoe:       "2a033ea1ef6762ed51b652243ed8481fec50243155706f81e36032ef47b2d720"
-    sha256 cellar: :any, arm64_sequoia:     "1c3eac8368193ac30d21066b7325895b644fb0328529247a5628aaa3c80994a3"
-    sha256 cellar: :any, arm64_linux:       "c42dd00dc469526645153f0154b49362a187a58713cc0dd7565bc2d848170c3c"
-    sha256 cellar: :any, x86_64_linux:      "edcadff5e6d54cec4030acfa3a58f65f14e469b4f2493e124819d55f50b80d73"
+    sha256 cellar: :any, arm64_golden_gate: "e7b2e9350a1723819c72bd22757883667adbfd24219cb904a79998fc8a31be83"
+    sha256 cellar: :any, arm64_tahoe:       "caa4ed17abc7f9e7139256d0dda83c21cf9805decfab288a4931eb9bf84ac429"
+    sha256 cellar: :any, arm64_sequoia:     "5ebb5a952ef058d32196ce43842073fbf3f1c721814c65bcdcaf1f25ec93fbf4"
+    sha256 cellar: :any, arm64_linux:       "db0932acfa74f940bfddf788e4ee1c5ddc9603be0353e3f891d6782e6721cb1f"
+    sha256 cellar: :any, x86_64_linux:      "966e096224246e0ffdab687e602e228c532e77e74d87ccab177c2906b2247005"
   end
 
   depends_on "pkgconf" => :build

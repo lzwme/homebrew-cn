@@ -99,11 +99,9 @@ class Newsboat < Formula
       cp (libexec/"lib/libstfl.so"), (libexec/"lib/libstfl.so.0") if OS.linux?
     end
 
-    gettext = Formula["gettext"]
-
-    ENV["GETTEXT_BIN_DIR"] = gettext.opt_bin.to_s
-    ENV["GETTEXT_LIB_DIR"] = gettext.lib.to_s
-    ENV["GETTEXT_INCLUDE_DIR"] = gettext.include.to_s
+    ENV["GETTEXT_BIN_DIR"] = formula_opt_bin("gettext")
+    ENV["GETTEXT_LIB_DIR"] = formula_opt_lib("gettext")
+    ENV["GETTEXT_INCLUDE_DIR"] = formula_opt_include("gettext")
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
 
     # Remove once libsftl is not used anymore
