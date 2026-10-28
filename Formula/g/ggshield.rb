@@ -3,18 +3,17 @@ class Ggshield < Formula
 
   desc "Scanner for secrets and sensitive data in code"
   homepage "https://www.gitguardian.com"
-  url "https://files.pythonhosted.org/packages/9b/96/f17606e742f65981bac50bf7edcfa5706e145d597010c913f1a55530ea99/ggshield-1.56.0.tar.gz"
-  sha256 "1b0e9c6471e357cb570a0c2f6df46acd7fe462881db6a95f1833cf17cacea92d"
+  url "https://files.pythonhosted.org/packages/be/2e/3af5151698baff481fbea82cd1d03084ca76ec633e01854096b5740ed656/ggshield-1.56.1.tar.gz"
+  sha256 "de2d62f13eaa8c7a9bde830449b901abad5e5d885e9b3ea5fa58fbae9bb99209"
   license "MIT"
-  revision 1
   head "https://github.com/GitGuardian/ggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "90062283220f51de1406c125be351b49a6b8aff40c16c5f5453ea646bf716c84"
-    sha256 cellar: :any, arm64_tahoe:       "39c5ddd80d4d3966cbd14d093a851fec3dcca0f17a18f7eb136b3fc680a735c1"
-    sha256 cellar: :any, arm64_sequoia:     "e858f9683e367ce4f33ca3a824862b2f9f3b6817556fc32d601b449fb44d91df"
-    sha256 cellar: :any, arm64_linux:       "17bf610a02d3680cc6e3ba32a5477c5774055ec8c1ca74e200b51dbb75453795"
-    sha256 cellar: :any, x86_64_linux:      "6f5288a06634cd1af9c4745ae99928f507fa68f751ac7b24f9eec71f600da381"
+    sha256 cellar: :any, arm64_golden_gate: "d56af1c607bb06e677070e62c9c39fffd03f8ee0e3c98b7786d156855798218c"
+    sha256 cellar: :any, arm64_tahoe:       "688dd687cfd651bb5b3baeb522cea404391345a1627638bea7c1a4ac6d8e50a7"
+    sha256 cellar: :any, arm64_sequoia:     "6609665b82f8ada6732c52ab76fe757e21a4d5896ee80b073a9526a2ae08facd"
+    sha256 cellar: :any, arm64_linux:       "4fd0ac4dce94d42ba5924209fac3f3f62ffd8f2f3e596c93aca778971041ad9d"
+    sha256 cellar: :any, x86_64_linux:      "13dc64c828b7d995ac25a2b34c3ecf8ecfec9e5f396a67f718850470fe5ddd5d"
   end
 
   depends_on "pkgconf" => :build # for `rfc3161_client`

@@ -1,17 +1,17 @@
 class Jackett < Formula
   desc "API Support for your favorite torrent trackers"
   homepage "https://github.com/Jackett/Jackett"
-  url "https://ghfast.top/https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.2918.tar.gz"
-  sha256 "0a7fc2f7bdc6dba96f65fa78a3e315697f4fffce0365794ef179e691fec3e0ba"
+  url "https://ghfast.top/https://github.com/Jackett/Jackett/archive/refs/tags/v0.24.2934.tar.gz"
+  sha256 "afc0b6f650c1aa5c7b8db67bb49dee9e7e9f6c94670ec25149684b1ad811d969"
   license "GPL-2.0-only"
   head "https://github.com/Jackett/Jackett.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "993ca3981ecd7d736cf450342d7887318a51ead7a58f4f83df03d1044c0fa59e"
-    sha256 cellar: :any, arm64_tahoe:       "50f6103ad7717479bcb3be9c350d6e8aa2408ce3291117fcf06020a00e90400c"
-    sha256 cellar: :any, arm64_sequoia:     "8e8541c5831a6c6faf23a0d385c4624f704d7d0bf28646e6e6dd50f39d548df0"
-    sha256 cellar: :any, arm64_linux:       "be6a358fc05d2cfc405d901bcc5a2c872ffe4ad12db4b40aa213e823802def38"
-    sha256 cellar: :any, x86_64_linux:      "a6396a0a26905b3c80eb106c2e5402c55c90c3d7626cb5c6093045f299610d97"
+    sha256 cellar: :any, arm64_golden_gate: "8428ab7973da6f6fd57e367b352b9a5a4e981d91cbef1d07101ed6ff914b2523"
+    sha256 cellar: :any, arm64_tahoe:       "fa6e6c5566eb514d13a4dd33cb9de5e1bd6422ff4cf50c7bc04d8d019228ec93"
+    sha256 cellar: :any, arm64_sequoia:     "5c64e67d451505d31f047933164b8cf86d35a1c380a601ca6ddbd678ca379f06"
+    sha256 cellar: :any, arm64_linux:       "6547d84c5c5829a9fe6904d8de4911be6408cb103138c9e6e743c4807ac0ccba"
+    sha256 cellar: :any, x86_64_linux:      "c137499421beb374fc449cb20b2987ec0ef6c3381bab985a501db02fd7e160ce"
   end
 
   # Aligned to .NET dependency. Can remove if updated to latest .NET
@@ -20,11 +20,20 @@ class Jackett < Formula
 
   depends_on "dotnet@9"
 
+  allow_network_access! :test
+
+  def dotnet = deps.find { |d| d.name.match?(/^dotnet(@\d+)?$/) }.to_formula
+
+  def fetch
+    ENV["XDG_RUNTIME_DIR"] = buildpath
+
+    system "dotnet", "restore", "src/Jackett.Server", "--use-current-runtime"
+  end
+
   def install
     ENV["DOTNET_CLI_TELEMETRY_OPTOUT"] = "1"
     ENV["DOTNET_SYSTEM_GLOBALIZATION_INVARIANT"] = "1"
-
-    dotnet = Formula["dotnet@9"]
+    ENV["XDG_RUNTIME_DIR"] = buildpath
 
     args = %W[
       --configuration Release

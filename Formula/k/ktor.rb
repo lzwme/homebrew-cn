@@ -1,22 +1,17 @@
 class Ktor < Formula
   desc "Generates Ktor projects through the command-line interface"
   homepage "https://github.com/ktorio/ktor-cli"
-  url "https://ghfast.top/https://github.com/ktorio/ktor-cli/archive/refs/tags/0.5.0.tar.gz"
-  sha256 "6bc452b6aa7e4a911649f10359a0c00d0017e8ab3a3c70b0e1412c026794f6a3"
+  url "https://ghfast.top/https://github.com/ktorio/ktor-cli/archive/refs/tags/0.5.1.tar.gz"
+  sha256 "dae763ded73a786dd183258e71af6001bea9b63fa357f50be78d0c3c2dcc8953"
   license "Apache-2.0"
   head "https://github.com/ktorio/ktor-cli.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "058c3f795043271fcc380c057c13312d5f1ae8d24a0383190bf0092fd6b2e5c6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "80dcedda4ea9f655c16984014ca3b31d5602f7920d20af606d48fc13424bc81f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ae5827c1b6127ef87c86509969b51b57e264b3a86e2ff7f89f1ae2dd2d61fe7d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "320e97018245a83890d9d43f902bc9d3c15b052ce0168b0156d1046c26df271d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:     "67e92b3134de86c1f73851c12756d0b60b8d395d62eb599cc0688e2539d92ce4"
-    sha256 cellar: :any_skip_relocation, sonoma:            "b348f62c90905932ac7a0758eddb06ba18f61415034790c0d1cfb867e3512d5e"
-    sha256 cellar: :any_skip_relocation, ventura:           "40853271a7712e7914374bbe56cbf5eba3f14586b5568991a78bff8d46283643"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0e58b14f78b06fc59b575bbb1c624bba3ce15888a2c01073b358c31f47dc1920"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "e3d5add07175e7adaab1079cd90d759fedd35ab162f57268c511a23d388164c1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0088c7a990eda7ccb705bc161fe753c1da32c18a1ddf629adaebd8fdd005b6b3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "855e7b79185c9d6e2bde31070b4b3b036a4df86ea5494c795be653e58b9d8736"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "228305902ce369c7415b24fc01ceec9eb6e07fb954b2df96ca5f23c65f72c773"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "e06f73b85ed6aeafb44ff23b2616b0e4e865e7af49f5fded59994b7132672e52"
+    sha256 cellar: :any,                 x86_64_linux:      "de16e77e3bcd9876976edc30022a1b7d5ec99fd2c3c6d89241f6b40dd278d303"
   end
 
   depends_on "go" => :build

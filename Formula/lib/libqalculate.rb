@@ -5,6 +5,12 @@ class Libqalculate < Formula
   sha256 "cf8d3eaf3d85030115701e997b6585e69573e71add88e7758486c5d1b01d3cc3"
   license "GPL-2.0-or-later"
 
+  # Upstream sometimes creates Windows-only releases.
+  livecheck do
+    url "https://qalculate.github.io/downloads.html"
+    regex(/href=.*?libqalculate[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256               arm64_golden_gate: "6af799ff6771bf5602443dff16199c0b77e2be24613d4ebc5558194448a4301d"
     sha256               arm64_tahoe:       "0f88adedbf0753257f8c37f46d3095f213b0d3f6e458ce530723cf92fae7e539"

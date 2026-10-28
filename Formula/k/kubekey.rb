@@ -2,8 +2,8 @@ class Kubekey < Formula
   desc "Installer for Kubernetes and / or KubeSphere, and related cloud-native add-ons"
   homepage "https://kubesphere.io"
   url "https://github.com/kubesphere/kubekey.git",
-      tag:      "v4.0.8",
-      revision: "f6b1019891844091ddb14580a8d3aeb3251c02fe"
+      tag:      "v4.0.9",
+      revision: "0cb245f681f91f1305fd1880f292076e21343dab"
   license "Apache-2.0"
   head "https://github.com/kubesphere/kubekey.git", branch: "main"
 
@@ -16,11 +16,11 @@ class Kubekey < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cd1968df17472610c2a7e8226db599342b1fc051b8ac5c3928324dee55d13e25"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "343cd733d2a5bb8c12686056bb829c675dfa89c6cff47717d654c2f87838a2c5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cafba082b650f420bbd6f0129e94eb7f8e480a46059a17aaaf24444e193dc8c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "18829b737522d626dac23cbb3272fe98f16a663e6c1967fe7170de134ea90f99"
-    sha256 cellar: :any,                 x86_64_linux:      "2da114bb72117c0a817f25d889ce75bedc7c0689a992a76302340731f489bee0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cb0abd3a1eb5b0b485fed992309e7020fd80f2fb3448900800fab8c33a9cb5c6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4a16c15a563d73d1b15fb3a37e7daa96d409dcf7d9b3319778f718631bef512f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "42e1a4948cf80460edc03ab44ed61298d337c8756e963d82ed5fa20fcf54d7a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f84e56a5dc8a814635055e2b4e8c164ec3a8d2fa309e3416b7bf0eb6ad042e03"
+    sha256 cellar: :any,                 x86_64_linux:      "8da8a4f5a9793e7875919b3aa381467ffb0689d2e61faad42506f2dd6c6ba6ae"
   end
 
   depends_on "go" => :build

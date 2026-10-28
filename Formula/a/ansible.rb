@@ -6,16 +6,16 @@ class Ansible < Formula
   url "https://files.pythonhosted.org/packages/dd/bf/9e39662e848e3162641ee33332787b7c156be63d20c84869ca69e83e503a/ansible-14.5.0.tar.gz"
   sha256 "daeafe730cb2cf82ebe1a1a30960dcdfc0d624c497eb96d57d81713ec19ef19f"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   compatibility_version 7
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ef6045aa7f8baa775614a8f0ac8f00fbb2aba9795c3277de6197ae8d8c49d6d7"
-    sha256 cellar: :any, arm64_tahoe:       "45ea08d46982e85bb09046b16f08a8c95b5fe89dd0a8be080153783b490f27d4"
-    sha256 cellar: :any, arm64_sequoia:     "db322618fbd930b719af6490a8c3c5b0b526ef814204ee619e658bfcf04a8093"
-    sha256 cellar: :any, arm64_linux:       "d9ea2758ffa286a97e43ffd0708722ba9350709659508d74e6a4277e7a6269d3"
-    sha256 cellar: :any, x86_64_linux:      "0e099e1b4fdf31caf5b78cac538895d060dd9b3c2dbf866706a9c411be60bb0c"
+    sha256 cellar: :any, arm64_golden_gate: "519a51c723d0f7a06d634d16af5ed133219706e3e6daed0180a315c258e7c7e2"
+    sha256 cellar: :any, arm64_tahoe:       "9c6f0eb376c0567685cd47577057526dbc093a3702476f381ce0cae5f547d4cf"
+    sha256 cellar: :any, arm64_sequoia:     "1959df9b8bce138541a138d9bedb0ce1480df080c4839ded86af230f416fb266"
+    sha256 cellar: :any, arm64_linux:       "ce20469506a94da1bfca253751e67497d27d273c54d54339718804181d50c3d2"
+    sha256 cellar: :any, x86_64_linux:      "a5ea7dd120825d9ebfb6de02a31817c1553f098cd73444b8dfa2ca85788220eb"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -26,7 +26,7 @@ class Ansible < Formula
   depends_on "libsodium" # for pynacl
   depends_on "libssh"
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "tree" # for ansible-role-init
 
   uses_from_macos "krb5"
@@ -69,6 +69,14 @@ class Ansible < Formula
   resource "ansible-core" do
     url "https://files.pythonhosted.org/packages/0b/27/d02c3f75e9f1468b5efbe49667574f68331b17e8a9f2bb99e1d18be70052/ansible_core-2.21.5.tar.gz"
     sha256 "65bb3148c58ebb843cd5074004c805f404f152114d98476dd823324616c9c6cb"
+
+    # Python 3.15 startup fix, upstream PR ref, https://github.com/ansible/ansible/pull/86976
+    patch do
+      url "https://github.com/ansible/ansible/commit/ee5c59156c61bc1f452a61846138e0d40427aeab.patch?full_index=1"
+      sha256 "d3d25e65af572af49e2c75d4096eba6ca3b97ce2b75f06977e2b6d189e2451c8"
+      type :backport
+      resolves "https://github.com/ansible/ansible/issues/87677"
+    end
   end
 
   resource "ansible-pylibssh" do
@@ -632,7 +640,14 @@ class Ansible < Formula
 
   def install
     venv = virtualenv_install_with_resources without: "ansible-core"
-    venv.pip_install_and_link resource("ansible-core")
+    resource("ansible-core").stage do
+      # Allow ansible-test to run with Python 3.15
+      # Upstream PR refs: https://github.com/ansible/ansible/pull/86821
+      #                   https://github.com/ansible/ansible/pull/87368
+      inreplace "test/lib/ansible_test/_util/target/common/constants.py", "'3.14',\n", "'3.14',\n    '3.15',\n"
+      inreplace "test/lib/ansible_test/_internal/coverage_util.py", "(3, 9), (3, 14)", "(3, 9), (3, 15)"
+      venv.pip_install_and_link Pathname.pwd
+    end
   end
 
   test do

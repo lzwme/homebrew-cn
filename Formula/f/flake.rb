@@ -21,6 +21,8 @@ class Flake < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "8fab554771a1e61cc3b14670fd0394fef5b60c4e545558ef6eb75b33edf5b258"
   end
 
+  deny_network_access!
+
   def install
     ENV.deparallelize
     system "./configure", "--disable-debug", "--prefix=#{prefix}"

@@ -5,28 +5,28 @@ class Gdb < Formula
   mirror "https://ftp.gnu.org/gnu/gdb/gdb-18.1.tar.xz"
   sha256 "cd9fc3fe2b47743840e42c1592d3d87f8302eb18639c0b8b4ba0898002e2348f"
   license "GPL-3.0-or-later"
+  revision 1
   compatibility_version 1
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "91247f76ee73fbc366d3044eb8535481ec1bfb9cda70a2a44fa5c4e9ed0b7673"
-    sha256 arm64_tahoe:       "9f783087782b9503fe7f9cceab6dbf7d157fff4bc5655f60d58960986904b647"
-    sha256 arm64_sequoia:     "a95e812778d999050c682e0ee353c18e0ab8d33d32834fa31c13ea661f622d24"
-    sha256 arm64_linux:       "3eb3f9425ed5084dd39521f62fdd1009ac9e105a121959c6c7d5a5f07e0a590a"
-    sha256 x86_64_linux:      "e790c95283f479fa22c597833c8bb6044f46758a0ea242effb30bc9d4c0b36b4"
+    sha256 arm64_golden_gate: "8dee7b8cc7eee80d35988b2ae17291083b8fd951209cb4f60afc9a4cfa8d3ceb"
+    sha256 arm64_tahoe:       "c616c89bff1382d9481cb51f8e3737f91684f7b9efd184eae0f4fc71749e6f7f"
+    sha256 arm64_sequoia:     "5ef8f3a5486ae4343d5ed0993d6a3b30f2b12899bdf94c73e522011528e6e097"
+    sha256 arm64_linux:       "4d9ed2a1b243b7b634b5170235cf8ee05a74f9f8718ea0014ce9d6c56e98fc86"
+    sha256 x86_64_linux:      "06dacef657717e6ee286ef592c41d618a25ad31637f5dcb3b5e86af3bb1efcd4"
   end
 
   depends_on "pkgconf" => :build
   depends_on "gmp"
   depends_on "mpfr"
-  depends_on "ncurses" # https://github.com/Homebrew/homebrew-core/issues/224294
   depends_on "python@3.15"
   depends_on "readline"
   depends_on "xz" # required for lzma support
   depends_on "zstd"
 
   uses_from_macos "expat", since: :sequoia # minimum macOS due to python
+  uses_from_macos "ncurses"
 
   # Workaround for https://github.com/Homebrew/brew/issues/19315
   on_sequoia :or_newer do
@@ -42,6 +42,14 @@ class Gdb < Formula
   on_linux do
     depends_on "guile"
     depends_on "zlib-ng-compat"
+  end
+
+  # Work around `mvwaddstr` and `mvwaddnstr` in macOS ncurses writing nothing,
+  # which leaves TUI windows such as `layout regs` empty
+  patch do
+    file "Patches/gdb/macos-system-ncurses.patch"
+    type :unofficial
+    resolves "https://github.com/Homebrew/homebrew-core/issues/224294"
   end
 
   def install

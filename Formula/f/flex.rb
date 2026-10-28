@@ -54,6 +54,8 @@ class Flex < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
     if build.head?
       ENV.prepend_path "PATH", formula_opt_libexec("gnu-sed")/"gnubin"

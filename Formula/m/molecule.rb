@@ -6,21 +6,21 @@ class Molecule < Formula
   url "https://files.pythonhosted.org/packages/ea/86/6f3b9af840bea4296746db9ebfe6809f7848bb68e0dac7ac639879b72d6a/molecule-26.10.0.tar.gz"
   sha256 "32533aaba78c29eed80bcaab5d03ff63fe48b8f43071cf77953f391e0732d439"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6b83de8768e38cd08def4a3a73675b3b183a8d3d86a3c6f1df8d8fff8a9db7ac"
-    sha256 cellar: :any, arm64_tahoe:       "604cbe10cec4ad72b547949cab41ad046998447f4ff422948f184a05e430c978"
-    sha256 cellar: :any, arm64_sequoia:     "71197812dc1dd72b7b52c69e76e005fbadd1572b7148eebaabf292174dd84685"
-    sha256 cellar: :any, arm64_linux:       "75a76e5bac05404c89f83f6f9005d58768a7fdbcf1aff0926fedf8150f7fbf04"
-    sha256 cellar: :any, x86_64_linux:      "47c40cc808adfbf00e610bd82423f1d8b140bd63a4931a2a37eaf82e6c42c44d"
+    sha256 cellar: :any, arm64_golden_gate: "bb75d851d39c6ebc8c187cd81ec2c0c9a6857ab4d3284ac62cb2f669f78c2513"
+    sha256 cellar: :any, arm64_tahoe:       "ea3c51f51bdbcbacf601f10f90e1c5e644acb2789c8f8acd27a3c2afb2a9dae2"
+    sha256 cellar: :any, arm64_sequoia:     "08f33f4e3c18c5bf4162068d2e26c580dd12e17ed9e3dee8e59f3815ab472221"
+    sha256 cellar: :any, arm64_linux:       "26cc8a298383f2ef057cf93c449ac75e904db72ce672223babc7cef47e626770"
+    sha256 cellar: :any, x86_64_linux:      "398146d556e42b924e4415052fe57cb49da3b8d2b050dc93c3206c9864fa4483"
   end
 
   depends_on "ansible"
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
 
   uses_from_macos "libffi"
@@ -40,6 +40,14 @@ class Molecule < Formula
   resource "ansible-core" do
     url "https://files.pythonhosted.org/packages/0b/27/d02c3f75e9f1468b5efbe49667574f68331b17e8a9f2bb99e1d18be70052/ansible_core-2.21.5.tar.gz"
     sha256 "65bb3148c58ebb843cd5074004c805f404f152114d98476dd823324616c9c6cb"
+
+    # Python 3.15 startup fix, upstream PR ref, https://github.com/ansible/ansible/pull/86976
+    patch do
+      url "https://github.com/ansible/ansible/commit/ee5c59156c61bc1f452a61846138e0d40427aeab.patch?full_index=1"
+      sha256 "d3d25e65af572af49e2c75d4096eba6ca3b97ce2b75f06977e2b6d189e2451c8"
+      type :backport
+      resolves "https://github.com/ansible/ansible/issues/87677"
+    end
   end
 
   resource "attrs" do

@@ -29,6 +29,8 @@ class Fcrackzip < Formula
 
   uses_from_macos "zip" => :test
 
+  deny_network_access!
+
   def install
     # Workaround for newer Clang
     ENV.append_to_cflags "-Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1403

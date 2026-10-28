@@ -1,8 +1,8 @@
 class GitGraph < Formula
   desc "Command-line tool to show clear git graphs arranged for your branching model"
   homepage "https://github.com/git-bahn/git-graph"
-  url "https://ghfast.top/https://github.com/git-bahn/git-graph/archive/refs/tags/v0.8.1.tar.gz"
-  sha256 "0694bcf963c7a0ba865303fa03f1b7382031271e651625ac55a97aeb340f36b4"
+  url "https://ghfast.top/https://github.com/git-bahn/git-graph/archive/refs/tags/v0.8.2.tar.gz"
+  sha256 "b2f9184af26e200e952cde24904bae8a57abcfeb5ccd38c55ae8f3f693c41569"
   license "MIT"
   head "https://github.com/git-bahn/git-graph.git", branch: "master"
 
@@ -12,11 +12,11 @@ class GitGraph < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "91e9379cb3b24b9862e559323c8779590262e957677e330c8719413326d03742"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2f91298b2e466ef7d4b2d598601af50af6bcedf28199b50d70719fc0d38885c7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1597801d6cdb58b045a36c6e66c312b4cfeb582154d75106f49ff7da30df51e6"
-    sha256 cellar: :any,                 arm64_linux:       "94ed3ae7076f88cf05f539b476eecf32890d885c582f68c78043c700f690a8c3"
-    sha256 cellar: :any,                 x86_64_linux:      "ca6e92429a03ca35e0b8b885f4a1fa2664f10bdb4a36ec419d7a677d59a6ea50"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "59a32f7666dfe4d56cb4584eb8f6cb3ebe5ced1a990d2712b242c12f8a490526"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ef93eb2d8ba2da7378ed0cf0dfd6405ce6de4e8d1e5a2dcf0380f276753b7899"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "497c5b47bda7bd9a6d42cc18d842bd1989d6be6a1be53fc6a7c8af71ac53b22f"
+    sha256 cellar: :any,                 arm64_linux:       "75fed9f1b4a1ade419c7475b46def26957e08cf861023de22dd964eb3c255194"
+    sha256 cellar: :any,                 x86_64_linux:      "d2656923d0df679f2718609aa65fa6b7a5008e289f976517050f265ed461aaac"
   end
 
   depends_on "rust" => :build

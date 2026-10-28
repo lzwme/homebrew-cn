@@ -103,6 +103,8 @@ class FfmpegAT4 < Formula
     depends_on "nasm" => :build
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       --prefix=#{prefix}

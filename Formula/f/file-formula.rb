@@ -26,6 +26,8 @@ class FileFormula < Formula
 
   depends_on "libmagic"
 
+  deny_network_access!
+
   def install
     ENV.prepend "LDFLAGS", "-L#{formula_opt_lib("libmagic")} -lmagic"
 

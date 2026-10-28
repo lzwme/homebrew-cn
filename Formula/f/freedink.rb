@@ -56,6 +56,8 @@ class Freedink < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     # cannot initialize a variable of type 'char *' with an rvalue of type 'const char *'
     inreplace "src/gfx_fonts.cpp", "char *familyname", "const char *familyname"

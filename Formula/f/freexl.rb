@@ -25,6 +25,8 @@ class Freexl < Formula
 
   uses_from_macos "expat"
 
+  deny_network_access!
+
   def install
     args = ["--disable-silent-rules"]
     # Help old config scripts identify arm64 linux

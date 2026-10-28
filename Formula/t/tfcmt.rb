@@ -1,18 +1,17 @@
 class Tfcmt < Formula
   desc "Notify the execution result of terraform command"
   homepage "https://suzuki-shunsuke.github.io/tfcmt/"
-  url "https://ghfast.top/https://github.com/suzuki-shunsuke/tfcmt/archive/refs/tags/v4.14.19.tar.gz"
-  sha256 "5c6fe5d838eb3019cad1f7ba1eb2d2ea4f74617529f0c61ed301036d4dd39fc9"
+  url "https://ghfast.top/https://github.com/suzuki-shunsuke/tfcmt/archive/refs/tags/v4.14.20.tar.gz"
+  sha256 "c9937126f6d9605f4f3b4fd1233f55d33e2e6b17373e2a41e8361111d257dccd"
   license "MIT"
   head "https://github.com/suzuki-shunsuke/tfcmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9f1e15694f309f8e4f765bd2992889f650101b75aa5a491c0448923ea29d5e58"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "90ea369ae934cbb1c8054b6034ad6dd0791cff009eff649e7b898333dc173970"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "90ea369ae934cbb1c8054b6034ad6dd0791cff009eff649e7b898333dc173970"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "90ea369ae934cbb1c8054b6034ad6dd0791cff009eff649e7b898333dc173970"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "84c01adeeab1119b5a356a0bb7a5cadf4999e7286420bd3efe678ce5c4b1a6ba"
-    sha256 cellar: :any,                 x86_64_linux:      "4ab375b6b25943e7e0d9b96b9327f5d107efb2838f13bcd31413d2c1bd6cf77c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "47bb106d3186e10a1b42241a6c66db2edc577e5a157f331e1a2351f3a9e20eb2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "47bb106d3186e10a1b42241a6c66db2edc577e5a157f331e1a2351f3a9e20eb2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "47bb106d3186e10a1b42241a6c66db2edc577e5a157f331e1a2351f3a9e20eb2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5a3b6b1b944238312f7cecaf0c1686e810bb063c7b9451ba5105edce4e3cd497"
+    sha256 cellar: :any,                 x86_64_linux:      "d31068f487ddd4afe0c6bc56ab6525678b65e891648a0daa473910dad9a8dd91"
   end
 
   depends_on "go" => :build

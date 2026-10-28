@@ -1,17 +1,17 @@
 class Cloudlist < Formula
   desc "Tool for listing assets from multiple cloud providers"
   homepage "https://github.com/projectdiscovery/cloudlist"
-  url "https://ghfast.top/https://github.com/projectdiscovery/cloudlist/archive/refs/tags/v1.5.0.tar.gz"
-  sha256 "cecd9e860707139226672ad79812c0ba6b45ab4e92faaa53f3f39f8be239ebe8"
+  url "https://ghfast.top/https://github.com/projectdiscovery/cloudlist/archive/refs/tags/v1.5.1.tar.gz"
+  sha256 "e75a769df7418f51b011b444c62fd4b758547e2dcc130369f69872a1b6e7009c"
   license "MIT"
   head "https://github.com/projectdiscovery/cloudlist.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3c3aa8f4c1eba9a8b632fc44cd755cd1215bbc3768089db7927ef034079dd9c3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "775a412c5d67943d36b990f11ff70d4375caa9d3ac00c7feeffe4cefc409bcfd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7fce75570a44ee929fae565c75e1f76d5ff1cad514837f749aaa727e7f41783e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d6d32979ebc94181bea022280b2498676c196e277e23b60dc04192947d462d48"
-    sha256 cellar: :any,                 x86_64_linux:      "6ffe68a77fe94ef7db129e4a6dfdb376750892a1e08eb3c1ed8bf65d7408e202"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ff57b04ea186c9be99e90ef7b2ee67c0484449ae0a8a8f5c60c4104f2e6ef21e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ade0d1a6bf00725c57fe270668e0500577fdbc3f11e01cffe2948fccb9dffe30"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ba2fa24605a11a613281aab0d87b4be30bc4f4519b4253a25b75701861eb6a3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "920eda07c530e846b861410778f665d6cfb79ecbbc8cdc512a9e8e0f321e8f4c"
+    sha256 cellar: :any,                 x86_64_linux:      "8cb96cfbcdfddc2bef6c4f6a6d836f4dea49f621466f5fd37628a0cb0c457b8c"
   end
 
   depends_on "go" => :build

@@ -56,6 +56,8 @@ class Fox < Formula
     file "Patches/libtool/configure-big_sur.diff"
   end
 
+  deny_network_access!
+
   def install
     # Needed for libxft to find ftbuild2.h provided by freetype
     ENV.append "CPPFLAGS", "-I#{formula_opt_include("freetype")}/freetype2"

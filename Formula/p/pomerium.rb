@@ -1,22 +1,21 @@
 class Pomerium < Formula
   desc "Identity and context-aware access proxy"
   homepage "https://www.pomerium.com"
-  url "https://ghfast.top/https://github.com/pomerium/pomerium/archive/refs/tags/v0.33.4.tar.gz"
-  sha256 "477bb4909f44b32c73d30655ef21478bd5b403922cf2bbc1549c97286ff2658f"
+  url "https://ghfast.top/https://github.com/pomerium/pomerium/archive/refs/tags/v0.33.6.tar.gz"
+  sha256 "7e35be21f17751e878c4d7ed8428bb6e876d70d6573d5ec586a368919d359343"
   license "Apache-2.0"
 
   head "https://github.com/pomerium/pomerium.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bbf773fb119f7298b47b97ec262bf89bf0203151ff479e9be3e11528f28052cc"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bbc284f0f9757bdaa0f9d029b3db5e6f56cd9028fcd96bbf8009916f7888f2ff"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5b9fb7c240ac2fc7e90801917f0199f79c219e2872ee3704db49f80bb0ce9cec"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "966d851cd86bf5316c79bf68f9133b15a9c8512109887ba1db34b0a2fa7a82b7"
-    sha256 cellar: :any,                 x86_64_linux:      "d66c849d2729e65199c05243e0732e8d8783a84ffb296c28b66949f586524389"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5838b147b04f1ef826ed1483de4d8b454b873e69886e41f7088b613ca319042b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6104560863460a8a3ad04e01ba19c4f638c83992853c956b0e5a262ea3a8d564"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "08d19ebc885ba92334b0bf3b8f74eb1ab030903a24b835c16ad5afc0222af1d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "2aa1b910bf6ca6ad3494429ab5033805bdbbd6ad5db3821832e13be1b96769ea"
+    sha256 cellar: :any,                 x86_64_linux:      "b840f226a7248670d826e9c163208357090fe6ac83982b4661e4553ca695f9bd"
   end
 
-  # TODO: unpin go@1.26 when pomerium supports go 1.27
-  depends_on "go@1.26" => :build
+  depends_on "go" => :build
   depends_on "node" => :build
 
   # Upstream dropped darwin x86_64 support in 0.33.0
@@ -25,9 +24,27 @@ class Pomerium < Formula
     depends_on arch: :arm64
   end
 
-  def install
+  # Fix build with Go 1.27, upstream PR ref, https://github.com/pomerium/pomerium/pull/6914
+  patch do
+    url "https://github.com/pomerium/pomerium/commit/73371215d5b0e0f21b5d9cf2fc909af1a179c60d.patch?full_index=1"
+    sha256 "0362774a70882d2ef078977ff1c50f90c33b34a1c9db5736ea7fcb960ace7b09"
+  end
+
+  # `test do` block runs a local HTTP server
+  allow_network_access! :test
+
+  def fetch
+    system "go", "mod", "download"
     system "make", "get-envoy"
-    system "make", "build-ui"
+    cd "ui" do
+      system "npm", "ci", *std_npm_args(prefix: false)
+    end
+  end
+
+  def install
+    cd "ui" do
+      system "npm", "--offline", "run", "build"
+    end
 
     ldflags = %W[
       -X github.com/pomerium/pomerium/internal/version.Version=#{version}
@@ -35,7 +52,6 @@ class Pomerium < Formula
       -X github.com/pomerium/pomerium/internal/version.ProjectName=pomerium
       -X github.com/pomerium/pomerium/internal/version.ProjectURL=github.com/pomerium/pomerium
     ]
-
     system "go", "build", *std_go_args(ldflags:), "./cmd/pomerium"
   end
 

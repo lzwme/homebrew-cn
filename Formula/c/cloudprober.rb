@@ -1,17 +1,17 @@
 class Cloudprober < Formula
   desc "Active monitoring software to detect failures before your customers do"
   homepage "https://cloudprober.org"
-  url "https://ghfast.top/https://github.com/cloudprober/cloudprober/archive/refs/tags/v0.14.6.tar.gz"
-  sha256 "5ee0bba29d64ee49eefcefc9e4dee6df279c34215729178265fbee2b200311ea"
+  url "https://ghfast.top/https://github.com/cloudprober/cloudprober/archive/refs/tags/v0.14.7.tar.gz"
+  sha256 "ea4d84380546b761270d88c46c109002b96e93c609048f599f21c9f77dc77fad"
   license "Apache-2.0"
   head "https://github.com/cloudprober/cloudprober.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c97947dba9b84101a023ce05deff40acfe1009fe728903cdb812b806d9c42660"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f413b97ae229ec976166ad6f4e45fb299c98276ba70743bb8cdc3c8233a7b377"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1de19b3c679273a05b649c2f869f89f3bfa0ecd4f06e2019ee1a64ada27e12a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0ea2f1dd53a8ea0613260df64e2a6e8579bffded7a405a32cda9a45b9856320d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "7064b827ac1644a9a5d7d63a634bb5786aacb7dfa0ee565f986f994c8551459b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "546ee137c4f3d9e2feb5599050b52a357821f6d494d0064b20020ec4dbb7df0d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7d9ca03454c49981d0ede0b1e4bf332213cbfa0fef7be80a6c2da9717e1de7fc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1bb8980fb89da4ac04dd58eec65bf7bfba0dec7db92fd1b8e5b5d36f69abcb90"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "09f749317505f925bd6e740f8e39ad1fe40c04f650ca8ed5b07e9a07c2e1af3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "03c751e42222bf5a02aa8440cff13f00dc8db3255a1f7b0e81c04f6fe34127fc"
   end
 
   depends_on "go" => :build

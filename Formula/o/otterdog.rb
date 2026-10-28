@@ -3,18 +3,17 @@ class Otterdog < Formula
 
   desc "Manage GitHub organizations at scale using an infrastructure as code approach"
   homepage "https://otterdog.readthedocs.io/en/latest/"
-  url "https://files.pythonhosted.org/packages/4c/9c/2bcc6edae61778a28333af98d91e60c7216b210326180aaa27fae11d4587/otterdog-1.6.1.tar.gz"
-  sha256 "0bfabbceb9c923055a5d4bcb542f11c2ffa37bc73bc1addf22946f3b140c1426"
+  url "https://files.pythonhosted.org/packages/c9/fd/033fac3fb5506b6edd81621b1f8ad47cb76f56e968906a6b6c97a633ad6f/otterdog-1.7.0.tar.gz"
+  sha256 "0bc09559a687409a4dfd8a408fdf2c4c47ebc3ade943c080e6583ef4081eb3bf"
   license "EPL-2.0"
-  revision 1
   head "https://github.com/eclipse-csi/otterdog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "1a5f86434a45bfef44ae488ce5e0decd92b3c092c01f4da1f5017f662ef8fd44"
-    sha256 cellar: :any, arm64_tahoe:       "143748fbd6bf6070a0739ee345b09e26707cb7248816441d9d733d4356002784"
-    sha256 cellar: :any, arm64_sequoia:     "128c0cb15fc59f689daf5dc0119bb21e5206f228b8f87fc05be6290363197fdc"
-    sha256 cellar: :any, arm64_linux:       "0476a185ccd64f055f1d9d92b2d4d33607a23c4ec114d2bc920666c3a50d9eed"
-    sha256 cellar: :any, x86_64_linux:      "9fe90b5d142b06dcf3d998978024eb7e0e0e476832b23f6c8b41b1c7f9d8c637"
+    sha256 cellar: :any, arm64_golden_gate: "ca5701ffc95164724ecfd57f9c4a79e977082bee5a3c0ab61ac109b4cd5d5ed8"
+    sha256 cellar: :any, arm64_tahoe:       "3e9d18bf20f59586118b62840360a75de8e5db7e07526d4f36d1721f1986f9e0"
+    sha256 cellar: :any, arm64_sequoia:     "e223c9ea0b6f746370523533397b408605d044df29e4403a16c40756bc3a6fc9"
+    sha256 cellar: :any, arm64_linux:       "eca923742d7e5b3acf3cb88400c5f9eba8d82646a05d096d4c0f0a5e4d36aa20"
+    sha256 cellar: :any, x86_64_linux:      "cebc45d914e8f78c65c9db9a290dd9cc6b1b246dced409a675c1b5abeba29551"
   end
 
   depends_on "rust" => :build # for rjsonnet
@@ -31,8 +30,8 @@ class Otterdog < Formula
   # No sdist on PyPI, so we use the GitHub tarball
   # Ref: https://github.com/microsoft/playwright-python/issues/2579
   resource "playwright" do
-    url "https://ghfast.top/https://github.com/microsoft/playwright-python/archive/refs/tags/v1.62.0.tar.gz"
-    sha256 "30cc72a0c00a22c3d287539233d3d6abd579becbfe7d02aef80bd3e75c951455"
+    url "https://ghfast.top/https://github.com/microsoft/playwright-python/archive/refs/tags/v1.64.1.tar.gz"
+    sha256 "7fb347825975afdeabbf7284a273d2335fd05e64b6a3ed1ec005afaa7b8696a9"
 
     # We track poetry.lock version while PyPI sdist is not available as it
     # guarantees a compatible version is installed.
@@ -188,8 +187,8 @@ class Otterdog < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/f9/79/84ddb5ba16c4eb2c69c71db76ae3c579fe546e511f7170c7e27eedbab7c1/multidict-7.1.0.tar.gz"
-    sha256 "61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec"
+    url "https://files.pythonhosted.org/packages/7b/6b/29ef8e752f5854dcc267ded0652c475bec99b86f255957a0d4fcad657b18/multidict-7.2.1.tar.gz"
+    sha256 "e8af3e6f1bdbc31fd762b094133b478b89988eaebc63cbe82b1d9e3bbd15cede"
   end
 
   resource "propcache" do

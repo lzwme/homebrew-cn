@@ -17,11 +17,21 @@ class Cake < Formula
 
   conflicts_with "coffeescript", because: "both install `cake` binaries"
 
+  deny_network_access!
+
+  def dotnet = deps.find { |d| d.name.match?(/^dotnet(@\d+)?$/) }.to_formula
+
+  def fetch
+    ENV["XDG_RUNTIME_DIR"] = buildpath
+    system "dotnet", "restore", "src/Cake", "--use-current-runtime",
+           "-p:TargetFrameworks=net#{dotnet.version.major_minor}"
+  end
+
   def install
+    ENV["XDG_RUNTIME_DIR"] = buildpath
     # Ignore dotnet version specification and use homebrew one
     rm "global.json"
 
-    dotnet = Formula["dotnet"]
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}
@@ -29,7 +39,9 @@ class Cake < Formula
       --no-self-contained
       --use-current-runtime
       -p:AppHostRelativeDotNet=#{dotnet.opt_libexec.relative_path_from(libexec)}
+      -p:TargetFrameworks=net#{dotnet.version.major_minor}
       -p:Version=#{version}
+      -p:WarningsNotAsErrors=NU1902%3BNU1903
     ]
 
     system "dotnet", "publish", "src/Cake", *args

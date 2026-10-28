@@ -12,25 +12,25 @@ class Aarch64ElfGdb < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "2c3e6b49cf2bc36df341e57d4811788ea82c1e20babac1515b949c5fca7dff0d"
-    sha256 arm64_tahoe:       "653ddaee64b53fd4029d3b4c6ea6aedd119684e5fa75a853666c56fe7072ccb5"
-    sha256 arm64_sequoia:     "f475560d0ea7603a5101a6bdc385e56f407359bd2dac95ce79151fc093825d79"
-    sha256 arm64_linux:       "bed612519115fabc085749b3bad91eda6bb95e5d2f6348af88cf23d02526447f"
-    sha256 x86_64_linux:      "59028ce682dad68dd197989ac07b1640469584c589dd4cd95d84d79e53d30366"
+    rebuild 2
+    sha256 arm64_golden_gate: "1d026536c1f3190ad2cbb2188a52e7f0a6e4c1fadccb8e55eb85b548908bc1a6"
+    sha256 arm64_tahoe:       "18bc30f8ff350127812bb98aa069a2ee54de2b672666b3aa9571f90adc12ebb2"
+    sha256 arm64_sequoia:     "cb23516529e9805cc4904dcf2de3dcb75217f04e544f3ee70f07866f547f36c1"
+    sha256 arm64_linux:       "74a348793f7a5067271f276968e9ef47e2d69a237c9e6bae20aa9c46d2e91563"
+    sha256 x86_64_linux:      "66519435a689a8adc19f3a12430fdeadfb92151d652c90038ed1df2cbc2f539b"
   end
 
   depends_on "pkgconf" => :build
   depends_on "aarch64-elf-gcc" => :test
   depends_on "gmp"
   depends_on "mpfr"
-  depends_on "ncurses" # https://github.com/Homebrew/homebrew-core/issues/224294
   depends_on "python@3.15"
   depends_on "readline"
   depends_on "xz" # required for lzma support
   depends_on "zstd"
 
   uses_from_macos "expat", since: :sequoia # minimum macOS due to python
+  uses_from_macos "ncurses"
 
   # Workaround for https://github.com/Homebrew/brew/issues/19315
   on_sequoia :or_newer do
@@ -45,6 +45,14 @@ class Aarch64ElfGdb < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Work around `mvwaddstr` and `mvwaddnstr` in macOS ncurses writing nothing,
+  # which leaves TUI windows such as `layout regs` empty
+  patch do
+    file "Patches/gdb/macos-system-ncurses.patch"
+    type :unofficial
+    resolves "https://github.com/Homebrew/homebrew-core/issues/224294"
   end
 
   deny_network_access!

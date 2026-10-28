@@ -23,6 +23,8 @@ class FontsEncodings < Formula
   depends_on "mkfontscale" => :build
   depends_on "util-macros" => :build
 
+  deny_network_access!
+
   def install
     configure_args = std_configure_args + %W[
       --with-fontrootdir=#{share}/fonts/X11

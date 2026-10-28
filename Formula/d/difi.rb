@@ -1,19 +1,17 @@
 class Difi < Formula
   desc "Pixel-perfect terminal diff viewer"
   homepage "https://github.com/xguot/difi"
-  url "https://ghfast.top/https://github.com/xguot/difi/archive/refs/tags/v0.2.31.tar.gz"
-  sha256 "8b2d6dc51d0f39d56013434176724739287f7f6173ab7af27b03628f7ffc99e6"
+  url "https://ghfast.top/https://github.com/xguot/difi/archive/refs/tags/v0.2.32.tar.gz"
+  sha256 "1473f63d985b49c076605d6959e60ae2134490b5b9d7936aec6db936abfd00b1"
   license "MIT"
   head "https://github.com/xguot/difi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d0a5188a02542d1a4816fee17a2664365270846cc8c92c345bac2f8046f86707"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "eb7cc1fcb8bdae5efdaa5f41b6434f52faaf865e9878876056acee4dc6a27c75"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "eb7cc1fcb8bdae5efdaa5f41b6434f52faaf865e9878876056acee4dc6a27c75"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "eb7cc1fcb8bdae5efdaa5f41b6434f52faaf865e9878876056acee4dc6a27c75"
-    sha256 cellar: :any_skip_relocation, sonoma:            "7e3e67183a0cde228682b1bbfa39480bde6db17f46c75791b30601c1f54d5c25"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "dc13d2d4b7141a3ad93ca9a820f701d32395f2350f4d53a5b68dab630522e431"
-    sha256 cellar: :any,                 x86_64_linux:      "9b99a475e408be9d9c79fa9d9b456a678d6984a8e6cc7c2e4a73b72270dd5f7b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7e232455a9f7e8f55c8d98c0fee85a2fc41a94b6a646c9d7f6f33626ff7f934f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7e232455a9f7e8f55c8d98c0fee85a2fc41a94b6a646c9d7f6f33626ff7f934f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7e232455a9f7e8f55c8d98c0fee85a2fc41a94b6a646c9d7f6f33626ff7f934f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "01a41019b832fa560a8d02465917e68e70af584c8e7f23693c59d45a2f96ef98"
+    sha256 cellar: :any,                 x86_64_linux:      "b6d4afc8182995a17b58d3dafc064c1a6721279ab5fcf58ba30c73988e07f9be"
   end
 
   depends_on "go" => :build

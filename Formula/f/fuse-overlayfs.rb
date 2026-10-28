@@ -25,6 +25,8 @@ class FuseOverlayfs < Formula
   depends_on "libfuse"
   depends_on :linux
 
+  deny_network_access!
+
   def install
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--prefix=#{prefix}"

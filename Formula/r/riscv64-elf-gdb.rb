@@ -12,25 +12,25 @@ class Riscv64ElfGdb < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "a3e64ba811a8b410d2aaff367841db780d3414cecb2457422f6e2a1d1ff1d821"
-    sha256 arm64_tahoe:       "48a0e804075a19753ac30b752c6e70dd23ab3f4ff58eb1446bdfc920fd1b0b97"
-    sha256 arm64_sequoia:     "3d2c2551c1202aa15dfc3a0a06b3cff4bfd9445e6f28c106655b2e7c68c76bf0"
-    sha256 arm64_linux:       "bc43bee0f515f6167ba3fb73acbffdd7a90099bfd2c98ad090369f1c1f3ca16d"
-    sha256 x86_64_linux:      "48edfcbe8787c26105202d9615b5897438d9f6235fecadaf484c83f84c8a6805"
+    rebuild 2
+    sha256 arm64_golden_gate: "2f402a649b4485ccd65bbb18d9cec1d20f04cfd20b55ecf79cc604af1c3e2913"
+    sha256 arm64_tahoe:       "9f60cfd3a02d0ba1cbb6b979e70a283f6c1d333bb396892d3b7d0f36c8422120"
+    sha256 arm64_sequoia:     "4b236957e4a8d2ecc6f88e6f29a6ddb4ef3c0b5ebdfdd7b46d970e9f6c2bc03b"
+    sha256 arm64_linux:       "d1f151497a9c913cdceefb19f2296015ec446ca60d28727c4d58f5a563cbd538"
+    sha256 x86_64_linux:      "b5167ff327c680499d6294d64f10a75f65593e5190a89b6c1fbf6323a7fbd9bb"
   end
 
   depends_on "pkgconf" => :build
   depends_on "riscv64-elf-gcc" => :test
   depends_on "gmp"
   depends_on "mpfr"
-  depends_on "ncurses" # https://github.com/Homebrew/homebrew-core/issues/224294
   depends_on "python@3.15"
   depends_on "readline"
   depends_on "xz" # required for lzma support
   depends_on "zstd"
 
   uses_from_macos "expat", since: :sequoia # minimum macOS due to python
+  uses_from_macos "ncurses"
 
   # Workaround for https://github.com/Homebrew/brew/issues/19315
   on_sequoia :or_newer do
@@ -45,6 +45,14 @@ class Riscv64ElfGdb < Formula
 
   on_linux do
     depends_on "zlib-ng-compat"
+  end
+
+  # Work around `mvwaddstr` and `mvwaddnstr` in macOS ncurses writing nothing,
+  # which leaves TUI windows such as `layout regs` empty
+  patch do
+    file "Patches/gdb/macos-system-ncurses.patch"
+    type :unofficial
+    resolves "https://github.com/Homebrew/homebrew-core/issues/224294"
   end
 
   def install

@@ -17,6 +17,8 @@ class Fwup < Formula
   depends_on "confuse"
   depends_on "libarchive"
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args
     system "make", "install"

@@ -3,30 +3,17 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https://gettaurus.org/"
+  url "https://files.pythonhosted.org/packages/61/63/3bfa8e62bb1e3551378fbbe3a7311f7fb3be81d93fb4c3d12466793aeada/bzt-1.17.2.tar.gz"
+  sha256 "6e9e76eb06b9513814307eb924dda0e4b91a92e8a84e257f650c137e7dfb676b"
   license "Apache-2.0"
-  revision 2
   head "https://github.com/Blazemeter/taurus.git", branch: "master"
 
-  stable do
-    url "https://files.pythonhosted.org/packages/ec/8d/d9f1a447107a6fef4c36af176236b2e70be0c4523a91781623fc934741cb/bzt-1.17.1.tar.gz"
-    sha256 "57144a67010944e5e2f66eca849da5b2900e833baf00e1f3de5f399a8e896227"
-
-    # Backport urllib3 pin so that we can verify `pip check` for manual resource update
-    patch do
-      url "https://github.com/Blazemeter/taurus/commit/3d47fbac24069cbd8bff950d81cfb50152d02e87.patch?full_index=1"
-      sha256 "f462f9760fb873db80943c4a6f5aede6fc417b39ab7319f658bd1d1fefc31471"
-      type :backport
-      resolves "https://github.com/Blazemeter/taurus/pull/2032"
-    end
-  end
-
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "d0cc435a053d91b4a751ebfe012b4d024d5be5a8cecb6783ff8d55d1a236946a"
-    sha256 cellar: :any, arm64_tahoe:       "0922ccb99abda9679165dcfeb23ec1add076a4fff626cfb9ff2ef3b64274298c"
-    sha256 cellar: :any, arm64_sequoia:     "36b851f9fc8b56be54de2f9653911f777a3210d5b6c664205005deb7563f2f9f"
-    sha256 cellar: :any, arm64_linux:       "ea27d9f13a0a444a6a0ca77df7ec848eb43c5392db33414e92e99bb2c92488d2"
-    sha256 cellar: :any, x86_64_linux:      "2c51ae71ca2399205beaceb98ea0264cd56289f1b8b0b6535cff0f044aea42a1"
+    sha256 cellar: :any, arm64_golden_gate: "a3da2a9801f7bc453bb617d3cf66376a336dc4c4659d5367287323f21c29f59c"
+    sha256 cellar: :any, arm64_tahoe:       "a86b325eb4138400b36894fe8f036352c360c17f053a78ac3b6a22c1b61a146b"
+    sha256 cellar: :any, arm64_sequoia:     "d687a7a7927f93af2d6422f73070a6aaf1051b9d60363e2f5e9b454932afeadd"
+    sha256 cellar: :any, arm64_linux:       "a8b02be0f615e939ecc7813b3e390b7658dc1c6de72dc66fe26248a9055f22c9"
+    sha256 cellar: :any, x86_64_linux:      "b60a5b8d5a0f14379898c96db06efa610b0ebbc0b0577911eff527e0cfb40ef4"
   end
 
   depends_on "cmake" => :build
@@ -159,8 +146,8 @@ class Bzt < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/f9/79/84ddb5ba16c4eb2c69c71db76ae3c579fe546e511f7170c7e27eedbab7c1/multidict-7.1.0.tar.gz"
-    sha256 "61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec"
+    url "https://files.pythonhosted.org/packages/7b/6b/29ef8e752f5854dcc267ded0652c475bec99b86f255957a0d4fcad657b18/multidict-7.2.1.tar.gz"
+    sha256 "e8af3e6f1bdbc31fd762b094133b478b89988eaebc63cbe82b1d9e3bbd15cede"
   end
 
   resource "multiprocess" do
@@ -199,8 +186,8 @@ class Bzt < Formula
   end
 
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
-    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+    url "https://files.pythonhosted.org/packages/0e/df/f15f80383f152452d8985b36d95cb8751f901a3e0ff4cd27f7e118f168e2/python_dateutil-3.0.0.tar.gz"
+    sha256 "7ebcb3c29a92f3ceafe79a7a48a5c45677e9e004bbeec5742ac0bbb00560b7a2"
   end
 
   resource "python-engineio" do
@@ -258,6 +245,11 @@ class Bzt < Formula
     sha256 "4e3eefe209aa89005a0a34d1525739424569729ee29b5e64a8dd51c5ebdab77f"
   end
 
+  resource "tzdata" do
+    url "https://files.pythonhosted.org/packages/d9/68/f1b440335057bfce71b6e50a9d09445aa2ecbd08359a337976627b8409e7/tzdata-2026.5.tar.gz"
+    sha256 "8cc73c0a0bfca7dbfa59235d60b2eff82231dee33f53d206db1acd9173cfc0a7"
+  end
+
   resource "urllib3" do
     url "https://files.pythonhosted.org/packages/e3/05/b17359e1cefb4f909b5e40b1b90a496d987258916dbbf88e842c729f510e/urllib3-2.8.0.tar.gz"
     sha256 "63bf2ead4c879426ebf22ef2a781eeb4aa3b4ae798a0435506f8687fd5bb9b63"
@@ -269,8 +261,8 @@ class Bzt < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
-    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
+    url "https://files.pythonhosted.org/packages/ea/01/e5ac23733628a6bbb91913a765fcf55ee8070d8d991bc88fdaaf805052c7/wcwidth-0.9.4.tar.gz"
+    sha256 "fd8d57d3cdfe570e3265c8fab1885c24e34ef40889c0759c0c304a19e9835954"
   end
 
   resource "websocket-client" do
@@ -301,9 +293,6 @@ class Bzt < Formula
   end
 
   test do
-    # TODO: remove with patch
-    system libexec/"bin/python", "-m", "pip", "check"
-
     assert_match version.to_s, shell_output("#{bin}/bzt -h")
 
     scenario = "execution.scenario.requests.0=https://gettaurus.org/"

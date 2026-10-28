@@ -3,18 +3,17 @@ class CheckJsonschema < Formula
 
   desc "JSON Schema CLI"
   homepage "https://github.com/python-jsonschema/check-jsonschema"
-  url "https://files.pythonhosted.org/packages/7f/43/f0cb0cc7e68421c5b0be6bca74d37e2daad915ee74edef42c4af21aaef19/check_jsonschema-0.38.2.tar.gz"
-  sha256 "967176475f9eddd2809baabf7e0d157f7eb482b06ac002a29a79788c0c8a5a90"
+  url "https://files.pythonhosted.org/packages/ad/0a/3d9da039817af8344be3e5502457c91b84dfd774792f48cef434c81af15e/check_jsonschema-0.39.0.tar.gz"
+  sha256 "33340a2f885e207411c7a7d1db0a052ba24a4e58c92a47f54231e4a128af2764"
   license "Apache-2.0"
   head "https://github.com/python-jsonschema/check-jsonschema.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "93b905f127af2e8306965b66d8c050cdf01c3d062b11df043ef3b4bd8022b9e1"
-    sha256 cellar: :any, arm64_tahoe:       "a0c441c153694bca5d47b785c42d706638fdb19af06372dc2233e2cd109d9cc5"
-    sha256 cellar: :any, arm64_sequoia:     "11373c896cd85ca6f8ea6b74e6fa68d50a3c627fde54f59b1de89f9496aa1dd8"
-    sha256 cellar: :any, arm64_linux:       "7dbf8d44c1576dace6cbb75a5117a135bbeed0261fd577ba504c4882aec0a892"
-    sha256 cellar: :any, x86_64_linux:      "40dea15bc75b7cdf7c4ac7be97339b04b9cab2c75e7c228b0bccc28094f6fbfe"
+    sha256 cellar: :any, arm64_golden_gate: "16a70e0608e2a48eb99bdec6a1d0d2b923aaf7a9d1a494494ca749af863170c0"
+    sha256 cellar: :any, arm64_tahoe:       "6dd0cc67e06595c11162a14713bbe11ef69cc7fcb7d8f2d53794f95b1e6d9eb2"
+    sha256 cellar: :any, arm64_sequoia:     "54c2e3c49866902cebfced9b0f5533a5000629d9d4aa7e199b63cfe0582e97b1"
+    sha256 cellar: :any, arm64_linux:       "074d320930f8e643582a3e1707332b93c2a9b4280796d0d528491691326e86dc"
+    sha256 cellar: :any, x86_64_linux:      "1091f18dea09ec12604c8fdac83e7df8f4037d5b3fa0931457cb1b670f1c5e9e"
   end
 
   depends_on "rust" => :build # for regress
@@ -62,8 +61,8 @@ class CheckJsonschema < Formula
   end
 
   resource "jsonpointer" do
-    url "https://files.pythonhosted.org/packages/5a/30/76a208d3eb75a5e2bcfec4e132c207ea1e22253d10b52a06c8ff3839dfc9/jsonpointer-3.2.0.tar.gz"
-    sha256 "807db557622fbe07a0d49e19cf4795a269d55eee5ba345fb9959d148eba5ef94"
+    url "https://files.pythonhosted.org/packages/54/04/e35b34f4e441473e62d82d6ed9a8f748d93d895f4c05d4e645aa0fde51d7/jsonpointer-3.6.tar.gz"
+    sha256 "82e839a3ba3a9e2b54394fda8b3d276c2459d80408d06ef9a6fbc369d7544ffc"
   end
 
   resource "jsonschema" do
@@ -77,8 +76,8 @@ class CheckJsonschema < Formula
   end
 
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
-    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+    url "https://files.pythonhosted.org/packages/0e/df/f15f80383f152452d8985b36d95cb8751f901a3e0ff4cd27f7e118f168e2/python_dateutil-3.0.0.tar.gz"
+    sha256 "7ebcb3c29a92f3ceafe79a7a48a5c45677e9e004bbeec5742ac0bbb00560b7a2"
   end
 
   resource "referencing" do

@@ -18,6 +18,8 @@ class Fpart < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
+  deny_network_access!
+
   def install
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules", *std_configure_args

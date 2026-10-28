@@ -1,19 +1,17 @@
 class Austin < Formula
   desc "Python frame stack sampler for CPython"
   homepage "https://github.com/P403n1x87/austin"
-  url "https://ghfast.top/https://github.com/P403n1x87/austin/archive/refs/tags/v4.0.0.tar.gz"
-  sha256 "1a857d4590092cd8f7fc110cd83c31311dde03113a5dc4cb93c4eb31e5c8f884"
+  url "https://ghfast.top/https://github.com/P403n1x87/austin/archive/refs/tags/v4.1.0.tar.gz"
+  sha256 "93fa2a3d86ef1199b4ac027e8874d6a960bd1cec2cdc3239c286dc85e74cb158"
   license "GPL-3.0-or-later"
   head "https://github.com/P403n1x87/austin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eba45218c3564a6394bfd576dc68231783213b3824f18367ac15206faf7bb52f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "da1ec3babb470a9b8e4f12b70ece43a4d0d00b5de8663477bfb88d5a10544b14"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d44ca3dd16c310c1aa9b06039ce4a3e660e9f6599d8f21ddfcc1ef0f0d93a3b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "2bb32d8e6f61cbb427fa68b9ba33e3028581dff7cba144686522f3fae9f6a429"
-    sha256 cellar: :any_skip_relocation, sonoma:            "ff93fdbf6c416993ffc4e25f03c56ccc9a832d8d06fb6bda5a4142ff41083b0f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "29c1aee7c3027fa88156dfbe09656e9a577f0c38f145ce3b40fe1daafc93a474"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8881075b254897ac5c175df033cf18c4e3c9be2c8f7da9c089ff51f829121833"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "763a64952097fb53780d9b7daec7e389623d65cb7800217436cd4afe97357f25"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f180633908671f28c4d68a7a50892f6325ea7a37b33680b671d62ca127c83dca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5b5e13e3db248c5f918b5504626139f7ff5eb73897e77365b54cfec0dc340aee"
+    sha256 cellar: :any,                 arm64_linux:       "240cdd46555c72ec9d4ca3c24ee7c092dd6684c96e63b1844ca089cdf5975a75"
+    sha256 cellar: :any,                 x86_64_linux:      "3b0ec667ba56f3593ef5bd32436fd358accd66db63bf3d5fd8bf7c212b08ea0f"
   end
 
   depends_on "autoconf" => :build

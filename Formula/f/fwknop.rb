@@ -42,6 +42,8 @@ class Fwknop < Formula
     depends_on "iptables"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       --disable-silent-rules

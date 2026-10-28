@@ -63,6 +63,8 @@ class ImagemagickFull < Formula
 
   skip_clean :la
 
+  deny_network_access!
+
   def install
     # Avoid references to shim
     inreplace Dir["**/*-config.in"], "@PKG_CONFIG@", formula_opt_bin("pkg-config")/"pkg-config"

@@ -2,19 +2,17 @@ class Kn < Formula
   desc "Command-line interface for managing Knative Serving and Eventing resources"
   homepage "https://github.com/knative/client"
   url "https://github.com/knative/client.git",
-      tag:      "knative-v1.23.0",
-      revision: "e411e88475005c36abaa42530521065210c8588d"
+      tag:      "knative-v1.24.0",
+      revision: "f2bfc7f364743c60fefce78e392e5f547aa5ad71"
   license "Apache-2.0"
   head "https://github.com/knative/client.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "77288248ffd07a513d51bce95ea744b33c8bde659a16f222832fd4a13705638b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9fa42c082218b8b828f4b1b32bef27c70177defaeb5bab1f8322e232c5eb54fa"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "002bb1f5bee5ced0408be0497f90d49180e5231eb4aa64fa263801e2281429f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8e9e1ebd135d62b449e6d717dc7fb5aec9e319800a75b05eb9101be4ea1f0aeb"
-    sha256 cellar: :any_skip_relocation, sonoma:            "c93dc1d9fef9b153e9ffc7dd444ec17e550774ca02f8c0cac9ee9f8e0c07ead7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "51dcfe063122ef3400b7d43e0519491f5435c67377ed81a84c7885265a45ff10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4d780f9623ccb237493eb530278fd023f4b5dc79fdb0fbbd91fd377b9d8deda8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0f70cdf577526e93fd4e5496c58e9f5c9410821a97632d70a555f246a85985e7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4efd6d4c334062e1b563a465c1479e90090d3b5be8634cedf530d0a939a2fe09"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "785cfed2cb10469a9dd2a274caf6f2d708bcde030a78c4ff9a07cda47e72a62d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "79720ec6d058da2ab7d17a001a684498686f63f9f413322b85fd4e249721b898"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "61da0d0cadcd2e204e1c0c78df4c5c9c27965aa3dfbcde03e9eb4b3c26d6c58c"
   end
 
   depends_on "go" => :build

@@ -1,19 +1,17 @@
 class Tfmv < Formula
   desc "CLI to rename Terraform resources and generate moved blocks"
   homepage "https://github.com/suzuki-shunsuke/tfmv"
-  url "https://ghfast.top/https://github.com/suzuki-shunsuke/tfmv/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "2783acb97c2b24f311a971cb22ff478ecc2323e2bab402457ef070051f754e9d"
+  url "https://ghfast.top/https://github.com/suzuki-shunsuke/tfmv/archive/refs/tags/v1.0.1.tar.gz"
+  sha256 "dd9bfc90354333876e46807e5f4a17105e799e59a8493171c61e32be7d816490"
   license "MIT"
   head "https://github.com/suzuki-shunsuke/tfmv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5002d5f1fc6091bfec4a3c320deacf55540a4a7acdff1889497c373b0db02ee3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8f8c31d6cd0910bdb3dfef1cd3cd24eefbd5ef4c87beb1cee502c6474e6a74c0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8f8c31d6cd0910bdb3dfef1cd3cd24eefbd5ef4c87beb1cee502c6474e6a74c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "8f8c31d6cd0910bdb3dfef1cd3cd24eefbd5ef4c87beb1cee502c6474e6a74c0"
-    sha256 cellar: :any_skip_relocation, sonoma:            "dfc830c36d5a0d948315027d6aafc7ef63046cac5c05bf3d5f8bde730d8bf22d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "161f5173d9a7b3ee6942da6d157ad9570054e9b0af6b3e4c137536ea801582e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "53413e3284046bc4560ccf3405f5e187f744083e5264d2f4c9c75cf064190be8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a6b8eda21963e159deb2ca52e2d393eaedfcecd91cc42c2eb1e49c2e116c13d7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a6b8eda21963e159deb2ca52e2d393eaedfcecd91cc42c2eb1e49c2e116c13d7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a6b8eda21963e159deb2ca52e2d393eaedfcecd91cc42c2eb1e49c2e116c13d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0afc7eeb09b97a8d3394d20bac5e76ced9026b854ef1d808f816c62f6e475935"
+    sha256 cellar: :any,                 x86_64_linux:      "4625bc4345a4a1460df4adf46aaf7b911af7103980aa4c52f6367403ba5e299e"
   end
 
   depends_on "go" => :build

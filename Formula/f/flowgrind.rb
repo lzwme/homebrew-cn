@@ -38,6 +38,8 @@ class Flowgrind < Formula
     depends_on "util-linux"
   end
 
+  deny_network_access!
+
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system "./configure", *std_configure_args, "--disable-silent-rules"

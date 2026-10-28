@@ -3,18 +3,17 @@ class MailDeduplicate < Formula
 
   desc "CLI to deduplicate mails from mail boxes"
   homepage "https://kdeldycke.github.io/mail-deduplicate/"
-  url "https://files.pythonhosted.org/packages/59/4b/0d3d5ee73a939c242551aeb4ef6fab754646f697d481594bd69e0433e819/mail_deduplicate-9.3.2.tar.gz"
-  sha256 "f362531b11e99cb5a51c7806b960e22bff7607dace1a713511baf9653af966e5"
+  url "https://files.pythonhosted.org/packages/b5/21/8ba034c701b146720babedf9e94f9e4dd262f096660067dcf316cce8c1ea/mail_deduplicate-9.4.0.tar.gz"
+  sha256 "07a13b614d71d29fe573bd3c048629123ce1f69cd2475c28217f76ffd217458c"
   license "GPL-2.0-or-later"
   head "https://github.com/kdeldycke/mail-deduplicate.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7a152c211956d9e15c483c431320ca61d675771bc43778aa9841d3bba441c937"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "262e1f5307e6128efa3e30094f9d2938edf17034a218069808df1fec62949542"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cf800b8b3f9b1883003d953b25fab99db722ce1b15508ae11005fbecb3fb8649"
-    sha256 cellar: :any,                 arm64_linux:       "5864c8d8f7ab5aea704311558b720e6a3f5af4abc9d5d3c3ba1017d0fc59f103"
-    sha256 cellar: :any,                 x86_64_linux:      "8734d5b0a6272139378436548930bea8afe71bea9fee415856ba24d75e1b1807"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7b15f200016e5ca84d0a05acabbea7affcdd95e86249e9e602d04c77ec008fd7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "daba7b77e79db4c2152867498ee4df50cc7353007fa8b85a76864675e787abcf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8a619eae4d700b8f276be0d455f6977b9007b6c1cbb47de9f67c922d530c3140"
+    sha256 cellar: :any,                 arm64_linux:       "d0e7fb22487cbab952062e5d31749f4975dc99a6dd8f11011735d8abc4c0887d"
+    sha256 cellar: :any,                 x86_64_linux:      "acde4235fddfe5a72a5b6801edb2933a4931fe0aa870091e820a595f10298a13"
   end
 
   depends_on "rust" => :build # for click_extra > uv_build
@@ -30,8 +29,8 @@ class MailDeduplicate < Formula
   end
 
   resource "bracex" do
-    url "https://files.pythonhosted.org/packages/ac/01/5f394b8bcd6e5b92f73130990960423bbb19711f906bd9fe9ea5557c667c/bracex-3.0.1.tar.gz"
-    sha256 "4e38e32392e4a4780fe15d644bfc7c8514057cfc3861e060b11814ce829c25e4"
+    url "https://files.pythonhosted.org/packages/fb/37/adf8dd2cde958c2d086bdd87fc36b532fd824bf38f10be6348d65da0c8f9/bracex-3.2.tar.gz"
+    sha256 "0a3d40bfae4caae4d3bfd0ea715874799fab711c38fd4012cc35343e815405cd"
   end
 
   resource "click" do
@@ -40,8 +39,8 @@ class MailDeduplicate < Formula
   end
 
   resource "click-extra" do
-    url "https://files.pythonhosted.org/packages/13/20/e2d60c90277a668b10a00f7a74cd52a87ab0c85afd5b8975cc582601eafc/click_extra-9.4.1.tar.gz"
-    sha256 "065df41b1c8f6601bd9e550d79ac34a73ba40bfc84cfdb320cdcfe066c40a6d1"
+    url "https://files.pythonhosted.org/packages/94/49/8f08a9dcff02255ade9898d7972e07a0e227b4151e040baac7c6499c4d07/click_extra-9.5.0.tar.gz"
+    sha256 "d3187fddf72c3f2cffc0c38d345e3bdbec989a7b790a5fec473d85cd4d497943"
   end
 
   resource "cloup" do
@@ -50,18 +49,18 @@ class MailDeduplicate < Formula
   end
 
   resource "deepmerge" do
-    url "https://files.pythonhosted.org/packages/38/6e/5cb3548b4d3112fea529375e55e6f3cdc52b8054e3a66f203b1f888ba885/deepmerge-3.0.1.tar.gz"
-    sha256 "35b39a4cb92cf328d6eca61cbbf65f68a37c2ceb3085f0f853cbb2e52a59fc23"
+    url "https://files.pythonhosted.org/packages/ca/e9/5e99e56e03f9461858e686fdaf82e2516671bc1bd46f8b7ad7b9a8375f6f/deepmerge-4.0.0.tar.gz"
+    sha256 "948565f2bc9cdb41259a4a23d26638e5840c9e084a343ab279ffd3edcfdf74d3"
   end
 
   resource "extra-platforms" do
-    url "https://files.pythonhosted.org/packages/ee/e9/805ffa0a5d7bbb2eee2297a2fe1c22e41b2900daa2f1144d335e827e2a1b/extra_platforms-13.11.0.tar.gz"
-    sha256 "79bd4a79df48a873c6cd46e2c7318a7604f3d07c7a14b405b22f63b1368eef11"
+    url "https://files.pythonhosted.org/packages/3e/2f/c8f34db12c09070b47885d51e4f5cf722107442c3c423cb9a1eb5ec7047a/extra_platforms-13.13.0.tar.gz"
+    sha256 "77f9927d5c3ca286241ccba049d4ac6d8256e3df123779e036148fc94d0ff583"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/80/a8/66d45abadff219e36e2a824181b8f6a67e7ed4572934d6252c71c29d5731/platformdirs-4.13.0.tar.gz"
-    sha256 "1aa0b0d3f224c1f07c295121e312a5a24a180d6ae5a8425ea1784b3e3863e9c0"
+    url "https://files.pythonhosted.org/packages/58/e6/d0abbb256b44e6a05748c6942511ff67db8dbb068de0c35b24bf1b395b09/platformdirs-4.13.5.tar.gz"
+    sha256 "05831adf87d392760f4b5c3a0a95579ab5a10b18b9b9bd43680dcb47544788a0"
   end
 
   resource "tabulate" do
@@ -70,18 +69,18 @@ class MailDeduplicate < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
-    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
+    url "https://files.pythonhosted.org/packages/08/72/fc01563df95c189a9f65850096bdc205bc2fe37da6c740cd64afaf18d07e/tomlkit-0.15.2.tar.gz"
+    sha256 "83e32755ba1d20d9340bd069ee97e9f6232ba2346b63ffcba425de01f7e327a6"
   end
 
   resource "wcmatch" do
-    url "https://files.pythonhosted.org/packages/78/cd/0e028d8b7d906d51acdac537334fbe85f8284f2a8147d48bc9403af77a0d/wcmatch-11.1.tar.gz"
-    sha256 "f2b6f0fad6f5e2571498723fcb3c8facdd0fba0dcc139f31d32f592eb648153e"
+    url "https://files.pythonhosted.org/packages/bd/07/b7a9162a804bc0f7d03fe84c93e374d3e1c4d828043d5f9b797f7d4e30e0/wcmatch-11.2.tar.gz"
+    sha256 "1605bde546fbde4c063628c7d89eda486909fd4337e51d73a873987fbcb2554c"
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
-    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
+    url "https://files.pythonhosted.org/packages/ea/01/e5ac23733628a6bbb91913a765fcf55ee8070d8d991bc88fdaaf805052c7/wcwidth-0.9.4.tar.gz"
+    sha256 "fd8d57d3cdfe570e3265c8fab1885c24e34ef40889c0759c0c304a19e9835954"
   end
 
   def install

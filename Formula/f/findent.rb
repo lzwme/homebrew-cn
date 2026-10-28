@@ -19,6 +19,8 @@ class Findent < Formula
     sha256 cellar: :any,                 x86_64_linux:      "a988cfa29e896820e533174e7103ae459974067130ea7d44779039971467a6b2"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",

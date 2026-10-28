@@ -1,17 +1,17 @@
 class Cmctl < Formula
   desc "Command-line tool to manage cert-manager"
   homepage "https://cert-manager.io"
-  url "https://ghfast.top/https://github.com/cert-manager/cmctl/archive/refs/tags/v2.6.1.tar.gz"
-  sha256 "83226abe4516e4e39953dee0d341b26e4c6f5a7f2f62ea07074bd2f8dd55c664"
+  url "https://ghfast.top/https://github.com/cert-manager/cmctl/archive/refs/tags/v2.6.2.tar.gz"
+  sha256 "5dd1bc9a68e0d3a76776746b4c20b60e44516176b97921dd5d8e71c304726182"
   license "Apache-2.0"
   head "https://github.com/cert-manager/cmctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eadb67d79ee52df9b729545c75dc862f3cafa4998c9cd29c43de168180a37e4f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "886c201764a25ecc7bde87ec9f5af0906774fefc16e49dc6389ce5cbc24f5858"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bfbffbe343313bb19a2d21feacc289bf973c75f8bdf8b7bbeec45bc45264d584"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c756ae42d2799c0c226df646cb1749143d9a70a9ffd74cd73abd61060b62e8dc"
-    sha256 cellar: :any,                 x86_64_linux:      "c5dcb068f1a918636d63f031c8a7ba61301a20ea2669001718faf6b89cc9c419"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bb85f23d67cf27f6bdc08a39bff5a237178259c41b3875d678a0b8fd56297c6e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a881921ec3321d24f748ebf90006bc22890261054f1271891f8e2afb9248fe81"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b3ae32507235bd3c48de6e25c9d32efd67a01754d5a8401bf9723021a8192897"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "8420e51c988ae22c0fffe39dcee1e993aa66a8f81e6fd05cd6b31134972eda26"
+    sha256 cellar: :any,                 x86_64_linux:      "1b9bfcf48c1ae1944d0d5d94c10a804738c04eb096e07ff85920129e426ad097"
   end
 
   depends_on "go" => :build

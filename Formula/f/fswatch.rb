@@ -20,6 +20,8 @@ class Fswatch < Formula
     sha256               x86_64_linux:      "630eb329e9ecf3a9dd216df41f8ced6c03a7d4485e2954772e0831934565d94f"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args
     system "make", "install"

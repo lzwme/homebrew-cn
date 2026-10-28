@@ -31,6 +31,8 @@ class Flactag < Formula
 
   uses_from_macos "libxslt"
 
+  deny_network_access!
+
   def install
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
     ENV.append "LDFLAGS", "-liconv" if OS.mac?

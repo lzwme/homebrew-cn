@@ -108,6 +108,14 @@ class ZabbixCli < Formula
       sha256 "7aefa906b62e2c9a8df255ea742ca97e155ac2e1238e49ce11e3e56e37ee1f8b"
       type :backport
     end
+
+    # Fix for flit-core>=5
+    patch do
+      url "https://github.com/sethmlarson/socksio/commit/504f7e51682b9526d3ecc7ea893338af1fedfb2d.patch?full_index=1"
+      sha256 "b0c327c4e8fa722669dc372263d735f429015587e02935e2e8cb2b22028c0bfb"
+      type :backport
+      resolves "https://github.com/sethmlarson/socksio/pull/66"
+    end
   end
 
   resource "strenum" do
@@ -141,14 +149,7 @@ class ZabbixCli < Formula
   allow_network_access! :build
 
   def install
-    venv = virtualenv_install_with_resources(without: "socksio")
-    resource("socksio").stage do
-      # Cap flit-core below 4 as socksio's legacy `[tool.flit.metadata]`
-      # pyproject table is no longer supported since flit-core 4
-      inreplace "pyproject.toml", "flit_core >=2", "flit_core >=2,<4"
-      venv.pip_install Pathname.pwd
-    end
-
+    virtualenv_install_with_resources
     generate_completions_from_executable(bin/"zabbix-cli", shell_parameter_format: :typer)
   end
 

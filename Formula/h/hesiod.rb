@@ -28,6 +28,8 @@ class Hesiod < Formula
   depends_on "libtool" => :build
   depends_on "libidn"
 
+  allow_network_access! :test
+
   def install
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules", *std_configure_args

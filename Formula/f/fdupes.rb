@@ -23,6 +23,8 @@ class Fdupes < Formula
   uses_from_macos "ncurses"
   uses_from_macos "sqlite"
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make"

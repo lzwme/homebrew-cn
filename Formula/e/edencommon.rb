@@ -1,18 +1,18 @@
 class Edencommon < Formula
   desc "Shared library for Watchman and Eden projects"
   homepage "https://github.com/facebookexperimental/edencommon"
-  url "https://ghfast.top/https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2026.10.19.00.tar.gz"
-  sha256 "8f998ab2f535a9736e073dae16b55f76fcc65d142dab551f3919e96a019a5f3b"
+  url "https://ghfast.top/https://github.com/facebookexperimental/edencommon/archive/refs/tags/v2026.10.26.00.tar.gz"
+  sha256 "08f5597c7ddbc79b6fca13bf97cf6f8ef4695a7ac6bc9d50c67cb8a435600d9a"
   license "MIT"
   compatibility_version 1
   head "https://github.com/facebookexperimental/edencommon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b344f0777d3b0545d49a2fe211a4b71d563c66def6bd16680f6361fe319b492e"
-    sha256 cellar: :any, arm64_tahoe:       "1ce435dff935653928d0102a77c451f8475a444d2a60541934ddd32b8dea324a"
-    sha256 cellar: :any, arm64_sequoia:     "9ecd0fddee6c4925d3f64af83fa00831894d69c5b4854bfbc1a734227f1f1c94"
-    sha256 cellar: :any, arm64_linux:       "98fed36abd1fcbce2fc1ac4a558c1a9eb911bfdea93b37016dc3dcebcdb226f2"
-    sha256 cellar: :any, x86_64_linux:      "7c9e531b68ee2a22c702d6c1d54be517d30d966b75e3572da8a043787eca6462"
+    sha256 cellar: :any, arm64_golden_gate: "316fbd1612e5e1603b1b9a0147d4c359c54b3b80ec7b4e322099d67c3aefc474"
+    sha256 cellar: :any, arm64_tahoe:       "875227a57731f52989dd2847f08ef45274d5e8c26277849d657c5ad0d9d40692"
+    sha256 cellar: :any, arm64_sequoia:     "c8d8501d3ecd0c4dece7700d99bd8647f83b4b44333f50e47810a5b2932763a6"
+    sha256 cellar: :any, arm64_linux:       "a2f4f76858007ad3f19683e5eb35e9f7175a2441007ac07b2448d1d664f0d70c"
+    sha256 cellar: :any, x86_64_linux:      "75ba1e9c05fdce730fdd81ccf20efa9247613349e59409d22d2d6842369bcbd9"
   end
 
   depends_on "cmake" => :build

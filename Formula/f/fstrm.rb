@@ -46,6 +46,8 @@ class Fstrm < Formula
   depends_on "pkgconf" => :build
   depends_on "libevent"
 
+  allow_network_access! :test
+
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system "./configure", "--disable-silent-rules", *std_configure_args

@@ -1,8 +1,8 @@
 class QobineWeb < Formula
   desc "Server and web based player for Qobuz"
   homepage "https://github.com/SofusA/qobine"
-  url "https://ghfast.top/https://github.com/sofusA/qobine/archive/refs/tags/v2026-10-16.tar.gz"
-  sha256 "826ddc36d1f297b7cd9da4fb542361eec5b321364378290a8c42c6b46ffb63cf"
+  url "https://ghfast.top/https://github.com/sofusA/qobine/archive/refs/tags/v2026-10-27.tar.gz"
+  sha256 "9c8145da3c56d9b1c33ed4d6033b27e564babd1065b4070f519957d13eff518d"
   license "GPL-3.0-only"
   head "https://github.com/sofusa/qobine.git", branch: "main"
 
@@ -13,11 +13,11 @@ class QobineWeb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dec457c6c77ff19b9bc39e115f035a19ef8273b4ead352c53e59493bdb986107"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "69e23ea61e965cb2e6b917ba984376ca3e4f1ede3aa74d224f1fc4b9cfcc1155"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7a92eec18377eeb3a5aee9d91452bbe43de5597cf6983f04920aee51c6c77437"
-    sha256 cellar: :any,                 arm64_linux:       "9031d852164349b20e5de88e01ec96cc90fcdbc133c8a07ae0819cc5256dde1d"
-    sha256 cellar: :any,                 x86_64_linux:      "c17c81ccd7a39f4cee6ecf0deddc115b01492957f7b771ed843bd22824a046e8"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e578a92fb7842740e8f417f3f11af45d22142ae58d6678f85599e00552bf49f2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b852e9d60088b41bd8299e2ac45cd551d7828f55025bdb10c3c74bfb7d5daa4a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "10d2aa4ceb10bb347492c2645669653379cf5c9053fd205126ba7e1968b789b1"
+    sha256 cellar: :any,                 arm64_linux:       "c61b6affdcb6fd8c0d514396e0da0d6f89618340f678f45a99829057278e8bb2"
+    sha256 cellar: :any,                 x86_64_linux:      "f752df9d69404160299ea429a6dd0aaa4ac068823e23f676651959e6f7d389fc"
   end
 
   depends_on "pkgconf" => :build

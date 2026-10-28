@@ -39,6 +39,8 @@ class Ftgl < Formula
   # build patch to fix type mismatch
   patch :DATA
 
+  deny_network_access!
+
   def install
     # If doxygen is installed, the docs may still fail to build.
     # So we disable building docs.

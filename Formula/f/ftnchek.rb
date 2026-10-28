@@ -32,6 +32,8 @@ class Ftnchek < Formula
     depends_on "groff" => :build
   end
 
+  deny_network_access!
+
   def install
     # Fix outdated host platform detection (use x86_64 and aarch64 instead
     # of i686 and arm, respectively)

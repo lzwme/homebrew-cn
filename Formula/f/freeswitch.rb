@@ -170,6 +170,8 @@ class Freeswitch < Formula
     sha256 "71b3f1492cd5ca3dacdaa7eb6b54f5d14e0e2267ae0a1df09a87ca93cfeb1401"
   end
 
+  deny_network_access!
+
   def install
     resource("spandsp").stage do
       system "autoreconf", "--force", "--install", "--verbose"

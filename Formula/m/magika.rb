@@ -4,7 +4,7 @@ class Magika < Formula
   url "https://ghfast.top/https://github.com/google/magika/archive/refs/tags/cli/v1.1.0.tar.gz"
   sha256 "87fd85f33d2c644d657de024b83cdc36bbdcf4a2961be5e93fe74e081477076c"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https://github.com/google/magika.git", branch: "main"
 
   livecheck do
@@ -13,11 +13,11 @@ class Magika < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c321c152fc6d3881d82eec2dc7b7074dcc732777bc957c167352e09d13b42024"
-    sha256 cellar: :any, arm64_tahoe:       "c79c802ea50529427b1a531054665bb63a5fdd329271d3ec34889d7843e97d07"
-    sha256 cellar: :any, arm64_sequoia:     "19909689a749a43590b4d786ec6e495458d7dab75915dfad07a1a0b3fd1376cb"
-    sha256 cellar: :any, arm64_linux:       "75ed8f1a5f7d0089003251b77589e827360af6fa0365209002d4af849f658f07"
-    sha256 cellar: :any, x86_64_linux:      "7f70b5de59d5d5437a00ddea91b86a2c72fac5bedfac29384659df39f6cceb32"
+    sha256 cellar: :any, arm64_golden_gate: "cd7658a3f2696ece09629627b7fd7953b20b3dec41bed24fb51fbb653f9d0234"
+    sha256 cellar: :any, arm64_tahoe:       "cf634d0f8e53d31ab6ce59f36e02320ef04939ce402afca1d37c8271fdf543db"
+    sha256 cellar: :any, arm64_sequoia:     "c1857280a7557860c9977d938e6dc9322f89ea2f32b35e28cd9c02179ed9172f"
+    sha256 cellar: :any, arm64_linux:       "1790bd9fcb20066cc91bd0a1f8e238536815578c04987c656e102628a2b42bf3"
+    sha256 cellar: :any, x86_64_linux:      "937b70d06afa0e7e73f1ae9594fef74810fb845e15bb4dc619ecd31f0f879105"
   end
 
   depends_on "pkgconf" => :build

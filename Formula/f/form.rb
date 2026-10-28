@@ -27,6 +27,8 @@ class Form < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules", "--disable-native"
     system "make", "install"

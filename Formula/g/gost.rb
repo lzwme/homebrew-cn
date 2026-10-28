@@ -1,8 +1,8 @@
 class Gost < Formula
   desc "GO Simple Tunnel - a simple tunnel written in golang"
   homepage "https://gost.run/"
-  url "https://ghfast.top/https://github.com/go-gost/gost/archive/refs/tags/v3.3.1.tar.gz"
-  sha256 "3b5241edbc69d9578a37b3e950cf02ca7a7dc2aa2f688457affc63d966b93012"
+  url "https://ghfast.top/https://github.com/go-gost/gost/archive/refs/tags/v3.3.2.tar.gz"
+  sha256 "838674347bfd7a7df43cab5ca25a21992a247fe50fe61e9a12497d5a1699a3d5"
   license "MIT"
   head "https://github.com/go-gost/gost.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Gost < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "da885fa49264deff7fa2d3bdb3a3062b14608d54fc92331c1a40d7b4218e4507"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "358219237c979767327eeec904ba73d31de14418eaf06a3453560f78b4d1486c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8df080e90ba923bbc6e491fbc816a7d4c8c46e1c63df0a83fcb2290e9f92e930"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "075b8494afc19ab2b8843b5b233ea075a1efdd95504e1f92e914689fa7adafe9"
-    sha256 cellar: :any,                 x86_64_linux:      "b7a36383fe1d3c812c497fe13f562f03e872ab4f3e681599342229634f89dae1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "56dc532091b071220e49fec3f492adaee3676873ccbaa3fe7069dfdef1c8dac7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "52c4479056b554b67c7ddd2b52bd0743a456d1dd01a4b640d2a5a87473b27ca2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "722a772e5f293d8ff19d0efdab1d4587a29dcd55cc63b4ce075233b2c4337caa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "068547dc78bfa25aea7c3ec768a23573d0afc9c24e128df12aa2f735176cac35"
+    sha256 cellar: :any,                 x86_64_linux:      "878202ee41daa66441039fb93a7bb75a1aae2a764d812649001b2f7571c1c7a9"
   end
 
   depends_on "go" => :build

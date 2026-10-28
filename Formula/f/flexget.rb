@@ -3,16 +3,16 @@ class Flexget < Formula
 
   desc "Multipurpose automation tool for content"
   homepage "https://www.flexget.com"
-  url "https://files.pythonhosted.org/packages/b7/73/ff4111cf27aac4f1dd78f1d694a773cd2ae590e770b446b5a0a9b9b2e7ff/flexget-3.22.7.tar.gz"
-  sha256 "a62d2b1518126f34379a08c5f09d1780cd3ae4e6fa943da59e7b0cd6fef0979b"
+  url "https://files.pythonhosted.org/packages/48/c4/4a5f699b5e2993698cd9d63c61f8f96b63760665ba59fdecedd878c63fe5/flexget-3.22.8.tar.gz"
+  sha256 "9842abec24a7d0d60fcfc3d97e9080d53d87905605bf63b2cf2dd7f53e91e077"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "033c166cd921d03c5809d381062dbed8789f2f7c0cb3225d6c3040aefac0cc3d"
-    sha256 cellar: :any, arm64_tahoe:       "7f0fe80b0a907d23edd23dc7e7ca0f704d2049768cdd90b464740270cc6196b6"
-    sha256 cellar: :any, arm64_sequoia:     "483e14a14e7d3bd3e13cfc1e3c15babf2d35a691f52f06dfa7b6cc477feee070"
-    sha256 cellar: :any, arm64_linux:       "7d32b35664b8031d4571b2c4e5bf25be20aed486dbee823ce0f28f3258f7346a"
-    sha256 cellar: :any, x86_64_linux:      "6e249ce280efdbd980bd87555c257a1c086b099e7dc9bac3e8165c17012c4ca1"
+    sha256 cellar: :any, arm64_golden_gate: "b6735e10fc83dac4ad9d712963cbe3a47165e75584e6950e11d42a4b7cee40e2"
+    sha256 cellar: :any, arm64_tahoe:       "563daf166614ff8d902469e1d573558d1923cd6cb7c8aa9d237a0abc4af3414a"
+    sha256 cellar: :any, arm64_sequoia:     "930ae85c0e4969dd3d0e904013796abe3b0ed890301dc965dc91615152bc986e"
+    sha256 cellar: :any, arm64_linux:       "9b761e232084450736f14b6cfb35d24d1f69c3fd5bf76842ed0f55635b31d167"
+    sha256 cellar: :any, x86_64_linux:      "857184c67eda117ece2aab3dc452bd0e51210e97325d8ea64e7a5c881a422a49"
   end
 
   depends_on "rust" => :build
@@ -87,8 +87,8 @@ class Flexget < Formula
   end
 
   resource "curl-cffi" do
-    url "https://files.pythonhosted.org/packages/82/e1/730125c43e3e331d98e17af3cb310ba526b3f1101b7635ca23d976ebfcf5/curl_cffi-0.16.3.tar.gz"
-    sha256 "d15d0c2a35f2d75bec430c28946c2a833f421c85773bdb0795182cc5c515665b"
+    url "https://files.pythonhosted.org/packages/96/4c/69074f9797d83a5401b3c6bc58c5de5aad6d1a085d0497b87a093a152e87/curl_cffi-0.17.0.tar.gz"
+    sha256 "31ee8500d06d6502ce1ec0b7ded1c5aa8e8f3401bbe37ccd78d6153d859d8f3c"
   end
 
   resource "feedparser" do

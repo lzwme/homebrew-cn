@@ -18,6 +18,8 @@ class Fizsh < Formula
 
   depends_on "zsh"
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",

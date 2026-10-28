@@ -1,8 +1,8 @@
 class Envoy < Formula
   desc "Cloud-native high-performance edge/middle/service proxy"
   homepage "https://www.envoyproxy.io/index.html"
-  url "https://ghfast.top/https://github.com/envoyproxy/envoy/archive/refs/tags/v1.40.1.tar.gz"
-  sha256 "5540c2b78934f7eb009d3751813490c2110cfa6be6aed6777bfc540d3c5020d0"
+  url "https://ghfast.top/https://github.com/envoyproxy/envoy/archive/refs/tags/v1.40.2.tar.gz"
+  sha256 "5238e7c8accea26de78c89169945fd47478555852e4e1ae043ab7d13575ffa81"
   license "Apache-2.0"
   head "https://github.com/envoyproxy/envoy.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Envoy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b3188191ceb1160e3918966255a3072f0b004f478be6d6de7a3c8f8bf6719721"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6f23e6506609cf2d42e2847d6e5ea1a3613645a0318b31554ef3b94dc34b558e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7159e59ee70dad25067e51622b03663b2fd0f12487f06fb57029583cd1dea95e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "46c1380b43bfd8b73eb16924cc3d3e2be783cc6ceee54c15edd3f059bf4d3114"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "3c5199906fc458896525452316aa2d4a56700996a6cd86d33fbea4049ebc90a9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "33d87c6eba3678acc6a1613b269ec26392f7cd29f8c4d3b7a4874585d590dcb9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "01ca9c90e60f371aa11b4ce1c401e341f736513a0327d8614cb23a3bbe7964da"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "922d1f2d480f77a69d82560c30fb29bb4a665b9470751d66a0a4bf48b6bfcd69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "52573390ef43b0bee73638b51b3f66beddaf371e39d4ba42b01c45ad1042462c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "fe89cec8a2c2234f3601dd541854384edc1bfa38985acad78784c1ae77f0073d"
   end
 
   depends_on "bazel@8" => :build

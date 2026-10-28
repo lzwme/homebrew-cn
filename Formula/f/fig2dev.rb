@@ -29,6 +29,8 @@ class Fig2dev < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--enable-transfig",
             *std_configure_args.reject { |s| s["--disable-debug"] }

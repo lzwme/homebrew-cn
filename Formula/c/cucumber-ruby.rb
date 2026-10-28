@@ -1,8 +1,8 @@
 class CucumberRuby < Formula
   desc "Cucumber for Ruby"
   homepage "https://cucumber.io"
-  url "https://ghfast.top/https://github.com/cucumber/cucumber-ruby/archive/refs/tags/v12.0.0.tar.gz"
-  sha256 "d1e1e3a4d6bebad2403c53982c9890dc0a0b8a31ef3f44b1b4dab32aa7414adf"
+  url "https://ghfast.top/https://github.com/cucumber/cucumber-ruby/archive/refs/tags/v12.0.1.tar.gz"
+  sha256 "ebac70bfd680cff836f93586d9ced050197a71f7e67638a9401ccf41f5be2ce9"
   license "MIT"
 
   livecheck do
@@ -11,11 +11,11 @@ class CucumberRuby < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ae29616fd792c77ae7bd88f8ed51ef1abf420532803ec18f2c1775d7acd5d186"
-    sha256 cellar: :any, arm64_tahoe:       "f3cbeff4c0e2afd59957aae20d1e15fc3b28efb004bab7a9f6f38fde47674483"
-    sha256 cellar: :any, arm64_sequoia:     "73a085b94f7461f787ba4954d5a8ea60514cd679b9ad6daa68c0674049209bc1"
-    sha256 cellar: :any, arm64_linux:       "12b1c7368701470dd9f3b6a34ca25c3ac202f7220dee41a495ff96dacadf7cf7"
-    sha256 cellar: :any, x86_64_linux:      "b407b4bcb10e7baa28956ae1240c87a037f56fcd2b45c575e00513b930a0cc09"
+    sha256 cellar: :any, arm64_golden_gate: "fc788a838ad9447aad98d1639bc48dd8aa3eeb4463567eb09f595c6534e046a5"
+    sha256 cellar: :any, arm64_tahoe:       "2d281de5a8d2f8454befe3278ecb6c3e6c9a39b47189c8928868a6093eb0f45e"
+    sha256 cellar: :any, arm64_sequoia:     "390e6851c3ce0de5c71dc8a9de6b1954b0911a3475cdeaac58fc26a3af6bba95"
+    sha256 cellar: :any, arm64_linux:       "21db96e9ae8c4755e0a2366359b599099d46846a97cea4ae944701ec27031741"
+    sha256 cellar: :any, x86_64_linux:      "46747f29255e9662fe9f4318a78a0f1192aa9f4887ec1d00514d799aea25c0f9"
   end
 
   depends_on "pkgconf" => :build

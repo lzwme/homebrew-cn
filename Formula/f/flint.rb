@@ -35,6 +35,8 @@ class Flint < Formula
 
   uses_from_macos "m4" => :build
 
+  deny_network_access!
+
   def install
     args = %W[
       --with-gmp=#{formula_opt_prefix("gmp")}

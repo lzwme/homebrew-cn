@@ -62,6 +62,10 @@ class Handbrake < Formula
     depends_on "zlib-ng-compat"
   end
 
+  # Fetches bundled dependencies during build-time
+  # TODO: try switching to Homebrew dependencies or add `fetch` method
+  allow_network_access! :build
+
   def install
     # Several vendored dependencies, including x265 and svt-av1, attempt detection
     # of supported CPU features in the compiler via -march flags.
@@ -74,7 +78,7 @@ class Handbrake < Formula
       freetype fribidi harfbuzz jansson lame
       libass libbluray libdav1d libdvdread libdvdnav
       libjpeg-turbo libogg libopus libspeex libtheora
-      libvorbis libvpx svt-av1 x264 zimg
+      libvorbis libvpx svt-av1 x264 xz zimg
     ]
     inreplace "make/include/main.defs" do |s|
       libs.each { |dep| s.gsub! "contrib/#{dep}", "" }

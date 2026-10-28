@@ -1,17 +1,17 @@
 class PolicyEngine < Formula
   desc "Unified Policy Engine"
   homepage "https://github.com/snyk/policy-engine"
-  url "https://ghfast.top/https://github.com/snyk/policy-engine/archive/refs/tags/v1.1.7.tar.gz"
-  sha256 "235f3de2da44973db56731449886eb361f23b0bccaa63f7624504045f0087828"
+  url "https://ghfast.top/https://github.com/snyk/policy-engine/archive/refs/tags/v1.1.8.tar.gz"
+  sha256 "20df2dbcc8431835568bf97917e818596dcc0cc803f56636743f188fc7a93ac4"
   license "Apache-2.0"
   head "https://github.com/snyk/policy-engine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ea22950f53cb7b0f04b4c65d0ad5dd9eb75137efe03ea1183c260e283c2276ed"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ea22950f53cb7b0f04b4c65d0ad5dd9eb75137efe03ea1183c260e283c2276ed"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ea22950f53cb7b0f04b4c65d0ad5dd9eb75137efe03ea1183c260e283c2276ed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b3635503bcd453f10fdc3f63304f7de2af61ea12d079c1d7415387e68b72aff8"
-    sha256 cellar: :any,                 x86_64_linux:      "da90d85bc07e09f7c4be07bdfa88cd97959f355535316362c5de21c29e3502a2"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dd908f95562d2451ea3d3edce5760eb8a4ac252f89a013fee0a4249aa0abc2c1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dd908f95562d2451ea3d3edce5760eb8a4ac252f89a013fee0a4249aa0abc2c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dd908f95562d2451ea3d3edce5760eb8a4ac252f89a013fee0a4249aa0abc2c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "47c8f63313af7b7445f83c399b1ef0f146b6570bda6da8f9ccf790358cd6c00c"
+    sha256 cellar: :any,                 x86_64_linux:      "61af8f200b52b583e3a875322a150799bbb265de7b6a26651a4af9cce3de9a76"
   end
 
   depends_on "go" => :build

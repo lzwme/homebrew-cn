@@ -1,8 +1,8 @@
 class Libmikmod < Formula
   desc "Portable sound library"
   homepage "https://mikmod.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/mikmod/libmikmod/3.3.15/libmikmod-3.3.15.tar.gz"
-  sha256 "dc27b338154b8f88dc9e6317196d42c6abc13bf63c4e055257a18d4e38e1afa2"
+  url "https://downloads.sourceforge.net/project/mikmod/libmikmod/3.3.16/libmikmod-3.3.16.tar.gz"
+  sha256 "7b24e41468b0dfe7fae1104ae6a0d7c52e04a65e1851b268c7074e4d06685a53"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -11,11 +11,11 @@ class Libmikmod < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a403bc3f03367c11686b1997c9c75e39e0cf8212bdcc43259e9088cfb030ca2a"
-    sha256 cellar: :any, arm64_tahoe:       "93feeba59b9c835dfa2d99f6f6291cbc02a7c8c78294efe4cf1ae4353c6c2682"
-    sha256 cellar: :any, arm64_sequoia:     "18ef9d2a292570ea261d4d048e556beff2c805a412083357fdd0e816be7f6ce2"
-    sha256 cellar: :any, arm64_linux:       "0e17b1a71ec3de3a7e78c9d84cc85c05080374a0f6b1185299c0260e9f1a08d0"
-    sha256 cellar: :any, x86_64_linux:      "f9566137363514847165e312a0892b6f67a722a6de9946ffb143a452b50b4d45"
+    sha256 cellar: :any, arm64_golden_gate: "7381c5f385a259badb7c64f91e8f0980f74b5d1bd659e2a7c3b071e79b0b2690"
+    sha256 cellar: :any, arm64_tahoe:       "6ea51e8c9075edbd6c69609a1cbbff78dc255ebf65563eef342bb39ce1508b85"
+    sha256 cellar: :any, arm64_sequoia:     "01e0d8558366a914db9912127103d31c30df44667eab6bbaedf98939014e8eec"
+    sha256 cellar: :any, arm64_linux:       "c2f86b6d443462a961be14eb86fae10c310820aeb4158c0b37a26949579800c9"
+    sha256 cellar: :any, x86_64_linux:      "232cf91bec8db7f780a45ce8753662a523f0ce8a6b5114009ddb78cb379ffe05"
   end
 
   def install

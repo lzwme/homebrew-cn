@@ -2,19 +2,16 @@ class EpicsBase < Formula
   desc "Experimental Physics and Industrial Control System"
   homepage "https://epics-controls.org/"
   url "https://github.com/epics-base/epics-base.git",
-     tag:      "R7.0.10",
-     revision: "bf11a0c31c919ba85ba2e23b72bcf0b5f9f62e77"
+     tag:      "R7.0.11",
+     revision: "9d60f8d0d383dd54a3f02695bfdfcb4fad29586d"
   license "EPICS"
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "a3e7864791cee6d3246e371edd21ee023bb672ae3951615a1e5de2f3ea938f51"
-    sha256 arm64_tahoe:       "b20b14d64026eabd3e617aec7dce5fb7724b83bff4de941802f9c27b4cf64055"
-    sha256 arm64_sequoia:     "175210994ae785846d9d0659b91ec166ea26eecfa8347fa0a2209c189294adf4"
-    sha256 arm64_sonoma:      "c4039118d444500c3cccb0efb38a39b0ecee7da21ac1aeb2af2ee784ef5dcae1"
-    sha256 sonoma:            "e47190cedf616e26da12813b64d50ed53fe667c9585a32e70d4a86766a4a833c"
-    sha256 arm64_linux:       "e3339438b5410ad2d7e37c8c03670f770f41af5f6623ee70e417e9ae21b38c5c"
-    sha256 x86_64_linux:      "96ff661a4f2c20e926d3561608358e9854b26dce71c80be58f9b407a63200e72"
+    sha256 arm64_golden_gate: "ed77fd6ad61f706d1e35fcda9f0600b6d8877a6cee59722dac39cefba59bd165"
+    sha256 arm64_tahoe:       "fae2436bdcc40f6c1c563997827270e24ef61a96e7a7cbfeccb384c7f2c2c3e3"
+    sha256 arm64_sequoia:     "778f9ff0bd8eecefffebe17c556adb40b5aa5fbf3068f80904074a2d1c1c78af"
+    sha256 arm64_linux:       "a9569da7e1f7e5f34bef7b13edb573dc4a78cbf3c2afd924b70dbbb886cce94d"
+    sha256 x86_64_linux:      "8aa6aa76b66159dbcd5920fbc4441ce956af9e3e006363bf5ba0a701d53553b1"
   end
 
   depends_on "pkgconf" => :build
@@ -22,13 +19,6 @@ class EpicsBase < Formula
   depends_on "readline"
 
   conflicts_with "libffcall", because: "both install `callback.h` header"
-
-  patch do
-    url "https://github.com/epics-base/epics-base/commit/2c4d4714acbfd4ec6a26dcf0d7b9823475251d16.patch?full_index=1"
-    sha256 "d71ff147064b3d305365b2e05a7810d3d4beed10692a343b955a76ba13d440eb"
-    type :backport
-    resolves "https://github.com/epics-base/epics-base/issues/895"
-  end
 
   def install
     hostarch = Utils.safe_popen_read("./startup/EpicsHostArch").strip

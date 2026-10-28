@@ -26,6 +26,8 @@ class Flac123 < Formula
   depends_on "libogg"
   depends_on "popt"
 
+  deny_network_access!
+
   def install
     ENV["ACLOCAL"] = "aclocal"
     ENV["AUTOMAKE"] = "automake"

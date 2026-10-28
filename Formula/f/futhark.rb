@@ -1,17 +1,17 @@
 class Futhark < Formula
   desc "Data-parallel functional programming language"
   homepage "https://futhark-lang.org/"
-  url "https://ghfast.top/https://github.com/diku-dk/futhark/archive/refs/tags/v0.28.1.tar.gz"
-  sha256 "13b75dc398f5c610a528c0d4352fa6e8c309d69d940e9f416c15054c77ba12ee"
+  url "https://ghfast.top/https://github.com/diku-dk/futhark/archive/refs/tags/v0.28.2.tar.gz"
+  sha256 "8256fe44685d3a886c257244824c9af342139a2daf53d6f6882849a6bee8479f"
   license "ISC"
   head "https://github.com/diku-dk/futhark.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "58f9701ed8d62fb2970d2533369688c8e87150b6a379b597e82ae8f95172f120"
-    sha256 cellar: :any, arm64_tahoe:       "a602f3e7a4a65317008c3cc27ef5b239312335d5f5c1afd8def55878f35fe428"
-    sha256 cellar: :any, arm64_sequoia:     "f9421f3f9f1ce03afca11364da18a462111fc53134187ff6ea9a71db9c82dbe6"
-    sha256 cellar: :any, arm64_linux:       "5507f2b94d90cda6fee3eb8bde736a91e182235e1c5f86dad3ba7ca6d6a246fe"
-    sha256 cellar: :any, x86_64_linux:      "d0cff3440ae0f50dd42af1a942ec73b9c9ed497d92b94a8fb10432bffd52ac00"
+    sha256 cellar: :any, arm64_golden_gate: "4b35ff7f7831d73267a59fb7b9bf38db52db3eaa351efda7d3af1179e738073b"
+    sha256 cellar: :any, arm64_tahoe:       "68417d1cd253fa40af85fa93936e14fde559e7c21faff9a61d77503015b8897f"
+    sha256 cellar: :any, arm64_sequoia:     "d21fdbaccf4cb68f05c30948ff0c99208616463c6afc9d10e6e480fec19c4a01"
+    sha256 cellar: :any, arm64_linux:       "0ef89cba106755b2ecaf0826b4d77fe0b00a641d5c282a907f595464bcf2c457"
+    sha256 cellar: :any, x86_64_linux:      "166a39f0504a7d62603b16b0bdd625c880154944015188ec76a48d162f9b5f5f"
   end
 
   depends_on "cabal-install" => :build

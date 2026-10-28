@@ -32,6 +32,8 @@ class Flite < Formula
     depends_on "alsa-lib"
   end
 
+  deny_network_access!
+
   def install
     ENV.prepend_path "PATH", formula_opt_libexec("coreutils")/"gnubin" if OS.mac?
 

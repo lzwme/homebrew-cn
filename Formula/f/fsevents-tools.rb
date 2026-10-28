@@ -34,6 +34,8 @@ class FseventsTools < Formula
 
   depends_on :macos
 
+  deny_network_access!
+
   def install
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-silent-rules", *std_configure_args

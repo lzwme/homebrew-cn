@@ -22,6 +22,8 @@ class Fplll < Formula
   depends_on "gmp"
   depends_on "mpfr"
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"

@@ -13,11 +13,8 @@ class VulkanHeaders < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e29460a3bc874e18e407211f3e550cf60177c6f7614c04d3081beb94d8ad4ab2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e29460a3bc874e18e407211f3e550cf60177c6f7614c04d3081beb94d8ad4ab2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e29460a3bc874e18e407211f3e550cf60177c6f7614c04d3081beb94d8ad4ab2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "fd0b8a24787166873dc36d747982d3164299c181340ef2e14d8968f7ca05636e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "fd0b8a24787166873dc36d747982d3164299c181340ef2e14d8968f7ca05636e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "64cb4ed61848cac6cbe070562d383f6d50a402524dee42f2a19ec0546736fe10"
   end
 
   depends_on "cmake" => :build
@@ -27,6 +24,9 @@ class VulkanHeaders < Formula
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--install", "build"
+
+    # Build an `:all` bottle
+    inreplace include/"vulkan/vulkan.hpp", "/opt/homebrew", HOMEBREW_PREFIX
   end
 
   test do

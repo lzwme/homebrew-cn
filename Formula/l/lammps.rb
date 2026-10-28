@@ -15,14 +15,12 @@ class Lammps < Formula
   livecheck do
     url :stable
     regex(/^stable[._-](\d{1,2}\w+\d{2,4})(?:[._-](update\d*))?$/i)
-    strategy :git do |tags, regex|
-      tags.map do |tag|
-        match = tag.match(regex)
-        next if match.blank? || match[1].blank?
+    strategy :github_latest do |json, regex|
+      match = json["tag_name"]&.match(regex)
+      next if match.blank? || match[1].blank?
 
-        date_str = Date.parse(match[1]).strftime("%Y%m%d")
-        match[2].present? ? "#{date_str}-#{match[2]}" : date_str
-      end
+      date_str = Date.parse(match[1]).strftime("%Y%m%d")
+      match[2].present? ? "#{date_str}-#{match[2]}" : date_str
     end
   end
 

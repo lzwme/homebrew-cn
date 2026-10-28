@@ -1,6 +1,6 @@
 cask "opendisk" do
-  version "1.4"
-  sha256 "d8b5e724d2059a6bc36be42598a1e6b06f752031f97772eff7175ae7147fd464"
+  version "1.4.2"
+  sha256 "ea95dfe3309e4b9a2d45f1fcfe724ea2cc680e3876cffa834938733fa5644edd"
 
   url "https://ghfast.top/https://github.com/137137137/OpenDisk/releases/download/v#{version}/OpenDisk-#{version}.zip"
   name "OpenDisk"

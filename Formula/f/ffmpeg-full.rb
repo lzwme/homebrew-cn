@@ -90,6 +90,8 @@ class FfmpegFull < Formula
     depends_on "nasm" => :build
   end
 
+  deny_network_access!
+
   def install
     # The new linker leads to duplicate symbol issue https://github.com/homebrew-ffmpeg/homebrew-ffmpeg/issues/140
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.ld64_version.between?("1015.7", "1022.1")

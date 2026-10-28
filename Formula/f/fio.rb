@@ -24,6 +24,8 @@ class Fio < Formula
 
   conflicts_with "fiona", because: "both install `fio` binaries"
 
+  deny_network_access!
+
   def install
     # fio's configure script passes `-march` flags as part of detecting CRC
     # support on ARM. By default brew's logic removes such flags, resulting

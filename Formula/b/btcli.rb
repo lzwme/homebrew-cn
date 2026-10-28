@@ -9,11 +9,12 @@ class Btcli < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3b9219a0107cd35cbbefb8ba9f39d3e9f4c1bffb24a0836a2e4c70f32112db69"
-    sha256 cellar: :any, arm64_tahoe:       "cc37d9f43d902462a470e2e7967955abca730048e4d21be0eac33f47c59cd952"
-    sha256 cellar: :any, arm64_sequoia:     "dd990a2d34914b57b16fac362d77b40455e2e40e004779e027c13c0cb7e92bd3"
-    sha256 cellar: :any, arm64_linux:       "a26f9f6d873202f4e2a20a193e59e808197eb1e3759f63fea3381ff15046ea8e"
-    sha256 cellar: :any, x86_64_linux:      "0a8ada53299d2c5bac6ed075da570391433e358b8cff9711c9174955ed8f7d91"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "618772884f53325079c11c9a705059ceaaf630dbc3ba4486c2e38bb8428cf4eb"
+    sha256 cellar: :any, arm64_tahoe:       "a20f9df2cfb19458f8199d0ccbfd238c7cc7a83d8a8dc2d217310702c10acee1"
+    sha256 cellar: :any, arm64_sequoia:     "747d7d2b2ed643867ad7eeb461f303dd2d566e444c8092b5d9e26abb2ea9cd61"
+    sha256 cellar: :any, arm64_linux:       "77b08d812aaf25dc9779395cf567b4e2598463da6fccc4c9c5c7c59f2623b938"
+    sha256 cellar: :any, x86_64_linux:      "259b3d9958214a28ebfe47bbe106be8f81bbfae6c47f0c29a6547ef3d69a4e8d"
   end
 
   deprecate! date: "2026-07-19", because: :repo_removed, replacement_formula: "bittensor"
@@ -25,7 +26,7 @@ class Btcli < Formula
   depends_on "libyaml"
   depends_on "numpy"
   depends_on "openssl@4"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "xxhash"
 
   conflicts_with "bittensor", "btpd", because: "both install `btcli` binaries"
@@ -70,14 +71,24 @@ class Btcli < Formula
   resource "bittensor-drand" do
     url "https://files.pythonhosted.org/packages/70/c8/f1fdee0f0f5088585d6804a0099554f66834fd6d7347b921a0fedfc18e73/bittensor_drand-2.0.0.tar.gz"
     sha256 "517cd8cabb4634a980e26aaf85ac0a8481f62fefadc0499ddbadb6467ae030c7"
+
+    # Bump PyO3 dependency to support Python 3.15
+    patch do
+      url "https://github.com/RaoFoundation/bittensor-drand/commit/e206a2aae1c79fd56d24e54630324484b4faec6b.patch?full_index=1"
+      sha256 "744ab6282f1754e909ff30847c37bf113ac7e50bc0eed8e8d6dccfbfd300bfd8"
+      type :backport
+    end
   end
 
   resource "bittensor-wallet" do
-    url "https://files.pythonhosted.org/packages/a0/30/7eb06cfd5d901d2cd3760a8b85d66c7b84f96f03d6d0402b306fdf8b6a2d/bittensor_wallet-4.1.0.tar.gz"
-    sha256 "f0f34641a4b9110def9e35fe22498195fcb31d143dc4f76dd9022db374ccd484"
+    url "https://files.pythonhosted.org/packages/78/65/acb38687b638c1511ac7795a8dff6dc986865e9050a0146f5f02f4cdf2cc/bittensor_wallet-4.1.1.tar.gz"
+    sha256 "074df6eaa417e105039df72189cd68127f76fdcf8361f93a88e9f988ca8010d7"
 
-    # https://github.com/RaoFoundation/btwallet/commit/bbbef4a9484679f17fb63ed1ae121b8d7995e170
-    patch :DATA
+    # Bump PyO3 dependency to support Python 3.15
+    patch do
+      file "Patches/btcli/bittensor-wallet-deps.diff"
+      type :unofficial
+    end
   end
 
   resource "cyscale" do
@@ -205,10 +216,17 @@ class Btcli < Formula
     sha256 "9ac374123c6fd7abf64d1fec93962b0bd4ee2c19751755a762a72dd96c0378f8"
   end
 
+  def openssl = deps.map(&:name).find { |d| d.match?(/^openssl(@\d+(\.\d+)*)?$/) }
+
   def install
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
+    ENV["OPENSSL_DIR"] = formula_opt_prefix(openssl)
     ENV["XXHASH_LINK_SO"] = "1"
-    virtualenv_install_with_resources
+    without = "async-substrate-interface"
+    venv = virtualenv_install_with_resources(without:)
+    resource("async-substrate-interface").stage do
+      inreplace "pyproject.toml", 'requires-python = ">=3.10,<3.15"', 'requires-python = ">=3.10,<3.16"'
+      venv.pip_install Pathname.pwd
+    end
 
     generate_completions_from_executable(bin/"btcli", shell_parameter_format: :typer)
   end
@@ -275,39 +293,3 @@ class Btcli < Formula
     assert_equal expected_balance, parsed_balance
   end
 end
-
-__END__
-diff --git a/Cargo.lock b/Cargo.lock
-index ad3b0e31b7dca17ef69945ebc425c54fd7cbdfc6..1f1926a2827453a0953e05c3d5229001b93e853a 100644
---- a/Cargo.lock
-+++ b/Cargo.lock
-@@ -1552,15 +1552,14 @@ checksum = "c08d65885ee38876c4f86fa503fb49d7b507c2b62552df7c70b2fce627e06381"
- 
- [[package]]
- name = "openssl"
--version = "0.10.66"
-+version = "0.10.80"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "9529f4786b70a3e8c61e11179af17ab6188ad8d0ded78c5529441ed39d4bd9c1"
-+checksum = "a45fa2aa886c42762255da344f0a0d313e254066c46aad76f300c3d3da62d967"
- dependencies = [
-  "bitflags 2.6.0",
-  "cfg-if",
-  "foreign-types",
-  "libc",
-- "once_cell",
-  "openssl-macros",
-  "openssl-sys",
- ]
-@@ -1587,9 +1586,9 @@ dependencies = [
- 
- [[package]]
- name = "openssl-sys"
--version = "0.9.103"
-+version = "0.9.116"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "7f9e8deee91df40a943c71b917e5874b951d32a802526c85721ce3b776c929d6"
-+checksum = "f28a22dc7140cda5f096e5e7724a6962ca81a7f8bfd2979f9b18c11af56318c4"
- dependencies = [
-  "cc",
-  "libc",

@@ -40,6 +40,8 @@ class FltkAT13 < Formula
     depends_on "mesa-glu"
   end
 
+  deny_network_access!
+
   def install
     args = %w[
       --enable-threads
