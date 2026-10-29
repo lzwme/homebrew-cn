@@ -1,20 +1,17 @@
 class Phodav < Formula
   desc "WebDav server implementation using libsoup (RFC 4918)"
   homepage "https://gitlab.gnome.org/GNOME/phodav"
-  url "https://download.gnome.org/sources/phodav/3.0/phodav-3.0.tar.xz"
-  sha256 "392ec2d06d50300dcff1ef269a2a985304e29bce3520002fca29f2edc1d138d1"
+  url "https://download.gnome.org/sources/phodav/3.2/phodav-3.2.tar.xz"
+  sha256 "93c993066ab3aebd5b539bab9d731eac43abbb750109c895f151ca3c74a5fc82"
   license "LGPL-2.1-only"
-  revision 1
   head "https://gitlab.gnome.org/GNOME/phodav.git", branch: "master"
 
   bottle do
-    sha256 arm64_golden_gate: "1238daa5d1328e43e7dd82c2a7daee3501f0168f74dd444419e0196c348b91fa"
-    sha256 arm64_tahoe:       "f1192115b21287b4a91568fa9257b8db536bb3529471c9fcf09da51f43408206"
-    sha256 arm64_sequoia:     "275e604708cdfcd2d5468532bd3ae37c7fc914f913ae2923b5c10b05d9ccab89"
-    sha256 arm64_sonoma:      "2164243dc4377c2624727447888926105498bb67bce02636811d5488bf9438dd"
-    sha256 sonoma:            "1b958681dab50441f112f3cc754f79f2f7f3a7766af6b5a85318a64d3692b5ad"
-    sha256 arm64_linux:       "5d8943c4e2ebdf97363b6d5efc2d000debf452fd8d6614efba08e6ce05a2501c"
-    sha256 x86_64_linux:      "44add3c66eabacd501c955a9ec7e41dc7c966b6abbf74df01d533bf1c25f2e69"
+    sha256               arm64_golden_gate: "7642ef26f83be662c5e1cca389e7c9308118387b205b9a33833c28aa021c4ae5"
+    sha256               arm64_tahoe:       "e51a4b28d1e6f6692ce908c9ae87972c72169cdc566cbf08f447795d68c1480a"
+    sha256               arm64_sequoia:     "6f2de9474c1f0e6630e5432d8295e7ff3c39bc1d22ea997e0f28343367d017ce"
+    sha256 cellar: :any, arm64_linux:       "af245a6b743c79933b79e458d1f9baae51b46b9dc665f887ca5a6bda180503ba"
+    sha256 cellar: :any, x86_64_linux:      "4c93cf5ad70a0c6927f4f23a0ffdfbc703722b91909a89e8534045a14956da86"
   end
 
   depends_on "meson" => :build
@@ -31,6 +28,9 @@ class Phodav < Formula
   end
 
   def install
+    # `tests/spice-webdavd.c` sets `_XOPEN_SOURCE`, which hides `cfmakeraw` on macOS
+    ENV.append_to_cflags "-D_DARWIN_C_SOURCE" if OS.mac?
+
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build"
     system "meson", "install", "-C", "build"

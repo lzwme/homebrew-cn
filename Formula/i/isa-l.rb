@@ -5,6 +5,11 @@ class IsaL < Formula
   sha256 "d9f7179ab0e14a3db9b610fac22793854a1435e8423ec9ce07f4cbedc5f92f5e"
   license "BSD-3-Clause"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(:?\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "7b396a8a4d3862c9de77367090e2509a424d1d6e10ab8230230ca0cd81a1ceea"
     sha256 cellar: :any, arm64_tahoe:       "bc6e6381b5a9df13aef59a6b14b9a4eee9263b09a409cf2dabbacb122aa2e630"

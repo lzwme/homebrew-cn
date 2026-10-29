@@ -3,18 +3,17 @@ class YtDlp < Formula
 
   desc "Feature-rich command-line audio/video downloader"
   homepage "https://github.com/yt-dlp/yt-dlp"
-  url "https://files.pythonhosted.org/packages/06/13/d2ea252871826205dc4965cb70e6037ab93697fcabf4feda49fe981f6da0/yt_dlp-2026.10.21.tar.gz"
-  sha256 "cbf748d7d17cd37647c4b9f07b6c25f24384bfd4361407ee5ec519e753d22539"
+  url "https://files.pythonhosted.org/packages/83/31/4be3987022a6244550ab6a3afe45ad10ac10b5e5ab8874bd8eecc7f8b937/yt_dlp-2026.10.26.tar.gz"
+  sha256 "abe5c6b94c3b2f0560500add1c42e0a97641752743a5b65588ac2007a6e23eb6"
   license "Unlicense"
-  revision 1
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eac4270f1c4f8cef92f89d02bc97437ee7dde7f0d3b8dc303830effbdb82883e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3f395f99badf3d67b481c257e09b9159c4bac7073225089501d969979ce46e4d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9080d3bcc403343eb0b4880395203fc09146731f61d185ea1d7a203315a15ddc"
-    sha256 cellar: :any,                 arm64_linux:       "ce9ed2c596b9199035779dc5789085441efc38f32a9aeca71271552bd86bdac3"
-    sha256 cellar: :any,                 x86_64_linux:      "3175cd9d44cd6cb313ee7c224f5872dacc471770fb90b96e06792eaa706cc973"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a4a6f0bfded433b4f52c265e26233a7ce44ac0972597af42df79bc7bec991f56"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ce40e0ff75a7c0cfc56850d536d35ff94204a970a668cbbcb244d10b6eb92352"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f7a3a027940c698b2942e90c131b43b5f0723e79d5c93872e50cdc063ad6f7b8"
+    sha256 cellar: :any,                 arm64_linux:       "8d187bbcbbda2b62ac97719fadff50cf63891a03c9e999f39a76b7766886b105"
+    sha256 cellar: :any,                 x86_64_linux:      "709aa6ddfa8cbe2ae38bc76ca9db5f220e532566e6bf8d8852b762d1a6606fc1"
   end
 
   head do
@@ -23,6 +22,7 @@ class YtDlp < Formula
     depends_on "pandoc" => :build
   end
 
+  depends_on "pkgconf" => :build
   depends_on "certifi"
   depends_on "cffi"
   depends_on "deno"
@@ -43,8 +43,8 @@ class YtDlp < Formula
   end
 
   resource "curl-cffi" do
-    url "https://files.pythonhosted.org/packages/82/e1/730125c43e3e331d98e17af3cb310ba526b3f1101b7635ca23d976ebfcf5/curl_cffi-0.16.3.tar.gz"
-    sha256 "d15d0c2a35f2d75bec430c28946c2a833f421c85773bdb0795182cc5c515665b"
+    url "https://files.pythonhosted.org/packages/96/4c/69074f9797d83a5401b3c6bc58c5de5aad6d1a085d0497b87a093a152e87/curl_cffi-0.17.0.tar.gz"
+    sha256 "31ee8500d06d6502ce1ec0b7ded1c5aa8e8f3401bbe37ccd78d6153d859d8f3c"
   end
 
   resource "idna" do

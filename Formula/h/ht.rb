@@ -46,6 +46,8 @@ class Ht < Formula
     type :backport
   end
 
+  deny_network_access!
+
   def install
     # Fix compilation with Xcode 9
     # https://github.com/sebastianbiallas/ht/pull/18

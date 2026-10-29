@@ -1,10 +1,9 @@
 class Wxmaxima < Formula
   desc "Cross platform GUI for Maxima"
   homepage "https://wxmaxima-developers.github.io/wxmaxima/"
-  url "https://ghfast.top/https://github.com/wxMaxima-developers/wxmaxima/archive/refs/tags/Version-26.09.0.tar.gz"
-  sha256 "c490e30383e77e17de2005276429606ff4c5b43ae268aa889cfc3d4fb148a9e9"
+  url "https://ghfast.top/https://github.com/wxMaxima-developers/wxmaxima/archive/refs/tags/Version-26.10.0.tar.gz"
+  sha256 "6098d3b54b531ed59cd2aff568f70039b41f6e7f89cbb84d1da2e5b796a7bb71"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/wxMaxima-developers/wxmaxima.git", branch: "main"
 
   livecheck do
@@ -13,11 +12,11 @@ class Wxmaxima < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "1ce64480996ac190fa9c2c16aa8fcfc51640d33be2cedfcdf82f4af502042779"
-    sha256 arm64_tahoe:       "6921b72bd5600525e2f30a1d85410d2ab702c8d9fe2b6c7b66c901d02f899753"
-    sha256 arm64_sequoia:     "da6a842c3b19cbad0335c3944c73e0384feb78489fd0aa4751329fd8f92b7666"
-    sha256 arm64_linux:       "ab91a67ca1091674c1935b532d90717a5103467919b99a8a2c1c22a2223f9135"
-    sha256 x86_64_linux:      "393319ee9adffcbef0a0e39d1bac12566950bbed21ab9580e304d0dfdc75401b"
+    sha256 arm64_golden_gate: "2abd7a2e0ed1660cd92a2ad44b9aff1b7613fd6dbceeb41345a58e9022286cf8"
+    sha256 arm64_tahoe:       "c45d6e4433850ed3378da18d8ebabc0db4c87fadd7d861afdb85224da2b6abe8"
+    sha256 arm64_sequoia:     "39161c42d8015ad2bacf4fb342c37a0308b5c2222c67477f63b4090ae7713d83"
+    sha256 arm64_linux:       "fca82ecdcc2f4100e4a74395d65955a9033bc98a84c4626af480cc48b49674b5"
+    sha256 x86_64_linux:      "e90de197e91139da291c8654230caa1d0e1c94c27696f8a776670b2cbe046c1d"
   end
 
   depends_on "cmake" => :build

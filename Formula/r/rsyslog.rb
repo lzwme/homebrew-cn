@@ -1,8 +1,8 @@
 class Rsyslog < Formula
   desc "Enhanced, multi-threaded syslogd"
   homepage "https://www.rsyslog.com/"
-  url "https://www.rsyslog.com/files/download/rsyslog/rsyslog-8.2608.0.tar.gz"
-  sha256 "e3d60c83405268c422f95feec740455a1cc4b911d00bd8424d5d1272bc509b1a"
+  url "https://www.rsyslog.com/files/download/rsyslog/rsyslog-8.2610.0.tar.gz"
+  sha256 "7bdf95e81ea6c0ee5d586342d57d2a6e395b089fb3c67318a0dc555816de404b"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later", "LGPL-3.0-or-later"]
 
   livecheck do
@@ -11,13 +11,11 @@ class Rsyslog < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "07508695e8222b3e2fa3320e8778c1d0c00b44b073715aade209f4f98ce875d6"
-    sha256 arm64_tahoe:       "608db8692ff14d11305b87b623e275fdf681e75bef9c1da714e499e2de1c4b10"
-    sha256 arm64_sequoia:     "2b2590d9569825409f6b634c9929c40bde2afa9bb78b4ffcdb20b7992da4bd95"
-    sha256 arm64_sonoma:      "f68e48ed0a6da73b190f84582743c677afe411e6491a9e0cecfa8088c5077f57"
-    sha256 sonoma:            "76fcad59dae37415494bfc26c54e1a79b3a5d5ca829d6226ad7095677b9c5ae8"
-    sha256 arm64_linux:       "35807eff264257faa5d95b1ef4a8b301fe9da149b06c0244c7851a6428811ef1"
-    sha256 x86_64_linux:      "a36e4d7065f844c85af04b82e49a5bf31f83ef6150029ddd14c40ad6228f16a2"
+    sha256 arm64_golden_gate: "496779e87ffea15fbd810053d73f70b1c78511c8187d623ddc391d73f563bcda"
+    sha256 arm64_tahoe:       "66451958b574eccaadd2265bab8c961f8134448ecbd39ef303a5f5b27e25c1c2"
+    sha256 arm64_sequoia:     "fb2e72d665c373f10e12dafb739e1a0b34c5ee678fe116a0a5510d0be8c0f00b"
+    sha256 arm64_linux:       "9eaa6e927b4f747b92fc93b1049c3a157516c562501f1ee332907f739f99f1f0"
+    sha256 x86_64_linux:      "1f58321974ce94c746b566c595525f3d305bd522bc2dc703b4da2ce2f86f10a3"
   end
 
   depends_on "pkgconf" => :build

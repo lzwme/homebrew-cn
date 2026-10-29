@@ -1,21 +1,10 @@
 class Openmsx < Formula
   desc "MSX emulator"
   homepage "https://openmsx.org/"
+  url "https://ghfast.top/https://github.com/openMSX/openMSX/releases/download/RELEASE_22_0/openmsx-22.0.tar.gz"
+  sha256 "f6d5ff89c62d32447dd5f731ff653d26a2a3c4ac6e86ea4f1bda3c4f8ad98c5d"
   license "GPL-2.0-or-later"
-  revision 3
   head "https://github.com/openMSX/openMSX.git", branch: "master"
-
-  stable do
-    url "https://ghfast.top/https://github.com/openMSX/openMSX/releases/download/RELEASE_21_0/openmsx-21.0.tar.gz"
-    sha256 "28838bfa974a0b769b04a8820ad7953a7ad0835eb5d1764db173deac75984b6f"
-
-    # Backport fix for sdl2-compat
-    patch do
-      url "https://github.com/openMSX/openMSX/commit/bef559e0e2e1413ba8abbef882224a5919214c5a.patch?full_index=1"
-      sha256 "3744a1693d43c86a678c416836f0e2fa900023f0b9176c63116080f009c5bbb9"
-      type :backport
-    end
-  end
 
   livecheck do
     url :stable
@@ -29,11 +18,11 @@ class Openmsx < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3efae828701880f69da6ed8cf8a543723020fc71671f5be6cb9c1f7d8fdc685c"
-    sha256 cellar: :any, arm64_tahoe:       "910fa962df7e83b22b334e2db93c202378bec265dd422ea0c124e97246836519"
-    sha256 cellar: :any, arm64_sequoia:     "d70cf4451ad52cbd27081e474b60a23a510795322d3e8a14f5542b08eb085858"
-    sha256               arm64_linux:       "fc16d95f0f49afd1e7915e3571e833db18cc67aba40bfa23520e9527c69a567e"
-    sha256 cellar: :any, x86_64_linux:      "6410732bda07385b3ef46f390a10c19a4d5230eb1126aa8da49e293073f5e854"
+    sha256 cellar: :any, arm64_golden_gate: "2ae66970aac4664f3373b1b892da9efabc19ed01193dabf4c09ac8fd3261ec68"
+    sha256 cellar: :any, arm64_tahoe:       "23a7bb25f72ddfe64eed971fdaa8b1fd566f49dcadfe6eadcaa888e760b1c988"
+    sha256 cellar: :any, arm64_sequoia:     "13d30058a4ea35d335fb7346384ed4a55a4b3c5c7577c15b30b296c2b65228af"
+    sha256               arm64_linux:       "630da52fe283a2255a4f519e7b89b59af4c014699a8c48d14cfe3dce053a66b7"
+    sha256 cellar: :any, x86_64_linux:      "33c9c41de524de68fb790f3cb56557443403888299bfc68bbb68ea29911c5a46"
   end
 
   depends_on "freetype"
@@ -67,6 +56,8 @@ class Openmsx < Formula
     cause "Requires C++20"
   end
 
+  deny_network_access!
+
   def install
     if OS.mac? && MacOS.version <= :ventura
       ENV.prepend "LDFLAGS", "-L#{formula_opt_lib("llvm")}/unwind -lunwind"
@@ -83,8 +74,14 @@ class Openmsx < Formula
     # Help finding Tcl (https://github.com/openMSX/openMSX/issues/1082)
     ENV["TCL_CONFIG"] = formula_opt_lib("tcl-tk")
 
+    args = %W[
+      CXX=#{ENV.cxx}
+      LDFLAGS=#{ENV.ldflags}
+    ]
+    args << "OSX_VER=#{MacOS.version}" if OS.mac?
+
     system "./configure"
-    system "make", "CXX=#{ENV.cxx}", "LDFLAGS=#{ENV.ldflags}"
+    system "make", *args
 
     if OS.mac?
       prefix.install Dir["derived/**/openMSX.app"]

@@ -27,6 +27,8 @@ class Hamlib < Formula
     depends_on "readline"
   end
 
+  deny_network_access!
+
   def install
     system "./bootstrap" if build.head?
     system "./configure", "--disable-silent-rules", *std_configure_args

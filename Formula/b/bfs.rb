@@ -1,18 +1,16 @@
 class Bfs < Formula
   desc "Breadth-first version of find"
   homepage "https://tavianator.com/projects/bfs.html"
-  url "https://ghfast.top/https://github.com/tavianator/bfs/archive/refs/tags/4.1.4.tar.gz"
-  sha256 "0cac6849efb8a9447268fb273de3fab38f8460adb26a1770934e3f325fab8f5d"
+  url "https://ghfast.top/https://github.com/tavianator/bfs/archive/refs/tags/4.1.5.tar.gz"
+  sha256 "8c3dcc9a7998c7a5550fbbc792f4e090748cf57ea5d118215da2f537b78d36fd"
   license "0BSD"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "bc771a035e66de8520b5a99637615b75db2b6b82ddc79effda10ac793dddca04"
-    sha256 cellar: :any, arm64_tahoe:       "28046c8bba51b65c2d7697ff06960470dd3319bd10feb1b844bda95aaa73c15d"
-    sha256 cellar: :any, arm64_sequoia:     "6ad4f55e8af45014f38bef001286fe9235e4cdb22842d6b8acc0c4031f2c98fe"
-    sha256 cellar: :any, arm64_sonoma:      "77033feadcdd2026a9248ed47fc9178771b410d879148380d6e7481fc6ce3506"
-    sha256 cellar: :any, sonoma:            "5eedd8fc518769e48054a5045996d66094b404a90192c8c30b2cb31a13878c55"
-    sha256 cellar: :any, arm64_linux:       "cba8e01b15629a1ac2d85f5ef9a684eb0235db4c8e3ce02718a800132a565b8f"
-    sha256 cellar: :any, x86_64_linux:      "3fde513eca75277a3cd613614254f67314303c4b438fc2b8c41044e6d159556d"
+    sha256 cellar: :any, arm64_golden_gate: "83e4c96d705d6f79dc3927eabaceaf4255d8a8de5036633b0a1bf7eaeb2f4e41"
+    sha256 cellar: :any, arm64_tahoe:       "ee5a76e170183bf201058b74e1d315d8ccdde4feb5c1d680250c2267c2681c52"
+    sha256 cellar: :any, arm64_sequoia:     "e61022fd6866cee8e1057c76971f5531327f799786c4f6168e111bd3851937f8"
+    sha256 cellar: :any, arm64_linux:       "6484b727170d1eb281464db71e62daee227e75f987c4549d86413c2c90c83b31"
+    sha256 cellar: :any, x86_64_linux:      "28261238752522d2048f830e3bf4f62b6f5a37454a39e356f9fe5fc0d36ac367"
   end
 
   depends_on "pkgconf" => :build

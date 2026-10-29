@@ -1,24 +1,18 @@
 class Kcgi < Formula
   desc "Minimal CGI and FastCGI library for C/C++"
-  homepage "https://kristaps.bsd.lv/kcgi/"
-  url "https://kristaps.bsd.lv/kcgi/snapshots/kcgi-1.0.1.tgz"
-  sha256 "bc1cc29bca48eace5df4ba0f1aa1dfc2fe7ac773f750d4af84d80c52cece3c45"
+  homepage "https://kristaps.bsd.lv/kcgi/", browsed: "2026-10-28"
+  url "https://ghfast.top/https://github.com/kristapsdz/kcgi/archive/refs/tags/VERSION_1_0_1.tar.gz"
+  sha256 "d2b9f377ca31c3ac6ec47e7ec0f46b8f208a33ca80701777a20e355937fc5934"
   license "ISC"
-
-  livecheck do
-    url "https://kristaps.bsd.lv/kcgi/snapshots/"
-    regex(/href=.*?kcgi[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
+  head "https://github.com/kristapsdz/kcgi.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "78d30ea55aef83859437826dbfc7a493e235fc77dc56215297a0c6889d544888"
-    sha256 cellar: :any, arm64_tahoe:       "191a0d3f1d112f9585774eddd41909e942affd5338e7c8144d38803e986acc66"
-    sha256 cellar: :any, arm64_sequoia:     "709e821d80864c2780293caa51f078fdb3f900bff44e515fcf938564819e4d4f"
-    sha256 cellar: :any, arm64_sonoma:      "06fef37ce17eea27851fdc51b89191eb3363c849f6f8f47b65797a22fd1aba3f"
-    sha256 cellar: :any, sonoma:            "47d68ef9bc518eae514f46b1dcb7a1b25b5445fec3b67ba9eb00e58af2a62067"
-    sha256               arm64_linux:       "d2864c56de92d3996fe29fc5f3bd28e8cae3fc36e3823aee230b57b53c57952d"
-    sha256               x86_64_linux:      "884dac750cf8338c422c6fcd249002d42e77d2c9b6e332fea44ab048fff7c421"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "8145cd72feba0c5be9d464bbcba1403d4e0a4ed61bcd5540c7fa10610a75c214"
+    sha256 cellar: :any, arm64_tahoe:       "0e11a41b99c2b97fc7ecb1c311c85346cc73d0345b56b8bfcbe7f1002cfa2936"
+    sha256 cellar: :any, arm64_sequoia:     "fd5d7cb5c53271bd8a0fc6e6fe2bbcc9b9f86cbb1375e75533f9ad7a904627e8"
+    sha256               arm64_linux:       "104680512dad607ab3b55e4e75fe9e2ef39c7285227ffc16dea475f5370a3659"
+    sha256               x86_64_linux:      "d975de5140334d23c9d32ba0b835d7a4ec8f87a18cb5287b521e74e24d727e2d"
   end
 
   depends_on "bmake" => :build
@@ -27,6 +21,8 @@ class Kcgi < Formula
     depends_on "libseccomp"
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     system "./configure", "MANDIR=#{man}",

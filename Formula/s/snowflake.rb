@@ -1,17 +1,17 @@
 class Snowflake < Formula
   desc "Pluggable Transport using WebRTC, inspired by Flashproxy"
   homepage "https://www.torproject.org"
-  url "https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/archive/v2.15.2/snowflake-v2.15.2.tar.gz"
-  sha256 "1646f8e61a72cbb07d4556289182078d60cdd40c6399af2f32986b8206565ec6"
+  url "https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/archive/v2.15.3/snowflake-v2.15.3.tar.gz"
+  sha256 "a78196e776297ef127122a84d0be691ec978d8263bc97f773e553be042632e57"
   license "BSD-3-Clause"
   head "https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e84394203373694533b6beab6808313a57936d28a240b3e75f3c368361fca0bd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "634b916bd566940c937f4ac7ac3a0e8f1e7e6b22562b95eb9f6406cf931b153e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c16b8dd7be40c15c60004226d55cdafe33786bfc15ab35e3616ab5553ffbacbd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "96ad3b852b760e51b1a76e4ada57960ea61cded8aca343ee295c8bcd536b44a2"
-    sha256 cellar: :any,                 x86_64_linux:      "b5ca52dda6f423a1468752a53162123aa62380fd893599759f1f18983aa22763"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d052b2b93494d8dc7a8b2d4d1d746477429356d09e9169d3f659cc578558f0b2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6ebe0ab1d18579a2b3e4c6f87df5586b103992c8c1b413cc5146c844b09aa6f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4f02213b074f37600b7f959f31aa291b815bbcb2a7b4a1f23782e91f10503104"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4d7afeff521fec223a8525ad2fa0071671678ac8c4de2a02761fbff0f981f332"
+    sha256 cellar: :any,                 x86_64_linux:      "9f9c2cd23beb897fcf12323db886e9037b1ef24f872691986b6b2d861230e51a"
   end
 
   depends_on "go" => :build

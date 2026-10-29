@@ -3604,7 +3604,7 @@ Homebrew-homebrew-core/Formula/k/kawa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kbld.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kbt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kcat.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/k/kcgi.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kcgi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kconf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kcov.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kcptun.rb, Homebrew/homebrew-core, 1
@@ -3731,7 +3731,6 @@ Homebrew-homebrew-core/Formula/k/kubent.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kubeone.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubergrunt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubernetes-cli.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.31.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.32.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.33.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.34.rb, Homebrew/homebrew-core, 0
@@ -6621,6 +6620,7 @@ Homebrew-homebrew-core/Formula/r/roapi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/robin-map.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/roblox-ts.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/robodoc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/roborev.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/robot-framework-robocop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/robot-framework.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/robotcode.rb, Homebrew/homebrew-core, 0
@@ -7983,6 +7983,7 @@ Homebrew-homebrew-core/Formula/u/unxip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/unyaffs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/unzip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/up.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/u/upki.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/upterm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uptimed.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uptoc.rb, Homebrew/homebrew-core, 0
@@ -9738,6 +9739,7 @@ Homebrew-homebrew-cask/Casks/d/desktoputility.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/desmume.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/detectx-swift.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/detexify.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/deutschlandgpt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/devcleaner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/developerexcuses.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/deviceshelf.rb, Homebrew/homebrew-cask, 0
@@ -14202,6 +14204,7 @@ Homebrew-homebrew-cask/Casks/n/ncar-ncl.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/ndi-tools.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/neat-reader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/neat.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/n/nebius.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/neo-network-utility.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/neo4j-desktop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/neodisk.rb, Homebrew/homebrew-cask, 1
@@ -14885,6 +14888,7 @@ Homebrew-homebrew-cask/Casks/q/qmk-toolbox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qmoji.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qobuz-downloader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/qobuz.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/q/qoder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/qownnotes.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qq.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/qqlive.rb, Homebrew/homebrew-cask, 0
@@ -15401,6 +15405,7 @@ Homebrew-homebrew-cask/Casks/s/sogouinput.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sokim.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sol.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/solar2d.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/solidcraft.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/solidtime.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/solvespace.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sonarqube-cli.rb, Homebrew/homebrew-cask, 0
@@ -15687,6 +15692,7 @@ Homebrew-homebrew-cask/Casks/t/taperlabs-shadow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/taphouse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tapmap.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tartelet.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/task-manager-tmog.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/taskade.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/taskbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/taskexplorer.rb, Homebrew/homebrew-cask, 1

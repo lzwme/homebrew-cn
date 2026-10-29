@@ -1,17 +1,17 @@
 class Packslip < Formula
   desc "Signed release manifest for vendor binaries"
   homepage "https://packslip.dev"
-  url "https://ghfast.top/https://github.com/jdx/packslip/archive/refs/tags/v1.11.1.tar.gz"
-  sha256 "923c128de8fa933e50b2945ce33f813b140ead36b982802157a42b06a2cee8bc"
+  url "https://ghfast.top/https://github.com/jdx/packslip/archive/refs/tags/v1.11.2.tar.gz"
+  sha256 "83d33a0ccd8ed1c41f850d5b499b412bc8770e017c8a8d9220af428ca2ff1681"
   license "MIT"
   head "https://github.com/jdx/packslip.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bb0c00c0f6ead6830a00f61e79b62dd698839f0a2b4b2113302fd4660e2c82f9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6a1bcde2771710a7ea561047cab4de2e145e728afe1e0dbbab20c770c4469462"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b56e6bc5d56dfb80e83cec75cc4f820e7b1124846599c4163eb4ed655be33ff7"
-    sha256 cellar: :any,                 arm64_linux:       "8387a57ddfdd837b59e54a56a10992cd11bce70b5fff2df5379245cdbeb9d084"
-    sha256 cellar: :any,                 x86_64_linux:      "a4b265133aec3d60fa4e0b3ce6825b5746d4eef8df950de13caaf8064e334987"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "52a7237c81242adffe98d70ed0bf2cd8332ff10bab229c450fd515c603e08a1a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aca7fcbc44afdef3a8af6c6c0ae16f332bc43d7decf497538ab47cc987f07942"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2395a00882ec2db4ba755dea67b26bf71c2515bf4295d26ac047a51fccc330f9"
+    sha256 cellar: :any,                 arm64_linux:       "6c19f1b2c2d7e69394eb971a338086cb68cd7031cf7619dd11ce07bbf5584b55"
+    sha256 cellar: :any,                 x86_64_linux:      "6d6fd9a74c8558071872c3aa482325f67f690abceaa041b2a023b5e6e97154cb"
   end
 
   depends_on "rust" => :build

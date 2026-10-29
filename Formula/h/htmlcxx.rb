@@ -26,6 +26,8 @@ class Htmlcxx < Formula
     file "Patches/libtool/configure-big_sur.diff"
   end
 
+  deny_network_access!
+
   def install
     ENV.cxx11
 

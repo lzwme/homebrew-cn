@@ -1,8 +1,8 @@
 class Dumpling < Formula
   desc "Creating SQL dump from a MySQL-compatible database"
   homepage "https://github.com/pingcap/tidb"
-  url "https://ghfast.top/https://github.com/pingcap/tidb/archive/refs/tags/v26.3.21.tar.gz"
-  sha256 "4af9c875702ad53ba9c3e1466c2c43e6f2dc1fd0082600ad9a961138b81f4f2a"
+  url "https://ghfast.top/https://github.com/pingcap/tidb/archive/refs/tags/v26.3.22.tar.gz"
+  sha256 "9bc4d7701064e0d66e4f400d5c9bcfce318da788ee9bcf1802588b79798d0da0"
   license "Apache-2.0"
   head "https://github.com/pingcap/tidb.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Dumpling < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "422a1ea4f07d71f8bafcbca0e6b1fc5cb40015a411bd82880adfb2cee26ec394"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "05d501669892a7033796b5d8498d156e4eaf9072c7a5ef2160a319625e6830b3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "75ff7cdb0abe357a06c1ddf5c841862bdfc1000a3e0ac155cc22acb46f9a00af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "032b1de6487b5dbd08a044849c7ba50d79146233c0954d8b6e81bc6bc3cb684d"
-    sha256 cellar: :any,                 x86_64_linux:      "6441dab0856a2d440d626f6fb868a6e155b16af2cdd0a9fbeed06c8fe0cbf9da"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "424755eaaa8653442371ef2085845502ee7a7d310387739d26ff75c0729ba5c2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2aa9b28fc8634d2a01765abbdb706d608933cd6ee1517ec42b0f0b8ec1bda60e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "90baea5f7c0b26efeea7fdf34e1dad2f628c1bfabfc3674d4f02fba2990d5c98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5ecff505514e347fad845ba590ff4d2b3d0d1e2f5fb3b983cfaf378b981c85ea"
+    sha256 cellar: :any,                 x86_64_linux:      "094e3a48ded10d0fca99f4a1b8139ec4f45b1f3a0a8ab2271d3126f0c95dac2f"
   end
 
   # TODO: unpin go@1.26 when dumpling supports go 1.27
@@ -24,6 +24,8 @@ class Dumpling < Formula
   depends_on "go@1.26" => :build
 
   deny_network_access!
+
+  def go = deps.find { |d| d.name.match?(/^go(@\d+(\.\d+)*)?$/) }.to_formula
 
   def fetch
     system "go", "mod", "download"
@@ -36,7 +38,7 @@ class Dumpling < Formula
       -X #{project}/cli.BuildTimestamp=#{time.iso8601}
       -X #{project}/cli.GitHash=#{tap.user}
       -X #{project}/cli.GitBranch=#{version}
-      -X #{project}/cli.GoVersion=go#{Formula["go"].version}
+      -X #{project}/cli.GoVersion=go#{go.version}
     ]
 
     system "go", "build", *std_go_args(ldflags:), "./dumpling/cmd/dumpling"

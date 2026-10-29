@@ -1,17 +1,17 @@
 class Ghcitty < Formula
   desc "Fast, friendly GHCi"
   homepage "https://github.com/mattlianje/ghcitty"
-  url "https://ghfast.top/https://github.com/mattlianje/ghcitty/archive/refs/tags/v0.5.0.tar.gz"
-  sha256 "13c26d741630d4c5d4dab0c7acc92ff6d9fa2382f25b83b0a4b261e20925a9b2"
+  url "https://ghfast.top/https://github.com/mattlianje/ghcitty/archive/refs/tags/v0.6.0.tar.gz"
+  sha256 "2764c26ca4bece4c2d404ad805604029a0ba047d8075d4d13a108fa7e6156623"
   license "Apache-2.0"
   head "https://github.com/mattlianje/ghcitty.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "97d54da8b7240fb28913190e8298b363381c4e596abdaea7e9c173bdfb6a1557"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f3c52753aba1e890d588d6015b196921c633118e3cda54f0fe328bc553b7f846"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4edbde42a5d4e1af6c281b1ba3f181c5996eda93f5e5aa71285940be3af5fdb6"
-    sha256 cellar: :any,                 arm64_linux:       "2a23483711f55b9d4d7a0142d15b5100749dd54a60c9daf7591010dd91413525"
-    sha256 cellar: :any,                 x86_64_linux:      "6fb6326c88700bf7133a0faaf19f8dafe72119f57cd6060686344ba8c8c859e4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7cda3696f77434a34734e73997d4a0e80be71db888390b64af0de2a5d8b662d0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ed0864413a064715f5274cd1f42bf2d96d222a05a1d9e65fd7fc6fc31546bfac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8cf74e25ed7dab735b699a5f2123297dc424578aaf80adac2af5d52a7c98a7af"
+    sha256 cellar: :any,                 arm64_linux:       "9b02c532a767776162c5bdb7aa5f077463aa7bd92ff3e3b8c93550c9425119d4"
+    sha256 cellar: :any,                 x86_64_linux:      "75d289bf6592e79bcc7a6799797653ab8848b00c66db6e86f8611bc78545473b"
   end
 
   depends_on "rust" => :build

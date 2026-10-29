@@ -29,6 +29,8 @@ class Help2man < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
 

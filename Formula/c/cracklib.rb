@@ -1,8 +1,8 @@
 class Cracklib < Formula
   desc "LibCrack password checking library"
   homepage "https://github.com/cracklib/cracklib"
-  url "https://ghfast.top/https://github.com/cracklib/cracklib/releases/download/v2.10.3/cracklib-2.10.3.tar.bz2"
-  sha256 "f3dcb54725d5604523f54a137b378c0427c1a0be3e91cfb8650281a485d10dae"
+  url "https://ghfast.top/https://github.com/cracklib/cracklib/releases/download/v2.10.4/cracklib-2.10.4.tar.bz2"
+  sha256 "4f2d151a2930ab2644def5f9e0e4dad7446ccbd3f2dd41960e91398d93c3129e"
   license "LGPL-2.1-only"
 
   livecheck do
@@ -11,14 +11,11 @@ class Cracklib < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "f6e91c55da1474d4c027e69cd7e6293ad90663a7123a0f6654c2f711fda2aa3c"
-    sha256 arm64_tahoe:       "bfe6f4fcc9715b80c772bc82847977a8514960010c677c3f497cef0ffe571338"
-    sha256 arm64_sequoia:     "05e23a17250844d8ce26720dbda596db1c5957b0886e44648ba957c85af67a21"
-    sha256 arm64_sonoma:      "4160ab423c5ae473533dccee9580626706f964231cfb8f1693ebaae91ce23a7b"
-    sha256 sonoma:            "35c49fa815da588e05b06289ef462503741f92ade3897d01fcf1f5cb1726d14c"
-    sha256 arm64_linux:       "707b67a337adda7425720a25ba33911c531845c3db75097e48151e6189117685"
-    sha256 x86_64_linux:      "92844634f5c499f9b31242fa1f05dd4657ac68fb2d335e3cbe5bd6002970e2c2"
+    sha256 arm64_golden_gate: "338032be69343873244d35917f59d3b473e3e69250067f5443b399e3bbf267c0"
+    sha256 arm64_tahoe:       "2acc254c0266961551117cd05fb21668aa629ef2598e55b8968f4f452e811f58"
+    sha256 arm64_sequoia:     "975f55605589226ccb62a8d6d4b204f54d0ca186314a6c125365c778c72be9da"
+    sha256 arm64_linux:       "eddea1c7ade1c56b95b704f4bbe8feb45a2090abdfe4cc76de04969d350b1002"
+    sha256 x86_64_linux:      "9c73178ee4504c9c3e3d7abb8a046dac67a8fb6b6aee2b9ac3c9473e587c1642"
   end
 
   head do
@@ -38,7 +35,7 @@ class Cracklib < Formula
   end
 
   resource "cracklib-words" do
-    url "https://ghfast.top/https://github.com/cracklib/cracklib/releases/download/v2.10.3/cracklib-words-2.10.3.bz2"
+    url "https://ghfast.top/https://github.com/cracklib/cracklib/releases/download/v2.10.4/cracklib-words-2.10.4.bz2"
     sha256 "ec25ac4a474588c58d901715512d8902b276542b27b8dd197e9c2ad373739ec4"
 
     livecheck do

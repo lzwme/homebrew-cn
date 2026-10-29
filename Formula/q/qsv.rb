@@ -1,10 +1,9 @@
 class Qsv < Formula
   desc "Ultra-fast CSV data-wrangling toolkit"
   homepage "https://qsv.dathere.com/"
-  url "https://ghfast.top/https://github.com/dathere/qsv/archive/refs/tags/26.0.0.tar.gz"
-  sha256 "166d3e9c9133098ba4705671e0dd68644c6daa343dc454f33718a6ba18963eec"
+  url "https://ghfast.top/https://github.com/dathere/qsv/archive/refs/tags/27.0.1.tar.gz"
+  sha256 "23631f14cce714bd1aed45d07a04e71471ab26851f469ce25a503b471c8d3b4c"
   license any_of: ["MIT", "Unlicense"]
-  revision 1
   head "https://github.com/dathere/qsv.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
@@ -16,11 +15,11 @@ class Qsv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6f0939534757b5695b696bbaf11abe5d3ad41cf2b4f7a4bc482e2e0648a5882d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "37a0a5fcaa227b44b41fc794edf87356b2d0ddf4c1718dc29071d75b8b49f653"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c9584a12c02872b961b42f50c59152a35100520e19075a130e7327fcbc830463"
-    sha256 cellar: :any,                 arm64_linux:       "11aaee2ed9396c394164573317fc127c2b3fcfe8822940f2bd63d7b17433b1f8"
-    sha256 cellar: :any,                 x86_64_linux:      "88dc2134927eaa449190f2210188faeb8d8708b638d02bfecdd1ea4e9ca23cf3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f1dc5f2ac37762322f128b6e5682291aa34b56a480ed71ae18f3934603b10002"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e0141c8c58bedef9740b8b19df193b3ce8d89099deb81c7bcb69bf840bb58570"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "02eb5b082f6882495d689be213e06f331d16d012f0fe4fedadb6888c408e195d"
+    sha256 cellar: :any,                 arm64_linux:       "b9daa8ebcd55b983886f59183790245e1102e477578bef5f7b652564706998cd"
+    sha256 cellar: :any,                 x86_64_linux:      "5485715146f98d39b7ceba22338e6860a9841838847a03aaad0ee0a240488fa5"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys

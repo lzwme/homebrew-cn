@@ -1,16 +1,16 @@
 class Anchor < Formula
   desc "Solana Program Framework"
   homepage "https://anchor-lang.com"
-  url "https://ghfast.top/https://github.com/otter-sec/anchor/archive/refs/tags/v1.2.1.tar.gz"
-  sha256 "c346ba9189b0d3e500653fdf7331940b8bca9b2fbf7286c53976b9ac55b8975f"
+  url "https://ghfast.top/https://github.com/otter-sec/anchor/archive/refs/tags/v1.2.2.tar.gz"
+  sha256 "2e4dd35104e003ef09890c35b29b45e1bf66f8f214dc749adbcecae9c0e467e2"
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_golden_gate: "c1eabe14272c725055816f60483a32c79a487fd327dd5641bd1584c942442d0d"
-    sha256 arm64_tahoe:       "54fe0dfdd319660bf85263bd1d0b90cddd351b14d496197d4160138f295c1f4f"
-    sha256 arm64_sequoia:     "046b721d1dff0759b4650d5ff68ad0d1c65ec0052555a3cd64b02ca24f8438dd"
-    sha256 arm64_linux:       "6c3751cc1739028b4fc363a7cbea69b1eeed4b753c124d4a5e963dd59e3877c5"
-    sha256 x86_64_linux:      "b3a1db40f6c6e377f537dcd05d7d13f67de1bdf984be1b4efcae3acdc4f66f85"
+    sha256 arm64_golden_gate: "4f95eea51bf17a81c0d96e7fa277ed22be35f485bd6f4decd4a4c35a4b88e4e8"
+    sha256 arm64_tahoe:       "d73080046f6cfa6f47ebc05dc9f386694647ead7977ded0b228872118c3daeff"
+    sha256 arm64_sequoia:     "4fe59e203357472cf93e8745017c2161282b5116e3804c94d7bfaeb7682d49f8"
+    sha256 arm64_linux:       "3eb818198d3a9234f2d8bfb01135000dedaa8db7505598632e0be0d5240445b5"
+    sha256 x86_64_linux:      "09bb968a6d886515d9cfd5faf7e285ede2bf53cd154bb83f1c67c3993f7ce429"
   end
 
   depends_on "pkgconf" => :build

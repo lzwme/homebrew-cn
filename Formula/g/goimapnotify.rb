@@ -1,19 +1,17 @@
 class Goimapnotify < Formula
   desc "Execute scripts on IMAP mailbox changes using IDLE"
   homepage "https://gitlab.com/shackra/goimapnotify"
-  url "https://gitlab.com/shackra/goimapnotify/-/archive/2.5.8/goimapnotify-2.5.8.tar.bz2"
-  sha256 "0d5764737ca6b76a3b4c0ddb25671de059abfe8b8e51686ffc3cf526bc605618"
+  url "https://gitlab.com/shackra/goimapnotify/-/archive/2.6.0/goimapnotify-2.6.0.tar.bz2"
+  sha256 "9d51636d8f546d3fd2c85284800d5491b0919eecdb110092431e7ca15b771516"
   license "GPL-3.0-or-later"
   head "https://gitlab.com/shackra/goimapnotify.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fbf741aa4f56eb31ff7cc2c766f7266b80c88179a6e0c4d00e5f778788b020ee"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ca0760f3957439af109e497f88e06a5f517867cbef43cefa59e2edcd75cec53b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ca0760f3957439af109e497f88e06a5f517867cbef43cefa59e2edcd75cec53b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ca0760f3957439af109e497f88e06a5f517867cbef43cefa59e2edcd75cec53b"
-    sha256 cellar: :any_skip_relocation, sonoma:            "70a6bf4686f3597892f5860bdeb7c29ac27b3763ee63a89dcd162612c949a6d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7c00d6e51d166f09fbda993e46c0746c7018c6140adb0b734e50636b0a831469"
-    sha256 cellar: :any,                 x86_64_linux:      "00cc8ca8e7dd00fb2d59781ce7888d4cada021e1258db597f34ba6eeabca9907"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a41d5ff5bfe6145f6d21c3b69a84726c473314b0182a2c24984ebc12fa4fdc54"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a41d5ff5bfe6145f6d21c3b69a84726c473314b0182a2c24984ebc12fa4fdc54"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a41d5ff5bfe6145f6d21c3b69a84726c473314b0182a2c24984ebc12fa4fdc54"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "bdbcecc8c2c95f79bc26977997c9531ea23c2d97b5b9d5f4f4ab9944bde2586f"
+    sha256 cellar: :any,                 x86_64_linux:      "326155ff39c82b694c49921ec87f8c1b766eddf1104388d9072a4be2a1dab51d"
   end
 
   depends_on "go" => :build

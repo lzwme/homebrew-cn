@@ -1,16 +1,16 @@
 class SatelliteTracker < Formula
   desc "Terminal-based real-time satellite tracking and orbit prediction application"
   homepage "https://github.com/ShenMian/tracker"
-  url "https://ghfast.top/https://github.com/ShenMian/tracker/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "2cfb81377db86b39faba1159fbbc81481eeb9418ae8c943a49d1aba5bc2b1473"
+  url "https://ghfast.top/https://github.com/ShenMian/tracker/archive/refs/tags/v0.2.2.tar.gz"
+  sha256 "f09223c10ae65d8b6e92a6ce2fac6489c6f0f110fb014514988160ef47f2cd1a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f753da683186bd736eebcf83f81e3ac239128f37852bd7df3a10dee5368b4c0c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0ee4fb14612d4c0b911a2ad9e5eacfb1fbcceb3225dcdc34936491867aa4c7b6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3f6785f9cff682c2469e2a97dc5f3a62358f8dd4cffea8f5fbf3f4d7c5aad19f"
-    sha256 cellar: :any,                 arm64_linux:       "ca2215c26fe977991b2d25c70d9dc8cc6ba771438ec9a3d407511ad0de60cbf8"
-    sha256 cellar: :any,                 x86_64_linux:      "b7cbac7f6e4dbe3bcc1b1ffce3693ec9e807038a88bac2e1315c6a5c96c38865"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "449f90c16cf63783f9a5cc7c8267c89b9ee374fb138878a98c1f4aa217b42d22"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7dcc00926d667b08827468779c5bd6f21a654e200bc1861d8bf176d99be751ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "891082793dede1336b80e8ea07abac8db7053d2296768027b3b7530c59b5692f"
+    sha256 cellar: :any,                 arm64_linux:       "047292109959d07d3867c8b95d60933945af2fa6c5716208f5c8b61a14d5f947"
+    sha256 cellar: :any,                 x86_64_linux:      "8093bf71f10c6dd322873c93cd1bdffe979b2b8af01e58ec2ce69a24df2820e8"
   end
 
   depends_on "pkgconf" => :build

@@ -1,8 +1,8 @@
 class Lxc < Formula
   desc "CLI client for interacting with LXD"
   homepage "https://ubuntu.com/lxd"
-  url "https://ghfast.top/https://github.com/canonical/lxd/archive/refs/tags/lxd-6.10.0.tar.gz"
-  sha256 "4ede1d19dc6980234e1d8d68c74b09fe5631d7cac1b69081937dca42995da994"
+  url "https://ghfast.top/https://github.com/canonical/lxd/archive/refs/tags/lxd-6.10.1.tar.gz"
+  sha256 "687495b7b989da5f29ab009f7e728462f845ebf65696d30c5a6a0d646ce3fb58"
   license "AGPL-3.0-only"
   head "https://github.com/canonical/lxd.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Lxc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "282193436ef282895b84e42ddb64cf58e47cf59392e3b4781cdd1b981d9ce214"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "282193436ef282895b84e42ddb64cf58e47cf59392e3b4781cdd1b981d9ce214"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "282193436ef282895b84e42ddb64cf58e47cf59392e3b4781cdd1b981d9ce214"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7e88613b3d095da9b232fd807458a691624bef005534ce2c1b8ee367bf38e015"
-    sha256 cellar: :any,                 x86_64_linux:      "2f113c483b8755802334a0784900e499db1cc2f9829dd85d2e7a2525c2b98152"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f1f2b1e6c6621e2c20f22cd3e87c4aa776e57fc80d83275d702b6785e8cfe9e2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f1f2b1e6c6621e2c20f22cd3e87c4aa776e57fc80d83275d702b6785e8cfe9e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f1f2b1e6c6621e2c20f22cd3e87c4aa776e57fc80d83275d702b6785e8cfe9e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "93c7c4dbb6bd03ce7bc1ff97c5e1f7b603c2711c49fceaf41c73fc6fef350d73"
+    sha256 cellar: :any,                 x86_64_linux:      "9e3e672cc1a855074267ed4c80ce2fcfedda3d38c621114201245c0316f90fc6"
   end
 
   depends_on "go" => :build

@@ -1,20 +1,20 @@
 class Pinot < Formula
   desc "Realtime distributed OLAP datastore"
   homepage "https://pinot.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=pinot/apache-pinot-1.5.1/apache-pinot-1.5.1-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/pinot/apache-pinot-1.5.1/apache-pinot-1.5.1-bin.tar.gz"
-  sha256 "805b7525c1c87019211f416c0201e662da8e2c0a57549d624eaf7dcfdc8b14f3"
+  url "https://www.apache.org/dyn/closer.lua?path=pinot/apache-pinot-1.6.0/apache-pinot-1.6.0-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/pinot/apache-pinot-1.6.0/apache-pinot-1.6.0-bin.tar.gz"
+  sha256 "44699a305190007a0de30645f295a408d365275bf1aec3294ca9a54249df03b3"
   license "Apache-2.0"
   head "https://github.com/apache/pinot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "dd2e6d2ba8e8bb950465b2e2708ba3e1108788c4f8405615a98a523c709368c2"
+    sha256 cellar: :any_skip_relocation, all: "6357ed9ee896909e0618d8a04032a0f84a163b180bf4d77e606376072ca1ca2c"
   end
 
-  depends_on "openjdk@21"
+  depends_on "openjdk@25"
 
   def install
-    java_env = Language::Java.java_home_env("21").merge(PATH: "${JAVA_HOME}/bin:${PATH}")
+    java_env = Language::Java.java_home_env("25").merge(PATH: "${JAVA_HOME}/bin:${PATH}")
     (var/"lib/pinot/data").mkpath
 
     libexec.install "lib"

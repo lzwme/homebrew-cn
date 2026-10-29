@@ -3,17 +3,17 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/70/aa/bff50daee0488e16d611258a9b6c5a1d0c9e128f8ca424e9f4e1c0444ef2/virtualenv-21.14.13.tar.gz"
-  sha256 "de5307ba4b9a0001d9c8ea02832d38f63ca432880f416c1bface61c4323fd905"
+  url "https://files.pythonhosted.org/packages/b2/24/20282bc8e69ff8dee680dc2b95e9dc81fa7e7894b14c1a8d06330e97fef7/virtualenv-21.15.1.tar.gz"
+  sha256 "e79c90b8f601701599c25905e02839924fede2c798d52325670d24fbdaab74ee"
   license "MIT"
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "043b6dea76193ee333dabfa95cd4b371bae0f563d8d3940f354d9d055e625d57"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "043b6dea76193ee333dabfa95cd4b371bae0f563d8d3940f354d9d055e625d57"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "043b6dea76193ee333dabfa95cd4b371bae0f563d8d3940f354d9d055e625d57"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8d3f16435cb42e21cd5778faed566b9db779af0390a01b15fee082c6c5b316b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8d3f16435cb42e21cd5778faed566b9db779af0390a01b15fee082c6c5b316b7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e55c9ac64b526b77f6f473ee339ffed35d269891b12c731b490909a0e9c0901e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e55c9ac64b526b77f6f473ee339ffed35d269891b12c731b490909a0e9c0901e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e55c9ac64b526b77f6f473ee339ffed35d269891b12c731b490909a0e9c0901e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b5d3ce05f4c0c440fab4e76f2971c4cdb49c7f92292f6600dd308fbb5a21f26f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b5d3ce05f4c0c440fab4e76f2971c4cdb49c7f92292f6600dd308fbb5a21f26f"
   end
 
   depends_on "python@3.15"
@@ -34,13 +34,13 @@ class Virtualenv < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/58/e6/d0abbb256b44e6a05748c6942511ff67db8dbb068de0c35b24bf1b395b09/platformdirs-4.13.5.tar.gz"
-    sha256 "05831adf87d392760f4b5c3a0a95579ab5a10b18b9b9bd43680dcb47544788a0"
+    url "https://files.pythonhosted.org/packages/1a/43/8c4b5fe23f0e119cf4e1b16c2d16240ab9057cdbb138568c91d5a48abf81/platformdirs-4.13.6.tar.gz"
+    sha256 "211d176e24674b5895dedf9021c262bcf9fad008a70610bfb147d4a8d6d8fe1b"
   end
 
   resource "python-discovery" do
-    url "https://files.pythonhosted.org/packages/f3/ee/cf608372c88ce2c136ee13c69ab6f667dbc0d0c1176af188b4ddc8853e66/python_discovery-1.6.4.tar.gz"
-    sha256 "bc70d31f0ec5de11eda13d4d64c16e24b3506a65984684f2b6c98cb83b2ea9df"
+    url "https://files.pythonhosted.org/packages/8e/3e/0c8cbdb52feeac4a8667ccff3c58fd2568d6d2969db2717ff00a9fdae73a/python_discovery-1.6.6.tar.gz"
+    sha256 "d687024fec55c489e7a465c7f5644300a4d9dbf7727a556a85660536ee922933"
   end
 
   allow_network_access! :build

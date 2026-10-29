@@ -29,6 +29,10 @@ class Hydra < Formula
 
   conflicts_with "ory-hydra", because: "both install `hydra` binaries"
 
+  allow_network_access! :test
+
+  def openssl = deps.map(&:name).find { |d| d.match?(/^openssl(@\d+(\.\d+)*)?$/) }
+
   def install
     # macOS auto-detects Homebrew library paths but not the system curses headers;
     # Linux auto-detects neither. Point configure at the right paths per platform.
@@ -40,15 +44,15 @@ class Hydra < Formula
       }
     else
       {
-        "CRYPTO_PATH"  => formula_opt_lib("openssl@4"),
+        "CRYPTO_PATH"  => formula_opt_lib(openssl),
         "CURSES_PATH"  => formula_opt_lib("ncurses"),
         "CURSES_IPATH" => formula_opt_include("ncurses"),
         "MYSQL_PATH"   => formula_opt_lib("mariadb-connector-c"),
         "MYSQL_IPATH"  => "#{formula_opt_include("mariadb-connector-c")}/mariadb",
         "PCRE_PATH"    => formula_opt_lib("pcre2"),
         "PCRE_IPATH"   => formula_opt_include("pcre2"),
-        "SSL_PATH"     => formula_opt_lib("openssl@4"),
-        "SSL_IPATH"    => formula_opt_include("openssl@4"),
+        "SSL_PATH"     => formula_opt_lib(openssl),
+        "SSL_IPATH"    => formula_opt_include(openssl),
         "SSH_PATH"     => formula_opt_lib("libssh"),
         "SSH_IPATH"    => formula_opt_include("libssh"),
         "SSLNEW"       => "YES",

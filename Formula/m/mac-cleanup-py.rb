@@ -3,28 +3,28 @@ class MacCleanupPy < Formula
 
   desc "Python cleanup script for macOS"
   homepage "https://github.com/mac-cleanup/mac-cleanup-py"
-  url "https://files.pythonhosted.org/packages/be/dc/75d83e78c24d7378dad5d3c0c20b68860c0b8e4d2875d242c5ea51f317eb/mac_cleanup-3.3.0.tar.gz"
-  sha256 "6773f059ba2025d8121d0c764afe45d1d10d305df23f604b2a485e1360e526a3"
+  url "https://files.pythonhosted.org/packages/b5/62/dcc23b0a85ddf7810261edd6f92d1727a00cfab83064b2bf591866cdc846/mac_cleanup-3.4.0.tar.gz"
+  sha256 "47718062d255f83eb47e108401e99ceb87e9d6a4d9423008739d74dc1b3aafa2"
   license "Apache-2.0"
   head "https://github.com/mac-cleanup/mac-cleanup-py.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "16df5efa5d888a43507ebfa637852daa78d3061bcff170f3c1cf37003097cd0e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f26249588807d486ba02b29af1ba0810da38d670b501f5b50397ef6cacbc7bb0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d867b29daf8fd7ff360b3fdbc42d908b136c9dec12c1b14566514ec4de4072ce"
-    sha256 cellar: :any,                 arm64_linux:       "9bc2b1cbd5d5cbc342cfd708a31c3e1150f0fea080a1f7d8e306f29949a94f8d"
-    sha256 cellar: :any,                 x86_64_linux:      "9ff100b328563f5c0970d922cbe4807f7940f5fd3dfd6ccb7af8c289e076b8de"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "182e1e360f28cdfb01b36226c254e06f2dc445eb04e4ea36710b984841fdb1ad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c73433bdc35eaa57fc42067e98680bf2733b55b71450ecb8e15129c254614eda"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fbd980f1ed9cc8838ffbd36dbe81fe3f2d2586f069b70d56f904a64560919e05"
+    sha256 cellar: :any,                 arm64_linux:       "30eef582c998495df16e9d69ff6ab2454418ce9568791f8849430e63c455084d"
+    sha256 cellar: :any,                 x86_64_linux:      "f79b5678365ca0cb6e21824ab14294845595b0df597baff6fc8b66964bb7436c"
   end
 
+  depends_on "rust" => :build
   depends_on "cffi"
   depends_on "python@3.15"
 
-  pypi_packages exclude_packages: ["cffi", "pycparser"]
+  pypi_packages exclude_packages: "cffi"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
-    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
+    url "https://files.pythonhosted.org/packages/9a/8e/82a0fe20a541c03148528be8cac2408564a6c9a0cc7e9171802bc1d26985/attrs-26.1.0.tar.gz"
+    sha256 "d03ceb89cb322a8fd706d4fb91940737b6642aa36998fe130a9bc96c985eff32"
   end
 
   resource "beartype" do
@@ -33,13 +33,13 @@ class MacCleanupPy < Formula
   end
 
   resource "blessed" do
-    url "https://files.pythonhosted.org/packages/0c/5e/3cada2f7514ee2a76bb8168c71f9b65d056840ebb711962e1ec08eeaa7b0/blessed-1.21.0.tar.gz"
-    sha256 "ece8bbc4758ab9176452f4e3a719d70088eb5739798cd5582c9e05f2a28337ec"
+    url "https://files.pythonhosted.org/packages/8f/e3/53462b28d7a06f2fcf820863f951255f4e022e4988981b0a5ca339f7773b/blessed-1.52.0.tar.gz"
+    sha256 "a6f42b2875c7afee78420ac9919699d5c3dce35bfa9ad45bc158b1713fc33d0d"
   end
 
   resource "editor" do
-    url "https://files.pythonhosted.org/packages/2a/92/734a4ab345914259cb6146fd36512608ea42be16195375c379046f33283d/editor-1.6.6.tar.gz"
-    sha256 "bb6989e872638cd119db9a4fce284cd8e13c553886a1c044c6b8d8a160c871f8"
+    url "https://files.pythonhosted.org/packages/c3/10/d3ace6204a16ad24d9c5e330b6b09e020967d3dda3b5a6c34caa182be7b7/editor-2.0.1.tar.gz"
+    sha256 "6ecdff42bf4a32ba250f42676dbcdd75ce5fa498ca8dd1e1918c63a2518538cf"
   end
 
   resource "inquirer" do
@@ -47,9 +47,14 @@ class MacCleanupPy < Formula
     sha256 "60d169fddffe297e2f8ad54ab33698249ccfc3fc377dafb1e5cf01a0efb9cbe5"
   end
 
+  resource "jinxed" do
+    url "https://files.pythonhosted.org/packages/39/d7/6e6d474ec5eaeca6a61acc17766bb19563b3a372b4b9d92910078f5fe49f/jinxed-2.1.0.tar.gz"
+    sha256 "7e755b831faa2443d44fb4ce7c0202eb9c3ed39bd5bf1193365888f4f6092b54"
+  end
+
   resource "markdown-it-py" do
-    url "https://files.pythonhosted.org/packages/5b/f5/4ec618ed16cc4f8fb3b701563655a69816155e79e24a17b651541804721d/markdown_it_py-4.0.0.tar.gz"
-    sha256 "cb0a2b4aa34f932c007117b194e945bd74e0ec24133ceb5bac59009cda1cb9f3"
+    url "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz"
+    sha256 "04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49"
   end
 
   resource "mdurl" do
@@ -58,23 +63,23 @@ class MacCleanupPy < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/b0/77/a5b8c569bf593b0140bde72ea885a803b82086995367bf2037de0159d924/pygments-2.19.2.tar.gz"
-    sha256 "636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887"
+    url "https://files.pythonhosted.org/packages/49/2e/ced460408999b33da6b31b0021b0f37d329e202d4169aeb164493778f25b/pygments-2.21.0.tar.gz"
+    sha256 "610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c"
   end
 
   resource "readchar" do
-    url "https://files.pythonhosted.org/packages/dd/f8/8657b8cbb4ebeabfbdf991ac40eca8a1d1bd012011bd44ad1ed10f5cb494/readchar-4.2.1.tar.gz"
-    sha256 "91ce3faf07688de14d800592951e5575e9c7a3213738ed01d394dcc949b79adb"
+    url "https://files.pythonhosted.org/packages/ed/49/a10341024c45bed95d13197ec9ef0f4e2fd10b5ca6e7f8d7684d18082398/readchar-4.2.2.tar.gz"
+    sha256 "e3b270fe16fc90c50ac79107700330a133dd4c63d22939f5b03b4f24564d5dd8"
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/ab/3a/0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bc/rich-13.9.4.tar.gz"
-    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
+    url "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz"
+    sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
   resource "runs" do
-    url "https://files.pythonhosted.org/packages/26/6d/b9aace390f62db5d7d2c77eafce3d42774f27f1829d24fa9b6f598b3ef71/runs-1.2.2.tar.gz"
-    sha256 "9dc1815e2895cfb3a48317b173b9f1eac9ba5549b36a847b5cc60c3bf82ecef1"
+    url "https://files.pythonhosted.org/packages/f2/ae/095cb626504733e288a81f871f86b10530b787d77c50193c170daaca0df1/runs-1.3.0.tar.gz"
+    sha256 "cca304b631dbefec598c7bfbcfb50d6feace6d3a968734b67fd42d3c728f5a05"
   end
 
   resource "toml" do
@@ -83,23 +88,21 @@ class MacCleanupPy < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
-    sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
+    url "https://files.pythonhosted.org/packages/ea/01/e5ac23733628a6bbb91913a765fcf55ee8070d8d991bc88fdaaf805052c7/wcwidth-0.9.4.tar.gz"
+    sha256 "fd8d57d3cdfe570e3265c8fab1885c24e34ef40889c0759c0c304a19e9835954"
   end
 
   resource "xattr" do
-    url "https://files.pythonhosted.org/packages/62/bf/8b98081f9f8fd56d67b9478ff1e0f8c337cde08bcb92f0d592f0a7958983/xattr-1.1.4.tar.gz"
-    sha256 "b7b02ecb2270da5b7e7deaeea8f8b528c17368401c2b9d5f63e91f545b45d372"
+    url "https://files.pythonhosted.org/packages/08/d5/25f7b19af3a2cb4000cac4f9e5525a40bec79f4f5d0ac9b517c0544586a0/xattr-1.3.0.tar.gz"
+    sha256 "30439fabd7de0787b27e9a6e1d569c5959854cb322f64ce7380fedbfa5035036"
   end
 
   resource "xmod" do
-    url "https://files.pythonhosted.org/packages/72/b2/e3edc608823348e628a919e1d7129e641997afadd946febdd704aecc5881/xmod-1.8.1.tar.gz"
-    sha256 "38c76486b9d672c546d57d8035df0beb7f4a9b088bc3fb2de5431ae821444377"
+    url "https://files.pythonhosted.org/packages/7a/3b/5a0d2670bab661164e27a5c27c448ae6204458c97cb94ccf89d0c47715bc/xmod-1.10.0.tar.gz"
+    sha256 "b40b2a54d56684b01eb9627892b0c179918e8ef0bd4d7f3bac7a3fdba11cd6e6"
   end
 
   def install
-    # Allow 3.14: https://github.com/mac-cleanup/mac-cleanup-py/pull/277
-    inreplace "pyproject.toml", 'python = ">=3.10,<3.14"', 'python = ">=3.10"'
     virtualenv_install_with_resources
   end
 

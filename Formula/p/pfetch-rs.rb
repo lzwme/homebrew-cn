@@ -1,17 +1,17 @@
 class PfetchRs < Formula
   desc "Pretty system information tool written in Rust"
   homepage "https://github.com/Gobidev/pfetch-rs"
-  url "https://ghfast.top/https://github.com/Gobidev/pfetch-rs/archive/refs/tags/v3.1.0.tar.gz"
-  sha256 "976aedbe1baee9e9c398811900d37e6a42c1fe74332ea7c0f7c7340f301074d7"
+  url "https://ghfast.top/https://github.com/Gobidev/pfetch-rs/archive/refs/tags/v3.1.1.tar.gz"
+  sha256 "13730b58a1fe20acfe32e17056f1d48a12a1ea7209c9c28507d21ccb36144466"
   license "MIT"
   head "https://github.com/Gobidev/pfetch-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0c060f3f0456cc683952a41900e86edafcbebacfccaa1fd23535a0a397863521"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "06c934242b3ed0703b157abdde551867e7589186f1b4254daf23e60d532ca31b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "edaa23ffe2914d862ee1d8b28db956a1845865884583e57855a0c7b57e3e1363"
-    sha256 cellar: :any,                 arm64_linux:       "eaaaada857230fc8b10d1e1ed92f5fb57fe7ff6ebc380570f3b95a985eb9961a"
-    sha256 cellar: :any,                 x86_64_linux:      "5763086a83c594629f80acf79eb89e2cca40a95a91380ea9c7b89ac3570ac91f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6f7ed9a83c1b12632e78360d5973017eeb327945364c136924901a83aaaa0ec7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "05698bc1f5c63f76bded25f8fef0340f247d4e7758399135c7ab438b3e749133"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d9750c531c165a78d4df1acbf7a81be1c20a55b6ea2a7192304f1ca6774aac9e"
+    sha256 cellar: :any,                 arm64_linux:       "778d6b2a97b9bdc4d316468c3c479cee7e2e2e8c92cba551ecb339e4c7fc274f"
+    sha256 cellar: :any,                 x86_64_linux:      "90c35e3173fa33b11b968a0bf68bb1cbf8745eca074c65d9a30ea127e3405189"
   end
 
   depends_on "rust" => :build

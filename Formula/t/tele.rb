@@ -1,5 +1,5 @@
 class Tele < Formula
-  desc "Keyboard-first Telegram client for the terminal, written in Go"
+  desc "Telegram client for the terminal: a keyboard-first TUI and a CLI"
   homepage "https://github.com/sorokin-vladimir/tele"
   url "https://ghfast.top/https://github.com/sorokin-vladimir/tele/archive/refs/tags/v2.0.2.tar.gz"
   sha256 "ff8586555bed5e6f20ec6f3e85d649acae962107609b1599d91d48a1b1d9f71f"

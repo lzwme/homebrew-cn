@@ -7,16 +7,16 @@ class Maki < Formula
   head "https://github.com/tontinton/maki.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f869eefb7a6e05644443f9776a1b4a85653456ed72d153de63e5f346da0e2707"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bdd8fe579cb73788fba45f949c5e0b80ad17b5cd144e957120ece0a21cc5c02a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b1e6688c8837808bd58d997632573f0821f36cb474a147dcf44d9092bef8b7cb"
-    sha256 cellar: :any,                 arm64_linux:       "ff3830cc2140f81f6e0cd68a77aa7250012af5f8997950f3735d1fe6126833e6"
-    sha256 cellar: :any,                 x86_64_linux:      "65ad56c007ad3317e16f1830d059fb14e05512bdff98f524501fcf46daac58e2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c9264d3e5721a895fadd224ea20cf29112663befd4ead9b0fe3d45504af1233e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6f64373418dd5932bd94eb225b64508d675ca44bd03b17d33e5e21d5f6574e34"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a2a85946331a2071c4e42ad8539d7496daaa5d5eb6de484959af2449ae6aa53e"
+    sha256 cellar: :any,                 arm64_linux:       "e4d08b0a54e6756c9e2cdba6bdbf4cbde73ff74b8bafebf36a14fa1d1450c769"
+    sha256 cellar: :any,                 x86_64_linux:      "2973a2486693d17155fc472b0e264b6bdf7963bf210a27dc3ff5f367ffcf0842"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "openssl@4"
 
   on_linux do
     depends_on "zlib-ng-compat"
@@ -29,7 +29,6 @@ class Maki < Formula
   end
 
   def install
-    ENV["OPENSSL_NO_VENDOR"] = "1"
     system "cargo", "install", *std_cargo_args
   end
 

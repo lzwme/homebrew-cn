@@ -3,17 +3,16 @@ class Modal < Formula
 
   desc "Client library and CLI for Modal"
   homepage "https://modal.com/"
-  url "https://files.pythonhosted.org/packages/f1/4c/4546bf12b132224a65a809766b6ada95a9a9fd63e28fb1abab1e1b962c2f/modal-1.6.2.tar.gz"
-  sha256 "f96bcd2de02abb74ac8ec3ff7d62400403633867a42c9c7b43f69f75ea00b952"
+  url "https://files.pythonhosted.org/packages/37/d5/17154c55985e3f7971bc8babc5afcbad2cb2e70f656f49090ef414f4f98d/modal-1.6.3.tar.gz"
+  sha256 "f6c1c59172274357e260a6f3d24254dddb472a6d4202cabce87452c127a1779c"
   license "Apache-2.0"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any, arm64_golden_gate: "dfba0f81715ae090d3c35f073b41d4eabcdda4eff1ddfb1804c3a1b5ecdfcf76"
-    sha256 cellar: :any, arm64_tahoe:       "75b04134caf813a4f3aae3ce433fadc5bbc121b6a5b0637fb0390b6ee9b6a177"
-    sha256 cellar: :any, arm64_sequoia:     "91ccba50e00c09f7fa64395b93a9b34d72a428be80a514a3dc841770bb047963"
-    sha256 cellar: :any, arm64_linux:       "2257e903f66e4653d72245d64be3e7df771ef39db26491cd85e25ef32ee84cad"
-    sha256 cellar: :any, x86_64_linux:      "28146c1564fc15615f689dc67eae7f4474ba9296b313a93cc7116f5952c05ed7"
+    sha256 cellar: :any, arm64_golden_gate: "1d3acaa964302471bf29aca4d6af8190574f18db56eaa6419a62b792d5090040"
+    sha256 cellar: :any, arm64_tahoe:       "44785caf73e089547a09f3995fd58e7534f3460d51e8c1a6e7842125bfa51e98"
+    sha256 cellar: :any, arm64_sequoia:     "17a499e2269c755acb29f9e1b16b23d8492ec873f346054c75b2f9de0942fc83"
+    sha256 cellar: :any, arm64_linux:       "fd6fbb8fd1bfe726617f714ba39ab5b80e32e7614122ee16a567305b4a8a1a79"
+    sha256 cellar: :any, x86_64_linux:      "6b3e097174745ac7ff17b14e977bbad92a1544b463f50ba783d3263031ea6142"
   end
 
   depends_on "rust" => :build # for `cbor2`
@@ -98,8 +97,8 @@ class Modal < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/f9/79/84ddb5ba16c4eb2c69c71db76ae3c579fe546e511f7170c7e27eedbab7c1/multidict-7.1.0.tar.gz"
-    sha256 "61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec"
+    url "https://files.pythonhosted.org/packages/7b/6b/29ef8e752f5854dcc267ded0652c475bec99b86f255957a0d4fcad657b18/multidict-7.2.1.tar.gz"
+    sha256 "e8af3e6f1bdbc31fd762b094133b478b89988eaebc63cbe82b1d9e3bbd15cede"
   end
 
   resource "propcache" do
@@ -123,8 +122,8 @@ class Modal < Formula
   end
 
   resource "synchronicity" do
-    url "https://files.pythonhosted.org/packages/ee/5f/9f6f7df5919f0d085013b96b9cb99b622b974fe722a04c126c10497bba8b/synchronicity-0.12.6.tar.gz"
-    sha256 "ac971eadb64c95938816b8d6125d6e28473982f3256789a35bdbe02025e1ce17"
+    url "https://files.pythonhosted.org/packages/f2/0d/68d6a97dead45e2704cd431df2ed5f92c9bdea620239d6129b16becc7508/synchronicity-0.12.7.tar.gz"
+    sha256 "6d86ba0fb797cc3cb7637f97cf9472a3ed20e50e85130b44c3292b43e2389b90"
   end
 
   resource "toml" do

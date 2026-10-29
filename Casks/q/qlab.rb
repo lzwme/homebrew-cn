@@ -1,6 +1,6 @@
 cask "qlab" do
-  version "5.6.4"
-  sha256 "74bcc8b691f37b161a2b592ecb5d2db0a0de23c6059fed93fd9c79859a5a5ebf"
+  version "5.6.5"
+  sha256 "0e3a2c894f03fdcd29588fa0ac3f632c061f304a83b56fc1971c167c57733a98"
 
   url "https://qlab.app/downloads/archive/QLab-#{version}.zip"
   name "QLab"
@@ -18,7 +18,9 @@ cask "qlab" do
   app "QLab.app"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.figure53.qlab.#{version.major}.sfl*",
     "~/Library/Application Support/QLab",
+    "~/Library/Caches/com.figure53.QLab.#{version.major}",
     "~/Library/HTTPStorages/com.figure53.QLab.#{version.major}",
     "~/Library/Preferences/com.figure53.QLab.#{version.major}.plist",
     "~/Library/Saved Application State/com.figure53.QLab.#{version.major}.savedState",

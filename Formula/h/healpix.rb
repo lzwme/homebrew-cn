@@ -25,6 +25,8 @@ class Healpix < Formula
   depends_on "pkgconf" => :build
   depends_on "cfitsio"
 
+  deny_network_access!
+
   def install
     cd "src/C/autotools" do
       system "autoreconf", "--force", "--install", "--verbose"

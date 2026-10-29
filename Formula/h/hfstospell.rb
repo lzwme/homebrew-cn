@@ -27,6 +27,8 @@ class Hfstospell < Formula
   depends_on "icu4c@79"
   depends_on "libarchive"
 
+  deny_network_access!
+
   def install
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules", "--without-libxmlpp", *std_configure_args

@@ -2,8 +2,8 @@ class KubernetesCli < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/docs/reference/kubectl/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.37.1",
-      revision: "f78e722310e50bcaca9276be22276d9e91d91308"
+      tag:      "v1.37.2",
+      revision: "c50e5395f1ae2d4a2c05f28fdcc38c0916cc1a32"
   license "Apache-2.0"
   head "https://github.com/kubernetes/kubernetes.git", branch: "master"
 
@@ -13,12 +13,11 @@ class KubernetesCli < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6f29919ed3e6eac28acbef2dfc818ab8b4e5bf0779ed393510ea3e0e96ff870a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8b0f055c752bf016c3c184ad540ebe19de13aa194c6ac7bd9c0f5eede97320b4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0300e994f298be4e7b88c698684f88c38f41bd93f04161aeb9692ab4b48bf1fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a63a5406c21b17f43a8166bdf1ef8a5e2e2522260a65efeb021d0a7e129c07a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f9f7668844dbcc5ef1591ad248d9d1ab001d1fe1880593d2e912a22e6c732822"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "19fa72010a3efa84080687499c8441de281378bc24f280c412729bfaf952d1af"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2b02c5b0a81511d5a628d1d82bb4ce5f7ec4dae92e993488d4cbbffd4a38d675"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bd24a83dfcae56ce91c8690d101cf9913f565d2a13414efb2b3a1ad665ba8cae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "9d880c5141d548efbd65d1c9cebef78cf656e9530a162c45ace225df5b765fbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "287b99637cc942686895d852bf05d4be0a87c99c6333963a0dc1c1c62a092945"
   end
 
   # TODO: unpin go@1.26 when Go 1.27's ML-DSA ClientHello no longer gets reset by TLS middleboxes

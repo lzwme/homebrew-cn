@@ -6,15 +6,15 @@ class Awscurl < Formula
   url "https://files.pythonhosted.org/packages/c8/77/7da6af880d56aed4a4023bb7c725e15c72a3088afd729ffd373eed0f5a18/awscurl-0.44.tar.gz"
   sha256 "13056e867ac33f556f29d3662102bfc3c40259ea037c6d817c5914dbb2bbd948"
   license "MIT"
-  revision 9
+  revision 10
   head "https://github.com/okigan/awscurl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "0943e1f62220c1a8669b1db42899ad32baff921fc18c09c692803d1d701ac248"
-    sha256 cellar: :any, arm64_tahoe:       "a0dbe6c7933d17879421537b7f1bf5aed7d6c3c5699bf6ee80312400fb242cda"
-    sha256 cellar: :any, arm64_sequoia:     "3f23ddc51e9b624d7a2b7a3c98b1bf0d7dbbee1c34665e4d6a170ad59d9a09b9"
-    sha256 cellar: :any, arm64_linux:       "b73eda651e39819a5cd12e3d7347d3cdfca44edad85ed08c3e86c5c27d3f709d"
-    sha256 cellar: :any, x86_64_linux:      "b145eea848b16a9678399b40d81bade6316dd7c4e42135e489b3adbeb1f997c9"
+    sha256 cellar: :any, arm64_golden_gate: "2352b591519cce2b3e014cce55c90674a2e5fa39a6803679408ac6db007bd9fc"
+    sha256 cellar: :any, arm64_tahoe:       "36ea407331cf39d0eeeceee9cee51f2991f527b906115ca91175e44ad27a4d05"
+    sha256 cellar: :any, arm64_sequoia:     "b0c128bdea138eeed71e84bc4ac27a48c03d5cd423007d016f7e3b1c134ef25d"
+    sha256 cellar: :any, arm64_linux:       "39d839aa0e6bb2dca2f9cba9d899b882a41001906a648b6c3fc8777ea101e501"
+    sha256 cellar: :any, x86_64_linux:      "e93a48416ab86012d1afb576d96fe5a3b13cc60d522ea0c90388854be8ffec36"
   end
 
   depends_on "aws-c-auth"

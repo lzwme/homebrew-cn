@@ -1,8 +1,8 @@
 class JpegTurbo < Formula
   desc "JPEG image codec that aids compression and decompression"
   homepage "https://www.libjpeg-turbo.org/"
-  url "https://ghfast.top/https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.2.0/libjpeg-turbo-3.2.0.tar.gz"
-  sha256 "6f30092cef9fb839779646608f4ee14ae3cbac989c47fa05e841b0841f09878e"
+  url "https://ghfast.top/https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.2.1/libjpeg-turbo-3.2.1.tar.gz"
+  sha256 "c27ad72a68da151177929aa969ae773a2da5ac2af9ce946079314fdac8cece7f"
   license all_of: [
     "IJG", # libjpeg API library and programs
     "Zlib", # libjpeg-turbo SIMD source code
@@ -17,13 +17,11 @@ class JpegTurbo < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "7bc0f7c007a73c68da8c11055e836de66c2814c1b0ca0302da9a6317199fd37a"
-    sha256 cellar: :any, arm64_tahoe:       "02539b0736cfacdc6c4bb6a7d274d0c5c8b6e1faf9b5bab1e155168961d288aa"
-    sha256 cellar: :any, arm64_sequoia:     "6dc55edcd33c693e474299ed2bba3c472ac1331cbe300066ec8ef99b88fab17c"
-    sha256 cellar: :any, arm64_sonoma:      "3ff48858f9042df4ce6ca4bf4006bae5e46f919037cba077f0c81a1f6e0a288a"
-    sha256 cellar: :any, arm64_linux:       "17e9fc799ed71fa8453d35fae0bdec249b015d2ba61d3258c8a4ba2bd47faf86"
-    sha256 cellar: :any, x86_64_linux:      "85713cddd87d363f7e772f9ab0db5d4192d6f4ef8793393458601ffdba8a1e07"
+    sha256 cellar: :any, arm64_golden_gate: "3f245f1914445713bba97fbee6b4f7cb379b4e9c91237d12e76ee52c1975ce0e"
+    sha256 cellar: :any, arm64_tahoe:       "d11374b84a9782d88a6f33409c564e92e172a3fb8658eb09aa297063c8271e61"
+    sha256 cellar: :any, arm64_sequoia:     "802413c7772789ae8c9d0444042e9a766bcff1beae3919ea5716022aa9dafce7"
+    sha256 cellar: :any, arm64_linux:       "afdfacef775a3d4468cd8ff4f6c2cf3587e9de8abf66bd18c16e3f12c1822ebb"
+    sha256 cellar: :any, x86_64_linux:      "8873de526f6a410fb8a77077905d4dec1b807d93bc1b5252d1f3ba748b3756fd"
   end
 
   depends_on "cmake" => :build

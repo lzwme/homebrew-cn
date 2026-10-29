@@ -1,20 +1,16 @@
 class Rmlint < Formula
   desc "Extremely fast tool to remove dupes and other lint from your filesystem"
   homepage "https://rmlint.readthedocs.io/en/master/"
-  url "https://ghfast.top/https://github.com/sahib/rmlint/archive/refs/tags/v2.10.3.tar.gz"
-  sha256 "8ffdbd5d09d15c8717ae55497e90d6fa46f085b45ac1056f2727076da180c33e"
+  url "https://ghfast.top/https://github.com/sahib/rmlint/archive/refs/tags/v2.10.4.tar.gz"
+  sha256 "cecb379b64e2abad7350db7030b945b5b0d021e7f9a1e8f14725ebffe049d041"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "d654ef6621769ecd5e1e66b463856a50909940935d40e709b214f4fc613f0cf4"
-    sha256 cellar: :any,                 arm64_tahoe:       "0d90cd13c8a94f6fc34bbdbf82ae92ce390a501cb7719eed1c3e5ba7e5a17311"
-    sha256 cellar: :any,                 arm64_sequoia:     "271ea48a158868357536e3dfff58e0707e33f2ce3a14a8040b25ac08b6434474"
-    sha256 cellar: :any,                 arm64_sonoma:      "b2d780f8713b5f8e9979f38f4fa9cfa831cbd65b2e1a206d8e760606335b2e78"
-    sha256 cellar: :any,                 arm64_ventura:     "ade2340e57e28b4693f73a4eb919f17bf1a18d39ab268f0ae51d984bf0cfeced"
-    sha256 cellar: :any,                 sonoma:            "bfc2a7bbbd018d9fa63b6dc5fcdc312e6811bd713a465da66b9a81f1ae03f72e"
-    sha256 cellar: :any,                 ventura:           "c6a8d12e5c6c75922cb42ebcacfc59b9d659328cd05b566a9ea3b262aed5b79b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e7bbe7f7dd26aa3ca9a053570ab919cf162b723ae2f92fd1e90e98e22a54afdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0e9369f955ae09325e3c66a511024ea6dd65cb6c5bcca1cba03b7ad3fecc8cfb"
+    sha256 cellar: :any, arm64_golden_gate: "16f7480d4c138e0258da076c1321d3e2070c8a8005824ae4bfc75906a077fe49"
+    sha256 cellar: :any, arm64_tahoe:       "84869952b1c95f0507c0faabed226bc17f4533da1f0fd861a64d04b4a96a1892"
+    sha256 cellar: :any, arm64_sequoia:     "46ca694d9c24978245a0c211c945579c46d222ab4dbbea18dd5e60ac55054e77"
+    sha256 cellar: :any, arm64_linux:       "5e01a4fba501524e4cc11d0015d0c39192331421fc79ccfcd80d18b8f2414375"
+    sha256 cellar: :any, x86_64_linux:      "b38f17083790b4de85e0fc3abaa6e787ca626f8d0a78e3c68ca65986ee50e5e8"
   end
 
   depends_on "gettext" => :build

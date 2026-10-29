@@ -41,6 +41,8 @@ class Httperf < Formula
 
   depends_on "openssl@4"
 
+  deny_network_access!
+
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
 

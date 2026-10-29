@@ -27,6 +27,8 @@ class Hunspell < Formula
 
   skip_clean "share/hunspell"
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-silent-rules",
                           "--with-ui",

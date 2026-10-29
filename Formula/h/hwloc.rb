@@ -21,6 +21,7 @@ class Hwloc < Formula
 
   head do
     url "https://github.com/open-mpi/hwloc.git", branch: "master"
+
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
@@ -30,6 +31,8 @@ class Hwloc < Formula
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
+
+  deny_network_access!
 
   def install
     system "./autogen.sh" if build.head?

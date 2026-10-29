@@ -27,6 +27,8 @@ class Hmmer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "6de4e838a141d9cd836421806beeb8fea120434756ab1897a7dcd2d6e858e0ae"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"

@@ -1,17 +1,17 @@
 class Auth0 < Formula
   desc "Build, manage and test your Auth0 integrations from the command-line"
   homepage "https://auth0.github.io/auth0-cli"
-  url "https://ghfast.top/https://github.com/auth0/auth0-cli/archive/refs/tags/v1.38.0.tar.gz"
-  sha256 "dbf7ee6bd8b534a039d1e47da014fcf62ef5024860e0e1feb420a7bd4e1f3a5d"
+  url "https://ghfast.top/https://github.com/auth0/auth0-cli/archive/refs/tags/v1.39.0.tar.gz"
+  sha256 "be98893dc831faaf0fb8772f92183d9e2a4d980b7eec6b2de72d1a5e4770f31a"
   license "MIT"
   head "https://github.com/auth0/auth0-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a4fce2a69396294375a741dd217e57e6740e81418d6f8828e1b460d054fd2d5e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a4fce2a69396294375a741dd217e57e6740e81418d6f8828e1b460d054fd2d5e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a4fce2a69396294375a741dd217e57e6740e81418d6f8828e1b460d054fd2d5e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "6ede2d9b917eed8c28a0550c0be23dbcb2f3185cd10b8c78bc51b07a1ece9584"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "adb4be57afba2b97e91fcfb31460387ec9bdae93d9823f38e4ad1ab01e1561c7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a2e168b06068abe8902d68a6bb3d87f920d4d71b10ff921cd010c575731ba91a"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a2e168b06068abe8902d68a6bb3d87f920d4d71b10ff921cd010c575731ba91a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a2e168b06068abe8902d68a6bb3d87f920d4d71b10ff921cd010c575731ba91a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b23d55862d934f5a5cb720f4454c83840b8c33fac6996f0fffb55ebee3b76597"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "497d2bf9659cd2e9ce882ce99352619e8f4ddf1e8498765da8a9258d03521dfa"
   end
 
   depends_on "go" => :build

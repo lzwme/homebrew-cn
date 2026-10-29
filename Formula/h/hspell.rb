@@ -34,6 +34,8 @@ class Hspell < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     ENV.deparallelize
 

@@ -68,6 +68,8 @@ class GnuApl < Formula
     depends_on xcode: ["16.4", :build]
   end
 
+  deny_network_access!
+
   def install
     # FIXME: Work around newer clang producing a broken binary
     if OS.mac? && MacOS.version >= :golden_gate && build.stable?

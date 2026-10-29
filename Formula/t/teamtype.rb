@@ -1,19 +1,17 @@
 class Teamtype < Formula
   desc "Peer-to-peer, editor-agnostic collaborative editing of local text files"
   homepage "https://teamtype.github.io/teamtype/"
-  url "https://ghfast.top/https://github.com/teamtype/teamtype/archive/refs/tags/v0.9.2.tar.gz"
-  sha256 "cbf36fd071512e39101aa7de111cbb8b1ae4c0aebf9bd3508eb33e68712bca0f"
+  url "https://ghfast.top/https://github.com/teamtype/teamtype/archive/refs/tags/v0.9.3.tar.gz"
+  sha256 "c018dcd454645a01b8a0db5996b4f402471bc5c6ee2ad19091b9e30bbee993c7"
   license "AGPL-3.0-or-later"
   head "https://github.com/teamtype/teamtype.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3ab13650e89fba0277959e9ac42a09966ec3555e0d453e063cc356b7a1218100"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5fb2d7442ecaaea0c5cf243729e22356ccb76ba979e92c76d5531c8dae77f8ba"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7eadb16bb1a0773f7de641bd279069ee49716abbaed50e9b5241820673bdecfa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "df7da3909aa55ee7d81883bb41f78944e5a6ee9c1d32d3073f51282734865938"
-    sha256 cellar: :any_skip_relocation, sonoma:            "1f050e83510628bdcbf87b0a9befd19f584fb7901a3d5a44b5a1a178ffe57804"
-    sha256 cellar: :any,                 arm64_linux:       "c4026250f0f68b91cee85c365a3793f75ac41ff77ac93fec33a43d3b32074cbd"
-    sha256 cellar: :any,                 x86_64_linux:      "3e05440ce176a996371de197006bf5a16818eea9011432d7f51fa15a9cb88b6a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "26a9d361e16c3df573bcb67519841e7d4adf5888f36f1d01a0581d9bc6c07a21"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "14bcd3a933d5617ee1e77bf49cf4bafbeedf8115560d65b18784f85f766d4a19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d77b5b2a78cd3daed2ec8c08f8dd4f141b63c3ccb35306fd00bffd8d34c98bcd"
+    sha256 cellar: :any,                 arm64_linux:       "88385e1e266da4be7a885ffda32cbba88c129d41a76147fedfab2992faaed312"
+    sha256 cellar: :any,                 x86_64_linux:      "af6dbe87fc8c28b22ce36928aedd156f3dea338523e5699885bab3b857be2d16"
   end
 
   depends_on "rust" => :build

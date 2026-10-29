@@ -3,16 +3,16 @@ class Pipdeptree < Formula
 
   desc "CLI to display dependency tree of the installed Python packages"
   homepage "https://github.com/tox-dev/pipdeptree"
-  url "https://files.pythonhosted.org/packages/7e/43/23b74c4767c90d33271cd8197847c2f58f5ae6372c145127e4ddf3520e4d/pipdeptree-4.2.9.tar.gz"
-  sha256 "58c6557df033e6cb923103e5e07938f4b3397371ac6e155f714b1dc2d462806d"
+  url "https://files.pythonhosted.org/packages/d4/8d/fcd5695b1e3a5202adbbcad5c8ef19caa979a345c08f419d77192d35f3d0/pipdeptree-4.2.10.tar.gz"
+  sha256 "51b8e7fa7b6426074caca57b0bc3c33d6dc4695e2cbf2877f1658d52b83f5126"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "23be1d29250f43cca59dcb9c2504e4f6335bf1e5a237bb4f6f5b68e9304f80d1"
-    sha256 cellar: :any, arm64_tahoe:       "ba423a6a8a407f19a8eebf39f0461f46fde46f7053b184730c2fa422b1d0156d"
-    sha256 cellar: :any, arm64_sequoia:     "084b0dbfc49bd6de359bc7e6963566df6f98d2b2040e66eff2dd15cac9443f4f"
-    sha256 cellar: :any, arm64_linux:       "08aaba3228fdb06269c8f572de65c47672d89ef27bcc669e5908a35dad79c9f3"
-    sha256 cellar: :any, x86_64_linux:      "0234a1dfed8ab734252553c5fd8b6d62bcbacbcdbaba0ee8509ef4385cce36e7"
+    sha256 cellar: :any, arm64_golden_gate: "008da61c8f60585df3d96d7ce430a506d18824555ff9c12fdb76484f1c659edb"
+    sha256 cellar: :any, arm64_tahoe:       "3b3659432ca54355d4c4834be18c2276adb55de8ed79042008b80c0a60c59bc7"
+    sha256 cellar: :any, arm64_sequoia:     "86ddf02330e3bb3b6fcd6f7dca1fd4f9c45f5e0eeaa54f19d6bf1f05c06e618f"
+    sha256 cellar: :any, arm64_linux:       "974c0448b69d9fed84babc6b96dd38cc60f5b036a28292559be85e5ffa256bec"
+    sha256 cellar: :any, x86_64_linux:      "b725b252a41282bdd666d15d62a1fa0ecb1d8e718f7ae0c3de7d47c5af96c2d0"
   end
 
   depends_on "meson" => :build
@@ -39,33 +39,33 @@ class Pipdeptree < Formula
   end
 
   resource "nab" do
-    url "https://files.pythonhosted.org/packages/25/3d/e4c8f4b2890efbf2fa6eef82acf57ecc0ef39b0a1e6843d306d2053a107c/nab-0.0.22.tar.gz"
-    sha256 "a0da54ee96bf1eb1997581566620c250c8a3557139e9467ccaced2a12e9e71ac"
+    url "https://files.pythonhosted.org/packages/3c/a9/e37ba832e0abdc50fdb24c467f19fa16a187dbc52902613d2664263a69ca/nab-0.0.23.tar.gz"
+    sha256 "4754ba4f17faf09930a1b1093faafd641edab00e63fedb4c75e0cf856d13326e"
   end
 
   resource "nab-index" do
-    url "https://files.pythonhosted.org/packages/2a/83/8d2483239b7dc5ac8d9f758db1cc19d4129d0143d34c2e1ab8cd48ea71fb/nab_index-0.0.22.tar.gz"
-    sha256 "5900ea5ad298512379cfddff1a73a544590f0b04620ef58ff345f99a7c59688e"
+    url "https://files.pythonhosted.org/packages/ac/66/b0b6de69648644dbf01c030e56e52980851793b5556b0ba922d58fef6a3b/nab_index-0.0.23.tar.gz"
+    sha256 "c75bbdc3a02ceaf4e7d81f00ef88023b5cc399c8e93e778ce146ea4dfa5ef662"
   end
 
   resource "nab-markersets" do
-    url "https://files.pythonhosted.org/packages/fc/b7/3997893dfdada9998d4dc786c10445a1361e197b4aed54ddd866c84dd538/nab_markersets-0.0.22.tar.gz"
-    sha256 "38212664f517f75d798808ecfe902bfd11fef340042ab0203100c7e06e78eea5"
+    url "https://files.pythonhosted.org/packages/c4/dd/d90ecc6152dca0ea1e6a77f82f135c3642147cc321becf6aea6e526e2781/nab_markersets-0.0.23.tar.gz"
+    sha256 "9ca0b1b5c98b6cf82feecc07c06a558f9e915d17577a747ef05c001210194f60"
   end
 
   resource "nab-project" do
-    url "https://files.pythonhosted.org/packages/65/84/f5197d4044ceda9c6ee3e7aefce154ab616fec632fa1d89cdfaacc665c07/nab_project-0.0.22.tar.gz"
-    sha256 "5f7a1dee5b618149267b2b6233c3a220e45cd6f97bd5ec7f3f48fa7570e9f053"
+    url "https://files.pythonhosted.org/packages/aa/28/435a8d3ad9beb39d2367bcee81c61a97dd169bf00d09be58d508a25a0bf7/nab_project-0.0.23.tar.gz"
+    sha256 "a2a3b842597a21e763dc1642b8adab6d2efd5e6d1307c3c2f6cac4bf7d86d29e"
   end
 
   resource "nab-provider" do
-    url "https://files.pythonhosted.org/packages/94/0d/64fbadae562fefc00257c4f5ec988171d6e6b3ea4363f1da2e8886e80228/nab_provider-0.0.22.tar.gz"
-    sha256 "3f129ab7394bf5eb031152c3535ee74073e2a6b6ae081fb7f5a4d269fcf5f8a0"
+    url "https://files.pythonhosted.org/packages/fa/53/9e3078e0974694e00843ad0bc97dc377553b9a8da6243bf4fe485d04c3f0/nab_provider-0.0.23.tar.gz"
+    sha256 "be51639dd663708893a73692382a8d71c9b77fc5544a7ecddc9415b28d39d814"
   end
 
   resource "nab-resolver" do
-    url "https://files.pythonhosted.org/packages/84/bc/dcbfe5163538b1cc8421797e3f8ff77d79321cbc9943af8065e2c8ae1c09/nab_resolver-0.0.22.tar.gz"
-    sha256 "e005b225213e032858cf4aef3850961aaa1d4ea521428da731f33175ebd3b05f"
+    url "https://files.pythonhosted.org/packages/9f/a5/442183a62cd2b7ca0aef64f774a0da7ae4334feafb234f2ced017f810361/nab_resolver-0.0.23.tar.gz"
+    sha256 "63a36fd319d2de8a244cfca0261452d1d5017ac8ef17b3392fd8daaa3f7e994a"
   end
 
   resource "packaging" do

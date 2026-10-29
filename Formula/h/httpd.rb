@@ -30,6 +30,10 @@ class Httpd < Formula
     depends_on "zlib-ng-compat"
   end
 
+  allow_network_access! :test
+
+  def openssl = deps.map(&:name).find { |d| d.match?(/^openssl(@\d+(\.\d+)*)?$/) }
+
   def install
     # fixup prefix references in favour of opt_prefix references
     inreplace "Makefile.in",
@@ -82,7 +86,7 @@ class Httpd < Formula
                           "--with-libxml2=#{libxml2}",
                           "--with-mpm=prefork",
                           "--with-nghttp2=#{formula_opt_prefix("libnghttp2")}",
-                          "--with-ssl=#{formula_opt_prefix("openssl@4")}",
+                          "--with-ssl=#{formula_opt_prefix(openssl)}",
                           "--with-pcre=#{formula_opt_prefix("pcre2")}/bin/pcre2-config",
                           "--with-z=#{zlib}",
                           "--disable-lua",

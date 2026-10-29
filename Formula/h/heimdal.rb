@@ -48,6 +48,8 @@ class Heimdal < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     if OS.linux?
       odie "Remove JSON resource and corresponding build!" if version > "7.8.0"

@@ -1,17 +1,17 @@
 class SpiffeHelper < Formula
   desc "Tool that can be used to retrieve and manage SVIDs on behalf of a workload"
   homepage "https://github.com/spiffe/spiffe-helper"
-  url "https://ghfast.top/https://github.com/spiffe/spiffe-helper/archive/refs/tags/v0.12.2.tar.gz"
-  sha256 "ccfcce0ae20ab613fb73048189931f52deb996f999561cb1f1681f65fb0705cb"
+  url "https://ghfast.top/https://github.com/spiffe/spiffe-helper/archive/refs/tags/v0.12.3.tar.gz"
+  sha256 "c6307f6c25991c9cd2bddec73f4bbee036d29267f2059c43742db4f44fb2dc78"
   license "Apache-2.0"
   head "https://github.com/spiffe/spiffe-helper.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "89866bcf98dce82fad6212650073811f5058c4a42885acd23eaec1e2e2f01e44"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "89866bcf98dce82fad6212650073811f5058c4a42885acd23eaec1e2e2f01e44"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "89866bcf98dce82fad6212650073811f5058c4a42885acd23eaec1e2e2f01e44"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "008d7736797ed3991143d3f2dcf8b152602ce47beda50fa8f3ed4eedc45d449e"
-    sha256 cellar: :any,                 x86_64_linux:      "b6b872fe25d09fa9b78c5bda24c1dfd511c7ac6054d859c432fbe3a063d2a5af"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "71d72d6ba0b1924581bcc1911cc2b4d38b583f8a7fefa35af64c570eb60f2c21"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "71d72d6ba0b1924581bcc1911cc2b4d38b583f8a7fefa35af64c570eb60f2c21"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "71d72d6ba0b1924581bcc1911cc2b4d38b583f8a7fefa35af64c570eb60f2c21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "6a24748150bcc56b8bbdb26c21ec7f87013dfd0026ae3083aeccd44bad6607e1"
+    sha256 cellar: :any,                 x86_64_linux:      "a84545f8141181b0f83e81df502ab42825d23343e493339b75e03f565291d7fd"
   end
 
   depends_on "go" => :build

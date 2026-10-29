@@ -1,17 +1,17 @@
 class Gotestwaf < Formula
   desc "Tool for API and OWASP attack simulation"
   homepage "https://lab.wallarm.com/test-your-waf-before-hackers/"
-  url "https://ghfast.top/https://github.com/wallarm/gotestwaf/archive/refs/tags/v0.5.10.tar.gz"
-  sha256 "1e16260572ba1932014683b934d2f18df6c06aec960756d51eaedfe7e025a8c1"
+  url "https://ghfast.top/https://github.com/wallarm/gotestwaf/archive/refs/tags/v0.5.11.tar.gz"
+  sha256 "4f80879d0e8e4fc81c98c720f3ee7352f4e50176dac84442124c92ea3a886027"
   license "MIT"
   head "https://github.com/wallarm/gotestwaf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e74cba58101dd2e91fec5aed201dae3b60c8c12df81e9436206fb9ef03a1b72f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e74cba58101dd2e91fec5aed201dae3b60c8c12df81e9436206fb9ef03a1b72f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e74cba58101dd2e91fec5aed201dae3b60c8c12df81e9436206fb9ef03a1b72f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "737e104725e902e5f7af41580c7f279033d14b301ce291cfa9cc8fca1b9510e4"
-    sha256 cellar: :any,                 x86_64_linux:      "56ffc30b55f5005eefbcd3aab1a743fc638f042ee27c03f7ddc78f627ed7cc5f"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "33f76dee16655553540f43ac66859cc5f15eb3b817378dd2c06c5b302d45d007"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "33f76dee16655553540f43ac66859cc5f15eb3b817378dd2c06c5b302d45d007"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "33f76dee16655553540f43ac66859cc5f15eb3b817378dd2c06c5b302d45d007"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "56091edb73c266f609ac6f5f053a8c995fe9b6e6d03d899f3be801ab884ad7a5"
+    sha256 cellar: :any,                 x86_64_linux:      "6b92abd630763516312773a1cefa301e740a66df6d804d76d4b41b3d4c668b6e"
   end
 
   depends_on "go" => :build

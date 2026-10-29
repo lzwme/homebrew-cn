@@ -1,8 +1,8 @@
 class Grafana < Formula
   desc "Gorgeous metric visualizations and dashboards for timeseries databases"
   homepage "https://grafana.com"
-  url "https://ghfast.top/https://github.com/grafana/grafana/archive/refs/tags/v13.2.4.tar.gz"
-  sha256 "fdd57503b5f591e951ea3dff80ab53a41487c3373dc89370da2e36e7bf752f52"
+  url "https://ghfast.top/https://github.com/grafana/grafana/archive/refs/tags/v13.3.0.tar.gz"
+  sha256 "f38dded2a24994e32f408aec2db1d75a4b5d00217d3ba7c3741d44cdffce4f6e"
   license "AGPL-3.0-only"
   head "https://github.com/grafana/grafana.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Grafana < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d4d36e9b8680a2a5f3d35dae7e28d65669818ae577c4aea745d3a99b3412d818"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "11ae5b1dff951e96475aa5031440c11d4207755cf7630d4f0b76488ff6089c1c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b8db76a4d9094c837d1da43ab8aeec591f1c399004aa1146fa2358cc477b8c31"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "de9fd8c8a718ca9ff7a85856bedf4763c778346f9db4f1e8809a93b067f2bae5"
-    sha256 cellar: :any,                 x86_64_linux:      "1f900ef561e17fb7ab66effcec2de43e6b83431454920882fe858f1d3860d462"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "16240c0b2cd286e59e3a675e9cbe5d00b4eee82ecbe43e6b63034cf4ce309f4e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1ed2e5d83f54021befd70b69bd393289d9f518cb9e8b5ace319b1671277ed0cf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ff1e8e6139da129636ff0ed36f5358dcc4a2664c26105b963e8b3609c72d1ee4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "694a90ba9b567ead1859b3f36ed564f8605fb657e9739d556f5aab6dc763fa5e"
+    sha256 cellar: :any,                 x86_64_linux:      "7c5b886f40f7a4f0df60b9fc372bcd606d1d55a2a776731bbb38eee01f1a2f76"
   end
 
   depends_on "go" => :build
@@ -51,6 +51,9 @@ class Grafana < Formula
     system "make", "gen-go"
     system "make", "build-backend"
 
+    # Avoid Nx daemon and plugin worker sockets, which the build sandbox blocks
+    ENV["NX_DAEMON"] = "false"
+    ENV["NX_ISOLATE_PLUGINS"] = "false"
     system "yarn", "build"
 
     os = OS.kernel_name.downcase

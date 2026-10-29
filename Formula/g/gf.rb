@@ -1,19 +1,17 @@
 class Gf < Formula
   desc "App development framework of Golang"
   homepage "https://goframe.org"
-  url "https://ghfast.top/https://github.com/gogf/gf/archive/refs/tags/v2.10.3.tar.gz"
-  sha256 "548e000382e013d853b8b3e360aa48e5bd23689a3a2eb3946d6f0b17e8339c5e"
+  url "https://ghfast.top/https://github.com/gogf/gf/archive/refs/tags/v2.10.4.tar.gz"
+  sha256 "eab11107d1e4f3fbd0d8653c6e998182e99b2a3c42a4f4111c4d2362827a3af0"
   license "MIT"
   head "https://github.com/gogf/gf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a5386d1f21929f2eb45093619ae74508e4e26c1b11f5a89e46f7cf841cab7a41"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0e0edcfe00304ec595cf09c87a682f17b342efb1f44665fdb12badd168b1048b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0e0edcfe00304ec595cf09c87a682f17b342efb1f44665fdb12badd168b1048b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "0e0edcfe00304ec595cf09c87a682f17b342efb1f44665fdb12badd168b1048b"
-    sha256 cellar: :any_skip_relocation, sonoma:            "65792664b36a7a413988eed11b20195f96df59e7419dc6a9382f1781fd2f9b64"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1acc10058b0bc46874f1446064e9d36c6c05d3764cb3ecb99fc072cee683913d"
-    sha256 cellar: :any,                 x86_64_linux:      "7250a6238833281939ed4270d2cd93fa7f4d5d7b37fa09f236fb59bd50d1cb68"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "049464afad56fd974001e708e9973328c4c1b707d897828aa64a10bbb188870d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "049464afad56fd974001e708e9973328c4c1b707d897828aa64a10bbb188870d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "049464afad56fd974001e708e9973328c4c1b707d897828aa64a10bbb188870d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "019256d0615f76ff80b0272f44019aed473ec3e05912129f26bb26de41bd6c01"
+    sha256 cellar: :any,                 x86_64_linux:      "409bd8d350edc7d61e47aac0f9c3d964ef3bb080d8a266676d821ed9da4dd09c"
   end
 
   depends_on "go" => [:build, :test]

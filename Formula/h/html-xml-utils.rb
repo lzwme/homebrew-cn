@@ -20,6 +20,8 @@ class HtmlXmlUtils < Formula
     sha256 cellar: :any,                 x86_64_linux:      "11d2d6aa63b5277ef37dfca8604514407057fd9469c725b6ed39fd5ec3ab9698"
   end
 
+  deny_network_access!
+
   def install
     ENV.append "CFLAGS", "-std=gnu89"
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"

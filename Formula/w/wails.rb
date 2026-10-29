@@ -6,6 +6,11 @@ class Wails < Formula
   license "MIT"
   head "https://github.com/wailsapp/wails.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(:?\.\d+)+)$/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0be646f0154dd387fec816f162703b117730ae6d3a39abce08e58acf97ec364f"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "147319c9b2bba0e960bae4cc69c4fef9cd3019d9a33d3435f3deb9742c963d61"
