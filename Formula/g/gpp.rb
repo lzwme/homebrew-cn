@@ -31,6 +31,8 @@ class Gpp < Formula
     depends_on "automake" => :build
   end
 
+  deny_network_access!
+
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] },

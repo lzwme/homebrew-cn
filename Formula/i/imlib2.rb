@@ -32,6 +32,8 @@ class Imlib2 < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-silent-rules",
                           "--enable-amd64=no",

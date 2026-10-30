@@ -5,6 +5,7 @@ class OpensslAT4 < Formula
   mirror "http://fresh-center.net/linux/misc/openssl-4.1.0.tar.gz"
   sha256 "50c17baf54cb008f6ce42d50deb4b28050a1aad711636cabd4b241c7e90cc2fd"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url "https://openssl-library.org/source/"

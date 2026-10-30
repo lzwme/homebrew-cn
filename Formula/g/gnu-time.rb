@@ -18,6 +18,8 @@ class GnuTime < Formula
 
   uses_from_macos "ruby" => :test
 
+  deny_network_access!
+
   def install
     args = %W[
       --prefix=#{prefix}

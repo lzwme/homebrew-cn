@@ -55,6 +55,8 @@ class Gnucobol < Formula
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"
 
+  deny_network_access!
+
   def install
     # Avoid shim references in binaries on Linux.
     ENV["LD"] = "ld" unless OS.mac?

@@ -1,11 +1,14 @@
 class ClangUml < Formula
   desc "Customizable automatic UML diagram generator for C++ based on Clang"
   homepage "https://github.com/bkryza/clang-uml"
-  url "https://ghfast.top/https://github.com/bkryza/clang-uml/archive/refs/tags/0.6.3.tar.gz"
-  sha256 "6bd077062761e18881b5d4a300993243c09730f0cda449a9920333db6e1fccdd"
   license "Apache-2.0"
   revision 1
-  head "https://github.com/bkryza/clang-uml.git", branch: "master"
+
+  stable do
+    url "https://ghfast.top/https://github.com/bkryza/clang-uml/archive/refs/tags/0.6.3.tar.gz"
+    sha256 "6bd077062761e18881b5d4a300993243c09730f0cda449a9920333db6e1fccdd"
+    depends_on "llvm@22" # TODO: switch to `depends_on "llvm"` in next release
+  end
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "f5cc2099f1a23b73bf3523722a6193ad3149673f537881469431e88c3ac53cf1"
@@ -17,9 +20,13 @@ class ClangUml < Formula
     sha256 cellar: :any, x86_64_linux:      "fbd208536d3b5d16849d7ce2dcfbbf2e0b54033b3d5e3ba5b5c6b1edb82f1b86"
   end
 
+  head do
+    url "https://github.com/bkryza/clang-uml.git", branch: "master"
+    depends_on "llvm"
+  end
+
   depends_on "cmake" => [:build, :test]
   depends_on "pkgconf" => :build
-  depends_on "llvm@22"
   depends_on "yaml-cpp"
 
   def llvm

@@ -26,6 +26,8 @@ class Gearman < Formula
     depends_on "util-linux" # for libuuid
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       --prefix=#{prefix}

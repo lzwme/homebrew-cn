@@ -42,6 +42,8 @@ class Graphicsmagick < Formula
 
   skip_clean :la
 
+  deny_network_access!
+
   def install
     args = %W[
       --disable-openmp

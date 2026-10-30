@@ -4,7 +4,7 @@ class Qscintilla2 < Formula
   url "https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.14.1/QScintilla_src-2.14.1.tar.gz"
   sha256 "dfe13c6acc9d85dfcba76ccc8061e71a223957a6c02f3c343b30a9d43a4cdd4d"
   license "GPL-3.0-only"
-  revision 6
+  revision 7
 
   # The downloads page also lists pre-release versions, which use the same file
   # name format as stable versions. The only difference is that files for
@@ -17,16 +17,16 @@ class Qscintilla2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "877b5c02e7140cb3e1e7d8a449bf49bb19909b16e3ddcfd46ed64f2d39c47cc4"
-    sha256 cellar: :any, arm64_tahoe:       "877b5c02e7140cb3e1e7d8a449bf49bb19909b16e3ddcfd46ed64f2d39c47cc4"
-    sha256 cellar: :any, arm64_sequoia:     "376d54ff3dfa2686a06955ea97c6a9fe611e3cabb15e8eeea6f80ed636f17221"
-    sha256 cellar: :any, arm64_linux:       "6610f9fd5bebc718251f845b621d9c1fecc24bcd28220796aff629c0000f546e"
-    sha256 cellar: :any, x86_64_linux:      "e514894167010803c915bf7a0ff518d6b7edae291d5586db81768380538369ba"
+    sha256 cellar: :any, arm64_golden_gate: "93a24d7ccc16cd7a9f8d60b13454e967e454c53e1cb2acaf8822982e1da2256a"
+    sha256 cellar: :any, arm64_tahoe:       "93a24d7ccc16cd7a9f8d60b13454e967e454c53e1cb2acaf8822982e1da2256a"
+    sha256 cellar: :any, arm64_sequoia:     "56b396fd81246ea9521595ba013b1363c8ed63560d6327bde0085c9a4e3ed40c"
+    sha256 cellar: :any, arm64_linux:       "2d7a069b3bab0c136ca7918ad2391081d519477a95d152121e500b96b57187e7"
+    sha256 cellar: :any, x86_64_linux:      "889d4d702e472f3fc9ef64dde1c3b94e795a5921959fe41ffc40406055c4a787"
   end
 
   depends_on "pyqt" => [:build, :test]
   depends_on "pyqt-builder" => :build
-  depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
   depends_on "qtbase"
 
   def install

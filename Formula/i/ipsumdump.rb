@@ -30,6 +30,8 @@ class Ipsumdump < Formula
   # add missing definition for SIOCGSTAMP to support linux arm build
   patch :DATA
 
+  deny_network_access!
+
   def install
     args = []
     # Help old config scripts identify arm64 linux

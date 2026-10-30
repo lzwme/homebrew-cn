@@ -23,6 +23,8 @@ class Gsasl < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--with-gssapi-impl=mit", *std_configure_args
     system "make", "install"

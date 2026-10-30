@@ -3,8 +3,8 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  url "https://files.pythonhosted.org/packages/40/ed/9ff6eb2510d68671640ee7f305f560d260edd918ffea1bf35c7c788974ef/checkov-3.3.30.tar.gz"
-  sha256 "d827f79e25797d0a54a6643683869dea9893ea06e16e1b81635c9d21c1f0f4a4"
+  url "https://files.pythonhosted.org/packages/18/79/2cd68b26af58038463b51ce0af448a5ceb861732ad829b928648df029aa3/checkov-3.4.0.tar.gz"
+  sha256 "02eb8564e8630ad2622f38079e6765aa187282bd023566536467538000b3b912"
   license "Apache-2.0"
 
   livecheck do
@@ -17,11 +17,11 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9187f37f5d2ad005858a47050fe2c6d05837f8444183354565467d2ce7cbd476"
-    sha256 cellar: :any, arm64_tahoe:       "2d106cd8890c84506867caa95e6746b3656b9da7723dcbf7b3824845149364c3"
-    sha256 cellar: :any, arm64_sequoia:     "e93d44c38c9e1e829596a5f22c08a7b6c2697ff8e015d1096eafd66e7c4488c8"
-    sha256 cellar: :any, arm64_linux:       "4f83a31f38378e57756bde54b6b262ecc5c18e2f1cf606c6721e69d2cb94e72f"
-    sha256 cellar: :any, x86_64_linux:      "218bcb0acbc6ad9f3def30ee43745a89db5df4d8d69666d877703d82d4828cd6"
+    sha256 cellar: :any, arm64_golden_gate: "272df1d441f1f486a8daae2d6272728d5d6803859c06ac98e1cb0f905da2d1db"
+    sha256 cellar: :any, arm64_tahoe:       "76ac2cd75c61237053f84b906ae73cda795a07cc823f13903004ccabbf2d6cc8"
+    sha256 cellar: :any, arm64_sequoia:     "b3d82fdeb4b9966ca499ffa4694d946640d2638a1c60a26352083fc516e98f95"
+    sha256 cellar: :any, arm64_linux:       "53382d66a567dd4ac49e68245cf642ba98d4cbc01e1ea21ca388cad31b272cd9"
+    sha256 cellar: :any, x86_64_linux:      "58e23354fa1f2e636c949e30a4c017c86b21bc0ce1f8ce9e6bb21ca2ae588361"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -154,8 +154,8 @@ class Checkov < Formula
   end
 
   resource "configargparse" do
-    url "https://files.pythonhosted.org/packages/5d/ed/33c0ba7f0b5be384ff8a2101ce77728f219e816b2104819f1651477e1ad5/configargparse-1.8.0.tar.gz"
-    sha256 "22a417f4d7b00149f0af82ef7c491f8ecc4b1d5454633fd319b386f5eb806f92"
+    url "https://files.pythonhosted.org/packages/bc/d9/c591a80cf3335de7820c6762f8ee9298a43da5319803d319e16657b6fdf2/configargparse-1.9.0.tar.gz"
+    sha256 "48d9c22affe4ac419b4dd0691fa929d759e1f99574be41826785f2dbf3da63a5"
   end
 
   resource "contextlib2" do
@@ -269,8 +269,8 @@ class Checkov < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/f9/79/84ddb5ba16c4eb2c69c71db76ae3c579fe546e511f7170c7e27eedbab7c1/multidict-7.1.0.tar.gz"
-    sha256 "61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec"
+    url "https://files.pythonhosted.org/packages/7b/6b/29ef8e752f5854dcc267ded0652c475bec99b86f255957a0d4fcad657b18/multidict-7.2.1.tar.gz"
+    sha256 "e8af3e6f1bdbc31fd762b094133b478b89988eaebc63cbe82b1d9e3bbd15cede"
   end
 
   resource "networkx" do
@@ -294,8 +294,8 @@ class Checkov < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/58/e6/d0abbb256b44e6a05748c6942511ff67db8dbb068de0c35b24bf1b395b09/platformdirs-4.13.5.tar.gz"
-    sha256 "05831adf87d392760f4b5c3a0a95579ab5a10b18b9b9bd43680dcb47544788a0"
+    url "https://files.pythonhosted.org/packages/40/28/1c058a9143d2304b3078f8dadcbb9dc27f7d3581b5d05157c84869c4cc0d/platformdirs-4.14.0.tar.gz"
+    sha256 "83f009c1e8c5fc36869b5171755b291887bd2cade7965233cdfabd23d754720b"
   end
 
   resource "ply" do
@@ -404,8 +404,8 @@ class Checkov < Formula
   end
 
   resource "soupsieve" do
-    url "https://files.pythonhosted.org/packages/5e/77/2dcfa996b01702ab8fd0763d84098f6a640d6162a328f1c04c2697579a1a/soupsieve-3.0.3.tar.gz"
-    sha256 "7dcf6022eed0399eb9934a75e020148f7a2024c37b7dfcd3cf2c5505d69c364e"
+    url "https://files.pythonhosted.org/packages/19/63/0b6bae54546aed98d72f12d09df57b19a287f01c84d22047fa2e23772ab9/soupsieve-3.0.4.tar.gz"
+    sha256 "924fab84ae21604c19e175e1f39815eb6fa83ba23836e09e9de180925e5bc4c0"
   end
 
   resource "spdx-tools" do
@@ -444,8 +444,8 @@ class Checkov < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
-    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
+    url "https://files.pythonhosted.org/packages/ea/01/e5ac23733628a6bbb91913a765fcf55ee8070d8d991bc88fdaaf805052c7/wcwidth-0.9.4.tar.gz"
+    sha256 "fd8d57d3cdfe570e3265c8fab1885c24e34ef40889c0759c0c304a19e9835954"
   end
 
   resource "xmltodict" do
@@ -459,8 +459,8 @@ class Checkov < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/dc/23/655a1802fe8041302c959774ca7c80b53bc24737ff3ef45cb50ef11bd96c/zipp-4.1.1.tar.gz"
-    sha256 "7ebb7a44c021b29fd8dbd7cce6812d0d7b5b454521f93cc71af6ccd155aaa70b"
+    url "https://files.pythonhosted.org/packages/18/05/ba1458dee0ac485b2a01071c1b88f5199fe878a485df482e10e1ef2205cc/zipp-4.1.2.tar.gz"
+    sha256 "cf474b90b07ea932637e17c6b9479de2b2882900b0d311bdaf4f5c000a15a97f"
   end
 
   def install

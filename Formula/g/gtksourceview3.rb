@@ -43,6 +43,8 @@ class Gtksourceview3 < Formula
     depends_on "harfbuzz"
   end
 
+  deny_network_access!
+
   def install
     system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
 

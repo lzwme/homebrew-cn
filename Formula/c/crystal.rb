@@ -5,8 +5,8 @@ class Crystal < Formula
   compatibility_version 2
 
   stable do
-    url "https://ghfast.top/https://github.com/crystal-lang/crystal/archive/refs/tags/1.22.1.tar.gz"
-    sha256 "134da23412c2493ec34ae2dda2d5dc10310d8e0c83ba7463bdc4a4269b392002"
+    url "https://ghfast.top/https://github.com/crystal-lang/crystal/archive/refs/tags/1.22.2.tar.gz"
+    sha256 "fd07dfa5e798b43cdf351494365e039c07fee15326d175c10490ae12e5f69edc"
 
     resource "shards" do
       url "https://ghfast.top/https://github.com/crystal-lang/shards/archive/refs/tags/v0.20.0.tar.gz"
@@ -20,11 +20,11 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b8c19b1df7bd9dd16b144ef8ee10c35706accf7e3b127c802a4d5f99586d890d"
-    sha256 cellar: :any, arm64_tahoe:       "f5d1bcee44666bf4686c04709bc12a37fbc5c7490ff628eca01a223b09814f64"
-    sha256 cellar: :any, arm64_sequoia:     "6028fae331447c2ee14291b1ee636b03ec64edd6684db267b9e2e3922cb60157"
-    sha256 cellar: :any, arm64_linux:       "4f3880b67f59a30c4145ce3e02df1bb22b4d67c344c202d3d32635d4d4cae68f"
-    sha256 cellar: :any, x86_64_linux:      "277702094dd3a298dea87adf5aa2aa4895e4453d5655bd373a4e922f8c693a71"
+    sha256 cellar: :any, arm64_golden_gate: "e4cfba6eaae5bea720b17c929837c9aace083379bacd3b02f95a01ad4e04ff9a"
+    sha256 cellar: :any, arm64_tahoe:       "37051a235ae4a2a308d602e4cc4e79c127d7634e687ea0ae160b7593bf11a641"
+    sha256 cellar: :any, arm64_sequoia:     "4c091d11e0afaa978c9690f59077238502dc36e855030f37221256c6553b1950"
+    sha256 cellar: :any, arm64_linux:       "f233e5198cea3d2552d2b6763e8cc67c89105a8e4f9898d932ab5439f5a4d666"
+    sha256 cellar: :any, x86_64_linux:      "5cb40cdf037c3ed3465f20ca498d08c7362c2ac381c78574f19310b2ea878d29"
   end
 
   head do

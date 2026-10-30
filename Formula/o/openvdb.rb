@@ -1,26 +1,24 @@
 class Openvdb < Formula
   desc "Sparse volumetric data processing toolkit"
   homepage "https://www.openvdb.org/"
-  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/openvdb/archive/refs/tags/v13.2.0.tar.gz"
-  sha256 "505c11d4eb1488518bd4d9a3656b27d547ee1a8b12f601e82407f1ae7dab5d31"
+  url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/openvdb/archive/refs/tags/v14.0.0.tar.gz"
+  sha256 "2c38592a42a9dc1f3e9749418cc9d286d88ed912232dafee954ce5156174e5b0"
   license "MPL-2.0"
   head "https://github.com/AcademySoftwareFoundation/openvdb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "cfade5759a23e26fcdb56fb06831aecdb296a5d1432a34c2ded11b0b7d8136e8"
-    sha256 cellar: :any, arm64_tahoe:       "195e7adc1f59a4c3c0dfa37caca81c32412ada14f418ea1c31478e2a9409e974"
-    sha256 cellar: :any, arm64_sequoia:     "c5031584b40f0e007a269fca58d316e382a9098831789af030fc630fd85737bf"
-    sha256 cellar: :any, arm64_linux:       "c2cdd16e5650b2cf9dd203fa9dcb47c4859fb51bb784be6df680811b714511a0"
-    sha256 cellar: :any, x86_64_linux:      "2dc29130fcef4a0afdf3394e93ba1221e557ea2bfe42a3f9971eb56334754f30"
+    sha256 cellar: :any, arm64_golden_gate: "ea5c68ef31d5d0237ddf5e232c49f02bf944848dde09d11e44c105e9c73f07eb"
+    sha256 cellar: :any, arm64_tahoe:       "35ddf4d68eeba9c4a981780be45c602e5e83ca2d41ecfb36339ff806d34abec6"
+    sha256 cellar: :any, arm64_sequoia:     "a51529bb6a783246010c75e71e318fb50cf9804773346ec76a446d99897f9033"
+    sha256 cellar: :any, arm64_linux:       "dc16e7f6ea3385843ab2cea6a89ff82934be6c1fab679f664f34da87e0bbe0df"
+    sha256 cellar: :any, x86_64_linux:      "41e3e7721db850fa5fdf632a027d183cf329eba77041f385053548d015b4938f"
   end
 
   depends_on "cmake" => :build
 
-  depends_on "boost"
-  depends_on "c-blosc"
   depends_on "jemalloc"
-  depends_on "openexr"
   depends_on "tbb"
+  depends_on "zstd"
 
   on_linux do
     depends_on "zlib-ng-compat"

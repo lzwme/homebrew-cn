@@ -20,6 +20,8 @@ class Kissat < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "406b4eaf9bb50f011363ef603542d6739687619a3bd570da052ad3022b9069d5"
   end
 
+  deny_network_access!
+
   def install
     system "./configure"
     system "make"

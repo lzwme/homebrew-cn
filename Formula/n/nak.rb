@@ -1,8 +1,8 @@
 class Nak < Formula
   desc "CLI for doing all things nostr"
   homepage "https://github.com/fiatjaf/nak"
-  url "https://ghfast.top/https://github.com/fiatjaf/nak/archive/refs/tags/v0.21.2.tar.gz"
-  sha256 "8697267ad1a5a8235f1382ed91437939b2d01167cb46bdc98f1b3a6022db5da5"
+  url "https://ghfast.top/https://github.com/fiatjaf/nak/archive/refs/tags/v0.22.0.tar.gz"
+  sha256 "0c5e774019094a4d1e2ce0023d0a571bacbb6a0f4619821ed476497d0c7b4318"
   license "Unlicense"
   head "https://github.com/fiatjaf/nak.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Nak < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b464e8d43c6a0c2e90daa8db65691fe8f368c8f3ddcedc18b999f827c7c79d97"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b464e8d43c6a0c2e90daa8db65691fe8f368c8f3ddcedc18b999f827c7c79d97"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b464e8d43c6a0c2e90daa8db65691fe8f368c8f3ddcedc18b999f827c7c79d97"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "de7600b60f89a808d9e72e5a0340fe6284d36ae5823046c456d4ffdfc545b04b"
-    sha256 cellar: :any,                 x86_64_linux:      "f5e2e95ce470335798dcd4df87d3713f599d440347dc0dd0fb6d236207adce88"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "28e2ff328e6858c34a5b928d5f9e4e9e67ebf0dc75faa971b7979449891ce31c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "28e2ff328e6858c34a5b928d5f9e4e9e67ebf0dc75faa971b7979449891ce31c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "28e2ff328e6858c34a5b928d5f9e4e9e67ebf0dc75faa971b7979449891ce31c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "0b70b91520282d9cabdcf4a4ca0a0f4cf1df6c77c59387be845bc3cc0c10b13c"
+    sha256 cellar: :any,                 x86_64_linux:      "93c9f5f6414693aebe5cbbc47216f32f7bbcddb59d9ae85ae6d6229cf5a742ff"
   end
 
   depends_on "go" => :build

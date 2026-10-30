@@ -6,15 +6,15 @@ class PyqtBuilder < Formula
   url "https://files.pythonhosted.org/packages/42/90/0aed537919f08cc5bd96e0ad2dc280766f578785ce82a7fa0e6abd22ba17/pyqt_builder-1.20.0.tar.gz"
   sha256 "267ac1ee1593c67884f3c9cb6566f72a92ca28353050fc9d087433c28c74a889"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/Python-PyQt/PyQt-builder.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "238b6f45e514ec8748f2c1f8d75e23baa3fb1fea41fcf27c59ac94e4403d17c7"
+    sha256 cellar: :any_skip_relocation, all: "a7305ccaeb363b43fc9582474a3fc3021f4e08bd5e58db02db7c27831feb8fd4"
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
 
   resource "packaging" do
     url "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz"

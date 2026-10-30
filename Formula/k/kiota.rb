@@ -1,17 +1,17 @@
 class Kiota < Formula
   desc "OpenAPI based HTTP Client code generator"
   homepage "https://aka.ms/kiota/docs"
-  url "https://ghfast.top/https://github.com/microsoft/kiota/archive/refs/tags/v1.36.1.tar.gz"
-  sha256 "e91e748a75d889d202f8fd121bfc04336060fd3f6c84c86ddff182beaa85700a"
+  url "https://ghfast.top/https://github.com/microsoft/kiota/archive/refs/tags/v1.37.0.tar.gz"
+  sha256 "99b389194156d85e8a6497cc8dee95c91fa816c511890b920d8f50bc7910505d"
   license "MIT"
   head "https://github.com/microsoft/kiota.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "76b8ef63aa121512cd98a828bfbf7095f55893d867eaee4b14077fa2f39fe5d9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c62868cdd91e43728fc54faf8ffffe1cb2ce90464e92b6a9c05373e86d27a9c4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "79f1c7ae62a282085c532b82ba20daa680ef5259f2fd77d87db2d2ca4a45e347"
-    sha256 cellar: :any,                 arm64_linux:       "8c0dab92d8eef32b252a96d8ccfe0f9911a01f9f4345d41e0c71eb298a9f2630"
-    sha256 cellar: :any,                 x86_64_linux:      "b1a775eafaf6e40075ce5b0d5dfba52ea1a1a45a98a615575794344924c5a8c5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4c6732d7452a032bed616d71819efa38983da8bd63c10a47bee8f0daa5592e5d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1e3b3f5ca15c919470e2e051e69537454afa69c50103f9678f17edb56dbe7e6e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "65b400bb7614f0f31db196cd565d0d4cc500d55ccaffd42b63f579b5e97579bb"
+    sha256 cellar: :any,                 arm64_linux:       "75eeed6f8c582fb85e8e1f9feaee5a57ee433c2661307432a571227a9e4d6549"
+    sha256 cellar: :any,                 x86_64_linux:      "d639fbbdc21a9ec0dc2e4445050e18ec4f2c7dfc422e7240b7f9ca127f89005e"
   end
 
   depends_on "dotnet"
@@ -19,6 +19,9 @@ class Kiota < Formula
   def install
     # Ignore dotnet version specification and use homebrew one
     rm "global.json"
+
+    # .NET named mutexes need `XDG_RUNTIME_DIR` (or `USER`) on Linux, which build containers may lack
+    ENV["XDG_RUNTIME_DIR"] = buildpath
 
     dotnet = Formula["dotnet"]
 

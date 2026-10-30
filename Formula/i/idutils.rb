@@ -45,6 +45,8 @@ class Idutils < Formula
   # https://savannah.gnu.org/patch/index.php?10240
   patch :DATA
 
+  deny_network_access!
+
   def install
     args = ["--disable-silent-rules", "--with-lispdir=#{elisp}"]
     if OS.linux?

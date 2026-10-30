@@ -49,6 +49,8 @@ class Gtkspell3 < Formula
     depends_on "perl-xml-parser" => :build
   end
 
+  deny_network_access!
+
   def install
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--enable-vala", *std_configure_args

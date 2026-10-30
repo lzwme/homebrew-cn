@@ -30,6 +30,8 @@ class IrcdHybrid < Formula
   # ircd-hybrid needs the .la files
   skip_clean :la
 
+  deny_network_access!
+
   def install
     ENV.deparallelize # build system trips over itself
 

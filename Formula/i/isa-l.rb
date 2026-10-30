@@ -28,6 +28,8 @@ class IsaL < Formula
     depends_on "nasm" => :build
   end
 
+  deny_network_access!
+
   def install
     system "./autogen.sh"
     system "./configure", "--disable-silent-rules", *std_configure_args

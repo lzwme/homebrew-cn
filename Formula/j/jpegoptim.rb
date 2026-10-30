@@ -18,6 +18,8 @@ class Jpegoptim < Formula
 
   depends_on "jpeg-turbo"
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args
     ENV.deparallelize # Install is not parallel-safe

@@ -6,16 +6,15 @@ class MagicWormhole < Formula
   url "https://files.pythonhosted.org/packages/d7/8c/964308aeed7b828ca726da4bbfcc8f2bc89713b39ba768e24ce6331b30f3/magic_wormhole-0.24.0.tar.gz"
   sha256 "c01b4815878e5fbcad7a22cfa190c529349bf271164189a0ad955a34a8d4cde0"
   license "MIT"
-  revision 4
+  revision 5
   head "https://github.com/magic-wormhole/magic-wormhole.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "ec6ec6d8c87d828054e3ada86a449a931d21887f27de98b7c8e3d69987b50ee2"
-    sha256 cellar: :any, arm64_tahoe:       "7bc79ab5f0c6116d942acedb5a7cd5e29a2d4e67211668cf931f4b52a41290d7"
-    sha256 cellar: :any, arm64_sequoia:     "73880ed1653cde4091adc85b118c59c2aef6ab25e0b94557bc034c05a62d7ecf"
-    sha256 cellar: :any, arm64_linux:       "1300bc3e9b247539993908b9ee5a1023fb38c341d9cffa9bc51736d7b2a174e6"
-    sha256 cellar: :any, x86_64_linux:      "949cf09bc12d78daffce64c599c16484d0b5c357762a71ece93fac901dd228e0"
+    sha256 cellar: :any, arm64_golden_gate: "bea209db39c64ccbb8b865eba611e0a67ed1d459da3b78840e1913732e9961d2"
+    sha256 cellar: :any, arm64_tahoe:       "79e80ae6d16ad10a32ed08f7c2dd38e398510e5b61d672126a39e267763314d1"
+    sha256 cellar: :any, arm64_sequoia:     "6a0201309dd456cb71e57cfa5a3916ad4a49006714232be2335f75c2301a4c7f"
+    sha256 cellar: :any, arm64_linux:       "482938789f5dacbf94d4c4ded7686ae3da99c7f83cf75c27e7d1d4806c944a43"
+    sha256 cellar: :any, x86_64_linux:      "e9d1072e9bd34f3ba9fcf7cb28138a03b62f778b9efc098ddfc56abb90523dfa"
   end
 
   depends_on "rust" => :build # for `cbor2`
@@ -33,8 +32,8 @@ class MagicWormhole < Formula
   end
 
   resource "autobahn" do
-    url "https://files.pythonhosted.org/packages/de/73/f109f563c27e048e45d135d81af19e6ca391e24905550b06bd1c9d674c57/autobahn-26.7.1.tar.gz"
-    sha256 "c6949a2c6eb95fb1c218837dbda0a59abbbebafb8b11098551c01a7061dfd245"
+    url "https://files.pythonhosted.org/packages/e5/84/8ea0607facb3c97a3beae3c767213fc716f9ab2f157570dc5aeba1174730/autobahn-26.10.2.tar.gz"
+    sha256 "6c69fca89106567060941c5568e67a5369738813d883db4e3d62b76f0a2c497e"
   end
 
   resource "automat" do
@@ -83,8 +82,8 @@ class MagicWormhole < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/0a/e7/bb605a7bab2d8425a64b3fa762b39dc1bf1c7e3f11ba6fb5413d6db0ff8c/msgpack-1.2.3.tar.gz"
-    sha256 "32edb81a2b5eb7cd7c9d941b2bfbbb082fd2cd09e0e725930316af6b708db186"
+    url "https://files.pythonhosted.org/packages/cc/52/1ec7ead2c7528bf3d1db73e886fa4df10f9e6f0eb7854a448b7090cfcef7/msgpack-1.2.4.tar.gz"
+    sha256 "475c44e12f2a5de766a8448783f149c9b33f3f49b88953c6cd739a77d93c732c"
   end
 
   resource "packaging" do
@@ -153,8 +152,8 @@ class MagicWormhole < Formula
   end
 
   resource "zope-interface" do
-    url "https://files.pythonhosted.org/packages/26/39/a8481b926e42c44a6fcc670904f8251469ec42edbff1ba066719ca1e7fb4/zope_interface-8.6.tar.gz"
-    sha256 "b40ef9b4873afb5d0dec02b8d2dfde1cf18c72337b60c99cb735961e0bac05c0"
+    url "https://files.pythonhosted.org/packages/de/ff/a1f0021a26033da0df223fd05a7455d6d2881b67daf2c6dc897b4fe0a427/zope_interface-8.7.tar.gz"
+    sha256 "0b47b62e8d0d99b24bcdd32f4f2120425e5019c3bee2ad69a0e1d75737487a96"
   end
 
   def install

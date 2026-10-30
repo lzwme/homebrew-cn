@@ -1,8 +1,8 @@
 class Nextdns < Formula
   desc "CLI for NextDNS's DNS-over-HTTPS (DoH)"
   homepage "https://nextdns.io"
-  url "https://ghfast.top/https://github.com/nextdns/nextdns/archive/refs/tags/v1.47.3.tar.gz"
-  sha256 "73a57ff41074d32a7707b751da36c0a618edc6d2b41ddf61ca565222448f567b"
+  url "https://ghfast.top/https://github.com/nextdns/nextdns/archive/refs/tags/v1.49.0.tar.gz"
+  sha256 "71acde630e1941f5e520ce71d6eab0fc2d655e5d1769b22930a73ff354d78069"
   license "MIT"
   head "https://github.com/nextdns/nextdns.git", branch: "master"
 
@@ -12,13 +12,11 @@ class Nextdns < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "68cb458dc94b89846017a72b35760152a046142852bda06c43e3fa63bfbfc207"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "014bc8b37811f6bc5827936cd4feda6ffcf0fa563d198fb0be2248103ad262a2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ac0d0c58752f5b475ea139c3446d3c38746f7b7825ffd1242fa79e4d0f4a085a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "16174e0a63ffa8467741da34813bce6beacca3e474cccd8dfe2c991021f60021"
-    sha256 cellar: :any_skip_relocation, sonoma:            "532df804d80b99bb2af239319aa012329056b836cd21ffd17fb21daa33115ca3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7c0321ff4398c2474b71b737976b25b85af487f7e55e333f52b76df41dcdd2f5"
-    sha256 cellar: :any,                 x86_64_linux:      "e9157dc82c5316d0412345a47d8e750c366cf5fa79dbffa6cb1cf7f6f68f6e8d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c633cd083afd187ac0dc5e4e60c8ee83971f73b8c39414745421fccf1dee3cbb"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e9f653f91d0e23958b0fb229a5dd508adfee01eb96bc1e132bcb45a0f3ff1f49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "80883e168dec66fd24555d953217b79205b9d878ecd599729bef78fd630019cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "cddd49421d3d268cd930eff5d7a2e7e744437cd05be1121e5089b3650a10382f"
+    sha256 cellar: :any,                 x86_64_linux:      "903d5a0ef3e8978dccdfaf0c80091cf9316c3d0de16511f9cccc48b3f539496d"
   end
 
   depends_on "go" => :build

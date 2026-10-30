@@ -26,6 +26,8 @@ class Jbig2dec < Formula
     sha256 "40764aed6c185f1f82123f9e09de8e4d61120e35d2b5c6ede082123749c22d91"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       --disable-dependency-tracking

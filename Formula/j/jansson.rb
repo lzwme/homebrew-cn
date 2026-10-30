@@ -16,6 +16,8 @@ class Jansson < Formula
     sha256 cellar: :any, x86_64_linux:      "f589a116c676bbc84a4b0628f9498080b8a05c5a89490008de69a12a7b12c548"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args
     system "make", "install"

@@ -29,6 +29,8 @@ class GuileFibers < Formula
     depends_on "texinfo" => :build
   end
 
+  deny_network_access!
+
   def install
     system "./autogen.sh"
     system "./configure", *std_configure_args

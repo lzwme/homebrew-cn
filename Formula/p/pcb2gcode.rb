@@ -1,26 +1,10 @@
 class Pcb2gcode < Formula
   desc "Command-line tool for isolation, routing and drilling of PCBs"
   homepage "https://github.com/pcb2gcode/pcb2gcode"
+  url "https://ghfast.top/https://github.com/pcb2gcode/pcb2gcode/archive/refs/tags/v3.1.0.tar.gz"
+  sha256 "1dc10343a16d291c058b3d79e6ded25f13a99584b1b0d572808cd33216358cc1"
   license "GPL-3.0-or-later"
-  revision 1
   head "https://github.com/pcb2gcode/pcb2gcode.git", branch: "master"
-
-  stable do
-    url "https://ghfast.top/https://github.com/pcb2gcode/pcb2gcode/archive/refs/tags/v3.0.4.tar.gz"
-    sha256 "46351d4b7479059becae064cc68f2d1d68d42ae314ff7a1d9a240c71a3c0c98c"
-
-    # Backport fix for newer Boost
-    patch do
-      url "https://github.com/pcb2gcode/pcb2gcode/commit/1120553b454625a888b113d0f1e241f7f379d771.patch?full_index=1"
-      sha256 "f3da7ab233cf12d7d0fa209add3492aed435b5c85f6dd0b89d172f2cc8f3eaac"
-      type :backport
-    end
-    patch do
-      url "https://github.com/pcb2gcode/pcb2gcode/commit/b3e196f97fde0a0c5bf5c9c32c163876d13976e1.patch?full_index=1"
-      sha256 "eb155e538ba346adfb33027e1b3869c81b12aade39b25f1d1709471f749abecd"
-      type :backport
-    end
-  end
 
   livecheck do
     url :stable
@@ -28,21 +12,21 @@ class Pcb2gcode < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "26e8e9c12d30a9a6dc13950743b270eba5c7c593a438ccbd07dab35cb7194eff"
-    sha256 cellar: :any, arm64_tahoe:       "cbe95f92cdb176d5c686ce4cc1bb1daffc7c787c868d34f868c17cc4b854ac4e"
-    sha256 cellar: :any, arm64_sequoia:     "2d32f276420a6405a587a6c5ae851011c441f99ff5e73252bcec33940c9b561f"
-    sha256 cellar: :any, arm64_sonoma:      "e9bbb4b5dda395d3f121db13f2d07e16e9c451820031c8f3b2f69ee39d055c07"
-    sha256 cellar: :any, arm64_linux:       "79db6cfd400cffa86c6e3a5edd88e88bab36f4fdcc4369602b7f0a574ac379b4"
-    sha256 cellar: :any, x86_64_linux:      "2320761478615db219ce64902e39e738397dd7f829214dbe910e35c4d4cf1487"
+    sha256 cellar: :any, arm64_golden_gate: "d7400a9fb093342400b9530044c0fa7fd5980c4be61525285e9f4a68346e9389"
+    sha256 cellar: :any, arm64_tahoe:       "9c6cd81020472d56114ff718e2f892c746efbb4b2569d1f42aca9467c3438862"
+    sha256 cellar: :any, arm64_sequoia:     "8d1608cd5be02000a701da77f6e5c527d0983c9942bd9468a845ba223fe31baf"
+    sha256 cellar: :any, arm64_linux:       "fcc5767aa9c7dbf1c99734af350dac94da76a4c31e52772105c646bae0fba231"
+    sha256 cellar: :any, x86_64_linux:      "a511d7c509d56215b41c3a72e4bc3d741b55b9d3d68f2c9add4d388bdf28af38"
   end
 
   deprecate! date: "2026-08-28", because: "uses deprecated `gerbv` which needs EOL `gtk+`"
   disable! date: "2027-08-28", because: "uses deprecated `gerbv` which needs EOL `gtk+`"
 
   depends_on "cmake" => :build
+  depends_on "nlohmann-json" => :build
   depends_on "pkgconf" => :build
   depends_on "boost"
+  depends_on "geos"
   depends_on "gerbv"
   depends_on "glib"
 

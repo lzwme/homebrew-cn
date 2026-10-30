@@ -1,11 +1,10 @@
 class Mupdf < Formula
   desc "Lightweight PDF and XPS viewer"
   homepage "https://mupdf.com/"
-  url "https://mupdf.com/downloads/archive/mupdf-1.28.5-source.tar.gz"
-  sha256 "98a5c10cda20c3992cdf76ff6b2a1149c32bd79cc796d3f703230b1185b7e934"
+  url "https://mupdf.com/downloads/archive/mupdf-1.28.6-source.tar.gz"
+  sha256 "dc85000640a45d90ca9b77b061f6ca67cce0c4d4fbecf8819647baf573eef101"
   license "AGPL-3.0-or-later"
-  revision 2
-  compatibility_version 8
+  compatibility_version 9
   head "git://git.ghostscript.com/mupdf.git", branch: "master"
 
   livecheck do
@@ -14,11 +13,11 @@ class Mupdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a6a5cb501f9c9cbb8fa411166bb5afc16940adbd7025ac33f51bf244ccacdb66"
-    sha256 cellar: :any, arm64_tahoe:       "9f0f317ba7a22e2b5a1377a1dfb503f36f42eca2858f6b8f79194eb7ef4400a3"
-    sha256 cellar: :any, arm64_sequoia:     "796bc80d48a28a561901f328b342bdb3ff0ce2959cd1e0dac981636756dbcb25"
-    sha256 cellar: :any, arm64_linux:       "a1eb6f72559d80c8692f8bdb805cda7b8f62774b67a1e5d3fa3d0f34c042d28c"
-    sha256 cellar: :any, x86_64_linux:      "628ab83b5e19620831476104a6aac4bf4aa722da382aa54d98fe783c5e637618"
+    sha256 cellar: :any, arm64_golden_gate: "20cfe1b07f88ede830eb6ce3f61ba871f7ad25e20ba7d7f536fae7fafd6aa0a8"
+    sha256 cellar: :any, arm64_tahoe:       "27671ae135295355150e1e4ad690b0cfc77ddb5b0bff7a8a191cee9dbd61999e"
+    sha256 cellar: :any, arm64_sequoia:     "c643e703aeeecf961b3d0346d6ea471ee7e2af49610f27f6965cb7f8b11a84b0"
+    sha256 cellar: :any, arm64_linux:       "55883dc3463fe051e9a9eb0548cf0a9a4f1ea50127d5522b4488888288bc359d"
+    sha256 cellar: :any, x86_64_linux:      "d642a721d68fce684dc1c79f7def57d839fa6300d4429982759118fef70a2909"
   end
 
   depends_on "llvm@21" => :build
@@ -53,8 +52,8 @@ class Mupdf < Formula
   # Currently, some source of mujs is required for building mupdf, so can't use formula
   # Issue ref: https://bugs.ghostscript.com/show_bug.cgi?id=708968
   resource "mujs" do
-    url "https://mujs.com/downloads/mujs-1.3.10.tar.gz"
-    sha256 "6e36c15dbb84ff859320297c900852f241b131a7b6ddaea669ac9a65bd75571c"
+    url "https://mujs.com/downloads/mujs-1.3.11.tar.gz"
+    sha256 "456a395769daf110a30f9bf6f793044261e261481d5dca33b63cdc8714774ca4"
 
     # Resource `livecheck` blocks don't support package references (yet), so we
     # can't use `formula "mujs"` here.

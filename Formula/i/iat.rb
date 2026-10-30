@@ -21,6 +21,8 @@ class Iat < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "5f6c91342941bb21b0ac060ac56c8453578655e499ef758ab2c7366ce2052d47"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}",
                           "--includedir=#{include}/iat"

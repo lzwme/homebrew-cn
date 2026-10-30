@@ -35,6 +35,8 @@ class Icecream < Formula
     depends_on "libcap-ng"
   end
 
+  deny_network_access!
+
   def install
     args = %w[
       --disable-silent-rules

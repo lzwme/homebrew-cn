@@ -21,6 +21,8 @@ class Gqlplus < Formula
   # We also cannot use macOS libedit as it lacks _history_list
   depends_on "libedit"
 
+  deny_network_access!
+
   def install
     ENV.append_to_cflags "-I#{formula_opt_libexec("libedit")}/include"
     ENV.append "LDFLAGS", "-L#{formula_opt_libexec("libedit")}/lib"

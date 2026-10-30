@@ -1,8 +1,8 @@
 class IpinfoCli < Formula
   desc "Official CLI for the IPinfo IP Address API"
   homepage "https://ipinfo.io/"
-  url "https://ghfast.top/https://github.com/ipinfo/cli/archive/refs/tags/ipinfo-3.3.3.tar.gz"
-  sha256 "6227811eb7eb8da2931f66b1d4fe52e664610a101246ca6340a66a02723bce5d"
+  url "https://ghfast.top/https://github.com/ipinfo/cli/archive/refs/tags/ipinfo-3.3.4.tar.gz"
+  sha256 "1cb2eeec72224d527a78e787ab51639d2fcefb21915e10842e66ec4acb699148"
   license "Apache-2.0"
   head "https://github.com/ipinfo/cli.git", branch: "master"
 
@@ -12,11 +12,11 @@ class IpinfoCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "814e82a1ef3a6e357a41ecd8a6acc6271dfef5ca0cba5f389f69f5d8c63604bd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0d7e88fea22be9192c73746717aee4a8dc9315d62fa82fb50088f34439fdfb55"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4d8691d2c4b77907d472598b8b9ab7e755addcff37047b1a1d78b4b2f882fdbf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "99af97f26dd7fa18d5a43a629450886b49b3ddfb52899f48d618a9c0c4094872"
-    sha256 cellar: :any,                 x86_64_linux:      "ce9533de4c89ef2bbfe68577dd2d7cfdf4db510afd4cb5b755e046175ea34fb1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "997776d2a075b800bedadb7f30b11105d140b35da80a8f798ff7d61940d780e9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5ecfb071b20462f6047533b2ba3362eb149c429490c258969531f4d9aeae5465"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e27c413463d04d20cc00a1292b13c7f556dae3d3c4c5d130e6cf9551b7586041"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "01f803952e26050acae7b18aa6870884740cd4a2b586273a76f21110936dc754"
+    sha256 cellar: :any,                 x86_64_linux:      "6138a40bee5081e696f17b0f9a73769b6f45d9b00b948021bfe6089e090e027f"
   end
 
   depends_on "go" => :build

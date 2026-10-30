@@ -26,6 +26,8 @@ class Gcl < Formula
   # https://cgit.git.savannah.gnu.org/cgit/gcl.git/commit/gcl?id=fd8984c0fcdaa45ff4296ebfdf13eddd12c2362b
   patch :DATA
 
+  deny_network_access!
+
   def install
     ENV.append "CPPFLAGS", "-I#{formula_opt_include("libtirpc")}/tirpc"
     ENV["GCL_MULTIPROCESS_MEMORY_POOL"] = buildpath

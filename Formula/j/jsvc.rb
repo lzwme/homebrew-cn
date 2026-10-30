@@ -22,6 +22,8 @@ class Jsvc < Formula
   depends_on "libtool" => :build
   depends_on "openjdk"
 
+  deny_network_access!
+
   def install
     prefix.install %w[NOTICE.txt LICENSE.txt RELEASE-NOTES.txt]
 

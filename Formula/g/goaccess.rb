@@ -34,6 +34,8 @@ class Goaccess < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
     args = %w[
       --enable-utf8

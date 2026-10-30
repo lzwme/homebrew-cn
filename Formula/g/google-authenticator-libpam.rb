@@ -25,8 +25,10 @@ class GoogleAuthenticatorLibpam < Formula
     depends_on "linux-pam"
   end
 
+  deny_network_access!
+
   def install
-    ENV.append "LDFLAGS", "-Wl,-rpath,#{Formula["qrencode"].lib}"
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{formula_opt_lib("qrencode")}"
     system "./bootstrap.sh"
     system "./configure", *std_configure_args,
                           "--disable-silent-rules"

@@ -24,6 +24,8 @@ class Gpgme < Formula
   depends_on "libassuan"
   depends_on "libgpg-error"
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-silent-rules",
                           "--enable-static",

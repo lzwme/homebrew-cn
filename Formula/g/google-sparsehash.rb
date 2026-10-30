@@ -16,6 +16,8 @@ class GoogleSparsehash < Formula
     sha256 "7592cec53ea45a87d7df86e5215747666c85677a1216e701b4c9248e633c65c3"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args
     system "make", "check"

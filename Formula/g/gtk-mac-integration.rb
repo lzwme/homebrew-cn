@@ -43,6 +43,8 @@ class GtkMacIntegration < Formula
   depends_on :macos
   depends_on "pango"
 
+  deny_network_access!
+
   def install
     configure = build.head? ? "./autogen.sh" : "./configure"
 

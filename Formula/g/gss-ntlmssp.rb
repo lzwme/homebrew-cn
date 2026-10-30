@@ -21,6 +21,8 @@ class GssNtlmssp < Formula
   depends_on "openssl@4"
   depends_on "zlib-ng-compat"
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-static",
                           "--without-wbclient",

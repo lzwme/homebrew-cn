@@ -27,6 +27,8 @@ class GnupgAT14 < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     # Work around failure from GCC 10+ using default of `-fno-common`
     # multiple definition of `mpi_debug_mode'; mpicalc.o:(.bss+0x344): first defined here

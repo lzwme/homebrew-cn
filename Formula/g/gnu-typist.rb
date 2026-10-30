@@ -31,6 +31,8 @@ class GnuTypist < Formula
     file "Patches/gnu-typist/2.10.patch"
   end
 
+  deny_network_access!
+
   def install
     # libiconv is not linked properly without this
     ENV.append "LDFLAGS", "-liconv" if OS.mac?

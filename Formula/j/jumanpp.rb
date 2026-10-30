@@ -29,6 +29,8 @@ class Jumanpp < Formula
   depends_on "boost" => :build
   depends_on "gperftools"
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"

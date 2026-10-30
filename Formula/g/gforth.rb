@@ -25,7 +25,10 @@ class Gforth < Formula
 
   depends_on "emacs" => :build
   depends_on "libtool"
+
   uses_from_macos "libffi"
+
+  deny_network_access!
 
   def install
     ENV["MACOSX_DEPLOYMENT_TARGET"] = MacOS.version if OS.mac?

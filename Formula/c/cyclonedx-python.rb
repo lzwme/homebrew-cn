@@ -3,18 +3,17 @@ class CyclonedxPython < Formula
 
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Python projects"
   homepage "https://cyclonedx.org/"
-  url "https://files.pythonhosted.org/packages/02/87/65a331687130bcd70152b345e05b6ec6b81b8d5fb7709e8aab48babcdd32/cyclonedx_bom-7.5.0.tar.gz"
-  sha256 "396cc8c9cb7533d25a21f930b45d2699a1839e3ba2be9ba88f8bd61c566b51dc"
+  url "https://files.pythonhosted.org/packages/c3/0d/4def029d72a4b13635d6eacb239fc554a8a03bc28995c7fa227974b0c079/cyclonedx_bom-7.6.0.tar.gz"
+  sha256 "ab8a8c4cf0d8704f75029f75826993047783b8fd416e7dc3431af54c03e8adab"
   license "Apache-2.0"
   head "https://github.com/CycloneDX/cyclonedx-python.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5b4c28c4f1264ad5bf49f679b0c0c7076e5460eedd01b181014fd258b46619a6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7e08a5ea672139d813b3b05600de1bde09799e298771e5687b1fd6ea6692e4f7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "36d592fdd29a6cc5c1dc02e273a15f2916a8ae78e8b49c6c0e3e5a272cd5db1e"
-    sha256 cellar: :any,                 arm64_linux:       "06c87d2195b2235d88020017855e27995e4b54b56a90d3efe3e0c2a21a33785e"
-    sha256 cellar: :any,                 x86_64_linux:      "a11569067cb55fdd56a2aa8dd69414b11b1a1a42d83d0d1e0ad088026a8a9338"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "96d84e02e867982d035af52b28b7715a08e834ed13703a25ae834f816312554f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e21eb5fe03b4996b3c70d69f9b62ce1550d5b95890af38a2cae089c5070029d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d7038cba6d2c0bd83748578555089e1158bdd29112c3d713df7d78ffcf05cb33"
+    sha256 cellar: :any,                 arm64_linux:       "b4c149b9c43cbb8f4ea5e9d2dd111fc3e32f4c7869e4b22fb3e8aa28fd8dbb30"
+    sha256 cellar: :any,                 x86_64_linux:      "6ca13636866d8973e07a38de78f1ae54c44f13fa1f9fc05b3a1f6e5d8c5208d9"
   end
 
   depends_on "python@3.15"
@@ -41,8 +40,8 @@ class CyclonedxPython < Formula
   end
 
   resource "chardet" do
-    url "https://files.pythonhosted.org/packages/b1/51/cd61c567092a6cec796144510a68aff158ebfc1df82950a45bae65f28413/chardet-7.6.0.tar.gz"
-    sha256 "93d9df6089ded42ed1fe9f57e272c0b74bd0464d45c0c7d50f09f26f31105c3c"
+    url "https://files.pythonhosted.org/packages/47/92/3d893ac5d338b9a9af34c5b517d77492dcea8a10254254eead4215a96f3f/chardet-7.7.0.tar.gz"
+    sha256 "0ba38a05201b0abf7570c12d8af45c30b2af835bd5cc52bfc7105082eda82c1e"
   end
 
   resource "cyclonedx-python-lib" do
@@ -71,8 +70,8 @@ class CyclonedxPython < Formula
   end
 
   resource "jsonpointer" do
-    url "https://files.pythonhosted.org/packages/5a/30/76a208d3eb75a5e2bcfec4e132c207ea1e22253d10b52a06c8ff3839dfc9/jsonpointer-3.2.0.tar.gz"
-    sha256 "807db557622fbe07a0d49e19cf4795a269d55eee5ba345fb9959d148eba5ef94"
+    url "https://files.pythonhosted.org/packages/54/04/e35b34f4e441473e62d82d6ed9a8f748d93d895f4c05d4e645aa0fde51d7/jsonpointer-3.6.tar.gz"
+    sha256 "82e839a3ba3a9e2b54394fda8b3d276c2459d80408d06ef9a6fbc369d7544ffc"
   end
 
   resource "jsonschema" do
@@ -126,8 +125,8 @@ class CyclonedxPython < Formula
   end
 
   resource "python-dateutil" do
-    url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
-    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+    url "https://files.pythonhosted.org/packages/0e/df/f15f80383f152452d8985b36d95cb8751f901a3e0ff4cd27f7e118f168e2/python_dateutil-3.0.0.tar.gz"
+    sha256 "7ebcb3c29a92f3ceafe79a7a48a5c45677e9e004bbeec5742ac0bbb00560b7a2"
   end
 
   resource "referencing" do
@@ -161,8 +160,8 @@ class CyclonedxPython < Formula
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/d9/68/f1b440335057bfce71b6e50a9d09445aa2ecbd08359a337976627b8409e7/tzdata-2026.5.tar.gz"
-    sha256 "8cc73c0a0bfca7dbfa59235d60b2eff82231dee33f53d206db1acd9173cfc0a7"
+    url "https://files.pythonhosted.org/packages/7a/29/6a1391d31cd00ff9e927215a224a880e1e84e826b64ba80a499e51c074d8/tzdata-2026.6.tar.gz"
+    sha256 "85d2cd9c09f81f0bb29db27759fc83af4f1e620efb814f8c5bf8b4cc4feece6d"
   end
 
   resource "uri-template" do

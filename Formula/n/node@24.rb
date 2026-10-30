@@ -4,6 +4,7 @@ class NodeAT24 < Formula
   url "https://registry.npmmirror.com/-/binary/node/v24.22.2/node-v24.22.2.tar.xz"
   sha256 "8fe2ec1723bb9f8d0b683907c82708debbeda64af21cb2aa214c4241eed0a061"
   license "MIT"
+  revision 1
   compatibility_version 1
 
   livecheck do
@@ -12,11 +13,10 @@ class NodeAT24 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "dcb7f0f3ddb9c26e8b8f65ae974f46498dc7837903bd511aad52c4faa7fb08b8"
-    sha256 arm64_tahoe:       "2a46a0b4832ca8a3d362bc79aa5db79a9c62a026b79f3e7913df64e42d3c0092"
-    sha256 arm64_sequoia:     "e81f67452a25c70d9713df3111d6bd97c27b16b61442abe493ed475acb1c3a62"
-    sha256 arm64_linux:       "b375df6e2638a3fd20aa5cd398a1dabfd586dc3b21419b0f97c36a93294664ee"
-    sha256 x86_64_linux:      "bb8bdd005016aed25f739fe4183a2ba9f3d908ca984102bcfdf72eefa1a9a418"
+    sha256 arm64_golden_gate: "a7a4004ef1b317c3ec4ec9a119a4a4e8eec7fbfa96488d1f49c667f939e63194"
+    sha256 arm64_tahoe:       "569634b55b2b44f7aec3abf569ad5553b434626ab600c96413105218c293d98f"
+    sha256 arm64_sequoia:     "7733d5080ec7b317e1c8c235c20b93ee67b9457f7843340f766982a0c47ad26e"
+    sha256 arm64_linux:       "9cac285149de06142132856f567db2b86bf3efe85ae1a939e394475a3e0bfb1e"
   end
 
   keg_only :versioned_formula

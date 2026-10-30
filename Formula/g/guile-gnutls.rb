@@ -31,6 +31,8 @@ class GuileGnutls < Formula
     depends_on "bdw-gc"
   end
 
+  deny_network_access!
+
   def install
     system "./bootstrap" if build.head?
     system "./configure", "--with-guile-site-dir=#{share}/guile/site/3.0",

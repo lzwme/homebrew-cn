@@ -1,10 +1,10 @@
 cask "bitwarden" do
   url_end = on_system_conditional macos: "universal.dmg", linux: "x86_64.AppImage"
 
-  version "2026.10.1"
-  sha256 arm:          "fddc07cd2d97aae9831eefc7586d98913c0773e6f60f5589ba140c44b49e768c",
-         intel:        "fddc07cd2d97aae9831eefc7586d98913c0773e6f60f5589ba140c44b49e768c",
-         x86_64_linux: "bc6f918d4a1a99d004215dd824b3b7c031c4102f68074090431010d84439bc23"
+  version "2026.10.2"
+  sha256 arm:          "f507ff8a5d9a65da787f0eec2a69443133485e951ea93909ce42aed6a2bb5f21",
+         intel:        "f507ff8a5d9a65da787f0eec2a69443133485e951ea93909ce42aed6a2bb5f21",
+         x86_64_linux: "07ce693427984332832be0889e652a74a65c1f0b680cf9fc3684a6fb0458494c"
 
   on_macos do
     depends_on macos: :monterey
@@ -17,10 +17,14 @@ cask "bitwarden" do
     ]
 
     zap trash: [
+      "~/Library/Application Scripts/com.bitwarden.desktop.autofill-extension",
+      "~/Library/Application Scripts/LTZ2PFU5D6.com.bitwarden.desktop",
       "~/Library/Application Support/Bitwarden",
       "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.bitwarden.desktop.sfl*",
       "~/Library/Caches/com.bitwarden.desktop",
       "~/Library/Caches/com.bitwarden.desktop.ShipIt",
+      "~/Library/Containers/com.bitwarden.desktop.autofill-extension",
+      "~/Library/Group Containers/LTZ2PFU5D6.com.bitwarden.desktop",
       "~/Library/Logs/Bitwarden",
       "~/Library/Preferences/ByHost/com.bitwarden.desktop.ShipIt.*.plist",
       "~/Library/Preferences/com.bitwarden.desktop.helper.plist",

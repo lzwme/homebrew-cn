@@ -50,6 +50,8 @@ class Gpa < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     inreplace "configure", "NEED_LIBASSUAN_API=2", "NEED_LIBASSUAN_API=3"
 

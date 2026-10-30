@@ -23,6 +23,8 @@ class Ideviceinstaller < Formula
   depends_on "libplist"
   depends_on "libzip"
 
+  deny_network_access!
+
   def install
     configure = build.head? ? "./autogen.sh" : "./configure"
     system configure, *std_configure_args

@@ -28,6 +28,8 @@ class Julius < Formula
   # https://github.com/julius-speech/julius/pull/184
   patch :DATA
 
+  deny_network_access!
+
   def install
     # Workaround for Xcode 15
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500

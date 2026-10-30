@@ -17,6 +17,8 @@ class GnuWhich < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "c71ab83aed2402d38566a99d30a9421a86fb8bffac25d66f5beeac27a576c096"
   end
 
+  deny_network_access!
+
   def install
     ENV.append "CFLAGS", "-std=gnu17" if DevelopmentTools.clang_build_version >= 1700
 

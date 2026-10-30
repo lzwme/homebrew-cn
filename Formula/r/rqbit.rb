@@ -1,18 +1,17 @@
 class Rqbit < Formula
   desc "Fast command-line bittorrent client and server"
   homepage "https://github.com/ikatson/rqbit"
-  url "https://ghfast.top/https://github.com/ikatson/rqbit/archive/refs/tags/v9.0.1.tar.gz"
-  sha256 "62a42c56259b737eea6580b63061589dc9940b145c40991cfff83470aa783291"
+  url "https://ghfast.top/https://github.com/ikatson/rqbit/archive/refs/tags/v9.1.0.tar.gz"
+  sha256 "5bf15132fa6f7395ea94c7428d53070aaf72f2adb9b5387c27ecd496830abfb3"
   license "Apache-2.0"
   head "https://github.com/ikatson/rqbit.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "62bb2ae7f7c4e50d60cc0a6451e27c65b52f058fc35c7805eadf0da979c6eea3"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2b92188a2fe9685b54265af619f9f9f619507bc372b272e452671010272a5a4f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8e9e0fe8ac528b26d540c2e132b52d2523fbef6492913db129d08b78e494ff87"
-    sha256 cellar: :any,                 arm64_linux:       "6a601699eb076c96eaff3d208172ebcee07877becdf737ac5e72e01abcdb651f"
-    sha256 cellar: :any,                 x86_64_linux:      "209d4e7c338188f569c1f7a0e4d26e640d4f03649d7936f2070b6bc66aae8372"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5424d8dcaa06035c2ef8c61741a4cf5cfbb152c70322bae916cb812b7ccb599f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cfc65b9a5980ce607c476dc6171f4207097d5b74f46420afec2d242ba9cd95a8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a86b8a4944c47bc763a08be24610270f83a1d8c450b2845efd096c4143b37dea"
+    sha256 cellar: :any,                 arm64_linux:       "5915cad2671dc54512c556af877ee9296a3b7f4d1ceb499f1dde223a932f7f12"
+    sha256 cellar: :any,                 x86_64_linux:      "15ee248b2a00d7b1d952d053dd82d2f0529c9e0122184d0e542cfc7b629e23ee"
   end
 
   depends_on "node" => :build

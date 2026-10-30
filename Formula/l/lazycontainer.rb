@@ -1,14 +1,13 @@
 class Lazycontainer < Formula
   desc "Terminal UI for Apple Containers"
   homepage "https://github.com/andreybleme/lazycontainer"
-  url "https://ghfast.top/https://github.com/andreybleme/lazycontainer/archive/refs/tags/v0.0.2.tar.gz"
-  sha256 "b7aa9e050f947c7e99c7059eed75477711e1f558d0b0c90098421bee196e1a64"
+  url "https://ghfast.top/https://github.com/andreybleme/lazycontainer/archive/refs/tags/v0.0.3.tar.gz"
+  sha256 "171388ec6706b67a30bc129addf56910b6fc3a1811f7fae4200a9314e5e834e0"
   license "MIT"
   head "https://github.com/andreybleme/lazycontainer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ed52b1138c61b158bb017797c8708f6580171c5c35066b1810c9f6e59487ecd7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "94c0f11d36ebb2b1bbbb158570ea00e4d77aaa5524a8bae0814c81e3458c7417"
+    sha256 cellar: :any_skip_relocation, all: "da661af9f663b723ceb3433f5da6f21a47e6d3bc278ee279c33f683f9ce81ecf"
   end
 
   depends_on "go" => :build

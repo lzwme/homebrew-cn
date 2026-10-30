@@ -23,6 +23,8 @@ class I2util < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
+  deny_network_access!
+
   def install
     cd "I2util/I2util" do
       system "./bootstrap"

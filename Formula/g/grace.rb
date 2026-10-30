@@ -40,6 +40,8 @@ class Grace < Formula
   depends_on "libxt"
   depends_on "openmotif"
 
+  deny_network_access!
+
   def install
     ENV.O1 # https://github.com/Homebrew/homebrew/issues/27840#issuecomment-38536704
 

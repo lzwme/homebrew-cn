@@ -38,6 +38,8 @@ class Isl < Formula
 
   depends_on "gmp"
 
+  deny_network_access!
+
   def install
     system "./autogen.sh" if build.head?
     system "./configure", "--disable-dependency-tracking",

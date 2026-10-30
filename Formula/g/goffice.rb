@@ -48,6 +48,8 @@ class Goffice < Formula
     depends_on "perl-xml-parser" => :build
   end
 
+  deny_network_access!
+
   def install
     configure = build.head? ? "./autogen.sh" : "./configure"
     system configure, "--disable-silent-rules", *std_configure_args

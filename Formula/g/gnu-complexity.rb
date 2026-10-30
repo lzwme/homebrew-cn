@@ -34,6 +34,8 @@ class GnuComplexity < Formula
     type :unofficial
   end
 
+  deny_network_access!
+
   def install
     odie "check if autoreconf line can be removed" if version > "1.13"
     # regenerate since the files were generated using automake 1.16.1

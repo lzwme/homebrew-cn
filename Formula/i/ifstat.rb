@@ -31,6 +31,8 @@ class Ifstat < Formula
   # Fixes 32/64 bit incompatibility
   patch :DATA
 
+  deny_network_access!
+
   def install
     # Fix compile with newer Clang
     if DevelopmentTools.clang_build_version >= 1403

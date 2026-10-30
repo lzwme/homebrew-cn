@@ -26,6 +26,8 @@ class GnuBarcode < Formula
   # https://lists.gnu.org/archive/html/bug-barcode/2015-06/msg00001.html
   patch :DATA
 
+  deny_network_access!
+
   def install
     system "./configure", "ac_cv_func_calloc_0_nonnull=yes",
                           "--disable-debug",

@@ -18,6 +18,8 @@ class Genext2fs < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
+  deny_network_access!
+
   def install
     system "./autogen.sh"
     system "./configure", "--disable-debug",

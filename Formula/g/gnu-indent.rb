@@ -29,6 +29,8 @@ class GnuIndent < Formula
     depends_on "texinfo" => :build
   end
 
+  deny_network_access!
+
   def install
     if OS.mac?
       ENV.append_to_cflags "-D_DARWIN_C_SOURCE"

@@ -1,19 +1,18 @@
 class Xrootd < Formula
   desc "High performance, scalable, fault-tolerant access to data"
   homepage "https://xrootd.org/"
-  url "https://ghfast.top/https://github.com/xrootd/xrootd/releases/download/v6.2.0/xrootd-6.2.0.tar.gz"
-  sha256 "cf41ba9f56b3baceb4860dfafad50e2f4724062650e125a59b9dbc5ebd6861e0"
+  url "https://ghfast.top/https://github.com/xrootd/xrootd/releases/download/v6.2.1/xrootd-6.2.1.tar.gz"
+  sha256 "43b974c4d2afb6a37687c2d81f0e61c1213fa46470c1da4b2b58e5d6319a6f26"
   license "LGPL-3.0-or-later"
-  revision 2
   compatibility_version 1
   head "https://github.com/xrootd/xrootd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b80ef96e113ac0f161b0f88b3b9421016654a49dc8aab0b2b0398819b0e25645"
-    sha256 cellar: :any, arm64_tahoe:       "cc2e29f7e52fdc0b001d24af62425401915fa34c99a65c6a37d3829ddae5121a"
-    sha256 cellar: :any, arm64_sequoia:     "b6523bd9d607f4f375ab16af08301a05ead38f0c4faa79e85ce497b97d63427b"
-    sha256 cellar: :any, arm64_linux:       "1875cf3765636eee4d5b9c8a7f68493c17c9f2da17949145ec1aa647440f2bd7"
-    sha256 cellar: :any, x86_64_linux:      "89ce60849d20cd76093c3ca64ec8e91cc263b4368467e9808490aca55ddfb73d"
+    sha256 cellar: :any, arm64_golden_gate: "59fc826afe2223aaaa7f032b09e47bc8e2767948c5b61cc7954d539c0745f015"
+    sha256 cellar: :any, arm64_tahoe:       "ff9f3fd7d0afa3b37a17b6d4bb0a68038bc59b9ae309f715b90bc10dff9c5679"
+    sha256 cellar: :any, arm64_sequoia:     "01530b42e1f89e7426c81be37629f5f89bf2cecb2fd5941cca498145c5d8933b"
+    sha256 cellar: :any, arm64_linux:       "03f3a3448d060b9c48d2c0d44c6b126627d0930f6378631c7b636495c8020f59"
+    sha256 cellar: :any, x86_64_linux:      "6275dfbe2fa76a49e7d48a57cd96e654063100a5d56936321ad622741b6396a9"
   end
 
   depends_on "cmake" => :build

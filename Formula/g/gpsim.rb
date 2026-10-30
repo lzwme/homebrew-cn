@@ -39,6 +39,8 @@ class Gpsim < Formula
   # https://sourceforge.net/p/gpsim/bugs/289/
   patch :DATA
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-gui",
                           "--disable-shared",

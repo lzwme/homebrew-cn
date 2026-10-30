@@ -25,6 +25,8 @@ class Gifsicle < Formula
     depends_on "automake" => :build
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       --disable-dependency-tracking

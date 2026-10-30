@@ -18,6 +18,8 @@ class Gperf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "b89551d7e9b6af83d8ff495b7ec376cbf0b73c37b39ee90a4164a115496cd11e"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"

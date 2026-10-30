@@ -32,6 +32,8 @@ class Jnettop < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
     # Fix compile with Clang
     ENV.append_to_cflags "-include stdlib.h"

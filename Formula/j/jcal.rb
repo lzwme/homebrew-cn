@@ -20,6 +20,8 @@ class Jcal < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "deca24243279710d9f91efb98dfed609ace40ffd24b4499e76838ddb690164ad"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--prefix=#{prefix}",
                           "--disable-debug",

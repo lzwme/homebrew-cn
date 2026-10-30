@@ -27,6 +27,8 @@ class GnuProlog < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "fdf61462c5418578e9d629fa743b527b462e6f767fbb64af23db63115a8d39c4"
   end
 
+  deny_network_access!
+
   def install
     cd "src" do
       system "./configure", "--prefix=#{prefix}", "--with-doc-dir=#{doc}"

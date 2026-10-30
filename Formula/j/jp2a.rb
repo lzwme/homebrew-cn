@@ -25,6 +25,8 @@ class Jp2a < Formula
   uses_from_macos "curl"
   uses_from_macos "ncurses"
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"

@@ -25,6 +25,8 @@ class Gnuastro < Formula
   depends_on "libtool"
   depends_on "wcslib"
 
+  deny_network_access!
+
   def install
     args = %W[
       --with-gsl=#{formula_opt_prefix("gsl")}

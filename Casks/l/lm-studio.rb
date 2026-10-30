@@ -4,10 +4,10 @@ cask "lm-studio" do
   os macos: "darwin", linux: "linux"
   url_end = on_system_conditional macos: "dmg", linux: "AppImage"
 
-  version "0.4.26,4"
-  sha256 arm:          "05f75703367022d7975e6431e756e09727037063bb8818d58b36696069258a89",
-         arm64_linux:  "8de222cd9d332496494e28f9863cddc9509802ad213c41e7422f15b9f63416d8",
-         x86_64_linux: "2c62a38a93ad03ca5daaef28804880be167566783ffafc173ce2e1cb10b7552e"
+  version "0.4.27,2"
+  sha256 arm:          "c8682c4dc40788cb353a48e5294ca33cbb4ba5f88c397f06281906576c8c9d65",
+         arm64_linux:  "03ed3d6ded3eadf7ea844e70faa5cc17392c4e1c30be4281ea242374379a3fb8",
+         x86_64_linux: "392a542fe5b4e094a8517af748ddcd6809789a45903700f5ec30fe087d630a96"
 
   on_macos do
     depends_on arch: :arm64
@@ -21,6 +21,7 @@ cask "lm-studio" do
     ]
 
     zap trash: [
+      "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/ai.elementlabs.lmstudio.sfl*",
       "~/Library/Application Support/LM Studio",
       "~/Library/Caches/ai.elementlabs.lmstudio",
       "~/Library/Caches/ai.elementlabs.lmstudio.ShipIt",

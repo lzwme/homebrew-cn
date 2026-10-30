@@ -1,17 +1,17 @@
 class Libuvc < Formula
   desc "Cross-platform library for USB video devices"
   homepage "https://libuvc.github.io/"
-  url "https://ghfast.top/https://github.com/libuvc/libuvc/archive/refs/tags/v0.0.8.tar.gz"
-  sha256 "abe134716f4c53fe60db2004b42adf6af60e64e45808135acfa4311454371ece"
+  url "https://ghfast.top/https://github.com/libuvc/libuvc/archive/refs/tags/v0.0.9.tar.gz"
+  sha256 "825775b21b8558ac2afcbc2561ab1e5081898c9b0296673fcaa7cabb6e94078e"
   license "BSD-3-Clause"
   head "https://github.com/libuvc/libuvc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d5e0b20b74f6584879ef4583c3883afea55ecda85a0280eb60a1a1aad6debf38"
-    sha256 cellar: :any, arm64_tahoe:       "13896ab4b41c9436cd8b9e67a13b7286ce692b0e640a80b9651b00f44e820543"
-    sha256 cellar: :any, arm64_sequoia:     "10e55f1f7eba992ea9b59a9917a091684adfb8b2218b3f549c79d7c86d2aca2d"
-    sha256 cellar: :any, arm64_linux:       "40dd445816f4aebd65feb79922cd0adcf1b75b3142ed1a11b2fb73bacb391489"
-    sha256 cellar: :any, x86_64_linux:      "3de0257f7e76ae8643796a9098c49677818a9f4b31d6da83caad79c726e2d458"
+    sha256 cellar: :any, arm64_golden_gate: "8d0eb73050dc38d7b3f9b1ea67c1bdd3f63b1015e8176b22420f463d66daa8d0"
+    sha256 cellar: :any, arm64_tahoe:       "faa9fad40a8c3996eb1fecc8b7423efc262c2e3ce082bfe9e1419c6666344216"
+    sha256 cellar: :any, arm64_sequoia:     "a79956a7e56ec8daabff9b189021da651e18e9a61d988eb3d07bc620741eb3dc"
+    sha256 cellar: :any, arm64_linux:       "3b6fa7380573054257b010db77ed52cb677b696cb30c1d8b9616ea8ab8487dd7"
+    sha256 cellar: :any, x86_64_linux:      "fbd8a55dcb6621c91e7edc2f4dd09b19757a9721d4fd86810d707d178af6f5bf"
   end
 
   depends_on "cmake" => :build

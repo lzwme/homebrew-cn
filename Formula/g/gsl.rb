@@ -21,6 +21,8 @@ class Gsl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "f7fb92934fa28882ef82232f29289132270d1de558d75452644668a8fdcd630a"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make"

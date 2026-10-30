@@ -37,6 +37,8 @@ class Jed < Formula
 
   depends_on "s-lang"
 
+  deny_network_access!
+
   def install
     args = ["--with-slang=#{formula_opt_prefix("s-lang")}"]
 

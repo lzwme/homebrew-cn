@@ -1,17 +1,17 @@
 class Difftastic < Formula
   desc "Diff that understands syntax"
   homepage "https://difftastic.wilfred.me.uk/"
-  url "https://ghfast.top/https://github.com/Wilfred/difftastic/archive/refs/tags/0.71.0.tar.gz"
-  sha256 "d6afd26103c6492a91307dc6779c7dd0ca4d4c85499f81d7dc53fdfa5107331d"
+  url "https://ghfast.top/https://github.com/Wilfred/difftastic/archive/refs/tags/0.72.0.tar.gz"
+  sha256 "ed8e2d59d44d62289b17c9d241e469bd72565fadf13c260676fc7a23bc28a844"
   license "MIT"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5578ee6094135d736ede1dd69a6017aad8ac8d63dc3ee0e0227e5a2fdd564a7c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c7f055b257d9555a8f43c79df32518dc4f23e68a6294a53418c0915bdebfe2e0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3a87d1b22ad38660211129051f6a3a33fa05528e26a1b4d80f9f7f5c7b41ad7f"
-    sha256 cellar: :any,                 arm64_linux:       "02cb64d0d56cf55db18d6ae838432b1bfa44552968682c1df8623b40d571a5ff"
-    sha256 cellar: :any,                 x86_64_linux:      "2af99f057a86b205a04c4c590ce481a3d22fa60aab4a1f388debc2bbf3c6cf7c"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "723b703f2dd8d40a55b8d25b4281d03910afeadc999e894564e10325629b601e"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9693c05f15d218cac89059bf485fb18184042794d6b11970c285b1baa18ccbc7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ee1042381b293f2e1f013399651970efa781d06830238df8b01f3a63ff8dd2d1"
+    sha256 cellar: :any,                 arm64_linux:       "37022c7048f3db689bc71ee0f47e286da757c390cbb9cb336e017345cfc5229f"
+    sha256 cellar: :any,                 x86_64_linux:      "198745b464c6af1e417e5ae3eb30152792980593a396e5ae36fc1eb156188ede"
   end
 
   depends_on "rust" => :build

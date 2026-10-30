@@ -21,7 +21,7 @@ class Openbao < Formula
   end
 
   depends_on "go" => :build
-  depends_on "node@22" => :build # failed to build with node 23, https://github.com/openbao/openbao/issues/731
+  depends_on "node" => :build
   depends_on "pnpm" => :build
 
   conflicts_with "bao", because: "both install `bao` binaries"
@@ -32,7 +32,6 @@ class Openbao < Formula
   def fetch
     system "go", "mod", "download"
     cd "ui" do
-      ENV.prepend_path "PATH", formula_opt_libexec("node@22")/"bin" # for pnpm
       # Prevent pnpm from downloading another copy due to `packageManager` field
       (buildpath/"ui/pnpm-workspace.yaml").append_lines "managePackageManagerVersions: false"
       system "pnpm", "install", "--frozen-lockfile"
@@ -41,8 +40,14 @@ class Openbao < Formula
 
   def install
     # Build ui assets
+    # FIXME: Poyfill to restore `util.isRegExp` for node 23+: https://github.com/openbao/openbao/issues/731
+    polyfill = <<~JS.chomp.gsub("\n", "; ")
+      import u from 'util'
+      u.isRegExp ??= v => Object.prototype.toString.call(v) === '[object RegExp]'
+    JS
+    ENV["NODE_OPTIONS"] = "--import \"data:text/javascript,#{polyfill}\""
+
     cd "ui" do
-      ENV.prepend_path "PATH", formula_opt_libexec("node@22")/"bin" # for pnpm
       system "pnpm", "--offline", "build"
     end
 

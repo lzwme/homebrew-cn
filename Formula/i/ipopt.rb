@@ -52,6 +52,8 @@ class Ipopt < Formula
     sha256 "b836dbf1208426f4bd93d6d79d632c6f5619054279ac33453825e036a915c675"
   end
 
+  deny_network_access!
+
   def install
     ENV.delete("MPICC")
     ENV.delete("MPICXX")

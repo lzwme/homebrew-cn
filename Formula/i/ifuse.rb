@@ -26,6 +26,8 @@ class Ifuse < Formula
   depends_on "libplist"
   depends_on :linux # on macOS, requires closed-source macFUSE
 
+  deny_network_access!
+
   def install
     if build.head?
       # This file can be generated only if `.git` directory is present

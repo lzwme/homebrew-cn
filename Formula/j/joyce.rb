@@ -28,6 +28,8 @@ class Joyce < Formula
 
   uses_from_macos "libxml2"
 
+  deny_network_access!
+
   def install
     # At the moment Joyces uses and bundles libdsk-1.5.x (dev)
     # while homebrew provides libdsk-1.4.x (stable) so we cannot

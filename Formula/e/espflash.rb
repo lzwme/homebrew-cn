@@ -1,17 +1,16 @@
 class Espflash < Formula
   desc "Serial flasher utility for Espressif SoCs and modules based on esptool.py"
   homepage "https://github.com/esp-rs/espflash"
-  url "https://ghfast.top/https://github.com/esp-rs/espflash/archive/refs/tags/v4.6.0.tar.gz"
-  sha256 "4d6fd3b57e7fc33480df9e4db403352632a3d8af486ed2721a8f5ab3c666195e"
+  url "https://ghfast.top/https://github.com/esp-rs/espflash/archive/refs/tags/v4.7.0.tar.gz"
+  sha256 "c8ded03faad091d502b9c4d755e4b04636a7a9ee721baa6bf1492075fc8224c4"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e8425192ff7e3a6210e59ccc49ee1bb0021c9046678d4b82fc35fa763aa675f4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "19f6cf57497f07dff52a61dbc31aec618ea6e946b70f1bbbafd73f00bc8380eb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "daec5d703b1ce85de1005bf3e5e700ed2d75c68eb0807ab39ef116c13b02e063"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "ef2f86c72c70059749bcd396a86910222d7ae2db071d5ae1e8fc51c7c838f4a1"
-    sha256 cellar: :any,                 arm64_linux:       "d947eea930a202bb3b5db2ad6673bed2dc00f60d9e48dfe27038b34f46f4bb7e"
-    sha256 cellar: :any,                 x86_64_linux:      "c42646ec9fd642369f1fb92d1dc35994de22f9d6502859512d2c7c0736824bcf"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4527ea31980a49e3dc6bb7ada57450bd49ac4892421e989a5c8eb265c9584ab8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0544da064806152aa6786c550cb4011c0396f574b3c95ed00d3044cbaaaf3ba6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c83b49d2e8b761d2456455cf7b9814777dcb5801603af4c2b52ff337eb0f10ea"
+    sha256 cellar: :any,                 arm64_linux:       "ecfd70c42a65b769501b84cd849ffd04c011d50e322efd81a6bb036e71d712f1"
+    sha256 cellar: :any,                 x86_64_linux:      "d81e66fe918a2d697d5c8ccb4ca3285b3db72c0c080cf10f3f5dccb845694c73"
   end
 
   depends_on "pkgconf" => :build

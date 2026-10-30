@@ -1,10 +1,9 @@
 class Nim < Formula
   desc "Statically typed compiled systems programming language"
   homepage "https://nim-lang.org/"
-  url "https://nim-lang.org/download/nim-2.2.12.tar.xz"
-  sha256 "2639a06a5ea7a7fcf57df1e7e1ef4d1b2bee58c7ac9bd00dbd2aa5bea1e5a56a"
+  url "https://nim-lang.org/download/nim-2.4.0.tar.xz"
+  sha256 "4fa00853bc6ac92ebdd924d8e2ce42509d3f708d76a3ffcc034e16288e0e0325"
   license "MIT"
-  revision 1
   compatibility_version 1
   head "https://github.com/nim-lang/Nim.git", branch: "devel"
 
@@ -14,11 +13,11 @@ class Nim < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4d2df55b1cf0c4978b44bbf4ff1814b6c3670062e2088b61aa0c7663d6176d75"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e2b09f464acfc030f26c79aad90f07bc112cd286f90689975b028f7a30ac4dcc"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9f6cbe0feedbe93f81d51add47893da2a23f8d72e5c24715e2498e1dcad9756d"
-    sha256 cellar: :any,                 arm64_linux:       "84f955f610307ed247d01510aa163d1db1050dabad370f7236bf75a9b1592d20"
-    sha256 cellar: :any,                 x86_64_linux:      "ff26686250267609cf902c882d7f038478285dd6364c54da6e95a280621d2fcd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "59f47b5ce3259bbc152a308e97fc81aa1b7b15b44f67d547491d5935e90f126b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "870cfb16af54acd490428b90cf1e6b91427d65d2a10008f4e9347093ef7ccc48"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "960bc7cd86d2acfd422caf0f509fb8c165596bcc05e36bb671edfd42f30c782f"
+    sha256 cellar: :any,                 arm64_linux:       "4dd0cdff206d7aac309301d241ebe427104584250af9ae2246ad2f7a336cce88"
+    sha256 cellar: :any,                 x86_64_linux:      "493fdba051c04c38ee4bb898c7dbf685b0cac29d157a2d30e3c363f326029022"
   end
 
   depends_on "help2man" => :build
@@ -28,6 +27,9 @@ class Nim < Formula
   end
 
   conflicts_with "atlas", "mongodb-atlas-cli", because: "both install `atlas` executable"
+
+  # Drop initializers added to `nre.nim` in 2.4.0 so the `pcre2` patches below apply
+  patch :DATA
 
   # Replace `pcre` with `pcre2` using commits from an unmerged upstream PR
   patch do
@@ -126,3 +128,53 @@ class Nim < Formula
     assert_equal "name: \"hello\"\n", shell_output("#{bin}/nimble dump").lines.first
   end
 end
+
+__END__
+--- a/lib/impure/nre.nim
++++ b/lib/impure/nre.nim
+@@ -247,7 +247,6 @@
+     `=destroy`(pattern.captureNameToId)
+ 
+ proc getinfo[T](pattern: Regex, opt: cint): T =
+-  result = default(T)
+   let retcode = pcre.fullinfo(pattern.pcreObj, pattern.pcreExtra, opt, addr result)
+ 
+   if retcode < 0:
+@@ -281,8 +280,8 @@
+     new(result, destroyRegex)
+   result.pattern = pattern
+ 
+-  var errorMsg: cstring = ""
+-  var errOffset: cint = 0
++  var errorMsg: cstring
++  var errOffset: cint
+ 
+   result.pcreObj = pcre.compile(cstring(pattern),
+                                 # better hope int is at least 4 bytes..
+@@ -294,7 +293,7 @@
+ 
+   if study:
+     var options: cint = 0
+-    var hasJit: cint = cint(0)
++    var hasJit: cint
+     if pcre.config(pcre.CONFIG_JIT, addr hasJit) == 0:
+       if hasJit == 1'i32:
+         options = pcre.STUDY_JIT_COMPILE
+@@ -319,7 +318,7 @@
+     return true
+ 
+   # get flags from build config
+-  var confFlags: cint = cint(0)
++  var confFlags: cint
+   if pcre.config(pcre.CONFIG_NEWLINE, addr confFlags) != 0:
+     assert(false, "CONFIG_NEWLINE apparently got screwed up")
+ 
+@@ -579,7 +578,7 @@
+     pcre.UTF8) > 0u32
+   let strlen = if endpos == int.high: str.len else: endpos+1
+   var offset = start
+-  var match: Option[RegexMatch] = default(Option[RegexMatch])
++  var match: Option[RegexMatch]
+   var neverMatched = true
+ 
+   while true:

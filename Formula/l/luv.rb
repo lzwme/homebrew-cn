@@ -1,18 +1,18 @@
 class Luv < Formula
   desc "Bare libuv bindings for lua"
   homepage "https://github.com/luvit/luv"
-  url "https://ghfast.top/https://github.com/luvit/luv/archive/refs/tags/1.53.0-0.tar.gz"
-  sha256 "bd393b5918f320c79a2c6405e3abebe01c024557c32b9fb9006bee20ce71e19e"
+  url "https://ghfast.top/https://github.com/luvit/luv/archive/refs/tags/1.53.0-1.tar.gz"
+  sha256 "e7d7c872637560e9e9ac0cdcaad1b06c4058152fb0eb9d039f38612b183d01a7"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/luvit/luv.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "096b0bbf0266140e535f699c2ee381a0136ecdd2a81e5000de41c9c0f7800673"
-    sha256 cellar: :any, arm64_tahoe:       "7db8ef065a98ddd04c6cb278341272c334d1e0f4b2995fd6aac3785623ac68b7"
-    sha256 cellar: :any, arm64_sequoia:     "a02d7d48c9b7296b4400f076acfd5221aa7cbb4a3cce1e97fc6db717bfbec835"
-    sha256 cellar: :any, arm64_linux:       "25fa572d4abea7342d734784ae12f3929613028e9364aede242a2dde38083e1c"
-    sha256 cellar: :any, x86_64_linux:      "2273b3e364326468f16e90e6c06c7da8baa8a6953062f52a0e8993e0e7697910"
+    sha256 cellar: :any, arm64_golden_gate: "c7feef2e5f46fdff6938d2441eaf4887a471a6de27d12acfe45a315013c27087"
+    sha256 cellar: :any, arm64_tahoe:       "5d5ad73e60e824d7389316ef9a8dd011f2fdb1c340d4768df8e61eb247f230db"
+    sha256 cellar: :any, arm64_sequoia:     "e45eba813ec01282a98ab1ea8df8c1cc66fe691694b262ceed5da32565af0fd0"
+    sha256 cellar: :any, arm64_linux:       "26fff14b6e3453f50ac599fa5e8748eb5008cd5591c304254d2a45fab2ebbb5e"
+    sha256 cellar: :any, x86_64_linux:      "e947ce69495c53720579adabef7684baca25179c5469af8e42212b616a533c6b"
   end
 
   depends_on "cmake" => :build

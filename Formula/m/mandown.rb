@@ -1,19 +1,16 @@
 class Mandown < Formula
   desc "Man-page inspired Markdown viewer"
   homepage "https://github.com/Titor8115/mandown"
-  url "https://ghfast.top/https://github.com/Titor8115/mandown/archive/refs/tags/v1.0.5.2.tar.gz"
-  sha256 "9903203fb95364a8b2774fe4eb4260daa725873d8f9a6e079d4c2ace81bede92"
+  url "https://ghfast.top/https://github.com/Titor8115/mandown/archive/refs/tags/v1.1.tar.gz"
+  sha256 "870e3fa2bd6b8ad5d2259e7ef30a69d4faa87ef6cad7b2d8e34dc4944b651335"
   license "GPL-3.0-or-later"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "7b8e24f549f9f71817220faf15ac79e88af1e349e0c06e2dc4848c3bbd508fe8"
-    sha256 cellar: :any,                 arm64_tahoe:       "e0a71f4348614a71714f3bae661966e3bae6c30d234f5b887fbf32953c39efc6"
-    sha256 cellar: :any,                 arm64_sequoia:     "a4d4f41216199da615810de57b142746d9250c1bd358498897b140adf3dc77b5"
-    sha256 cellar: :any,                 arm64_sonoma:      "f70416d10f93c0cb2479202290365d407922ae817919c0dbd9bf962b2403f1fb"
-    sha256 cellar: :any,                 sonoma:            "7f71e396b11bb72dcb1cd7f5e604d5af2c6a2a24b0db14e21280cb54229fb544"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2e62004a89ba8f886aa8b7b2cd31336ed9d40ff699257a9ce3655f6fb7c18556"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "1381bf6e475ce5933e9c36111695f9df2e17073c65e934d518c89cd54c4c74cd"
+    sha256 cellar: :any, arm64_golden_gate: "3b449504af7e4a74813ded40c61badf79bf0d6f4b9aed15b50c26a4472516df9"
+    sha256 cellar: :any, arm64_tahoe:       "67c94490d14924523d9bc259f691e3a03f2f3690fd1afef13b566c8379c1d41b"
+    sha256 cellar: :any, arm64_sequoia:     "ce8872683a7e2b3d9548dffbe16fd41b35ef17f697fc8b4dca2e2d6bd28c84e8"
+    sha256 cellar: :any, arm64_linux:       "40e8f060fd999cc97f247638208efa477b167beb79ea12490fb69b17636105f8"
+    sha256 cellar: :any, x86_64_linux:      "8aa1f669babd02383fa44403a1d1465d9565d80fafc1db71df83d552e0470781"
   end
 
   depends_on "pkgconf" => :build

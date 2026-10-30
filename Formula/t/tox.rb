@@ -3,16 +3,16 @@ class Tox < Formula
 
   desc "Generic Python virtualenv management and test command-line tool"
   homepage "https://tox.wiki/en/latest/"
-  url "https://files.pythonhosted.org/packages/57/c0/cc1ce2c8d5b3eef3c6051e5b73311a09ded0ccb931329a717abaf6cce527/tox-4.67.3.tar.gz"
-  sha256 "54c6cd8e5509ebc2188836a550ada6264759df7f14fd46f613d20fc3d2dedb26"
+  url "https://files.pythonhosted.org/packages/64/bf/c0eb714b28d21c225eec423efc4243d806de64b5678fec6a15e03a361c09/tox-4.67.4.tar.gz"
+  sha256 "6f97945d3ca1c204337aeecd858b178b30fc5cf9d0b0c15aacea12d1c5eb0946"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "951d5f6ffe25cc08a2945820455dfe6b65990bbda5696afb72b268ebc3a69384"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "951d5f6ffe25cc08a2945820455dfe6b65990bbda5696afb72b268ebc3a69384"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "951d5f6ffe25cc08a2945820455dfe6b65990bbda5696afb72b268ebc3a69384"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "0e0ee66a5fb2d851a6cc53645647aabd3ebfebcc6f1c78b32061cb621e2cf15d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0e0ee66a5fb2d851a6cc53645647aabd3ebfebcc6f1c78b32061cb621e2cf15d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7dd4644e6e06a888e0d7d0662922980ef146cca22aaa8cbe7c7568c0e4237592"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7dd4644e6e06a888e0d7d0662922980ef146cca22aaa8cbe7c7568c0e4237592"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7dd4644e6e06a888e0d7d0662922980ef146cca22aaa8cbe7c7568c0e4237592"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ea49e769455e7531d256fdf7c85da6fffc3cfef57a02aad0c8991fd9eb82c898"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ea49e769455e7531d256fdf7c85da6fffc3cfef57a02aad0c8991fd9eb82c898"
   end
 
   depends_on "python@3.15"
@@ -43,8 +43,8 @@ class Tox < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/1a/43/8c4b5fe23f0e119cf4e1b16c2d16240ab9057cdbb138568c91d5a48abf81/platformdirs-4.13.6.tar.gz"
-    sha256 "211d176e24674b5895dedf9021c262bcf9fad008a70610bfb147d4a8d6d8fe1b"
+    url "https://files.pythonhosted.org/packages/35/e9/bf409046a91b6a9ca652e9b0ac3c39481674f6774e23e58b52315516099a/platformdirs-4.13.7.tar.gz"
+    sha256 "f7f351c027d6632c30471124e1fdb6ac0fef9ccc5cbac1b34cb333431b1fc3e1"
   end
 
   resource "pluggy" do
@@ -58,8 +58,8 @@ class Tox < Formula
   end
 
   resource "python-discovery" do
-    url "https://files.pythonhosted.org/packages/8e/3e/0c8cbdb52feeac4a8667ccff3c58fd2568d6d2969db2717ff00a9fdae73a/python_discovery-1.6.6.tar.gz"
-    sha256 "d687024fec55c489e7a465c7f5644300a4d9dbf7727a556a85660536ee922933"
+    url "https://files.pythonhosted.org/packages/a3/0b/908da9ef8a14b600fc188eee8d63ede071996114613721153f6fc9ea3cd5/python_discovery-1.6.7.tar.gz"
+    sha256 "7f7c28568c8ec3d988d8bddbdbec8e65f08e8767e52f734e18b8b498549b9b70"
   end
 
   resource "tomli-w" do

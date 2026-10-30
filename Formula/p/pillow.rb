@@ -1,6 +1,6 @@
 class Pillow < Formula
   desc "Friendly PIL fork (Python Imaging Library)"
-  homepage "https://python-pillow.github.io/"
+  homepage "https://python-pillow.org/"
   url "https://files.pythonhosted.org/packages/ce/a4/9cc30690a394a8305e8be4c9036aa16d0dfddadd09079860b582f562496d/pillow-13.0.0.tar.gz"
   sha256 "cdcd1ba258178f7356d74170c9a81ba4eab6a5d55748bc402a5a2a6fe6be3510"
   license "MIT-CMU"
@@ -15,10 +15,9 @@ class Pillow < Formula
     sha256               x86_64_linux:      "c25e0e751300132842ca1a5bd4774838006751c067c07be47403566e6d55421b"
   end
 
-  depends_on "cmake" => :build
-  depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "pybind11" => :build
+  depends_on "python-setuptools" => :build
   depends_on "python@3.14" => [:build, :test]
   depends_on "python@3.15" => [:build, :test]
   depends_on "freetype"
@@ -36,12 +35,6 @@ class Pillow < Formula
     depends_on "zlib-ng-compat"
   end
 
-  def pythons
-    deps.map(&:to_formula)
-        .select { |f| f.name.match?(/^python@\d\.\d+$/) }
-        .map { |f| f.opt_libexec/"bin/python" }
-  end
-
   # Test webp support
   resource "test-webp", :test do
     url "https://ghfast.top/https://raw.githubusercontent.com/python-pillow/Pillow/refs/heads/main/Tests/images/flower.webp"
@@ -54,6 +47,14 @@ class Pillow < Formula
     sha256 "438dc63eb5aa722f4b23a93ac48cd0c19b7a575865c89e666c86b7ac363cff04"
   end
 
+  deny_network_access!
+
+  def pythons
+    deps.map(&:to_formula)
+        .select { |f| f.name.match?(/^python@\d\.\d+$/) }
+        .map { |f| f.opt_libexec/"bin/python" }
+  end
+
   def install
     ENV["MAX_CONCURRENCY"] = ENV.make_jobs.to_s
     deps.each do |dep|
@@ -64,7 +65,7 @@ class Pillow < Formula
     end
 
     pythons.each do |python|
-      system python, "-m", "pip", "install", *std_pip_args(build_isolation: true),
+      system python, "-m", "pip", "install", *std_pip_args,
                      "-C", "debug=true", # Useful in case of build failures.
                      "-C", "tiff=enable",
                      "-C", "freetype=enable",

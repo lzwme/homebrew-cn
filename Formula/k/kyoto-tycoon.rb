@@ -40,6 +40,8 @@ class KyotoTycoon < Formula
     file "Patches/kyoto-tycoon/ephemeral-ports.patch"
   end
 
+  allow_network_access! :test
+
   def install
     ENV.append_to_cflags "-fpermissive" if OS.linux?
     ENV.append "CXXFLAGS", "-std=c++98"

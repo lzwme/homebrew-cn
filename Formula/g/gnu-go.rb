@@ -26,6 +26,8 @@ class GnuGo < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "99e7447f557b3af1f8c1e56d9a30cbe4315bd9f05ec734fb2fadac5887ab0474"
   end
 
+  deny_network_access!
+
   def install
     # Work around failure from GCC 10+ using default of `-fno-common`
     # multiple definition of `DRAW'; globals.o:(.bss+0x0): first defined here

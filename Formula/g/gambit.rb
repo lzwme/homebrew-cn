@@ -21,8 +21,11 @@ class Gambit < Formula
 
   depends_on "wxwidgets"
 
+  deny_network_access!
+
+  def wxwidgets = deps.find { |dep| dep.name.match?(/^wxwidgets(@\d+(\.\d+)*)?$/) }.to_formula
+
   def install
-    wxwidgets = deps.find { |dep| dep.name.match?(/^wxwidgets(@\d+(\.\d+)*)?$/) }.to_formula
     wx_config = wxwidgets.opt_bin/"wx-config-#{wxwidgets.version.major_minor}"
     system "./configure", "--disable-silent-rules",
                           "--with-wx-config=#{wx_config}",

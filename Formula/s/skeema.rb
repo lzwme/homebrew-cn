@@ -1,19 +1,17 @@
 class Skeema < Formula
   desc "Declarative pure-SQL schema management for MySQL and MariaDB"
   homepage "https://www.skeema.io/"
-  url "https://ghfast.top/https://github.com/skeema/skeema/archive/refs/tags/v1.14.1.tar.gz"
-  sha256 "3c38cbf5aed5dccce918da3fab1be97bbe21ae3422bf74deb9cf40529e1b84b1"
+  url "https://ghfast.top/https://github.com/skeema/skeema/archive/refs/tags/v1.14.2.tar.gz"
+  sha256 "d072315fbb941555b6c009d99ca2079950e5a18d9dffce80f54d4ddc6cc23c44"
   license "Apache-2.0"
   head "https://github.com/skeema/skeema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a8724a598b5070d9e68030cf203b62e972ffa5d0550d7b3e146757e5f58bedf5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "51ca8e90dd79f58b6d91205fc7119eb6fa602a6b40ec776a4acd66a464e85b4e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "51ca8e90dd79f58b6d91205fc7119eb6fa602a6b40ec776a4acd66a464e85b4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "51ca8e90dd79f58b6d91205fc7119eb6fa602a6b40ec776a4acd66a464e85b4e"
-    sha256 cellar: :any_skip_relocation, sonoma:            "d24e03a3c4c65d119f543dcea28cb1e747a7efe5f044a3c18b80d74d65bc6ea4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "19e977df5ef110a1b97291f74cc5202ba89e025fb514f4ce8bbf829cb1a23d1a"
-    sha256 cellar: :any,                 x86_64_linux:      "2fd47fedb6618da28d12b45a419fcd514a203361553e566084190c9b04d8fae4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8d2ddd22b895287001d3c49ea23b86275dcb9d5cee9a5762c3e4cedbe1832ea8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8d2ddd22b895287001d3c49ea23b86275dcb9d5cee9a5762c3e4cedbe1832ea8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8d2ddd22b895287001d3c49ea23b86275dcb9d5cee9a5762c3e4cedbe1832ea8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "445fdd7e72ad07d24dba2ffc7242c003959b2aa04c43fe4ed13a699f49e83815"
+    sha256 cellar: :any,                 x86_64_linux:      "fa2500a2303c441e9bb72a507e08483dc35a31ae7b29d2d36940ca52d1a3089f"
   end
 
   depends_on "go" => :build

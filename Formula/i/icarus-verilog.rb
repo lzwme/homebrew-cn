@@ -44,6 +44,8 @@ class IcarusVerilog < Formula
     resolves "https://github.com/steveicarus/iverilog/pull/1315"
   end
 
+  deny_network_access!
+
   def install
     system "autoconf"
     system "./configure", "--prefix=#{prefix}"

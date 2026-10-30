@@ -30,6 +30,8 @@ class Gaul < Formula
     sha256 "f4f59a0d676b0d58ba068424dfcb2c1715ff9aeaa940cab2daebff323274594c"
   end
 
+  deny_network_access!
+
   def install
     # Run autoreconf to regenerate the configure script and update outdated macros.
     # This ensures that the build system is properly configured on both macOS

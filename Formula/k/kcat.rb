@@ -33,6 +33,8 @@ class Kcat < Formula
   depends_on "libserdes"
   depends_on "yajl"
 
+  deny_network_access!
+
   def install
     system "./configure", "--prefix=#{prefix}",
                           "--enable-json",

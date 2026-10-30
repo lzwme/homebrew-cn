@@ -26,6 +26,8 @@ class Kyua < Formula
 
   uses_from_macos "sqlite"
 
+  deny_network_access!
+
   def install
     ENV.append "CPPFLAGS", "-I#{formula_opt_include("lua")}/lua"
 
@@ -39,7 +41,7 @@ class Kyua < Formula
 
   test do
     kyuafile = testpath/"Kyuafile"
-    kyuafile.write <<~EOF
+    kyuafile.write <<~KYUA
       syntax(2)
 
       test_suite("sanity_check")
@@ -47,10 +49,10 @@ class Kyua < Formula
       atf_test_program{name="atf_test"}
       plain_test_program{name="plain_test"}
       tap_test_program{name="tap_test"}
-    EOF
+    KYUA
 
     atf_test_c = testpath/"atf_test.c"
-    atf_test_c.write <<~EOF
+    atf_test_c.write <<~C
       #include <atf-c.h>
 
       ATF_TC_WITHOUT_HEAD(tc1);
@@ -66,25 +68,25 @@ class Kyua < Formula
 
         return atf_no_error();
       }
-    EOF
+    C
 
     flags = shell_output("pkgconf --cflags --libs atf-c").chomp.split
     system ENV.cc, atf_test_c, "-o", "atf_test", *flags
 
     plain_test = testpath/"plain_test"
-    plain_test.write <<~EOF
+    plain_test.write <<~SH
       #!/bin/sh
       echo "this is a plain test that always passes"
-    EOF
+    SH
     plain_test.chmod(0555)
 
     tap_test = testpath/"tap_test"
-    tap_test.write <<~EOF
+    tap_test.write <<~SH
       #!/bin/sh
       echo "1..2"
       echo "ok 1"
       echo "not ok 2 # SKIP: demonstrates that not ok + SKIP => does not fail"
-    EOF
+    SH
     tap_test.chmod(0555)
 
     system bin/"kyua", "test", "-k", kyuafile

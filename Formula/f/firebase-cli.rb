@@ -1,16 +1,16 @@
 class FirebaseCli < Formula
   desc "Firebase command-line tools"
   homepage "https://firebase.google.com/docs/cli/"
-  url "https://registry.npmjs.org/firebase-tools/-/firebase-tools-15.34.1.tgz"
-  sha256 "1a106a3a99d2d5d7a998c764b753e92cb577b1bf548b624dcfd4ea8a537509fa"
+  url "https://registry.npmjs.org/firebase-tools/-/firebase-tools-15.34.2.tgz"
+  sha256 "55182615d351ec57fd23eb5f7ff0817af30fb63c8c19d212b25fa2e44d1a1be5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f6db5682d42e5cd67b282ce0dedae17ff5b46f98645ef2daa01316245d8d8f50"
-    sha256 cellar: :any, arm64_tahoe:       "f6db5682d42e5cd67b282ce0dedae17ff5b46f98645ef2daa01316245d8d8f50"
-    sha256 cellar: :any, arm64_sequoia:     "f6db5682d42e5cd67b282ce0dedae17ff5b46f98645ef2daa01316245d8d8f50"
-    sha256 cellar: :any, arm64_linux:       "af194c407bdb8c4316a8ebc5f9eefd708eebc2eae55e7a1534bb3932a0bb5ddb"
-    sha256 cellar: :any, x86_64_linux:      "793476e2c2fc93d0a8af1c391dfc304425040c6b9a086826b4870f7da06fc97a"
+    sha256 cellar: :any, arm64_golden_gate: "ccc201ca7e51890e21edd73d6b1683ad251ee155c7627555d7e602607731b4d5"
+    sha256 cellar: :any, arm64_tahoe:       "ccc201ca7e51890e21edd73d6b1683ad251ee155c7627555d7e602607731b4d5"
+    sha256 cellar: :any, arm64_sequoia:     "ccc201ca7e51890e21edd73d6b1683ad251ee155c7627555d7e602607731b4d5"
+    sha256 cellar: :any, arm64_linux:       "27a63141660b9fb42d6fc6a0e38026498e76d0d09cbd2617842554b837d0b55f"
+    sha256 cellar: :any, x86_64_linux:      "dce9a3e50e98681a84689c6924f7ca46e55550a6fd88bb387886c90e00e8846c"
   end
 
   depends_on "node"
@@ -20,7 +20,6 @@ class FirebaseCli < Formula
     bin.install_symlink libexec.glob("bin/*")
 
     node_modules = libexec/"lib/node_modules/firebase-tools/node_modules"
-    deuniversalize_machos node_modules/"fsevents/fsevents.node" if OS.mac?
 
     # Remove incompatible pre-built `bare-fs`/`bare-path`/`bare-os`/`bare-url` binaries
     os = OS.kernel_name.downcase

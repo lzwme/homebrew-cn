@@ -19,7 +19,10 @@ class Ip2location < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+
   uses_from_macos "perl" => :build
+
+  allow_network_access! :test
 
   def install
     # TODO: remove in the next release

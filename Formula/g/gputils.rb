@@ -26,6 +26,8 @@ class Gputils < Formula
     sha256 x86_64_linux:      "980a09d45f616f560b368078822553d130d7630b813d92696fd15f894593bf4b"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
     system "make", "install"

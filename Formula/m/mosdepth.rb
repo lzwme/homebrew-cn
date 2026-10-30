@@ -1,19 +1,17 @@
 class Mosdepth < Formula
   desc "Fast BAM/CRAM depth calculation for WGS, exome, or targeted sequencing"
   homepage "https://github.com/brentp/mosdepth"
-  url "https://ghfast.top/https://github.com/brentp/mosdepth/archive/refs/tags/v0.3.14.tar.gz"
-  sha256 "abac67de4547dc5642efd46846044d6b3536d2ca3443b4ca172446edf82eeb42"
+  url "https://ghfast.top/https://github.com/brentp/mosdepth/archive/refs/tags/v0.3.15.tar.gz"
+  sha256 "7fc4bacd5cd1fecad76c93f08921e32efaad2ebabccd7a65e6f4fdf9095ea08e"
   license "MIT"
   head "https://github.com/brentp/mosdepth.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "203470a7eaccc10122f081e3fc9916d7ce0541fd71c27ea426de5a0b5780bc96"
-    sha256 cellar: :any, arm64_tahoe:       "ab01db3acd22d1cb686cdb38ff9cc5a432c86d843c04af34a5c08a75f5c0030b"
-    sha256 cellar: :any, arm64_sequoia:     "cffc3d89b425592fda027bf10f79ca40419d1c8a037ea215f9ba44d465c445c4"
-    sha256 cellar: :any, arm64_sonoma:      "aea014b3b89a1d585eed3624c034b6017fbbd52e255c64262a87c9b348de1dc4"
-    sha256 cellar: :any, sonoma:            "3cfae40cc1b231281f7742897a8aab277efe32d41c8ae8d4a9bc62795104158c"
-    sha256 cellar: :any, arm64_linux:       "efb4b8a4114263f90c64e5169327da64957e3e2df160475beb13194c21ef4945"
-    sha256 cellar: :any, x86_64_linux:      "7b2f09e1fab11ee2e00ba6f2c5df342cd6c3095f8f92197ffbe12bb1b04fa7ac"
+    sha256 cellar: :any, arm64_golden_gate: "aca29bbd3d039122e9fb5ee700c758d2d31a88ffaa40ef083b8e07b5580a4876"
+    sha256 cellar: :any, arm64_tahoe:       "6fbc754534b3214dac991c1ff6462e3d2c0076ab6398b98f0e26ce174bcbf137"
+    sha256 cellar: :any, arm64_sequoia:     "34f181713614749647b2b7e301b6cdfed540983ef5a81bc6081827b01686d7ec"
+    sha256 cellar: :any, arm64_linux:       "b5986e1b5fe8cb3ac41b162edecfbd51bf49848444737f5cc17617061491ffec"
+    sha256 cellar: :any, x86_64_linux:      "a517cad427a2e1c7129ae2757ff28e6ea17b5d11c1d5c9f276e553637cbc6ef6"
   end
 
   depends_on "nim" => :build
@@ -24,23 +22,41 @@ class Mosdepth < Formula
   # d4 output is intentionally omitted: it needs the out-of-core d4 library,
   # so mosdepth is built without `-d:d4` (all other functionality is present).
   resource "hts-nim" do
-    url "https://ghfast.top/https://github.com/brentp/hts-nim/archive/refs/tags/v0.3.31.tar.gz"
-    sha256 "e2e8572156cced4557fcb75ecf5a7ee072bcc7abf81066d4b54d5bf674dab3e0"
+    url "https://ghfast.top/https://github.com/brentp/hts-nim/archive/refs/tags/v0.3.32.tar.gz"
+    sha256 "98eb4da6140e61e1383946b77451b684865d8b7ea00ddc17a4bf331ee171892d"
+
+    livecheck do
+      url :url
+    end
   end
 
   resource "docopt" do
     url "https://ghfast.top/https://github.com/docopt/docopt.nim/archive/refs/tags/v0.7.1.tar.gz"
     sha256 "a172f7e8be5c10735727ca00f69294e8615c4ad055dd9b58dcdb0f7c6bd7d025"
+
+    # mosdepth pins an exact docopt version
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/brentp/mosdepth/refs/tags/v#{LATEST_VERSION}/mosdepth.nimble"
+      regex(/docopt\s*==\s*v?(\d+(?:\.\d+)+)/i)
+    end
   end
 
   resource "regex" do
-    url "https://ghfast.top/https://github.com/nitely/nim-regex/archive/refs/tags/v0.26.3.tar.gz"
-    sha256 "f237ca8e162cd203c5530f0ca05c0dc3b00288ee190d8ad8efba45cd51a2d4d6"
+    url "https://ghfast.top/https://github.com/nitely/nim-regex/archive/refs/tags/v0.27.0.tar.gz"
+    sha256 "3132a9c3f04b1b8b8ded14228062c815b083d475ab30006fd66604e9484dc47c"
+
+    livecheck do
+      url :url
+    end
   end
 
   resource "unicodedb" do
-    url "https://ghfast.top/https://github.com/nitely/nim-unicodedb/archive/refs/tags/v0.13.2.tar.gz"
-    sha256 "61a994fbdc3f3596e5dd663ca17fe585726da5c5b7059e437087787b3aa9aae2"
+    url "https://ghfast.top/https://github.com/nitely/nim-unicodedb/archive/refs/tags/v0.14.1.tar.gz"
+    sha256 "dc2861b9e19feab099695aa49ffae37f1a3fd1930a536e67ddc02dd917ba560e"
+
+    livecheck do
+      url :url
+    end
   end
 
   def install

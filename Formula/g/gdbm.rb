@@ -21,6 +21,8 @@ class Gdbm < Formula
     sha256               x86_64_linux:      "4c4edca03ef3c629d9849d37084eb16afa5aaaf4b76d004f89c6f43e78af5adb"
   end
 
+  deny_network_access!
+
   def install
     # --enable-libgdbm-compat for dbm.h / gdbm-ndbm.h compatibility:
     #   https://www.gnu.org.ua/software/gdbm/manual/html_chapter/gdbm_19.html

@@ -56,6 +56,8 @@ class GnustepBase < Formula
     resolves "https://github.com/gnustep/libs-base/issues/589"
   end
 
+  deny_network_access!
+
   def install
     ENV.prepend_path "PATH", formula_opt_libexec("gnustep-make")
     ENV["GNUSTEP_MAKEFILES"] = if OS.mac?

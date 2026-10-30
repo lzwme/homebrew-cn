@@ -24,6 +24,8 @@ class Guichan < Formula
     depends_on "mesa-glu"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args
     system "make", "install"

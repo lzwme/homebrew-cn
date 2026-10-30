@@ -1,23 +1,17 @@
 class Libnxml < Formula
   desc "C library for parsing, writing, and creating XML files"
   homepage "https://github.com/bakulf/libnxml"
-  url "https://ghfast.top/https://github.com/bakulf/libnxml/archive/refs/tags/0.18.5.tar.gz"
-  sha256 "263d6424db3cd5f17a9f6300594548e82449ed22af59e9e5534646fa0dabd6a7"
+  url "https://ghfast.top/https://github.com/bakulf/libnxml/archive/refs/tags/0.18.6.tar.gz"
+  sha256 "c6de3c486f37c064eeae7d94e74f8dd25328e23effd8409a26a1170c19203ab4"
   license "LGPL-2.1-or-later"
-  head "https://github.com/bakulf/libnxml.git", branch: "master"
+  head "https://github.com/bakulf/libnxml.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "cebca3da5ce484630add5605fa3f72904be9ed62cf0b6bbefd1e768226574f91"
-    sha256 cellar: :any,                 arm64_tahoe:       "4c39575bded5e30f6417654a6d1eabb5a2812401fe97ff351fb3067f76ab7a8a"
-    sha256 cellar: :any,                 arm64_sequoia:     "3e49138d11e9bb15e135e9387bb4e1f1d55a7daa354b3caa245e9b25a1b5ace0"
-    sha256 cellar: :any,                 arm64_sonoma:      "c7287e418f649ae7a95a152feb06cc43846a286ed8a5b511b490e4a2cac8d341"
-    sha256 cellar: :any,                 arm64_ventura:     "6a57d9af9acf0588b0b58903248f8f116639f043bd6b1716d6592c459da3f658"
-    sha256 cellar: :any,                 arm64_monterey:    "c6887b727e4b7254d5d90c7018cd60c80681624eb0fafe6e8075a8d8313ef6a7"
-    sha256 cellar: :any,                 sonoma:            "b33e1d5aef9bbf9f058740832ee647c7c838c23bc2523105b3e1192059f01ddf"
-    sha256 cellar: :any,                 ventura:           "5025007cfe5e551c8f0fba852bfadf3bc22f9d631548e6fd15c78fad5b927839"
-    sha256 cellar: :any,                 monterey:          "2d3296d3ee6942ded48af843e36539242da4f5fea43cafc406dec3b69f7f5bcb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "aeae7a08c735c217cc5cc14eabddbcc883af5933aba7253e3fa020622a6783f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "63bb969c6efc96d3bc6c97c4e8faa0dc918ed41bdf9d55e25f372f33b4c4d78e"
+    sha256 cellar: :any, arm64_golden_gate: "d63a311d1bf0bf235b8daa053c37e01a85bb3470e74529cf1d82255b64fde8f2"
+    sha256 cellar: :any, arm64_tahoe:       "73226db738bdc3ed56aa6881d2d26d7abff7f6149b14412cb02da556af835d56"
+    sha256 cellar: :any, arm64_sequoia:     "2e09599d025ca50a967eeb385e630589c6755633e49a1456a6c2e73360bf4e67"
+    sha256 cellar: :any, arm64_linux:       "ac69cdb84e9c1476ea4d457b790d43fc62f38cf1dc1ad09e7f6dcbb0be7d3f38"
+    sha256 cellar: :any, x86_64_linux:      "51aab30b0421595917785b80d4efec5e769f859280daf6cd8649ad1737caab95"
   end
 
   depends_on "autoconf" => :build

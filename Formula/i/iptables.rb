@@ -24,6 +24,8 @@ class Iptables < Formula
   depends_on :linux
   depends_on "nftables"
 
+  allow_network_access! :test
+
   def install
     system "./configure", "--disable-silent-rules",
                           "--enable-bpf-compiler",

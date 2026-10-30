@@ -1,20 +1,16 @@
 class AmplAsl < Formula
   desc "AMPL Solver Library"
   homepage "https://ampl.com/"
-  url "https://ghfast.top/https://github.com/ampl/asl/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "57b767161fd95869757daa0761d9b19fa39ad5de4315f95a3c0dff08b0d4c4f2"
+  url "https://ghfast.top/https://github.com/ampl/asl/archive/refs/tags/v1.0.2.tar.gz"
+  sha256 "cf907bcd14ed172d75e3d0fd34f11b3f8e42154d696cf0f8c73e217f5bf149c6"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "fd69c61559a2d9167f4fa68e2a16169edfded0b6123028620c5d310495ffcebd"
-    sha256 cellar: :any,                 arm64_tahoe:       "3e93cfc9570652c4c096b01942081b983ebafff86da8edbaf143992fe5c97338"
-    sha256 cellar: :any,                 arm64_sequoia:     "df57b49399130fbfff59616c73f30a0751241e422bc817013870c339bb213537"
-    sha256 cellar: :any,                 arm64_sonoma:      "80dc283a53e12edbaa054669f376bc5fb6d54f90b4e94d9fa6b4119d46127531"
-    sha256 cellar: :any,                 arm64_ventura:     "d8e6c8531c3fe9794f920361660e8e574a989ffb2be3d9bd2a175c765fce5937"
-    sha256 cellar: :any,                 sonoma:            "63dc38641db70dd681e96b4845458fbe9aed065dd896dca0ef8daba1c98f3724"
-    sha256 cellar: :any,                 ventura:           "60cfa373989ced8460b2d010ee473cf4be786b867f3198edc4f791fef9e80584"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "3b5fcd3e7c6634a5718574b024cec7f43f90085ce233e9d7038c62a5915b351d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6ed2974a2535806181150237068f2125ab75f64fc06644cd972b66278cfb8dda"
+    sha256 cellar: :any, arm64_golden_gate: "36b60c5a7858d4db9ddd2c23829e17f26c92edabc26024d8d2d869275fb2911c"
+    sha256 cellar: :any, arm64_tahoe:       "60f58fc31ee59a4eca8185f57ab627b7df43606e7615dddd9c8b11e35634fac0"
+    sha256 cellar: :any, arm64_sequoia:     "06d1fb1f8166958b8bf53b3b365befbe35273ae9ee2b2f1a308619decdee6e24"
+    sha256 cellar: :any, arm64_linux:       "b9252673d3f768fb0a5e0db566235e3a77fcf881dba0f339d2c50083cacfaeed"
+    sha256 cellar: :any, x86_64_linux:      "c13d846da79122af60e3d0cd85d53dc96aab7206ddbc7d2d896e055426e2acf4"
   end
 
   depends_on "cmake" => :build

@@ -25,6 +25,8 @@ class GnustepMake < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "7828040571e064d2b983a3324119f5232af9fa54da624eb1f52ae2c517aab7d5"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args,
                           "--with-config-file=#{prefix}/etc/GNUstep.conf",

@@ -54,6 +54,8 @@ class Gpredict < Formula
     depends_on "xorg-server" => :test
   end
 
+  deny_network_access!
+
   def install
     if build.head?
       inreplace "autogen.sh", "libtoolize", "glibtoolize"

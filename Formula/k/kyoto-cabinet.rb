@@ -27,6 +27,8 @@ class KyotoCabinet < Formula
 
   patch :DATA
 
+  deny_network_access!
+
   def install
     if OS.linux?
       ENV.append_to_cflags "-I#{formula_opt_include("zlib-ng-compat")}"

@@ -37,6 +37,8 @@ class Jigdo < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     # Find our docbook catalog
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"

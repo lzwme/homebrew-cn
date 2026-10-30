@@ -40,6 +40,8 @@ class Iftop < Formula
   uses_from_macos "libpcap"
   uses_from_macos "ncurses"
 
+  deny_network_access!
+
   def install
     # Work around failure from GCC 10+ using default of `-fno-common`
     # (resolves "multiple definition of `...'" errors)

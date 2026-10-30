@@ -80,6 +80,8 @@ class JohnJumbo < Formula
     resolves "https://github.com/openwall/john/pull/4611"
   end
 
+  deny_network_access!
+
   def install
     ENV.append "CFLAGS", "-DJOHN_SYSTEMWIDE=1"
     ENV.append "CFLAGS", "-DJOHN_SYSTEMWIDE_EXEC='\"#{share}/john\"'"

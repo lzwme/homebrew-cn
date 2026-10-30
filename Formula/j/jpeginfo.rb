@@ -28,6 +28,8 @@ class Jpeginfo < Formula
   depends_on "autoconf" => :build
   depends_on "jpeg-turbo"
 
+  deny_network_access!
+
   def install
     ENV.deparallelize
 

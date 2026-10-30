@@ -22,6 +22,8 @@ class Joe < Formula
 
   conflicts_with "jupp", because: "both install the same binaries"
 
+  deny_network_access!
+
   def install
     # fix implicit declaration errors https://sourceforge.net/p/joe-editor/bugs/408/
     inreplace "joe/tty.c", "#include \"types.h\"", "#include \"types.h\"\n#include <util.h>" if OS.mac?

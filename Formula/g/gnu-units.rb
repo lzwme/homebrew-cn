@@ -18,6 +18,8 @@ class GnuUnits < Formula
 
   depends_on "readline"
 
+  deny_network_access!
+
   def install
     args = %W[
       --prefix=#{prefix}

@@ -30,6 +30,8 @@ class Kvazaar < Formula
     sha256 "a0ab512c66d276fd3932aacdd6073f9734c7e246c8747c48bf5d9dd34ac8b392"
   end
 
+  deny_network_access!
+
   def install
     system "./autogen.sh"
     system "./configure", *std_configure_args

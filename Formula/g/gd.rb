@@ -48,6 +48,8 @@ class Gd < Formula
     resolves "https://github.com/libgd/libgd/pull/766"
   end
 
+  deny_network_access!
+
   def install
     system "./bootstrap.sh" if build.head?
     system "./configure", *std_configure_args,

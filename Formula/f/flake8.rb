@@ -3,14 +3,13 @@ class Flake8 < Formula
 
   desc "Lint your Python code for style and logical errors"
   homepage "https://flake8.pycqa.org/"
-  url "https://files.pythonhosted.org/packages/c2/94/85870fc02dfe4ab0885c440e7e41f6a986b10e43eca6717e90f8ce1215cc/flake8-7.4.1.tar.gz"
-  sha256 "84ea5afcaf344487b0ea5baaebb8100f4cfaebc01f755998f75876664029f587"
+  url "https://files.pythonhosted.org/packages/9a/da/b0d00f8c4c676212284edd3cc3d371588ce0e36a349373c3a01e188b5639/flake8-7.5.0.tar.gz"
+  sha256 "0dab7566341aca0d80aa29b5812bdadf256caa6a63e6068e49ac2649918236a4"
   license "MIT"
   head "https://github.com/PyCQA/flake8.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "6f98b0b600995298f16c2861fde614b40b7933e5e4f6fa68885b3b7b37102c17"
+    sha256 cellar: :any_skip_relocation, all: "4dbbca2d65bf66be8ef49406ef3bea25a63b3330013f9444bafd9c41639d872c"
   end
 
   depends_on "python@3.15"
@@ -26,8 +25,8 @@ class Flake8 < Formula
   end
 
   resource "pyflakes" do
-    url "https://files.pythonhosted.org/packages/2c/1b/3ba8bd62723cfe1b651c4e4b89b33767fce7a08bb800491cf1d3dd3a7716/pyflakes-4.0.3.tar.gz"
-    sha256 "94762a3a5a343a79b28754f96c554bce057a592a4896907d73f0369fe824e053"
+    url "https://files.pythonhosted.org/packages/9b/43/f4566b992ab97abd18426aeba516a83c7a833230614a2c3f4d3e9d8ff0f0/pyflakes-4.1.0.tar.gz"
+    sha256 "592beb57058eb82eb190fb7514f2081c555c51000b029ff71286a681e6cf2f83"
   end
 
   def install

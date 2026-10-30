@@ -1,8 +1,8 @@
 class Gperftools < Formula
   desc "Multi-threaded malloc() and performance analysis tools"
   homepage "https://github.com/gperftools/gperftools"
-  url "https://ghfast.top/https://github.com/gperftools/gperftools/releases/download/gperftools-2.19.1/gperftools-2.19.1.tar.gz"
-  sha256 "4b0ac7a3803868685caa0ca4c190100ad8a302af6eb10b3e7482d36367f97309"
+  url "https://ghfast.top/https://github.com/gperftools/gperftools/releases/download/gperftools-2.19.2/gperftools-2.19.2.tar.gz"
+  sha256 "48a127fa4cf2cf9f2764dddd9340f158245f53b9fe6ab4fbf007ecaf304d8e1a"
   license "BSD-3-Clause"
   compatibility_version 1
 
@@ -13,11 +13,11 @@ class Gperftools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d0dd9a78846de2a079c11cb778b9b6f62e66fa9150c15bb6178dc01bf6e38d7f"
-    sha256 cellar: :any, arm64_tahoe:       "2b58af0b84162b0d46e1d909542658688928f71ae0dee7196d97a55a1987b22e"
-    sha256 cellar: :any, arm64_sequoia:     "3ba1d5dbc2df27877317dd264ee64b1ce919227f2f8ba6a9bad6cb71fb4dab4f"
-    sha256 cellar: :any, arm64_linux:       "e42c1766f0042c368176b368d3bae5bcde2490a6d352c12b0bbc54b9cb13671f"
-    sha256 cellar: :any, x86_64_linux:      "166f2776700e803f5be436177651716f14530370b74df1c4d627c759f09a245c"
+    sha256 cellar: :any, arm64_golden_gate: "58aa206809daf99493855f0c240bd27b18d9f97309001da162b1c80d4297d72c"
+    sha256 cellar: :any, arm64_tahoe:       "6288a03b5f162e1c71c02ed28fb1e52d76fb2a316a8a8ca3c4f48e3226a3bcf6"
+    sha256 cellar: :any, arm64_sequoia:     "6cf12bc4aa6e928f6724fb779c2231643670f72ade811474779274b491785768"
+    sha256 cellar: :any, arm64_linux:       "87f1377bd4ede18792c9c32b5e357a6ec715279d302880f10b018aa5ee0d1d60"
+    sha256 cellar: :any, x86_64_linux:      "c757b7dc358994ed15eea974e7c824242bf7bd1b90509fb6c4b250dcd4bf964c"
   end
 
   head do
@@ -35,6 +35,8 @@ class Gperftools < Formula
     # https://github.com/gperftools/gperftools/blob/master/INSTALL
     depends_on "libunwind"
   end
+
+  deny_network_access!
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?

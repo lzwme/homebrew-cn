@@ -1,6 +1,6 @@
 cask "cleanmymac" do
-  version "5.7.2,50702.0.2610141002"
-  sha256 "f35ce6e1f122d3d4ff029d5bfd3910e1531b71423c883954eeada807f96c2962"
+  version "5.7.3,50703.0.2610281229"
+  sha256 "34809a5113e07e539abcfd77b1fdc5a1eb0c6b721bda9b0c51600fb4d99dedb7"
 
   url "https://updates.cleanmymac.com/com.macpaw.cleanmymac#{version.major}/releases/CleanMyMac#{version.major}_#{version.csv.second}.zip"
   name "CleanMyMac"
@@ -37,10 +37,14 @@ cask "cleanmymac" do
     "/Library/LaunchDaemons/com.macpaw.CleanMyMac#{version.major}.Agent.plist",
     "/Library/PrivilegedHelperTools/com.macpaw.CleanMyMac#{version.major}.Agent",
     "/Users/Shared/CleanMyMac_#{version.major}",
+    "~/Library/Application Scripts/com.macpaw.CleanMyMac#{version.major}.FinderSyncExtension",
     "~/Library/Application Scripts/S8EX82NJP6.com.macpaw.CleanMyMac#{version.major}",
+    "~/Library/Application Scripts/S8EX82NJP6.com.macpaw.CleanMyMac4",
     "~/Library/Application Support/CleanMyMac_#{version.major}",
     "~/Library/Caches/com.macpaw.CleanMyMac#{version.major}",
+    "~/Library/Containers/com.macpaw.CleanMyMac#{version.major}.FinderSyncExtension",
     "~/Library/Group Containers/S8EX82NJP6.com.macpaw.CleanMyMac#{version.major}",
+    "~/Library/Group Containers/S8EX82NJP6.com.macpaw.CleanMyMac4",
     "~/Library/HTTPStorages/com.macpaw.CleanMyMac#{version.major}",
     "~/Library/HTTPStorages/com.macpaw.CleanMyMac#{version.major}.binarycookies",
     "~/Library/LaunchAgents/com.macpaw.CleanMyMac#{version.major}.Updater.plist",

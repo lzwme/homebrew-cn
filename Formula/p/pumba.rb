@@ -1,8 +1,8 @@
 class Pumba < Formula
   desc "Chaos testing tool for Docker"
   homepage "https://github.com/alexei-led/pumba"
-  url "https://ghfast.top/https://github.com/alexei-led/pumba/archive/refs/tags/1.2.1.tar.gz"
-  sha256 "1b4cebc76127d1557cf63a1aa8493506d434321bb55e2b09e65d4f88b8c5707e"
+  url "https://ghfast.top/https://github.com/alexei-led/pumba/archive/refs/tags/1.4.0.tar.gz"
+  sha256 "74f2b50eb62d83ba33ae0a8d6308c44e65a7080f1f5dea46e247f163a48ea393"
   license "Apache-2.0"
   head "https://github.com/alexei-led/pumba.git", branch: "master"
 
@@ -12,13 +12,11 @@ class Pumba < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0c32442d5fd67f9f0478b0d8e255f44b64b3dc175e851d92531abf67dd646a25"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cff1960d49a0be15691339f89e8069d7820d769bf7420e9b5513247b670092b0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cff1960d49a0be15691339f89e8069d7820d769bf7420e9b5513247b670092b0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "cff1960d49a0be15691339f89e8069d7820d769bf7420e9b5513247b670092b0"
-    sha256 cellar: :any_skip_relocation, sonoma:            "306c23343c0854f79b767ed66c55821d2fcf7b1f36de629c0a73e449b3c7de24"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "73142262c8323399cd361b28186cedc1530fbccf2763817b0d780d9336d2e570"
-    sha256 cellar: :any,                 x86_64_linux:      "7c45b4903a52abca7aae91ac96206365e9e1a05e4b371a4d2a6db95aea3b8cd6"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9d7529684b63728b372dfeadf897a91ab1aa23b208edeeae6f04f91d740d9c32"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9d7529684b63728b372dfeadf897a91ab1aa23b208edeeae6f04f91d740d9c32"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9d7529684b63728b372dfeadf897a91ab1aa23b208edeeae6f04f91d740d9c32"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f1185dcd53967d1673498d2afe721b0cd1e3294c90617098ec818a217979763d"
+    sha256 cellar: :any,                 x86_64_linux:      "b051e57932e1846dc09376941ade86e973a80411bc8a955c4cb21ab1bfd69462"
   end
 
   depends_on "go" => :build

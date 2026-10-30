@@ -22,6 +22,8 @@ class GnuShogi < Formula
     sha256                               x86_64_linux:      "7700579666c89c383d66c691c0deb1531fe3af8b886b1b74ed875803862c5223"
   end
 
+  deny_network_access!
+
   def install
     # Work around failure from GCC 10+ using default of `-fno-common`
     # multiple definition of `DRAW'; globals.o:(.bss+0x0): first defined here

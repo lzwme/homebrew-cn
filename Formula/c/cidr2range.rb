@@ -1,8 +1,8 @@
 class Cidr2range < Formula
   desc "Converts CIDRs to IP ranges"
   homepage "https://ipinfo.io"
-  url "https://ghfast.top/https://github.com/ipinfo/cli/archive/refs/tags/cidr2range-3.3.3.tar.gz"
-  sha256 "6e85038d745515b22ed4c19d2400d5d8f7c4d6c9099d6fdf4a88c1d4ad4e1a74"
+  url "https://ghfast.top/https://github.com/ipinfo/cli/archive/refs/tags/cidr2range-3.3.4.tar.gz"
+  sha256 "68c4d30c33d4c2028e30c036b78aca7f8c987a5a83a3d82c515771cdcb2880a9"
   license "Apache-2.0"
   head "https://github.com/ipinfo/cli.git", branch: "master"
 
@@ -12,11 +12,11 @@ class Cidr2range < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "56e6039e2c505b4816817547a268328f3d281aa10c2005801c9c7973d7fac493"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "56e6039e2c505b4816817547a268328f3d281aa10c2005801c9c7973d7fac493"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "56e6039e2c505b4816817547a268328f3d281aa10c2005801c9c7973d7fac493"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "bbf42ecbcb2cc9ac2ca8c3c52e2ac265852ffc8da9d9f55b21d1cf5130c4244b"
-    sha256 cellar: :any,                 x86_64_linux:      "f3aed044873acf8e5e4d904c5f02ab8f342a3297619737894dbedeea2010d611"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ed1f6a33718cd9599007d74182ffb81c8951af956392892065bffcf5df0edde0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ed1f6a33718cd9599007d74182ffb81c8951af956392892065bffcf5df0edde0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ed1f6a33718cd9599007d74182ffb81c8951af956392892065bffcf5df0edde0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "03a609e4c18ffa805a259fd21e61a199fb4165846b4e5026c5c50434e5c3b2e0"
+    sha256 cellar: :any,                 x86_64_linux:      "0386358ff85e926961c81ae77cc6c687dad0326ca54059c9f5aedf3243609730"
   end
 
   depends_on "go" => :build

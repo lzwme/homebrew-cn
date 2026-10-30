@@ -1,20 +1,16 @@
 class Brename < Formula
   desc "Cross-platform command-line tool for safe batch renaming via regular expressions"
   homepage "https://github.com/shenwei356/brename"
-  url "https://ghfast.top/https://github.com/shenwei356/brename/archive/refs/tags/v2.14.0.tar.gz"
-  sha256 "a16bceb25a75afa14c5dae2248c1244f1083b80b62783ce5dbf3e46ff68867d5"
+  url "https://ghfast.top/https://github.com/shenwei356/brename/archive/refs/tags/v2.15.0.tar.gz"
+  sha256 "ad957eea95c7b1f8283a08c46f7128e0f944d29e139bf63557da17f1906b47df"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9db45160cc1056ea3ff0fee3d588a2d9815853bafcd11f453a6bc0966c995500"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "de768e5762a8564a275a8bc3f06407d3b17e8eb22cfb7619baa517815aefa460"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "39e2df7de67e853a566edaa7a2ba0f092013367b2efcea51d3c5c5d311b8fd94"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "39e2df7de67e853a566edaa7a2ba0f092013367b2efcea51d3c5c5d311b8fd94"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:     "39e2df7de67e853a566edaa7a2ba0f092013367b2efcea51d3c5c5d311b8fd94"
-    sha256 cellar: :any_skip_relocation, sonoma:            "b8b913eb74ec7ad4a0173416d14bbf3b0778e4cfcfbab96074d23f3dc3eb599e"
-    sha256 cellar: :any_skip_relocation, ventura:           "b8b913eb74ec7ad4a0173416d14bbf3b0778e4cfcfbab96074d23f3dc3eb599e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "170e7aab9d87ab1c8f1d8dfc8fdf21e50317f6de279a87e41fe0c1f3da895b49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8a2f5be698351339e8d38e1f6c0349a527c16bba384f8af516b732d4dc0330af"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2212ccc939cbfe057695a0162921a22598766d7cd89de84a36f6349a6de9a3d1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2212ccc939cbfe057695a0162921a22598766d7cd89de84a36f6349a6de9a3d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2212ccc939cbfe057695a0162921a22598766d7cd89de84a36f6349a6de9a3d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "b6907fee4844568207c80cdc6a387a45b3bf505b26511b6d863e866b787af24b"
+    sha256 cellar: :any,                 x86_64_linux:      "51a77ae555f60537d7317ee02d4f59ebb0d34696fa102302c6050954da1034d3"
   end
 
   depends_on "go" => :build

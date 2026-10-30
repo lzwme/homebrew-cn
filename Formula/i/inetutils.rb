@@ -30,6 +30,8 @@ class Inetutils < Formula
   conflicts_with "tnftp", because: "both install `ftp` binaries"
   conflicts_with "gping", because: "both install `gping` binaries"
 
+  allow_network_access! :test
+
   def noshadow
     # List of binaries that do not shadow macOS utils
     %w[dnsdomainname ftp rcp rexec rlogin rsh telnet]

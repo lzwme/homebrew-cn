@@ -27,6 +27,8 @@ class Intltool < Formula
     depends_on "perl-xml-parser"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args
     system "make", "install"

@@ -3,8 +3,8 @@ class Suricata < Formula
 
   desc "Network IDS, IPS, and security monitoring engine"
   homepage "https://suricata.io"
-  url "https://www.openinfosecfoundation.org/download/suricata-8.0.7.tar.gz"
-  sha256 "a9d46a9c8f40e81f8a6df3ecc2c5a9a8e8da985876299108d92da547c013ba8c"
+  url "https://www.openinfosecfoundation.org/download/suricata-8.0.8.tar.gz"
+  sha256 "bb56bbaeb4da81b4c90e61148f93b789ea924412207388bc9cba0a7ac6a24a8f"
   license "GPL-2.0-only"
 
   livecheck do
@@ -13,12 +13,11 @@ class Suricata < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "7ed8b5478e18f57e2e76923b759128d84896d9decc0b145e48ee6771a23019d4"
-    sha256 arm64_tahoe:       "4890096d759ff4bc8286cd8d570761418dd40d940aa3eb252609f450192afc79"
-    sha256 arm64_sequoia:     "ffc6195a2508bad7faafa426bbb2f476611e4294aa9220bc99b43254188cbfb5"
-    sha256 arm64_linux:       "c7f4a917c88ed7491d0c65baf5d4643e72b549597b135df48fa1e12499f76889"
-    sha256 x86_64_linux:      "98011f9dadf98c4a4be6bbaac3bc208435fb98acc42041dc4dc57520e7b56ead"
+    sha256 arm64_golden_gate: "97ba78e4aa1c5fa011f1a8483307b87b45bb1459a1355957f12092ecffaddd44"
+    sha256 arm64_tahoe:       "229c7815a5c5dc52e6f95bbe71a68695f3ff61a9dd312f3976c4b323430aaca5"
+    sha256 arm64_sequoia:     "c38ac7d8545866d4e0776162bba4dfed9ff272da72802ba86808c8d6e4e5f37b"
+    sha256 arm64_linux:       "0c443a96c2d510a817c640c7609a901f20fdb13a155a8312f483041e041576dd"
+    sha256 x86_64_linux:      "80f3d3b4cf0b5c16362f148b5cf8f20ab5b8218b00ba1775761e22801d827adf"
   end
 
   depends_on "pkgconf" => :build

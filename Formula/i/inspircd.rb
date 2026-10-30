@@ -33,6 +33,8 @@ class Inspircd < Formula
   skip_clean "data"
   skip_clean "logs"
 
+  deny_network_access!
+
   def install
     system "./configure", "--enable-extras",
                           "argon2 ldap mysql pgsql regex_posix ssl_gnutls sslrehashsignal"

@@ -25,6 +25,8 @@ class Grap < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",

@@ -31,6 +31,8 @@ class Imake < Formula
     sha256 "07716eb1fe1fd1f8a1d6588457db0101cae70cb896d49dc65978c97b148ce976"
   end
 
+  deny_network_access!
+
   def install
     ENV.deparallelize
 

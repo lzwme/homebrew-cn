@@ -23,6 +23,8 @@ class Garmintools < Formula
 
   depends_on "libusb-compat"
 
+  deny_network_access!
+
   def install
     # Fix flat namespace usage
     inreplace "configure", "${wl}-flat_namespace ${wl}-undefined ${wl}suppress", "${wl}-undefined ${wl}dynamic_lookup"

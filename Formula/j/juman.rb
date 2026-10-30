@@ -52,6 +52,8 @@ class Juman < Formula
     cause "makemat/.libs/makemat: U00005f62U00005bb9U00008a5e  is undefined in  JUMAN.grammar ."
   end
 
+  deny_network_access!
+
   def install
     # Fix compile with newer Clang
     if DevelopmentTools.clang_build_version >= 1403 || ENV.compiler == :llvm_clang

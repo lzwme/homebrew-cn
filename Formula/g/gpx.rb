@@ -22,6 +22,8 @@ class Gpx < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "50b29dd66920ad57a1f25ca2da7bd5cbed6f73ae4141fdc6fc9a07fb2166496c"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",

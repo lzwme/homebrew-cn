@@ -4,6 +4,7 @@ class Libclc < Formula
   url "https://ghfast.top/https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.4/llvm-project-23.1.4.src.tar.xz"
   sha256 "819ecf7351f1a66f76b2d701d8942faaf5faeb324cb90c9d5b090de142434bb2"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   compatibility_version 1
 
   livecheck do
@@ -12,16 +13,18 @@ class Libclc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e39c37e42ad846c3976dcb1a65d9b0e46b392f9170c43e85bf5ac52f10f1f526"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e39c37e42ad846c3976dcb1a65d9b0e46b392f9170c43e85bf5ac52f10f1f526"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3c1492f230c76e735fc804e9b9779f28994edbe8836b872c9cd8ddbbad8d60c0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "df827f3de4b13714e7c079cc0eda10e5dee2462880b6417244a5e4c39689f504"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "05c0236725903ee728de1bfb26644235fd516394dbf2517bac3affb604d5df52"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d01bb75e1befb15fb370ba715caf5f12b338af34d0776c76db39dc63d708cd4b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d01bb75e1befb15fb370ba715caf5f12b338af34d0776c76db39dc63d708cd4b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "63da17025a75cfa99964805fd86bf818d31f57b75c9c005aaf0e63ae31ffa07c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4c78c63f3bc44d009d68350f9abbda33de690cecf9d5101fc33b91d7f4fe4cca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "4f3e09173647a65a61316939f59de416bc2faf20e078935f5f1070d6429c8581"
   end
 
   depends_on "cmake" => :build
   depends_on "llvm" => [:build, :test]
   depends_on "spirv-llvm-translator" => :build
+
+  deny_network_access!
 
   def install
     targets = %w[
@@ -42,6 +45,15 @@ class Libclc < Formula
       system "cmake", "--build", builddir
       system "cmake", "--install", builddir
     end
+
+    # Restore a minimal pkgconfig file needed by Mesa
+    (share/"pkgconfig/libclc.pc").write <<~PC
+      libexecdir=#{opt_share}/clc
+
+      Name: libclc
+      Description: Library requirements of the OpenCL C programming language
+      Version: #{version}
+    PC
   end
 
   test do

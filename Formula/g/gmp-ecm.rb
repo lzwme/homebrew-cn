@@ -29,6 +29,8 @@ class GmpEcm < Formula
     depends_on "libomp"
   end
 
+  deny_network_access!
+
   def install
     system "autoreconf", "--force", "--install"
     system "./configure", "--enable-openmp", "--enable-shared", "--disable-silent-rules", *std_configure_args
@@ -69,8 +71,8 @@ class GmpEcm < Formula
       }
     C
     system ENV.cc, "test.c", "-o", "test",
-           "-I#{include}", "-L#{lib}", "-L#{Formula["gmp"].lib}",
-           "-L#{Formula["primesieve"].lib}",
+           "-I#{include}", "-L#{lib}", "-L#{formula_opt_lib("gmp")}",
+           "-L#{formula_opt_lib("primesieve")}",
            "-lecm", "-lgmp", "-lprimesieve"
     system "./test"
   end

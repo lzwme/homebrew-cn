@@ -30,6 +30,8 @@ class GnupgPkcs11Scd < Formula
   depends_on "openssl@4"
   depends_on "pkcs11-helper"
 
+  deny_network_access!
+
   def install
     system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules", *std_configure_args

@@ -31,6 +31,8 @@ class Jbig2enc < Formula
     depends_on "webp"
   end
 
+  deny_network_access!
+
   def install
     system "./autogen.sh"
     system "./configure", *std_configure_args

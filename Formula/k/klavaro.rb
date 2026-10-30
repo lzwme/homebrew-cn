@@ -50,6 +50,8 @@ class Klavaro < Formula
     depends_on "perl-xml-parser" => :build
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args
     system "make", "install"

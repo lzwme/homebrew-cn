@@ -30,6 +30,8 @@ class Gawk < Formula
     conflicts_with "awk", because: "both install an `awk` executable"
   end
 
+  deny_network_access!
+
   def install
     system "./bootstrap.sh" if build.head?
 

@@ -1,17 +1,17 @@
 class CloudSqlProxy < Formula
   desc "Utility for connecting securely to your Cloud SQL instances"
   homepage "https://github.com/GoogleCloudPlatform/cloud-sql-proxy"
-  url "https://ghfast.top/https://github.com/GoogleCloudPlatform/cloud-sql-proxy/archive/refs/tags/v2.26.3.tar.gz"
-  sha256 "7f9721d813ce628f311fec574484569e852a8f92c0220471fa49d335276f2979"
+  url "https://ghfast.top/https://github.com/GoogleCloudPlatform/cloud-sql-proxy/archive/refs/tags/v2.27.0.tar.gz"
+  sha256 "ee430dd14b6f64a973239464d115a74a6eb6570fd4390bc064bf29555df95f5d"
   license "Apache-2.0"
   head "https://github.com/GoogleCloudPlatform/cloud-sql-proxy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c2a458590c9057fbe10dff81018d89879617e43d3b4c05b8f5aa8a7bd86cd1d6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fa7dd4c7dbb62a7bbe2a3f93c04db4df1ac023593792002d757fdb2517b58043"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aaea91c1292b34d4880f85ccf0015be01fe7c2ba45730865f728106904f077ba"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b13acb26a1373d59e75fae7418a8fe244ee39b2b3524bcf92b7e61b829b9c255"
-    sha256 cellar: :any,                 x86_64_linux:      "4a4bed0e0225df45460a09931d3845f1e724b230b26faa329a0d5ea99528da8a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a6640c731a8a535a67c69f4b3ded7344210634d8fd11e4126003658d8fa2434c"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6e92abd894ad31393ca8b75afa0c02bbecc7f53c58ebdae27db2e0e60673bbb7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6107dc917bf5729cfc0af5264f601393a13060be3aa6cd696b1fe0b18d64a9ca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "c499b4fd4b7e7097bb51b17f7e201ad3c6bd9ba0d8cef6665fc9114d7b3eec71"
+    sha256 cellar: :any,                 x86_64_linux:      "4de402a8715df41dbb7b74bf2774edff2a70ba94997099fb2c22edfb772a3897"
   end
 
   # TODO: unpin go@1.26 when Go 1.27's ML-DSA ClientHello no longer gets reset by TLS middleboxes

@@ -28,6 +28,8 @@ class Juise < Formula
   depends_on "libslax"
   depends_on :macos # due to libslax
 
+  deny_network_access!
+
   def install
     # Work around undefined symbol ___res_9_state
     ENV.append "LDFLAGS", "-lresolv" if DevelopmentTools.clang_build_version >= 1700

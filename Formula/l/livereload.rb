@@ -6,22 +6,21 @@ class Livereload < Formula
   url "https://files.pythonhosted.org/packages/43/6e/f2748665839812a9bbe5c75d3f983edbf3ab05fa5cd2f7c2f36fffdf65bd/livereload-2.7.1.tar.gz"
   sha256 "3d9bf7c05673df06e32bea23b494b8d36ca6d10f7d5c3c8a6989608c09c986a9"
   license "BSD-3-Clause"
-  revision 4
+  revision 5
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "81261202220ca64ab42119155bf290539a4d1d935894a2bde94818fa1d63731f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e4c0f649cb9def65438d88b50c24a67c1097cebcd4b89c8773c588c7dcc92f06"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "12eedc4e98202891995b8eda572f50803f4876cca62067ca309a04a73da129f4"
-    sha256 cellar: :any,                 arm64_linux:       "5ff267da13e7c4931f2f26052be77c2b87c2ae35c069f7cda861bb81d72d0ea9"
-    sha256 cellar: :any,                 x86_64_linux:      "cf4a8e449ad2683f0fa441a49bc2266cac0e2d61bae7a3443a6080f05c50452d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9234e4d26d2c285df2a861d5e6d4b362509bdfe4d2caed78cb2c4edb4dcd6ee2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "330729f945e80e758381fb108c44747799c3b4ed1cb2cc736098659546b9d5a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "05c47138857c7abeb3d355f6cf57574d3a174a556bf9ffec5e1a6958f5f8474e"
+    sha256 cellar: :any,                 arm64_linux:       "bae5fd3b89dcb035a00402cdd98c95785546e1fab10cb8d855492ef74880c881"
+    sha256 cellar: :any,                 x86_64_linux:      "3bd41f92bbae130171d0de4664d953904f6cde5323aeea1f6ffaa5095f05e01a"
   end
 
   depends_on "python@3.15"
 
   resource "tornado" do
-    url "https://files.pythonhosted.org/packages/06/61/53d562a57b28c08eda40b258c0f975e360541943ad7c7bef897a40caafda/tornado-6.5.10.tar.gz"
-    sha256 "a6b1ccd08c04b4a06fb5aeb381be99de5ad1e5375c1785e31d78c880feb57687"
+    url "https://files.pythonhosted.org/packages/d0/02/5f549b1ad5da6267ed1e1fac2eef69257b1979cc812497002499b7895ff9/tornado-6.6.tar.gz"
+    sha256 "34c4aa916d7f2b2d5cadee2c6850f5a4a7f3d688cbf58399ea9bd3057af4abd5"
   end
 
   def install

@@ -23,6 +23,8 @@ class Gzip < Formula
     resolves "https://lists.gnu.org/archive/html/bug-gzip/2026-09/msg00031.html"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make", "install"

@@ -40,6 +40,8 @@ class Gource < Formula
     depends_on "mesa-glu"
   end
 
+  deny_network_access!
+
   def install
     ENV.append "LDFLAGS", "-pthread" if OS.linux?
 

@@ -17,6 +17,8 @@ class Kanif < Formula
 
   depends_on "taktuk"
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",

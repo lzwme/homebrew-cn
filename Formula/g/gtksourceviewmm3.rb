@@ -46,6 +46,8 @@ class Gtksourceviewmm3 < Formula
     depends_on "pango"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args
     system "make", "install"

@@ -23,6 +23,8 @@ class Jlog < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
+  deny_network_access!
+
   def install
     system "autoconf"
     system "./configure", "--prefix=#{prefix}"

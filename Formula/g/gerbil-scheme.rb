@@ -39,6 +39,8 @@ class GerbilScheme < Formula
     cause "gambit-scheme is built with GCC"
   end
 
+  deny_network_access!
+
   def install
     ENV["GERBIL_VERSION"] = "v#{version}"
     system "./configure", "--prefix=#{prefix}", "--enable-march="

@@ -6,13 +6,14 @@ class Pymupdf < Formula
   url "https://files.pythonhosted.org/packages/b0/23/3575cf6652171bba33fd4b41d34ab92c7ee75bb5e5790f5a2a044b9ba49b/pymupdf-2.0.tar.gz"
   sha256 "7733136f626fffe98677daa53c906eb45f2eb486a6450dbcfd652cbbd760f1e2"
   license "AGPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b0fed251ae621bc71fa438bbe76335134f1e31cea3fb6603a97b3857a8b4ddd6"
-    sha256 cellar: :any, arm64_tahoe:       "1cd5778f6e625ab842e012d3d91b16b49ed4ccff670b80f959ece77151a4641c"
-    sha256 cellar: :any, arm64_sequoia:     "c314fa8e603d3729b90a19ec4c4ae4c92ce5381453c64fa7da7177ed4dec4e1c"
-    sha256 cellar: :any, arm64_linux:       "d13eb47a04d59a4f6fabf46ae90e4b5413d738418e922d07c8219e9d40e9376b"
-    sha256 cellar: :any, x86_64_linux:      "3fc06fa08c0b44e5ee47f743120b891421ad211458dcf1a46a118cd312597619"
+    sha256 cellar: :any, arm64_golden_gate: "f74746d26f0297957c5d8ed057c7ddc295f0c3b94bc0a26f00a7ab1ab8e88f61"
+    sha256 cellar: :any, arm64_tahoe:       "cfbecbe86e0abb38331084f90a5bebf7120ecbd26a0f574e4e94fe91bf1eb918"
+    sha256 cellar: :any, arm64_sequoia:     "208b516d7217ebc94cbd52f54464b9472b6fca72babceeaa40a91e6f6837bdd9"
+    sha256 cellar: :any, arm64_linux:       "21468bb70abf05867dbaacb918398a85c87618dc1392a276c1a901c19c091fda"
+    sha256 cellar: :any, x86_64_linux:      "bbf9a0710ae7f1ee5bba7324dd231f8178ea357f69572fd37ccd5d3dfc93218b"
   end
 
   depends_on "freetype" => :build

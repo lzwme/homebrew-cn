@@ -26,6 +26,8 @@ class Kimwituxx < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "cece1163e971acd007363d1bd70c61a0d85a056b85cd878d53b520c330479754"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-silent-rules", *std_configure_args
     bin.mkpath

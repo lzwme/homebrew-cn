@@ -33,6 +33,8 @@ class Jupp < Formula
 
   conflicts_with "joe", because: "both install the same binaries"
 
+  deny_network_access!
+
   def install
     # C23 makes `()` mean `(void)`, breaking the K&R-style `jpoly_int` callback typedef
     ENV.append_to_cflags "-std=gnu17"

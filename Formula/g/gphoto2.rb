@@ -34,6 +34,8 @@ class Gphoto2 < Formula
     depends_on "gettext"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args
     system "make", "install"

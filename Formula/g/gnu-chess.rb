@@ -25,6 +25,7 @@ class GnuChess < Formula
 
   head do
     url "https://svn.savannah.gnu.org/svn/chess/trunk"
+
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "help2man" => :build
@@ -42,6 +43,8 @@ class GnuChess < Formula
       regex(/href=.*?book[._-]v?(\d+(?:\.\d+)+\.pgn)/i)
     end
   end
+
+  deny_network_access!
 
   def install
     #  Fix "install-sh: Permission denied" issue

@@ -6,22 +6,21 @@ class Snakeviz < Formula
   url "https://files.pythonhosted.org/packages/04/06/82f56563b16d33c2586ac2615a3034a83a4ff1969b84c8d79339e5d07d73/snakeviz-2.2.2.tar.gz"
   sha256 "08028c6f8e34a032ff14757a38424770abb8662fb2818985aeea0d9bc13a7d83"
   license "BSD-3-Clause"
-  revision 6
+  revision 7
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c0d9d7598fe76d47804230dbfe1e87afe2a3fd4802336e64258d98c98fffd81b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "545312b44c723b1d2f014bc4472d743d87044f2bb265de93f89286f739ec7835"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ab01af3b2c4975ac0abbedda8e40a95f592cea7d028318cb909246875b6a508e"
-    sha256 cellar: :any,                 arm64_linux:       "bd596a2409618d84b596e2f60545c8b4839a614fe16ced141ea4d565691e5f58"
-    sha256 cellar: :any,                 x86_64_linux:      "fdd6eb72b7d149506bff521c5dcbb517cf1c0110f6640a82169355d9291a0204"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7b263d7c98aefa3778790b90e566b7c3e1c4ad7b0d9e91797017bfa754237747"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6ecd705ee68e34213f4cb56a22cd8c6165b44983ee9e2d86466ebf9470f80b59"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a7ef9f42158ea67377185cca4a890774f64b847a72d74fe2f9f35fbe7ccd94d0"
+    sha256 cellar: :any,                 arm64_linux:       "032d789891df01750e85d39befd34e8ad50ad48fb8ebe1a4d56943a0a72ff4fd"
+    sha256 cellar: :any,                 x86_64_linux:      "29feea25efcd3831a3afe5af1995c31f4abd60f8f56df97441010c6084c47dfe"
   end
 
   depends_on "python@3.15"
 
   resource "tornado" do
-    url "https://files.pythonhosted.org/packages/06/61/53d562a57b28c08eda40b258c0f975e360541943ad7c7bef897a40caafda/tornado-6.5.10.tar.gz"
-    sha256 "a6b1ccd08c04b4a06fb5aeb381be99de5ad1e5375c1785e31d78c880feb57687"
+    url "https://files.pythonhosted.org/packages/d0/02/5f549b1ad5da6267ed1e1fac2eef69257b1979cc812497002499b7895ff9/tornado-6.6.tar.gz"
+    sha256 "34c4aa916d7f2b2d5cadee2c6850f5a4a7f3d688cbf58399ea9bd3057af4abd5"
   end
 
   def install

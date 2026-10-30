@@ -1,17 +1,16 @@
 class Et < Formula
   desc "Remote terminal with IP roaming"
   homepage "https://mistertea.github.io/EternalTerminal/"
-  url "https://ghfast.top/https://github.com/MisterTea/EternalTerminal/archive/refs/tags/et-v7.0.0.tar.gz"
-  sha256 "3580962861589c0b69efd6b385ff92ad8fdf688c91d1a0edc1a83278205e28e8"
+  url "https://ghfast.top/https://github.com/MisterTea/EternalTerminal/archive/refs/tags/et-v7.1.1.tar.gz"
+  sha256 "7f5ab26f5cc18e66184d806648a2437c447b549ca106a7e6107f793435e39270"
   license "Apache-2.0"
-  revision 5
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "55753551805383574a06066cacd01561db9b36b019609d17f358a711fbb77f80"
-    sha256 cellar: :any, arm64_tahoe:       "c36f4f97bad05ae5b06e00df0c07d32f10433a2352be2cac22e84f67dde8c308"
-    sha256 cellar: :any, arm64_sequoia:     "b8785322616535eabdccc3038d5c006be5c784f3807e58165a9de432e318e9b2"
-    sha256 cellar: :any, arm64_linux:       "b32def35feac04513a783aa4abdd8fe146b353b6c3c8444e0670bcb7b8c426bc"
-    sha256 cellar: :any, x86_64_linux:      "916a6272b0331d52ce6815de82fd1cf88ef98d99c896b7b7a6a188f8967a1cc8"
+    sha256 cellar: :any, arm64_golden_gate: "dc91389f42b64e0b88a0eb3c8dcd2d5c0c376d69e8d2cbcb964fda7263813ec4"
+    sha256 cellar: :any, arm64_tahoe:       "381012be6ccc37c626b73cbfb06463e0f64ba99092627163c9afa64751fc2a93"
+    sha256 cellar: :any, arm64_sequoia:     "428d43af63d8a75a9bf0726f70de8394c4261c868b41e89c2ddd3ec26e9f21d5"
+    sha256 cellar: :any, arm64_linux:       "c80bab11c9d161d746c748506257bf8f81c8f8905a656b2f2bfc9fbae2fa28f2"
+    sha256 cellar: :any, x86_64_linux:      "f0a406a9eaef5507f1690e9db57cd59576023724120743b90699ee0b1c3f3e83"
   end
 
   depends_on "cmake" => :build
@@ -46,6 +45,9 @@ class Et < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
+    # Remove Windows-specific script
+    rm bin/"et1.cmd"
+
     etc.install "etc/et.cfg"
   end
 
@@ -60,23 +62,21 @@ class Et < Formula
 
   test do
     port = free_port
-    pid = fork do
-      exec bin/"etserver", "--port", port.to_s, "--logtostdout"
-    end
+    # Avoid the default `$HOME/.local/share/etserver` fifo directory, whose
+    # ancestor checks open `/` for reading and fail inside the Linux sandbox.
+    pid = spawn bin/"etserver", "--port", port.to_s, "--serverfifo", testpath/"etserver.fifo", "--logtostdout"
 
-    begin
-      require "socket"
-      Timeout.timeout(60) do
-        loop do
-          TCPSocket.open("127.0.0.1", port).close
-          break
-        rescue Errno::ECONNREFUSED
-          sleep 1
-        end
+    require "socket"
+    Timeout.timeout(60) do
+      loop do
+        TCPSocket.open("127.0.0.1", port).close
+        break
+      rescue Errno::ECONNREFUSED
+        sleep 1
       end
-    ensure
-      Process.kill("TERM", pid)
-      Process.wait(pid)
     end
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end

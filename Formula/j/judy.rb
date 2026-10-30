@@ -25,6 +25,8 @@ class Judy < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
 
+  deny_network_access!
+
   def install
     # Regenrate configure script as it is too old for libtool patch
     system "autoreconf", "--force", "--install", "--verbose"

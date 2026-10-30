@@ -1,8 +1,8 @@
 class ForgejoRunner < Formula
   desc "Official Actions runner for Forgejo instances"
   homepage "https://code.forgejo.org/forgejo/runner"
-  url "https://code.forgejo.org/forgejo/runner/archive/v13.2.0.tar.gz"
-  sha256 "9a7cc5bce2385feaa124213a7e000090dfac6e6a0177b04ae084e7dcb6ba46d5"
+  url "https://code.forgejo.org/forgejo/runner/archive/v13.2.1.tar.gz"
+  sha256 "c5596ecdf5336b5c4777109a373ba675130324104618ce34952f28682a44c948"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -13,11 +13,11 @@ class ForgejoRunner < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1c8b9bd534ab0b380cd5e34186088964740b63ef9a7d2c450a42eedfe20a54d9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1c8b9bd534ab0b380cd5e34186088964740b63ef9a7d2c450a42eedfe20a54d9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1c8b9bd534ab0b380cd5e34186088964740b63ef9a7d2c450a42eedfe20a54d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2992055ca9c45ffb38dc027b258e3fb401dd77d31d0da72d09d4db6c966e4a08"
-    sha256 cellar: :any,                 x86_64_linux:      "2b980c34f907a83cec7609c412c182c731718dfc66554b2f448a33ba49a60f6a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0a8cb32f024121e50ebca1840ed2f5650d65d3eb3e183679c0f8f0bc14d6fb48"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0a8cb32f024121e50ebca1840ed2f5650d65d3eb3e183679c0f8f0bc14d6fb48"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0a8cb32f024121e50ebca1840ed2f5650d65d3eb3e183679c0f8f0bc14d6fb48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "46b6cf6d9a7ab413cb885271f1e1e175a3794cf289a77799f5de65e2e216019a"
+    sha256 cellar: :any,                 x86_64_linux:      "86f9ca5c0565e96a989987cc6ad01043610287fdb13d30861be4fcbccf37f974"
   end
 
   depends_on "go" => :build
