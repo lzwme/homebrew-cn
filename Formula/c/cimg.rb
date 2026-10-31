@@ -4,6 +4,7 @@ class Cimg < Formula
   url "https://cimg.eu/files/CImg_4.0.7.zip"
   sha256 "32b93f038681f7e489af5d2e0a7937a32c90e020d0d9fc01f7d5badf430e6697"
   license "CECILL-2.0"
+  compatibility_version 1
 
   livecheck do
     url "https://cimg.eu/files/"

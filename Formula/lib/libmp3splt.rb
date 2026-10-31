@@ -5,6 +5,7 @@ class Libmp3splt < Formula
   sha256 "30eed64fce58cb379b7cc6a0d8e545579cb99d0f0f31eb00b9acc8aaa1b035dc"
   license "GPL-2.0-or-later"
   revision 7
+  compatibility_version 1
 
   # We check the "libmp3splt" directory page since versions aren't present in
   # the RSS feed as of writing.

@@ -4,6 +4,7 @@ class Restic < Formula
   url "https://ghfast.top/https://github.com/restic/restic/archive/refs/tags/v0.19.1.tar.gz"
   sha256 "bb9b1a19040744d26d8a79be029d4e6b189c45ccc9d8831d7fe367d3c33df725"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/restic/restic.git", branch: "master"
 
   bottle do

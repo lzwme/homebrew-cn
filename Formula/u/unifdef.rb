@@ -7,6 +7,7 @@ class Unifdef < Formula
     "BSD-2-Clause",
     "BSD-3-Clause", # only for `unifdef.1`
   ]
+  compatibility_version 1
   head "https://github.com/fanf2/unifdef.git", branch: "master"
 
   bottle do

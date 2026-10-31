@@ -5,6 +5,7 @@ class InfluxdbAT2 < Formula
       tag:      "v2.10.0",
       revision: "01c64e96a87f0912f2550dd7e72745e70ef5a4fe"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable

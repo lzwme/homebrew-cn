@@ -4,6 +4,7 @@ class RabbitmqC < Formula
   url "https://ghfast.top/https://github.com/alanxz/rabbitmq-c/archive/refs/tags/v0.18.1.tar.gz"
   sha256 "0779bd4f00175ff2f722f9dc43b542bea3bc606ed079e7099fa8a18627c2ddc9"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/alanxz/rabbitmq-c.git", branch: "master"
 
   bottle do

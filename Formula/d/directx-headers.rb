@@ -4,6 +4,7 @@ class DirectxHeaders < Formula
   url "https://ghfast.top/https://github.com/microsoft/DirectX-Headers/archive/refs/tags/v1.619.5.tar.gz"
   sha256 "24a0b7d8079a2dbbc90753c0d8bc812040d052acce2302e69a97c5d873b313b8"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "48076cb85f5b74a45f1b13b2eb72ba14426838cbc066154c6b3093a64285f095"

@@ -7,6 +7,7 @@ class S3cmd < Formula
   sha256 "6b567521be1c151323f2059c8feec85ded96b6f184ff80535837fea33798b40b"
   license "GPL-2.0-or-later"
   revision 2
+  compatibility_version 1
   head "https://github.com/s3tools/s3cmd.git", branch: "master"
 
   bottle do

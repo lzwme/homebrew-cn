@@ -7,6 +7,7 @@ class Tdb < Formula
     "LGPL-3.0-or-later",
     "GPL-3.0-or-later", # tools/
   ]
+  compatibility_version 1
 
   livecheck do
     url "https://www.samba.org/ftp/tdb/"

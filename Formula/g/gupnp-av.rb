@@ -4,6 +4,7 @@ class GupnpAv < Formula
   url "https://download.gnome.org/sources/gupnp-av/0.14/gupnp-av-0.14.5.tar.xz"
   sha256 "93918fcf5af529fda5b3d2d9fc3b77cd93df88064939b82f249f5577d8de1c02"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "3897f2d2dbc7e5ecf4084775761fe83933511ea8c1c74cfcbcfe523c56ec611a"

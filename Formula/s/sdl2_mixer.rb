@@ -4,6 +4,7 @@ class Sdl2Mixer < Formula
   url "https://ghfast.top/https://github.com/libsdl-org/SDL_mixer/releases/download/release-2.8.2/SDL2_mixer-2.8.2.tar.gz"
   sha256 "938dff531d00ace2296557a6599abe6f34599e2f34f0a4a08a397e2ccac8b8f7"
   license "Zlib"
+  compatibility_version 1
 
   livecheck do
     url :stable

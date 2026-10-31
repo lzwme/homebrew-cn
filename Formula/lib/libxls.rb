@@ -4,6 +4,7 @@ class Libxls < Formula
   url "https://ghfast.top/https://github.com/libxls/libxls/releases/download/v1.6.4/libxls-1.6.4.tar.gz"
   sha256 "064ee1da6cf3d481d8af4a936e0e0ce0190114e468fb7dfef5a81610746081e0"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "8106160b907bc71a2d8361d482dffc72ff2d24e71ce3a914fb987cf6c5a00520"

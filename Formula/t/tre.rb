@@ -4,6 +4,7 @@ class Tre < Formula
   url "https://ghfast.top/https://github.com/laurikari/tre/releases/download/v0.9.0/tre-0.9.0.tar.gz"
   sha256 "f57f5698cafdfe516d11fb0b71705916fe1162f14b08cf69d7cf86923b5a2477"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "3a577590e52938e492bf621c1d5c9e31bf406ed168bd009b322a3952df7aed49"

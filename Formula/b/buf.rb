@@ -4,6 +4,7 @@ class Buf < Formula
   url "https://ghfast.top/https://github.com/bufbuild/buf/archive/refs/tags/v1.75.0.tar.gz"
   sha256 "e1b688283938b19ff072789d37f371e9bdfbc866ebb719b20c1f1bdc4a9ca8ff"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/bufbuild/buf.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a

@@ -8,6 +8,7 @@ class WasmComponentLd < Formula
     "Apache-2.0",
     "MIT",
   ]
+  compatibility_version 1
   head "https://github.com/bytecodealliance/wasm-component-ld.git", branch: "main"
 
   bottle do

@@ -4,6 +4,7 @@ class Faiss < Formula
   url "https://ghfast.top/https://github.com/facebookresearch/faiss/archive/refs/tags/v1.15.1.tar.gz"
   sha256 "7b583010cc3c0a778b909a1beecbc5a4bd42f415d82af734b2c05d5eaaca0ffa"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable

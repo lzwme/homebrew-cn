@@ -4,6 +4,7 @@ class Opam < Formula
   url "https://ghfast.top/https://github.com/ocaml/opam/releases/download/2.6.1/opam-full-2.6.1.tar.gz"
   sha256 "ebbaffa4192e69d612d2c1a5fc5a15b32730322d7e34bc4456ad4076bb987007"
   license "LGPL-2.1-only"
+  compatibility_version 1
   head "https://github.com/ocaml/opam.git", branch: "master"
 
   # Upstream sometimes publishes tarballs with a version suffix (e.g. 2.2.0-2)

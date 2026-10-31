@@ -4,6 +4,7 @@ class Leiningen < Formula
   url "https://ghfast.top/https://github.com/technomancy/leiningen/archive/refs/tags/2.13.0.tar.gz"
   sha256 "a71aaf44eaf7796198943bd6db7662c99664bb6441f8dc7216d4a87fa4ea4dad"
   license "EPL-1.0"
+  compatibility_version 1
   head "https://github.com/technomancy/leiningen.git", branch: "main"
 
   bottle do

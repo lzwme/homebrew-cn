@@ -5,6 +5,7 @@ class Libpeas < Formula
   sha256 "589eca89b437006edf3755478df037c740a2a84cfa5d202dbad6095e828e2488"
   license "LGPL-2.1-or-later"
   revision 2
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "89673f946c510b1d959d2e20212461961f7ffd76e070d3b45e7a2bf6b4053a3d"

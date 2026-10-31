@@ -5,6 +5,7 @@ class Libcddb < Formula
   sha256 "35ce0ee1741ea38def304ddfe84a958901413aa829698357f0bee5bb8f0a223b"
   license "LGPL-2.0-or-later"
   revision 5
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "a1f48c53dc3320669db5527e455948f1dd68894c46f36918163994fd14ace9d6"

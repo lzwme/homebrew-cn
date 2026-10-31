@@ -5,6 +5,7 @@ class OsinfoDbTools < Formula
   sha256 "f3315f675d18770f25dea8ed04b20b8fc80efb00f60c37ee5e815f9c3776e7f3"
   license "GPL-2.0-or-later"
   revision 1
+  compatibility_version 1
   head "https://gitlab.com/libosinfo/osinfo-db-tools.git", branch: "main"
 
   bottle do

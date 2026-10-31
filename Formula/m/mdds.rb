@@ -4,6 +4,7 @@ class Mdds < Formula
   url "https://gitlab.com/api/v4/projects/mdds%2Fmdds/packages/generic/source/3.2.1/mdds-3.2.1.tar.bz2"
   sha256 "2ed33238ca9e42cc9ffa99a14adc80d86c09c0b0d001f876724ae3a167435048"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     rebuild 1

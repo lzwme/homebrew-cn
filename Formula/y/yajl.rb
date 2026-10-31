@@ -5,6 +5,7 @@ class Yajl < Formula
   sha256 "3fb73364a5a30efe615046d07e6db9d09fd2b41c763c5f7d3bfb121cd5c5ac5a"
   license "ISC"
   revision 1
+  compatibility_version 1
 
   bottle do
     rebuild 1

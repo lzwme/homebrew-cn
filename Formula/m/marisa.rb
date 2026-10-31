@@ -4,6 +4,7 @@ class Marisa < Formula
   url "https://ghfast.top/https://github.com/s-yata/marisa-trie/archive/refs/tags/v0.3.1.tar.gz"
   sha256 "986ed5e2967435e3a3932a8c95980993ae5a196111e377721f0849cad4e807f3"
   license any_of: ["BSD-2-Clause", "LGPL-2.1-or-later"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "b1a3168b27684bba38eb3358f44ddbb634fa5896cc4ba650a4fc6b58b93fbe5c"

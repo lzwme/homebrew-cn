@@ -4,6 +4,7 @@ class Hackrf < Formula
   url "https://ghfast.top/https://github.com/greatscottgadgets/hackrf/releases/download/v2026.01.3/hackrf-2026.01.3.tar.xz"
   sha256 "d2b76a1115d9b4df648c29efb2f3c8e80009b7cf9a8adf37abbfdba72101b086"
   license "GPL-2.0-or-later"
+  compatibility_version 1
   head "https://github.com/greatscottgadgets/hackrf.git", branch: "main"
 
   livecheck do

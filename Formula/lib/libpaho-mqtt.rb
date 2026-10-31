@@ -5,6 +5,7 @@ class LibpahoMqtt < Formula
   sha256 "8b960f51edc7e03507637d987882bc486d8f4be6e79431bf99e2763344fd14c5"
   license "EPL-2.0"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "07546812ea899bd199fa038cfbf8c25135b66e222f9abe11435e4f9c3d82c629"

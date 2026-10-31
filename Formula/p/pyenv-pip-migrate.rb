@@ -13,6 +13,8 @@ class PyenvPipMigrate < Formula
 
   depends_on "pyenv"
 
+  deny_network_access!
+
   def install
     prefix.install Dir["*"]
   end

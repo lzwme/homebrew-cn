@@ -5,6 +5,7 @@ class Plutobook < Formula
   sha256 "439758ab506d4578518bc1427c4ea4eed8e654d9e01cea327267156a83428310"
   license "MPL-2.0"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "4fd715d512a456b6c7be15c149bc4a55eaaeea7c7e1afd609593d64e7d1bdda5"

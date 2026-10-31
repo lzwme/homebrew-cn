@@ -4,6 +4,7 @@ class AmplAsl < Formula
   url "https://ghfast.top/https://github.com/ampl/asl/archive/refs/tags/v1.0.2.tar.gz"
   sha256 "cf907bcd14ed172d75e3d0fd34f11b3f8e42154d696cf0f8c73e217f5bf149c6"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "36b60c5a7858d4db9ddd2c23829e17f26c92edabc26024d8d2d869275fb2911c"

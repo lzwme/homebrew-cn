@@ -4,6 +4,7 @@ class Cabextract < Formula
   url "https://www.cabextract.org.uk/cabextract-1.11.tar.gz"
   sha256 "b5546db1155e4c718ff3d4b278573604f30dd64c3c5bfd4657cd089b823a3ac6"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url :homepage

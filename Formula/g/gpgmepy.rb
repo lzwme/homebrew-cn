@@ -5,6 +5,7 @@ class Gpgmepy < Formula
   sha256 "07e1265648ff51da238c9af7a18b3f1dc7b0c66b4f21a72f27c74b396cd3336d"
   license "LGPL-2.1-or-later"
   revision 3
+  compatibility_version 1
 
   livecheck do
     url "https://gnupg.org/ftp/gcrypt/gpgmepy/"

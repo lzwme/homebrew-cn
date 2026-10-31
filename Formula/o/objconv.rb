@@ -5,6 +5,7 @@ class Objconv < Formula
   version "2026-05-14"
   sha256 "0f604f93f97f689afd7615c86176eb15bc95001eadf8317f17ebd099c50c59e1"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url :homepage

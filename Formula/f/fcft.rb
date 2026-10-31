@@ -4,6 +4,7 @@ class Fcft < Formula
   url "https://codeberg.org/dnkl/fcft/releases/download/3.3.3/fcft-3.3.3.tar.gz"
   sha256 "bb298772d625e7d917373d541456f34f1957a9e22b16f17f64158b2c3816563c"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     rebuild 1

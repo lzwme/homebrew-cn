@@ -4,6 +4,7 @@ class Log4cpp < Formula
   url "https://downloads.sourceforge.net/project/log4cpp/log4cpp-1.1.x%20%28new%29/log4cpp-1.1/log4cpp-1.1.6.tar.gz"
   sha256 "a036bc6bd6044479e6c456de7edd042b060ea5c843e47beb75f59baea9b20e3a"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   livecheck do
     url :stable

@@ -5,6 +5,7 @@ class Gts < Formula
   sha256 "059c3e13e3e3b796d775ec9f96abdce8f2b3b5144df8514eda0cc12e13e8b81e"
   license "LGPL-2.0-or-later"
   revision 4
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "afea12b155fa2547184e9bd141a4233248a3a450206d12b9a0750176e532f4fc"

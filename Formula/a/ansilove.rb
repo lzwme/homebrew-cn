@@ -4,6 +4,7 @@ class Ansilove < Formula
   url "https://ghfast.top/https://github.com/ansilove/ansilove/releases/download/4.2.2/ansilove-4.2.2.tar.gz"
   sha256 "443e1d8b6d94851cb9563f530b56fb5ef8ffba4b1eda6fd2c3cafaa38adb62d3"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "b691297bcc06aec154e91e93d3fe82e2c27cefeb01864b798ff7084c4fd5cd8a"

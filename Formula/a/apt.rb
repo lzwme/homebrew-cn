@@ -5,6 +5,7 @@ class Apt < Formula
   url "https://salsa.debian.org/apt-team/apt/-/archive/3.3.5/apt-3.3.5.tar.bz2"
   sha256 "5255db6f7cd2217fbc6102d5f6222d8631299ca2c0f812a50cf9fcdf2bada897"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://deb.debian.org/debian/pool/main/a/apt/"

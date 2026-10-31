@@ -4,6 +4,7 @@ class Cctz < Formula
   url "https://ghfast.top/https://github.com/google/cctz/archive/refs/tags/v2.5.tar.gz"
   sha256 "47d2d68e7cb5af3296dc7e69b0f4a765589f1b2f4af4b9c42e772414c428b421"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "23caa9eddc2e39b396a3cad468e331e8d8bc2411e7b9198e1a00099469b996de"

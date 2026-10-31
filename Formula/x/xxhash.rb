@@ -7,6 +7,7 @@ class Xxhash < Formula
     "BSD-2-Clause", # library
     "GPL-2.0-or-later", # `xxhsum` command line utility
   ]
+  compatibility_version 1
 
   livecheck do
     url :stable

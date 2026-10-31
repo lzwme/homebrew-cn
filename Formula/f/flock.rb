@@ -4,6 +4,7 @@ class Flock < Formula
   url "https://ghfast.top/https://github.com/discoteq/flock/releases/download/v0.4.0/flock-0.4.0.tar.xz"
   sha256 "01bbd497d168e9b7306f06794c57602da0f61ebd463a3210d63c1d8a0513c5cc"
   license "ISC"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ac915000ff9253106b373c1188f6c26e51e554b0eb65937f443902aef76b517c"

@@ -4,6 +4,7 @@ class Woff2 < Formula
   url "https://ghfast.top/https://github.com/google/woff2/archive/refs/tags/v1.0.2.tar.gz"
   sha256 "add272bb09e6384a4833ffca4896350fdb16e0ca22df68c0384773c67a175594"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     rebuild 1

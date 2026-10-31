@@ -4,6 +4,7 @@ class Fribidi < Formula
   url "https://ghfast.top/https://github.com/fribidi/fribidi/releases/download/v1.0.18/fribidi-1.0.18.tar.xz"
   sha256 "1de5e8073d035388b71d0b2d452b1da1f8caeea8a7702997b401fe1b6250727f"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "8509ef7fdecd81cce30f0831067a8f33453f836ec560a73809ccef32d6a8e1b6"

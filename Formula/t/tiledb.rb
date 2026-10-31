@@ -5,6 +5,7 @@ class Tiledb < Formula
   sha256 "36381f9eaa2a6defc8990aa1a95d1f0e87971748a50bf6fb705bf032ac7384cf"
   license "MIT"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url :stable

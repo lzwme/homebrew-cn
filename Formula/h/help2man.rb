@@ -6,6 +6,7 @@ class Help2man < Formula
   sha256 "4d7e4fdef2eca6afe07a2682151cea78781e0a4e8f9622142d9f70c083a2fd4f"
   license "GPL-3.0-or-later"
   revision 5
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "15f0a87126cbd87f2b88624fa557f9ea7e8b86d2831e13056079f79c80a67e69"

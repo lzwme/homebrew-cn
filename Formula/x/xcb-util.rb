@@ -4,6 +4,7 @@ class XcbUtil < Formula
   url "https://xcb.freedesktop.org/dist/xcb-util-0.4.1.tar.xz"
   sha256 "5abe3bbbd8e54f0fa3ec945291b7e8fa8cfd3cccc43718f8758430f94126e512"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "5e9846494798644d5c6c5632ff760ad557a75a8d546740bd5e065d669b484880"
@@ -23,6 +24,8 @@ class XcbUtil < Formula
 
   depends_on "pkgconf" => [:build, :test]
   depends_on "libxcb"
+
+  deny_network_access!
 
   def install
     args = %W[

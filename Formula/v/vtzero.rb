@@ -4,6 +4,7 @@ class Vtzero < Formula
   url "https://ghfast.top/https://github.com/mapbox/vtzero/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "bdbd4a70404fbd6efc8588cc34065aa401b3bcd2533b532e68ff790267f4fc23"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   livecheck do
     url :stable

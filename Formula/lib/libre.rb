@@ -4,6 +4,7 @@ class Libre < Formula
   url "https://ghfast.top/https://github.com/baresip/re/archive/refs/tags/v4.12.0.tar.gz"
   sha256 "707b6194dd3b8d3fb1641ca08a0999aaac1d38d36b5c45514777a13ded311923"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "3bc1fe6c9130fe3c83d0b058bd583cb6fa991d4d9c96ead0c4d7d14a9abaedc6"

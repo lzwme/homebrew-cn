@@ -4,6 +4,7 @@ class Execline < Formula
   url "https://skarnet.org/software/execline/execline-2.10.0.0.tar.gz"
   sha256 "561be2ce578604644e2263a889bbdf4736e7980401ee88556a7f9017c166dbab"
   license "ISC"
+  compatibility_version 1
   head "git://git.skarnet.org/execline", branch: "main"
 
   livecheck do

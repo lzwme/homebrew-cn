@@ -4,6 +4,7 @@ class Cminpack < Formula
   url "https://ghfast.top/https://github.com/devernay/cminpack/archive/refs/tags/v1.3.14.tar.gz"
   sha256 "10a76d214e01baa0480828fa473c2ef6209983c80941eca10b5a69df4de02cee"
   license "Minpack"
+  compatibility_version 1
   head "https://github.com/devernay/cminpack.git", branch: "master"
 
   bottle do

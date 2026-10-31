@@ -5,6 +5,7 @@ class Ant < Formula
   mirror "https://archive.apache.org/dist/ant/binaries/apache-ant-1.10.18-bin.tar.xz"
   sha256 "e03e4f4047b51ea0164dfdfa7827dce267b6e033bac1387241731ca037bda7b9"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://git-wip-us.apache.org/repos/asf/ant.git", branch: "master"
 
   bottle do

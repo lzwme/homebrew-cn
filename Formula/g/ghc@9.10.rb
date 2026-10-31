@@ -9,6 +9,7 @@ class GhcAT910 < Formula
     "MIT", # libffi
     any_of: ["LGPL-3.0-or-later", "GPL-2.0-or-later"], # GMP
   ]
+  compatibility_version 1
 
   livecheck do
     url "https://gitlab.haskell.org/ghc/ghc/-/wikis/GHC%20Status#all-released-ghc-versions"

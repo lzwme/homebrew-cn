@@ -5,6 +5,7 @@ class Libxaw3d < Formula
   sha256 "0cdb8f51c390b0f9f5bec74454e53b15b6b815bc280f6b7c969400c9ef595803"
   license "MIT"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "8c3bcdaed34defe95f3e8d12469b86a536329c964d3c11ac69886bc124996bcd"

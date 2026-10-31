@@ -6,6 +6,7 @@ class BerkeleyDb < Formula
   sha256 "0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8"
   license "AGPL-3.0-only"
   revision 4
+  compatibility_version 1
 
   livecheck do
     url "https://www.oracle.com/database/technologies/related/berkeleydb-downloads.html"

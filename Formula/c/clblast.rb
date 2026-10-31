@@ -4,6 +4,7 @@ class Clblast < Formula
   url "https://ghfast.top/https://github.com/CNugteren/CLBlast/archive/refs/tags/1.7.0.tar.gz"
   sha256 "cac83330a6110214f2b7efc8e46062536f40ba96122f3b2a074a51497d8ca9e7"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "880c47aba78e088e5547172e8964d6d30d1a8586f54af6642027e7e028b0fa03"

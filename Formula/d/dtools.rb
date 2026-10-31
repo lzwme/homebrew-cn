@@ -4,6 +4,7 @@ class Dtools < Formula
   url "https://ghfast.top/https://github.com/dlang/tools/archive/refs/tags/v2.113.0.tar.gz"
   sha256 "9fae73963d16ab7330120588c0bbbd15919de087858bfcb1d75d7cc06970179e"
   license "BSL-1.0"
+  compatibility_version 1
   head "https://github.com/dlang/tools.git", branch: "master"
 
   bottle do

@@ -22,6 +22,8 @@ class PythonTkAT310 < Formula
   depends_on "python@3.10"
   depends_on "tcl-tk@8"
 
+  deny_network_access!
+
   def install
     cd "Modules" do
       tcltk = Formula["tcl-tk@8"]

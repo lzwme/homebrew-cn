@@ -9,18 +9,19 @@ class Dolphie < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "846746b2bf5467d46cdc92d759c4fd50bfc74158147360ec35ecb73adc04c036"
-    sha256 cellar: :any, arm64_tahoe:       "418470bcfc42b68d246f1b915e82d042456129f2efc1cfc2bebf6ba52b16c4b8"
-    sha256 cellar: :any, arm64_sequoia:     "2f11265853add7873793e15e7e063722517353c4b808da8d7891d122cbf2e624"
-    sha256 cellar: :any, arm64_linux:       "1868fcb3e8199149bca0db44e0a1165198fbd9a389cf5dda2b0fced5fd635185"
-    sha256 cellar: :any, x86_64_linux:      "869e93b81f10256fc996436701dc661c6cbb7abe01bcbb73b03e58e818146458"
+    rebuild 2
+    sha256 cellar: :any, arm64_golden_gate: "1be8359d932e0289bf4dc29cf7043667abed92bf45acb4092fd7d2bfabea9f0d"
+    sha256 cellar: :any, arm64_tahoe:       "3808d2bc90c0b5e078ae824cdd942519f9ff7c6b1a18a8549d4fa29833c379e7"
+    sha256 cellar: :any, arm64_sequoia:     "f929bdbbd717ec58c60f065ecca9d0f17c1014808c27555dc88f7fb74e29829e"
+    sha256 cellar: :any, arm64_linux:       "e85b0b93172e13bfa37d47d7f53c6ecb79cf16ff2b12cc18ebae592df9c374f2"
+    sha256 cellar: :any, x86_64_linux:      "390c2132b88470c2a0cb7bac9c0b648863bfe54bfdc9b027f6b4821ad41fb013"
   end
 
   depends_on "rust" => :build # for orjson
   depends_on "certifi" => :no_linkage
   depends_on "cryptography" => :no_linkage
   depends_on "python@3.15"
+  depends_on "zstd"
 
   pypi_packages exclude_packages: ["certifi", "cryptography"]
 
@@ -140,7 +141,13 @@ class Dolphie < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources without: "zstandard"
+
+    resource("zstandard").stage do
+      args = std_pip_args(prefix: false, build_isolation: true)
+      args << "--config-settings=--build-option=--system-zstd"
+      system venv.root/"bin/python", "-m", "pip", "install", *args, "."
+    end
   end
 
   test do

@@ -8,6 +8,7 @@ class Abook < Formula
     "BSD-2-Clause",      # xmalloc.c
     "BSD-4.3RENO",       # ldif.c
   ]
+  compatibility_version 1
   head "https://git.code.sf.net/p/abook/git.git", branch: "master"
 
   stable do

@@ -5,6 +5,7 @@ class Swiftly < Formula
       tag:      "1.1.4",
       revision: "24b20ba8a53aa9837a04e9393c035be33968b1e8"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/swiftlang/swiftly.git", branch: "main"
 
   livecheck do

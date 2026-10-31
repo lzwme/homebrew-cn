@@ -6,6 +6,7 @@ class Mandoc < Formula
   sha256 "8bf0d570f01e70a6e124884088870cbed7537f36328d512909eb10cd53179d9c"
   license "ISC"
   revision 1
+  compatibility_version 1
   head "anoncvs@mandoc.bsd.lv:/cvs", using: :cvs
 
   livecheck do

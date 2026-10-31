@@ -5,6 +5,7 @@ class Safeint < Formula
   version "3.0.28a"
   sha256 "9e652d065a3cef80623287d5dc61edcf6a95ddab38a9dfeb34f155261fc9cef7"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/dcleblanc/SafeInt.git", branch: "master"
 
   # The `GithubLatest` strategy is used here because upstream changed their

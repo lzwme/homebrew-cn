@@ -5,6 +5,7 @@ class Ponyc < Formula
       tag:      "0.77.2",
       revision: "c4844d2c631039fc195def492ac118c33efbfa86"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   bottle do
     sha256               arm64_golden_gate: "ab4e55c1ae0c14ec6d49d88c3d2e4d2fd6660a7a1444f890d708b420da7a5505"

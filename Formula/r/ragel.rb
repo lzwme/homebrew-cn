@@ -4,6 +4,7 @@ class Ragel < Formula
   url "https://www.colm.net/files/ragel/ragel-6.11.tar.gz"
   sha256 "47653e376554adbb617d2f1da15394b6a163264e2410c2bff3581347a14890e3"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url :homepage

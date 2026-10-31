@@ -4,6 +4,7 @@ class Bower < Formula
   url "https://registry.npmjs.org/bower/-/bower-1.8.14.tgz"
   sha256 "00df3dcc6e8b3a4dd7668934a20e60e6fc0c4269790192179388c928553a3f7e"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     rebuild 1

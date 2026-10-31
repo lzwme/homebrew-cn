@@ -32,6 +32,8 @@ class Youplot < Formula
     sha256 "0bbd1defdc31134abefed027a639b3723c2753862150f4c3ee61cab71b20d67d"
   end
 
+  deny_network_access!
+
   def install
     ENV["GEM_HOME"] = libexec
     resources.each do |r|

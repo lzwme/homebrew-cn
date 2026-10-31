@@ -4,6 +4,7 @@ class Libfabric < Formula
   url "https://ghfast.top/https://github.com/ofiwg/libfabric/releases/download/v2.7.0/libfabric-2.7.0.tar.bz2"
   sha256 "366000427e194d4ce22e272519b608afbebb1fc9915bcf5da924157a8a47fe10"
   license any_of: ["BSD-2-Clause", "GPL-2.0-only"]
+  compatibility_version 1
   head "https://github.com/ofiwg/libfabric.git", branch: "main"
 
   livecheck do

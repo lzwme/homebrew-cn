@@ -5,6 +5,7 @@ class Cppad < Formula
   sha256 "41ec617bb1e4163da381aaa5083a152e033631e9b5e135ccdc3466aaa1dc9001"
   license "EPL-2.0"
   version_scheme 1
+  compatibility_version 1
   head "https://github.com/coin-or/CppAD.git", branch: "main"
 
   livecheck do

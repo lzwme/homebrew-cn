@@ -5,6 +5,7 @@ class Etcd < Formula
       tag:      "v3.7.3",
       revision: "0a173d0410a96d01091b484daae81365bbcde57e"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/etcd-io/etcd.git", branch: "main"
 
   bottle do

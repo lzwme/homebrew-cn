@@ -4,6 +4,7 @@ class Zbar < Formula
   url "https://linuxtv.org/downloads/zbar/zbar-0.23.95.tar.gz"
   sha256 "7b0907a3114503e0a8fbd1c6bfdb61592e6ded79f68716d7ca673ddeb6a87e99"
   license "LGPL-2.1-only"
+  compatibility_version 1
   head "https://github.com/mchehab/zbar.git", branch: "master"
 
   livecheck do

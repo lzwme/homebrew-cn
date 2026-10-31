@@ -4,6 +4,7 @@ class Tlx < Formula
   url "https://ghfast.top/https://github.com/tlx/tlx/archive/refs/tags/v0.6.1.tar.gz"
   sha256 "24dd1acf36dd43b8e0414420e3f9adc2e6bb0e75047e872a06167961aedad769"
   license "BSL-1.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c9b2c612407117a198bca2965dbe60bd5f344111a6835034db4ed62fd1c7603e"

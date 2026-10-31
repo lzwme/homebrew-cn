@@ -10,6 +10,7 @@ class EigenAT3 < Formula
     "Minpack",       # LevenbergMarquardt
     "LGPL-2.1-only", # IterativeSolvers
   ]
+  compatibility_version 1
 
   livecheck do
     url "https://gitlab.com/api/v4/projects/libeigen%2Feigen/releases"

@@ -4,6 +4,7 @@ class Valijson < Formula
   url "https://ghfast.top/https://github.com/tristanpenman/valijson/archive/refs/tags/v1.1.3.tar.gz"
   sha256 "887b53b1a924f6fe0b35fa3bbc9bbbe5ae8c72097b7f0f7c17b45f4cfa646029"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "3ec954911f843d9b5090b0b36b59aabb4e20dae934b2a4c9f81b88faf3fccdf4"

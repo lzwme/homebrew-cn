@@ -4,6 +4,7 @@ class AsyncSimple < Formula
   url "https://ghfast.top/https://github.com/alibaba/async_simple/archive/refs/tags/1.4.tar.gz"
   sha256 "6188f7a5f4211754fee758dfebf73759b74ce78c208719b5cc37d5ab4775d550"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/alibaba/async_simple.git", branch: "main"
 
   bottle do

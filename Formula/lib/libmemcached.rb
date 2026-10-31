@@ -5,6 +5,7 @@ class Libmemcached < Formula
   sha256 "e22c0bb032fde08f53de9ffbc5a128233041d9f33b5de022c0978a2149885f82"
   license "BSD-3-Clause"
   revision 2
+  compatibility_version 1
 
   bottle do
     rebuild 2

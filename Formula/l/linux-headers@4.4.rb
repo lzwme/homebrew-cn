@@ -4,6 +4,7 @@ class LinuxHeadersAT44 < Formula
   url "https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.4.302.tar.gz"
   sha256 "66271f9d9fce8596622e8154ca0ea160e46b78a5a6c967a15b55855f744d1b0b"
   license "GPL-2.0-only" => { with: "Linux-syscall-note" }
+  compatibility_version 1
 
   livecheck do
     skip "No longer developed or maintained"

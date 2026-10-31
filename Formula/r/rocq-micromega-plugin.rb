@@ -5,6 +5,7 @@ class RocqMicromegaPlugin < Formula
   sha256 "5ed46c62dfb7c06ad1df2f744bca5a39282ac9787c57433478a87a706e6e4391"
   license "LGPL-2.1-only"
   revision 3
+  compatibility_version 1
 
   livecheck do
     url :stable

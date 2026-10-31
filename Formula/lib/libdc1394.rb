@@ -4,6 +4,7 @@ class Libdc1394 < Formula
   url "https://downloads.sourceforge.net/project/libdc1394/libdc1394-2/2.2.7/libdc1394-2.2.7.tar.gz"
   sha256 "537ceb78dd3cef271a183f4a176191d1cecf85f025520e6bd3758b0e19e6609f"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     rebuild 1

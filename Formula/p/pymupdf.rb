@@ -7,6 +7,7 @@ class Pymupdf < Formula
   sha256 "7733136f626fffe98677daa53c906eb45f2eb486a6450dbcfd652cbbd760f1e2"
   license "AGPL-3.0-only"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "f74746d26f0297957c5d8ed057c7ddc295f0c3b94bc0a26f00a7ab1ab8e88f61"

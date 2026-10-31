@@ -4,6 +4,7 @@ class Libnetworkit < Formula
   url "https://ghfast.top/https://github.com/networkit/networkit/archive/refs/tags/11.2.2.tar.gz"
   sha256 "04fffd0f801a91524a6dc2643f7d262e79600b086e4688bcb1b7988b2b5448dd"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     formula "networkit"

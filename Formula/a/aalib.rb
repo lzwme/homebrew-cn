@@ -5,6 +5,7 @@ class Aalib < Formula
   sha256 "fbddda9230cf6ee2a4f5706b4b11e2190ae45f5eda1f0409dc4f99b35e0a70ee"
   license "LGPL-2.0-or-later"
   revision 2
+  compatibility_version 1
 
   # The latest version in the formula is a release candidate, so we have to
   # allow matching of unstable versions.

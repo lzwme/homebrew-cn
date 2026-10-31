@@ -6,6 +6,7 @@ class Sdl2Gfx < Formula
   sha256 "63e0e01addedc9df2f85b93a248f06e8a04affa014a835c2ea34bfe34e576262"
   license "Zlib"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url :homepage

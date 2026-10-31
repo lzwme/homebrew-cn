@@ -4,6 +4,7 @@ class SoxNg < Formula
   url "https://codeberg.org/sox_ng/sox_ng/releases/download/sox_ng-14.8.1/sox_ng-14.8.1.tar.gz"
   sha256 "1dedd9ad574abc576bbda06743867fb778accf98a1eacde1a42913acbf072448"
   license "GPL-2.0-only"
+  compatibility_version 1
   head "https://codeberg.org/sox_ng/sox_ng.git", branch: "main"
 
   livecheck do

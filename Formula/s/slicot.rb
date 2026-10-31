@@ -4,6 +4,7 @@ class Slicot < Formula
   url "https://ghfast.top/https://github.com/SLICOT/SLICOT-Reference/releases/download/v5.9.1/slicot-5.9.1.tar.gz"
   sha256 "0f812933a07577db8c80dc53fc3663844114d43880f4c2fb383622891e931504"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "e6e06c50fc324a02a56d4c11cfc9cb8afc57ae00e418eff59971776f53e9c3e8"

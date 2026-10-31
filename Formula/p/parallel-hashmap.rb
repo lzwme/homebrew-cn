@@ -5,6 +5,7 @@ class ParallelHashmap < Formula
   sha256 "4f462f51a3468166ea4cf87c80e001dc1999093264cf55cbda3492ca39a7730b"
   license "Apache-2.0"
   version_scheme 1
+  compatibility_version 1
   head "https://github.com/greg7mdp/parallel-hashmap.git", branch: "master"
 
   # Upstream switched from a version format like 1.37 to semantic versions like

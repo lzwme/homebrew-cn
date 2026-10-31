@@ -5,6 +5,7 @@ class LinuxHeadersAT68 < Formula
   sha256 "1f6134265066aa2bef94103c1e4485d6ed8c2e08ba2a24202ea0c757c6c2c0de"
   license "GPL-2.0-only" => { with: "Linux-syscall-note" }
   revision 1
+  compatibility_version 1
 
   livecheck do
     skip "Final kernel.org release for 6.8. Consider adding patches from Ubuntu 24.04."

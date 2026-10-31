@@ -13,6 +13,7 @@ class Yasm < Formula
     any_of: ["Artistic-1.0-Perl", "GPL-2.0-or-later", "LGPL-2.0-or-later"], # libyasm/bitvect.c
   ]
   revision 2
+  compatibility_version 1
 
   livecheck do
     url "https://www.tortall.net/projects/yasm/releases/"

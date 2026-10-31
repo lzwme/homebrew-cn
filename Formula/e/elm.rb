@@ -4,6 +4,7 @@ class Elm < Formula
   url "https://ghfast.top/https://github.com/elm/compiler/archive/refs/tags/0.19.3.tar.gz"
   sha256 "e051f8700578a0920024ba9eb3496df6336119058ef996579b1b4a574b8313fa"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "58aab6f16a5900cad12eb45300f7d80ca00cbf4ab993cda6b4a7ec0ef98963ad"

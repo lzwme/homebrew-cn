@@ -5,6 +5,7 @@ class QuartzWm < Formula
   version "1.3.2"
   sha256 "11a344d8ad9375b61461f0e90b465bc569e60ce973f78e84d3476e7542065be0"
   license "APSL-2.0"
+  compatibility_version 1
 
   no_autobump! because: :incompatible_version_format
 

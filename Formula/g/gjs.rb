@@ -7,6 +7,7 @@ class Gjs < Formula
   # TODO: Move to latest `spidermonkey` once gjs supports mozjs-153.
   # Also set deprecation date on `spidermonkey@140`.
   revision 1
+  compatibility_version 1
   head "https://gitlab.gnome.org/GNOME/gjs.git", branch: "master"
 
   # This regex is intended to avoid the `Gnome` strategy's version filtering

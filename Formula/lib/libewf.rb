@@ -7,6 +7,7 @@ class Libewf < Formula
   sha256 "6dbbefe68e913243dc000b9daaf59f293e33c2340024f7dfb144f1ad90b06544"
   license "LGPL-3.0-or-later"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url :stable

@@ -9,6 +9,10 @@ class Openskills < Formula
     sha256 cellar: :any_skip_relocation, all: "e2026c6d2ec9ba496ba0be75a24794d328cb23cfd8ede1922f0be3b1a81da9e8"
   end
 
+  # see https://github.com/numman-ali/openskills/issues/94
+  deprecate! date: "2026-10-30", because: :unmaintained
+  disable! date: "2027-10-30", because: :unmaintained
+
   depends_on "node"
 
   def install

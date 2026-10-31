@@ -6,6 +6,7 @@ class Lz4 < Formula
   mirror "http://fresh-center.net/linux/misc/legacy/lz4-1.10.0.tar.gz"
   sha256 "537512904744b35e232912055ccf8ec66d768639ff3abe5788d90d792ec5f48b"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/lz4/lz4.git", branch: "dev"
 
   livecheck do

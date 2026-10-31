@@ -3,17 +3,16 @@ class CondaLock < Formula
 
   desc "Lightweight lockfile for conda environments"
   homepage "https://conda.github.io/conda-lock/"
-  url "https://files.pythonhosted.org/packages/4b/a2/5b088ae0b780cb98849a8ee93d293d82076f6d297850fc3797d31521fe8d/conda_lock-4.0.3.tar.gz"
-  sha256 "455efdfddb8e03cb44f2c4b7921e0ddc9d30e949c90611569dbe5aa652eb3079"
+  url "https://files.pythonhosted.org/packages/67/22/9c9dc6543a2e180a438367f04d1e19eb1194e44f57c4f7da4a0d2898565c/conda_lock-4.0.4.tar.gz"
+  sha256 "90c1111958d756f1bb3480312cb0303d0dab909b04fda4aaaefb352e6621113f"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "dbc2681d26744e055f6ad33f7b8ce7ec2c5327517ee02e75f7014be59b077d9b"
-    sha256 cellar: :any, arm64_tahoe:       "6ccf512f31de46dc4d974e0815658d63b27c2ae6fb3417256b6063378211d1ee"
-    sha256 cellar: :any, arm64_sequoia:     "b38abf22a17c27183b6aafafb0e9128ac9c2f73917ed22f6cf9024c7e4b79def"
-    sha256 cellar: :any, arm64_linux:       "ce66dda5d7110e2268b9b05c0c7cb168d884eddbe4d648756f62ff3cab73efe9"
-    sha256 cellar: :any, x86_64_linux:      "a5d1618418ae1eead3942af7c5eb594d7ae54e8972c9f05a1bfbd78620db5e7c"
+    sha256 cellar: :any, arm64_golden_gate: "a8a702b65e075eebc6d1501b112fad7792275021fbc066d175aa4c177b9ff8d1"
+    sha256 cellar: :any, arm64_tahoe:       "c6bd5afcc4f0582b706e4046c3201edc27437c5654aa7be0e48ac301e8d8e672"
+    sha256 cellar: :any, arm64_sequoia:     "5f1183e7ac14926456dc121ed4ecf03132ab71d6cf45b31713f60590038ed1e3"
+    sha256 cellar: :any, arm64_linux:       "fded2831d47e943a1dc86c77fcdb1fc60df682885e89a760fe4707a12de98736"
+    sha256 cellar: :any, x86_64_linux:      "51131d90def358b9199752cc25e3aec7c90ef94e1a4e3576bfefcee6f8e799fe"
   end
 
   depends_on "rust" => :build # for cachecontrol, uv-backend
@@ -162,8 +161,8 @@ class CondaLock < Formula
   end
 
   resource "msgpack" do
-    url "https://files.pythonhosted.org/packages/0a/e7/bb605a7bab2d8425a64b3fa762b39dc1bf1c7e3f11ba6fb5413d6db0ff8c/msgpack-1.2.3.tar.gz"
-    sha256 "32edb81a2b5eb7cd7c9d941b2bfbbb082fd2cd09e0e725930316af6b708db186"
+    url "https://files.pythonhosted.org/packages/cc/52/1ec7ead2c7528bf3d1db73e886fa4df10f9e6f0eb7854a448b7090cfcef7/msgpack-1.2.4.tar.gz"
+    sha256 "475c44e12f2a5de766a8448783f149c9b33f3f49b88953c6cd739a77d93c732c"
   end
 
   resource "packaging" do
@@ -177,8 +176,8 @@ class CondaLock < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/58/e6/d0abbb256b44e6a05748c6942511ff67db8dbb068de0c35b24bf1b395b09/platformdirs-4.13.5.tar.gz"
-    sha256 "05831adf87d392760f4b5c3a0a95579ab5a10b18b9b9bd43680dcb47544788a0"
+    url "https://files.pythonhosted.org/packages/40/28/1c058a9143d2304b3078f8dadcbb9dc27f7d3581b5d05157c84869c4cc0d/platformdirs-4.14.0.tar.gz"
+    sha256 "83f009c1e8c5fc36869b5171755b291887bd2cade7965233cdfabd23d754720b"
   end
 
   resource "pyproject-hooks" do

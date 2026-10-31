@@ -3,18 +3,17 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https://streamlink.github.io/"
-  url "https://files.pythonhosted.org/packages/79/0d/d7875f76e1e87c9978bed557af5d5d43d4adbd495117d363f9dbfd09255c/streamlink-8.6.2.tar.gz"
-  sha256 "7f02e31e99e1a0e0022a48187b16461fba59bd5fad764ad4cab4ce654b05ee23"
+  url "https://files.pythonhosted.org/packages/35/71/213d837ca5ddcc5bc56b50373da97f4bcd407bca384a1d05d212c5212938/streamlink-8.6.3.tar.gz"
+  sha256 "d3602a2629b62d935a7ddc2f31dcea7797b3780654dcccbd5c3dd5b5f7e380c8"
   license "BSD-2-Clause"
   head "https://github.com/streamlink/streamlink.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "90ff7fe1e3e1c1dd0c21c94648041f09ef7c9f2013e1dc0724fa3992ddb6ded3"
-    sha256 cellar: :any, arm64_tahoe:       "8887767201550c631b1d2ee0e1e51a4b85f61d7428ac9cbedf5318e769e132f9"
-    sha256 cellar: :any, arm64_sequoia:     "4bb213892cdc12e563b8622147c8d7858db9c87aa05e509dd8b1b372f52a7f0d"
-    sha256 cellar: :any, arm64_linux:       "e5b5746f9a63da8a5880bd8a9edfe241928e392c89e2ffe70c225dd738ed045b"
-    sha256 cellar: :any, x86_64_linux:      "6845de4b7be34152eb59af8bc2742e0d0590e90035eb0519ef11a5837ae4d918"
+    sha256 cellar: :any, arm64_golden_gate: "93d25ff08f3e2d6fd46c68612205d2357aaf04a02b13acdaea1a02bf3198777f"
+    sha256 cellar: :any, arm64_tahoe:       "fbb6ba30505c741a2a95172796b2fa71034fc3357c802eada00a9c49488cd500"
+    sha256 cellar: :any, arm64_sequoia:     "46337dffcf2fbbdf0834fffad000b92d67d600597ab2e380b909bebec0da7f75"
+    sha256 cellar: :any, arm64_linux:       "d73da9a08c769d896718c8046d84a5aafa50f1f928548995e0abb697ac3f4cc4"
+    sha256 cellar: :any, x86_64_linux:      "dd068cb2d22ea4de476f4f65288d5879a1b8ea12297aef174bc0f71c3887910e"
   end
 
   depends_on "pkgconf" => :build
@@ -68,8 +67,8 @@ class Streamlink < Formula
   end
 
   resource "pycryptodome" do
-    url "https://files.pythonhosted.org/packages/34/e0/0d0bd5b1089a4bf5ef48164459289ddf02a9110ca1db854edaad25127e64/pycryptodome-3.24.0.tar.gz"
-    sha256 "9140779b40405476a799305b9ac1bcaab4ee6791dc3d38b12a9aa84ffbd6aabf"
+    url "https://files.pythonhosted.org/packages/33/c7/f9374c8939560ab22db1dd9dbe215b62d20f32634aeb7f259dc03c807b44/pycryptodome-4.2.0.tar.gz"
+    sha256 "21d7fdba239d6ef863d3d08388801c683453a3bb4897c2b27f27847aad89bdf7"
   end
 
   resource "pysocks" do

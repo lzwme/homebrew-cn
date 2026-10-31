@@ -4,6 +4,7 @@ class Fig2dev < Formula
   url "https://downloads.sourceforge.net/project/mcj/fig2dev-3.2.9a.tar.xz"
   sha256 "61e185393176852f03b901b3b05b19fbc5ad8258ff142f3da6e70b1b83513326"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable

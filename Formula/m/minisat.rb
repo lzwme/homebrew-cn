@@ -4,6 +4,7 @@ class Minisat < Formula
   url "https://ghfast.top/https://github.com/stp/minisat/archive/refs/tags/releases/2.2.1.tar.gz"
   sha256 "432985833596653fcd698ab439588471cc0f2437617d0df2bb191a0252ba423d"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/stp/minisat.git", branch: "master"
 
   bottle do

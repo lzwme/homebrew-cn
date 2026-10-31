@@ -5,6 +5,7 @@ class ScalaCli < Formula
       tag:      "v1.18.0",
       revision: "65126b818f5a135ed3d18eb77e8010cbdb0daae9"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url :stable

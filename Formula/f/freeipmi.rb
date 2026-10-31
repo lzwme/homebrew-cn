@@ -5,6 +5,7 @@ class Freeipmi < Formula
   mirror "https://ftp.gnu.org/gnu/freeipmi/freeipmi-1.6.20.tar.gz"
   sha256 "9cc644530ee629ffb94d6fd209e7cb4a8b8ae6677f89d2dc461efed9b2e709f2"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "347bfaa6be50d30ca86a51aaf3b1dd7b5d7e467b8526ca9640b99b8a9a99ecc4"

@@ -4,6 +4,7 @@ class Libtermkey < Formula
   url "https://www.leonerd.org.uk/code/libtermkey/libtermkey-0.22.tar.gz"
   sha256 "6945bd3c4aaa83da83d80a045c5563da4edd7d0374c62c0d35aec09eb3014600"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :homepage

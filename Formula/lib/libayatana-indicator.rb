@@ -4,6 +4,7 @@ class LibayatanaIndicator < Formula
   url "https://ghfast.top/https://github.com/AyatanaIndicators/libayatana-indicator/archive/refs/tags/0.9.5.tar.gz"
   sha256 "73d71c908b803f12e4a5ecd8392511b58afbdd0c82ad7909611a17bb7847c5c8"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     rebuild 1

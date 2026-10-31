@@ -28,6 +28,8 @@ class Xauth < Formula
     depends_on "libxdmcp"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       --sysconfdir=#{etc}

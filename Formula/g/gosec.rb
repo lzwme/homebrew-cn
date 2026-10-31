@@ -4,6 +4,7 @@ class Gosec < Formula
   url "https://ghfast.top/https://github.com/securego/gosec/archive/refs/tags/v2.30.0.tar.gz"
   sha256 "58ad3a584453ad31f0b646818bcd1cc005afd20ef507d71cd41821fbba506332"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/securego/gosec.git", branch: "master"
 
   bottle do

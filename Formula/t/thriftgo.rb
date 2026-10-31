@@ -4,6 +4,7 @@ class Thriftgo < Formula
   url "https://ghfast.top/https://github.com/cloudwego/thriftgo/archive/refs/tags/v0.4.5.tar.gz"
   sha256 "8469be2df13bb1c2128a3594e4d59fb718ddf3da603181d163dbcf3d230214af"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/cloudwego/thriftgo.git", branch: "main"
 
   bottle do

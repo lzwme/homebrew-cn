@@ -5,6 +5,7 @@ class XmlrpcC < Formula
   sha256 "509c3a3bffb77c81e2c364175ac70b95b799e5b695cc37d4bf833ec28fdfe0b6"
   license "BSD-3-Clause"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "320d56ff6025d45887470bee950ecfb5cdfda6f7739cefd2b6845e3de7ae3ae1"

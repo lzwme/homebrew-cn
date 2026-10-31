@@ -5,6 +5,7 @@ class Argtable3 < Formula
   sha256 "c08bca4b88ddb9234726b75455b3b1670d7c864d8daf198eaa7a3b4d41addf2c"
   license "BSD-3-Clause"
   revision 1
+  compatibility_version 1
   head "https://github.com/argtable/argtable3.git", branch: "master"
 
   livecheck do

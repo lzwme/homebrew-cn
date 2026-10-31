@@ -5,6 +5,7 @@ class Maxima < Formula
   sha256 "0bc4b5e11fe153ef20b24a3a816b668ece5378cc738fa24ca426b62fd6d8fc37"
   license "GPL-2.0-only"
   revision 2
+  compatibility_version 1
 
   livecheck do
     url :stable

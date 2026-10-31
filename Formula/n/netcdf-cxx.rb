@@ -5,6 +5,7 @@ class NetcdfCxx < Formula
   sha256 "e3fe3d2ec06c1c2772555bf1208d220aab5fee186d04bd265219b0bc7a978edc"
   license "NetCDF"
   revision 3
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "5b35e7081ab06ad5441a628c86d99382eedf348608d2cf8bd314a63fde67a43b"

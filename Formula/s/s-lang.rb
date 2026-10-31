@@ -4,6 +4,7 @@ class SLang < Formula
   url "https://www.jedsoft.org/releases/slang/slang-2.3.3.tar.bz2"
   sha256 "f9145054ae131973c61208ea82486d5dd10e3c5cdad23b7c4a0617743c8f5a18"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://www.jedsoft.org/releases/slang/"

@@ -4,6 +4,7 @@ class Atf < Formula
   url "https://ghfast.top/https://github.com/freebsd/atf/releases/download/atf-0.26/atf-0.26.tar.gz"
   sha256 "bae70930bef565faacb95b10e5673601df0d7f25db720cc735060d115c92ee73"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/freebsd/atf.git", branch: "master"
 
   livecheck do

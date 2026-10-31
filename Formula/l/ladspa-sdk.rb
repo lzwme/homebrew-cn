@@ -4,6 +4,7 @@ class LadspaSdk < Formula
   url "https://www.ladspa.org/download/ladspa_sdk_1.17.tgz"
   sha256 "27d24f279e4b81bd17ecbdcc38e4c42991bb388826c0b200067ce0eb59d3da5b"
   license "LGPL-2.1-only"
+  compatibility_version 1
 
   livecheck do
     url "https://www.ladspa.org/download/index.html"

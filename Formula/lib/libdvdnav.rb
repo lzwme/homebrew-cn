@@ -4,6 +4,7 @@ class Libdvdnav < Formula
   url "https://download.videolan.org/pub/videolan/libdvdnav/7.0.0/libdvdnav-7.0.0.tar.xz"
   sha256 "a2a18f5ad36d133c74bf9106b6445806fa253b09141a46392550394b647b221e"
   license "GPL-2.0-or-later"
+  compatibility_version 1
   head "https://code.videolan.org/videolan/libdvdnav.git", branch: "master"
 
   livecheck do

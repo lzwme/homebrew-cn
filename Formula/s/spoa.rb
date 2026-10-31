@@ -4,6 +4,7 @@ class Spoa < Formula
   url "https://ghfast.top/https://github.com/rvaser/spoa/archive/refs/tags/4.1.6.tar.gz"
   sha256 "5c69a2329456f9d7f611eccddf5cc8e85414a2f2ad23b539f77140919ba0da27"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "917e9fadb2ca216ba79721022a4982e3e4074efe0cc1c4891595c9ba9a67fa60"

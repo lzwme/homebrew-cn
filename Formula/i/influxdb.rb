@@ -5,6 +5,7 @@ class Influxdb < Formula
       tag:      "v3.12.2",
       revision: "cc9769917ab399ed5b48567a92b5d34ed4d918ea"
   license any_of: ["Apache-2.0", "MIT"]
+  compatibility_version 1
   head "https://github.com/influxdata/influxdb.git", branch: "main"
 
   # Upstream no longer creates releases for tags on GitHub, so we check the

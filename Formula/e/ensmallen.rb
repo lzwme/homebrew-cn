@@ -4,6 +4,7 @@ class Ensmallen < Formula
   url "https://ghfast.top/https://github.com/mlpack/ensmallen/archive/refs/tags/3.11.1.tar.gz"
   sha256 "3606c0d0a06ac75858ddb4eecd0802154bc91d45763aa9521cf53a0e78178d55"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/mlpack/ensmallen.git", branch: "master"
 
   bottle do

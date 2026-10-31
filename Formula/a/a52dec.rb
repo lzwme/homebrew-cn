@@ -4,6 +4,7 @@ class A52dec < Formula
   url "https://distfiles.adelielinux.org/source/a52dec/a52dec-0.8.0.tar.gz"
   sha256 "03c181ce9c3fe0d2f5130de18dab9bd8bc63c354071515aa56983c74a9cffcc9"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://distfiles.adelielinux.org/source/a52dec/"

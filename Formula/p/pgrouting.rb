@@ -4,6 +4,7 @@ class Pgrouting < Formula
   url "https://ghfast.top/https://github.com/pgRouting/pgrouting/releases/download/v4.0.2/pgrouting-4.0.2.tar.gz"
   sha256 "2faf31b178db969637c1f392ba3ba18fba8d5aed15bdc73fbb4a53a72c5d0f71"
   license "GPL-2.0-or-later"
+  compatibility_version 1
   head "https://github.com/pgRouting/pgrouting.git", branch: "develop"
 
   livecheck do

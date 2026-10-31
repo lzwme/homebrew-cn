@@ -4,6 +4,7 @@ class Libxscrnsaver < Formula
   url "https://xorg.freedesktop.org/archive/individual/lib/libXScrnSaver-1.2.5.tar.xz"
   sha256 "5057365f847253e0e275871441e10ff7846c8322a5d88e1e187d326de1cd8d00"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "f95fd53831c3fca39f3a8290b9fd46c4e2f166fd537b306b8201749c57f0290d"

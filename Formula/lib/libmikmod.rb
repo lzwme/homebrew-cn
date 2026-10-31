@@ -4,6 +4,7 @@ class Libmikmod < Formula
   url "https://downloads.sourceforge.net/project/mikmod/libmikmod/3.3.16/libmikmod-3.3.16.tar.gz"
   sha256 "7b24e41468b0dfe7fae1104ae6a0d7c52e04a65e1851b268c7074e4d06685a53"
   license "LGPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url :stable

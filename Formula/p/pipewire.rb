@@ -8,6 +8,7 @@ class Pipewire < Formula
     "GPL-2.0-only",      # libjackserver.so
     "LGPL-2.1-or-later", # libspa-alsa.so
   ]
+  compatibility_version 1
   head "https://gitlab.freedesktop.org/pipewire/pipewire.git", branch: "master"
 
   # We restrict matching to versions with an even-numbered minor version number,

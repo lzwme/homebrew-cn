@@ -4,6 +4,7 @@ class Jemalloc < Formula
   url "https://ghfast.top/https://github.com/jemalloc/jemalloc/releases/download/5.4.0/jemalloc-5.4.0.tar.bz2"
   sha256 "200776fac271093e7c2f21edd6d62657ecd2be578d9328633f2a86bfa6ef4f1d"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "ebc856c594fac98560d03ee45b1a74dafc7564cfd1cc54223c717b8976697096"

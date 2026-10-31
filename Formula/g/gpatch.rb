@@ -5,6 +5,7 @@ class Gpatch < Formula
   mirror "https://ftp.gnu.org/gnu/patch/patch-2.8.1.tar.xz"
   sha256 "3240c7959c5347c8ed347e3c4201c0337bf4240d5cf09d68889e58eeaba30e17"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2b1381f45a7565f59b5e14294855454764e6e5464b784f2cffa3467a1b449834"

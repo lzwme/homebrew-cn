@@ -4,6 +4,7 @@ class Libcutl < Formula
   url "https://www.codesynthesis.com/download/xsd/4.2/libcutl-1.11.0.tar.gz"
   sha256 "bb78ff87d6cb1a2544543ffe7941f0aeb8f9dcaf7dd46e9acef3e032ed7881dc"
   license "MIT"
+  compatibility_version 1
   head "https://git.codesynthesis.com/libcutl/libcutl.git", branch: "master"
 
   livecheck do

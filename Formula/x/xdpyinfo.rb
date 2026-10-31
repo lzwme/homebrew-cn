@@ -25,6 +25,8 @@ class Xdpyinfo < Formula
   depends_on "libxi"
   depends_on "libxtst"
 
+  deny_network_access!
+
   def install
     args = %W[
       --sysconfdir=#{etc}

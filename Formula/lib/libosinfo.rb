@@ -5,6 +5,7 @@ class Libosinfo < Formula
   sha256 "ad8557ece26793da43d26de565e3d68ce2ee6bfb8d0113b7cc7dfe07f6bfc6b6"
   license "LGPL-2.0-or-later"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://gitlab.com/libosinfo/libosinfo.git"

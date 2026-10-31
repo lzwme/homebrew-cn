@@ -4,6 +4,7 @@ class Xeve < Formula
   url "https://ghfast.top/https://github.com/mpeg5/xeve/archive/refs/tags/v0.7.1.tar.gz"
   sha256 "5d1249212f431816b4723937c9ec8491b45ee1bb75c0f46692deaf7f59fbf19c"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/mpeg5/xeve.git", branch: "master"
 
   # Regex is needed to avoid picking up non-semver tags

@@ -4,6 +4,7 @@ class ProtocGenGo < Formula
   url "https://ghfast.top/https://github.com/protocolbuffers/protobuf-go/archive/refs/tags/v1.36.12.tar.gz"
   sha256 "23a247d69c52872ecbfd6bcbee3216793b2672fa5a7b99497777bf9c3563756f"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/protocolbuffers/protobuf-go.git", branch: "master"
 
   bottle do

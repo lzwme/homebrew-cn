@@ -14,6 +14,8 @@ class Ydiff < Formula
 
   depends_on "python@3.15"
 
+  allow_network_access! :build
+
   def install
     virtualenv_install_with_resources
   end

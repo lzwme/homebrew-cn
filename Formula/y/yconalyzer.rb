@@ -37,6 +37,8 @@ class Yconalyzer < Formula
     resolves "https://sourceforge.net/p/yconalyzer/bugs/3/"
   end
 
+  deny_network_access!
+
   def install
     # Workaround for error: 'strptime' was not declared in this scope
     # Upstream is not maintained

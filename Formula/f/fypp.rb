@@ -6,6 +6,7 @@ class Fypp < Formula
   url "https://files.pythonhosted.org/packages/bb/a8/e156637279a91880d477a8afeb13097f438e46af332c5c1996fed10369f5/fypp-3.3.tar.gz"
   sha256 "14bb98c370873624c0a5e53bcf30f6ef0e1a3885e0f0cc714774c745ed8543f1"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/aradi/fypp.git", branch: "main"
 
   bottle do

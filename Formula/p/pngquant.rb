@@ -4,6 +4,7 @@ class Pngquant < Formula
   url "https://static.crates.io/crates/pngquant/pngquant-3.0.3.crate"
   sha256 "68a12bdd8825f9989f4ee9a6ab0b42727dae57728b939ef63453366697a07232"
   license all_of: ["GPL-3.0-or-later", "HPND", "BSD-2-Clause"]
+  compatibility_version 1
   head "https://github.com/kornelski/pngquant.git", branch: "main"
 
   bottle do

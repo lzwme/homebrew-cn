@@ -4,6 +4,7 @@ class Kustomize < Formula
   url "https://ghfast.top/https://github.com/kubernetes-sigs/kustomize/archive/refs/tags/kustomize/v5.8.3.tar.gz"
   sha256 "c823ae7b7e1461d82dfe7e592823796c6a98d9633cdbe33c64508b65c9911a57"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/kubernetes-sigs/kustomize.git", branch: "master"
 
   livecheck do

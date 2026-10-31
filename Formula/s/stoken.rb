@@ -5,6 +5,7 @@ class Stoken < Formula
   sha256 "102e2d112b275efcdc20ef438670e4f24f08870b9072a81fda316efcc38aef9c"
   license "LGPL-2.1-or-later"
   revision 2
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "e29db5cc3c80124d2f93bc2f7c6c907b339b533d7fdbfae3db22cf67649ab05e"

@@ -5,6 +5,7 @@ class Glpk < Formula
   mirror "https://ftp.gnu.org/gnu/glpk/glpk-5.0.tar.gz"
   sha256 "4a1013eebb50f728fc601bdd833b0b2870333c3b3e5a816eeba921d95bec6f15"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "a100b95363267be7c9156c013b2cc8aff450b2230657a2cd8b17014f5faa8459"

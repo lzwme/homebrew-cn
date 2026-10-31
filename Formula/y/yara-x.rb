@@ -4,6 +4,7 @@ class YaraX < Formula
   url "https://ghfast.top/https://github.com/VirusTotal/yara-x/archive/refs/tags/v1.22.1.tar.gz"
   sha256 "86036741a5c30d1e6ecf3fe11b6b4a79fb7e9e534a03479c036d66de8b20f657"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/VirusTotal/yara-x.git", branch: "main"
 
   livecheck do

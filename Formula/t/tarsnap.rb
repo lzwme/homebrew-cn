@@ -5,6 +5,7 @@ class Tarsnap < Formula
   sha256 "bebdbe1e6e91233755beb42ef0b4adbefd9573455258f009fb331556c799b3d0"
   license "0BSD"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://www.tarsnap.com/download.html"

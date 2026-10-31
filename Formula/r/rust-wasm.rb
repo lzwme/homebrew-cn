@@ -4,6 +4,7 @@ class RustWasm < Formula
   url "https://static.rust-lang.org/dist/rustc-1.99.1-src.tar.gz"
   sha256 "db56bbc64db491ceda6b78a2811a6d121c639338906fd944f720289cbd02245c"
   license any_of: ["Apache-2.0", "MIT"]
+  compatibility_version 1
 
   livecheck do
     formula "rust"

@@ -4,6 +4,7 @@ class Twm < Formula
   url "https://www.x.org/releases/individual/app/twm-1.0.13.1.tar.xz"
   sha256 "a52534755aa8b492c884e52fa988bac84ab4d54641954679b9aaf08e323df2c5"
   license "X11"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "ef3eafad63d25f13c1746678bd3efbbbabd513c3d1710b2bb885d6953fc906a8"

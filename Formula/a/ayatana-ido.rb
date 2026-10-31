@@ -4,6 +4,7 @@ class AyatanaIdo < Formula
   url "https://ghfast.top/https://github.com/AyatanaIndicators/ayatana-ido/archive/refs/tags/0.10.4.tar.gz"
   sha256 "bd59abd5f1314e411d0d55ce3643e91cef633271f58126be529de5fb71c5ab38"
   license any_of: ["GPL-3.0-or-later", "LGPL-2.0-or-later"]
+  compatibility_version 1
 
   bottle do
     rebuild 1

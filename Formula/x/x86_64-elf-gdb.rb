@@ -55,6 +55,8 @@ class X8664ElfGdb < Formula
     resolves "https://github.com/Homebrew/homebrew-core/issues/224294"
   end
 
+  deny_network_access!
+
   def install
     target = "x86_64-elf"
     args = %W[

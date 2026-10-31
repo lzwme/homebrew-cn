@@ -4,6 +4,7 @@ class Crun < Formula
   url "https://ghfast.top/https://github.com/containers/crun/releases/download/1.30.1/crun-1.30.1.tar.zst"
   sha256 "d62b89a82520a553edf63fd3ae11275be6f16ec86ed90d8ef7b113d06b239fa2"
   license any_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_linux:  "da0321c50b3b008dd1a51e43502ad845703059e31cddbe88ae9b0c1261ab843c"

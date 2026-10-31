@@ -4,6 +4,7 @@ class Libqalculate < Formula
   url "https://ghfast.top/https://github.com/Qalculate/libqalculate/releases/download/v5.13.1/libqalculate-5.13.1.tar.gz"
   sha256 "cf8d3eaf3d85030115701e997b6585e69573e71add88e7758486c5d1b01d3cc3"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   # Upstream sometimes creates Windows-only releases.
   livecheck do

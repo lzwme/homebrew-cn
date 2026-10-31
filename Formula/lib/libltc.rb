@@ -4,6 +4,7 @@ class Libltc < Formula
   url "https://ghfast.top/https://github.com/x42/libltc/releases/download/v1.3.2/libltc-1.3.2.tar.gz"
   sha256 "0a6d42cd6c21e925a27fa560dc45ac80057d275f23342102825909c02d3b1249"
   license "LGPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "2539fcf26e5c508b1232a1eb70cb084d51516c199fd5d1f43fa6bdf1b6184619"

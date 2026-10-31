@@ -4,6 +4,7 @@ class Libwpe < Formula
   url "https://ghfast.top/https://github.com/WebPlatformForEmbedded/libwpe/releases/download/1.16.3/libwpe-1.16.3.tar.xz"
   sha256 "c880fa8d607b2aa6eadde7d6d6302b1396ebc38368fe2332fa20e193c7ee1420"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/WebPlatformForEmbedded/libwpe.git", branch: "master"
 
   livecheck do

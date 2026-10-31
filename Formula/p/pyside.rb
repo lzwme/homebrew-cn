@@ -14,6 +14,7 @@ class Pyside < Formula
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
   ]
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://download.qt.io/official_releases/QtForPython/pyside6/"

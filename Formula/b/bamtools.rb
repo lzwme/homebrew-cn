@@ -5,6 +5,7 @@ class Bamtools < Formula
   sha256 "7d4e59bac7c03bde488fe43e533692f78b5325a097328785ec31373ffac08344"
   license "MIT"
   revision 1
+  compatibility_version 1
   head "https://github.com/pezmaster31/bamtools.git", branch: "master"
 
   bottle do

@@ -5,6 +5,7 @@ class Tabixpp < Formula
   sha256 "c850299c3c495221818a85c9205c60185c8ed9468d5ec2ed034470bb852229dc"
   license "MIT"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "a175582af57dbc5b5fe66aa6646aa6a16b3d2c33ec4b02056056393c96cdbddb"

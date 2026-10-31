@@ -7,13 +7,15 @@ class PythonMatplotlib < Formula
   sha256 "cec596316640f2b394b8f0daa0ea61a8eae82d017b620b9f202befb972a59ea4"
   license "PSF-2.0"
   revision 1
+  compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "480528f7169b0eeb01798199b15b5fc7178b76bbb553fdc7b96ab88640140d9a"
-    sha256 cellar: :any, arm64_tahoe:       "07c9a09123943be9ffd92154047b12500d2c4ad5098a026b4dcca6cf7dd3f74a"
-    sha256 cellar: :any, arm64_sequoia:     "4c89d10cfc820d7c307fe398f29840dc0174e6b11385f121c287a9b354d29107"
-    sha256 cellar: :any, arm64_linux:       "c1cebfa7d0da66c810fc7255ab8fca987f12bddbaeea1ee5077cdc1d6468a88a"
-    sha256 cellar: :any, x86_64_linux:      "182d1654b4d1806a07b05742c027bd22ff2431e5b698c85e7d49425cc5b64a76"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "cf7c50426b19581dd31233b58c3234566da59d3c419fd37568d2f5ad4d04e4c3"
+    sha256 cellar: :any, arm64_tahoe:       "7fd471f2dccebc96a0f3baa35075c7865fe140a32649313bb7a57b29ab08e6a0"
+    sha256 cellar: :any, arm64_sequoia:     "63172942e9ef3b5afd6ba916a611a90a4de2fdb53dd4e68dbcc8e526dfdaf6e7"
+    sha256 cellar: :any, arm64_linux:       "0c30f93da63f7a179ea0f072bc6a513eea225866ee7d3b26a23a11474d0cb28f"
+    sha256 cellar: :any, x86_64_linux:      "f476b95c43594b706abd902875a55d8bb741ac23c816b6e364d97d1653e933b7"
   end
 
   depends_on "cmake" => :build # for contourpy
@@ -21,6 +23,7 @@ class PythonMatplotlib < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "freetype"
+  depends_on "libraqm"
   depends_on "numpy"
   depends_on "pillow" => :no_linkage
   depends_on "python@3.15"
@@ -76,7 +79,9 @@ class PythonMatplotlib < Formula
     venv = virtualenv_create(libexec, python3)
     venv.pip_install resources
     system python3, "-m", "pip", "--python=#{venv.root}", "install",
+                                 "--config-settings=setup-args=--wrap-mode=nodownload",
                                  "--config-settings=setup-args=-Dsystem-freetype=true",
+                                 "--config-settings=setup-args=-Dsystem-libraqm=true",
                                  "--config-settings=setup-args=-Dsystem-qhull=true",
                                  *std_pip_args(prefix: false, build_isolation: true), "."
 

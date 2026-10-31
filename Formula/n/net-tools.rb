@@ -4,6 +4,7 @@ class NetTools < Formula
   url "https://downloads.sourceforge.net/project/net-tools/net-tools-2.10.tar.xz"
   sha256 "b262435a5241e89bfa51c3cabd5133753952f7a7b7b93f32e08cb9d96f580d69"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   bottle do
     rebuild 2

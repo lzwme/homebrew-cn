@@ -4,6 +4,7 @@ class YelpXsl < Formula
   url "https://download.gnome.org/sources/yelp-xsl/49/yelp-xsl-49.0.tar.xz"
   sha256 "59d43a8f8fe67b784f14f9a04dd4a7a092a7f4a64a65e71b90fe02a47a50fbec"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "MIT", "BSD-3-Clause"]
+  compatibility_version 1
   head "https://gitlab.gnome.org/GNOME/yelp-xsl.git", branch: "master"
 
   bottle do
@@ -16,6 +17,8 @@ class YelpXsl < Formula
   depends_on "ninja" => :build
 
   uses_from_macos "libxslt" => [:build, :test]
+
+  deny_network_access!
 
   def install
     inreplace "yelp-xsl.pc.in", "@prefix@", opt_prefix

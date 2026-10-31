@@ -4,6 +4,7 @@ class Libebml < Formula
   url "https://dl.matroska.org/downloads/libebml/libebml-1.4.7.tar.xz"
   sha256 "5b08214f929ee54c6187c370f84235fc9d0f2a2258c4d320d68eae6e2bdfd3f7"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
   head "https://github.com/Matroska-Org/libebml.git", branch: "master"
 
   livecheck do

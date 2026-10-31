@@ -4,6 +4,7 @@ class Tclap < Formula
   url "https://downloads.sourceforge.net/project/tclap/v1.6.0/tclap-1.6.0.tar.gz"
   sha256 "2ed4bb7655cb4feb7a0432311f1194875bf2d61d6624bf3e513fa101cb0bcb10"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable

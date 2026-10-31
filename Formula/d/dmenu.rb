@@ -4,6 +4,7 @@ class Dmenu < Formula
   url "https://dl.suckless.org/tools/dmenu-5.4.tar.gz"
   sha256 "8fbace2a0847aa80fe861066b118252dcc7b4ca0a0a8f3a93af02da8fb6cd453"
   license "MIT"
+  compatibility_version 1
   head "https://git.suckless.org/dmenu/", using: :git, branch: "master"
 
   livecheck do

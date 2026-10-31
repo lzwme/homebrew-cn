@@ -40,6 +40,8 @@ class Xapian < Formula
     end
   end
 
+  deny_network_access!
+
   def install
     odie "bindings resource needs to be updated" if version != resource("bindings").version
 

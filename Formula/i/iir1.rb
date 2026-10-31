@@ -4,6 +4,7 @@ class Iir1 < Formula
   url "https://ghfast.top/https://github.com/berndporr/iir1/archive/refs/tags/1.11.1.tar.gz"
   sha256 "ee3ffd1c8b7d406cd5610d537a9e033d93e00f5db208ea0341f0dbd0472e486a"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "fb1447fc77cd41cd22080c4b3cbaea302319df9cd2ca86b84fdae381a6cb8a8b"

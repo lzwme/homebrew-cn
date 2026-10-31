@@ -4,6 +4,7 @@ class Sol2 < Formula
   url "https://ghfast.top/https://github.com/ThePhD/sol2/archive/refs/tags/v3.5.0.tar.gz"
   sha256 "86c0f6d2836b184a250fc2907091c076bf53c9603dd291eaebade36cc342e13c"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "0eb3e697a4eea493659041a9c714c3b7ba1dad59c38e10fbea596f2d4825a6b1"

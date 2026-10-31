@@ -4,6 +4,7 @@ class Shfmt < Formula
   url "https://ghfast.top/https://github.com/mvdan/sh/archive/refs/tags/v3.14.1.tar.gz"
   sha256 "ec4bdb88ab6c95686be3a4eeb4ad77d2b49d33d2ed7b0a65035cd52d2d87c443"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/mvdan/sh.git", branch: "master"
 
   bottle do

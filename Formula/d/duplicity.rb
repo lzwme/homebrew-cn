@@ -6,6 +6,7 @@ class Duplicity < Formula
   url "https://files.pythonhosted.org/packages/a8/31/94fac806c15bb2388f09c338f5f75a023c10eceffb496c18eec682976078/duplicity-3.2.1.tar.gz"
   sha256 "4284e3d8f0082a85d3dcfa634901532a1087463df7a33ead417670c0d63b9ef5"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   # FIXME: Fails trying to resolve lxml as needs `libxml2`/`libxslt` installed
   no_autobump! because: "`update-python-resources` cannot determine dependencies"

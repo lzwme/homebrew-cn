@@ -4,6 +4,7 @@ class Xorgrgb < Formula
   url "https://xorg.freedesktop.org/archive/individual/app/rgb-1.1.1.tar.gz"
   sha256 "9bceca0821a46ff54989ab08ab00d6dd87eb2779fc15165d848eaa0ddd742fbe"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8f79a129e52bcf4efe0095fa424fee29b8d4a287d71795a8f8f52fd33ebdc037"

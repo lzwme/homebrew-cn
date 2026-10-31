@@ -4,6 +4,7 @@ class Zix < Formula
   url "https://gitlab.com/drobilla/zix/-/archive/v0.8.2/zix-v0.8.2.tar.gz"
   sha256 "a2464cdc11fa359b5e713b3c82bf0b476952efe397a02374ddbc1b62eee04f13"
   license "ISC"
+  compatibility_version 1
   head "https://gitlab.com/drobilla/zix.git", branch: "main"
 
   bottle do

@@ -10,6 +10,7 @@ class Qttasktree < Formula
     "BSD-3-Clause", # *.cmake
   ]
   revision 1
+  compatibility_version 1
   head "https://code.qt.io/qt/qttasktree.git", branch: "dev"
 
   livecheck do

@@ -4,6 +4,7 @@ class TidyHtml5 < Formula
   url "https://ghfast.top/https://github.com/htacg/tidy-html5/archive/refs/tags/5.8.0.tar.gz"
   sha256 "59c86d5b2e452f63c5cdb29c866a12a4c55b1741d7025cf2f3ce0cde99b0660e"
   license "Zlib"
+  compatibility_version 1
   head "https://github.com/htacg/tidy-html5.git", branch: "next"
 
   livecheck do

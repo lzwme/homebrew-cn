@@ -8,6 +8,7 @@ class Libblastrampoline < Formula
     "BSD-2-Clause-Views", # include/common/f77blas.h
     "BSD-3-Clause",       # include/common/lapacke*
   ]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "59cbab5b3da6915ee96a4679b2c967609d042509774b610b4aca260460e6dc43"

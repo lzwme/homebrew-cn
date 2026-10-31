@@ -3,6 +3,7 @@ class Flex < Formula
   homepage "https://github.com/westes/flex"
   license "BSD-2-Clause"
   revision 2
+  compatibility_version 1
 
   stable do
     url "https://ghfast.top/https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz"

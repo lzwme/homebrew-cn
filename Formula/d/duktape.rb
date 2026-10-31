@@ -4,6 +4,7 @@ class Duktape < Formula
   url "https://ghfast.top/https://github.com/svaarala/duktape/releases/download/v2.7.0/duktape-2.7.0.tar.xz"
   sha256 "90f8d2fa8b5567c6899830ddef2c03f3c27960b11aca222fa17aa7ac613c2890"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable

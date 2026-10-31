@@ -4,6 +4,7 @@ class AwsLc < Formula
   url "https://ghfast.top/https://github.com/aws/aws-lc/archive/refs/tags/v5.12.0.tar.gz"
   sha256 "52c7f98ffd296d267cc015ad4653d1ffae399db65b14421da4f5f7efc44becd2"
   license all_of: ["Apache-2.0", "ISC", "OpenSSL", "MIT", "BSD-3-Clause"]
+  compatibility_version 1
 
   livecheck do
     url :stable

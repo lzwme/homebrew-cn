@@ -4,6 +4,7 @@ class Hamlib < Formula
   url "https://ghfast.top/https://github.com/Hamlib/Hamlib/releases/download/4.7.2/hamlib-4.7.2.tar.gz"
   sha256 "ae1fcf2dbc80ea0786ea8f047b09399c3f7737d1930442f61a031708ed33e88f"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
   head "https://github.com/hamlib/hamlib.git", branch: "master"
 
   bottle do

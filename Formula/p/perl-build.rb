@@ -4,6 +4,7 @@ class PerlBuild < Formula
   url "https://ghfast.top/https://github.com/tokuhirom/Perl-Build/archive/refs/tags/1.34.tar.gz"
   sha256 "50e90b18f2541aca857b8743bd3c187b7844c608076c4f2aa13eadc0689b1644"
   license any_of: ["Artistic-1.0", "GPL-1.0-or-later"]
+  compatibility_version 1
   head "https://github.com/tokuhirom/perl-build.git", branch: "master"
 
   bottle do

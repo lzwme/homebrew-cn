@@ -4,6 +4,7 @@ class Protozero < Formula
   url "https://ghfast.top/https://github.com/mapbox/protozero/archive/refs/tags/v1.8.2.tar.gz"
   sha256 "68d1df951b4d8397355c8fc9ffed40d9c06282a877fe847403feac6edcee3ef1"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "e17a824e97d2e4740dec4d3182c5334376871adde4d099ee6c93d24f769bfba1"

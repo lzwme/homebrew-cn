@@ -4,6 +4,7 @@ class Libjaylink < Formula
   url "https://gitlab.zapb.de/libjaylink/libjaylink/-/archive/0.5.0/libjaylink-0.5.0.tar.bz2"
   sha256 "6c03a9c4d9d781c41ca0f5203e46bebe47ecd5857c6a7d75cbc52accc7be73f8"
   license "GPL-2.0-or-later"
+  compatibility_version 1
   head "https://gitlab.zapb.de/libjaylink/libjaylink.git", branch: "master"
 
   bottle do

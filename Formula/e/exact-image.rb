@@ -4,6 +4,7 @@ class ExactImage < Formula
   url "https://dl.exactcode.de/oss/exact-image/exact-image-1.2.1.tar.bz2"
   sha256 "7843cf35db40f3a2caed3d0b11256e226ef16169244ca2dc1c89af86ac8a148a"
   license "GPL-2.0-only"
+  compatibility_version 1
 
   livecheck do
     url "https://dl.exactcode.de/oss/exact-image/"

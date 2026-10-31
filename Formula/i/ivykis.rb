@@ -4,6 +4,7 @@ class Ivykis < Formula
   url "https://ghfast.top/https://github.com/buytenh/ivykis/archive/refs/tags/v0.43.2-trunk.tar.gz"
   sha256 "22621ae6a7144039cfb8666ed509b99ea1876d7642021a3505c7351502641103"
   license "LGPL-2.1-only"
+  compatibility_version 1
 
   livecheck do
     url :stable

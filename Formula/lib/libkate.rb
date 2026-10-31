@@ -4,6 +4,7 @@ class Libkate < Formula
   url "https://downloads.xiph.org/releases/kate/libkate-0.4.3.tar.gz"
   sha256 "96827ca136ad496b4e34ff3ed2434a8e76ad83b1e6962b5df06ad24cbbfeebaf"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "c85e9ff276447142d5706857bd3b239831baff9c6bd6e5a24ece74f297b9c568"

@@ -4,6 +4,7 @@ class KyotoCabinet < Formula
   url "https://dbmx.net/kyotocabinet/pkg/kyotocabinet-1.2.80.tar.gz"
   sha256 "4c85d736668d82920bfdbdb92ac3d66b7db1108f09581a769dd9160a02def349"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://dbmx.net/kyotocabinet/pkg/"

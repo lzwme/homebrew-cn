@@ -5,6 +5,7 @@ class Ollama < Formula
       tag:      "v0.40.13",
       revision: "04088e7c9d41cba5d33bafbf788d87a465c79d5b"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/ollama/ollama.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are

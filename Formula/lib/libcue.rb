@@ -4,6 +4,7 @@ class Libcue < Formula
   url "https://ghfast.top/https://github.com/lipnitsk/libcue/archive/refs/tags/v2.3.0.tar.gz"
   sha256 "cc1b3a65c60bd88b77a1ddd1574042d83cf7cc32b85fe9481c99613359eb7cfe"
   license "GPL-2.0-only"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "b1c6d9e1262e95b78ba0a43002cbd574ceca052ce1828b7071ace8adce366fbe"

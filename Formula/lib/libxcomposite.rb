@@ -4,6 +4,7 @@ class Libxcomposite < Formula
   url "https://xorg.freedesktop.org/archive/individual/lib/libXcomposite-0.4.7.tar.xz"
   sha256 "8bdf310967f484503fa51714cf97bff0723d9b673e0eecbf92b3f97c060c8ccb"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "cf20ed01a700f3f5efc6d0b6521a785699ab8580de730e4dfc908aea942d5982"

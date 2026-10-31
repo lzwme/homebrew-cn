@@ -4,6 +4,7 @@ class Sbt < Formula
   url "https://ghfast.top/https://github.com/sbt/sbt/releases/download/v2.0.12/sbt-2.0.12.tgz"
   sha256 "a797e1d940260c9d6e8a0a434ff8fc3247c1b711d2cf302bae62ae243293fe55"
   license "Apache-2.0"
+  compatibility_version 1
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
   # but are labeled as "pre-release" on GitHub.

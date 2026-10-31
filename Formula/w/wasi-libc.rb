@@ -6,6 +6,7 @@ class WasiLibc < Formula
     "MIT",
     "Apache-2.0" => { with: "LLVM-exception" },
   ]
+  compatibility_version 1
   head "https://github.com/WebAssembly/wasi-libc.git", branch: "main"
 
   stable do

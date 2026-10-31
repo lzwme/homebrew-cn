@@ -4,6 +4,7 @@ class Libngspice < Formula
   url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/47/ngspice-47.tar.gz"
   sha256 "894e649651f1838a14095e5a5439e7d3aa63e87ede14d283173fda4fcdef675f"
   license :cannot_represent
+  compatibility_version 1
   head "https://git.code.sf.net/p/ngspice/ngspice.git", branch: "master"
 
   livecheck do

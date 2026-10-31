@@ -11,6 +11,8 @@ class Xcv < Formula
     sha256 cellar: :any_skip_relocation, all: "d9e0dfc790cbc0a90240e2964f439260ea656a826d7688730bd9c304232e733d"
   end
 
+  deny_network_access!
+
   def install
     bin.install "xcv"
   end

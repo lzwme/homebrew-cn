@@ -6,6 +6,7 @@ class Autogen < Formula
   sha256 "f8a13466b48faa3ba99fe17a069e71c9ab006d9b1cfabe699f8c60a47d5bb49a"
   license "GPL-3.0-or-later"
   revision 3
+  compatibility_version 1
 
   livecheck do
     url :stable

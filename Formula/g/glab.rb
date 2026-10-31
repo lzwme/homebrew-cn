@@ -5,6 +5,7 @@ class Glab < Formula
     tag:      "v1.126.0",
     revision: "4dd0d32d18361db6c1c668eb4ac691c0d6edf255"
   license "MIT"
+  compatibility_version 1
   head "https://gitlab.com/gitlab-org/cli.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream

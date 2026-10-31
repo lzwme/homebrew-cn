@@ -4,6 +4,7 @@ class Avisynthplus < Formula
   url "https://ghfast.top/https://github.com/AviSynth/AviSynthPlus/archive/refs/tags/v3.7.6.tar.gz"
   sha256 "8c019a934189688e73fe1cd85e6768cc0bc120fe1f4a3310c889060283c9e083"
   license "GPL-2.0-or-later"
+  compatibility_version 1
   head "https://github.com/AviSynth/AviSynthPlus.git", branch: "master"
 
   livecheck do

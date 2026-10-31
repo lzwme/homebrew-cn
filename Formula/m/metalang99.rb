@@ -4,6 +4,7 @@ class Metalang99 < Formula
   url "https://ghfast.top/https://github.com/Hirrolot/metalang99/archive/refs/tags/v1.13.5.tar.gz"
   sha256 "f3d1607d76b4b081d3295661c4c2b8d5fde4d5018b1aa409c84fb3a6660ffb90"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/Hirrolot/metalang99.git", branch: "master"
 
   bottle do

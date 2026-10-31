@@ -4,6 +4,7 @@ class Asciidoctor < Formula
   url "https://ghfast.top/https://github.com/asciidoctor/asciidoctor/archive/refs/tags/v2.0.26.tar.gz"
   sha256 "25c22b934bc0ae2448f2d73d4b2eba0c59e0521cf5e893fb0b0ad54a461bf066"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     rebuild 2

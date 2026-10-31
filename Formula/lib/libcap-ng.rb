@@ -5,6 +5,7 @@ class LibcapNg < Formula
   sha256 "399040138e0ca62fa2bcabd63da9af4431a246ef7a654561a0ca3cb00010a539"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   revision 1
+  compatibility_version 1
   head "https://github.com/stevegrubb/libcap-ng.git", branch: "master"
 
   bottle do

@@ -4,6 +4,7 @@ class HowardHinnantDate < Formula
   url "https://ghfast.top/https://github.com/HowardHinnant/date/archive/refs/tags/v3.0.5.tar.gz"
   sha256 "ef786edc203daec76475825640b3af247bd08e31fc52217e5ce8f76107b4bb05"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "e3b0bd13c2a60edd97b68ab8fae2aa9f3502c53703a2e724d58b7855980c0372"

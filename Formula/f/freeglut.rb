@@ -4,6 +4,7 @@ class Freeglut < Formula
   url "https://ghfast.top/https://github.com/freeglut/freeglut/releases/download/v3.8.0/freeglut-3.8.0.tar.gz"
   sha256 "674dcaff25010e09e450aec458b8870d9e98c46f99538db457ab659b321d9989"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     rebuild 1

@@ -3,6 +3,7 @@ class Cereal < Formula
   homepage "https://uscilab.github.io/cereal/"
   license "BSD-3-Clause"
   revision 1
+  compatibility_version 1
   head "https://github.com/USCiLab/cereal.git", branch: "master"
 
   stable do

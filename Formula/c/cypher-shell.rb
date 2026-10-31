@@ -5,6 +5,7 @@ class CypherShell < Formula
   sha256 "cd3604b5bcaa45079d2ea64746ae9bbc880a262d09f92d4d8fa89576fd0484b8"
   license "GPL-3.0-only"
   version_scheme 1
+  compatibility_version 1
 
   livecheck do
     url "https://neo4j.com/deployment-center/"

@@ -4,6 +4,7 @@ class NativefiledialogExtended < Formula
   url "https://ghfast.top/https://github.com/btzy/nativefiledialog-extended/archive/refs/tags/v1.4.1.tar.gz"
   sha256 "4a01eafa921169f009f3e83bea8e287d9e5d0b94ca9064cf7f0a546652d7c884"
   license "Zlib"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "d368ee5c6aee72210d1852bf1eb11104ef0d90d769a04a1870ad08fd95a97c17"

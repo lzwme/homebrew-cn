@@ -1,9 +1,10 @@
 class Patchelf < Formula
   desc "Modify dynamic ELF executables"
   homepage "https://github.com/NixOS/patchelf"
-  url "https://ghfast.top/https://github.com/NixOS/patchelf/releases/download/0.19.2/patchelf-0.19.2.tar.bz2"
-  sha256 "d4ad9a4e5c689e09119ce2f30a94b0e8b4f98c78590123ea21665e34c6928801"
+  url "https://ghfast.top/https://github.com/NixOS/patchelf/releases/download/0.19.3/patchelf-0.19.3.tar.bz2"
+  sha256 "20dbe23e9dbc4ad769078a867ad002c04297a069ff93c95fb72242dd55d4dd6f"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url :stable
@@ -11,11 +12,11 @@ class Patchelf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bd8031ce10d3b4494815b89f92d84f35cafe06629010d60407025fbb126f4267"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ca983b871e31aa5ad8e5310f8436c9eea5044dce44cd6a9f2692dfcc8439bccf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "173b1c00c78d2626621a598ee0d79094dbee6e67c4b8636afef77098f4d13f2a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b902a6c4df239292e0bd32f17927f8500b25e4dbfd300ccbfb3a9da8efb91aff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a42d6647f56285333fa8b209faf526eb85e409b3a818f5a99cf036e3367e3ab1"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8f785866740a9c4010ce961214e5fd8734be9369d06d1282adb75da699322799"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f5adbf0b87fc96a767414bbed42dd2dac926d6a6340a9148f50835ba727b6660"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ce4c7e8ae70eb6dca9823a6682be92d3a9caa5d9f0a105991e021b00092f553a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "94c77e6b38123091609f83bdc2d47533335c915d31d935f44c18a85ef7208bab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "6cc97c2a1de234017bcd54cb3d12ae95b36e3b5be9a0dfb6b5b276879ca7d9cc"
   end
 
   head do

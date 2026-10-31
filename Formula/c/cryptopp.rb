@@ -5,6 +5,7 @@ class Cryptopp < Formula
   version "8.9.0"
   sha256 "4cc0ccc324625b80b695fcd3dee63a66f1a460d3e51b71640cdbfc4cd1a3779c"
   license all_of: [:public_domain, "BSL-1.0"]
+  compatibility_version 1
   head "https://github.com/weidai11/cryptopp.git", branch: "master"
 
   livecheck do

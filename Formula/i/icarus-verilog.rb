@@ -4,6 +4,7 @@ class IcarusVerilog < Formula
   url "https://ghfast.top/https://github.com/steveicarus/iverilog/archive/refs/tags/v13_0.tar.gz"
   sha256 "c897bbfa9848688982c6d5c30529fc29d68df0b9ff22ffa73bad89db73a7ce49"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  compatibility_version 1
   head "https://github.com/steveicarus/iverilog.git", branch: "master"
 
   livecheck do

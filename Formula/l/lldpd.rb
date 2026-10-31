@@ -1,8 +1,8 @@
 class Lldpd < Formula
   desc "Implementation of IEEE 802.1ab (LLDP)"
   homepage "https://lldpd.github.io/"
-  url "https://media.luffy.cx/files/lldpd/lldpd-1.0.22.tar.gz"
-  sha256 "9587940ed2314a86774c5499f3dfb13a8eb86232a62d243a83a1f09886848e03"
+  url "https://media.bernat.ch/files/lldpd/lldpd-1.0.23.tar.gz"
+  sha256 "b65fc380e2063a3fb15555f413f192a63006f6fd0c81fd524e3a43851700c48b"
   license "ISC"
 
   livecheck do
@@ -11,11 +11,11 @@ class Lldpd < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "885a3c65f7399c4826ec8645e279e8ff09451f6388ccbd2a4f0a196b7c2e7c4e"
-    sha256 arm64_tahoe:       "d2be2c7719ff6b3746957f399214e34eb2866617e8bdfd78e032a49e8ffe835a"
-    sha256 arm64_sequoia:     "46fa0dbea6c352bf58b1eb1c0d154ea8af222a37b64e483d0e80e0378e4a38bc"
-    sha256 arm64_linux:       "e2ae49271b7bbd2fc2f21d867fe23e44efae7210e95f69641005b2526fe8edbe"
-    sha256 x86_64_linux:      "6271b6f460a4a3079278be3222722b7c20758e03330800c44ff6025815813622"
+    sha256 arm64_golden_gate: "a6939ddbd23ca53ca3d3bd5fe6bb26b88cd5e4022bd445b967a643f7ed212fa9"
+    sha256 arm64_tahoe:       "9f71abb7d2b6582ed9de6267a79737660f809bbb1d824eec34da54d3b8a703be"
+    sha256 arm64_sequoia:     "7401b73ef06fea630c434b4824b48a96c2fa0343c2605bf45e0a8055a44a822e"
+    sha256 arm64_linux:       "6a807b6d37dc4c601f294a755f5f8ac73d93f82195106f7d83bc48591cc470df"
+    sha256 x86_64_linux:      "c8d08cedb3d25c851217fa421342733b4ee225ec3d5b0f388d7bb554986268d1"
   end
 
   depends_on "pkgconf" => :build
@@ -27,6 +27,8 @@ class Lldpd < Formula
   deny_network_access!
 
   def install
+    rm_r("libevent")
+
     args = %W[
       --sysconfdir=#{etc}
       --localstatedir=#{var}

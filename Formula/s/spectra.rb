@@ -4,6 +4,7 @@ class Spectra < Formula
   url "https://ghfast.top/https://github.com/yixuan/spectra/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "fdfccacba1c77d9b4ffefae7258c760c99e3c8a2823ca87ea5b11a50d297a73b"
   license "MPL-2.0"
+  compatibility_version 1
   head "https://github.com/yixuan/spectra.git", branch: "master"
 
   bottle do

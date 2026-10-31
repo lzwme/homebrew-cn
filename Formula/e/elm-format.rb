@@ -5,6 +5,7 @@ class ElmFormat < Formula
       tag:      "0.8.8",
       revision: "d07fddc8c0eef412dba07be4ab8768d6abcca796"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/avh4/elm-format.git", branch: "main"
 
   bottle do

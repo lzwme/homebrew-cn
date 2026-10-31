@@ -4,6 +4,7 @@ class Libheinz < Formula
   url "https://jugit.fz-juelich.de/mlz/lib/heinz/-/archive/v4.1.0/heinz-v4.1.0.tar.bz2"
   sha256 "86daa9a501270bc0d1b8dfa1e83ed2dc1b598b0bd129cc73abca70018138a3ff"
   license "0BSD"
+  compatibility_version 1
 
   bottle do
     rebuild 1

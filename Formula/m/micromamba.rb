@@ -5,6 +5,7 @@ class Micromamba < Formula
   sha256 "396cf6c08f16ecbc0a98b45a3f14469911aa2f6dda9c3b4ca98d010cea017835"
   license "BSD-3-Clause"
   revision 1
+  compatibility_version 1
   head "https://github.com/mamba-org/mamba.git", branch: "main"
 
   livecheck do

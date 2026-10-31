@@ -9,6 +9,7 @@ class Xmltoman < Formula
   sha256 "948794a316aaecd13add60e17e476beae86644d066cb60171fc6b779f2df14b0"
   license "GPL-2.0-or-later"
   revision 4
+  compatibility_version 1
 
   bottle do
     rebuild 1

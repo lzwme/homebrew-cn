@@ -4,6 +4,7 @@ class Librest < Formula
   url "https://download.gnome.org/sources/librest/0.10/librest-0.10.2.tar.xz"
   sha256 "7b6cb912bb3a22cfa7dcf005925dcb62883024db0c09099486e7d6851185c9b8"
   license all_of: ["LGPL-2.1-or-later", "LGPL-3.0-or-later"]
+  compatibility_version 1
 
   # librest doesn't seem to follow the typical GNOME version scheme, so we
   # provide a regex to disable the `Gnome` strategy's version filtering.

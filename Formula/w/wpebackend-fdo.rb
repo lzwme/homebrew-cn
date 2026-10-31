@@ -4,6 +4,7 @@ class WpebackendFdo < Formula
   url "https://ghfast.top/https://github.com/Igalia/WPEBackend-fdo/releases/download/1.16.1/wpebackend-fdo-1.16.1.tar.xz"
   sha256 "544ae14012f8e7e426b8cb522eb0aaaac831ad7c35601d1cf31d37670e0ebb3b"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/Igalia/WPEBackend-fdo.git", branch: "master"
 
   livecheck do

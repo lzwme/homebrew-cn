@@ -4,6 +4,7 @@ class Libdaemon < Formula
   url "https://0pointer.de/lennart/projects/libdaemon/libdaemon-0.14.tar.gz"
   sha256 "fd23eb5f6f986dcc7e708307355ba3289abe03cc381fc47a80bca4a50aa6b834"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   livecheck do
     url :homepage

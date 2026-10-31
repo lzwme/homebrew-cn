@@ -4,6 +4,7 @@ class Charls < Formula
   url "https://ghfast.top/https://github.com/team-charls/charls/archive/refs/tags/2.4.5.tar.gz"
   sha256 "b55c742ef96b5e9d63f813a75d0ba29944302abb5a6ab59756ad61fa017b1dd3"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/team-charls/charls.git", branch: "main"
 
   bottle do

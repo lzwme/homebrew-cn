@@ -4,6 +4,7 @@ class Esbuild < Formula
   url "https://ghfast.top/https://github.com/evanw/esbuild/archive/refs/tags/v0.28.2.tar.gz"
   sha256 "300162f899361d9f0263065f8728ef9086dcfc1a3d36bcbc4e0abe5de9c58bf8"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/evanw/esbuild.git", branch: "main"
 
   bottle do

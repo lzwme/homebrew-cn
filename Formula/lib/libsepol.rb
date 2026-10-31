@@ -4,6 +4,7 @@ class Libsepol < Formula
   url "https://ghfast.top/https://github.com/SELinuxProject/selinux/releases/download/3.11/libsepol-3.11.tar.gz"
   sha256 "79f3d2c88f44b7eb5cf54d9792e03232297e17f97a179163f2750099a00f164d"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   livecheck do
     url :stable

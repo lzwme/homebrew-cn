@@ -4,6 +4,7 @@ class Runc < Formula
   url "https://ghfast.top/https://github.com/opencontainers/runc/releases/download/v1.5.2/runc-1.5.2.tar.xz"
   sha256 "46eba094e45fc37d96a1b1dc150971fe8d076d6e23bae09dd35443141bed31a1"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/opencontainers/runc.git", branch: "main"
 
   livecheck do

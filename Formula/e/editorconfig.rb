@@ -4,6 +4,7 @@ class Editorconfig < Formula
   url "https://ghfast.top/https://github.com/editorconfig/editorconfig-core-c/archive/refs/tags/v0.12.11.tar.gz"
   sha256 "9d8b420b56a969ea3cf784861c72d26fa0e158fa1494d732df2c8a1480d36a5c"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/editorconfig/editorconfig-core-c.git", branch: "master"
 
   bottle do

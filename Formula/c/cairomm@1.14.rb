@@ -4,6 +4,7 @@ class CairommAT114 < Formula
   url "https://cairographics.org/releases/cairomm-1.14.6.tar.xz"
   sha256 "7e0d5c7f29175d573a03ab5c45aef63f48dd91a5caf335a404cd763e4b7cea4a"
   license "LGPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://cairographics.org/releases/?C=M&O=D"

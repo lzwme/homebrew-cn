@@ -4,6 +4,7 @@ class Iputils < Formula
   url "https://ghfast.top/https://github.com/iputils/iputils/releases/download/20250605/iputils-20250605.zip"
   sha256 "66a8697da6b6696e8cd69e88d69a31c7b7a7cc6d6937cd1dfc84532c23a84f14"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
+  compatibility_version 1
   head "https://github.com/iputils/iputils.git", branch: "master"
 
   bottle do

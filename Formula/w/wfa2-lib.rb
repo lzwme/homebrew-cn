@@ -4,6 +4,7 @@ class Wfa2Lib < Formula
   url "https://ghfast.top/https://github.com/smarco/WFA2-lib/archive/refs/tags/v2.3.6.tar.gz"
   sha256 "fd74c4bfdd5764ae8668cdeee7a80bfa35583b1980e261daa9dbf425bf12bb0b"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/smarco/WFA2-lib.git", branch: "main"
 
   bottle do

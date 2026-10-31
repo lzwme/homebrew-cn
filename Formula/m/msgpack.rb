@@ -4,6 +4,7 @@ class Msgpack < Formula
   url "https://ghfast.top/https://github.com/msgpack/msgpack-c/releases/download/c-7.0.2/msgpack-c-7.0.2.tar.gz"
   sha256 "6ae50f69612871aa01de76bec904165cd2a2fc30ff9f653f2f60a663c5c1a86c"
   license "BSL-1.0"
+  compatibility_version 1
   head "https://github.com/msgpack/msgpack-c.git", branch: "c_master"
 
   livecheck do

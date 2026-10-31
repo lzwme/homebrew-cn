@@ -4,6 +4,7 @@ class XcbUtilKeysyms < Formula
   url "https://xcb.freedesktop.org/dist/xcb-util-keysyms-0.4.1.tar.gz"
   sha256 "1fa21c0cea3060caee7612b6577c1730da470b88cbdf846fa4e3e0ff78948e54"
   license "X11"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "5cb22b2679fb2355215fbcc6b68357796a9bda85c1a4863f48bf563c9a8f89c8"
@@ -31,6 +32,8 @@ class XcbUtilKeysyms < Formula
 
   depends_on "pkgconf" => [:build, :test]
   depends_on "libxcb"
+
+  deny_network_access!
 
   def install
     system "./autogen.sh" if build.head?

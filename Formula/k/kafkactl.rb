@@ -4,6 +4,7 @@ class Kafkactl < Formula
   url "https://ghfast.top/https://github.com/deviceinsight/kafkactl/archive/refs/tags/v5.21.0.tar.gz"
   sha256 "31baacbaab41a9b3f945a894440b11647b99e1dd49744ccfa750aa082fb4632e"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/deviceinsight/kafkactl.git", branch: "main"
 
   bottle do

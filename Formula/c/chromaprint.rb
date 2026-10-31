@@ -4,6 +4,7 @@ class Chromaprint < Formula
   url "https://ghfast.top/https://github.com/acoustid/chromaprint/releases/download/v1.6.2/chromaprint-1.6.2.tar.gz"
   sha256 "d54ada62c16b2db396d3251ec54fc7a58909c163131a1cfcf7fa6407dbc14360"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "9446f7a7a9204f250cc483249e06483b947b28997146f44ed41d8ee801fd0d04"

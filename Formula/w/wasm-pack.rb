@@ -1,19 +1,18 @@
 class WasmPack < Formula
   desc "Your favorite rust -> wasm workflow tool!"
   homepage "https://wasm-bindgen.github.io/wasm-pack/"
-  url "https://ghfast.top/https://github.com/wasm-bindgen/wasm-pack/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "04530d7c215a46cc5468796de3c69fd6620fd78612578545d57f9806aa0c64a4"
+  url "https://ghfast.top/https://github.com/wasm-bindgen/wasm-pack/archive/refs/tags/v0.15.1.tar.gz"
+  sha256 "5e72eb8eb73091ef6376d1a9d2b33a45e727970f29c75664b4a969cb437fccb2"
   license any_of: ["Apache-2.0", "MIT"]
+  compatibility_version 1
   head "https://github.com/wasm-bindgen/wasm-pack.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b102138345eb0bdd259a4e8fd30d0ff26a773fb3eb3918f56ee39dc595fa951a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3f5e00e2878b6720a2e6b78143c3d108f315eed4ae2e27d84ab7c06d178370c2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e25df58c63956efc5ba5b5eabe677317615f96f19944a630eea91552bc5a685f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "479a15f08423cbe8088c3050bce029b22f30b31c7222589fc8a7ebc2fecd8316"
-    sha256 cellar: :any_skip_relocation, sonoma:            "9207047837d68825a4f1fa64962596dfbaf774c94f64da75364dafa5861a5112"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "f14fd0596a8f5c3e3b798e12513254fe26bd1e315172073c518a1412fec6c830"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "740daedf0ec40401edd93b035261ca5f571203d36c7f45cf2d6ad5d94c3a45b9"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a0afec3efc61040915e16f669ea2d0ae9780eb503212dea1a4800a9ebe50ec65"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5065e2dd622f289ac44e52174dd11cece94eb7e57f1f6ce627c94a7402575e78"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "03fc65f8f5ef0270850133d3ca545a49e211b9e30fcc9419eb134ac85a3bac52"
+    sha256 cellar: :any,                 arm64_linux:       "24638b7bc4315a3a2e8236e555dcf2493c9044622125afaafa932d21a63e26dd"
+    sha256 cellar: :any,                 x86_64_linux:      "3d046831096b640c15e9be8d8ffaf20f6499fd5f7d54211f9c752ae1a1c6c992"
   end
 
   depends_on "cmake" => :build

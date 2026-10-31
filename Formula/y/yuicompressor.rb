@@ -5,6 +5,7 @@ class Yuicompressor < Formula
   sha256 "3243fd79cb68cc61a5278a8ff67a0ad6a2d825c36464594b66900ad8426a6a6e"
   license "BSD-3-Clause"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url :stable
@@ -17,6 +18,8 @@ class Yuicompressor < Formula
   end
 
   depends_on "openjdk"
+
+  deny_network_access!
 
   def install
     libexec.install "yuicompressor-#{version}.jar"

@@ -4,6 +4,7 @@ class Scala < Formula
   url "https://ghfast.top/https://github.com/scala/scala3/releases/download/3.10.0/scala3-3.10.0.tar.gz"
   sha256 "1ff07ebf32e52d608dda2bd7de875383cff9662da41d3c5952d119283f763314"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url "https://www.scala-lang.org/download/"

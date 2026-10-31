@@ -5,6 +5,7 @@ class Eiffelstudio < Formula
   version "25.02.98732"
   sha256 "fd7a1ec2a09e87535f077bdef542fed1665f6790c46b837b44497aec5b65c6dd"
   license "GPL-2.0-only"
+  compatibility_version 1
 
   livecheck do
     url "https://ftp.eiffel.com/pub/download/latest/pp/"

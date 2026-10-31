@@ -4,6 +4,7 @@ class Netcode < Formula
   url "https://ghfast.top/https://github.com/mas-bandwidth/netcode/archive/refs/tags/v1.4.9.tar.gz"
   sha256 "4c192aed884cbff44b7ac9892035ae37b422ab8148e13a7d552f4f145705bdda"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "5bd5199c2645b18bd8baa3bbc6fe35da3ebedfdec2d0269d2ffc4d61151cf632"

@@ -4,6 +4,7 @@ class Hunspell < Formula
   url "https://ghfast.top/https://github.com/hunspell/hunspell/releases/download/v1.7.6/hunspell-1.7.6.tar.gz"
   sha256 "9c650ace31d4d8cc1da925a9507c3de1d50f1a54857af2f72429f517d5d53467"
   license any_of: ["MPL-1.1", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "758f13e3e0cc168aec0e5d6145bd49607333a623cdf8c044a7794a4d153a9d66"

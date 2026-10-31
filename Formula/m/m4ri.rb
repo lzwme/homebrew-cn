@@ -4,6 +4,7 @@ class M4ri < Formula
   url "https://ghfast.top/https://github.com/malb/m4ri/releases/download/20260122/m4ri-20260122.tar.gz"
   sha256 "7e033ca1fd36be8861e2f67d9d124c398fc0d830209bb0226462485876346404"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "00a8b67fe3c1e4886a481f584abb169582c3333c1d3471c1c4cc53c7fde1cea9"

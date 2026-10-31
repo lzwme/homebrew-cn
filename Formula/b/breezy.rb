@@ -7,6 +7,7 @@ class Breezy < Formula
   sha256 "70a5a810690ad8d5def1798a1351e7588be7f89f821eb7a6fae277aacd33d3be"
   license "GPL-2.0-or-later"
   revision 4
+  compatibility_version 1
   head "https://github.com/breezy-team/breezy.git", branch: "main"
 
   bottle do

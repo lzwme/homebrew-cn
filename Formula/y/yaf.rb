@@ -4,6 +4,7 @@ class Yaf < Formula
   url "https://tools.netsa.cert.org/releases/yaf-2.20.3.tar.gz"
   sha256 "fb581317124a2a5064c17e211cc2a0226a41f606c2135a5a5c6f672ecf6e4c9f"
   license "GPL-2.0-only"
+  compatibility_version 1
 
   # NOTE: This should be updated to check the main `/yaf/download.html`
   # page when it links to a stable version again in the future.

@@ -5,6 +5,7 @@ class Icon < Formula
   version "9.5.25a"
   sha256 "ab15b7fc5a96e8b4da1b76cc6c7935400879f8a54b0fcf94a947c02815f21006"
   license :public_domain
+  compatibility_version 1
 
   livecheck do
     url :stable

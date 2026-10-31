@@ -7,6 +7,7 @@ class CryticCompile < Formula
   sha256 "161325e40785d8e42cdd8846b98d4f82c291ca5bcd07b5feae1a84d5a18c59fb"
   license "AGPL-3.0-only"
   revision 1
+  compatibility_version 1
   head "https://github.com/crytic/crytic-compile.git", branch: "master"
 
   bottle do

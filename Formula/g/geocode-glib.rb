@@ -5,6 +5,7 @@ class GeocodeGlib < Formula
   sha256 "2d9a6826d158470449a173871221596da0f83ebdcff98b90c7049089056a37aa"
   license "GPL-2.0-or-later"
   revision 1
+  compatibility_version 1
 
   bottle do
     rebuild 1

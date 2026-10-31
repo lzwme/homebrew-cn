@@ -5,6 +5,7 @@ class Libvterm < Formula
   sha256 "09156f43dd2128bd347cbeebe50d9a571d32c64e0cf18d211197946aff7226e0"
   license "MIT"
   version_scheme 1
+  compatibility_version 1
 
   livecheck do
     url :stable

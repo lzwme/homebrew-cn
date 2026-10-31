@@ -4,6 +4,7 @@ class Sdl2Net < Formula
   url "https://ghfast.top/https://github.com/libsdl-org/SDL_net/releases/download/release-2.4.0/SDL2_net-2.4.0.tar.gz"
   sha256 "9cbca2527feb3f1a622d48ba65cc7dee9b1e3f2c55ceafb7d7720bb058aafb30"
   license "Zlib"
+  compatibility_version 1
 
   livecheck do
     url :stable

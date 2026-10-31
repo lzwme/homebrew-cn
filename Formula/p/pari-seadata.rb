@@ -6,6 +6,7 @@ class PariSeadata < Formula
   version "20090618"
   sha256 "c9282a525ea3f92c1f9c6c69e37ac5a87b48fb9ccd943cfd7c881a3851195833"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   # The only difference in the `livecheck` blocks for pari-* formulae is the
   # package name in the regex and they should otherwise be kept in parity.

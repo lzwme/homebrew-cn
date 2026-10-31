@@ -7,6 +7,7 @@ class BashCompletion < Formula
   sha256 "8ebe30579f0f3e1a521013bcdd183193605dab353d7a244ff2582fb3a36f7bec"
   license "GPL-2.0-or-later"
   revision 3
+  compatibility_version 1
 
   livecheck do
     skip "1.x versions are no longer developed"

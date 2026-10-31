@@ -4,6 +4,7 @@ class Nbytes < Formula
   url "https://ghfast.top/https://github.com/nodejs/nbytes/archive/refs/tags/v0.1.4.tar.gz"
   sha256 "67f4b8363f12abb64c07a0cecf2bf2dce7ab47b5f8b9fd2efdb852ea254c2d40"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "e12b964d3bb567375c1f8f0a106c474e6f31f3d47d60776f8f99123a28c9c3cd"

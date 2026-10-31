@@ -4,6 +4,7 @@ class Kraken2 < Formula
   url "https://ghfast.top/https://github.com/DerrickWood/kraken2/archive/refs/tags/2.17.2.tar.gz"
   sha256 "84ff95cd6d8a4c9e93ab6bf1d9b3892099baaefb0277bcf2edc3eb4948566035"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/DerrickWood/kraken2.git", branch: "master"
 
   livecheck do

@@ -6,6 +6,7 @@ class EyeD3 < Formula
   url "https://files.pythonhosted.org/packages/ee/aa/5873b98fa5f570724a65757987c155dea68d27f0acae17da1b1ffc8cd0d2/eyed3-0.9.9.tar.gz"
   sha256 "a8affaae19384aca66f6efef3babd705042a76e546f08e886f5f28691ac62a3b"
   license "GPL-3.0-or-later"
+  compatibility_version 1
   head "https://github.com/nicfit/eyeD3.git", branch: "0.9.x"
 
   bottle do

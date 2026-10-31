@@ -5,6 +5,7 @@ class Jp2a < Formula
   sha256 "8aa995f570235321c94dcf705ca12d3e499f2a6b78213698de3c152534e38c0e"
   license "GPL-2.0-or-later"
   version_scheme 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "fd0d855fb6e554b22ef939b1eb89d2b7f2e6effba95631e67b8db653aba18e1a"

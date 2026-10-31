@@ -5,6 +5,7 @@ class Redland < Formula
   sha256 "de1847f7b59021c16bdc72abb4d8e2d9187cd6124d69156f3326dd34ee043681"
   license any_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later", "Apache-2.0"]
   revision 1
+  compatibility_version 1
 
   livecheck do
     url :homepage

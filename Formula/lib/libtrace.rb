@@ -6,6 +6,7 @@ class Libtrace < Formula
   sha256 "b3e73b9ca6757094047295937ab4d834155a0c64674f499132b56e8f81f8fcc9"
   license all_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
   revision 1
+  compatibility_version 1
 
   livecheck do
     url :stable

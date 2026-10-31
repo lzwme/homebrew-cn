@@ -4,6 +4,7 @@ class Smake < Formula
   url "https://codeberg.org/schilytools/schilytools/archive/2024-03-21.tar.gz"
   sha256 "fd3db00278caecd94b3802e1f903bf235a7137511ac0a450b31d855e3a52917b"
   license "CDDL-1.0"
+  compatibility_version 1
 
   bottle do
     rebuild 2

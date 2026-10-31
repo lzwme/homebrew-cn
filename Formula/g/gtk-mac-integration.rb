@@ -4,6 +4,7 @@ class GtkMacIntegration < Formula
   url "https://download.gnome.org/sources/gtk-mac-integration/3.0/gtk-mac-integration-3.0.2.tar.xz"
   sha256 "42f29e002365467eac10f4ba78435d4be785a947424d9890112c8c8d5e21be25"
   license "LGPL-2.1-only"
+  compatibility_version 1
 
   # We use a common regex because gtk-mac-integration doesn't use GNOME's
   # "even-numbered minor is stable" version scheme.

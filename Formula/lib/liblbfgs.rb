@@ -4,6 +4,7 @@ class Liblbfgs < Formula
   url "https://ghfast.top/https://github.com/chokkan/liblbfgs/archive/refs/tags/v1.10.tar.gz"
   sha256 "95c1997e6c215c58738f5f723ca225d64c8070056081a23d636160ff2169bd2f"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "bcb59ee5132c84a3517603aa023200863cd9a70cad3c0c8c1c63a37752485ca7"

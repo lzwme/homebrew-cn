@@ -5,6 +5,7 @@ class Papilo < Formula
   sha256 "3ab6e4a41667aa1edc87697dfcc0dc7d517d047d4366abafd8858d22e02d4f2f"
   license "Apache-2.0"
   version_scheme 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "a3e22125aa7ff189326a169b6ac70a82130b4b8aa3de46383e26d0227edcaa36"

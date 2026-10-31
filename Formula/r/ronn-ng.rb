@@ -5,6 +5,7 @@ class RonnNg < Formula
   sha256 "180f18015ce01be1d10c24e13414134363d56f9efb741fda460358bb67d96684"
   license "MIT"
   revision 2
+  compatibility_version 1
 
   bottle do
     rebuild 2

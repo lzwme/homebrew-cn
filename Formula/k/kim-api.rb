@@ -4,6 +4,7 @@ class KimApi < Formula
   url "https://s3.openkim.org/kim-api/kim-api-2.4.2.txz"
   sha256 "1710bd6ceaea093062e000d2308719c51cc0a2d2def1bdcb0a03df8ed867b11f"
   license "CDDL-1.0"
+  compatibility_version 1
 
   livecheck do
     url "https://openkim.org/kim-api/previous-versions/"

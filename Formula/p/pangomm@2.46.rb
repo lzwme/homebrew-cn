@@ -4,6 +4,7 @@ class PangommAT246 < Formula
   url "https://download.gnome.org/sources/pangomm/2.46/pangomm-2.46.5.tar.xz"
   sha256 "38ca0b050b065de4e3da0c182df657437757063bbf0c4b6c9567ddba019b1d68"
   license "LGPL-2.1-only"
+  compatibility_version 1
 
   livecheck do
     url :stable

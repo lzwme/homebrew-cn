@@ -5,6 +5,7 @@ class Davix < Formula
   sha256 "cf68461550fcd8fd88320658a42c55c7e7f6653e2be1461dfa95013adc56cced"
   license "LGPL-2.1-or-later"
   revision 1
+  compatibility_version 1
   head "https://github.com/cern-fts/davix.git", branch: "devel"
 
   livecheck do

@@ -4,6 +4,7 @@ class Tass64 < Formula
   url "https://downloads.sourceforge.net/project/tass64/source/64tass-1.60.3243-src.zip"
   sha256 "9d83be3d23a2c55e085b7c7a7856c2f96080447ea120a6a8c21a217ed76427f0"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "LGPL-2.1-only", "MIT"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "666c89b012cf9bf2c1ab0d5653116c1e16ec1414b27300bd543547034be348c7"

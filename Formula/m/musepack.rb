@@ -10,6 +10,7 @@ class Musepack < Formula
     "GPL-2.0-or-later", # mpcchap
     "Zlib", # common/huffman-bcl.c
   ]
+  compatibility_version 1
 
   livecheck do
     url "https://www.musepack.net/index.php?pg=src"

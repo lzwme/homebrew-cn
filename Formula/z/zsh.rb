@@ -7,6 +7,7 @@ class Zsh < Formula
     "GPL-2.0-or-later", # Completion/Unix/Command/_darcs
     "ISC", # Src/openssh_bsd_setres_id.c
   ]
+  compatibility_version 1
 
   stable do
     url "https://downloads.sourceforge.net/project/zsh/zsh/5.9.2/zsh-5.9.2.tar.xz"

@@ -4,6 +4,7 @@ class WebpPixbufLoader < Formula
   url "https://ghfast.top/https://github.com/aruiz/webp-pixbuf-loader/archive/refs/tags/0.2.7.tar.gz"
   sha256 "61ce5e8e036043f9d0e78c1596a621788e879c52aedf72ab5e78a8c44849411a"
   license "LGPL-2.0-or-later"
+  compatibility_version 1
   head "https://github.com/aruiz/webp-pixbuf-loader.git", branch: "mainline"
 
   bottle do

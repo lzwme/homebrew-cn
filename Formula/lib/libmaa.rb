@@ -4,6 +4,7 @@ class Libmaa < Formula
   url "https://downloads.sourceforge.net/project/dict/libmaa/libmaa-1.5.1/libmaa-1.5.1.tar.gz"
   sha256 "3a30e25f038e99c4715125545516490d991fe3a505825cc832b1a956e31bf669"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/cheusov/libmaa.git", branch: "master"
 
   livecheck do

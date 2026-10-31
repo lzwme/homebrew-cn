@@ -4,6 +4,7 @@ class SpiceProtocol < Formula
   url "https://www.spice-space.org/download/releases/spice-protocol-0.14.5.tar.xz"
   sha256 "baf58449f6e89d19f475899ad5fb9196fdc46c03cc53233f4e39cf2978f9cff7"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url "https://www.spice-space.org/download/releases/"

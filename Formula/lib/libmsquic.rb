@@ -4,6 +4,7 @@ class Libmsquic < Formula
   url "https://ghfast.top/https://github.com/microsoft/msquic/archive/refs/tags/v2.6.3.tar.gz"
   sha256 "8584e3918f2e3c43c97b3c5ee036a14783581906d1b18d103982b1ccf54266cf"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable

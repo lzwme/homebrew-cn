@@ -4,6 +4,7 @@ class Libfastjson < Formula
   url "https://download.rsyslog.com/libfastjson/libfastjson-1.2609.0.tar.gz"
   sha256 "7cd6f78c1c07f4140f6976a9a0e0048bcaa7292329c6ac2c0e070383d83d8edd"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   livecheck do
     url "https://download.rsyslog.com/libfastjson/"

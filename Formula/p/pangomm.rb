@@ -4,6 +4,7 @@ class Pangomm < Formula
   url "https://download.gnome.org/sources/pangomm/2.58/pangomm-2.58.0.tar.xz"
   sha256 "217514c1a65035c2fce6e69e33b0d92bafa2594cc474e995a4473441b10f3a33"
   license "LGPL-2.1-only"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "4ed7a8fd20c2c4b23080fc8881e107499f3a51e3347c854a77ef3051a090e6e7"

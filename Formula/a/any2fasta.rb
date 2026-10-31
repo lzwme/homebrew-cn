@@ -4,6 +4,7 @@ class Any2fasta < Formula
   url "https://ghfast.top/https://github.com/tseemann/any2fasta/archive/refs/tags/v0.8.1.tar.gz"
   sha256 "73f4f2c1eb0cb5525703a5368fe4b34ddd252e64af1f9c3aba2ba63d8f9723b6"
   license "GPL-3.0-only"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "bba7ed684a5d3c4472a5c4aa1bac8c7aadc293bf6e6e198a35ca094bfd867d28"

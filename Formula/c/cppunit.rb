@@ -4,6 +4,7 @@ class Cppunit < Formula
   url "https://dev-www.libreoffice.org/src/cppunit-1.15.1.tar.gz"
   sha256 "89c5c6665337f56fd2db36bc3805a5619709d51fb136e51937072f63fcc717a7"
   license "LGPL-2.1-only"
+  compatibility_version 1
 
   livecheck do
     url "https://dev-www.libreoffice.org/src/"

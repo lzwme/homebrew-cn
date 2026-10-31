@@ -4,6 +4,7 @@ class UrdfdomHeaders < Formula
   url "https://ghfast.top/https://github.com/ros/urdfdom_headers/archive/refs/tags/3.0.1.tar.gz"
   sha256 "42d85a82d1dea2e1252596131e58997244ce6c59d12ae9ab852fe7c35d09f0ec"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   # Upstream uses Git tags (e.g. `1.0.0`) to indicate a new version. They
   # created a few releases on GitHub in the past but now they simply use tags.

@@ -4,6 +4,7 @@ class NagiosPlugins < Formula
   url "https://ghfast.top/https://github.com/nagios-plugins/nagios-plugins/releases/download/release-2.5/nagios-plugins-2.5.tar.gz"
   sha256 "44d1510b5e17055fd9aa4a1d9662a234fc5d5c1b96548852c8e78701584b2684"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "3e443f22cd930fb03b05bc21a1999261fa45438fcb42f42c2b989f0e89fb8355"

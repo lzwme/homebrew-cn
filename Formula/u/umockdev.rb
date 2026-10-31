@@ -4,6 +4,7 @@ class Umockdev < Formula
   url "https://ghfast.top/https://github.com/martinpitt/umockdev/releases/download/0.19.9/umockdev-0.19.9.tar.xz"
   sha256 "666e050f76eb61921e6d79e309c5833cef639de3ec1f9c35c74ebce1681f7c34"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
   head "https://github.com/martinpitt/umockdev.git", branch: "main"
 
   bottle do

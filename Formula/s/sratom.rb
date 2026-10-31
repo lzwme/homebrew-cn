@@ -4,6 +4,7 @@ class Sratom < Formula
   url "https://download.drobilla.net/sratom-0.6.22.tar.xz"
   sha256 "0209b7d0f22c96abb416722ed735b0933be47931ecff4aa4b26ded7760b4f252"
   license "ISC"
+  compatibility_version 1
 
   livecheck do
     url "https://download.drobilla.net"

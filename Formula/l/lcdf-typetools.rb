@@ -4,6 +4,7 @@ class LcdfTypetools < Formula
   url "https://www.lcdf.org/type/lcdf-typetools-2.110.tar.gz"
   sha256 "517f9ee879208679d3224a14d5e6eb20598fc648d5c3562708083d003088a934"
   license "GPL-2.0-or-later"
+  compatibility_version 1
   head "https://github.com/kohler/lcdf-typetools.git", branch: "master"
 
   livecheck do

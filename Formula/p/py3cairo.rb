@@ -22,6 +22,8 @@ class Py3cairo < Formula
   depends_on "python@3.15" => [:build, :test]
   depends_on "cairo"
 
+  deny_network_access!
+
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.match?(/^python@\d\.\d+$/) }

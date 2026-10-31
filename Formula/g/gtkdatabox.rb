@@ -5,6 +5,7 @@ class Gtkdatabox < Formula
   sha256 "8bee70206494a422ecfec9a88d32d914c50bb7a0c0e8fedc4512f5154aa9d3e3"
   license "LGPL-2.1-or-later"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "828710ff79dc0895cedf8269d30388a3054e781cc6de6e44a6a41a675a6dab5f"

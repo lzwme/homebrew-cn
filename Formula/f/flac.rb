@@ -13,6 +13,7 @@ class Flac < Formula
     :public_domain,
     any_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"],
   ]
+  compatibility_version 1
 
   livecheck do
     url "https://ftp.osuosl.org/pub/xiph/releases/flac/?C=M&O=D"

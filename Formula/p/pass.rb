@@ -7,6 +7,7 @@ class Pass < Formula
       tag:      "1.7.4",
       revision: "1078f2514d579178d5df7042c6a790e9c9b731ad"
   license "GPL-2.0-or-later"
+  compatibility_version 1
   head "https://git.zx2c4.com/password-store.git", branch: "master"
 
   livecheck do

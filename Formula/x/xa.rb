@@ -4,6 +4,7 @@ class Xa < Formula
   url "https://www.floodgap.com/retrotech/xa/dists/xa-2.4.1.tar.gz"
   sha256 "63c12a6a32a8e364f34f049d8b2477f4656021418f08b8d6b462be0ed3be3ac3"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url :homepage
@@ -23,6 +24,8 @@ class Xa < Formula
     sha256 cellar: :any_skip_relocation, arm64_linux:       "988caaf9671af8cb7f041f4ef6380bf738ee75080321c41f4e45a391bf984a26"
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "4e35f6c603bbc9e5a84d41c3b9980f572989c8573139ff3438e36304745a5950"
   end
+
+  deny_network_access!
 
   def install
     system "make", "CC=#{ENV.cc}",

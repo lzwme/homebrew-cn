@@ -4,6 +4,7 @@ class Htmlcxx < Formula
   url "https://downloads.sourceforge.net/project/htmlcxx/v0.87/htmlcxx-0.87.tar.gz"
   sha256 "5d38f938cf4df9a298a5346af27195fffabfef9f460fc2a02233cbcfa8fc75c8"
   license all_of: ["LGPL-2.0-only", "Apache-2.0"]
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "b633e444043da2d1a93d06aef2530b60a31ac1519b3e956969c1b6f76b4bc4db"

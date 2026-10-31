@@ -3,16 +3,16 @@ class Pipdeptree < Formula
 
   desc "CLI to display dependency tree of the installed Python packages"
   homepage "https://github.com/tox-dev/pipdeptree"
-  url "https://files.pythonhosted.org/packages/d4/8d/fcd5695b1e3a5202adbbcad5c8ef19caa979a345c08f419d77192d35f3d0/pipdeptree-4.2.10.tar.gz"
-  sha256 "51b8e7fa7b6426074caca57b0bc3c33d6dc4695e2cbf2877f1658d52b83f5126"
+  url "https://files.pythonhosted.org/packages/f0/ec/1a384c5f240c2a274001f3719595c87a80eb051e158efad5cf6a278579ad/pipdeptree-4.2.12.tar.gz"
+  sha256 "1a441b1918dc70afb64cbb3f715f159459bb74395539ebbd0c0a2893c5cedeb7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "008da61c8f60585df3d96d7ce430a506d18824555ff9c12fdb76484f1c659edb"
-    sha256 cellar: :any, arm64_tahoe:       "3b3659432ca54355d4c4834be18c2276adb55de8ed79042008b80c0a60c59bc7"
-    sha256 cellar: :any, arm64_sequoia:     "86ddf02330e3bb3b6fcd6f7dca1fd4f9c45f5e0eeaa54f19d6bf1f05c06e618f"
-    sha256 cellar: :any, arm64_linux:       "974c0448b69d9fed84babc6b96dd38cc60f5b036a28292559be85e5ffa256bec"
-    sha256 cellar: :any, x86_64_linux:      "b725b252a41282bdd666d15d62a1fa0ecb1d8e718f7ae0c3de7d47c5af96c2d0"
+    sha256 cellar: :any, arm64_golden_gate: "ce837919e948d01422b622514cd26fd0d076370ea11ead042bc95963fa284b49"
+    sha256 cellar: :any, arm64_tahoe:       "21b0b5a51c51e119a2dbd99f6f25fa2d07e99b7ebe983a75736607b2e5c917b8"
+    sha256 cellar: :any, arm64_sequoia:     "fee90b3597f9079468723ada1c7a398abf53574a33ce12c814544d07ebe50fcd"
+    sha256 cellar: :any, arm64_linux:       "0a8eaf1e8310301f413d6d8df5842d4df2b3ff7c2b8bb769c15009c3eb1793ac"
+    sha256 cellar: :any, x86_64_linux:      "1d6799eadf91c6f909addced7e7085b42fca495c60bfd3451affbb7565a1b3d8"
   end
 
   depends_on "meson" => :build

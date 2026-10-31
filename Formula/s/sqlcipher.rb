@@ -4,6 +4,7 @@ class Sqlcipher < Formula
   url "https://ghfast.top/https://github.com/sqlcipher/sqlcipher/archive/refs/tags/v4.20.0.tar.gz"
   sha256 "38705f51b61ac0636a5fd064f9a77fafabc7227b2aa2513f1b14c8bb1102affc"
   license all_of: ["BSD-3-Clause", "blessing"]
+  compatibility_version 1
   head "https://github.com/sqlcipher/sqlcipher.git", branch: "master"
 
   bottle do

@@ -5,6 +5,7 @@ class Adaptivecpp < Formula
   sha256 "334b16ebff373bd2841f83332c2ae9a45ec192f2cf964d5fdfe94e1140776059"
   license "BSD-2-Clause"
   revision 1
+  compatibility_version 1
   head "https://github.com/AdaptiveCpp/AdaptiveCpp.git", branch: "develop"
 
   bottle do

@@ -5,6 +5,7 @@ class QpidProton < Formula
   mirror "https://archive.apache.org/dist/qpid/proton/0.41.1/qpid-proton-0.41.1.tar.gz"
   sha256 "03d9ba7f88c62524c125de8b1aff997313dcddb35e98c5a7927c0844842f9121"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/apache/qpid-proton.git", branch: "main"
 
   bottle do

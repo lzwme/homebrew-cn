@@ -3,6 +3,7 @@ class Devil < Formula
   homepage "https://sourceforge.net/projects/openil/"
   license "LGPL-2.1-only"
   revision 6
+  compatibility_version 1
   head "https://github.com/DentonW/DevIL.git", branch: "master"
 
   stable do

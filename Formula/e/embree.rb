@@ -4,6 +4,7 @@ class Embree < Formula
   url "https://ghfast.top/https://github.com/RenderKit/embree/archive/refs/tags/v4.4.1.tar.gz"
   sha256 "dcf338cc61b636c871ccf370e673bfd380c5ecb71ce49ad50f28e1d4ec9995dc"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/RenderKit/embree.git", branch: "master"
 
   livecheck do

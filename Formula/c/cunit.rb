@@ -4,6 +4,7 @@ class Cunit < Formula
   url "https://downloads.sourceforge.net/project/cunit/CUnit/2.1-3/CUnit-2.1-3.tar.bz2"
   sha256 "f5b29137f845bb08b77ec60584fdb728b4e58f1023e6f249a464efa49a40f214"
   license "LGPL-2.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "fc8213c40350e795f3e5268cc0c8c7cfee4ae7d229188356c9be0c5fb4ec44f8"

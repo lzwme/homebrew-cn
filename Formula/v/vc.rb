@@ -4,6 +4,7 @@ class Vc < Formula
   url "https://ghfast.top/https://github.com/VcDevel/Vc/archive/refs/tags/1.4.5.tar.gz"
   sha256 "eb734ef4827933fcd67d4c74aef54211b841c350a867c681c73003eb6d511a48"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1c39842e871901f1a2c17c93220cbb9ae9a6d932717258c287ce606634d7796c"

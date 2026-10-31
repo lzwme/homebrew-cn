@@ -5,6 +5,7 @@ class Icestorm < Formula
   sha256 "928dd541d15540a796a3d320122794d8d76acff90783de8c5747f613e474652f"
   license "ISC"
   revision 1
+  compatibility_version 1
   head "https://github.com/YosysHQ/icestorm.git", branch: "main"
 
   bottle do

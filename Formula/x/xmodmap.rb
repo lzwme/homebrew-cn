@@ -4,6 +4,7 @@ class Xmodmap < Formula
   url "https://www.x.org/releases/individual/app/xmodmap-1.0.12.tar.xz"
   sha256 "fc54b9b5bbf2ae58ba8f9d42bd051c41c7438377400c42c17d7496d19e1bb3ce"
   license "MIT-open-group"
+  compatibility_version 1
 
   bottle do
     rebuild 1

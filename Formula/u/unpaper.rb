@@ -5,6 +5,7 @@ class Unpaper < Formula
   sha256 "2575fbbf26c22719d1cb882b59602c9900c7f747118ac130883f63419be46a80"
   license "GPL-2.0-or-later"
   revision 4
+  compatibility_version 1
   head "https://github.com/unpaper/unpaper.git", branch: "main"
 
   bottle do

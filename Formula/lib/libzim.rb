@@ -5,6 +5,7 @@ class Libzim < Formula
   sha256 "38f8e2139a089f00196f288f52f2d0677a6becc218f380b54ca70b6f162398bd"
   license "GPL-2.0-or-later"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "0db912894c4387fe3b132a639247bb16e1f3ee86b13e5374d4189bde99eb2b46"

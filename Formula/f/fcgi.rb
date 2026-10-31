@@ -5,6 +5,7 @@ class Fcgi < Formula
   url "https://ghfast.top/https://github.com/FastCGI-Archives/fcgi2/archive/refs/tags/2.4.7.tar.gz"
   sha256 "e41ddc3a473b555bdc0cbd80703dcb1f4610c1a7700d3b9d3d0c14a416e1074b"
   license "OML"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "be1c4909039113d2a7d10ab5b7f6b75d1f1e83c853afb6574554f07fcd4c2bec"

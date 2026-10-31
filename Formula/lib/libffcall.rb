@@ -5,6 +5,7 @@ class Libffcall < Formula
   mirror "https://ftp.gnu.org/gnu/libffcall/libffcall-2.5.tar.gz"
   sha256 "7f422096b40498b1389093955825f141bb67ed6014249d884009463dc7846879"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "b4f50e5ea72969477339e4d0a22883eb4a0a2686a8fa55bd2ef40b3e7a6cd1ff"

@@ -7,6 +7,7 @@ class SpiceGtk < Formula
   sha256 "cee26e5b2d22909f35b40a94398d1e863ca3962ee46494ca97aab206abc3203b"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "BSD-3-Clause"]
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://www.spice-space.org/download/gtk/"

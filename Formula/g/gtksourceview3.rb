@@ -5,6 +5,7 @@ class Gtksourceview3 < Formula
   sha256 "691b074a37b2a307f7f48edc5b8c7afa7301709be56378ccf9cc9735909077fd"
   license "LGPL-2.1-or-later"
   revision 5
+  compatibility_version 1
 
   livecheck do
     url :stable

@@ -5,6 +5,7 @@ class RancherMachine < Formula
   version "0.15.0-rancher145"
   sha256 "e039feb0f202854a97737bf7eadfde1d1a647294494c153791d191f8277835b0"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/rancher/machine.git", branch: "master"
 
   livecheck do

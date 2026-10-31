@@ -7,6 +7,7 @@ class Pyinstaller < Formula
   sha256 "05eb2f5615503e72939a7224d68b4aff572c6b0438ee4a17d0a4b481f399362d"
   license "GPL-2.0-or-later"
   revision 1
+  compatibility_version 1
   head "https://github.com/pyinstaller/pyinstaller.git", branch: "develop"
 
   bottle do

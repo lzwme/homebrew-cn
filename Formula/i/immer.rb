@@ -4,6 +4,7 @@ class Immer < Formula
   url "https://ghfast.top/https://github.com/arximboldi/immer/archive/refs/tags/v0.9.1.tar.gz"
   sha256 "b18b92ba60ec3186dc36ef671d3c2ae542cbb63eb6dc0e258476c6111a67c971"
   license "BSL-1.0"
+  compatibility_version 1
 
   livecheck do
     url :stable

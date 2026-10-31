@@ -4,6 +4,7 @@ class Graalvm < Formula
   url "https://ghfast.top/https://github.com/oracle/graal/archive/refs/tags/graal-25.4.4.1.1.tar.gz"
   sha256 "be511fd2ff9bc64862c281f11bd1ad2a9f3c311c8551aba7bbe5700c71fe575d"
   license "GPL-2.0-only" => { with: "Classpath-exception-2.0" }
+  compatibility_version 1
 
   livecheck do
     url "https://github.com/graalvm/graalvm-ce-builds"

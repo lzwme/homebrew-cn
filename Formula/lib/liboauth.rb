@@ -7,6 +7,7 @@ class Liboauth < Formula
   # otherwise read COPYING.MIT
   license "MIT"
   revision 4
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "0a35185bf79a17c6bb4fd57bdaf67eacde9095bd393c7a9ebee80e0dc5969fac"

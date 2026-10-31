@@ -4,6 +4,7 @@ class Libiscsi < Formula
   url "https://ghfast.top/https://github.com/sahlberg/libiscsi/archive/refs/tags/1.20.3.tar.gz"
   sha256 "212f6e1fd8e7ddb4b02208aafc6de600f6f330f40359babeefdd83b0c79d47a1"
   license all_of: [:public_domain, "LGPL-2.1-or-later", "GPL-2.0-or-later"]
+  compatibility_version 1
   head "https://github.com/sahlberg/libiscsi.git", branch: "master"
 
   bottle do

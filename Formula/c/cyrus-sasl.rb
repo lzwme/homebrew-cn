@@ -6,6 +6,7 @@ class CyrusSasl < Formula
   sha256 "7ccfc6abd01ed67c1a0924b353e526f1b766b21f42d4562ee635a8ebfc5bb38c"
   license "BSD-3-Clause-Attribution"
   revision 4
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "244e8389554db8ee28e01455456a62e72e18f006430ad95536609a1db4fcd090"

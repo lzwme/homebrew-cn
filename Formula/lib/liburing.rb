@@ -5,6 +5,7 @@ class Liburing < Formula
   url "https://ghfast.top/https://github.com/axboe/liburing/archive/refs/tags/liburing-2.15.tar.gz"
   sha256 "8d052f2622dcb3678cbaee5ff582a87572672a6c0a56533cdda5b65cb636120a"
   license any_of: ["MIT", "LGPL-2.1-only"]
+  compatibility_version 1
   head "https://github.com/axboe/liburing.git", branch: "master"
 
   bottle do

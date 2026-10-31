@@ -5,6 +5,7 @@ class Liblcf < Formula
   sha256 "e827b265702cf7d9f4af24b8c10df2c608ac70754ef7468e34836201ff172273"
   license "MIT"
   revision 2
+  compatibility_version 1
   head "https://github.com/EasyRPG/liblcf.git", branch: "master"
 
   bottle do

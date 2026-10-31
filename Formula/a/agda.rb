@@ -5,6 +5,7 @@ class Agda < Formula
   # Everything else specifies MIT license and installs corresponding file.
   license all_of: ["MIT", "BSD-3-Clause"]
   revision 2
+  compatibility_version 1
 
   stable do
     url "https://ghfast.top/https://github.com/agda/agda/archive/refs/tags/v2.8.0.2.tar.gz"

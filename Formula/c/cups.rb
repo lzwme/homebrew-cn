@@ -7,6 +7,7 @@ class Cups < Formula
   sha256 "ab4d9cd7f3e58060091d2b24972223d6401675f11c49b65abf4f6ef31dea22ff"
   license "Apache-2.0" => { with: "LLVM-exception" }
   revision 1
+  compatibility_version 1
   head "https://github.com/OpenPrinting/cups.git", branch: "master"
 
   livecheck do

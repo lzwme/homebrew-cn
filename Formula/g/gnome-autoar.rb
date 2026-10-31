@@ -4,6 +4,7 @@ class GnomeAutoar < Formula
   url "https://download.gnome.org/sources/gnome-autoar/0.5/gnome-autoar-0.5.2.tar.xz"
   sha256 "6c20bd16c87aba15869e56444424481f632ac302989a203e8ce4dcc73dea33a5"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   # gnome-autoar doesn't seem to follow the typical GNOME version format where
   # even-numbered minor versions are stable, so we override the default regex

@@ -4,6 +4,7 @@ class Cairo < Formula
   url "https://cairographics.org/releases/cairo-1.18.6.tar.xz"
   sha256 "1c767308174337a74694da0f3ec069c271452163a1ef4540964c50c301f157d4"
   license any_of: ["LGPL-2.1-only", "MPL-1.1"]
+  compatibility_version 1
   head "https://gitlab.freedesktop.org/cairo/cairo.git", branch: "master"
 
   livecheck do

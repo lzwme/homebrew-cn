@@ -4,6 +4,7 @@ class CpuFeatures < Formula
   url "https://ghfast.top/https://github.com/google/cpu_features/archive/refs/tags/v0.11.0.tar.gz"
   sha256 "ab2463f2d38fcaff1ce806be8e4c91333449931f5e02009d543b2569a3fa471a"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/google/cpu_features.git", branch: "main"
 
   bottle do

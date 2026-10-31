@@ -4,6 +4,7 @@ class Sfsexp < Formula
   url "https://ghfast.top/https://github.com/mjsottile/sfsexp/releases/download/v1.4.1/sfsexp-1.4.1.tar.gz"
   sha256 "15e9a18bb0d5c3c5093444a9003471c2d25ab611b4219ef1064f598668723681"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "63481e034e12e9a48cba6db8416f52b6fec9eebd35b36549589cd1d8070f3cd5"

@@ -4,6 +4,7 @@ class Ddcutil < Formula
   url "https://www.ddcutil.com/tarballs/ddcutil-3.0.1.tar.gz"
   sha256 "1c862dc263aa295f23da8d9a6693487d4cd8c97a91bdeaa4711cab28a33cdd6e"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://www.ddcutil.com/releases/"

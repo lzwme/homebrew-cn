@@ -4,6 +4,7 @@ class Fping < Formula
   url "https://fping.org/dist/fping-5.5.tar.gz"
   sha256 "15c4e32b6c55ff105bafe03e8c91c7ca1b2eda31bf9a7127326bb87887ee18fe"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url :homepage

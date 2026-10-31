@@ -4,6 +4,7 @@ class Age < Formula
   url "https://ghfast.top/https://github.com/FiloSottile/age/archive/refs/tags/v1.3.2.tar.gz"
   sha256 "b07c28c6c4bdafa272073a310b75bc22c49da8904585a89c30e5ca4233e63843"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/FiloSottile/age.git", branch: "main"
 
   bottle do

@@ -6,6 +6,7 @@ class PortableOpenssl < PortableFormula
   url "https://ghfast.top/https://github.com/openssl/openssl/releases/download/openssl-4.0.3/openssl-4.0.3.tar.gz"
   sha256 "325b5c806167c13b40b1ffeadfe0248197c00eccc4cf123ec1e28d2d2fd216d9"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url :stable

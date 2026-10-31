@@ -4,6 +4,7 @@ class Cweb < Formula
   url "https://ghfast.top/https://github.com/ascherer/cweb/archive/refs/tags/cweb-4.12.2.tar.gz"
   sha256 "519ac1c03610eea18956ed62d2996dc5a629f0c3af91f38cf4621d5deab749fd"
   license "Knuth-CTAN" # https://ctan.org/pkg/cweb
+  compatibility_version 1
 
   livecheck do
     url :stable

@@ -4,6 +4,7 @@ class Libmatroska < Formula
   url "https://dl.matroska.org/downloads/libmatroska/libmatroska-1.7.2.tar.xz"
   sha256 "f3e4d406daf7f1399962c43940e4a87de089474d5bcfbf2e6ca516e98bb87cfc"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
   head "https://github.com/Matroska-Org/libmatroska.git", branch: "master"
 
   livecheck do

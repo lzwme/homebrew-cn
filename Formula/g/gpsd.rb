@@ -5,6 +5,7 @@ class Gpsd < Formula
   mirror "https://download-mirror.savannah.gnu.org/releases/gpsd/gpsd-3.27.5.tar.xz"
   sha256 "dc4a62bad835282bae788772bc7cc8f8bec4c7a48e8dceeb37477a89091c4656"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://gitlab.com/gpsd/gpsd.git", branch: "master"
 
   livecheck do

@@ -4,6 +4,7 @@ class Astyle < Formula
   url "https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.6/astyle-3.6.20.tar.bz2"
   sha256 "b058f3e176334dba65477fd126105d3df4eab9e954eab1c76b568cd5370cfbe9"
   license "MIT"
+  compatibility_version 1
   head "https://svn.code.sf.net/p/astyle/code/trunk/AStyle"
 
   livecheck do

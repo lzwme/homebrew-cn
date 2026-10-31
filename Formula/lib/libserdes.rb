@@ -5,6 +5,7 @@ class Libserdes < Formula
       tag:      "v8.4.0",
       revision: "8cf97f7395bf5131d14bacfe896c6a5731b1f0c8"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/confluentinc/libserdes.git", branch: "master"
 
   bottle do

@@ -1,17 +1,17 @@
 class Fortitude < Formula
   desc "Fortran linter"
   homepage "https://fortitude.readthedocs.io/en/stable/"
-  url "https://ghfast.top/https://github.com/PlasmaFAIR/fortitude/archive/refs/tags/v0.10.0.tar.gz"
-  sha256 "883d2b0448c7c81e380f07fa8d46780cb9503cd0be9e3434945c702fd18016ec"
+  url "https://ghfast.top/https://github.com/PlasmaFAIR/fortitude/archive/refs/tags/v0.10.1.tar.gz"
+  sha256 "1b03901650199fb05e6c9f7afda0789b67a73b52bb0bf0f9d3e877b47890c736"
   license "MIT"
   head "https://github.com/PlasmaFAIR/fortitude.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fba43909d21295d500c2c58746e768c7f037560f7b6d9af5c914be7042870d1e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "979994d2f0eb0b75f2bf0af694321efddb24b0712bdad50d00ade7eaab9d8656"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "013d6cdc6fe8e921126cb718c7a00b3c239e54abaa69ce3c41413d594b7316c6"
-    sha256 cellar: :any,                 arm64_linux:       "8156d2ff6a5b06d1ef80e1edf2e8e0bbaa852db6df372b969dce4ecad97cf2f4"
-    sha256 cellar: :any,                 x86_64_linux:      "3f6c452e7060a6892d8c0ca3ab60f1088bd524d6a70936306c6ce7758f61e538"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3171afb506b4cfed8e1e0c46884378c022baacfb0cd634db0c0151485deda2c6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cfe64c5e4f99dbb1d7c59ebe31c6c36bb96687b810ed107153cfda100b0e9c16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "00595d6bd8317b93079c06fca3360b8462833e54cf125efe94e448f202fa1058"
+    sha256 cellar: :any,                 arm64_linux:       "9b37f393a67578d9643fa3358b0068301dd5b131ac80d0b63ded8ff3f52bee9b"
+    sha256 cellar: :any,                 x86_64_linux:      "d83e2071ce217cf97fc2fb0c2de1acb8b8310c7f3471d15aa224f0362f261a11"
   end
 
   depends_on "rust" => :build

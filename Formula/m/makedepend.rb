@@ -4,6 +4,7 @@ class Makedepend < Formula
   url "https://xorg.freedesktop.org/releases/individual/util/makedepend-1.0.10.tar.xz"
   sha256 "f278c4686285d70292c03f7339cc3c0a811fc6c4bf9c053906d0a5732eac9138"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url "https://xorg.freedesktop.org/releases/individual/util/"

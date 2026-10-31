@@ -24,6 +24,8 @@ class PythonGdbmAT311 < Formula
   depends_on "gdbm"
   depends_on "python@3.11"
 
+  deny_network_access!
+
   def install
     cd "Modules" do
       (Pathname.pwd/"setup.py").write <<~PYTHON

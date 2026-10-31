@@ -5,6 +5,7 @@ class Libopusenc < Formula
   mirror "https://archive.mozilla.org/pub/opus/libopusenc-0.3.tar.gz"
   sha256 "f616d3aff9b2034547894ccb8ab56c36cf1a4acb0d922c5d7119f97bbe58642c"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url "https://ftp.osuosl.org/pub/xiph/releases/opus/?C=M&O=D"

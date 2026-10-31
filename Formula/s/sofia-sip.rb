@@ -4,6 +4,7 @@ class SofiaSip < Formula
   url "https://ghfast.top/https://github.com/freeswitch/sofia-sip/archive/refs/tags/v1.13.19.tar.gz"
   sha256 "99389b574dfcff5775b260dd9ef1bdd2bcb5a42e655bd229d477e488e658064f"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "67bdb2c21dbf6434f8750d7814cbc95432822b313516b51ec72a88e3dd00aa46"

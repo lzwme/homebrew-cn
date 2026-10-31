@@ -4,6 +4,7 @@ class Feh < Formula
   url "https://feh.finalrewind.org/feh-3.13.1.tar.bz2"
   sha256 "785cd3bf51e05f6bb86ab0d649b7ed20e31892eb635bc5a25c963bf934088445"
   license "MIT-feh"
+  compatibility_version 1
 
   livecheck do
     url :homepage

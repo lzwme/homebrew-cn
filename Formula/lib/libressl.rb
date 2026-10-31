@@ -6,6 +6,7 @@ class Libressl < Formula
   mirror "https://mirrorservice.org/pub/OpenBSD/LibreSSL/libressl-4.4.0.tar.gz"
   sha256 "7d02522ad5070b9adb32eb253ecabce181184a3750cf65abac0675ee908687c1"
   license "OpenSSL"
+  compatibility_version 1
 
   livecheck do
     url :homepage

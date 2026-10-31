@@ -4,6 +4,7 @@ class Jlog < Formula
   url "https://ghfast.top/https://github.com/omniti-labs/jlog/archive/refs/tags/2.6.0.tar.gz"
   sha256 "c3c6e745557f789c2cef3e3760e3c68ee585727a0d55c14ad9cb3e8232f4e46b"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/omniti-labs/jlog.git", branch: "master"
 
   bottle do

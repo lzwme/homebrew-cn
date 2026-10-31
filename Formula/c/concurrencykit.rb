@@ -5,6 +5,7 @@ class Concurrencykit < Formula
   url "https://ghfast.top/https://github.com/concurrencykit/ck/archive/refs/tags/0.7.2.tar.gz"
   sha256 "568ebe0bc1988a23843fce6426602e555b7840bf6714edcdf0ed530214977f1b"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/concurrencykit/ck.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are

@@ -4,6 +4,7 @@ class CabalInstall < Formula
   url "https://hackage.haskell.org/package/cabal-install-3.18.2.0/cabal-install-3.18.2.0.tar.gz"
   sha256 "1d55fea99bf82b2f4a2ae51bd47313167048ba05aac6290a30752d91cd5f7cb8"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/haskell/cabal.git", branch: "master"
 
   bottle do

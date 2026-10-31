@@ -4,6 +4,7 @@ class Lzo < Formula
   url "https://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz"
   sha256 "c0f892943208266f9b6543b3ae308fab6284c5c90e627931446fb49b4221a072"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://www.oberhumer.com/opensource/lzo/download/"

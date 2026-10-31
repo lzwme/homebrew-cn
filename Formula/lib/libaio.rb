@@ -4,6 +4,7 @@ class Libaio < Formula
   url "https://pagure.io/libaio/archive/libaio-0.3.113/libaio-libaio-0.3.113.tar.gz"
   sha256 "716c7059703247344eb066b54ecbc3ca2134f0103307192e6c2b7dab5f9528ab"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
   head "https://pagure.io/libaio.git", branch: "master"
 
   # This regex only captures the first three numeric parts of the version

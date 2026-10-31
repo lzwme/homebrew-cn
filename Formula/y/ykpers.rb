@@ -44,6 +44,8 @@ class Ykpers < Formula
     resolves "https://github.com/Yubico/yubikey-personalization/pull/165"
   end
 
+  deny_network_access!
+
   def install
     # Work around failure from GCC 10+ using default of `-fno-common`
     ENV.append_to_cflags "-fcommon" if ENV.compiler.to_s.start_with?("gcc")

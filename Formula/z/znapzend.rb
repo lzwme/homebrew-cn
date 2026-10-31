@@ -15,20 +15,79 @@ class Znapzend < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "69190ba3dcb22df4c2065e5cb18327ec047a5484c8afb2a5218135f306341dfe"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5aa6f0226f94f813871cb07c350b43070fe34670d1f1d140b9fe9089b6176de8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "61c38517d722d3fa4d195c911a52dc3c27d27cc825d0201cfbd6835fce50903d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "5031431002c158ea87df165949df1c2280b161fa663ffa38bdbc87265a0072a5"
-    sha256 cellar: :any_skip_relocation, sonoma:            "68096ec47d33a9d0ccb180931aa1be8b8af900a331fc54ffb41b2b0c0178b52a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c976696b673908fe23be4d5f0c6046ac09a046c774d685ddba01d4a280593ab1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c96670acc3cbe2b425c0574b0d1918e72731d9ebdf6dc3b1888cacb90baccb8c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "051815a5a7dc66b5b31187d81767ccd4f49d213e4816311222b186d583c21a91"
   end
 
-  uses_from_macos "perl", since: :big_sur
+  depends_on "pod2man" => :build # generate same manpage on all OS
+  uses_from_macos "perl"
+
+  resource "ExtUtils::Config" do
+    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/ExtUtils-Config-0.010.tar.gz"
+    sha256 "82e7e4e90cbe380e152f5de6e3e403746982d502dd30197a123652e46610c66d"
+  end
+
+  resource "ExtUtils::Helpers" do
+    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/ExtUtils-Helpers-0.028.tar.gz"
+    sha256 "c8574875cce073e7dc5345a7b06d502e52044d68894f9160203fcaab379514fe"
+  end
+
+  resource "ExtUtils::InstallPaths" do
+    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/ExtUtils-InstallPaths-0.015.tar.gz"
+    sha256 "7d64eb2dfa87ead010cdf55c8a1bdfde50b7b5852d7cb8cf2304f55bea2eb007"
+  end
+
+  resource "Module::Build::Tiny" do
+    url "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-Tiny-0.053.tar.gz"
+    sha256 "3726d622da6f655e88fdf89e4fd597709c44970b47de65082003e8d86b5e193a"
+  end
+
+  resource "Class::Method::Modifiers" do
+    url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Class-Method-Modifiers-2.15.tar.gz"
+    sha256 "65cd85bfe475d066e9186f7a8cc636070985b30b0ebb1cde8681cf062c2e15fc"
+  end
+
+  resource "Role::Tiny" do
+    url "https://cpan.metacpan.org/authors/id/H/HA/HAARG/Role-Tiny-2.002005.tar.gz"
+    sha256 "4618ec524618c104dc28a8cc86af129a00cad282aea7f4c75060ba05d4c8f4d7"
+  end
+
+  resource "Mojolicious" do
+    url "https://cpan.metacpan.org/authors/id/S/SR/SRI/Mojolicious-9.53.tar.gz"
+    sha256 "7a1417d6183929e274885c81e109e3a331c059c33ce1824929c1de81d9fe73bf"
+  end
+
+  resource "Mojo::Log::Role::Clearable" do
+    url "https://cpan.metacpan.org/authors/id/D/DB/DBOOK/Mojo-Log-Clearable-1.001.tar.gz"
+    sha256 "82e06a29d59e99ce260bfc69efb59deea795da246a638c2b439351b07b6c0a72"
+  end
+
+  deny_network_access!
 
   def install
+    ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
+
+    resources.each do |r|
+      r.stage do
+        if File.exist? "Makefile.PL"
+          system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}",
+                                        "INSTALLMAN1DIR=none",
+                                        "INSTALLMAN3DIR=none",
+                                        "NO_PACKLIST=1",
+                                        "NO_PERLLOCAL=1"
+          system "make", "install"
+        else
+          system "perl", "Build.PL", "--create_packlist=0",
+                                     "--install_base", libexec,
+                                     "--install_path", "libdoc=none"
+          system "./Build"
+          system "./Build", "install"
+        end
+      end
+    end
+
     system "./configure", "--disable-silent-rules", *std_configure_args
-    system "make", "install"
+    system "make", "install", "SUBDIRS=lib"
     (var/"log/znapzend").mkpath
   end
 

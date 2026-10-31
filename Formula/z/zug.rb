@@ -4,6 +4,7 @@ class Zug < Formula
   url "https://ghfast.top/https://github.com/arximboldi/zug/archive/refs/tags/v0.1.2.tar.gz"
   sha256 "75ff666a4ce1615b3ca26abbb17b10f5cb5cf5f86c9c293ec430c34750d3ea27"
   license "BSL-1.0"
+  compatibility_version 1
   head "https://github.com/arximboldi/zug.git", branch: "master"
 
   bottle do

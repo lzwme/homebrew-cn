@@ -4,6 +4,7 @@ class Libscrypt < Formula
   url "https://ghfast.top/https://github.com/technion/libscrypt/archive/refs/tags/v1.22.tar.gz"
   sha256 "a2d30ea16e6d288772791de68be56153965fe4fd4bcd787777618b8048708936"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "a31f17cb8bad2f6bee0574cce3ad1a7a6525708b26115872c214dff98b3c2225"

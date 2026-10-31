@@ -4,6 +4,7 @@ class Save3dsFuse < Formula
   url "https://ghfast.top/https://github.com/wwylele/save3ds/archive/refs/tags/v1.4.0.tar.gz"
   sha256 "3bf47e34db1f3e5162df5b8e67a5673b473b37bf0eaa729be28e5e7a62212858"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "aeb3c342b554a06da26c0fd097f35faefa9662362f966eec3c8de00613449116"

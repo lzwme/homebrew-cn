@@ -4,6 +4,7 @@ class Kingfisher < Formula
   url "https://ghfast.top/https://github.com/mongodb/kingfisher/archive/refs/tags/v2.16.0.tar.gz"
   sha256 "d906d91fc63be68c4c4c4d498e7a3adc7068cc1e63d8442f62a33d86fa52cb83"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "29b6670a33a86812b6634d5e3351f0deebaacd0b9863816d49cd87758cf21cf8"

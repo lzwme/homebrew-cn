@@ -4,6 +4,7 @@ class Bubblewrap < Formula
   url "https://ghfast.top/https://github.com/containers/bubblewrap/releases/download/v0.13.1/bubblewrap-0.13.1.tar.xz"
   sha256 "0e85c8702248b8dd64144f594147553650cdd0e4c951690345faace79c217c4d"
   license "LGPL-2.0-or-later"
+  compatibility_version 1
   head "https://github.com/containers/bubblewrap.git", branch: "main"
 
   bottle do

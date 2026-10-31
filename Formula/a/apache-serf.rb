@@ -3,6 +3,7 @@ class ApacheSerf < Formula
   homepage "https://serf.apache.org/"
   license "Apache-2.0"
   revision 1
+  compatibility_version 1
   head "https://github.com/apache/serf.git", branch: "trunk"
 
   stable do

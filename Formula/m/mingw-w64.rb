@@ -12,6 +12,7 @@ class MingwW64 < Formula
     "GPL-3.0-or-later" => { with: "GCC-exception-3.1" },
   ]
   revision 3
+  compatibility_version 1
 
   livecheck do
     url :stable

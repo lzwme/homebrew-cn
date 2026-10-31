@@ -3,6 +3,7 @@ class OpenSceneGraph < Formula
   homepage "https://github.com/openscenegraph/OpenSceneGraph"
   license "LGPL-2.1-or-later" => { with: "WxWindows-exception-3.1" }
   revision 2
+  compatibility_version 1
   head "https://github.com/openscenegraph/OpenSceneGraph.git", branch: "master"
 
   stable do

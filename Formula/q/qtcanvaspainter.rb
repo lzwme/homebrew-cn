@@ -12,6 +12,7 @@ class Qtcanvaspainter < Formula
     "Zlib", # nanovg
   ]
   revision 1
+  compatibility_version 1
   head "https://code.qt.io/qt/qtcanvaspainter.git", branch: "dev"
 
   livecheck do

@@ -4,6 +4,7 @@ class LibnetfilterQueue < Formula
   url "https://www.netfilter.org/projects/libnetfilter_queue/files/libnetfilter_queue-1.0.5.tar.bz2"
   sha256 "f9ff3c11305d6e03d81405957bdc11aea18e0d315c3e3f48da53a24ba251b9f5"
   license "LGPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://www.netfilter.org/projects/libnetfilter_queue/downloads.html"

@@ -5,6 +5,7 @@ class Librasterlite2 < Formula
   sha256 "f7284cdfc07ad343a314e4878df0300874b0145d9d331b063b096b482e7e44f4"
   license any_of: ["MPL-1.1", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 5
+  compatibility_version 1
 
   livecheck do
     url :homepage

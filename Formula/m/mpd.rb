@@ -1,18 +1,17 @@
 class Mpd < Formula
   desc "Music Player Daemon"
   homepage "https://www.musicpd.org/"
-  url "https://ghfast.top/https://github.com/MusicPlayerDaemon/MPD/archive/refs/tags/v0.24.17.tar.gz"
-  sha256 "06f9da57872170e8d5232d21ae45960d04df2a1c9b168d425d215fab3f8d3515"
+  url "https://ghfast.top/https://github.com/MusicPlayerDaemon/MPD/archive/refs/tags/v0.24.18.tar.gz"
+  sha256 "7a754a4c51efc7bdd39408a2f7046b591bcd0513f08ccb46b223ebf154c46c6c"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://github.com/MusicPlayerDaemon/MPD.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "76e593c06fa664b052df355605b0bdb36fb357fdcb5013e3f0cce5188a357745"
-    sha256 cellar: :any, arm64_tahoe:       "2efe14a6483652ec8aaf0e3a97e5eca0a21d99d4e20d2e26b1ba79d9e5ceb7d9"
-    sha256 cellar: :any, arm64_sequoia:     "2466bd87f436a421dd0742f41a83fddef5bd9f356b59d5f28f389660c1849780"
-    sha256 cellar: :any, arm64_linux:       "c04069123e2a43d14a0df21dec134179697b8436b808a8ba12f7320fbe2e789b"
-    sha256 cellar: :any, x86_64_linux:      "a22905d99eb4208df257ea3ce589d2bdf9cdb4ee894a048cd87b7afdeb21ea91"
+    sha256 cellar: :any, arm64_golden_gate: "bc8a0ae2cc1a8a93db825950abd67df9291c6c0d5b516179662c6f1f91315d64"
+    sha256 cellar: :any, arm64_tahoe:       "c51859957e0dc1c0b969d3d1a5cfd22737f2d874ec9495c9fbce735bd7e780b5"
+    sha256 cellar: :any, arm64_sequoia:     "4da94d3c0894c8cd4d2f56c1e53325e4aaccb24d155278e09117873f00d06e0d"
+    sha256 cellar: :any, arm64_linux:       "7849d1ecd09f24e9261eebfa4031b25c74c071fb68c868b1064e872a3dd26dcc"
+    sha256 cellar: :any, x86_64_linux:      "fed529529f43e82cc058013ba1c283965c1248d6971ae8f54e61bd0da414bf50"
   end
 
   depends_on "meson" => :build

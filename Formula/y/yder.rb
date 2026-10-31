@@ -4,6 +4,7 @@ class Yder < Formula
   url "https://ghfast.top/https://github.com/babelouest/yder/archive/refs/tags/v1.4.20.tar.gz"
   sha256 "c1a7f2281514d0d0bba912b6b70f371d8c127ccfd644b8c438c9301a0fd4c5f2"
   license "LGPL-2.1-only"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "f4705fef3371134a3cec45a7605157a1f0779248e287e862665d5dac3e1ee37f"

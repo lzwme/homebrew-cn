@@ -10,6 +10,7 @@ class Valkey < Formula
     "MIT", # deps/lua
     any_of: ["CC0-1.0", "BSD-2-Clause"], # deps/hdr_histogram
   ]
+  compatibility_version 1
   head "https://github.com/valkey-io/valkey.git", branch: "unstable"
 
   bottle do

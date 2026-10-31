@@ -5,6 +5,7 @@ class BoostBuild < Formula
   sha256 "bf2d9efb60cded0eca0c0be37e5c8a9fda7a3977a5c675b353aefced66ff3444"
   license "BSL-1.0"
   version_scheme 1
+  compatibility_version 1
   head "https://github.com/boostorg/build.git", branch: "develop"
 
   livecheck do

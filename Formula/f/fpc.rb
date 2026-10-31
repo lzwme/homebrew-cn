@@ -5,6 +5,7 @@ class Fpc < Formula
   sha256 "d542e349de246843d4f164829953d1f5b864126c5b62fd17c9b45b33e23d2f44"
   license "GPL-2.0-or-later"
   revision 1
+  compatibility_version 1
 
   # fpc releases involve so many files that the tarball is pushed out of the
   # RSS feed and we can't rely on the SourceForge strategy.

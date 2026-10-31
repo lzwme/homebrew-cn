@@ -2,6 +2,7 @@ class Shaderc < Formula
   desc "Collection of tools, libraries, and tests for Vulkan shader compilation"
   homepage "https://github.com/google/shaderc"
   license "Apache-2.0"
+  compatibility_version 1
 
   stable do
     url "https://ghfast.top/https://github.com/google/shaderc/archive/refs/tags/v2026.4.tar.gz"

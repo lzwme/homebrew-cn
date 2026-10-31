@@ -4,6 +4,7 @@ class I2cTools < Formula
   url "https://mirrors.edge.kernel.org/pub/software/utils/i2c-tools/i2c-tools-4.4.tar.xz"
   sha256 "8b15f0a880ab87280c40cfd7235cfff28134bf14d5646c07518b1ff6642a2473"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  compatibility_version 1
 
   livecheck do
     url "https://mirrors.edge.kernel.org/pub/software/utils/i2c-tools/"

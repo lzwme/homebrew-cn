@@ -5,6 +5,7 @@ class Antlr4CppRuntime < Formula
   sha256 "0ed13668906e86dbc0dcddf30fdee68c10203dea4e83852b4edb810821bee3c4"
   license "BSD-3-Clause"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://www.antlr.org/download.html"

@@ -4,6 +4,7 @@ class Ruff < Formula
   url "https://ghfast.top/https://github.com/astral-sh/ruff/archive/refs/tags/0.17.3.tar.gz"
   sha256 "7281befde89b669bd92231064ceb3d3211d9094e20e6983bb3b92e641b305860"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/astral-sh/ruff.git", branch: "main"
 
   bottle do

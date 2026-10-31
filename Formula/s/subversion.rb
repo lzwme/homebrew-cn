@@ -5,6 +5,7 @@ class Subversion < Formula
   mirror "https://archive.apache.org/dist/subversion/subversion-1.15.0.tar.bz2"
   sha256 "dfb7b1e5270c7def971ccbd5938b0c03b1b5bd60b6674a2d8a74a9560839fb8c"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     rebuild 1

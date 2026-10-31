@@ -4,6 +4,7 @@ class SpanLite < Formula
   url "https://ghfast.top/https://github.com/nonstd-lite/span-lite/archive/refs/tags/v0.11.0.tar.gz"
   sha256 "ef4e028e18ff21044da4b4641ca1bc8a2e2d656e2028322876c0e1b9b6904f9d"
   license "BSL-1.0"
+  compatibility_version 1
   head "https://github.com/nonstd-lite/span-lite.git", branch: "master"
 
   bottle do

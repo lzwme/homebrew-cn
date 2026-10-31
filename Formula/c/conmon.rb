@@ -4,6 +4,7 @@ class Conmon < Formula
   url "https://ghfast.top/https://github.com/containers/conmon/archive/refs/tags/v2.2.1.tar.gz"
   sha256 "814fb5979a3a4b8576b1f901e606b482bebb41cb7e57926e6d5765ee786b96d3"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/containers/conmon.git", branch: "main"
 
   bottle do

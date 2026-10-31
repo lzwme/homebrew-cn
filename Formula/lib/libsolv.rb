@@ -4,6 +4,7 @@ class Libsolv < Formula
   url "https://ghfast.top/https://github.com/openSUSE/libsolv/archive/refs/tags/0.7.41.tar.gz"
   sha256 "38b4ee1924f8bd1ec0f6b2ec147e4c54c6deac132db5f90b4214b43ccd32fdd6"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url :stable

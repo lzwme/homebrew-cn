@@ -5,6 +5,7 @@ class Gzip < Formula
   mirror "https://ftp.gnu.org/gnu/gzip/gzip-1.15.tar.gz"
   sha256 "545886cf57fa88a65e967fbf705903d7fcb2567c82c7342493e82e8d7b1a210b"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5a4fc6cf11086f1848bd0bc4d9797cafbaa79cf2ab4098bde4aa034837af517d"

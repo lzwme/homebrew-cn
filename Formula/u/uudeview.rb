@@ -6,6 +6,7 @@ class Uudeview < Formula
   sha256 "e49a510ddf272022af204e96605bd454bb53da0b3fe0be437115768710dae435"
   license "GPL-2.0-or-later"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url :homepage

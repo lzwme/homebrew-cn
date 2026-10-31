@@ -4,6 +4,7 @@ class Libbpf < Formula
   url "https://ghfast.top/https://github.com/libbpf/libbpf/archive/refs/tags/v1.8.0.tar.gz"
   sha256 "b7a1e685f90f6a63ead0dd85d053694b222975da8d09c1a966041cff6f0055ff"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_linux:  "0f59485aef544d9260217f4a9c34d35c20260b9bd025bf15e1e843d0a7f878f6"

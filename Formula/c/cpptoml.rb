@@ -5,6 +5,7 @@ class Cpptoml < Formula
   sha256 "23af72468cfd4040984d46a0dd2a609538579c78ddc429d6b8fd7a10a6e24403"
   license "MIT"
   revision 1
+  compatibility_version 1
   head "https://github.com/skystrife/cpptoml.git", branch: "master"
 
   bottle do

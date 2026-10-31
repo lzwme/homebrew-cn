@@ -4,6 +4,7 @@ class Docbook2x < Formula
   url "https://downloads.sourceforge.net/project/docbook2x/docbook2x/0.8.8/docbook2X-0.8.8.tar.gz"
   sha256 "4077757d367a9d1b1427e8d5dfc3c49d993e90deabc6df23d05cfe9cd2fcdc45"
   license all_of: ["MIT", "DocBook-XML"]
+  compatibility_version 1
 
   livecheck do
     url :stable

@@ -5,6 +5,7 @@ class Tinycdb < Formula
   sha256 "469de2d445bf54880f652f4b6dc95c7cdf6f5502c35524a45b2122d70d47ebc2"
   license :public_domain
   revision 1
+  compatibility_version 1
 
   livecheck do
     url :homepage

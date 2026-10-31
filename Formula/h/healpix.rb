@@ -6,6 +6,7 @@ class Healpix < Formula
   sha256 "8876c18efc596fd706b2a004ac15f2fb60b795f2db6fbabea9d8ccf549531dda"
   license "GPL-2.0-or-later"
   revision 2
+  compatibility_version 1
 
   no_autobump! because: :incompatible_version_format
 

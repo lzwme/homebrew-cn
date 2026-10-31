@@ -4,6 +4,7 @@ class Regclient < Formula
   url "https://ghfast.top/https://github.com/regclient/regclient/archive/refs/tags/v0.11.7.tar.gz"
   sha256 "a648fcf3b5b81c55773f47f6d7401d1904675c32520a76159d960a9e8798badd"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/regclient/regclient.git", branch: "main"
 
   bottle do

@@ -2,6 +2,7 @@ class Rapidjson < Formula
   desc "JSON parser/generator for C++ with SAX and DOM style APIs"
   homepage "https://rapidjson.org/"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/Tencent/rapidjson.git", branch: "master"
 
   stable do

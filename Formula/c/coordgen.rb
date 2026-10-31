@@ -4,6 +4,7 @@ class Coordgen < Formula
   url "https://ghfast.top/https://github.com/schrodinger/coordgenlibs/archive/refs/tags/v3.0.2.tar.gz"
   sha256 "f67697434f7fec03bca150a6d84ea0e8409f6ec49d5aab43badc5833098ff4e3"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "8d64977d2f3d038efabbcd36c5cda09adbe4b2c85792c19a0678a039bc0c7044"

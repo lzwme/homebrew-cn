@@ -2,17 +2,18 @@ class Aom < Formula
   desc "Codec library for encoding and decoding AV1 video streams"
   homepage "https://aomedia.googlesource.com/aom"
   url "https://aomedia.googlesource.com/aom.git",
-      tag:      "v3.15.2",
-      revision: "af3dc9aadc793c1b00edc003e3fc19a44fdeb574"
+      tag:      "v3.15.3",
+      revision: "b141d9c45db236335351c8a4b2a14b3ade27c937"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://aomedia.googlesource.com/aom.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ca3e34c2d919d712bdff0799bd15689ac8cbacea8d33508718a3813be45153bf"
-    sha256 cellar: :any, arm64_tahoe:       "abdf34de13cbb520adaa7ea5cb3cc1f8313d281a0f456c9c39fa415cddef82a0"
-    sha256 cellar: :any, arm64_sequoia:     "d8b133d6a8e7b2193f34f2f3cbc2cb327e8898331432daf2cc4cb84164871b35"
-    sha256 cellar: :any, arm64_linux:       "63fef63ada9e237e795c6da37fa399a633b9b6315d7e5a470468e3455ab575bc"
-    sha256 cellar: :any, x86_64_linux:      "ef4de0b57f137eecbd45f1461cc005dc46712c69f8c4a84308a3abfd85a23995"
+    sha256 cellar: :any, arm64_golden_gate: "62c6e88627ca648845e877164e637feb66e64fbcc95a839f1f4a484fdfa359cd"
+    sha256 cellar: :any, arm64_tahoe:       "1700f28827f8c737481b7f0b702aadd0c2c760108a3cf9fa8c227e4bfe17e518"
+    sha256 cellar: :any, arm64_sequoia:     "39acbc6e2fc0c0e02623a314fc1247153288cd4c30d8945e45e4629da963f784"
+    sha256 cellar: :any, arm64_linux:       "aa0af3f40be623f4b538464c2040f5c67f065de387833cda57c4c7e91a499e5e"
+    sha256 cellar: :any, x86_64_linux:      "1e3c1c9925e655d8c21273ff97ee8828d9162a837f58cf503e5bb0e77ba46e02"
   end
 
   depends_on "cmake" => :build

@@ -10,6 +10,7 @@ class Katago < Formula
     "CC0-1.0", # g170 resources
   ]
   revision 2
+  compatibility_version 1
 
   livecheck do
     url :stable

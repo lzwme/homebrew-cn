@@ -5,6 +5,7 @@ class Ttyd < Formula
   sha256 "039dd995229377caee919898b7bd54484accec3bba49c118e2d5cd6ec51e3650"
   license "MIT"
   revision 14
+  compatibility_version 1
   head "https://github.com/tsl0922/ttyd.git", branch: "main"
 
   bottle do

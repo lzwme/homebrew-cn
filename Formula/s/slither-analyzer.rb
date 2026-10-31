@@ -7,6 +7,7 @@ class SlitherAnalyzer < Formula
   sha256 "72aff6c1924a8641c1c8e4d84f9a4e6c97b5bfb3221bf71a11ffaee46d2f7da2"
   license "AGPL-3.0-only"
   revision 1
+  compatibility_version 1
   head "https://github.com/crytic/slither.git", branch: "master"
 
   bottle do

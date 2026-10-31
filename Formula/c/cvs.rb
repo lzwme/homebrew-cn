@@ -10,6 +10,7 @@ class Cvs < Formula
   sha256 "78853613b9a6873a30e1cc2417f738c330e75f887afdaf7b3d0800cb19ca515e"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later"]
   revision 4
+  compatibility_version 1
 
   livecheck do
     url "https://ftpmirror.gnu.org/non-gnu/cvs/source/feature/"

@@ -5,6 +5,7 @@ class Wasmtime < Formula
       tag:      "v50.0.1",
       revision: "c307ec81de02852d815e9849f7c89d955c03c30d"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  compatibility_version 1
   head "https://github.com/bytecodealliance/wasmtime.git", branch: "main"
 
   # Upstream maintains multiple major versions and the "latest" release may be

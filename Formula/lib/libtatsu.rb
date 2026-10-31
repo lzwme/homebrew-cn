@@ -5,6 +5,7 @@ class Libtatsu < Formula
   sha256 "536fa228b14f156258e801a7f4d25a3a9dd91bb936bf6344e23171403c57e440"
   license "LGPL-2.1-or-later"
   revision 1
+  compatibility_version 1
   head "https://github.com/libimobiledevice/libtatsu.git", branch: "master"
 
   bottle do

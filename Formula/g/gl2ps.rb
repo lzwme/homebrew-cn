@@ -4,6 +4,7 @@ class Gl2ps < Formula
   url "https://geuz.org/gl2ps/src/gl2ps-1.4.3.tgz"
   sha256 "2e0a5368917cf0e5467ba8618bc576f50ae9f316c61201635b09711c7908efcc"
   license "GL2PS"
+  compatibility_version 1
 
   livecheck do
     url "https://geuz.org/gl2ps/src/"

@@ -4,6 +4,7 @@ class OvhTtyrec < Formula
   url "https://ghfast.top/https://github.com/ovh/ovh-ttyrec/archive/refs/tags/v1.2.0.0.tar.gz"
   sha256 "74a474ea33090a9a814c186429c2f725c0bfa1f9d3ceee03caf999daf047eb41"
   license all_of: ["BSD-3-Clause", "BSD-4-Clause-UC"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "bf3f94f223e68a3813d1c6363d1264996532370bda70e46800864a9286a62164"

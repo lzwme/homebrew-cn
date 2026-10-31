@@ -5,6 +5,7 @@ class Wdiff < Formula
   mirror "https://ftp.gnu.org/gnu/wdiff/wdiff-1.2.3.tar.gz"
   sha256 "29a4457eb0ed35c902e6732d71f25e1d6c7fe7fa0eda0fb6c371ed6779b49fd6"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "dc8240927b1f768e46971d0f8aa24d42953f615890dc0bcb75e3c99033c8b2ec"

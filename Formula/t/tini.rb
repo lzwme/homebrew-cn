@@ -4,6 +4,7 @@ class Tini < Formula
   url "https://ghfast.top/https://github.com/krallin/tini/archive/refs/tags/v0.19.0.tar.gz"
   sha256 "0fd35a7030052acd9f58948d1d900fe1e432ee37103c5561554408bdac6bbf0d"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/krallin/tini.git", branch: "master"
 
   bottle do

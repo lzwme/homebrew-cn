@@ -5,6 +5,7 @@ class Dub < Formula
   sha256 "7f0a5133885a71b89f7a683d8f3e3616e070238424b36ae04fdbc0d7b99e3027"
   license "MIT"
   version_scheme 1
+  compatibility_version 1
   head "https://github.com/dlang/dub.git", branch: "master"
 
   # Upstream may not create a GitHub release for tagged versions, so we check

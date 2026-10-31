@@ -4,6 +4,7 @@ class TerminalNotifier < Formula
   url "https://ghfast.top/https://github.com/julienXX/terminal-notifier/archive/refs/tags/3.1.0.tar.gz"
   sha256 "7dac44a563f00c10d49aa2da4cde9d1fecdb12b36ed57fe7fdff789c3578421e"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/julienXX/terminal-notifier.git", branch: "master"
 
   bottle do

@@ -4,6 +4,7 @@ class Snap < Formula
   url "https://ghfast.top/https://github.com/canonical/snapd/releases/download/2.78/snapd_2.78.vendor.tar.xz"
   sha256 "197d5e5870ae7f3681276cea37339d5ee528ddfaf47f53509f858fdad46e4aed"
   license "GPL-3.0-only"
+  compatibility_version 1
 
   livecheck do
     url :stable

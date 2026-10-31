@@ -4,6 +4,7 @@ class OsxCpuTemp < Formula
   url "https://ghfast.top/https://github.com/lavoiesl/osx-cpu-temp/archive/refs/tags/1.1.0.tar.gz"
   sha256 "94b90ce9a1c7a428855453408708a5557bfdb76fa45eef2b8ded4686a1558363"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0b74f3aeb9e26e5f33bb904e2a098fdc616d97e3ff484be7fd316d48314e220a"

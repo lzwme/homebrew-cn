@@ -2,6 +2,7 @@ class Czmq < Formula
   desc "High-level C binding for ZeroMQ"
   homepage "http://czmq.zeromq.org/"
   license "MPL-2.0"
+  compatibility_version 1
 
   stable do
     url "https://ghfast.top/https://github.com/zeromq/czmq/releases/download/v4.2.1/czmq-4.2.1.tar.gz"

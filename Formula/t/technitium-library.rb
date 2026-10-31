@@ -4,6 +4,7 @@ class TechnitiumLibrary < Formula
   url "https://ghfast.top/https://github.com/TechnitiumSoftware/TechnitiumLibrary/archive/refs/tags/dns-server-v15.6.2.tar.gz"
   sha256 "e7f5add92da555fc3120991fabd802c0605ab9c45cb4b56137dfb0699a006cec"
   license "GPL-3.0-only"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bb244ea50399b9891ae553e8566cdd0bc75649823223c809d3eb79b7b14e9aa4"

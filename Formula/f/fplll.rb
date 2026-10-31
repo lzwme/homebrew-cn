@@ -4,6 +4,7 @@ class Fplll < Formula
   url "https://ghfast.top/https://github.com/fplll/fplll/releases/download/5.5.0/fplll-5.5.0.tar.gz"
   sha256 "f0af6bdd0ebd5871e87ff3ef7737cb5360b1e38181a4e5a8c1236f3476fec3b2"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256                               arm64_golden_gate: "ee484c59a301b6b0cf65d3e136a09a94f113dc2de40b644f4d73eed3b0d94379"

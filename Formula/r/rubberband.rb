@@ -4,6 +4,7 @@ class Rubberband < Formula
   url "https://breakfastquay.com/files/releases/rubberband-4.0.0.tar.bz2"
   sha256 "af050313ee63bc18b35b2e064e5dce05b276aaf6d1aa2b8a82ced1fe2f8028e9"
   license "GPL-2.0-or-later"
+  compatibility_version 1
   head "https://hg.sr.ht/~breakfastquay/rubberband", using: :hg
 
   livecheck do

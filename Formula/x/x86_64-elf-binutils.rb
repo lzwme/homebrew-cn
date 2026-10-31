@@ -5,6 +5,7 @@ class X8664ElfBinutils < Formula
   mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.47.tar.bz2"
   sha256 "3068128c75cda9f898ccb4211d360246e8e195ffcc9dfb655b23ae23a54800e8"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   livecheck do
     formula "binutils"
@@ -30,6 +31,8 @@ class X8664ElfBinutils < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     target = "x86_64-elf"

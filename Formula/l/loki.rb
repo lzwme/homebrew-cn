@@ -4,6 +4,7 @@ class Loki < Formula
   url "https://ghfast.top/https://github.com/grafana/loki/archive/refs/tags/v3.7.9.tar.gz"
   sha256 "374cc8b5f9aab740b44b1b0d9689e69b0e6f2c0feb41942cb52d3e1c4bb7bdeb"
   license "AGPL-3.0-only"
+  compatibility_version 1
   head "https://github.com/grafana/loki.git", branch: "main"
 
   livecheck do

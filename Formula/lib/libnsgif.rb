@@ -4,6 +4,7 @@ class Libnsgif < Formula
   url "https://download.netsurf-browser.org/libs/releases/libnsgif-1.0.0-src.tar.gz"
   sha256 "6014c842f61454d2f5a0f8243d7a8d7bde9b7da3ccfdca2d346c7c0b2c4c061b"
   license "MIT"
+  compatibility_version 1
   head "git://git.netsurf-browser.org/libnsgif.git", branch: "master"
 
   livecheck do

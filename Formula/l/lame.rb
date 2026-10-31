@@ -4,6 +4,7 @@ class Lame < Formula
   url "https://downloads.sourceforge.net/project/lame/lame/4.0/lame-4.0.tar.gz"
   sha256 "3df5124d5ad3a98312ffd7ba6a9b36230e4f8a3e66d3ce0f425e336c32d216eb"
   license "LGPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url :stable

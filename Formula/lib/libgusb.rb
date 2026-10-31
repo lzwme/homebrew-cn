@@ -4,6 +4,7 @@ class Libgusb < Formula
   desc "GObject wrappers for libusb1"
   homepage "https://github.com/hughsie/libgusb"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
   head "https://github.com/hughsie/libgusb.git", branch: "main"
 
   stable do

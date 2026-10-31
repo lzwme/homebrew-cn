@@ -4,6 +4,7 @@ class Discount < Formula
   url "https://www.pell.portland.or.us/~orc/Code/discount/discount-3.0.2.0.tar.bz2"
   sha256 "4747d9e745c2bb6fc0f2cf24ebf27d8f5cc61d08c01fafa54db419b604f1b674"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/Orc/discount.git", branch: "main"
 
   livecheck do

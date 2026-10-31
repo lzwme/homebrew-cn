@@ -4,6 +4,7 @@ class Sdl3Ttf < Formula
   url "https://ghfast.top/https://github.com/libsdl-org/SDL_ttf/releases/download/release-3.2.2/SDL3_ttf-3.2.2.tar.gz"
   sha256 "63547d58d0185c833213885b635a2c0548201cc8f301e6587c0be1a67e1e045d"
   license "Zlib"
+  compatibility_version 1
   head "https://github.com/libsdl-org/SDL_ttf.git", branch: "main"
 
   bottle do

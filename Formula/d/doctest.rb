@@ -4,6 +4,7 @@ class Doctest < Formula
   url "https://ghfast.top/https://github.com/doctest/doctest/archive/refs/tags/v2.5.3.tar.gz"
   sha256 "174ebc4e769928959614789c5b4e9c3d0a0f81a62bb608756b127bfebfb21331"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "30a480dee0a16e08b071549d936a0bb62b6e370dcd26c831d1a91071778afd0d"

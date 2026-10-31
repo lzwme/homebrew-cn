@@ -5,6 +5,7 @@ class OsmiumTool < Formula
   sha256 "e629d2f3e500ffa5df6f1b1689161ab3dea3a82f66beec2b453a74b8d782f949"
   license "GPL-3.0-or-later"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "495c9d0a5b0567d5c72468b35b357fa8a59e2b339286ad5a25645d2ca38ad964"

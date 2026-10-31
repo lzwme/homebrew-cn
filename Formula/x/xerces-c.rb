@@ -5,6 +5,7 @@ class XercesC < Formula
   mirror "https://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.3.0.tar.gz"
   sha256 "9555f1d06f82987fbb4658862705515740414fd34b4db6ad2ed76a2dc08d3bde"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "2a9e84deebedcf42d325c4aa2fa825bba064fcf31c73836bfc122e8b63bf5d1f"

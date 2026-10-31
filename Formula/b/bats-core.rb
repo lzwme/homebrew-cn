@@ -4,6 +4,7 @@ class BatsCore < Formula
   url "https://ghfast.top/https://github.com/bats-core/bats-core/archive/refs/tags/v1.14.0.tar.gz"
   sha256 "bb537b70b15b732f6d8827dd6578e3d8ce166636ce1f18ea9a074184fcce9177"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable

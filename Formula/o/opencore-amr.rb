@@ -4,6 +4,7 @@ class OpencoreAmr < Formula
   url "https://downloads.sourceforge.net/project/opencore-amr/opencore-amr/opencore-amr-0.1.6.tar.gz"
   sha256 "483eb4061088e2b34b358e47540b5d495a96cd468e361050fae615b1809dc4a1"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url :stable

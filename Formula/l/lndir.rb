@@ -4,6 +4,7 @@ class Lndir < Formula
   url "https://www.x.org/releases/individual/util/lndir-1.0.6.tar.xz"
   sha256 "18f6d664e52894b7dee0d2fc9b171e0e58566e5091e44f9535f10e6d941912a4"
   license "MIT-open-group"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "11877dde5969265f46b2e8eb717f104918ed50adf38d3a9d43cf938c84cdf57d"

@@ -4,6 +4,7 @@ class Vectorscan < Formula
   url "https://ghfast.top/https://github.com/VectorCamp/vectorscan/archive/refs/tags/vectorscan/5.4.13.tar.gz"
   sha256 "11bfcd2dde32d8a08d1a2eebb09294b12a3fa2be140078f8091b751fa1fabd89"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/VectorCamp/vectorscan.git", branch: "develop"
 
   bottle do

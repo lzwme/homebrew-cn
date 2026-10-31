@@ -101,6 +101,8 @@ class Yewtube < Formula
     sha256 "9e213e48cea35c66b378e4447903f118f6392a5fa380a2b6d7070ec86f4e0af1"
   end
 
+  allow_network_access! :build
+
   def install
     virtualenv_install_with_resources
 

@@ -4,6 +4,7 @@ class IcWasm < Formula
   url "https://ghfast.top/https://github.com/dfinity/ic-wasm/archive/refs/tags/0.11.1.tar.gz"
   sha256 "0ad9b97cc85a66d862f0b855860c4c2fbaa247c62fcc7b6092c18ba4ac4c5199"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "406c857018bbc0233c2f07c79c66997d50b0fb224f2abe8aa818c58c177b6a9d"

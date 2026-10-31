@@ -2,8 +2,8 @@ class CadenceWorkflow < Formula
   desc "Distributed, scalable, durable, and highly available orchestration engine"
   homepage "https://cadenceworkflow.io/"
   url "https://github.com/cadence-workflow/cadence.git",
-      tag:      "v1.4.2",
-      revision: "c98e64e010409fbaae94cdc19c2e70ee662634b7"
+      tag:      "v1.4.5",
+      revision: "ecd2b70caf1fe9921aca19b00eb0b2905a3cc602"
   license "Apache-2.0"
   head "https://github.com/cadence-workflow/cadence.git", branch: "master"
 
@@ -16,11 +16,11 @@ class CadenceWorkflow < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1fbb110c50b629456b6cf9aad1b62c9517c2649ef90cb608249a1be125b0c38a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6ef3808218f82f2ca477bf63a5fdd8632df2b311c143712abbae674c1a35ac40"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "be8ddbf97947234b933537c39a0fb4bb031cec87137effb32e95977b975816e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "9e64141df3b423878b273392a85fafc71a58fdd7e5374d63fec62d762629c74b"
-    sha256 cellar: :any,                 x86_64_linux:      "b3f4a42712bb86528d08adc41bca1247207b98048cc5f0bef2b434e26f4ee2ad"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9652c8cdaf0d32cdfbf81524c3d4e994a707b724a9d2a7eb5380021184d40696"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2d06c497e25d8a0cfc5537f659fcd6f7c55070bc76748040c0385442674bc581"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9a4bbe545636bc16509ca5f70ce70b4fa16d6aa7573bfb5180e35a6d6b2cf240"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ba840612c097a477bf0efaa23fdcd1e50ff88a80c9d80553c12dd1f446befbf0"
+    sha256 cellar: :any,                 x86_64_linux:      "f0608915915baecc3d1b0c7dc6000d808a7ea3b64e5d3499ee1ceae84ee2d983"
   end
 
   depends_on "go" => :build

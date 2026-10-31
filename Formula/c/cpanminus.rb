@@ -6,6 +6,7 @@ class Cpanminus < Formula
   sha256 "b9ffb88e62a06aa91bd7d5a28ef6bdbb942608aea90e3969aa29b33640035214"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   version_scheme 1
+  compatibility_version 1
   head "https://github.com/miyagawa/cpanminus.git", branch: "devel"
 
   bottle do

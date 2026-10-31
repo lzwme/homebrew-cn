@@ -7,6 +7,7 @@ class RiemannClient < Formula
       revision: "36cf5cde0648c8ae953f7636bedbf6fab02d58ef"
   license "EUPL-1.2"
   revision 1
+  compatibility_version 1
   head "https://git.madhouse-project.org/algernon/riemann-c-client.git", branch: "main"
 
   bottle do

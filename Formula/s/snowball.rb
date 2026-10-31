@@ -4,6 +4,7 @@ class Snowball < Formula
   url "https://ghfast.top/https://github.com/snowballstem/snowball/archive/refs/tags/v3.1.1.tar.gz"
   sha256 "d8714aa91ed4333654708472a7a98b529c867a8f99b05c5e66febf4ca72c44c7"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "22b6b9e4dded05bebad3c6dea46c7a3f02c8cf64a78e18f133f9016bb40e7fd6"

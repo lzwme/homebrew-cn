@@ -13,6 +13,8 @@ class Xcenv < Formula
 
   depends_on :macos
 
+  deny_network_access!
+
   def install
     prefix.install ["bin", "libexec"]
   end

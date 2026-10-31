@@ -5,6 +5,7 @@ class CargoC < Formula
   version "0.10.26"
   sha256 "5ff6e05531e58286d3c02ec0adb7f254e5d532a8d4b667f30b9942d802e1db25"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :homepage

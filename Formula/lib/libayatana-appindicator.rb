@@ -4,6 +4,7 @@ class LibayatanaAppindicator < Formula
   url "https://ghfast.top/https://github.com/AyatanaIndicators/libayatana-appindicator/archive/refs/tags/0.6.1.tar.gz"
   sha256 "56c0b938ffaa3e17b10c38d3e54c16d316f41f0da61949eda028adbf19ee767f"
   license any_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "e3eac516a9e3878cd19e20e46911dde52d7d15f6db4fa061a1171cb1cd6e110b"

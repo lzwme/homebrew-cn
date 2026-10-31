@@ -4,6 +4,7 @@ class LibnetfilterConntrack < Formula
   url "https://www.netfilter.org/pub/libnetfilter_conntrack/libnetfilter_conntrack-1.1.1.tar.xz"
   sha256 "769d3eaf57fa4fbdb05dd12873b6cb9a5be7844d8937e222b647381d44284820"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://www.netfilter.org/projects/libnetfilter_conntrack/downloads.html"

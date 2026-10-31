@@ -4,6 +4,7 @@ class Iptables < Formula
   url "https://www.netfilter.org/pub/iptables/iptables-1.8.13.tar.xz"
   sha256 "1afcd33da9e8f913ace6a2126788162e207e26f5d5e29c6573c0e581ffc58b99"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://www.netfilter.org/projects/iptables/downloads.html"

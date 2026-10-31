@@ -4,6 +4,7 @@ class Sse2neon < Formula
   url "https://ghfast.top/https://github.com/DLTcollab/sse2neon/archive/refs/tags/v1.9.1.tar.gz"
   sha256 "6b70e7cb8c5ce4641002b85deaafe97efdf9ade9b49884edeaf678b35f0e132f"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/DLTcollab/sse2neon.git", branch: "master"
 
   bottle do

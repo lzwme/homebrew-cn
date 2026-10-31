@@ -4,6 +4,7 @@ class Diamond < Formula
   url "https://ghfast.top/https://github.com/bbuchfink/diamond/archive/refs/tags/v2.2.8.tar.gz"
   sha256 "a9cc37bd955fa7ed25447278a0b4f97e7036a9abd64f60e6565a56c28219c54c"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "104b2f784f12dfd7cf0c700c11db3eb925426d2956c1b35a584fce76aad7b975"

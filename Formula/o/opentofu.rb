@@ -4,6 +4,7 @@ class Opentofu < Formula
   url "https://ghfast.top/https://github.com/opentofu/opentofu/archive/refs/tags/v1.13.2.tar.gz"
   sha256 "ea26bb64b303701fee619b7f28422459be9ff04ee87c5491d046022e1c24f499"
   license "MPL-2.0"
+  compatibility_version 1
   head "https://github.com/opentofu/opentofu.git", branch: "main"
 
   bottle do

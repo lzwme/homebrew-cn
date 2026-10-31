@@ -4,6 +4,7 @@ class AppstreamGlib < Formula
   url "https://ghfast.top/https://github.com/hughsie/appstream-glib/archive/refs/tags/appstream_glib_0_8_4.tar.gz"
   sha256 "19798c8fbd2734554848817e52ef351d21253b1df9fff288b7cf91c10618415d"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   livecheck do
     url :stable

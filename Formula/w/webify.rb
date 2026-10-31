@@ -4,6 +4,7 @@ class Webify < Formula
   url "https://ghfast.top/https://github.com/beefsack/webify/archive/refs/tags/v1.5.0.tar.gz"
   sha256 "66805a4aef4ed0e9c49e711efc038e2cd4e74aa2dc179ea93b31dc3aa76e6d7b"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/beefsack/webify.git", branch: "master"
 
   bottle do

@@ -6,6 +6,7 @@ class Yamllint < Formula
   url "https://files.pythonhosted.org/packages/28/a0/8fc2d68e132cf918f18273fdc8a1b8432b60d75ac12fdae4b0ef5c9d2e8d/yamllint-1.38.0.tar.gz"
   sha256 "09e5f29531daab93366bb061e76019d5e91691ef0a40328f04c927387d1d364d"
   license "GPL-3.0-or-later"
+  compatibility_version 1
   head "https://github.com/adrienverge/yamllint.git", branch: "master"
 
   bottle do
@@ -29,6 +30,8 @@ class Yamllint < Formula
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
+
+  allow_network_access! :build
 
   def install
     virtualenv_install_with_resources

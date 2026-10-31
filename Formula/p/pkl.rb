@@ -4,6 +4,7 @@ class Pkl < Formula
   url "https://ghfast.top/https://github.com/apple/pkl/archive/refs/tags/0.32.2.tar.gz"
   sha256 "ca6a2efd6e89e8e9c230023fafa2a58b746c84db7c1c17a6f6b9ade4a7d63eab"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "aeaf9ab0d02ba647314dc9361bbadf14439b1d7c4c7c01d2c234115f0894f212"

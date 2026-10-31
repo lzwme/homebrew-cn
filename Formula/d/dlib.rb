@@ -4,6 +4,7 @@ class Dlib < Formula
   url "https://ghfast.top/https://github.com/davisking/dlib/archive/refs/tags/v20.0.1.tar.gz"
   sha256 "dab5b4ec4b68bd7dc128a1fb7900723f89d2da107e44cd5def7d38fc57252a9d"
   license "BSL-1.0"
+  compatibility_version 1
   head "https://github.com/davisking/dlib.git", branch: "master"
 
   livecheck do

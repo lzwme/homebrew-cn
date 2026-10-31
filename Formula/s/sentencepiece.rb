@@ -3,6 +3,7 @@ class Sentencepiece < Formula
   homepage "https://github.com/google/sentencepiece"
   license "Apache-2.0"
   revision 1
+  compatibility_version 1
   head "https://github.com/google/sentencepiece.git", branch: "master"
 
   stable do

@@ -5,6 +5,7 @@ class Newt < Formula
   sha256 "ef0ca9ee27850d1a5c863bb7ff9aa08096c9ed312ece9087b30f3a426828de82"
   license "LGPL-2.0-or-later"
   revision 2
+  compatibility_version 1
 
   livecheck do
     url :head

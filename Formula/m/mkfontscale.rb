@@ -4,6 +4,7 @@ class Mkfontscale < Formula
   url "https://www.x.org/releases/individual/app/mkfontscale-1.2.4.tar.xz"
   sha256 "a01492a17a9b6c0ee3f92ee578850e305315b9f298da5f006a1cd4b51db01a5e"
   license "X11"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "332e69e25071a760b49590b8acd901458c83eeabc71934591aec4f8a7d4417b5"

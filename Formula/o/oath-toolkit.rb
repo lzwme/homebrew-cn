@@ -6,6 +6,7 @@ class OathToolkit < Formula
   sha256 "8ad24aa9ff13c0edf3efc2573d90e85cf8b5ce7e82c08042574c1591f9d91eaa"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.1-or-later"]
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://download.savannah.gnu.org/releases/oath-toolkit/"

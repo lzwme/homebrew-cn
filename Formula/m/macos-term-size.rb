@@ -4,6 +4,7 @@ class MacosTermSize < Formula
   url "https://ghfast.top/https://github.com/sindresorhus/macos-terminal-size/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "f8e4476549ef4446d979875e87a77365fcfecfe58df7e62a653a402e29c8a0dd"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/sindresorhus/macos-terminal-size.git", branch: "main"
 
   bottle do

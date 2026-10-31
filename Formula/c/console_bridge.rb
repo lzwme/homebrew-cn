@@ -4,6 +4,7 @@ class ConsoleBridge < Formula
   url "https://ghfast.top/https://github.com/ros/console_bridge/archive/refs/tags/1.0.2.tar.gz"
   sha256 "303a619c01a9e14a3c82eb9762b8a428ef5311a6d46353872ab9a904358be4a4"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "fe126b741ad808bea2a61049a9390e6979a9cac5abc8a0ccfc120a47b9d1f321"

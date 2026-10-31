@@ -4,6 +4,7 @@ class Bedtools < Formula
   url "https://ghfast.top/https://github.com/arq5x/bedtools2/archive/refs/tags/v2.31.1.tar.gz"
   sha256 "79a1ba318d309f4e74bfa74258b73ef578dccb1045e270998d7fe9da9f43a50e"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     rebuild 1

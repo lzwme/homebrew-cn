@@ -4,6 +4,7 @@ class UtilMacros < Formula
   url "https://xorg.freedesktop.org/archive/individual/util/util-macros-1.20.2.tar.xz"
   sha256 "9ac269eba24f672d7d7b3574e4be5f333d13f04a7712303b1821b2a51ac82e8e"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     rebuild 1

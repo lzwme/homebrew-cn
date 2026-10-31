@@ -4,6 +4,7 @@ class PkgConfigWrapper < Formula
   url "https://ghfast.top/https://github.com/influxdata/pkg-config/archive/refs/tags/v0.3.1.tar.gz"
   sha256 "11776c4f44b4d338619723cba1a6ef716573e80a358b0943ff2e2a86129ca8d5"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/influxdata/pkg-config.git", branch: "master"
 
   livecheck do

@@ -4,6 +4,7 @@ class OsinfoDb < Formula
   url "https://gitlab.com/libosinfo/osinfo-db/-/releases/v20260812/downloads/osinfo-db-20260812.tar.xz", using: :nounzip
   sha256 "f13ed6e1e480b5266d39cad7f0010febdf0265dfc45579de2fb34543bc6b35de"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://gitlab.com/libosinfo/osinfo-db.git"

@@ -9,6 +9,7 @@ class Gcr < Formula
     "GPL-2.0-or-later", # gcr/gcr-ssh-agent-private.h
     "FSFULLRWD", # gck/{pkcs11x.h,pkcs11-trust-assertions.h}
   ]
+  compatibility_version 1
   head "https://gitlab.gnome.org/GNOME/gcr.git", branch: "main"
 
   # gcr doesn't use GNOME's "even-numbered minor is stable" version scheme.

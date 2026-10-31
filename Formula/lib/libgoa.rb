@@ -4,6 +4,7 @@ class Libgoa < Formula
   url "https://download.gnome.org/sources/gnome-online-accounts/3.58/gnome-online-accounts-3.58.1.tar.xz"
   sha256 "9ec1900cc51409c2067c07c828c10be06fe3bf68d2999bb72d7d5ed325ed9bbc"
   license "LGPL-2.0-or-later"
+  compatibility_version 1
   head "https://gitlab.gnome.org/GNOME/gnome-online-accounts.git", branch: "master"
 
   livecheck do

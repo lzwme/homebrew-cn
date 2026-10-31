@@ -4,6 +4,7 @@ class Libcext < Formula
   url "https://ftp.eso.org/pub/dfs/pipelines/libraries/cext/cext-1.3.2.tar.gz"
   sha256 "622532430a63ad26756eb51751c1815c96bca4722ca30cb961ebb35a2072201d"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://ftp.eso.org/pub/dfs/pipelines/libraries/cext/"

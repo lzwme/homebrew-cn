@@ -4,6 +4,7 @@ class UniAlgo < Formula
   url "https://ghfast.top/https://github.com/uni-algo/uni-algo/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "f2a1539cd8635bc6088d05144a73ecfe7b4d74ee0361fabed6f87f9f19e74ca9"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "11546d83f87fdfb6c271aa325c1dc0ac1380330ebb0a99edbf2a08dfef0b2834"

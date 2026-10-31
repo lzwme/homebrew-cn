@@ -4,6 +4,7 @@ class Flatbuffers < Formula
   url "https://ghfast.top/https://github.com/google/flatbuffers/archive/refs/tags/v25.12.19.tar.gz"
   sha256 "f81c3162b1046fe8b84b9a0dbdd383e24fdbcf88583b9cb6028f90d04d90696a"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/google/flatbuffers.git", branch: "master"
 
   livecheck do

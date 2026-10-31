@@ -5,6 +5,7 @@ class LibsvgCairo < Formula
   sha256 "a380be6a78ec2938100ce904363815a94068fca372c666b8cc82aa8711a0215c"
   license "LGPL-2.1-or-later"
   revision 3
+  compatibility_version 1
 
   livecheck do
     url "https://cairographics.org/snapshots/"

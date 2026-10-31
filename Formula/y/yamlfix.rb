@@ -96,6 +96,8 @@ class Yamlfix < Formula
     sha256 "d0396f770a560ab1b0a8504e13b5f254b728cedb05c61cf0359e944e50ce8901"
   end
 
+  allow_network_access! :build
+
   def install
     # Workaround for ruyaml needing pkg_resources removed from setuptools 82+
     (buildpath/"build-constraints.txt").write "setuptools<82\n"

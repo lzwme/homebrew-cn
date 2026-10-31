@@ -5,6 +5,7 @@ class Mpi4py < Formula
   sha256 "56860286dc45f20e8821e93cb06669e30462348bf866f685553fa4b712d58d02"
   license "BSD-3-Clause"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "5eae24fbdbe6296f6312cdc6ea98b48efcc8c8debfaddb7372c51d39e87603e5"

@@ -4,6 +4,7 @@ class Sord < Formula
   url "https://download.drobilla.net/sord-0.16.22.tar.xz"
   sha256 "bb23b34b216579136795d518cffa73d91cf205594ce9accebfd408afb839173f"
   license "ISC"
+  compatibility_version 1
 
   livecheck do
     url "https://download.drobilla.net"

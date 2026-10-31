@@ -4,6 +4,7 @@ class Jbig2enc < Formula
   url "https://ghfast.top/https://github.com/agl/jbig2enc/archive/refs/tags/0.32.tar.gz"
   sha256 "5b3b1c48617e5b1608f916a78038ea867a2c9eb20c2ff34a78a48a243f655c2a"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/agl/jbig2enc.git", branch: "master"
 
   bottle do

@@ -6,6 +6,7 @@ class Gupnp < Formula
   url "https://download.gnome.org/sources/gupnp/1.6/gupnp-1.6.10.tar.xz"
   sha256 "a1ee07b7b12673c32d7fc73ca158a50c1a4dc69ab35b65e94d24d38ac875345e"
   license "LGPL-2.0-or-later"
+  compatibility_version 1
   head "https://gitlab.gnome.org/GNOME/gupnp.git", branch: "master"
 
   bottle do

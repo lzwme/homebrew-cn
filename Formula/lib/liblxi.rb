@@ -5,6 +5,7 @@ class Liblxi < Formula
   sha256 "d33ca3990513223880ec238eb2e5aa1cc93aff51c470ef0db9df3e0c332493d5"
   license "BSD-3-Clause"
   revision 1
+  compatibility_version 1
   head "https://github.com/lxi-tools/liblxi.git", branch: "master"
 
   bottle do

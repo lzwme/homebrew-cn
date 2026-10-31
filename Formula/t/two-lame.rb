@@ -4,6 +4,7 @@ class TwoLame < Formula
   url "https://downloads.sourceforge.net/project/twolame/twolame/0.4.0/twolame-0.4.0.tar.gz"
   sha256 "cc35424f6019a88c6f52570b63e1baf50f62963a3eac52a03a800bb070d7c87d"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "a266bcd23148b1f6b2d98b606c5115055b618a2cc16d8f513b98eed69dce1df6"

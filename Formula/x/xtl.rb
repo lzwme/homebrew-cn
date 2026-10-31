@@ -4,6 +4,7 @@ class Xtl < Formula
   url "https://ghfast.top/https://github.com/xtensor-stack/xtl/archive/refs/tags/0.8.2.tar.gz"
   sha256 "8fb38d6a5856aab5740d2ccb3d791d289f648d4cc506b94a1338fe5fce100c11"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "d90f6f106f3d81356101e8ed533410aa4d4ccb952b90ce93e7836438fb3d5377"

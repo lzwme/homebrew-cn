@@ -4,6 +4,7 @@ class Ancient < Formula
   url "https://ghfast.top/https://github.com/temisu/ancient/archive/refs/tags/v2.3.0.tar.gz"
   sha256 "5d1d71f0fb8c69955bb4ec01ed9ffd2b5bf546b10463030dda85d949ea422bc9"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "55454a9c44a27899501570f81781c989bbf7dfb589c2adb41e04406b4e356d64"

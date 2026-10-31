@@ -6,6 +6,7 @@ class Openvpn < Formula
   sha256 "c070d1d2440b5a6fca6c2c68645c98cd492116ac36ef4f0946177115532c8e36"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://openvpn.net/community-downloads/"

@@ -14,6 +14,7 @@ class Qtwayland < Formula
     "LGPL-2.1-or-later", # src/3rdparty/protocol/appmenu/
     "MIT",               # src/3rdparty/protocol/
   ]
+  compatibility_version 1
   head "https://code.qt.io/qt/qtwayland.git", branch: "dev"
 
   livecheck do

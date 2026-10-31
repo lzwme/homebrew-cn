@@ -4,6 +4,7 @@ class Canfigger < Formula
   url "https://ghfast.top/https://github.com/andy5995/canfigger/releases/download/v0.3.2/canfigger-0.3.2.tar.xz"
   sha256 "f128a62cec50cce16e1e8c87012f8564d972b663316b27358d1d7f6b4486bec8"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/andy5995/canfigger.git", branch: "trunk"
 
   bottle do

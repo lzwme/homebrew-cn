@@ -4,6 +4,7 @@ class Libxfont2 < Formula
   url "https://xorg.freedesktop.org/archive/individual/lib/libXfont2-2.0.9.tar.gz"
   sha256 "8564b4df365bc5a6cb0c15900dc688f6e8f47b00a8571c6708c916dfb85066ba"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "1838324222e25f35308c810e70acb39bd7578366378ace1e03d1399d6f86783f"

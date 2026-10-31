@@ -5,6 +5,7 @@ class Libsigrokdecode < Formula
   sha256 "c50814aa6743cd8c4e88c84a0cdd8889d883c3be122289be90c63d7d67883fc0"
   license "GPL-3.0-or-later"
   revision 2
+  compatibility_version 1
   head "git://sigrok.org/libsigrokdecode", branch: "master"
 
   # The upstream website has gone down due to a server failure and the previous

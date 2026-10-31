@@ -24,6 +24,8 @@ class Yapf < Formula
     sha256 "63743c02414e755de4e31b8f68125c1407495b86c5a006e203c01ff8b9924250"
   end
 
+  allow_network_access! :build
+
   def install
     virtualenv_install_with_resources
   end

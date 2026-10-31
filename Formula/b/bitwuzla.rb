@@ -4,6 +4,7 @@ class Bitwuzla < Formula
   url "https://ghfast.top/https://github.com/bitwuzla/bitwuzla/archive/refs/tags/0.9.1.tar.gz"
   sha256 "42707f38900a20bb18108e426ba667560d1fd2ccce0d4f75aa60439b546488b4"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable

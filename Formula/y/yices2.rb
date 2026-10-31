@@ -4,6 +4,7 @@ class Yices2 < Formula
   url "https://ghfast.top/https://github.com/SRI-CSL/yices2/archive/refs/tags/yices-2.7.0.tar.gz"
   sha256 "584db72abf6643927b2c3ba98ff793f602216b452b8ff2f34a8851d35904804a"
   license "GPL-3.0-or-later"
+  compatibility_version 1
   head "https://github.com/SRI-CSL/yices2.git", branch: "master"
 
   livecheck do
@@ -27,6 +28,8 @@ class Yices2 < Formula
   depends_on "gmp"
 
   uses_from_macos "gperf" => :build
+
+  deny_network_access!
 
   def install
     system "autoconf"

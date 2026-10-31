@@ -2,6 +2,7 @@ class Softhsm < Formula
   desc "Cryptographic store accessible through a PKCS#11 interface"
   homepage "https://www.softhsm.org/"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/softhsm/SoftHSMv2.git", branch: "main"
 
   stable do

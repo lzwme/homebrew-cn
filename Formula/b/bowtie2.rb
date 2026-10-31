@@ -4,6 +4,7 @@ class Bowtie2 < Formula
   url "https://ghfast.top/https://github.com/BenLangmead/bowtie2/archive/refs/tags/v2.5.5.tar.gz"
   sha256 "e38d1833ec235ca27fa57589d32d897c9addf87085b7cb7bc978662954662da2"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4fa4de54149a23a2c39a27d3ddb776583db862febc4678f6a0148fff43bd56cd"

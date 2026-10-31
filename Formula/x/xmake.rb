@@ -4,6 +4,7 @@ class Xmake < Formula
   url "https://ghfast.top/https://github.com/xmake-io/xmake/releases/download/v3.1.2/xmake-v3.1.2.tar.gz"
   sha256 "0e068e76c66dddd87573a31b77f37c8c4ebe7d50b0fb48d507dcb902c77e6cc4"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/xmake-io/xmake.git", branch: "dev"
 
   bottle do

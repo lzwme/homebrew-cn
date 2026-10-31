@@ -4,6 +4,7 @@ class ZshAsync < Formula
   url "https://ghfast.top/https://github.com/mafredri/zsh-async/archive/refs/tags/v1.8.6.tar.gz"
   sha256 "0f2778cb882b73471569b016bbfa6d9d75572bff40dc7f25ac50b3a8dc94ef47"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     rebuild 1

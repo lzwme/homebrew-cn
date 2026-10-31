@@ -4,6 +4,7 @@ class Halibut < Formula
   url "https://www.chiark.greenend.org.uk/~sgtatham/halibut/halibut-1.3/halibut-1.3.tar.gz"
   sha256 "aaa0f7696f17f74f42d97d0880aa088f5d68ed3079f3ed15d13b6e74909d3132"
   license all_of: ["MIT", "APAFML"]
+  compatibility_version 1
   head "https://git.tartarus.org/simon/halibut.git", branch: "main"
 
   livecheck do

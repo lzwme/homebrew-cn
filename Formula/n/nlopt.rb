@@ -4,6 +4,7 @@ class Nlopt < Formula
   url "https://ghfast.top/https://github.com/stevengj/nlopt/archive/refs/tags/v2.11.0.tar.gz"
   sha256 "53e552d83e9294d67db37f0f4a23f15933a9ef698485301a18b98b40004cf0de"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/stevengj/nlopt.git", branch: "master"
 
   bottle do

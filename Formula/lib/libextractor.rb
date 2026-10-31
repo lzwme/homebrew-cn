@@ -5,6 +5,7 @@ class Libextractor < Formula
   mirror "https://ftp.gnu.org/gnu/libextractor/libextractor-1.19.tar.gz"
   sha256 "2d5b33cbdb21c88ae9360994d4e216627413ee9cb11b31b033c2d0cf42ef2700"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "3b12a01931e57f35ea8b491c20e7f6e75bf94e2cf32995e01006f075716a6bb0"

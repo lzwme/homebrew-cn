@@ -4,6 +4,7 @@ class Libansilove < Formula
   url "https://ghfast.top/https://github.com/ansilove/libansilove/releases/download/1.4.3/libansilove-1.4.3.tar.gz"
   sha256 "f1d6f75e01aa44eaa79f8b63e9bb2c9d0f4d5d55b234e9abaf790314cccbfc18"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "b6e0e5bb88c36b447468db240f48efc8780e49f7ed42f97630af89bc39ccdabf"

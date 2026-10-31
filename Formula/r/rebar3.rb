@@ -4,6 +4,7 @@ class Rebar3 < Formula
   url "https://ghfast.top/https://github.com/erlang/rebar3/archive/refs/tags/3.28.0.tar.gz"
   sha256 "4a8bdd1fc845742833988db73012b232a3e9fd048011189ae9e0cecf70bdb7a2"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url :stable

@@ -3,6 +3,7 @@ class LdidProcursus < Formula
   homepage "https://github.com/ProcursusTeam/ldid"
   license "AGPL-3.0-or-later"
   revision 3
+  compatibility_version 1
   head "https://github.com/ProcursusTeam/ldid.git", branch: "master"
 
   stable do

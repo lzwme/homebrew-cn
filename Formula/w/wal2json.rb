@@ -4,6 +4,7 @@ class Wal2json < Formula
   url "https://ghfast.top/https://github.com/eulerto/wal2json/archive/refs/tags/wal2json_2_7.tar.gz"
   sha256 "e6c12d02dc32e4d610dce33ee52ea85a54e12a563e79c4844508b6c061ff07a1"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url :stable

@@ -4,6 +4,7 @@ class Mx < Formula
   url "https://ghfast.top/https://github.com/graalvm/mx/archive/refs/tags/7.88.0.tar.gz"
   sha256 "f055eb6ecc94ed9e0c4c864733c99d3081fb732e9680b4d1454b47d8281b54da"
   license "GPL-2.0-only"
+  compatibility_version 1
 
   livecheck do
     url :stable

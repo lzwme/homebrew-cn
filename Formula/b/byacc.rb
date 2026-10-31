@@ -4,6 +4,7 @@ class Byacc < Formula
   url "https://invisible-mirror.net/archives/byacc/byacc-20260126.tgz"
   sha256 "b618c5fb44c2f5f048843db90f7d1b24f78f47b07913c8c7ba8c942d3eb24b00"
   license :public_domain
+  compatibility_version 1
 
   livecheck do
     url "https://invisible-mirror.net/archives/byacc/"

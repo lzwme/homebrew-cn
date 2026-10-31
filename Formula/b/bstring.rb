@@ -4,6 +4,7 @@ class Bstring < Formula
   url "https://ghfast.top/https://github.com/msteinert/bstring/releases/download/v1.1.1/bstring-1.1.1.tar.xz"
   sha256 "caaa9770c763dfc31a34e86d4afe50a9d3b3e6c43f9b410fa4f3130192ea47f1"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/msteinert/bstring.git", branch: "main"
 
   bottle do

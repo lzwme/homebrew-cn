@@ -5,6 +5,7 @@ class Sdl3Mixer < Formula
   sha256 "182a07c745375e113dc740d43964ff21b0be29f29f59876c4dbc4db3d32f6901"
   license "Zlib"
   revision 1
+  compatibility_version 1
   head "https://github.com/libsdl-org/SDL_mixer.git", branch: "main"
 
   livecheck do

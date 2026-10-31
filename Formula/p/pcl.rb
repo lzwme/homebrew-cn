@@ -3,6 +3,7 @@ class Pcl < Formula
   homepage "https://pointclouds.org/"
   license "BSD-3-Clause"
   revision 8
+  compatibility_version 1
   head "https://github.com/PointCloudLibrary/pcl.git", branch: "master"
 
   stable do

@@ -2,6 +2,7 @@ class Fstrm < Formula
   desc "Frame Streams implementation in C"
   homepage "https://github.com/farsightsec/fstrm"
   license "MIT"
+  compatibility_version 1
 
   stable do
     url "https://dl.farsightsecurity.com/dist/fstrm/fstrm-0.6.1.tar.gz"

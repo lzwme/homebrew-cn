@@ -4,6 +4,7 @@ class Sdl2Compat < Formula
   url "https://ghfast.top/https://github.com/libsdl-org/sdl2-compat/releases/download/release-2.32.74/sdl2-compat-2.32.74.tar.gz"
   sha256 "ec68abde77e2e459c8abc4f9587b8976b5d2a657b2bfda2fb3a079b0f8924588"
   license "Zlib"
+  compatibility_version 1
   head "https://github.com/libsdl-org/sdl2-compat.git", branch: "main"
 
   bottle do

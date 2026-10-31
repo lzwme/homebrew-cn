@@ -1,8 +1,8 @@
 class Incus < Formula
   desc "CLI client for interacting with Incus"
   homepage "https://linuxcontainers.org/incus"
-  url "https://linuxcontainers.org/downloads/incus/incus-7.5.1.tar.xz"
-  sha256 "93338baa19016b1b406f5c8275306ee20afbaf3e3d4b32ea203ad75583266c6a"
+  url "https://linuxcontainers.org/downloads/incus/incus-7.6.tar.xz"
+  sha256 "3b492ff0710d56d23b0dbfc7f5b5320efee9f6f6472b9275d6abd443c889a395"
   license "Apache-2.0"
   head "https://github.com/lxc/incus.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Incus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "864f707022778302ef3be6f11746f7aea15e659613c768ed63ab56f349eff2da"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "864f707022778302ef3be6f11746f7aea15e659613c768ed63ab56f349eff2da"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "864f707022778302ef3be6f11746f7aea15e659613c768ed63ab56f349eff2da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "52a3020376961df04996f04f6eb739b1847eb39fe1b9f9ae6a9f49f8207726ba"
-    sha256 cellar: :any,                 x86_64_linux:      "e24f08fbc01dc624b0229a17dbdd204e93e0b460587613ee905d937165b2bad0"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "51dc23b3808c29a15c9f2cfe3aa37fb2a5048636e45022981884329b03724f9f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "51dc23b3808c29a15c9f2cfe3aa37fb2a5048636e45022981884329b03724f9f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "51dc23b3808c29a15c9f2cfe3aa37fb2a5048636e45022981884329b03724f9f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "74209d89911b148665453128ad8bd85b057e2943383cfda34d36ce033f52362b"
+    sha256 cellar: :any,                 x86_64_linux:      "4ab6c53fd785c9cb254ca1959f216071d93346c07f1c0e5560941554f030b4f5"
   end
 
   depends_on "go" => :build

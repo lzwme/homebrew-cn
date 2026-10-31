@@ -23,6 +23,8 @@ class Yetris < Formula
 
   uses_from_macos "ncurses"
 
+  deny_network_access!
+
   def install
     system "make", "install", "PREFIX=#{prefix}"
   end

@@ -5,6 +5,7 @@ class Tcsh < Formula
   mirror "https://ftp.osuosl.org/pub/blfs/conglomeration/tcsh/tcsh-6.24.16.tar.gz"
   sha256 "4208cf4630fb64d91d81987f854f9570a5a0e8a001a92827def37d0ed8f37364"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url "https://astron.com/pub/tcsh/"

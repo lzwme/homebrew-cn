@@ -23,6 +23,8 @@ class Xdotool < Formula
   depends_on "libxkbcommon"
   depends_on "libxtst"
 
+  deny_network_access!
+
   def install
     system "make", "PREFIX=#{prefix}", "INSTALLMAN=#{man}", "install"
   end

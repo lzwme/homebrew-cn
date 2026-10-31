@@ -5,6 +5,7 @@ class GnuProlog < Formula
   mirror "https://ftp.gnu.org/gnu/gprolog/gprolog-1.5.0.tar.gz"
   sha256 "670642b43c0faa27ebd68961efb17ebe707688f91b6809566ddd606139512c01"
   license any_of: ["LGPL-3.0-or-later", "GPL-2.0-or-later"]
+  compatibility_version 1
 
   livecheck do
     url :homepage

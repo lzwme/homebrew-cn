@@ -4,6 +4,7 @@ class Minimap2 < Formula
   url "https://ghfast.top/https://github.com/lh3/minimap2/archive/refs/tags/v2.31.tar.gz"
   sha256 "bff334a0e4512644e2f3e29944aeec408f49450f4f74dc39fe89e5273869255b"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable

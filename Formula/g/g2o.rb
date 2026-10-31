@@ -6,6 +6,7 @@ class G2o < Formula
   sha256 "d691ead69184ebbb8256c9cd9f4121d1a880b169370efc0554dd31a64802a452"
   license "BSD-2-Clause"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url :stable

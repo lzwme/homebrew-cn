@@ -4,6 +4,7 @@ class LibomemoC < Formula
   url "https://ghfast.top/https://github.com/dino/libomemo-c/archive/refs/tags/v0.5.1.tar.gz"
   sha256 "d1b65dbf7bccc67523abfd5e429707f540b2532932d128b2982f0246be2b22a0"
   license "GPL-3.0-only"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "33a9923f6dfb7e70280d857d626e83901b94523635d1072ae7013a75f5602548"

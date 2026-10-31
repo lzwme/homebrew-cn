@@ -4,6 +4,7 @@ class Libdmtx < Formula
   url "https://ghfast.top/https://github.com/dmtx/libdmtx/archive/refs/tags/v0.7.8.tar.gz"
   sha256 "2394bf1d1d693a5a4ca3cfcc1bb28a4d878bdb831ea9ca8f3d5c995d274bdc39"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "29fa6d46fc8976253466ece40d455d0229bbe42866a16e50d242f7f77dab856f"

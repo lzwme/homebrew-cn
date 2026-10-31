@@ -12,6 +12,7 @@ class Lensfun < Formula
     :public_domain,
   ]
   version_scheme 1
+  compatibility_version 1
   head "https://github.com/lensfun/lensfun.git", branch: "master"
 
   # Versions with a 90+ patch are unstable and this regex should only match the

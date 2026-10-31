@@ -5,6 +5,7 @@ class AvroC < Formula
   mirror "https://archive.apache.org/dist/avro/avro-1.12.2/c/avro-c-1.12.2.tar.gz"
   sha256 "ccc85c5a967ca647fe0961ddeedf286cde00aacf87834d8ca552a0165ae4aa6d"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "cd90c5e29f7244629d1ef4550e31b6bc6394b70a604164b18968bf12bce5068c"

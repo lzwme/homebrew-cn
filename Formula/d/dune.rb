@@ -4,6 +4,7 @@ class Dune < Formula
   url "https://ghfast.top/https://github.com/ocaml/dune/releases/download/3.24.2/dune-3.24.2.tbz"
   sha256 "472798691b0216daf538709f0f4703b3617ef24ad0866c9096068baaba4d762a"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/ocaml/dune.git", branch: "main"
 
   bottle do

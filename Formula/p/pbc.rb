@@ -4,6 +4,7 @@ class Pbc < Formula
   url "https://crypto.stanford.edu/pbc/files/pbc-1.0.0.tar.gz"
   sha256 "18275a367283077bafe35f443200499e3b19c4a3754953da2a1b2f0d6b5922dc"
   license "LGPL-3.0-only"
+  compatibility_version 1
 
   livecheck do
     url "https://crypto.stanford.edu/pbc/download.html"

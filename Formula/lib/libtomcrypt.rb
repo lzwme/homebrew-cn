@@ -5,6 +5,7 @@ class Libtomcrypt < Formula
   sha256 "d870fad1e31cb787c85161a8894abb9d7283c2a654a9d3d4c6d45a1eba59952c"
   license "Unlicense"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "d95dbad31ee81e2c711d4175d9e135b9d426110e2d5533caf764ead1c47c87f1"

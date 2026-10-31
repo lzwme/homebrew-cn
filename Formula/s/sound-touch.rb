@@ -4,6 +4,7 @@ class SoundTouch < Formula
   url "https://codeberg.org/soundtouch/soundtouch/archive/2.4.1.tar.gz"
   sha256 "35d404e6e8c2ebd12fb4000da6fadd75c99e37eed2126a04721828c11c0377ec"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     rebuild 1

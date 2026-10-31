@@ -5,6 +5,7 @@ class Gd < Formula
   sha256 "3fe822ece20796060af63b7c60acb151e5844204d289da0ce08f8fdf131e5a61"
   license "GD"
   revision 6
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "64b5f5079ed42c8bd045aada18026b751bf8e7111de8e411ab63d7860ecf3691"

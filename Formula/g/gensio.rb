@@ -5,6 +5,7 @@ class Gensio < Formula
   sha256 "e28c24fc5d9f3cb90005bc008fec8bb8eedce503753024ab650bed0ac250cbe3"
   license all_of: ["LGPL-2.1-only", "GPL-2.0-only", "Apache-2.0"]
   revision 2
+  compatibility_version 1
 
   bottle do
     rebuild 1

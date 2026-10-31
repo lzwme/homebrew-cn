@@ -4,6 +4,7 @@ class Unibilium < Formula
   url "https://ghfast.top/https://github.com/neovim/unibilium/archive/refs/tags/v2.1.4.tar.gz"
   sha256 "7360907bcf79ba49f6fc4a504767ff86e93ab9018477026fcc70d5ab77e1f2c1"
   license "LGPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "955d75f75ed264c4efafbbe4b4598825070db0cae8f2a87808c95d9fb44ae2ab"

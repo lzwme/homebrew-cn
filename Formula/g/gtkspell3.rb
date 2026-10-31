@@ -5,6 +5,7 @@ class Gtkspell3 < Formula
   sha256 "b040f63836b347eb344f5542443dc254621805072f7141d49c067ecb5a375732"
   license "GPL-2.0-or-later"
   revision 4
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "aae3fc468e4de416ebbee759476a9abc610848e17b92d4c558b9e2b69c970989"

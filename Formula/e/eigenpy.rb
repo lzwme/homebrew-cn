@@ -5,6 +5,7 @@ class Eigenpy < Formula
   sha256 "4e5f05ffa68a299732c6284348486d1f0c364e7f2a2bce0f14afa93780226d0b"
   license "BSD-2-Clause"
   revision 2
+  compatibility_version 1
   head "https://github.com/stack-of-tasks/eigenpy.git", branch: "devel"
 
   bottle do

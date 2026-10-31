@@ -3,6 +3,7 @@ class Innoextract < Formula
   homepage "https://constexpr.org/innoextract/"
   license "Zlib"
   revision 14
+  compatibility_version 1
   head "https://github.com/dscharrer/innoextract.git", branch: "master"
 
   stable do

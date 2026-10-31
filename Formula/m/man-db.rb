@@ -5,6 +5,7 @@ class ManDb < Formula
   mirror "https://download-mirror.savannah.gnu.org/releases/man-db/man-db-2.13.1.tar.xz"
   sha256 "8afebb6f7eb6bb8542929458841f5c7e6f240e30c86358c1fbcefbea076c87d9"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://download.savannah.gnu.org/releases/man-db/"

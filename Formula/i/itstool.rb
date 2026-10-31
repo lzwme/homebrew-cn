@@ -5,6 +5,7 @@ class Itstool < Formula
   sha256 "6b9a7cd29a12bb95598f5750e8763cee78836a1a207f85b74d8b3275b27e87ca"
   license "GPL-3.0-or-later"
   revision 3
+  compatibility_version 1
 
   livecheck do
     url "https://itstool.org/download.html"

@@ -3,6 +3,7 @@ class Bindgen < Formula
   homepage "https://rust-lang.github.io/rust-bindgen/"
   license "BSD-3-Clause"
   revision 1
+  compatibility_version 1
   head "https://github.com/rust-lang/rust-bindgen.git", branch: "main"
 
   stable do

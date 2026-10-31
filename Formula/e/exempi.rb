@@ -4,6 +4,7 @@ class Exempi < Formula
   url "https://libopenraw.freedesktop.org/download/exempi-2.6.6.tar.bz2"
   sha256 "7513b7e42c3bd90a58d77d938c60d2e87c68f81646e7cb8b12d71fe334391c6f"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url :homepage

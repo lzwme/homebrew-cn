@@ -4,6 +4,7 @@ class JavaServiceWrapper < Formula
   url "https://download.tanukisoftware.com/wrapper/3.7.4/wrapper_3.7.4_src.tar.gz"
   sha256 "d8c5936fb894d27701e96a5685fdbf8cf1a3d4d61c465c3abdc944361ea23905"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
+  compatibility_version 1
 
   livecheck do
     url "https://download.tanukisoftware.com/wrapper/latest"

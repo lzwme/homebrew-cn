@@ -4,6 +4,7 @@ class Container < Formula
   url "https://ghfast.top/https://github.com/apple/container/archive/refs/tags/1.6.1.tar.gz"
   sha256 "29c95aee960d5346452ef314fd3fdcb527c217ea4298a46bdb315221397f28b5"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/apple/container.git", branch: "main"
 
   bottle do

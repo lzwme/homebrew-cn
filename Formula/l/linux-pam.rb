@@ -4,6 +4,7 @@ class LinuxPam < Formula
   url "https://ghfast.top/https://github.com/linux-pam/linux-pam/releases/download/v1.7.3/Linux-PAM-1.7.3.tar.xz"
   sha256 "2ce4765fd49df6693771ef2941f81e33d8ee14b94a81a5c7b369aa3b137b85a5"
   license any_of: ["BSD-3-Clause", "GPL-1.0-only"]
+  compatibility_version 1
   head "https://github.com/linux-pam/linux-pam.git", branch: "master"
 
   bottle do

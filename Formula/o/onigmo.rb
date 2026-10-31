@@ -4,6 +4,7 @@ class Onigmo < Formula
   url "https://ghfast.top/https://github.com/k-takata/Onigmo/releases/download/Onigmo-6.2.0/onigmo-6.2.0.tar.gz"
   sha256 "c648496b5339953b925ebf44b8de356feda8d3428fa07dc1db95bfe2570feb76"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/k-takata/Onigmo.git", branch: "master"
 
   livecheck do

@@ -5,6 +5,7 @@ class Attr < Formula
   mirror "https://mirror.csclub.uwaterloo.ca/nongnu/attr/attr-2.6.0.tar.gz"
   sha256 "d42fa374513180bb48cb11a46696f488240e5124ff1e6ad88b0abff706985612"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://download.savannah.nongnu.org/releases/attr/"

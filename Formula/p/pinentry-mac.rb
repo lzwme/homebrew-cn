@@ -4,6 +4,7 @@ class PinentryMac < Formula
   url "https://ghfast.top/https://github.com/GPGTools/pinentry/archive/refs/tags/v1.3.1.1.tar.gz"
   sha256 "ba929dd1c57b102fbfca12bc2d784be441498e7c82ee97a1231cbe03dcda7ae9"
   license all_of: ["GPL-2.0-or-later", "GPL-3.0-or-later"]
+  compatibility_version 1
   head "https://github.com/GPGTools/pinentry.git", branch: "master"
 
   bottle do

@@ -4,6 +4,7 @@ class Libfreenect < Formula
   url "https://ghfast.top/https://github.com/OpenKinect/libfreenect/archive/refs/tags/v0.7.5.tar.gz"
   sha256 "3c668053db726206a8c3a92e92e91ef7a64407968f422b9c4b828d0fd234c866"
   license any_of: ["Apache-2.0", "GPL-2.0-only"]
+  compatibility_version 1
   head "https://github.com/OpenKinect/libfreenect.git", branch: "master"
 
   bottle do

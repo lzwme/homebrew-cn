@@ -4,6 +4,7 @@ class MkConfigure < Formula
   url "https://downloads.sourceforge.net/project/mk-configure/mk-configure/mk-configure-0.40.3/mk-configure-0.40.3.tar.gz"
   sha256 "3b70b7ffe817a386b13bca7f685fb068d7fd7925a51c9710a8557487d5f1c732"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "MIT", "MIT-CMU"]
+  compatibility_version 1
 
   livecheck do
     url :stable

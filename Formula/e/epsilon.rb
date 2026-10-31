@@ -7,6 +7,7 @@ class Epsilon < Formula
     "BSD-3-Clause",
     any_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later"],
   ]
+  compatibility_version 1
 
   livecheck do
     url :stable

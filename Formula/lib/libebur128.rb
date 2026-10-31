@@ -4,6 +4,7 @@ class Libebur128 < Formula
   url "https://ghfast.top/https://github.com/jiixyj/libebur128/archive/refs/tags/v1.2.6.tar.gz"
   sha256 "baa7fc293a3d4651e244d8022ad03ab797ca3c2ad8442c43199afe8059faa613"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "47d64a4fac10bec2baa1f3b3dcf891df4bec550b5532997978b80bd59fe5b530"

@@ -4,6 +4,7 @@ class IsaL < Formula
   url "https://ghfast.top/https://github.com/intel/isa-l/archive/refs/tags/v2.32.1.tar.gz"
   sha256 "d9f7179ab0e14a3db9b610fac22793854a1435e8423ec9ce07f4cbedc5f92f5e"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url :stable

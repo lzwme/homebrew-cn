@@ -5,6 +5,7 @@ class Ed < Formula
   mirror "https://ftp.gnu.org/gnu/ed/ed-1.22.6.tar.lz"
   sha256 "3f33b22135219c39c3c695f7b7171c2567d3e2a17c798c0a90607320cbb268f2"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2bb1d547e167a08bd02baea122fa95641528021433a43f7706b01deab652f991"

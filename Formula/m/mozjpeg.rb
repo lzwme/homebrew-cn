@@ -4,6 +4,7 @@ class Mozjpeg < Formula
   url "https://ghfast.top/https://github.com/mozilla/mozjpeg/archive/refs/tags/v4.1.5.tar.gz"
   sha256 "9fcbb7171f6ac383f5b391175d6fb3acde5e64c4c4727274eade84ed0998fcc1"
   license all_of: ["IJG", "Zlib", "BSD-3-Clause"]
+  compatibility_version 1
 
   livecheck do
     url :stable

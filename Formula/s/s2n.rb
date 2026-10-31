@@ -4,6 +4,7 @@ class S2n < Formula
   url "https://ghfast.top/https://github.com/aws/s2n-tls/archive/refs/tags/v1.7.13.tar.gz"
   sha256 "bf60fe631eebb79ed9a0b9b553460a4017dd2547269292ce3e9e2ac61c97dea2"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/aws/s2n-tls.git", branch: "main"
 
   livecheck do

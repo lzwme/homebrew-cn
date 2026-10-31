@@ -4,6 +4,7 @@ class Augeas < Formula
   url "https://ghfast.top/https://github.com/hercules-team/augeas/releases/download/release-1.15.0/augeas-1.15.0.tar.gz"
   sha256 "95b2b5c4c10c964024c694d6349024e8033dcfa1aaba88884ea09394908d30ff"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   livecheck do
     url :stable

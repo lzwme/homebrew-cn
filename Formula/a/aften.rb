@@ -4,6 +4,7 @@ class Aften < Formula
   url "https://downloads.sourceforge.net/project/aften/aften/0.0.8/aften-0.0.8.tar.bz2"
   sha256 "87cc847233bb92fbd5bed49e2cdd6932bb58504aeaefbfd20ecfbeb9532f0c0a"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   # Aften has moved from a version scheme like 0.07 to 0.0.8. We restrict
   # matching to versions with three parts, since a version like 0.07 is parsed

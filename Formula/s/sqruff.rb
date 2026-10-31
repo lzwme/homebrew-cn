@@ -1,17 +1,17 @@
 class Sqruff < Formula
   desc "Fast SQL formatter/linter"
   homepage "https://github.com/quarylabs/sqruff"
-  url "https://ghfast.top/https://github.com/quarylabs/sqruff/archive/refs/tags/v0.43.0.tar.gz"
-  sha256 "431a0fae3a184860fa0ac436cc0a9c14fa48cabc141f5993eeaed8fa27b80597"
+  url "https://ghfast.top/https://github.com/quarylabs/sqruff/archive/refs/tags/v0.44.0.tar.gz"
+  sha256 "24345a86b4b5ec5f312f8951071f75d1b0b918077bfe23fa21642034abd8641d"
   license "Apache-2.0"
   head "https://github.com/quarylabs/sqruff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a51a02acdb8c18da358321cb8346c8a77598d1a8a0e35f1e8bdd4d24cb7fac0d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "14aff0e2a579172ec5d9e7cac1727b6aa0d37c405fb46a8defed690a82d4ab76"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "657bc709665355996d3f9085d156b3b1e0f671748c915eb5638cbbf60c5378ca"
-    sha256 cellar: :any,                 arm64_linux:       "afe9052f7b020b2bcb47935ba63f7c0bb38e49203edc3452671ea24f0c4fa9bc"
-    sha256 cellar: :any,                 x86_64_linux:      "5d885b8f78b7de567f6a9ca669fdbb6573e5b0942c074b9e34d08172ffb1044b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "572b0a437663e0862672efb6c624a342a62b74113784f973afe2b39c70f70aad"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "db9eebe4dd421cca72b0057ff65176b817013ef4856437f43a0dce80fa219d67"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ba33d7216504ea0f59ac419f8499584463eb22ee0d6a2f3a01691435de5c74ea"
+    sha256 cellar: :any,                 arm64_linux:       "d5d05d974078bdb5508a0bf13e6acf83f906b97e80c30ca481d44e854acee4ae"
+    sha256 cellar: :any,                 x86_64_linux:      "84f06721d3ceb28d77ed2c3d6a95cf2726e9b5ae62c1d37601bb7c0ca071354d"
   end
 
   depends_on "rust" => :build

@@ -5,6 +5,7 @@ class Jack < Formula
   sha256 "1e42b9fc4ad7db7befd414d45ab2f8a159c0b30fcd6eee452be662298766a849"
   license "GPL-2.0-or-later"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url :stable

@@ -4,6 +4,7 @@ class Jthread < Formula
   url "https://research.edm.uhasselt.be/jori/jthread/jthread-1.3.3.tar.bz2"
   sha256 "17560e8f63fa4df11c3712a304ded85870227b2710a2f39692133d354ea0b64f"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :homepage

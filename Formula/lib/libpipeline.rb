@@ -4,6 +4,7 @@ class Libpipeline < Formula
   url "https://download.savannah.nongnu.org/releases/libpipeline/libpipeline-1.5.8.tar.gz"
   sha256 "1b1203ca152ccd63983c3f2112f7fe6fa5afd453218ede5153d1b31e11bb8405"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://download.savannah.nongnu.org/releases/libpipeline/"

@@ -53,6 +53,8 @@ class Xboard < Formula
     depends_on "texinfo" => :build
   end
 
+  deny_network_access!
+
   def install
     ENV.append_to_cflags "-fcommon" if OS.linux?
     ENV.append "LDFLAGS", "-Wl,-dead_strip_dylibs" if OS.mac?

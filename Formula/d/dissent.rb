@@ -1,20 +1,17 @@
 class Dissent < Formula
   desc "GTK4 Discord client in Go"
   homepage "https://github.com/diamondburned/dissent"
-  url "https://ghfast.top/https://github.com/diamondburned/dissent/archive/refs/tags/v0.0.37.tar.gz"
-  sha256 "b08ae331e5c69759eb7b9511908007fc3e9c7a28208bfa66ffbd84b6f335364a"
+  url "https://ghfast.top/https://github.com/diamondburned/dissent/archive/refs/tags/v0.0.39.tar.gz"
+  sha256 "24b3423353ce7063cb36d0329141605e4f39ffb28e1be6745fddc16af0755de7"
   license "GPL-3.0-or-later"
   head "https://github.com/diamondburned/dissent.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_golden_gate: "87101722475ad131ffd48bc7f618cc7b5a542222a0ed597c61bfd79221a44469"
-    sha256 cellar: :any,                 arm64_tahoe:       "dd1e49a1cba57126c5863d4a2b677b02fd03fdbaf8a1ce6f81474007b9394661"
-    sha256 cellar: :any,                 arm64_sequoia:     "b45fd55dfd1e9cd6191fb59cc7cac06c310e90414a44033c916c84fb572da839"
-    sha256 cellar: :any,                 arm64_sonoma:      "9604a42062cae3551df4c41f8c47a79f7d743fd8fe42c870655240652d79c074"
-    sha256 cellar: :any,                 sonoma:            "ea9319c548bdd84c5a00e110f352299d4c3f586fc9a176005e71dd5fdd18ad07"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "09d43aa6bfef20752ac31e2b33ad1737a2e40ee0d57bf3ee214833302e2ad81a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b7cb6a3cebf7c5fcebeed8c7ee8180e59dc465c4e9c4c1595b40de885392caaa"
+    sha256 cellar: :any, arm64_golden_gate: "96eeba7970347016e0687e345d9eaf64603208b2bfaf5e314c30284e88f90722"
+    sha256 cellar: :any, arm64_tahoe:       "d8cffbc15932e6a4fb431aafb391ab9aedb93ab9fb466dc20a13c33034795777"
+    sha256 cellar: :any, arm64_sequoia:     "68202c2152588581b828bab53dad7252524cb10469c968127fd2c200e6abba3b"
+    sha256 cellar: :any, arm64_linux:       "ba689005e8e207e5527c256928e096d5ab02a58f22e59421876c0b16c6b3330d"
+    sha256 cellar: :any, x86_64_linux:      "5726fd2d4306e6b2c1dcd98574996d8a919450db89613f6341c5dedfea31e7db"
   end
 
   depends_on "go" => :build
@@ -31,6 +28,7 @@ class Dissent < Formula
   depends_on "libcanberra"
   depends_on "libspelling"
   depends_on "pango"
+  depends_on "pcre2"
 
   on_macos do
     depends_on "gettext"

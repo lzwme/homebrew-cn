@@ -5,6 +5,7 @@ class Rcs < Formula
   mirror "https://ftp.gnu.org/gnu/rcs/rcs-5.10.1.tar.lz"
   sha256 "43ddfe10724a8b85e2468f6403b6000737186f01e60e0bd62fde69d842234cc5"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "703eb5428f2258ae984a4d107f163dcaf5863ff3772f131d85a48f00a2b731a6"

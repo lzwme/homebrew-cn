@@ -4,6 +4,7 @@ class Alembic < Formula
   url "https://ghfast.top/https://github.com/alembic/alembic/archive/refs/tags/1.8.12.tar.gz"
   sha256 "b6d916c40446e8c502c84273092ab3d98f3f7f6094f8a2b8203d23e2f1d2a4a0"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/alembic/alembic.git", branch: "master"
 
   bottle do

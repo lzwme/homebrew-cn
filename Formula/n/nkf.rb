@@ -4,6 +4,7 @@ class Nkf < Formula
   url "https://deb.debian.org/debian/pool/main/n/nkf/nkf_2.1.5.orig.tar.gz"
   sha256 "d1a7df435847a79f2f33a92388bca1d90d1b837b1b56523dcafc4695165bad44"
   license "Zlib"
+  compatibility_version 1
 
   livecheck do
     url "https://deb.debian.org/debian/pool/main/n/nkf/"

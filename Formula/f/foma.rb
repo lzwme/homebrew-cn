@@ -5,6 +5,7 @@ class Foma < Formula
   sha256 "32fff2bd0a8338716adfee71505277d8562dabd48be9bf15620c38b15c8c404e"
   license "Apache-2.0"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://ghfast.top/https://raw.githubusercontent.com/mhulden/foma/refs/heads/master/foma/CHANGELOG"

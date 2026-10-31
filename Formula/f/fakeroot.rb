@@ -4,6 +4,7 @@ class Fakeroot < Formula
   url "https://ftp.debian.org/debian/pool/main/f/fakeroot/fakeroot_2.1.4.orig.tar.xz"
   sha256 "0822bd5a9f0cf19d2ba0546b88b0432d4d3d9917db62c57b74044ccadba06e49"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://deb.debian.org/debian/pool/main/f/fakeroot/"

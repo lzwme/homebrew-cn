@@ -5,6 +5,7 @@ class Libflowmanager < Formula
   sha256 "ab60c9c9611488e51c14b6e3870f91a191236dced12f0ed16a58cdd2c08ee74f"
   license "LGPL-3.0-or-later"
   revision 2
+  compatibility_version 1
 
   livecheck do
     url :stable

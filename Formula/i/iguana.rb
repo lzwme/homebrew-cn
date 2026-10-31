@@ -4,6 +4,7 @@ class Iguana < Formula
   url "https://ghfast.top/https://github.com/qicosmos/iguana/archive/refs/tags/1.2.0.tar.gz"
   sha256 "29ad1ff853a278df0b1598db992e1507167bd4521b232a55e360928cf751a9af"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/qicosmos/iguana.git", branch: "master"
 
   bottle do

@@ -4,6 +4,7 @@ class JsonrpcGlib < Formula
   url "https://download.gnome.org/sources/jsonrpc-glib/3.44/jsonrpc-glib-3.44.2.tar.xz"
   sha256 "965496b6e1314f3468b482a5d80340dc3b0340a5402d7783cad24154aee77396"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "0756e5864f4a752ba8da639780e1525539393f42721760cb4b014bc398fd2c30"

@@ -3,6 +3,7 @@ class Collectd < Formula
   homepage "https://collectd.org/"
   license "MIT"
   revision 11
+  compatibility_version 1
 
   stable do
     url "https://storage.googleapis.com/collectd-tarballs/collectd-5.12.0.tar.bz2"

@@ -5,6 +5,7 @@ class Peg < Formula
   mirror "https://deb.debian.org/debian/pool/main/p/peg/peg_0.1.19.orig.tar.gz"
   sha256 "0013dd83a6739778445a64bced3d74b9f50c07553f86ea43333ae5fab5c2bbb4"
   license "MIT"
+  compatibility_version 1
 
   # The homepage links to development tarballs using the stable version format
   # (with nothing in the file name to distinguish stable/development), so we

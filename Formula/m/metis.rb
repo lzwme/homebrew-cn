@@ -5,6 +5,7 @@ class Metis < Formula
   mirror "https://ftp.mcs.anl.gov/pub/pdetools/spack-pkgs/metis-5.1.0.tar.gz"
   sha256 "76faebe03f6c963127dbb73c13eab58c9a3faeae48779f049066a21c087c5db2"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url :homepage

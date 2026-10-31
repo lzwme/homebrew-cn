@@ -5,6 +5,7 @@ class Libgnt < Formula
   sha256 "195933a9a731d3575791b881ba5cc0ad2a715e1e9c4c23ccaaa2a17e164c96ec"
   license "GPL-2.0-or-later"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://sourceforge.net/projects/pidgin/rss?path=/libgnt"

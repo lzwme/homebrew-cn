@@ -4,6 +4,7 @@ class Beakerlib < Formula
   url "https://ghfast.top/https://github.com/beakerlib/beakerlib/archive/refs/tags/1.33.3.tar.gz"
   sha256 "87a054194ddd2e073d50c15b0c4f7cf1373b1a5a82e78d9a8f16f13ade7ee00e"
   license "GPL-2.0-only"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a97429652f2d1a36d8d9d29449317ccdc3a7fe40a6106c5e49b4af3369e18dcf"

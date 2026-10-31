@@ -4,6 +4,7 @@ class Bmake < Formula
   url "https://www.crufty.net/ftp/pub/sjg/bmake-20260912.tar.gz"
   sha256 "b6bd32964cbe451be2838822c9d200b7c7e76a2a5947c03feb71dc6bd72988bd"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url "https://www.crufty.net/ftp/pub/sjg/"

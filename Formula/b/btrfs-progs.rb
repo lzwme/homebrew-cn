@@ -7,6 +7,7 @@ class BtrfsProgs < Formula
     "GPL-2.0-only",
     "LGPL-2.1-or-later", # libbtrfsutil
   ]
+  compatibility_version 1
 
   livecheck do
     url "https://mirrors.edge.kernel.org/pub/linux/kernel/people/kdave/btrfs-progs/"

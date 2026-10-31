@@ -4,6 +4,7 @@ class Pod2man < Formula
   url "https://archives.eyrie.org/software/perl/podlators-v6.1.1.tar.xz"
   sha256 "a28027ac17848912ab2b14544fd457e28269e7b3f8423d72526556f9779b1807"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
+  compatibility_version 1
 
   livecheck do
     url "https://archives.eyrie.org/software/perl/"

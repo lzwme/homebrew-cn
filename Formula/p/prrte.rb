@@ -3,6 +3,7 @@ class Prrte < Formula
   homepage "https://pmix.org/"
   license "BSD-3-Clause-Open-MPI"
   revision 1
+  compatibility_version 1
 
   stable do
     url "https://ghfast.top/https://github.com/openpmix/prrte/releases/download/v4.1.0/prrte-4.1.0.tar.bz2"

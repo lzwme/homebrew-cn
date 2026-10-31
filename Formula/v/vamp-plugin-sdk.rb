@@ -5,6 +5,7 @@ class VampPluginSdk < Formula
   sha256 "aeaf3762a44b148cebb10cde82f577317ffc9df2720e5445c3df85f3739ff75f"
   license all_of: ["X11", "BSD-3-Clause"]
   revision 1
+  compatibility_version 1
   head "https://github.com/vamp-plugins/vamp-plugin-sdk.git", branch: "master"
 
   livecheck do

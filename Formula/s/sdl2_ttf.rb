@@ -4,6 +4,7 @@ class Sdl2Ttf < Formula
   url "https://ghfast.top/https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.24.0/SDL2_ttf-2.24.0.tar.gz"
   sha256 "0b2bf1e7b6568adbdbc9bb924643f79d9dedafe061fa1ed687d1d9ac4e453bfd"
   license "Zlib"
+  compatibility_version 1
 
   livecheck do
     url :stable

@@ -4,6 +4,7 @@ class Libdex < Formula
   url "https://gitlab.gnome.org/GNOME/libdex/-/archive/1.2.0/libdex-1.2.0.tar.gz"
   sha256 "0feb7f0f76938500800c28e32e5a655ab95bf042263639c5cc0f79446f15401d"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
   head "https://gitlab.gnome.org/GNOME/libdex.git", branch: "main"
 
   # We restrict matching to versions with an even-numbered minor version number,

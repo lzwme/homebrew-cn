@@ -4,6 +4,7 @@ class Yarn < Formula
   url "https://ghfast.top/https://github.com/yarnpkg/yarn/releases/download/v1.22.22/yarn-v1.22.22.tar.gz"
   sha256 "88268464199d1611fcf73ce9c0a6c4d44c7d5363682720d8506f6508addf36a0"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   livecheck do
     skip("1.x line is frozen and features/bugfixes only happen on 2+")
@@ -18,6 +19,8 @@ class Yarn < Formula
 
   conflicts_with "corepack", because: "both install `yarn` and `yarnpkg` binaries"
   conflicts_with "hadoop", because: "both install `yarn` binaries"
+
+  allow_network_access! :test
 
   def install
     libexec.install buildpath.glob("*")

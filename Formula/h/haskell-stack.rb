@@ -4,6 +4,7 @@ class HaskellStack < Formula
   url "https://ghfast.top/https://github.com/commercialhaskell/stack/archive/refs/tags/v3.11.1.tar.gz"
   sha256 "388916c20e2a9e9d343ef40c0c31fbb664cdbf302122ded8508ded8f765cbb4f"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/commercialhaskell/stack.git", branch: "master"
 
   livecheck do

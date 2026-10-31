@@ -4,6 +4,7 @@ class Libobjc2 < Formula
   url "https://ghfast.top/https://github.com/gnustep/libobjc2/archive/refs/tags/v2.3.tar.gz"
   sha256 "5ead2276b42a534ac40437ce53b2231320b985539dc325453d93874be8d92869"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_linux:  "f3555edab456c1bc62c1d549893f3bf913382b7e3b8ab56b367d3d3d4ce212b9"

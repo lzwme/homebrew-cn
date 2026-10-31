@@ -4,6 +4,7 @@ class DesktopFileUtils < Formula
   url "https://www.freedesktop.org/software/desktop-file-utils/releases/desktop-file-utils-0.28.tar.xz"
   sha256 "4401d4e231d842c2de8242395a74a395ca468cd96f5f610d822df33594898a70"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "7d488b90983d9ee0ad3b0a66397a0edb54ea9b0d8987b6126bd408aeb2395331"

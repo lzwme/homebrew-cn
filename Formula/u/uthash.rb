@@ -4,6 +4,7 @@ class Uthash < Formula
   url "https://ghfast.top/https://github.com/troydhanson/uthash/archive/refs/tags/v2.4.0.tar.gz"
   sha256 "387ba027946d7c64e9aa19cc53b2edcd714f8f9dca9fa8e3aaef17e0e8e3d736"
   license "BSD-1-Clause"
+  compatibility_version 1
   head "https://github.com/troydhanson/uthash.git", branch: "master"
 
   bottle do

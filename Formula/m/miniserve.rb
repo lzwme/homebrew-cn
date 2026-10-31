@@ -4,6 +4,7 @@ class Miniserve < Formula
   url "https://ghfast.top/https://github.com/svenstaro/miniserve/archive/refs/tags/v0.35.0.tar.gz"
   sha256 "8ae108c161f2ed740f8c4b4dfd0a80805adcbaf7a05a6128f2b4d8f5093f5490"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f8e174947c35124659b00977879bdfc6fb0b3d03d0459ac03cb31e8e50241d9a"

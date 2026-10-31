@@ -17,6 +17,7 @@ class NodeAT24 < Formula
     sha256 arm64_tahoe:       "569634b55b2b44f7aec3abf569ad5553b434626ab600c96413105218c293d98f"
     sha256 arm64_sequoia:     "7733d5080ec7b317e1c8c235c20b93ee67b9457f7843340f766982a0c47ad26e"
     sha256 arm64_linux:       "9cac285149de06142132856f567db2b86bf3efe85ae1a939e394475a3e0bfb1e"
+    sha256 x86_64_linux:      "0a91d921f0be41f9b90e0a989cc112780a5a9f563bd836a3901ced2a493dc6cb"
   end
 
   keg_only :versioned_formula

@@ -5,6 +5,7 @@ class X8664ElfGcc < Formula
   mirror "https://ftp.gnu.org/gnu/gcc/gcc-16.2.0/gcc-16.2.0.tar.xz"
   sha256 "e6738e29597f733270731aa90600f37ffdc045079dfc27ec7e8192cc81085c3e"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
+  compatibility_version 1
 
   livecheck do
     formula "gcc"
@@ -29,6 +30,8 @@ class X8664ElfGcc < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     target = "x86_64-elf"

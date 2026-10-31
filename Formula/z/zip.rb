@@ -6,6 +6,7 @@ class Zip < Formula
   sha256 "f0e8bb1f9b7eb0b01285495a2699df3a4b766784c1765a8f1aeedf63c0806369"
   license "Info-ZIP"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url :stable

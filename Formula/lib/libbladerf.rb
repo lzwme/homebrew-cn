@@ -5,6 +5,7 @@ class Libbladerf < Formula
       tag:      "2025.10",
       revision: "fcf9423325ae49f5fdd2e5b52ab68bfc2576ad47"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
+  compatibility_version 1
   head "https://github.com/Nuand/bladeRF.git", branch: "master"
 
   # Upstream uses GitHub releases to indicate that a version is released

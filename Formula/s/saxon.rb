@@ -5,6 +5,7 @@ class Saxon < Formula
   version "13.0"
   sha256 "4a08ac02d8ea26b769bf14274bef27b3c8bbf2557b20b7e4258d172e99638163"
   license all_of: ["BSD-3-Clause", "MIT", "MPL-2.0"]
+  compatibility_version 1
 
   livecheck do
     url :stable

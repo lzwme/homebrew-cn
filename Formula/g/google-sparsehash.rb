@@ -4,6 +4,7 @@ class GoogleSparsehash < Formula
   url "https://ghfast.top/https://github.com/sparsehash/sparsehash/archive/refs/tags/sparsehash-2.0.4.tar.gz"
   sha256 "8cd1a95827dfd8270927894eb77f62b4087735cbede953884647f16c521c7e58"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/sparsehash/sparsehash.git", branch: "master"
 
   bottle do

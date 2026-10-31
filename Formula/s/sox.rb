@@ -5,6 +5,7 @@ class Sox < Formula
   sha256 "b45f598643ffbd8e363ff24d61166ccec4836fea6d3888881b8df53e3bb55f6c"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   revision 6
+  compatibility_version 1
 
   bottle do
     rebuild 2

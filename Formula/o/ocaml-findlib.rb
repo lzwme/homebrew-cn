@@ -5,6 +5,7 @@ class OcamlFindlib < Formula
   sha256 "d6899935ccabf67f067a9af3f3f88d94e310075d13c648fa03ff498769ce039d"
   license "MIT"
   revision 6
+  compatibility_version 1
 
   livecheck do
     url "https://opam.ocaml.org/packages/ocamlfind/"

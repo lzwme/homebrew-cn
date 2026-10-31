@@ -4,6 +4,7 @@ class Xcodegen < Formula
   url "https://ghfast.top/https://github.com/yonaskolb/XcodeGen/archive/refs/tags/2.46.0.tar.gz"
   sha256 "c83c7bd70255b0ddf4116dadce16bdf0e5939165b43a544e124de294ec84aa27"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/yonaskolb/XcodeGen.git", branch: "master"
 
   bottle do

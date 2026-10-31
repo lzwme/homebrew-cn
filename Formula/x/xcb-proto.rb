@@ -5,6 +5,7 @@ class XcbProto < Formula
   sha256 "2c1bacd2110f4799f74de6ebb714b94cf6f80fb112316b1219480fd22562148c"
   license "MIT"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "019dc0c8c057b145fb308abe073a0c30da2ea309f61a12a8f03c303e7bd27de9"
@@ -12,6 +13,8 @@ class XcbProto < Formula
 
   depends_on "pkgconf" => [:build, :test]
   depends_on "python@3.15" => [:build, :test]
+
+  deny_network_access!
 
   def install
     args = %W[

@@ -5,6 +5,7 @@ class LibvirtPython < Formula
   sha256 "ab24a102ebf99b913ddc3459031aa71a48b0b1cdbb0f423b4ea278052791ac8a"
   license "LGPL-2.1-or-later"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://download.libvirt.org/python/"

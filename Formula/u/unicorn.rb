@@ -7,6 +7,7 @@ class Unicorn < Formula
     "GPL-2.0-only",
     "GPL-2.0-or-later", # glib, qemu
   ]
+  compatibility_version 1
   head "https://github.com/unicorn-engine/unicorn.git", branch: "master"
 
   bottle do

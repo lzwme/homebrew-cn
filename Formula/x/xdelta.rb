@@ -4,6 +4,7 @@ class Xdelta < Formula
   url "https://ghfast.top/https://github.com/jmacd/xdelta/archive/refs/tags/v3.2.2.tar.gz"
   sha256 "995319ccb7fe721a523fb3142376f5813093685b1cc302d07018ca97d2584af2"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "e06ba5f00d39b61c4cecf44a11da88219d448564152518507fd0ab022a4db59d"

@@ -4,6 +4,7 @@ class Re2c < Formula
   url "https://ghfast.top/https://github.com/skvadrik/re2c/releases/download/4.6/re2c-4.6.tar.xz"
   sha256 "75bf2696445e831d0d44e0d9f2909eeffc18c09757f222b2fb025f7e59fe130b"
   license :public_domain
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "a0a9457636b8ded11407dc23378f3e9cbcfee8700dc943d968754b575d14cf28"

@@ -8,6 +8,7 @@ class ArgpStandalone < Formula
     "LGPL-2.0-or-later", # argp.h, argp-parse.c
     :public_domain,      # mempcpy.c, strchrnul.c
   ]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d9ed7d2c1e021585ca577b161c59dcaf7cf99727c572af7bcffc582da87ff6c2"

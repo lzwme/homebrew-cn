@@ -9,6 +9,7 @@ class Avahi < Formula
   url "https://ghfast.top/https://github.com/avahi/avahi/archive/refs/tags/v0.9-rc5.tar.gz"
   sha256 "5b0a9d88110b0fc8aaafc5cc0a26e83e7d2a4aca3a36bc27c9b626db7ead27b0"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   # Remove livecheck after 0.9 release
   livecheck do

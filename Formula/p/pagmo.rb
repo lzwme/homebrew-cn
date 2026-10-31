@@ -4,6 +4,7 @@ class Pagmo < Formula
   url "https://ghfast.top/https://github.com/esa/pagmo2/archive/refs/tags/v2.20.0.tar.gz"
   sha256 "8d684e9a3667dcccc844489083906c35aba7610594c5fce0f4eccce9c2264f4d"
   license any_of: ["LGPL-3.0-or-later", "GPL-3.0-or-later"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "09411ccb768026f9cde2978003397d0ab70917d0b56111a37390584045b3d359"

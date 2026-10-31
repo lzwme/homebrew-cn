@@ -5,6 +5,7 @@ class StartupNotification < Formula
   sha256 "3c391f7e930c583095045cd2d10eb73a64f085c7fde9d260f2652c7cb3cfbe4a"
   license "LGPL-2.0-or-later"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "ccb14ea7ecb1e13ea739f7a824f5936d0e5c340cfef521379162dfbc62a64db1"

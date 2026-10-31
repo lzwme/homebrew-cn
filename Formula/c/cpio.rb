@@ -5,6 +5,7 @@ class Cpio < Formula
   mirror "https://ftp.gnu.org/gnu/cpio/cpio-2.15.tar.bz2"
   sha256 "937610b97c329a1ec9268553fb780037bcfff0dcffe9725ebc4fd9c1aa9075db"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b945a688c55cdca954fe6ca77d1bf85d3979d672ba21476af63daaa7589fe87e"

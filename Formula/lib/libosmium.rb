@@ -4,6 +4,7 @@ class Libosmium < Formula
   url "https://ghfast.top/https://github.com/osmcode/libosmium/archive/refs/tags/v2.23.1.tar.gz"
   sha256 "eb47d8163396c73870dbf27819dcadda0c56f0191935c4f8659d1e61b261552f"
   license "BSL-1.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "fd58fa48dfc0c19e696e717b13215cc2bf965667f018b708e6f2264f1fc4f1c0"

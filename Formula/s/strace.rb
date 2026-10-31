@@ -4,6 +4,7 @@ class Strace < Formula
   url "https://ghfast.top/https://github.com/strace/strace/releases/download/v7.3/strace-7.3.tar.xz"
   sha256 "529634c40910895a9a1f3c5c1e65da2ca9ed72fb158dfc4bcc89efdf05e39b72"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_linux:  "8cad55fb8ea563d24c4a52bbdb4433c651197af9d1d1b4b2cf3179961c06165c"

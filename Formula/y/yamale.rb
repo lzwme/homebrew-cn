@@ -6,6 +6,7 @@ class Yamale < Formula
   url "https://files.pythonhosted.org/packages/da/64/9e5de0e829920b848dcf5fe3ff64936d83cc7471babd264588b08bca97e0/yamale-6.1.0.tar.gz"
   sha256 "fd435aa7b830c73e89a9ef548c0ace2d3d8dc3e5e180e6b57ff70b31495672fd"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/23andMe/Yamale.git", branch: "master"
 
   bottle do
@@ -24,6 +25,8 @@ class Yamale < Formula
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
+
+  allow_network_access! :build
 
   def install
     virtualenv_install_with_resources

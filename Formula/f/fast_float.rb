@@ -4,6 +4,7 @@ class FastFloat < Formula
   url "https://ghfast.top/https://github.com/fastfloat/fast_float/archive/refs/tags/v8.3.2.tar.gz"
   sha256 "71bb9e865b888df01351558db5a39586d13ea97ada162156b3a07784d8c1b26b"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/fastfloat/fast_float.git", branch: "main"
 
   bottle do

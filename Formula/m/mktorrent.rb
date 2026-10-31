@@ -5,6 +5,7 @@ class Mktorrent < Formula
   sha256 "d0f47500192605d01b5a2569c605e51ed319f557d24cfcbcb23a26d51d6138c9"
   license "GPL-2.0-or-later"
   revision 3
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "d46c44ca9365fbdca86e9116613488eaea6be1430606f45d5cdda4c29f139058"

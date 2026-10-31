@@ -4,6 +4,7 @@ class Mt32emu < Formula
   url "https://ghfast.top/https://github.com/munt/munt/archive/refs/tags/libmt32emu_2_8_3.tar.gz"
   sha256 "81f8c462f46bc8901618762ae34cf9de93894ff81f41db73c79472fa3baef875"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
   head "https://github.com/munt/munt.git", branch: "master"
 
   livecheck do

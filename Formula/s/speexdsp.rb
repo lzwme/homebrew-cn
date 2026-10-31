@@ -5,6 +5,7 @@ class Speexdsp < Formula
   mirror "https://mirror.csclub.uwaterloo.ca/xiph/releases/speex/speexdsp-1.2.1.tar.gz"
   sha256 "8c777343e4a6399569c72abc38a95b24db56882c83dbdb6c6424a5f4aeb54d3d"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url "https://ftp.osuosl.org/pub/xiph/releases/speex/?C=M&O=D"

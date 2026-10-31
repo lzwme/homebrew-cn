@@ -1,8 +1,8 @@
 class Clarinet < Formula
   desc "Command-line tool and runtime for the Clarity smart contract language"
   homepage "https://stackslabs.com/"
-  url "https://ghfast.top/https://github.com/stx-labs/clarinet/archive/refs/tags/v3.26.0.tar.gz"
-  sha256 "3dc203cb406eb3873f276efa98f4051d844dab5762bed2eb57d9bc44d53089ce"
+  url "https://ghfast.top/https://github.com/stx-labs/clarinet/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "2966f2de5926e46830df1c3c96486c716eb1ed160c3f563b34b6d0273e0e4062"
   license "GPL-3.0-only"
   version_scheme 1
   head "https://github.com/stx-labs/clarinet.git", branch: "main"
@@ -13,11 +13,11 @@ class Clarinet < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "321cc64db986c8ee3c05432760d16551cc937bac501afa67a9f44877b7edbf42"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "87b7b3a26767f93617f9dd58fbc6a4d1e9617068e8a5ff3edb60c2b7986627b3"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "660ecdab8357520c7683e027a114b23787d8f16060016b995d6ebc0b1ae4b51c"
-    sha256 cellar: :any,                 arm64_linux:       "dfe29109d3cb6cec316e1511ff12e5776fcbd8e2f00322a4746d3591aa9a2335"
-    sha256 cellar: :any,                 x86_64_linux:      "ca4bd15ea625df09dc47e19b84b7c0b9ac0c736267a39110fa731e2533eaec57"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a2a5d73492cbfe3477637b224975a8ede10677b0058e898964bea38a7226f441"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ca571b2f0fbfefc72b9fa7cbc75ccf5eff82175aa2c2e1f9ad7cd3509a41b1c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a7b9dfa358fc23415d19093d0e89357b458a608b31c18ce6f5e239bf7b8e6d17"
+    sha256 cellar: :any,                 arm64_linux:       "cd6df6317088efe1aae5af4547407f328b3b550d68457b670152f7fd022c5319"
+    sha256 cellar: :any,                 x86_64_linux:      "b0f2361a2a099318cb4de3b53dfb5914a3195fa0375951efa105e9ddba0457a1"
   end
 
   depends_on "rust" => :build

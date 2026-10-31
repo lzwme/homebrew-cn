@@ -4,6 +4,7 @@ class GlibNetworking < Formula
   url "https://download.gnome.org/sources/glib-networking/2.90/glib-networking-2.90.1.tar.xz"
   sha256 "ea95636590098355a05e3027579dba1a9a950b05e456b2488ea03d82e4b6c18a"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   # This regex is intended to avoid the `Gnome` strategy's version filtering
   # logic while maintaining the "even-numbered minor is stable" behavior, as

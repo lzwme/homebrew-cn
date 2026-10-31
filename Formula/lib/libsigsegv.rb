@@ -5,6 +5,7 @@ class Libsigsegv < Formula
   mirror "https://ftp.gnu.org/gnu/libsigsegv/libsigsegv-2.15.tar.gz"
   sha256 "036855660225cb3817a190fc00e6764ce7836051bacb48d35e26444b8c1729d9"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "867eee98eec63182149b197cc7ce0dd35a5ed028ec7709bf9ccfcf1d14225081"

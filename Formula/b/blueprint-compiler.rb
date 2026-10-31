@@ -6,6 +6,7 @@ class BlueprintCompiler < Formula
   url "https://download.gnome.org/sources/blueprint-compiler/0.22/blueprint-compiler-0.22.2.tar.xz"
   sha256 "231d72efbac931c235ac3e022fe94982095c20d88721d9a8dcf60152f2017e07"
   license "LGPL-3.0-or-later"
+  compatibility_version 1
   head "https://gitlab.gnome.org/GNOME/blueprint-compiler.git", branch: "main"
 
   bottle do

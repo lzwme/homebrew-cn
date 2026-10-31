@@ -6,6 +6,7 @@ class Libsixel < Formula
   sha256 "9088475e5a1332f84b92ad46fd3c199ac56500c67f8a4054efccbc0db644bdba"
   license "MIT"
   version_scheme 1
+  compatibility_version 1
   head "https://github.com/saitoha/libsixel.git", branch: "master"
 
   livecheck do

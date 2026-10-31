@@ -4,6 +4,7 @@ class Lief < Formula
   url "https://ghfast.top/https://github.com/lief-project/LIEF/archive/refs/tags/1.0.0.tar.gz"
   sha256 "2cf412695ff739d82e129db441e5c2025f3bb4873a3d3a1d3dd4cf300b682abd"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     rebuild 1

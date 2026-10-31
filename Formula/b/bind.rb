@@ -8,6 +8,7 @@ class Bind < Formula
   # downgrade.
   license "MPL-2.0"
   version_scheme 1
+  compatibility_version 1
 
   stable do
     url "https://downloads.isc.org/isc/bind9/9.20.30/bind-9.20.30.tar.xz"

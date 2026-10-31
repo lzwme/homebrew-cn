@@ -3,6 +3,7 @@ class Clisp < Formula
   homepage "https://clisp.sourceforge.io/"
   license "GPL-2.0-or-later"
   revision 1
+  compatibility_version 1
   head "https://gitlab.com/gnu-clisp/clisp.git", branch: "master"
 
   stable do

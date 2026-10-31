@@ -4,6 +4,7 @@ class Libofx < Formula
   url "https://ghfast.top/https://github.com/libofx/libofx/releases/download/0.10.9/libofx-0.10.9.tar.gz"
   sha256 "1ca89ff7d681c9edad312172ac464231a8de686e653213612f9417492cef0d37"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "d66854870d4afc41009bb2f483c8350e2a64c7b750bf9a6b4517b48821404680"

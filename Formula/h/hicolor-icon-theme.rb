@@ -4,6 +4,7 @@ class HicolorIconTheme < Formula
   url "https://icon-theme.freedesktop.org/releases/hicolor-icon-theme-0.18.tar.xz"
   sha256 "db0e50a80aa3bf64bb45cbca5cf9f75efd9348cf2ac690b907435238c3cf81d7"
   license "GPL-2.0-only"
+  compatibility_version 1
   head "https://gitlab.freedesktop.org/xdg/default-icon-theme.git", branch: "master"
 
   # The homepage hasn't been updated to link to more recent versions, so we

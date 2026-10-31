@@ -4,6 +4,7 @@ class RangeV3 < Formula
   url "https://ghfast.top/https://github.com/ericniebler/range-v3/archive/refs/tags/0.12.0.tar.gz"
   sha256 "015adb2300a98edfceaf0725beec3337f542af4915cec4d0b89fa0886f4ba9cb"
   license "BSL-1.0"
+  compatibility_version 1
 
   bottle do
     rebuild 3

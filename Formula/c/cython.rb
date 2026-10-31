@@ -7,6 +7,7 @@ class Cython < Formula
   sha256 "eed0d93fbca7087f143b42c34b05a825849bdf17f101572c2105acfa49aa88b8"
   license "Apache-2.0"
   revision 1
+  compatibility_version 1
   head "https://github.com/cython/cython.git", branch: "master"
 
   bottle do

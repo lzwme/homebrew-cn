@@ -9,6 +9,7 @@ class Po4a < Formula
   sha256 "6e390eb7707501a86f2e648d78fddb0d211d1e8699aa1ee201176e9f966a798b"
   license "GPL-2.0-or-later"
   revision 2
+  compatibility_version 1
   head "https://github.com/mquinson/po4a.git", branch: "master"
 
   bottle do

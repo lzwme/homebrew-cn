@@ -28,6 +28,8 @@ class Pygobject3 < Formula
 
   uses_from_macos "libffi"
 
+  deny_network_access!
+
   def pythons
     deps.map(&:to_formula)
         .select { |f| f.name.match?(/^python@\d\.\d+$/) }

@@ -4,6 +4,7 @@ class Fairymax < Formula
   url "https://deb.debian.org/debian/pool/main/f/fairymax/fairymax_5.0b.orig.tar.gz"
   sha256 "3e36ba168aa10179225f8dd6953d1c39c4cd4526572765b2e9c77717efe3e52f"
   license :public_domain
+  compatibility_version 1
 
   livecheck do
     skip "No longer developed or maintained"

@@ -4,6 +4,7 @@ class Nanoflann < Formula
   url "https://ghfast.top/https://github.com/jlblancoc/nanoflann/archive/refs/tags/2.0.1.tar.gz"
   sha256 "bb3991ad924248d3f20953a951c34878196c11ca112d800acc341c3808443896"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/jlblancoc/nanoflann.git", branch: "master"
 
   livecheck do

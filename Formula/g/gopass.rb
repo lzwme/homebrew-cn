@@ -4,6 +4,7 @@ class Gopass < Formula
   url "https://ghfast.top/https://github.com/gopasspw/gopass/releases/download/v1.17.4/gopass-1.17.4.tar.gz"
   sha256 "de75d2a43cd7ae54cdeac2e3074456ab2a79901c607a24166804878269415989"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/gopasspw/gopass.git", branch: "master"
 
   bottle do

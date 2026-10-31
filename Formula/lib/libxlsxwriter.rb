@@ -4,6 +4,7 @@ class Libxlsxwriter < Formula
   url "https://ghfast.top/https://github.com/jmcnamara/libxlsxwriter/archive/refs/tags/v1.2.4.tar.gz"
   sha256 "e0db59fc248a5ffa465a05ea83a9d466d4bca0e53ab42771515d4ebb467a41c1"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/jmcnamara/libxlsxwriter.git", branch: "main"
 
   bottle do

@@ -65,6 +65,7 @@ class Mesa < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
+  depends_on "python-setuptools" => :build
   depends_on "python@3.15" => :build
   depends_on "rust" => :build
   depends_on "xorgproto" => :build
@@ -111,7 +112,12 @@ class Mesa < Formula
   end
 
   pypi_packages package_name:   "",
-                extra_packages: %w[mako packaging ply pyyaml]
+                extra_packages: %w[flit-core mako packaging ply pyyaml]
+
+  resource "flit-core" do
+    url "https://files.pythonhosted.org/packages/d3/8b/0370578a456986d6995344967a479dd5c9d4e064681550c2a9594bb58b4a/flit_core-4.2.0.tar.gz"
+    sha256 "84e4e4d8fdd45ba2613800a3ebc6834de26d47ec9746efc3719f94181137b460"
+  end
 
   resource "mako" do
     url "https://files.pythonhosted.org/packages/5a/09/e07c4b5579a79f4b16f8d4f29f6c54514ac787c4ad506b8c4f28a0e6b0bf/mako-1.4.3.tar.gz"
@@ -158,9 +164,16 @@ class Mesa < Formula
     end
   end
 
+  deny_network_access!
+
+  def fetch
+    # Fetching all Rust subprojects since Meson doesn't recursively download subprojects
+    system "meson", "subprojects", "download", "*-rs"
+  end
+
   def install
     venv = virtualenv_create(buildpath/"venv", python3)
-    venv.pip_install resources.reject { |r| r.test? || (OS.mac? && r.name == "ply") }
+    venv.pip_install resources.reject { |r| r.test? || (OS.mac? && r.name == "ply") }, build_isolation: false
     ENV.prepend_path "PYTHONPATH", venv.site_packages
     ENV.prepend_path "PATH", venv.root/"bin"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath}" if OS.mac?

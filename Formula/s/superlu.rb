@@ -4,6 +4,7 @@ class Superlu < Formula
   url "https://ghfast.top/https://github.com/xiaoyeli/superlu/archive/refs/tags/v7.0.1.tar.gz"
   sha256 "86dcca1e086f8b8079990d07f00eb707fc9ef412cf3b2ce808b37956f0de2cb8"
   license "BSD-3-Clause-LBNL"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "d83cb7e68557ce6098bd72680fe68ef633ed59f28e4cc37350336340ab8125bc"

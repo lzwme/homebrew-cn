@@ -4,6 +4,7 @@ class LiquidDsp < Formula
   url "https://ghfast.top/https://github.com/jgaeddert/liquid-dsp/archive/refs/tags/v1.8.3.tar.gz"
   sha256 "18fa83b73db8bb6fe6ea0376e4b5aecf8645970f4604d10d9dadbf609f3f95e2"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "08f26b099934aba3db8a1a0c7b312f1fbc05a3790e7469d1e1433edcf972196c"

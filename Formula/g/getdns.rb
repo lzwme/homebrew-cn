@@ -3,6 +3,7 @@ class Getdns < Formula
   homepage "https://getdnsapi.net"
   license "BSD-3-Clause"
   revision 2
+  compatibility_version 1
   head "https://github.com/getdnsapi/getdns.git", branch: "develop"
 
   stable do

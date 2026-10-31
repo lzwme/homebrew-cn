@@ -4,6 +4,7 @@ class Chruby < Formula
   url "https://ghfast.top/https://github.com/postmodern/chruby/releases/download/v0.3.9/chruby-0.3.9.tar.gz"
   sha256 "7220a96e355b8a613929881c091ca85ec809153988d7d691299e0a16806b42fd"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/postmodern/chruby.git", branch: "master"
 
   bottle do

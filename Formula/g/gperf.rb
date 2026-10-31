@@ -5,6 +5,7 @@ class Gperf < Formula
   mirror "https://ftp.gnu.org/gnu/gperf/gperf-3.3.tar.gz"
   sha256 "fd87e0aba7e43ae054837afd6cd4db03a3f2693deb3619085e6ed9d8d9604ad8"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8483bac6a9bb1befe43194380b571064a0471329a41ca4fc92dd0a3f325da369"

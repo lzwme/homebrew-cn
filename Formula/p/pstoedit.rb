@@ -4,6 +4,7 @@ class Pstoedit < Formula
   url "https://ghfast.top/https://github.com/woglu/pstoedit/archive/refs/tags/v4.3.tar.gz"
   sha256 "36dfdc79c750930dd57e2c4a4dee2a6ab1a1fe65cd8fc4dc047dbfb6f2cfa15b"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   bottle do
     rebuild 1

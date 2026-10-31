@@ -4,6 +4,7 @@ class Scdoc < Formula
   url "https://git.sr.ht/~sircmpwn/scdoc/archive/1.11.5.tar.gz"
   sha256 "98780bbdf16c1bce89ef3a8c0f537ac6e4ea77087b609e7698857614488a2a62"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f24cde7b98a4e6eb3ab2d7812c7ca63c25be3a79e14af0b612f762c85474ecce"

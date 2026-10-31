@@ -5,6 +5,7 @@ class BerkeleyDbAT5 < Formula
   sha256 "e0a992d740709892e81f9d93f06daf305cf73fb81b545afe72478043172c3628"
   license "Sleepycat"
   revision 1
+  compatibility_version 1
 
   livecheck do
     skip "No longer developed or maintained"

@@ -3,17 +3,17 @@ class Harlequin < Formula
 
   desc "Easy, fast, and beautiful database client for the terminal"
   homepage "https://harlequin.sh", browsed: "2026-09-05"
-  url "https://files.pythonhosted.org/packages/a3/0e/e30b611a5c3b3a5181743c02f7e746a28511b241aa7f5a66a90c47b119a9/harlequin-2.16.2.tar.gz"
-  sha256 "62f5e6bcab6040a2375cf481fe04f53932e27473bf999c423a808428e26b35fd"
+  url "https://files.pythonhosted.org/packages/c6/0c/d2f0eaf8ca5b6d1e484906013e3670838891ec286cf064f2f04bd9e19e55/harlequin-2.17.0.tar.gz"
+  sha256 "2e129308168a72e71c336c5679978a5385efb89d32507d3e1d6e1f773ee6dda1"
   license "MIT"
   head "https://github.com/tconbeer/harlequin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8b4d5bd6782edc4f6dd548e1fb3f27ef82f6686bcb6086903a17c2bc997c86ff"
-    sha256 cellar: :any, arm64_tahoe:       "9ce770591c4f563bf1085d867ed70e05e715ef3c2d3752b4ca564bde9618649d"
-    sha256 cellar: :any, arm64_sequoia:     "ff347c23ed4fcde3f3788668536798ee86f796d70a8e874c267eab14649dc9e0"
-    sha256 cellar: :any, arm64_linux:       "3bd092f64066eedbf7dab85b77f9f0a3c54beec5202cfcf401ed0b3f8fdf2edc"
-    sha256 cellar: :any, x86_64_linux:      "f6e8095d307acaf1b0ca291b2b66c329dd5515788bc3972925c5cf1c128ee913"
+    sha256 cellar: :any, arm64_golden_gate: "991e65115a82cf7a8492f3c7728ff1e360f534cd5bc852bc247ef7317a45c924"
+    sha256 cellar: :any, arm64_tahoe:       "cafa0f170a7f2acc4108410cf0e9aee4d49a33f068b9836d397a4a6d3ed5d144"
+    sha256 cellar: :any, arm64_sequoia:     "62071d2e9d49cb11e8c06e76c8ed94440d3d420ebc4f2b5fedd4294565f459ec"
+    sha256 cellar: :any, arm64_linux:       "90bec23ab073fb2248cfd7e8825ca4a54c1233a19b0846e1fac97a1a3ac23a6c"
+    sha256 cellar: :any, x86_64_linux:      "c46b3a044485781bf5831e33f6907839512b23564098a5d6bf3628f436610e73"
   end
 
   depends_on "cmake" => :build
@@ -31,8 +31,7 @@ class Harlequin < Formula
   end
 
   pypi_packages package_name:     "harlequin[mysql,odbc,postgres]",
-                exclude_packages: %w[numpy psycopg-binary tree-sitter-languages],
-                extra_packages:   "psycopg-c"
+                exclude_packages: %w[numpy psycopg-binary tree-sitter-languages]
 
   resource "click" do
     url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
@@ -40,13 +39,13 @@ class Harlequin < Formula
   end
 
   resource "duckdb" do
-    url "https://files.pythonhosted.org/packages/59/0b/d65ea3be00ea79aa276a8388bec588a9cbf409ce637c6d306e5316210d15/duckdb-1.5.6.tar.gz"
-    sha256 "166a91dbfacfc0c9f08cc76c0243cb6d3d4296bfab5bad72a3cfb63140a5b7c8"
+    url "https://files.pythonhosted.org/packages/c2/7c/dfdf5e9cebefd032f57f09b224993e861ecb55f61e36c709544b04b44f70/duckdb-2.0.0.tar.gz"
+    sha256 "09de511ef0dc76a5213e8d3d87a8b89bb4d3e8a6fe73a9f60dc001269946b44f"
   end
 
   resource "harlequin-mysql" do
-    url "https://files.pythonhosted.org/packages/28/86/e9fe658afd953b8580ad8399fad17f248b2dfab612fff5c2e2292d415f14/harlequin_mysql-1.4.0.tar.gz"
-    sha256 "60eb100978711c4f8a6e1b702d7fed313f298b2b0641eed259a5415673f75d25"
+    url "https://files.pythonhosted.org/packages/f2/34/e0b31d86cc318c2df15e01d7420681b3f4f1fe49ec8a3c6215ca113e1bef/harlequin_mysql-1.5.0.tar.gz"
+    sha256 "84ab123f74ac1e9fcfcda486b842401f0ee9e42acde3dd1d6d4da7c0f844211c"
   end
 
   resource "harlequin-odbc" do
@@ -55,8 +54,8 @@ class Harlequin < Formula
   end
 
   resource "harlequin-postgres" do
-    url "https://files.pythonhosted.org/packages/f9/cd/ece234f9cf1cd52fc892bb2fc1eb0f8fb00db32b0ec62c77151d165ee1c2/harlequin_postgres-1.5.1.tar.gz"
-    sha256 "d159db9bf3c57a7ca0f2eacd0cf991332043ef8eed843d436ddbfc0c6c3b8fec"
+    url "https://files.pythonhosted.org/packages/63/19/09937776647585e0e9bb58f8f99d63159ad1b32bc52cf096fccf263806b7/harlequin_postgres-1.6.0.tar.gz"
+    sha256 "48608904f81622493ff24f705b945ee4ff95c7b315d5c9fc81d9058204bc2104"
   end
 
   resource "jinja2" do
@@ -107,8 +106,8 @@ class Harlequin < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/b7/89/dfd269de936e76319cf27787d9eaaca513491f635d49b0fbe7cdb6d3bf6f/platformdirs-4.13.4.tar.gz"
-    sha256 "dd96496961684a7f42041923f842ec7494e09f5e87aded99117e1109cd40570e"
+    url "https://files.pythonhosted.org/packages/40/28/1c058a9143d2304b3078f8dadcbb9dc27f7d3581b5d05157c84869c4cc0d/platformdirs-4.14.0.tar.gz"
+    sha256 "83f009c1e8c5fc36869b5171755b291887bd2cade7965233cdfabd23d754720b"
   end
 
   resource "prompt-toolkit" do
@@ -119,11 +118,6 @@ class Harlequin < Formula
   resource "psycopg" do
     url "https://files.pythonhosted.org/packages/76/26/3ea4ca5eaea1c0debcdf7ee7c1613fbe721dc27a03c461c0817ffd8a0601/psycopg-3.3.6.tar.gz"
     sha256 "c081f2250df751a943036e42db6df4571c66cd0aabe8291a7a506512b12007d2"
-  end
-
-  resource "psycopg-c" do
-    url "https://files.pythonhosted.org/packages/58/53/bf15aa48cd6f0ad0039b9f48681d2e76e8564d413af47b13fab50dd03555/psycopg_c-3.3.6.tar.gz"
-    sha256 "29c568426ad61c1b702c7d73505c43ca2c9fc5d97a8431d8d9049e731e319ff8"
   end
 
   resource "psycopg-pool" do
@@ -237,8 +231,8 @@ class Harlequin < Formula
   end
 
   resource "tree-sitter-markdown" do
-    url "https://ghfast.top/https://github.com/tree-sitter-grammars/tree-sitter-markdown/archive/refs/tags/v0.5.1.tar.gz"
-    sha256 "acaffe5a54b4890f1a082ad6b309b600b792e93fc6ee2903d022257d5b15e216"
+    url "https://files.pythonhosted.org/packages/10/ee/d54192a828a931082bcb4f71d4e66369318ae8fb0f30758ade716c6c92fb/tree_sitter_markdown-0.5.4.tar.gz"
+    sha256 "5fc422637d41aa5b286551a8e6fa674733d92dac1c6a42c1d4ada0be59045bd3"
   end
 
   resource "tree-sitter-python" do
@@ -282,13 +276,28 @@ class Harlequin < Formula
   end
 
   resource "wcwidth" do
-    url "https://files.pythonhosted.org/packages/f0/b4/7830542634bb2d3e62aa3b586a72d5b3b6c91c3168929e7000ef3fed041d/wcwidth-0.9.2.tar.gz"
-    sha256 "ae0ef90b90f6af38b54f1fe6d58662ec33b3cb4b8391958a62416d654231727b"
+    url "https://files.pythonhosted.org/packages/ea/01/e5ac23733628a6bbb91913a765fcf55ee8070d8d991bc88fdaaf805052c7/wcwidth-0.9.4.tar.gz"
+    sha256 "fd8d57d3cdfe570e3265c8fab1885c24e34ef40889c0759c0c304a19e9835954"
+  end
+
+  # FIXME: update-python-resources cannot handle psycopg-c which needs pg_config on PATH.
+  # As a workaround, we track latest version of resource and fail the build if incorrect.
+  resource "psycopg-c" do
+    url "https://files.pythonhosted.org/packages/58/53/bf15aa48cd6f0ad0039b9f48681d2e76e8564d413af47b13fab50dd03555/psycopg_c-3.3.6.tar.gz"
+    sha256 "29c568426ad61c1b702c7d73505c43ca2c9fc5d97a8431d8d9049e731e319ff8"
+
+    livecheck do
+      url :url
+    end
   end
 
   allow_network_access! :build
 
   def install
+    if resource("psycopg").version != resource("psycopg-c").version
+      odie "Manually modify psycopg-c version to match psycopg==#{resource("psycopg").version}"
+    end
+
     virtualenv_install_with_resources
     generate_completions_from_executable(bin/"harlequin", shell_parameter_format: :click)
   end

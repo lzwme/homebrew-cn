@@ -7,6 +7,7 @@ class Libwmf < Formula
     "LGPL-2.1-or-later",
     "GD", # src/extra/gd
   ]
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "006ac0141ddd8c8a424eef3c52ed99229d959db73bde36f0272946025cf8fe72"

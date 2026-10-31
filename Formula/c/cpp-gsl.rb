@@ -4,6 +4,7 @@ class CppGsl < Formula
   url "https://ghfast.top/https://github.com/Microsoft/GSL/archive/refs/tags/v5.0.1.tar.gz"
   sha256 "733a87a7eea56db075ee060735ba7616a27c1c55955f264d5473bf9e83294ad0"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/Microsoft/GSL.git", branch: "main"
 
   bottle do

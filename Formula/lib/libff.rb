@@ -7,6 +7,7 @@ class Libff < Formula
       revision: "5835b8c59d4029249645cf551f417608c48f2770"
   license "MIT"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "ae0ea1830966e28d6cf7bc9d79789c90521e2af006d581f9b1262c4c9a689884"

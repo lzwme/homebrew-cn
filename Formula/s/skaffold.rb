@@ -5,6 +5,7 @@ class Skaffold < Formula
       tag:      "v2.25.0",
       revision: "d915e113210eb7590ccbc8363aeab38053172ab3"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/GoogleContainerTools/skaffold.git", branch: "main"
 
   bottle do

@@ -5,6 +5,7 @@ class Daemontools < Formula
   sha256 "a55535012b2be7a52dcd9eccabb9a198b13be50d0384143bd3b32b8710df4c1f"
   license :public_domain
   revision 2
+  compatibility_version 1
 
   livecheck do
     url "https://cr.yp.to/daemontools/install.html"

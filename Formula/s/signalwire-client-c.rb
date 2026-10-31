@@ -5,6 +5,7 @@ class SignalwireClientC < Formula
   sha256 "336c88a28015cf666bdbb070e9e11ce53dfd05baec074171fe8866945b68e8f9"
   license "MIT"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "d4266e744a8932d7f0b6c2c49cf3b10d43c1366848302301e6c0419c58f7ff11"

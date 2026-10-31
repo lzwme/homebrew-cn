@@ -4,6 +4,7 @@ class Libbinio < Formula
   url "https://ghfast.top/https://github.com/adplug/libbinio/releases/download/libbinio-1.5/libbinio-1.5.tar.bz2"
   sha256 "398b2468e7838d2274d1f62dbc112e7e043433812f7ae63ef29f5cb31dc6defd"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "2e445b4d3b9c1fe6acfe80b397e36df216d544d80a00246884f0655c87f27152"

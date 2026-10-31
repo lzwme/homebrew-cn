@@ -4,6 +4,7 @@ class Xrdb < Formula
   url "https://www.x.org/releases/individual/app/xrdb-1.2.3.tar.xz"
   sha256 "c88f560243278c896ce4fc92ae5a45a2b505a316ffa427fe55b02e5d5914c4e4"
   license all_of: ["MIT-open-group", "HPND-DEC"]
+  compatibility_version 1
 
   bottle do
     rebuild 1

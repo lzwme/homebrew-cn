@@ -4,6 +4,7 @@ class Cln < Formula
   url "https://www.ginac.de/CLN/cln-1.3.7.tar.bz2"
   sha256 "7c7ed8474958337e4df5bb57ea5176ad0365004cbb98b621765bc4606a10d86b"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url :homepage

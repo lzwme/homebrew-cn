@@ -4,6 +4,7 @@ class Libwpg < Formula
   url "https://dev-www.libreoffice.org/src/libwpg-0.3.4.tar.xz"
   sha256 "b55fda9440d1e070630eb2487d8b8697cf412c214a27caee9df69cec7c004de3"
   license all_of: ["LGPL-2.1-only", "MPL-2.0"]
+  compatibility_version 1
 
   livecheck do
     url "https://dev-www.libreoffice.org/src/"

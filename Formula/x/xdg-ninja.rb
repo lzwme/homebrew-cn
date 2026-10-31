@@ -15,6 +15,8 @@ class XdgNinja < Formula
 
   uses_from_macos "jq", since: :sequoia
 
+  deny_network_access!
+
   def install
     pkgshare.install "programs/"
     pkgshare.install "xdg-ninja.sh" => "xdg-ninja"
@@ -26,6 +28,13 @@ class XdgNinja < Formula
   end
 
   test do
-    system bin/"xdg-ninja"
+    # Use clean HOME so brew changes to test environment doesn't cause test failures
+    mkdir "test" do
+      with_env(HOME: Pathname.pwd) do
+        system bin/"xdg-ninja"
+        touch ".zshrc"
+        assert_match 'export ZDOTDIR="$HOME"/.config/zsh', shell_output(bin/"xdg-ninja", 1)
+      end
+    end
   end
 end

@@ -4,6 +4,7 @@ class Googletest < Formula
   url "https://ghfast.top/https://github.com/google/googletest/archive/refs/tags/v1.18.0.tar.gz"
   sha256 "6e3191c1455468b3fc35a417fb565c1c5071aee1b7e7f85e30cf48a98d37d8b5"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/google/googletest.git", branch: "main"
 
   bottle do

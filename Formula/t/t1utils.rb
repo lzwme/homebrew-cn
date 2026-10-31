@@ -4,6 +4,7 @@ class T1utils < Formula
   url "https://www.lcdf.org/type/t1utils-1.42.tar.gz"
   sha256 "61877935b1987044ddff4bb90a05200ca7164678a355e170bf5f1a5556cc9f29"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d8473655e54104845fdaca22602a1a90476fa8a2fa8d01d19d66e133bdf82033"

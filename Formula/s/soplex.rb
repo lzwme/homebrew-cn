@@ -4,6 +4,7 @@ class Soplex < Formula
   url "https://soplex.zib.de/download/release/soplex-8.1.0.tgz"
   sha256 "e7daa1725d9cf01ea1f0a548fa396e7dcc945c1e81af626c2c98503b0c4e5990"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url "https://soplex.zib.de/soplexdata.js"

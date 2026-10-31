@@ -4,6 +4,7 @@ class Pcaudiolib < Formula
   url "https://ghfast.top/https://github.com/espeak-ng/pcaudiolib/releases/download/1.3/pcaudiolib-1.3.tar.gz"
   sha256 "e8bd15f460ea171ccd0769ea432e188532a7fb27fa73ec2d526088a082abaaad"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "d3d2a3921bf151eb0ea70be556eb0c95150bec5f85878e6c2f7695cdef4fbca0"

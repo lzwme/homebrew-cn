@@ -4,6 +4,7 @@ class Xbitmaps < Formula
   url "https://xorg.freedesktop.org/archive/individual/data/xbitmaps-1.1.4.tar.xz"
   sha256 "895722f136e21e728c52f2d99fd2dae95018b9ddad1bac1f29d61bcd6593721d"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "db41d221049abcd7de13f3cb4adc6f6d78c7f2db6a154985d188cb362ca3d171"
@@ -11,6 +12,8 @@ class Xbitmaps < Formula
 
   depends_on "pkgconf" => :build
   depends_on "util-macros" => :build
+
+  deny_network_access!
 
   def install
     args = %W[

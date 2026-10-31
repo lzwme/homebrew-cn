@@ -6,6 +6,7 @@ class ApacheFlink < Formula
   version "2.3.0"
   sha256 "b52864b0c42a3638adb0895b97542a3ca820a0c3defda99eba6e45c2f8ca496a"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/apache/flink.git", branch: "master"
 
   livecheck do

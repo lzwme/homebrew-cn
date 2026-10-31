@@ -7,6 +7,7 @@ class Wllvm < Formula
   sha256 "3e057a575f05c9ecc8669a8c4046f2bfdf0c69533b87b4fbfcabe0df230cc331"
   license "MIT"
   revision 1
+  compatibility_version 1
 
   bottle do
     rebuild 7

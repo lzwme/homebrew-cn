@@ -5,6 +5,7 @@ class Tomcat < Formula
   mirror "https://archive.apache.org/dist/tomcat/tomcat-11/v11.0.27/bin/apache-tomcat-11.0.27.tar.gz"
   sha256 "6eafcfd623de7582857027872421495d6a464a1537168d0758a1991ce7a54367"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "4934238705b7345b130325815b6ceb6d2fd7614dad9ad9ebc2b8baad78ca6646"

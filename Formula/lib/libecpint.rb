@@ -5,6 +5,7 @@ class Libecpint < Formula
   sha256 "e9c60fddb2614f113ab59ec620799d961db73979845e6e637c4a6fb72aee51cc"
   license "MIT"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "eceda5d6f40c9ddd0122b527f9f613d6d580c49c797253d2559942fe67d0c7c9"

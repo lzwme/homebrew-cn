@@ -4,6 +4,7 @@ class Pax < Formula
   url "https://mbsd.evolvis.org/MirOS/dist/mir/cpio/paxmirabilis-20240817.tgz"
   sha256 "e955d5d3af97aede0a3f463a9a59b83e8d1083aaf142eb6f388c549a7d182e6b"
   license "MirOS"
+  compatibility_version 1
 
   livecheck do
     url "https://mbsd.evolvis.org/MirOS/dist/mir/cpio"

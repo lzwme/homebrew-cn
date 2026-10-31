@@ -9,6 +9,7 @@ class Libks < Formula
     "HPND",         # src/ks_pool.c
     :public_domain, # src/ks_utf8.c, src/ks_printf.c
   ]
+  compatibility_version 1
   head "https://github.com/signalwire/libks.git", branch: "master"
 
   bottle do

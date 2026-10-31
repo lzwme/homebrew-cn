@@ -4,6 +4,7 @@ class Libmtp < Formula
   url "https://downloads.sourceforge.net/project/libmtp/libmtp/1.1.23/libmtp-1.1.23.tar.gz"
   sha256 "74a2b6e8cb4a0304e95b995496ea3ac644c29371649b892b856e22f12a0bdeed"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "151523d3e1cb19adf95de432b63b0f52b1d64bceaba3d289145d5ce9a316457f"

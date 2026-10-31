@@ -5,6 +5,7 @@ class Libvncserver < Formula
   sha256 "62352c7795e231dfce044beb96156065a05a05c974e5de9e023d688d8ff675d7"
   license "GPL-2.0-or-later"
   revision 1
+  compatibility_version 1
   head "https://github.com/LibVNC/libvncserver.git", branch: "master"
 
   livecheck do

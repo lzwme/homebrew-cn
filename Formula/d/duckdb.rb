@@ -6,6 +6,7 @@ class Duckdb < Formula
       revision: "d54cbbe3df17e8e5ce68312f483b4155836112aa"
   license "MIT"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "4b006cf962ebd7866ece8785e60ee5851edd903a224bcd83de91ab5d2dec5784"

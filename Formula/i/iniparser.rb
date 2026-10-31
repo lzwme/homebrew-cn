@@ -4,6 +4,7 @@ class Iniparser < Formula
   url "https://gitlab.com/iniparser/iniparser/-/archive/v4.3.2/iniparser-v4.3.2.tar.bz2"
   sha256 "60fbba5c2f6c2aa3856c3ba1b6674e48f3322e3437228e5e7df7a0f222e52ac7"
   license "MIT"
+  compatibility_version 1
   head "https://gitlab.com/iniparser/iniparser.git", branch: "main"
 
   bottle do

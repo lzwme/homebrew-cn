@@ -7,6 +7,7 @@ class WireguardGo < Formula
       tag:      "0.0.20250522",
       revision: "f333402bd9cbe0f3eeb02507bd14e23d7d639280"
   license "MIT"
+  compatibility_version 1
   head "https://git.zx2c4.com/wireguard-go.git", branch: "master"
 
   livecheck do

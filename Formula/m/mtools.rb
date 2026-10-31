@@ -5,6 +5,7 @@ class Mtools < Formula
   mirror "https://ftp.gnu.org/gnu/mtools/mtools-4.0.49.tar.gz"
   sha256 "10cd1111da87bf2400a380c1639a6cba8bfb937a24f9c51f5f88d393ae5f6f76"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "824aff5ad542e17394dc3ac0a67f46c7a34f877bf7d8a0bfd5d6599bb7b0355a"

@@ -5,6 +5,7 @@ class Libtpms < Formula
   sha256 "edac03680f8a4a1c5c1d609a10e3f41e1a129e38ff5158f0c8deaedc719fb127"
   license "BSD-2-Clause"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "8335ea28c832407e001886232c1fdd6e45da78a314a6dc812efc96da4504946f"

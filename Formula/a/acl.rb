@@ -4,6 +4,7 @@ class Acl < Formula
   url "https://download.savannah.nongnu.org/releases/acl/acl-2.4.0.tar.gz"
   sha256 "73c853c3d44e1f693e5a96a986f1bd19d3d0dac2c7d453e796177774bc4e5f6a"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  compatibility_version 1
 
   livecheck do
     url "https://download.savannah.nongnu.org/releases/acl/"

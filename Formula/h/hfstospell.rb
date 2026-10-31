@@ -5,6 +5,7 @@ class Hfstospell < Formula
   sha256 "ab644c802f813a06a406656c3a873d31f6a999e13cafc9df68b03e76714eae0e"
   license "Apache-2.0"
   revision 5
+  compatibility_version 1
 
   livecheck do
     url :stable

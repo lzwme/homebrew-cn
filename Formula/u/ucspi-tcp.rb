@@ -4,6 +4,7 @@ class UcspiTcp < Formula
   url "https://cr.yp.to/ucspi-tcp/ucspi-tcp-0.88.tar.gz"
   sha256 "4a0615cab74886f5b4f7e8fd32933a07b955536a3476d74ea087a3ea66a23e9c"
   license :public_domain
+  compatibility_version 1
 
   livecheck do
     url "https://cr.yp.to/ucspi-tcp/install.html"

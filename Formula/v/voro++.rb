@@ -5,6 +5,7 @@ class Voroxx < Formula
   sha256 "ef7970071ee2ce3800daa8723649ca069dc4c71cc25f0f7d22552387f3ea437e"
   license "BSD-3-Clause"
   revision 2
+  compatibility_version 1
 
   livecheck do
     url "https://math.lbl.gov/voro++/download/"

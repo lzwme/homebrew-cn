@@ -4,6 +4,7 @@ class Dos2unix < Formula
   url "https://waterlander.net/dos2unix/files/dos2unix-7.5.7.tar.gz"
   sha256 "669ee27120ae71589f638fe3a167d6ea54f8633f5ab1b282551bd7a7c9510dfa"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   livecheck do
     url :homepage

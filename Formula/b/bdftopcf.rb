@@ -4,6 +4,7 @@ class Bdftopcf < Formula
   url "https://www.x.org/releases/individual/util/bdftopcf-1.1.2.tar.xz"
   sha256 "bc60be5904330faaa3ddd2aed7874bee2f29e4387c245d6787552f067eb0523a"
   license "MIT-open-group"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4b21a37a8bbe1db3535b3711e5c449c87a1a510dc0e2edd0fe1208f0113fb0ed"

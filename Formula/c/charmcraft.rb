@@ -9,11 +9,12 @@ class Charmcraft < Formula
   head "https://github.com/canonical/charmcraft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5c0c45613a72e8239c505fb611598c646cc2165644b67b6445d733d86e986f93"
-    sha256 cellar: :any, arm64_tahoe:       "de491fd2ca516198d2f05b591374fbd770fed0291efa6698196cbf88ebb5b665"
-    sha256 cellar: :any, arm64_sequoia:     "4a13fe69a3a85b6c907366c25144483e11ff1bdbbf4ed759b392b1d5bff69e34"
-    sha256 cellar: :any, arm64_linux:       "d85788284c5e74adb7bcf21a2b8eaf795764ef20993a5d9ef3562f50ed17b817"
-    sha256 cellar: :any, x86_64_linux:      "a1fdf0fe07fc4984cadb203b70c0e1b8dda62aa7a51b1a598cdba1abf313a24a"
+    rebuild 1
+    sha256 cellar: :any, arm64_golden_gate: "0157d2be99891556de5eb7f97f6e9494d13654e1f492df48f274a735b7c393d0"
+    sha256 cellar: :any, arm64_tahoe:       "4748d878cad9cd44d582544ae2094b3ab73944dee899c94b36f77a385bfdc3a4"
+    sha256 cellar: :any, arm64_sequoia:     "68181a8aa6ceb1cb4cd028075d2cae86485d35376a4a004943735e97dc4342d7"
+    sha256 cellar: :any, arm64_linux:       "837482aba89b3fec152b34c682fb658991c1af035a721c5db08cb6a6865db708"
+    sha256 cellar: :any, x86_64_linux:      "bf3abfca1edfb1466a60d1e850600548185e55185f961da4f6a9c2c9ec20fdf7"
   end
 
   depends_on "certifi" => :no_linkage
@@ -24,6 +25,7 @@ class Charmcraft < Formula
   depends_on "pygit2" => :no_linkage
   depends_on "python@3.15"
   depends_on "rpds-py" => :no_linkage
+  depends_on "zstd"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -353,8 +355,15 @@ class Charmcraft < Formula
     ENV["SODIUM_INSTALL"] = "system"
     ENV["SETUPTOOLS_SCM_PRETEND_VERSION_FOR_CHARMCRAFT"] = version
 
-    without = %w[jeepney secretstorage] unless OS.linux?
-    virtualenv_install_with_resources(without:)
+    without = %w[zstandard]
+    without += %w[jeepney secretstorage] unless OS.linux?
+    venv = virtualenv_install_with_resources(without:)
+
+    resource("zstandard").stage do
+      args = std_pip_args(prefix: false, build_isolation: true)
+      args << "--config-settings=--build-option=--system-zstd"
+      system venv.root/"bin/python", "-m", "pip", "install", *args, "."
+    end
   end
 
   test do

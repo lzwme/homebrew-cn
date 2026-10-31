@@ -4,6 +4,7 @@ class Potrace < Formula
   url "https://potrace.sourceforge.net/download/1.16/potrace-1.16.tar.gz"
   sha256 "be8248a17dedd6ccbaab2fcc45835bb0502d062e40fbded3bc56028ce5eb7acc"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url :homepage

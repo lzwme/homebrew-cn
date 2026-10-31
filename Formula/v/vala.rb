@@ -5,6 +5,7 @@ class Vala < Formula
   sha256 "5ad7cbbfcc0de61b403d6797c9ef60455bfbebd8e162aec33b5b0b097adfb9d5"
   license "LGPL-2.1-or-later"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "05f822310b3a2ff54b5b8a04516fdcdddccc6081cee03a12da66366e10210c38"

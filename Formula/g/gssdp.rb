@@ -4,6 +4,7 @@ class Gssdp < Formula
   url "https://download.gnome.org/sources/gssdp/1.6/gssdp-1.6.6.tar.xz"
   sha256 "767d2275254ce0efeaeac64419ff9f4f0ad470d134ef672f5c556b2abb786bcb"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "e193e87206ffddd6b3c50aecdb66ad41dd246d9f03ecae3f23cf6a4d025e53ff"

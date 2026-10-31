@@ -5,6 +5,7 @@ class Inetutils < Formula
   mirror "https://ftp.gnu.org/gnu/inetutils/inetutils-2.8.tar.gz"
   sha256 "57b3cf4f77555992881e5ba2a09a63b05aa2c56342a60ed4305b5f45938390b5"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "cd0918bf99f605250199ab717d2a7e0e168ad5b962a846b8db37702477baa767"

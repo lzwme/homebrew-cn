@@ -18,6 +18,8 @@ class XcodeBuildServer < Formula
 
   uses_from_macos "python"
 
+  deny_network_access!
+
   def install
     libexec.install Dir["*"]
 

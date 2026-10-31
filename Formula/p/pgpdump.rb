@@ -4,6 +4,7 @@ class Pgpdump < Formula
   url "https://ghfast.top/https://github.com/kazu-yamamoto/pgpdump/archive/refs/tags/v0.38.tar.gz"
   sha256 "6e994c2ee7479ea4f4492d5d94d7177ac493fdb1b1bcf698aa90ae26495fd95b"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/kazu-yamamoto/pgpdump.git", branch: "main"
 
   bottle do

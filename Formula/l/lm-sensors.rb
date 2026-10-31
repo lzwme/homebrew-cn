@@ -5,6 +5,7 @@ class LmSensors < Formula
   version "3.6.2"
   sha256 "c6a0587e565778a40d88891928bf8943f27d353f382d5b745a997d635978a8f0"
   license any_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  compatibility_version 1
 
   bottle do
     sha256 arm64_linux:  "05d1a0969a84d7ed3f9b95effe63bc9378452f2a1a1e367b8c8ef1efde275af9"

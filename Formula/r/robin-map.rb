@@ -4,6 +4,7 @@ class RobinMap < Formula
   url "https://ghfast.top/https://github.com/Tessil/robin-map/archive/refs/tags/v1.4.1.tar.gz"
   sha256 "0e3f53a377fdcdc5f9fed7a4c0d4f99e82bbb64175233bd13427fef9a771f4a1"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "672e92ee26dbed640ed6617e5c386f91753e9b9b7a3856fe16aa7f3798435df0"

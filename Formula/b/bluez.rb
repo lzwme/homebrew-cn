@@ -4,6 +4,7 @@ class Bluez < Formula
   url "https://mirrors.edge.kernel.org/pub/linux/bluetooth/bluez-5.87.tar.xz"
   sha256 "26bdcf2cebd7310c6f598850606b037ef0c515fe6608ebc54d22c50c4c32b35f"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://mirrors.edge.kernel.org/pub/linux/bluetooth/"

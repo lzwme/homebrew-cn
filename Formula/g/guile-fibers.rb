@@ -4,6 +4,7 @@ class GuileFibers < Formula
   url "https://codeberg.org/guile/fibers/archive/v1.4.3.tar.gz"
   sha256 "fd055e9cee7ec11f7d9a6009e5387c002e99beb9fa9d2da3eab1b4da92b5be91"
   license "LGPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     rebuild 1

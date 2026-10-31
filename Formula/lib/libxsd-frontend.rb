@@ -4,6 +4,7 @@ class LibxsdFrontend < Formula
   url "https://www.codesynthesis.com/download/xsd/4.2/libxsd-frontend-2.1.0.tar.gz"
   sha256 "98321b9c2307d7c4e1eba49da6a522ffa81bdf61f7e3605e469aa85bfcab90b1"
   license "GPL-2.0-only" # with Xerces-C++ linking exception (non-SPDX)
+  compatibility_version 1
 
   # Versions of libxsd-frontend beyond 2.0.0 (from 2014) are provided as XSD
   # dependencies, so we have to check within XSD releases.

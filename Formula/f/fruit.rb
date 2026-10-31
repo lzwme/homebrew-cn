@@ -4,6 +4,7 @@ class Fruit < Formula
   url "https://ghfast.top/https://github.com/google/fruit/archive/refs/tags/v3.7.1.tar.gz"
   sha256 "ed4c6b7ebfbf75e14a74e21eb74ce2703b8485bfc9e660b1c36fb7fe363172d0"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "9593026b0314c0dd6c495c5a97eada952995f108fc0da4bd57d578bf61050f23"

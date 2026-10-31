@@ -3,6 +3,7 @@ class Node < Formula
   homepage "https://nodejs.org/"
   license "MIT"
   revision 1
+  compatibility_version 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
   stable do

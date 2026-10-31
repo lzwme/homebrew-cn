@@ -22,6 +22,8 @@ class Yydecode < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "2bc48318a8c556b45209f4c7a8bb41c638767ba44166f219f8cc67b94b7be8a2"
   end
 
+  deny_network_access!
+
   def install
     # Redefinition of type found in 10.13 system headers
     # https://sourceforge.net/p/yydecode/bugs/5/

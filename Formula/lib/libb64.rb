@@ -5,6 +5,7 @@ class Libb64 < Formula
   sha256 "20106f0ba95cfd9c35a13c71206643e3fb3e46512df3e2efb2fdbf87116314b2"
   license "CC-PDDC"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e68f645a1a05fccb826987069257a725416e5bad80c6da9bce638aabe66f9fe2"

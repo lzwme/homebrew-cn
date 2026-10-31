@@ -4,6 +4,7 @@ class Libvisual < Formula
   url "https://ghfast.top/https://github.com/Libvisual/libvisual/releases/download/libvisual-0.4.2/libvisual-0.4.2.tar.gz"
   sha256 "63085fd9835c42c9399ea6bb13a7ebd4b1547ace75c4595ce8e9759512bd998a"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "26858babd5168242ae65b81a2770125a0378b6d15db0790503b0ccc382eede92"

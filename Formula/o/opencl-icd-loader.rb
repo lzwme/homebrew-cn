@@ -4,6 +4,7 @@ class OpenclIcdLoader < Formula
   url "https://ghfast.top/https://github.com/KhronosGroup/OpenCL-ICD-Loader/archive/refs/tags/v2026.05.29.tar.gz"
   sha256 "48fd0c5181db7cd046f4f731d5955694892e10998d49d09ee0d997e7e04fd939"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/KhronosGroup/OpenCL-ICD-Loader.git", branch: "main"
 
   bottle do

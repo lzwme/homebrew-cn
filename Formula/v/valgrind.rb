@@ -4,6 +4,7 @@ class Valgrind < Formula
   url "https://sourceware.org/pub/valgrind/valgrind-3.28.0.tar.bz2"
   sha256 "9f7a18d128f05d3a80fea53e6953f34aad7200a425ceaee46099a8a798a7dd9c"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://sourceware.org/pub/valgrind/"

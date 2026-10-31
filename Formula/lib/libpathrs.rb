@@ -4,6 +4,7 @@ class Libpathrs < Formula
   url "https://ghfast.top/https://github.com/cyphar/libpathrs/archive/refs/tags/v0.2.6.tar.gz"
   sha256 "ae274cd296b863d538e28ee42e612f40723f9f0b2601a41c5b796ac074e5eb9c"
   license any_of: ["MPL-2.0", "LGPL-3.0-or-later"]
+  compatibility_version 1
   head "https://github.com/cyphar/libpathrs.git", branch: "main"
 
   bottle do

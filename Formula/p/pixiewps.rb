@@ -4,6 +4,7 @@ class Pixiewps < Formula
   url "https://ghfast.top/https://github.com/wiire-a/pixiewps/releases/download/v1.4.2/pixiewps-1.4.2.tar.xz"
   sha256 "c4dc0569e476ebdbd85992da2d1ff799db97ed0040da9dc44e13d08a97a9de1e"
   license "GPL-3.0-or-later"
+  compatibility_version 1
   head "https://github.com/wiire-a/pixiewps.git", branch: "master"
 
   bottle do

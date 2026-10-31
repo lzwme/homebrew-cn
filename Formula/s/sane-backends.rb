@@ -5,6 +5,7 @@ class SaneBackends < Formula
   sha256 "f99205c903dfe2fb8990f0c531232c9a00ec9c2c66ac7cb0ce50b4af9f407a72"
   license "GPL-2.0-or-later"
   revision 2
+  compatibility_version 1
 
   livecheck do
     url :head

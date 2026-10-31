@@ -5,6 +5,7 @@ class Libmypaint < Formula
   sha256 "741754f293f6b7668f941506da07cd7725629a793108bb31633fb6c3eae5315f"
   license "ISC"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "0b2b141085b4c1afe3861742449b13cc86f85a7daae91babf6e844e071413266"

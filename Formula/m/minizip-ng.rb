@@ -4,6 +4,7 @@ class MinizipNg < Formula
   url "https://ghfast.top/https://github.com/zlib-ng/minizip-ng/archive/refs/tags/4.2.2.tar.gz"
   sha256 "71af7b9799856d8b03619df3949e9c1be9703f8de0795af71399ba283cb27aac"
   license "Zlib"
+  compatibility_version 1
   head "https://github.com/zlib-ng/minizip-ng.git", branch: "develop"
 
   bottle do

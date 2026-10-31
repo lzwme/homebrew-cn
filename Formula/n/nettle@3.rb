@@ -5,6 +5,7 @@ class NettleAT3 < Formula
   mirror "https://ftp.gnu.org/gnu/nettle/nettle-3.10.2.tar.gz"
   sha256 "fe9ff51cb1f2abb5e65a6b8c10a92da0ab5ab6eaf26e7fc2b675c45f1fb519b5"
   license any_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
+  compatibility_version 1
 
   livecheck do
     url :stable

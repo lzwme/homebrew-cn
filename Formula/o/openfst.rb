@@ -4,6 +4,7 @@ class Openfst < Formula
   url "https://openfst.org/twiki/pub/FST/FstDownload/openfst-1.8.4.tar.gz"
   sha256 "a8ebbb6f3d92d07e671500587472518cfc87cb79b9a654a5a8abb2d0eb298016"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url "https://www.openfst.org/twiki/bin/view/FST/FstDownload"

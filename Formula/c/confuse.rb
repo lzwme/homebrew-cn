@@ -4,6 +4,7 @@ class Confuse < Formula
   url "https://ghfast.top/https://github.com/libconfuse/libconfuse/releases/download/v3.4/confuse-3.4.tar.xz"
   sha256 "36bfa3928f9c323914c7c8317e8722cb22f41db69d7c9d4c24b4689fa955445d"
   license "ISC"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "17c2bb81226f8236bc3000edcd76f48e430c7a44536b69badaf6f547b1ea0e47"

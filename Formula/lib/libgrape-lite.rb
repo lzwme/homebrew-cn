@@ -5,6 +5,7 @@ class LibgrapeLite < Formula
   sha256 "77b7f08ad10b26ec7e6f60bf90ab8281208758702a9e8d9dd00b1cd6f5560f39"
   license "Apache-2.0"
   revision 2
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "13b8b639b989ae3806b550d9646ead847a7b0ba79fcd07fe45f991d473f13b38"

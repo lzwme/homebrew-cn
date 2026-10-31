@@ -4,6 +4,7 @@ class Moarvm < Formula
   url "https://ghfast.top/https://github.com/MoarVM/MoarVM/releases/download/2026.09/MoarVM-2026.09.tar.gz"
   sha256 "6572adbef9eba7905323318a4d99f450fe365032da71b268c2c16234b8cdb42e"
   license "Artistic-2.0"
+  compatibility_version 1
 
   livecheck do
     url :stable

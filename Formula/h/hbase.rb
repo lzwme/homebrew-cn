@@ -5,6 +5,7 @@ class Hbase < Formula
   mirror "https://archive.apache.org/dist/hbase/3.0.0/hbase-3.0.0-bin.tar.gz"
   sha256 "09ec88a00f238f0ec608fa58b737ceefad60bb7339bd557ea32ea4a7a0a79655"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c6d118044288e0fa75281ec90e5ed5f17e36d1836314f67a1bb339afceb5a63c"

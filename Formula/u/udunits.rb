@@ -4,6 +4,7 @@ class Udunits < Formula
   url "https://downloads.unidata.ucar.edu/udunits/2.2.28/udunits-2.2.28.tar.gz"
   sha256 "590baec83161a3fd62c00efa66f6113cec8a7c461e3f61a5182167e0cc5d579e"
   license "UCAR"
+  compatibility_version 1
 
   livecheck do
     url "https://downloads.unidata.ucar.edu/udunits/release_info.json"

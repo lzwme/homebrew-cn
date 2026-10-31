@@ -4,6 +4,7 @@ class AklompBase64 < Formula
   url "https://ghfast.top/https://github.com/aklomp/base64/archive/refs/tags/v0.5.2.tar.gz"
   sha256 "723a0f9f4cf44cf79e97bcc315ec8f85e52eb104c8882942c3f2fba95acc080d"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "4e76cece69dae4cfec36993cb86fa36c0077204d9c3557452869683aa89e3ed2"

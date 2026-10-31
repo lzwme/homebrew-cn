@@ -4,6 +4,7 @@ class Aribb24 < Formula
   url "https://code.videolan.org/jeeb/aribb24/-/archive/v1.0.4/aribb24-v1.0.4.tar.bz2"
   sha256 "88b58dd760609372701087e25557ada9f7c6d973306c017067c5dcaf9e2c9710"
   license "LGPL-3.0-only"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "ad2ca862e3088967bac500d2d42048b1b13803bf32ddae3cc42e9b48a50ac83f"

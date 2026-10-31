@@ -5,6 +5,7 @@ class Tinysvm < Formula
   mirror "http://chasen.org/~taku/software/TinySVM/src/TinySVM-0.09.tar.gz"
   sha256 "e377f7ede3e022247da31774a4f75f3595ce768bc1afe3de9fc8e962242c7ab8"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   livecheck do
     url :homepage

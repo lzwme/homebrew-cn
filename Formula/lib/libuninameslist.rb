@@ -4,6 +4,7 @@ class Libuninameslist < Formula
   url "https://ghfast.top/https://github.com/fontforge/libuninameslist/releases/download/20260918/libuninameslist-dist-20260918.tar.gz"
   sha256 "deb2ec02640c232a4bc333c2cd301ee6b286914eeeb0ccc31ccafe326aed0029"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url :stable

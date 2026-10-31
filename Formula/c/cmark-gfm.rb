@@ -5,6 +5,7 @@ class CmarkGfm < Formula
   version "0.29.0.gfm.13"
   sha256 "5abc61798ebd9de5660bc076443c07abad2b8d15dbc11094a3a79644b8ad243a"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   no_autobump! because: :incompatible_version_format
 

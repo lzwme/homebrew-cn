@@ -4,6 +4,7 @@ class Bazel < Formula
   url "https://ghfast.top/https://github.com/bazelbuild/bazel/releases/download/9.3.1/bazel-9.3.1-dist.zip"
   sha256 "6169ed42d506f3466fac899cc0a1ffa05718dece512cde9c2cd5eebf4e9ff4c3"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url :stable

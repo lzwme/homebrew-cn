@@ -4,6 +4,7 @@ class Cracklib < Formula
   url "https://ghfast.top/https://github.com/cracklib/cracklib/releases/download/v2.10.4/cracklib-2.10.4.tar.bz2"
   sha256 "4f2d151a2930ab2644def5f9e0e4dad7446ccbd3f2dd41960e91398d93c3129e"
   license "LGPL-2.1-only"
+  compatibility_version 1
 
   livecheck do
     url :stable

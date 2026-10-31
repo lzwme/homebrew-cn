@@ -4,6 +4,7 @@ class Zydis < Formula
   url "https://ghfast.top/https://github.com/zyantific/zydis/archive/refs/tags/v4.1.1.tar.gz"
   sha256 "45c6d4d499a1cc80780f7834747c637509777c01dca1e98c5e7c0bfaccdb1514"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/zyantific/zydis.git", branch: "master"
 
   bottle do

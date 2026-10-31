@@ -5,6 +5,7 @@ class Wabt < Formula
   sha256 "a76cda3c174a43097863a07fc0b0c202f770f53e21806ea2636f167d1ffb1e30"
   license "Apache-2.0"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url :stable

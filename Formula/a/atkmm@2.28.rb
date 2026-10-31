@@ -4,6 +4,7 @@ class AtkmmAT228 < Formula
   url "https://download.gnome.org/sources/atkmm/2.28/atkmm-2.28.5.tar.xz"
   sha256 "ae449192a582a2582a95e0602b15d792bbd639e836339b81ef916aa87540ac5c"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   livecheck do
     url :stable

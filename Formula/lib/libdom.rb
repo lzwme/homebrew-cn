@@ -4,6 +4,7 @@ class Libdom < Formula
   url "https://download.netsurf-browser.org/libs/releases/libdom-0.4.2-src.tar.gz"
   sha256 "d05e45af16547014c2b0a3aecf3670fa13d419f505b3f5fc7ac8a1491fc30f3c"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url "https://download.netsurf-browser.org/libs/releases/"

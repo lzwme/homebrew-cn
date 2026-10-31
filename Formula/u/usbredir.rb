@@ -4,6 +4,7 @@ class Usbredir < Formula
   url "https://www.spice-space.org/download/usbredir/usbredir-0.15.0.tar.xz"
   sha256 "6dc2a380277688a068191245dac2ab7063a552999d8ac3ad8e841c10ff050961"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later"]
+  compatibility_version 1
 
   livecheck do
     url "https://www.spice-space.org/download/usbredir/"

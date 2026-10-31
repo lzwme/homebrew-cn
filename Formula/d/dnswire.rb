@@ -4,6 +4,7 @@ class Dnswire < Formula
   url "https://www.dns-oarc.net/files/dnswire/dnswire-0.5.1.tar.gz"
   sha256 "b0b52b95e20eda768256794097080b5f5725d9fe841ef03568c51987b02673b4"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "af08e098cecfb092e02ee3691645f92ec7722c36d212cce26247694e26b2a118"

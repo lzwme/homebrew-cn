@@ -4,6 +4,7 @@ class Libfixbuf < Formula
   url "https://tools.netsa.cert.org/releases/libfixbuf-2.5.4.tar.gz"
   sha256 "106b8e1e560928a4dc91d8264326bd2463767570d77417535964f450de1f972e"
   license "LGPL-3.0-only"
+  compatibility_version 1
 
   # NOTE: This should be updated to check the main `/fixbuf/download.html`
   # page when it links to a stable version again in the future.

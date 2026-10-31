@@ -4,6 +4,7 @@ class Pocl < Formula
   url "https://ghfast.top/https://github.com/pocl/pocl/archive/refs/tags/v7.2.tar.gz"
   sha256 "7ddc01a7afcd49d4ec7fa9bf94df20852db44fcda629a9763086a8c541e5da1e"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/pocl/pocl.git", branch: "main"
 
   livecheck do

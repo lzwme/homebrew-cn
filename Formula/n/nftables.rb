@@ -6,6 +6,7 @@ class Nftables < Formula
   url "https://www.netfilter.org/pub/nftables/nftables-1.1.7.tar.xz"
   sha256 "a6fbf060d8d4fff001517a2b94f356bb4366bfbf0ba366366f9d27cc38caa58f"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://www.netfilter.org/projects/nftables/downloads.html"

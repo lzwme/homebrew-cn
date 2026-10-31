@@ -4,6 +4,7 @@ class Msdfgen < Formula
   url "https://ghfast.top/https://github.com/Chlumsky/msdfgen/archive/refs/tags/v1.13.tar.gz"
   sha256 "93cd1ad8918c1a78c5c96e82d4f4c77f0eb86c2e7e8579a0967e54196c4b7167"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/Chlumsky/msdfgen.git", branch: "master"
 
   livecheck do

@@ -2,6 +2,7 @@ class Coin3d < Formula
   desc "Open Inventor 2.1 API implementation (Coin)"
   homepage "https://coin3d.github.io/"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   stable do
     url "https://ghfast.top/https://github.com/coin3d/coin/releases/download/v4.0.10/coin-4.0.10-src.tar.gz"

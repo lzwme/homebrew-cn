@@ -4,6 +4,7 @@ class Libnftnl < Formula
   url "https://www.netfilter.org/pub/libnftnl/libnftnl-1.3.2.tar.xz"
   sha256 "c97abc3409f8fa396b4462b2bb7f147a3a47a4ddc97cfa0b2f18890c9cfde8b0"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://www.netfilter.org/projects/libnftnl/downloads.html"

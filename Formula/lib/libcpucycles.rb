@@ -4,6 +4,7 @@ class Libcpucycles < Formula
   url "https://cpucycles.cr.yp.to/libcpucycles-20260901.tar.gz"
   sha256 "c914c7275952ed00bb188e1170409c83b61abfd0b828cdb2b5a87275be43344e"
   license any_of: [:public_domain, "CC0-1.0", "0BSD", "MIT-0", "MIT"]
+  compatibility_version 1
 
   livecheck do
     url "https://cpucycles.cr.yp.to/libcpucycles-latest-version.txt"

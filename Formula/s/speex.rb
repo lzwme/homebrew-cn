@@ -5,6 +5,7 @@ class Speex < Formula
   mirror "https://mirror.csclub.uwaterloo.ca/xiph/releases/speex/speex-1.2.1.tar.gz"
   sha256 "4b44d4f2b38a370a2d98a78329fefc56a0cf93d1c1be70029217baae6628feea"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url "https://ftp.osuosl.org/pub/xiph/releases/speex/?C=M&O=D"

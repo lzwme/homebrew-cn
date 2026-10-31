@@ -5,6 +5,7 @@ class PrometheusCpp < Formula
   sha256 "62bc2cc9772db2314dbaae506ae2a75c8ee897dab053d8729e86a637b018fdb6"
   license "MIT"
   revision 1
+  compatibility_version 1
   head "https://github.com/jupp0r/prometheus-cpp.git", branch: "master"
 
   bottle do

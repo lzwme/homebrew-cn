@@ -5,6 +5,7 @@ class Kapacitor < Formula
       tag:      "v1.8.8",
       revision: "5795d00a62fa02bec66c4ae0ed0c572cb7d2fa69"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/influxdata/kapacitor.git", branch: "master"
 
   livecheck do

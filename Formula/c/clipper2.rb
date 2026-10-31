@@ -4,6 +4,7 @@ class Clipper2 < Formula
   url "https://ghfast.top/https://github.com/AngusJohnson/Clipper2/releases/download/Clipper2_2.0.1/Clipper2_2.0.1.zip"
   sha256 "63e893fc40c3453c9d14cbe98bc7647f16a9d5846ae25b513d8a1ed5b8421144"
   license "BSL-1.0"
+  compatibility_version 1
 
   livecheck do
     url :stable

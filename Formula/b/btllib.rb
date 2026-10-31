@@ -4,6 +4,7 @@ class Btllib < Formula
   url "https://ghfast.top/https://github.com/BirolLab/btllib/releases/download/v1.8.0/btllib-1.8.0.tar.gz"
   sha256 "c78449648f9a512ceb2bc4e95ee349bad4edd864197a63fd6d399e759018eb91"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "c0362c25bef5d56648e63f8bf50456eeb46e3420a8edd4507e0e14f909f39ea0"

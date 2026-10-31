@@ -5,6 +5,7 @@ class Nanobind < Formula
   sha256 "39659890a112e84e7263e4a263c71dd2621f866f7a4386ce95ef410e6c0e5c2f"
   license "BSD-3-Clause"
   revision 1
+  compatibility_version 1
   head "https://github.com/wjakob/nanobind.git", branch: "master"
 
   bottle do

@@ -4,6 +4,7 @@ class Hpack < Formula
   url "https://hackage.haskell.org/package/hpack-0.39.6/hpack-0.39.6.tar.gz"
   sha256 "267459c3961bf66428a1570a71b3aac577c11a07b775b91872282634418ea936"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/sol/hpack.git", branch: "main"
 
   bottle do

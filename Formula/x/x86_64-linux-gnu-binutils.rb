@@ -48,6 +48,8 @@ class X8664LinuxGnuBinutils < Formula
     sha256 "1be60e7c456abc590a613c64fab4eac7632c81ec6f22734a61b53669a4407346"
   end
 
+  deny_network_access!
+
   def install
     ENV.cxx11
 

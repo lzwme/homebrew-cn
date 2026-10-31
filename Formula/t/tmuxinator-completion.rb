@@ -4,6 +4,7 @@ class TmuxinatorCompletion < Formula
   url "https://ghfast.top/https://github.com/tmuxinator/tmuxinator/archive/refs/tags/v3.4.2.tar.gz"
   sha256 "5abf32ddd6cb22fac7991310024bc14d95820e09cb7d86c6b633210afd549f67"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/tmuxinator/tmuxinator.git", branch: "master"
 
   livecheck do

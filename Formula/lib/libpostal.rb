@@ -4,6 +4,7 @@ class Libpostal < Formula
   url "https://ghfast.top/https://github.com/openvenues/libpostal/archive/refs/tags/v1.1.4.tar.gz"
   sha256 "41ad2cd20261e6498f1843c8d21cd737470d17e975deb6ea2a5d1517880729d3"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/openvenues/libpostal.git", branch: "master"
 
   bottle do

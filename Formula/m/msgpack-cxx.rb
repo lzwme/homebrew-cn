@@ -4,6 +4,7 @@ class MsgpackCxx < Formula
   url "https://ghfast.top/https://github.com/msgpack/msgpack-c/releases/download/cpp-9.0.0/msgpack-cxx-9.0.0.tar.gz"
   sha256 "303d3a7321aee65eb9450db8a6c973954e00af34b88ba0c0aca236bc50bfb8a9"
   license "BSL-1.0"
+  compatibility_version 1
   head "https://github.com/msgpack/msgpack-c.git", branch: "cpp_master"
 
   livecheck do

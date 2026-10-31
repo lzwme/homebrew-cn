@@ -4,6 +4,7 @@ class LibtorrentRakshasa < Formula
   url "https://ghfast.top/https://github.com/rakshasa/libtorrent/archive/refs/tags/v0.16.27.tar.gz"
   sha256 "dfef062965b1675e3c21663898eefa31ef18a8bf80c0ab872735c0bf89c4035c"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url :stable

@@ -4,6 +4,7 @@ class NetsurfBuildsystem < Formula
   url "https://download.netsurf-browser.org/libs/releases/buildsystem-1.10.tar.gz"
   sha256 "3d3e39d569e44677c4b179129bde614c65798e2b3e6253160239d1fd6eae4d79"
   license "MIT"
+  compatibility_version 1
   head "git://git.netsurf-browser.org/buildsystem.git", branch: "master"
 
   livecheck do

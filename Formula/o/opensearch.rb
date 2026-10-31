@@ -5,6 +5,7 @@ class Opensearch < Formula
       tag:      "3.9.0",
       revision: "4ee42a94e87f66fbf1e62a9871b1b87f91e02472"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "66dc8dfda2d0fc66a9f19a2e60c419a22d3043bc6ad54fdc8654596c86b47320"

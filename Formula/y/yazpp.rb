@@ -4,6 +4,7 @@ class Yazpp < Formula
   url "https://ftp.indexdata.com/pub/yazpp/yazpp-1.9.2.tar.gz"
   sha256 "92516d1d889dd6ff617d92b3af0ba28861dbd1fc436cfcadd0fde65ca9f34fe9"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url "https://ftp.indexdata.com/pub/yazpp/"

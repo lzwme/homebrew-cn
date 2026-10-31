@@ -4,6 +4,7 @@ class GoogleBenchmark < Formula
   url "https://ghfast.top/https://github.com/google/benchmark/archive/refs/tags/v1.10.0.tar.gz"
   sha256 "acc5c7c0fbed855c4aaa2d7c3c36fb82b0c15c28f4e151e3f679c2fc0aa404af"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/google/benchmark.git", branch: "main"
 
   bottle do

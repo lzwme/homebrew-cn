@@ -4,6 +4,7 @@ class XcbUtilRenderutil < Formula
   url "https://xcb.freedesktop.org/dist/xcb-util-renderutil-0.3.10.tar.gz"
   sha256 "e04143c48e1644c5e074243fa293d88f99005b3c50d1d54358954404e635128a"
   license all_of: ["X11", "HPND-sell-variant"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "89571b763ee6813facf410da086602ce3b50272c311ac12ae2bb28da9d03002c"
@@ -31,6 +32,8 @@ class XcbUtilRenderutil < Formula
 
   depends_on "pkgconf" => [:build, :test]
   depends_on "libxcb"
+
+  deny_network_access!
 
   def install
     system "./autogen.sh" if build.head?

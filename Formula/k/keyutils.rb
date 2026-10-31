@@ -4,6 +4,7 @@ class Keyutils < Formula
   url "https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/keyutils.git/snapshot/keyutils-1.6.3.tar.gz"
   sha256 "a61d5706136ae4c05bd48f86186bcfdbd88dd8bd5107e3e195c924cfc1b39bb4"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_linux:  "569fc190618bdad81896e66145fe832b1d858644d19c87a59ce417158e0cea7e"

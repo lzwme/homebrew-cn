@@ -12,6 +12,7 @@ class Qttools < Formula
     "BSL-1.0", # bundled catch2
   ]
   revision 1
+  compatibility_version 1
   head "https://code.qt.io/qt/qttools.git", branch: "dev"
 
   livecheck do

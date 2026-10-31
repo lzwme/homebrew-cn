@@ -5,6 +5,7 @@ class Wandio < Formula
   version "4.2.7"
   sha256 "45021795b5c4d1609ba509358e730ea605c4c9621704d75214abb003f37602ab"
   license "LGPL-3.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url :stable

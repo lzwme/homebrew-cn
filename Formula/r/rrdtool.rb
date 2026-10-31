@@ -4,6 +4,7 @@ class Rrdtool < Formula
   url "https://ghfast.top/https://github.com/oetiker/rrdtool-1.x/releases/download/v1.11.0/rrdtool-1.11.0.tar.gz"
   sha256 "24c345b5c077c1b2b2fcbc1a364f1da051650fb6743ad5213096adc04c862ed4"
   license "GPL-2.0-or-later" => { with: "RRDtool-FLOSS-exception-2.0" }
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "f1532fe1f8760d04a510c1c692dbca24ab0eb216ac84f425052b1e24d73e4fae"

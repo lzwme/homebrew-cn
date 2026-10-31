@@ -4,6 +4,7 @@ class Reproc < Formula
   url "https://ghfast.top/https://github.com/daandemeyer/reproc/archive/refs/tags/14.2.8.tar.gz"
   sha256 "27c3b452bfc419a2deda23969aa10c77909c4ff9e71c549eb65d09ae6aa7aa32"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/DaanDeMeyer/reproc.git", branch: "main"
 
   bottle do

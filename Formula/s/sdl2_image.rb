@@ -5,6 +5,7 @@ class Sdl2Image < Formula
   sha256 "393f5efb50536ec13ca4f4affb69cc9966d3c3f969e6c5e701faddf9f9785381"
   license "Zlib"
   revision 1
+  compatibility_version 1
   head "https://github.com/libsdl-org/SDL_image.git", branch: "main"
 
   livecheck do

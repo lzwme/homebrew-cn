@@ -5,6 +5,7 @@ class Libmusicbrainz < Formula
   sha256 "6749259e89bbb273f3f5ad7acdffb7c47a2cf8fcaeab4c4695484cef5f4c6b46"
   license "LGPL-2.1-or-later"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "ba24b8ffc3a73978d7fbb23d92fb05538bed4bcdbfb9e8917c176c92b7ed5896"

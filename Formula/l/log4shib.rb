@@ -4,6 +4,7 @@ class Log4shib < Formula
   url "https://shibboleth.net/downloads/log4shib/2.0.1/log4shib-2.0.1.tar.gz"
   sha256 "aad37f3929bd3d4c16f09831ff109c20ae8c7cb8b577917e3becb12f873f26df"
   license "LGPL-2.1-only"
+  compatibility_version 1
 
   livecheck do
     url "https://shibboleth.net/downloads/log4shib/latest/"

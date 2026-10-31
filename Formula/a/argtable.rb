@@ -5,6 +5,7 @@ class Argtable < Formula
   version "2.13"
   sha256 "8f77e8a7ced5301af6e22f47302fdbc3b1ff41f2b83c43c77ae5ca041771ddbf"
   license "LGPL-2.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "774aacc8867c72e7bcadd132ca14ba9b108ce20e91f5949a8f0f748b9431f312"

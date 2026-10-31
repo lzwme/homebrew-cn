@@ -4,6 +4,7 @@ class GhcAT912 < Formula
   url "https://downloads.haskell.org/~ghc/9.12.4/ghc-9.12.4-src.tar.xz"
   sha256 "02d1ee5080acf00e135b93b238f09015b06ff27254cde59669cf57c42c2bee43"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url "https://www.haskell.org/ghc/"

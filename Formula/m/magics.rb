@@ -4,6 +4,7 @@ class Magics < Formula
   url "https://confluence.ecmwf.int/download/attachments/3473464/Magics-4.17.1-Source.tar.gz"
   sha256 "a0119c54c812b34a7b190ebf39c546bf523ede6c985e85ff3d41074b11f35598"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url "https://confluence.ecmwf.int/display/MAGP/Releases"

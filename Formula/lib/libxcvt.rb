@@ -4,6 +4,7 @@ class Libxcvt < Formula
   url "https://www.x.org/releases/individual/lib/libxcvt-0.1.3.tar.xz"
   sha256 "a929998a8767de7dfa36d6da4751cdbeef34ed630714f2f4a767b351f2442e01"
   license "MIT"
+  compatibility_version 1
   head "https://gitlab.freedesktop.org/xorg/lib/libxcvt.git", branch: "master"
 
   bottle do

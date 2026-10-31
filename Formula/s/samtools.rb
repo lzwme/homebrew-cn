@@ -4,6 +4,7 @@ class Samtools < Formula
   url "https://ghfast.top/https://github.com/samtools/samtools/releases/download/1.25/samtools-1.25.tar.bz2"
   sha256 "8bbd2b3cb447953149a74ab0b00e3ec4e88a789a27b8373a31fa6b5b2dee02b1"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "c7d4f2a00b5e769a8674b5a515665786af7d5551352b51092c0b78c67f5c9b0f"

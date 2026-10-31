@@ -4,6 +4,7 @@ class Binaryen < Formula
   url "https://ghfast.top/https://github.com/WebAssembly/binaryen/archive/refs/tags/version_133.tar.gz"
   sha256 "2f3e3d9edc56751499571da073a8a81943ca3fcbc08a945d2c619a7a1d4eb88b"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/WebAssembly/binaryen.git", branch: "main"
 
   livecheck do

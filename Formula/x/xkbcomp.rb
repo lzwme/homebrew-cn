@@ -4,6 +4,7 @@ class Xkbcomp < Formula
   url "https://www.x.org/releases/individual/app/xkbcomp-1.5.0.tar.xz"
   sha256 "2ac31f26600776db6d9cd79b3fcd272263faebac7eb85fb2f33c7141b8486060"
   license all_of: ["HPND", "MIT-open-group"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "277acaf03dcf8c82d8a2ffe3f0bff893c18d5c0e35ec4bfc99ff27c82596e740"

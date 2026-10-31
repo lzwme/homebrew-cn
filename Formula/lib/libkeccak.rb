@@ -4,6 +4,7 @@ class Libkeccak < Formula
   url "https://codeberg.org/maandree/libkeccak/archive/1.4.3.tar.gz"
   sha256 "e395732342c9a6cbc22d709434a9d7b40f7b958952e9061ec09ec6d80d7ce83f"
   license "ISC"
+  compatibility_version 1
 
   bottle do
     rebuild 1

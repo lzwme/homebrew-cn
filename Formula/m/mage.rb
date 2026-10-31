@@ -5,6 +5,7 @@ class Mage < Formula
       tag:      "v1.17.2",
       revision: "0953947c1673fd745a51c032aadeb3c63f9f3368"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/magefile/mage.git", branch: "master"
 
   bottle do

@@ -7,6 +7,7 @@ class Libelf < Formula
   sha256 "591a9b4ec81c1f2042a97aa60564e0cb79d041c52faa7416acb38bc95bd2c76d"
   license "LGPL-2.0-or-later"
   revision 1
+  compatibility_version 1
 
   livecheck do
     skip "No longer developed or maintained"

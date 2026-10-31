@@ -4,6 +4,7 @@ class Pugixml < Formula
   url "https://ghfast.top/https://github.com/zeux/pugixml/releases/download/v1.16/pugixml-1.16.tar.gz"
   sha256 "4cee1ca4aad395170f4c7a07824f3bdd41f28316c6e1e1090a1425b278ec0b4b"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable

@@ -4,6 +4,7 @@ class GoMd2man < Formula
   url "https://ghfast.top/https://github.com/cpuguy83/go-md2man/archive/refs/tags/v2.0.7.tar.gz"
   sha256 "ca3a5b57e2c01759f5a00ad2a578d034c5370fae9aa7a6c3af5648b2fc802a92"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/cpuguy83/go-md2man.git", branch: "master"
 
   bottle do

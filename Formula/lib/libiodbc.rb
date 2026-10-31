@@ -4,6 +4,7 @@ class Libiodbc < Formula
   url "https://ghfast.top/https://github.com/openlink/iODBC/releases/download/v3.52.16/libiodbc-3.52.16.tar.gz"
   sha256 "3898b32d07961360f6f2cf36db36036b719a230e476469258a80f32243e845fa"
   license any_of: ["BSD-3-Clause", "LGPL-2.0-only"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "22806091cd48ae928f7285e5087f0a4e98ec47105ea0ab43abb11d457c9b8666"

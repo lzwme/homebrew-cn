@@ -5,6 +5,7 @@ class LibgeditTepl < Formula
   sha256 "23126d33b0016e5823351c4845cfdc074f7c232a85288a73d00468d003bebbe1"
   license "LGPL-2.1-or-later"
   revision 1
+  compatibility_version 1
   head "https://gitlab.gnome.org/World/gedit/libgedit-tepl.git", branch: "main"
 
   bottle do

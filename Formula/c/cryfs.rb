@@ -3,37 +3,68 @@ class Cryfs < Formula
 
   desc "Encrypts your files so you can safely store them in Dropbox, iCloud, etc."
   homepage "https://www.cryfs.org"
-  url "https://ghfast.top/https://github.com/cryfs/cryfs/releases/download/1.0.3/cryfs-1.0.3.tar.gz"
-  sha256 "5550f612f7b692e60c0c10a0331dcefbcc9616ad1411a016de7e4503ad866696"
   license "LGPL-3.0-or-later"
   revision 2
-  head "https://github.com/cryfs/cryfs.git", branch: "main"
+
+  stable do
+    url "https://ghfast.top/https://github.com/cryfs/cryfs/releases/download/1.0.3/cryfs-1.0.3.tar.gz"
+    sha256 "5550f612f7b692e60c0c10a0331dcefbcc9616ad1411a016de7e4503ad866696"
+
+    depends_on "cmake" => :build
+    depends_on "curl" => :build
+    depends_on "python@3.15" => :build
+    depends_on "range-v3" => :build
+    depends_on "boost"
+    depends_on "fmt"
+    depends_on "libfuse@2" # FUSE 3 issue: https://github.com/cryfs/cryfs/issues/419
+    depends_on "spdlog"
+  end
+
+  # TODO: remove on 1.1.0 along with deprecation
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
 
   bottle do
     sha256 cellar: :any, arm64_linux:  "f37d5f9737038bc459af168ff87848d3c6385189cb4939c19b6b4136db4e547b"
     sha256 cellar: :any, x86_64_linux: "f1527479be0986f7cea6a71eb7e95522a9eb133a8dc7e2b697f7d689deb7fcf0"
   end
 
+  head do
+    url "https://github.com/cryfs/cryfs.git", branch: "main"
+
+    depends_on "rust" => :build
+    depends_on "libfuse" => :no_linkage
+    depends_on "libsodium"
+    depends_on "openssl@4"
+  end
+
   # Can be undeprecated if v2 is released or FUSE 3 support is added to v1
   deprecate! date: "2026-06-21", because: "needs unmaintained `libfuse@2`"
   disable! date: "2027-06-21", because: "needs unmaintained `libfuse@2`"
 
-  depends_on "cmake" => :build
-  depends_on "curl" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.14" => :build
-  depends_on "range-v3" => :build
-  depends_on "boost"
-  depends_on "fmt"
-  depends_on "libfuse@2" # FUSE 3 issue: https://github.com/cryfs/cryfs/issues/419
   depends_on :linux # on macOS, requires closed-source macFUSE
-  depends_on "spdlog"
+
+  deny_network_access!
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args if build.head?
+  end
 
   def install
-    ENV.runtime_cpu_detection # for bundled cryptopp
-    system "cmake", "-B", "build", "-S", ".", "-DCRYFS_UPDATE_CHECKS=OFF", *std_cmake_args
-    system "cmake", "--build", "build"
-    system "cmake", "--install", "build"
+    if build.head?
+      ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
+      ENV["SODIUM_USE_PKG_CONFIG"] = "1"
+
+      system "cargo", "install", "--no-default-features", *std_cargo_args(path: "crates/cryfs-cli")
+    else
+      ENV.runtime_cpu_detection # for bundled cryptopp
+      system "cmake", "-B", "build", "-S", ".", "-DCRYFS_UPDATE_CHECKS=OFF", *std_cmake_args
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+    end
   end
 
   test do

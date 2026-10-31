@@ -4,6 +4,7 @@ class Libslax < Formula
   url "https://ghfast.top/https://github.com/Juniper/libslax/releases/download/3.1.6/libslax-3.1.6.tar.gz"
   sha256 "e876068b343c54c40872fdb3c06749dd9cc4826f43fe4bd8247743070d51d9fb"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url :stable

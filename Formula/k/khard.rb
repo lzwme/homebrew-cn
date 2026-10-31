@@ -6,6 +6,7 @@ class Khard < Formula
   url "https://files.pythonhosted.org/packages/b8/80/56b6698504dd5ed2e1f354af6e823845da62254150198071958b900eada8/khard-0.22.0.tar.gz"
   sha256 "99f8ce6ab338eafb4840d82881a155b3f13031505123efc92ea42e88e900c6dd"
   license "GPL-3.0-only"
+  compatibility_version 1
 
   bottle do
     rebuild 1

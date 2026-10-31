@@ -4,6 +4,7 @@ class Libestr < Formula
   url "https://libestr.adiscon.com/files/download/libestr-0.1.11.tar.gz"
   sha256 "46632b2785ff4a231dcf241eeb0dcb5fc0c7d4da8ee49cf5687722cdbe8b2024"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://libestr.adiscon.com/download/"

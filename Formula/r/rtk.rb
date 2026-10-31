@@ -4,6 +4,7 @@ class Rtk < Formula
   url "https://ghfast.top/https://github.com/rtk-ai/rtk/archive/refs/tags/v1.1.0.tar.gz"
   sha256 "6b34417b584fc8397438a6bd05ac8608e2c0da072c45daab20f3c59f0701a1f7"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/rtk-ai/rtk.git", branch: "develop"
 
   bottle do

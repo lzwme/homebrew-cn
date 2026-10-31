@@ -8,6 +8,7 @@ class Afflib < Formula
     :public_domain, # contributions after 2.0a14
   ]
   revision 2
+  compatibility_version 1
 
   bottle do
     rebuild 1

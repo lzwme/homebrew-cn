@@ -4,6 +4,7 @@ class Libpanel < Formula
   url "https://download.gnome.org/sources/libpanel/1.10/libpanel-1.10.4.tar.xz"
   sha256 "593888a7691f0af8aaa6e193c9e14afa86a810c0c2f27515c6d813f18733b1cd"
   license "LGPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "699059b3b574a1913299b519504ed61b2b4c76468dc43665802fbc13585b3c3e"

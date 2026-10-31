@@ -4,6 +4,7 @@ class S6 < Formula
   url "https://skarnet.org/software/s6/s6-2.15.1.1.tar.gz"
   sha256 "62080839eb5b04d51efd4ef6e7b43e29b5d0576efce9eb319ace32ea90c05931"
   license "ISC"
+  compatibility_version 1
   head "git://git.skarnet.org/s6.git", branch: "main"
 
   bottle do

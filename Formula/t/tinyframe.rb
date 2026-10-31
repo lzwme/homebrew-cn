@@ -4,6 +4,7 @@ class Tinyframe < Formula
   url "https://www.dns-oarc.net/files/tinyframe/tinyframe-0.1.2.tar.gz"
   sha256 "181e18bf3e8067b5415f0179d1b35286bf1d379ba71bb89c8e6cc2a73c3cec8d"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "7c4a52ea7a2018bf86a62e6fe77450e7273ad3270332657fe723b5cd835c95b7"

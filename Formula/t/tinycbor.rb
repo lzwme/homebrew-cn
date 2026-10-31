@@ -4,6 +4,7 @@ class Tinycbor < Formula
   url "https://ghfast.top/https://github.com/intel/tinycbor/archive/refs/tags/v7.1.tar.gz"
   sha256 "08c0a4c0a983000806f3d8c1599ec07995789ae49e9a23034db4cbfccc81c2e5"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/intel/tinycbor.git", branch: "main"
 
   bottle do

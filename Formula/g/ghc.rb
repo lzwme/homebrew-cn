@@ -4,6 +4,7 @@ class Ghc < Formula
   url "https://downloads.haskell.org/~ghc/9.14.1/ghc-9.14.1-src.tar.xz"
   sha256 "2a83779c9af86554a3289f2787a38d6aa83d00d136aa9f920361dd693c101e77"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://gitlab.haskell.org/ghc/ghc.git", branch: "master"
 
   livecheck do

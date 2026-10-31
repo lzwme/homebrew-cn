@@ -3,6 +3,7 @@ class Httperf < Formula
   homepage "https://github.com/httperf/httperf"
   license "GPL-2.0-or-later"
   revision 3
+  compatibility_version 1
 
   stable do
     url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/httperf/httperf-0.9.0.tar.gz"

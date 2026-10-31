@@ -6,6 +6,7 @@ class Libagg < Formula
   sha256 "ab1edc54cc32ba51a62ff120d501eecd55fceeedf869b9354e7e13812289911f"
   license "GPL-2.0-or-later"
   revision 1
+  compatibility_version 1
 
   # The homepage for this formula is a copy of the original and was created
   # after the original was discontinued. There will be no further releases of

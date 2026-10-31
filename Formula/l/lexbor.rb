@@ -4,6 +4,7 @@ class Lexbor < Formula
   url "https://ghfast.top/https://github.com/lexbor/lexbor/archive/refs/tags/v3.0.1.tar.gz"
   sha256 "08ce3d18efdd09b8b3488779b97509f83cc181e09a5a4cd8162ac08d77266600"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "d24c9c977e25a93f2232da550e0e0e8a93e15b69bf35480717fc9b3087929b4b"

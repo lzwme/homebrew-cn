@@ -4,6 +4,7 @@ class Antlr < Formula
   url "https://www.antlr.org/download/antlr-4.13.2-complete.jar"
   sha256 "eae2dfa119a64327444672aff63e9ec35a20180dc5b8090b7a6ab85125df4d76"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   livecheck do
     url "https://www.antlr.org/download.html"

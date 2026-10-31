@@ -4,6 +4,7 @@ class Phodav < Formula
   url "https://download.gnome.org/sources/phodav/3.2/phodav-3.2.tar.xz"
   sha256 "93c993066ab3aebd5b539bab9d731eac43abbb750109c895f151ca3c74a5fc82"
   license "LGPL-2.1-only"
+  compatibility_version 1
   head "https://gitlab.gnome.org/GNOME/phodav.git", branch: "master"
 
   bottle do

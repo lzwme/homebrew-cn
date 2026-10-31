@@ -4,6 +4,7 @@ class TemplateGlib < Formula
   url "https://download.gnome.org/sources/template-glib/3.40/template-glib-3.40.0.tar.xz"
   sha256 "e533ec2f6c24cc6df66ac55ac824fadd1b4a5f433a11cbf3a6b25815c0cfcfd5"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "c7d7e146b38cc24a3dae317dcbad82b3eecc32335b6e922f12ec75d7091dae59"

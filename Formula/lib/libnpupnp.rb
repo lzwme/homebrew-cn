@@ -4,6 +4,7 @@ class Libnpupnp < Formula
   url "https://www.lesbonscomptes.com/upmpdcli/downloads/libnpupnp-6.3.0.tar.gz"
   sha256 "082d999178291ed45ae24c3fd9e781120d3ec94d61d11121e5bac90c69365cda"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://framagit.org/medoc92/npupnp.git", branch: "master"
 
   livecheck do

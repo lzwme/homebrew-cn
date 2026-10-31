@@ -3,6 +3,7 @@ class Fcl < Formula
   homepage "https://flexible-collision-library.github.io/"
   license "BSD-3-Clause"
   revision 2
+  compatibility_version 1
   head "https://github.com/flexible-collision-library/fcl.git", branch: "master"
 
   stable do

@@ -4,6 +4,7 @@ class Ginkgo < Formula
   url "https://ghfast.top/https://github.com/ginkgo-project/ginkgo/archive/refs/tags/v1.11.0.tar.gz"
   sha256 "8052c3d5994e1c996ebabe50a169deb565965da4f1c6c02e814ff0c7146c0378"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   bottle do
     rebuild 1

@@ -1,8 +1,8 @@
 class Liblerc < Formula
   desc "Esri LERC library (Limited Error Raster Compression)"
   homepage "https://github.com/Esri/lerc"
-  url "https://ghfast.top/https://github.com/Esri/lerc/archive/refs/tags/v4.2.0.tar.gz"
-  sha256 "a1fb593ed1fcb5b38800caf3c4454f872745202e961d00d745e53d81447e17c9"
+  url "https://ghfast.top/https://github.com/Esri/lerc/archive/refs/tags/v4.3.0.tar.gz"
+  sha256 "28d74992e0bc0f13ecdda1dd9ca3b40b1a87009369b9ec5a599853f6f311fee7"
   license "Apache-2.0"
   compatibility_version 1
 
@@ -12,13 +12,11 @@ class Liblerc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "292ce526ba0d800c9d91ac6a5da8cb6ee6f96be4c971534bd553d3609c339a72"
-    sha256 cellar: :any, arm64_tahoe:       "c4bbbcc51f83f769162c44d936642d7c239200f6029e7aed3fe1960d8793a16d"
-    sha256 cellar: :any, arm64_sequoia:     "7b63dddb160e026085a8e5d44387c30c213b4e13e7ff06398db8cfe833e8584f"
-    sha256 cellar: :any, arm64_sonoma:      "28d3a0920443b66baf1f6b17df4ba352169d506198e8f483e4d887e92479ab2c"
-    sha256 cellar: :any, sonoma:            "e46b255b2eb7e1463ee166fcee7dc45da3b78c325f5020506c4f90e39e76e863"
-    sha256 cellar: :any, arm64_linux:       "9f8118de7abee212c290b4f5047aaa0f9168fc4714b92af95cdb78c0041d88f8"
-    sha256 cellar: :any, x86_64_linux:      "3e74e8b4392767d770d87f8547a974aadac9beda1ac20a30d9407370688df4a4"
+    sha256 cellar: :any, arm64_golden_gate: "1cd5dd2e502dac355e2e57c4efd0dd31597846b79830c7972359b8375f30e0a0"
+    sha256 cellar: :any, arm64_tahoe:       "b61635f91bd88667aa386fc6bbb67df1af289d51daec935a00f89159c3548841"
+    sha256 cellar: :any, arm64_sequoia:     "cff8a14998073c9dd1a91f291258e0488e0d5670db80a8e2049d1c0e7e6f7ccd"
+    sha256 cellar: :any, arm64_linux:       "20f9c6cf1d8ad208171e7a4658e12c6cbb6cb5dd606fbf0ed6bbcc29822973fb"
+    sha256 cellar: :any, x86_64_linux:      "315d93e84865e319954ad3b2c849cf5dc263c52f6bbbf209772be808784fe34f"
   end
 
   depends_on "cmake" => :build

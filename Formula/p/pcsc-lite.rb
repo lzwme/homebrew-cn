@@ -9,6 +9,7 @@ class PcscLite < Formula
     "GPL-3.0-or-later", # src/spy/ (libpcscspy, pcsc-spy)
     "ISC",              # src/simclist.*
   ]
+  compatibility_version 1
 
   livecheck do
     url "https://pcsclite.apdu.fr/files/"

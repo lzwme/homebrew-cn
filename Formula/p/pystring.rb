@@ -4,6 +4,7 @@ class Pystring < Formula
   url "https://ghfast.top/https://github.com/imageworks/pystring/archive/refs/tags/v1.2.0.tar.gz"
   sha256 "020a603a757ba1e429f4b1ea6feb3afbe0fb34bcafa355032e1f1b8a0019d198"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/imageworks/pystring.git", branch: "master"
 
   bottle do

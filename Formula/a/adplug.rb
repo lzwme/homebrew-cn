@@ -4,6 +4,7 @@ class Adplug < Formula
   url "https://ghfast.top/https://github.com/adplug/adplug/releases/download/adplug-2.4/adplug-2.4.tar.bz2"
   sha256 "de18463bf7c0cb639a3228ad47e69eb7f78a5a197802d325f3a5ed7e1c56d57f"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "cf6bfe53e419851291acb8373a875a64d6f2710809c3f7822e48ec7e3d85128f"

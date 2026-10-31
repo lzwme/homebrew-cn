@@ -4,6 +4,7 @@ class FuseOverlayfs < Formula
   url "https://ghfast.top/https://github.com/containers/fuse-overlayfs/archive/refs/tags/v1.18.tar.gz"
   sha256 "fdd1896c8de35a15eb14444d7880be81d635fcbbc4ad162d8bc3ccf5627aa8c7"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead

@@ -4,6 +4,7 @@ class Cppzmq < Formula
   url "https://ghfast.top/https://github.com/zeromq/cppzmq/archive/refs/tags/v4.11.0.tar.gz"
   sha256 "0fff4ff311a7c88fdb76fceefba0e180232d56984f577db371d505e4d4c91afd"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "5aad9277c9ee7b3140a55c7602ffc5f2be20dd46ea77fcae0ca4bb75c47fb372"

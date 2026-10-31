@@ -10,6 +10,7 @@ class Sdcc < Formula
     "Zlib",             # makebin
   ]
   revision 1
+  compatibility_version 1
   head "https://svn.code.sf.net/p/sdcc/code/trunk/sdcc"
 
   livecheck do

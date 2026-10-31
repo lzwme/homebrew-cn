@@ -4,6 +4,7 @@ class Inchi < Formula
   url "https://ghfast.top/https://github.com/IUPAC-InChI/InChI/archive/refs/tags/v1.07.5.tar.gz"
   sha256 "9a8af985295c47bfaf424ad8386b1597da515589665ec71908dae1bd2b67ac96"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "980c4eaad2db4db01ab61f57e4f28500bdd6a614344d2fa3cbc4c98a843c0145"

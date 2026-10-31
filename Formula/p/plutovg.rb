@@ -4,6 +4,7 @@ class Plutovg < Formula
   url "https://ghfast.top/https://github.com/sammycage/plutovg/archive/refs/tags/v1.3.3.tar.gz"
   sha256 "2b0d17a6e016f47b86f9c00e2cb82600041b1ea1f7d2a00c2d46ae542cbfed3c"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "39ec3e914d244f7507272a31e1790fb33be09cc164f53f2795cdd67757e6c041"

@@ -14,6 +14,8 @@ class PyenvCcache < Formula
   depends_on "ccache"
   depends_on "pyenv"
 
+  deny_network_access!
+
   def install
     ENV["PREFIX"] = prefix
     system "./install.sh"

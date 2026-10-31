@@ -5,6 +5,7 @@ class FileFormula < Formula
   url "https://astron.com/pub/file/file-5.48.tar.gz"
   sha256 "ed14656883b23a364b4057c05595d93252da9bc473d30106519519d0da141283"
   license "BSD-2-Clause-Darwin"
+  compatibility_version 1
   head "https://github.com/file/file.git", branch: "master"
 
   livecheck do

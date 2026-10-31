@@ -6,6 +6,7 @@ class Libmpeg2 < Formula
   sha256 "dee22e893cb5fc2b2b6ebd60b88478ab8556cb3b93f9a0d7ce8f3b61851871d4"
   license "GPL-2.0-or-later"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://libmpeg2.sourceforge.io/downloads.html"

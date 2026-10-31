@@ -6,6 +6,7 @@ class AprUtil < Formula
   sha256 "96de1dd6f6a0476d2d2e7964926d8c1ddc3bb0e210e1b1812d3ba5a454a392e2"
   license "Apache-2.0"
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "ad199dc3a5579906d061fdde92fa50568967d01c5766a2e0881b18f5e77cf894"

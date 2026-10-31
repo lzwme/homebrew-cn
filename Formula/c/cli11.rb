@@ -4,6 +4,7 @@ class Cli11 < Formula
   url "https://ghfast.top/https://github.com/CLIUtils/CLI11/archive/refs/tags/v2.7.2.tar.gz"
   sha256 "46eef3101da70852ec7af026e09d485ccee81813331c8c6052d39344443b83da"
   license "BSD-3-Clause"
+  compatibility_version 1
   head "https://github.com/CLIUtils/CLI11.git", branch: "main"
 
   bottle do

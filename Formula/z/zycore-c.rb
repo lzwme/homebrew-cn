@@ -4,6 +4,7 @@ class ZycoreC < Formula
   url "https://ghfast.top/https://github.com/zyantific/zycore-c/archive/refs/tags/v1.5.2.tar.gz"
   sha256 "943f91eb9ab2a8cc01ab9f8b785e769a273502071e0ee8011cdfcaad93947cec"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "ea8eea045150a07d9b43e5f651b1a8a8bdf9b4c23527566a91e9886143a48540"

@@ -13,6 +13,7 @@ class Sysprof < Formula
     "BSD-3-Clause",
     :public_domain,
   ]
+  compatibility_version 1
   head "https://gitlab.gnome.org/GNOME/sysprof.git", branch: "master"
 
   bottle do

@@ -5,6 +5,7 @@ class Leveldb < Formula
   sha256 "9a37f8a6174f09bd622bc723b55881dc541cd50747cbd08831c2a82d620f6d76"
   license "BSD-3-Clause"
   revision 2
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "3df843b6a5fbfb949b905632a63529f7accc4f5154807e05828faa0e16dc29d3"

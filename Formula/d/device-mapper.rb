@@ -5,6 +5,7 @@ class DeviceMapper < Formula
   version "2.03.44"
   sha256 "42f829927d2d459f5733fcdb38a5bf2455a8b84072193092450a9c69d6596eca"
   license "LGPL-2.1-only"
+  compatibility_version 1
   head "https://gitlab.com/lvmteam/lvm2.git", branch: "main"
 
   livecheck do

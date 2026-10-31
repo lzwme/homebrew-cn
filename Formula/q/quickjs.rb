@@ -4,6 +4,7 @@ class Quickjs < Formula
   url "https://bellard.org/quickjs/quickjs-2026-06-04.tar.xz"
   sha256 "b376e839b322978313d929fd20663b11ba58b75df5a46c126dd19ea2fa70ad2a"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :homepage

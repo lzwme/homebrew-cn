@@ -4,6 +4,7 @@ class FontUtil < Formula
   url "https://xorg.freedesktop.org/archive/individual/font/font-util-1.4.2.tar.xz"
   sha256 "02e4f8afdcf03cc8372ca9c37aa104b1e36b47722dbc79531be08f0a4c622999"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ce49a3627e0c54dab9343e522d2dde1e397393d5168717e5c9ca5999adba2bc0"

@@ -5,6 +5,7 @@ class Gengetopt < Formula
   mirror "https://ftp.gnu.org/gnu/gengetopt/gengetopt-2.23.1.tar.xz"
   sha256 "3b9def48422bd45f78af95936200b7f9287369a3db76c4907c42fe10f4922ab6"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9587eb09436394fc491df82712e888c498bc1b7edeeb4c4706089fb9f2394263"

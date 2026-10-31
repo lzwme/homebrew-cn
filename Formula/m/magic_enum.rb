@@ -4,6 +4,7 @@ class MagicEnum < Formula
   url "https://ghfast.top/https://github.com/Neargye/magic_enum/archive/refs/tags/v0.9.8.tar.gz"
   sha256 "1e54959a3f3cb675938d858603ad69d0f3f7c82439fc2bf86d7232daec2bd10e"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "d2ccda5da04b1332011cd1d927cb6a9f4c0f942054ba6a8e7a9101ee43d60d90"

@@ -4,6 +4,7 @@ class Tradcpp < Formula
   url "https://cdn.netbsd.org/pub/NetBSD/misc/dholland/tradcpp-0.5.3.tar.gz"
   sha256 "e17b9f42cf74b360d5691bc59fb53f37e41581c45b75fcd64bb965e5e2fe4c5e"
   license "BSD-2-Clause"
+  compatibility_version 1
 
   livecheck do
     url :homepage

@@ -4,6 +4,7 @@ class Libxpresent < Formula
   url "https://xorg.freedesktop.org/archive/individual/lib/libXpresent-1.0.2.tar.xz"
   sha256 "4e5b21b4812206a4b223013606ae31170502c1043038777a1ef8f70c09d37602"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "17764bb9c2cb7dbe35882dedb12236cb18d9412a059eec1a60a4aa5abbfb0499"

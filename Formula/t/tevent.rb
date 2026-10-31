@@ -4,6 +4,7 @@ class Tevent < Formula
   url "https://www.samba.org/ftp/tevent/tevent-0.17.2.tar.gz"
   sha256 "e53b1ac288d017d66dde0471cd429a806168ecf07179d7f019572d7a7e05f0d6"
   license "LGPL-3.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://www.samba.org/ftp/tevent/"

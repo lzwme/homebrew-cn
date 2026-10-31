@@ -5,6 +5,7 @@ class GitAnnex < Formula
   sha256 "fc080a8a556d364e3e9e6255e4ec1540cc53d568df01de30d93d4322e311d028"
   license all_of: ["AGPL-3.0-or-later", "BSD-2-Clause", "BSD-3-Clause",
                    "GPL-2.0-only", "GPL-3.0-or-later", "MIT"]
+  compatibility_version 1
   head "git://git-annex.branchable.com/", branch: "master"
 
   livecheck do

@@ -4,6 +4,7 @@ class Libvdpau < Formula
   url "https://gitlab.freedesktop.org/vdpau/libvdpau/-/archive/1.5/libvdpau-1.5.tar.bz2"
   sha256 "a5d50a42b8c288febc07151ab643ac8de06a18446965c7241f89b4e810821913"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url :stable

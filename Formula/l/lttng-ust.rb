@@ -4,6 +4,7 @@ class LttngUst < Formula
   url "https://lttng.org/files/lttng-ust/lttng-ust-2.16.0.tar.bz2"
   sha256 "1e84e02fa1fc1261eb6cf3d14d64006506a29f7c605ac85de02180318c6aa38a"
   license all_of: ["LGPL-2.1-only", "MIT", "GPL-2.0-only", "BSD-3-Clause", "BSD-2-Clause", "GPL-3.0-or-later"]
+  compatibility_version 1
 
   livecheck do
     url "https://lttng.org/download/"

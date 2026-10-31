@@ -4,6 +4,7 @@ class Lxc < Formula
   url "https://ghfast.top/https://github.com/canonical/lxd/archive/refs/tags/lxd-6.10.1.tar.gz"
   sha256 "687495b7b989da5f29ab009f7e728462f845ebf65696d30c5a6a0d646ce3fb58"
   license "AGPL-3.0-only"
+  compatibility_version 1
   head "https://github.com/canonical/lxd.git", branch: "main"
 
   livecheck do

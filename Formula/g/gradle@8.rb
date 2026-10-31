@@ -4,6 +4,7 @@ class GradleAT8 < Formula
   url "https://services.gradle.org/distributions/gradle-8.14.6-all.zip"
   sha256 "24fc39aedd1b68c3de8e4d46a0277c9b42d9ccdb172231a634fad54a3693e50a"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url "https://gradle.org/releases/"

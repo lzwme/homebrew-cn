@@ -4,6 +4,7 @@ class Wildmidi < Formula
   url "https://ghfast.top/https://github.com/Mindwerks/wildmidi/archive/refs/tags/wildmidi-0.5.0.tar.gz"
   sha256 "2164396d5fe80153fd2af9764fcd991883d06fbf1fdfd96efbc99eed21ed1a2f"
   license all_of: ["GPL-3.0-only", "LGPL-3.0-only"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "7671bf44b94c047c2ce235863223baed3ae2bf9c16560be52c187d2e84c2f1a9"

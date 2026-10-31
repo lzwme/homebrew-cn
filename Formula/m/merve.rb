@@ -5,6 +5,7 @@ class Merve < Formula
   sha256 "8f19c2132447b9113545ffd399cb2bc1e61c6166743921b04883f8e1d778d69e"
   license "Apache-2.0"
   revision 4
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "eb81276048e809a4c28176af2240e5609180e0cc8e2aeef4fdc79c12fa7b97bb"

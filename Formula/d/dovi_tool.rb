@@ -4,6 +4,7 @@ class DoviTool < Formula
   url "https://ghfast.top/https://github.com/quietvoid/dovi_tool/archive/refs/tags/2.3.4.tar.gz"
   sha256 "15b5cb68b3598e51ca968316443c9fb9597b6230e9d692cb4e641d54505a97ec"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/quietvoid/dovi_tool.git", branch: "main"
 
   livecheck do

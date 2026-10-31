@@ -4,6 +4,7 @@ class VapoursynthBestsource < Formula
   url "https://ghfast.top/https://github.com/vapoursynth/bestsource/archive/refs/tags/R23.tar.gz"
   sha256 "1cbc9586bd83668be130b2d69faa46448d3f6a2e2c075dae2977a87358e8986b"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/vapoursynth/bestsource.git", branch: "master"
 
   livecheck do

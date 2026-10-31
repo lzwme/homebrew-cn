@@ -4,6 +4,7 @@ class Ode < Formula
   url "https://bitbucket.org/odedevs/ode/downloads/ode-0.16.6.tar.gz"
   sha256 "c91a28c6ff2650284784a79c726a380d6afec87ecf7a35c32a6be0c5b74513e8"
   license any_of: ["LGPL-2.1-or-later", "BSD-3-Clause"]
+  compatibility_version 1
   head "https://bitbucket.org/odedevs/ode.git", branch: "master"
 
   livecheck do

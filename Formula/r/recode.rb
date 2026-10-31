@@ -4,6 +4,7 @@ class Recode < Formula
   url "https://ghfast.top/https://github.com/rrthomas/recode/releases/download/v3.7.17/recode-3.7.17.tar.gz"
   sha256 "1b0aebe7283b79ff46bc0a06ee21faf65b4d0b304632cbc855721c25583d8ea3"
   license "GPL-3.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "5347c12db883be84b0b18df0895ef8bd1575d0c4a907c02d69c39d0d35fbc994"

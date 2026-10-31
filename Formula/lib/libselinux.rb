@@ -4,6 +4,7 @@ class Libselinux < Formula
   url "https://ghfast.top/https://github.com/SELinuxProject/selinux/releases/download/3.11/libselinux-3.11.tar.gz"
   sha256 "73d419c6e20e874adaa4019372cbd097eecf4d276e13f27ec5e67d35c0bd203c"
   license :public_domain
+  compatibility_version 1
 
   livecheck do
     url :stable

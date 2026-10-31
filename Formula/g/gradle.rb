@@ -4,6 +4,7 @@ class Gradle < Formula
   url "https://services.gradle.org/distributions/gradle-9.8.2-all.zip"
   sha256 "a1bb7e9651ef09e4cd9a62d471564e0ee23b5757e5f21fd7358d7cfc21018fdf"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url "https://gradle.org/releases/"

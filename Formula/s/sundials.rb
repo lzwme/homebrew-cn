@@ -4,6 +4,7 @@ class Sundials < Formula
   url "https://ghfast.top/https://github.com/llnl/sundials/releases/download/v7.9.0/sundials-7.9.0.tar.gz"
   sha256 "13f898a27b48fe3449483f9e438a800ed545abf93bc2e2ceec2d1e00ae8db5ef"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "0bee7b3a7d89719e797e7dd0b7551ea5aef1725616baeb4c23b74bf58e4602eb"

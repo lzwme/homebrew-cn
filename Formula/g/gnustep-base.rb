@@ -5,6 +5,7 @@ class GnustepBase < Formula
   sha256 "e7546f1c978a7c75b676953a360194a61e921cb45a4804497b4f346a460545cd"
   license "GPL-2.0-or-later"
   revision 4
+  compatibility_version 1
 
   livecheck do
     url :stable

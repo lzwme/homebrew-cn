@@ -4,6 +4,7 @@ class Containerd < Formula
   url "https://ghfast.top/https://github.com/containerd/containerd/archive/refs/tags/v2.4.2.tar.gz"
   sha256 "02cbbecd0ef78a521d124afa791b843ba5458ef206e1f7f017999ff45c80c0b4"
   license "Apache-2.0"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fc4aab39c42519f1bef0559850f778e44387a6ecaeb6bff13cf33005b6caaeda"

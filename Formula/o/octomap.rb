@@ -4,6 +4,7 @@ class Octomap < Formula
   url "https://ghfast.top/https://github.com/OctoMap/octomap/archive/refs/tags/v1.10.1.tar.gz"
   sha256 "b6b6c10c99ab15701dd105840e7d4cf18e226eb68714dd4bdfe049dede5cd489"
   license "BSD-3-Clause"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "ebe6fd230093c36f670de6dde66f7f135a064f4953892a0cfe655e2280455c91"

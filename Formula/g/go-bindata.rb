@@ -4,6 +4,7 @@ class GoBindata < Formula
   url "https://ghfast.top/https://github.com/kevinburke/go-bindata/archive/refs/tags/v4.0.2.tar.gz"
   sha256 "ac343c4b316b234b8ea354d86eb3c7ded2da4fe8f40d45f60391d289c66cd950"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/kevinburke/go-bindata.git", branch: "master"
 
   bottle do

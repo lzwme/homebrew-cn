@@ -4,6 +4,7 @@ class Daq < Formula
   url "https://ghfast.top/https://github.com/snort3/libdaq/archive/refs/tags/v3.0.28.tar.gz"
   sha256 "a72bc8882abdcfaf475b18d547b5a08785d574005584ce258e533d247bc62771"
   license "GPL-2.0-only"
+  compatibility_version 1
   head "https://github.com/snort3/libdaq.git", branch: "master"
 
   bottle do

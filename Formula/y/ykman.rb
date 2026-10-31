@@ -92,6 +92,8 @@ class Ykman < Formula
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
+  allow_network_access! :build
+
   def install
     # Fixes: smartcard/scard/helpers.c:28:22: fatal error: winscard.h: No such file or directory
     ENV.append "CFLAGS", "-I#{formula_opt_include("pcsc-lite")}/PCSC" if OS.linux?

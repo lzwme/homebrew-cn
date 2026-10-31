@@ -4,6 +4,7 @@ class Dlpack < Formula
   url "https://ghfast.top/https://github.com/dmlc/dlpack/archive/refs/tags/v1.3.tar.gz"
   sha256 "f3d567f885f6c142183afc91a58873b31d0e0b36faa2e45c232b98c74596404f"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/dmlc/dlpack.git", branch: "main"
 
   bottle do

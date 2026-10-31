@@ -5,6 +5,7 @@ class OcamlZarith < Formula
   sha256 "5db9dcbd939153942a08581fabd846d0f3f2b8c67fe68b855127e0472d4d1859"
   license "LGPL-2.0-only"
   revision 7
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "2796d9feedfae5f9cf45b4742d4eee43c5062b4d6ec765d879be7a2f7021fc14"

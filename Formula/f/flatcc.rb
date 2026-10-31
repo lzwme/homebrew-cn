@@ -4,6 +4,7 @@ class Flatcc < Formula
   url "https://ghfast.top/https://github.com/dvidelabs/flatcc/archive/refs/tags/v0.6.4.tar.gz"
   sha256 "463c1cbc95777a01e103a6c961325f28e8876cb44a195b5c0f8d1117ae019580"
   license "Apache-2.0"
+  compatibility_version 1
   head "https://github.com/dvidelabs/flatcc.git", branch: "master"
 
   bottle do

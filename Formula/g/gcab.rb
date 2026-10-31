@@ -4,6 +4,7 @@ class Gcab < Formula
   url "https://download.gnome.org/sources/gcab/1.6/gcab-1.6.tar.xz"
   sha256 "2f0c9615577c4126909e251f9de0626c3ee7a152376c15b5544df10fc87e560b"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   # We use a common regex because gcab doesn't use GNOME's "even-numbered minor
   # is stable" version scheme.

@@ -4,6 +4,7 @@ class XcbUtilWm < Formula
   url "https://xcb.freedesktop.org/dist/xcb-util-wm-0.4.2.tar.gz"
   sha256 "dcecaaa535802fd57c84cceeff50c64efe7f2326bf752e16d2b77945649c8cd7"
   license "X11"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "7c2d47f7e1a217c3888b28b66fac28a66045c5ae1d7a71494585b7af91299121"
@@ -33,6 +34,8 @@ class XcbUtilWm < Formula
   depends_on "libxcb"
 
   uses_from_macos "m4" => :build
+
+  deny_network_access!
 
   def install
     system "./autogen.sh" if build.head?

@@ -4,6 +4,7 @@ class Taktuk < Formula
   url "https://deb.debian.org/debian/pool/main/t/taktuk/taktuk_3.7.8.orig.tar.gz"
   sha256 "f674edd33d27760b1ee6d41abf4542e07061d049405f0203d151e1af74be9b5c"
   license "GPL-2.0-or-later"
+  compatibility_version 1
 
   livecheck do
     url "https://deb.debian.org/debian/pool/main/t/taktuk/"

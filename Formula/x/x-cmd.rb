@@ -19,6 +19,8 @@ class XCmd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "f31616625d492334fc1c63f99abc62d81c966b239335bf3178a056d68acfd864"
   end
 
+  deny_network_access!
+
   def install
     prefix.install Dir.glob("*")
     prefix.install Dir.glob(".x-cmd")

@@ -4,6 +4,7 @@ class Vdt < Formula
   url "https://ghfast.top/https://github.com/dpiparo/vdt/archive/refs/tags/v0.4.6.tar.gz"
   sha256 "1820feae446780763ec8bbb60a0dbcf3ae1ee548bdd01415b1fb905fd4f90c54"
   license "LGPL-3.0-or-later"
+  compatibility_version 1
   head "https://github.com/dpiparo/vdt.git", branch: "master"
 
   bottle do

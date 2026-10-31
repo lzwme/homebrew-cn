@@ -1,10 +1,9 @@
 class Postgis < Formula
   desc "Adds support for geographic objects to PostgreSQL"
   homepage "https://postgis.net/"
-  url "https://download.osgeo.org/postgis/source/postgis-3.6.4.tar.gz"
-  sha256 "ed8dc6679f1e06f7b113592b04cde2a7e00f1b1e681294c8ca2204058990cec6"
+  url "https://download.osgeo.org/postgis/source/postgis-3.7.0.tar.gz"
+  sha256 "832bbf50f2b6f57fab053bc9676b3bfe641e5bf966cdcb28c7926f8d4b3c5e04"
   license "GPL-2.0-or-later"
-  revision 1
   compatibility_version 1
 
   livecheck do
@@ -13,11 +12,11 @@ class Postgis < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8bd96243aa18f03749ba4f5a324b288650ebca092debdc1c028e9906bd69b3b0"
-    sha256 cellar: :any, arm64_tahoe:       "eeed71ff14a8e399aa1bd4c39d775ac5a21b408c48d667b1f7bf4798efdd6583"
-    sha256 cellar: :any, arm64_sequoia:     "bc73fe7f8d972f1d5cc88dd62385e419260a9b10f7ed15e06c90071e1611357d"
-    sha256 cellar: :any, arm64_linux:       "489a3d604762ca50f73180a11bde009494d4750f2e46b68dcc9fffb8d9f7a290"
-    sha256 cellar: :any, x86_64_linux:      "7b45d5d2c7c604ac8df543a60a0e9231d4a4a62faec731cf869de662fae05626"
+    sha256 cellar: :any, arm64_golden_gate: "79f17567869fc7b1b1c772a7890aa91e5ad5dc5d0c37192f44af0e1fc096c131"
+    sha256 cellar: :any, arm64_tahoe:       "554c3844361d161e7ce02d159907d2b34b726c280b2565b6cb15ecd12da08949"
+    sha256 cellar: :any, arm64_sequoia:     "9c4e021231f6b9cc8087cacb436710d9fbff294080a1cf21c8a40abab492b566"
+    sha256 cellar: :any, arm64_linux:       "7d545f118e4b0626113fa7aacfbf3c17f0824c0f0ef63e8c9a2d4704f0e9d9bb"
+    sha256 cellar: :any, x86_64_linux:      "d307d37888dbbe6a89b99104634ab9e2ea6ee7509d3cecdaca70100ec7bd92cd"
   end
 
   head do
@@ -34,6 +33,7 @@ class Postgis < Formula
 
   depends_on "gdal"
   depends_on "geos"
+  depends_on "gmp"
   depends_on "icu4c@79"
   depends_on "json-c"
   depends_on "libpq"
@@ -145,7 +145,7 @@ class Postgis < Formula
 
     result = shell_output("#{bin}/shp2pgsql #{testpath}/brew.shp")
     assert_match "Point", result
-    assert_match "AddGeometryColumn", result
+    assert_match "geometry(POINTZM,0)", result
 
     postgresqls.each do |postgresql|
       pg_version = postgresql.version.major

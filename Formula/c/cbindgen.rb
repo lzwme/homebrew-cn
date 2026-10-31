@@ -4,6 +4,7 @@ class Cbindgen < Formula
   url "https://ghfast.top/https://github.com/mozilla/cbindgen/archive/refs/tags/v0.29.4.tar.gz"
   sha256 "9b5757e915cf8be523d3aca282b9b5651bafa112e14bf1ba488562ba282807d6"
   license "MPL-2.0"
+  compatibility_version 1
 
   # Upstream uses GitHub releases to indicate that a version is released
   # (there's also sometimes a notable gap between when a version is tagged and

@@ -5,6 +5,7 @@ class Dolt < Formula
   sha256 "2e1a37855c9803415164b4b9d815082e3f87073e99d2275b9d8864521b1537bf"
   license "Apache-2.0"
   version_scheme 1
+  compatibility_version 1
   head "https://github.com/dolthub/dolt.git", branch: "main"
 
   livecheck do

@@ -4,6 +4,7 @@ class Polkit < Formula
   url "https://ghfast.top/https://github.com/polkit-org/polkit/archive/refs/tags/128.tar.gz"
   sha256 "6edb06bf1448e49e428f9597a97af6a05d62146dd0b58f86eeaebcee3f5ecfaa"
   license "LGPL-2.0-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 arm64_golden_gate: "daf513f1270b19090bc8c6060877b860b4424af4bceaaa98d2f6abf6505616b0"

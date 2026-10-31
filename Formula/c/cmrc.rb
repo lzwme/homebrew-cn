@@ -2,6 +2,7 @@ class Cmrc < Formula
   desc "CMake Resource Compiler"
   homepage "https://github.com/vector-of-bool/cmrc"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/vector-of-bool/cmrc.git", branch: "master"
 
   stable do

@@ -5,6 +5,7 @@ class Webkitgtk < Formula
   sha256 "a76345b391bef6211fb5ab6cfab2e86b285d18cda17cbb9ade595f1252b86065"
   license "GPL-3.0-or-later"
   revision 1
+  compatibility_version 1
 
   livecheck do
     url "https://webkitgtk.org/releases/"

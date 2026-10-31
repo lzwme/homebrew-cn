@@ -4,6 +4,7 @@ class Xtrans < Formula
   url "https://xorg.freedesktop.org/archive/individual/lib/xtrans-1.6.0.tar.xz"
   sha256 "faafea166bf2451a173d9d593352940ec6404145c5d1da5c213423ce4d359e92"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "eac4f242f00e4216244a9da8f9470bd0bfd9af02ee9d305d4e5be8bc35aa5143"

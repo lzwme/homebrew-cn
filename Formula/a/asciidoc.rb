@@ -7,6 +7,7 @@ class Asciidoc < Formula
   sha256 "d9f13c285981b3c7eb660d02ca0a2779981e88d48105de81bb40445e60dddb83"
   license "GPL-2.0-or-later"
   revision 1
+  compatibility_version 1
   head "https://github.com/asciidoc-py/asciidoc-py.git", branch: "main"
 
   bottle do

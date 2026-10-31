@@ -4,6 +4,7 @@ class Libmodbus < Formula
   url "https://ghfast.top/https://github.com/stephane/libmodbus/releases/download/v3.2.0/libmodbus-3.2.0.tar.gz"
   sha256 "72239f319b9b8483e3d393c5a60865d734fcff18a8abbb2486e389834a2f6ef1"
   license "LGPL-2.1-or-later"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "98e188647aa1c980362e85784933dfa087c2663d1bf57fa6e7cce80116620825"

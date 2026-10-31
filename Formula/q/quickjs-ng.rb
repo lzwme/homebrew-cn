@@ -4,6 +4,7 @@ class QuickjsNg < Formula
   url "https://ghfast.top/https://github.com/quickjs-ng/quickjs/archive/refs/tags/v0.17.0.tar.gz"
   sha256 "559bc4c420475e55c7ab4510adbc562f55d7524d75e8e89d79ce4bb02f5687d9"
   license "MIT"
+  compatibility_version 1
   head "https://github.com/quickjs-ng/quickjs.git", branch: "master"
 
   bottle do

@@ -4,6 +4,7 @@ class Tomlplusplus < Formula
   url "https://ghfast.top/https://github.com/marzer/tomlplusplus/archive/refs/tags/v3.4.0.tar.gz"
   sha256 "8517f65938a4faae9ccf8ebb36631a38c1cadfb5efa85d9a72e15b9e97d25155"
   license "MIT"
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "c169b59a47b5fd45a4b365689f19815c3147f77868a8de171aff4e4443ea8d4a"

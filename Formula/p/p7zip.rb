@@ -4,6 +4,7 @@ class P7zip < Formula
   url "https://ghfast.top/https://github.com/p7zip-project/p7zip/archive/refs/tags/v17.06.tar.gz"
   sha256 "c35640020e8f044b425d9c18e1808ff9206dc7caf77c9720f57eb0849d714cd1"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "25b2de8512623e6ce40f0168b3eeead0ff8aabfb42d4fcc87809991acc4a8df5"

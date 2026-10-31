@@ -5,6 +5,7 @@ class Libstrophe < Formula
   sha256 "d079668474d5c3aa4555347c33e77014a1071629603557cc506a6bc6f82e01f5"
   license all_of: ["GPL-3.0-only", "MIT"]
   revision 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any, arm64_golden_gate: "9d7e8c18a0b80ac3779819038ed50480ed8f2659730cdaeef0adb2201a8fda70"

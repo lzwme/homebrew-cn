@@ -5,6 +5,7 @@ class Libspiro < Formula
   sha256 "1412a21b943c6e1db834ee2d74145aad20b3f62b12152d475613b8241d9cde10"
   license "GPL-3.0-or-later"
   version_scheme 1
+  compatibility_version 1
 
   bottle do
     sha256 cellar: :any,                 arm64_golden_gate: "51c38e1ea152e9d6578f6f1d3293bb65f51c6501ff4698cf23c78b08e0f840eb"
