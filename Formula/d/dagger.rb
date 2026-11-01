@@ -19,8 +19,7 @@ class Dagger < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "7f36706db3f9da578173b88829db5e385baebad78700445f9a5423299e41cca3"
   end
 
-  # TODO: switch back to `go` when x/net is bumped past v0.54.0 (broken with Go 1.27)
-  depends_on "go@1.26" => :build
+  depends_on "go" => :build
   depends_on "docker" => :test
 
   deny_network_access!

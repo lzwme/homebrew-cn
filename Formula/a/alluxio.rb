@@ -21,6 +21,8 @@ class Alluxio < Formula
   # Alluxio requires Java 8 or Java 11
   depends_on "openjdk@11"
 
+  deny_network_access!
+
   def default_alluxio_conf
     <<~EOS
       alluxio.master.hostname=localhost

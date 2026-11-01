@@ -6,11 +6,6 @@ class GccAT9 < Formula
   sha256 "27769f64ef1d4cd5e2be8682c0c93f9887983e6cfd1a927ce5a0a2915a95cf8f"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
-  # https://gcc.gnu.org/gcc-9/
-  livecheck do
-    skip "No longer developed or maintained"
-  end
-
   bottle do
     sha256                               monterey:     "9aa22339b3002ae9b3bde3ed9034238d80b07cff4a5c3c60f3f3653f52c55ce3"
     sha256                               big_sur:      "ea000947da4131b653f137e3e275c061b34d7faa6b961896ecabc3717009df32"
@@ -22,6 +17,8 @@ class GccAT9 < Formula
   # out of the box on Xcode-only systems due to an incorrect sysroot.
   pour_bottle? only_if: :clt_installed
 
+  disable! date: "2027-04-30", because: :unsupported
+
   depends_on "gmp"
   depends_on "isl"
   depends_on "libmpc"
@@ -30,10 +27,6 @@ class GccAT9 < Formula
   on_macos do
     depends_on maximum_macos: [:monterey, :build]
     depends_on arch: :x86_64
-    # Align dates to remove Intel macOS support with brew
-    # https://docs.brew.sh/Support-Tiers#future-macos-support
-    deprecate! date: "2025-09-18", because: :unsupported
-    disable! date: "2026-09-18", because: :unsupported
   end
 
   on_linux do

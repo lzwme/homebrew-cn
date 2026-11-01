@@ -26,6 +26,8 @@ class Xmltoman < Formula
     depends_on "perl-xml-parser"
   end
 
+  deny_network_access!
+
   def install
     ENV.prepend_path "PATH", formula_opt_libexec("coreutils")/"gnubin" if OS.mac?
     # Modify shebang to run xmltoman during build as automatic rewrite happens after install

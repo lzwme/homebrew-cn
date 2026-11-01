@@ -1,18 +1,16 @@
 class Libiconv < Formula
   desc "Conversion library"
   homepage "https://www.gnu.org/software/libiconv/"
-  url "https://ftpmirror.gnu.org/libiconv/libiconv-1.19.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/libiconv/libiconv-1.19.tar.gz"
-  sha256 "88dd96a8c0464eca144fc791ae60cd31cd8ee78321e67397e25fc095c4a19aa6"
+  url "https://ftpmirror.gnu.org/libiconv/libiconv-1.19.1.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/libiconv/libiconv-1.19.1.tar.gz"
+  sha256 "9a06844846d664d7122161700c10a64480d7c7bcead3091925a785b38c91edab"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.0-or-later"]
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a0c48a39b76517baa52bf0a0a228aa3a92ba6258dde0a01ceada5eb324a5ba32"
-    sha256 cellar: :any, arm64_tahoe:       "39e4ffdefdebf658be077d84e1dca6840d4df7d364b990ababbc736037312990"
-    sha256 cellar: :any, arm64_sequoia:     "a4049c55b940c08ad3988a56ada9886e2f131592320cf4b9e158e8a44d57f894"
-    sha256 cellar: :any, arm64_sonoma:      "319e71654138da2d8ffee7a0b9041b3bdaa89297b4ae0a2adab72d445cf63dfe"
-    sha256 cellar: :any, sonoma:            "dc9389c9b302277e146eb4a22bb575df3bdf70d9bf82051904781192e9ef86d9"
+    sha256 cellar: :any, arm64_golden_gate: "84718608d5c5f2bf0afd3884587957f9d1c5a4870340dcdc75c12d3a5fd71007"
+    sha256 cellar: :any, arm64_tahoe:       "9a7174efb9791b8465d71485e9d455ce51de5be13a6c20ae457ca2c63f06d7d0"
+    sha256 cellar: :any, arm64_sequoia:     "eaecd1468193e943ad6fb51c286d5bba93ed425c391370be6a9e498ce7f45b92"
   end
 
   keg_only :provided_by_macos

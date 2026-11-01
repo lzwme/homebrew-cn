@@ -1,23 +1,31 @@
 class Grpcurl < Formula
   desc "Like cURL, but for gRPC"
   homepage "https://www.fullstory.com/resources/content/fullstory-engineering-blog/"
-  url "https://ghfast.top/https://github.com/fullstorydev/grpcurl/archive/refs/tags/v1.9.4.tar.gz"
-  sha256 "bea899ba2f483a951bf40aa05d41e069dd2f7bfe52d2a229717abfdb5620cb7c"
   license "MIT"
   head "https://github.com/fullstorydev/grpcurl.git", branch: "master"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "605806917cf60295403f7a448eb73aa3f30e4ec2a77c976aeb3a02cb7ad27b94"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d28c43ea91643dc945ea37b820f1d7677ebf1eaca75eafafbbef930281abe8af"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d28c43ea91643dc945ea37b820f1d7677ebf1eaca75eafafbbef930281abe8af"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d28c43ea91643dc945ea37b820f1d7677ebf1eaca75eafafbbef930281abe8af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2a53d7cc70c45181bd570774db9800d7c37357b632efd48c5240042eb8f4d1dd"
-    sha256 cellar: :any,                 x86_64_linux:      "a7e35ba2c3a3c3147d5b766575def1a1c8d4edb7330c3e59762bfb382fb0aab4"
+  stable do
+    url "https://ghfast.top/https://github.com/fullstorydev/grpcurl/archive/refs/tags/v1.9.4.tar.gz"
+    sha256 "bea899ba2f483a951bf40aa05d41e069dd2f7bfe52d2a229717abfdb5620cb7c"
+
+    # Fix Go 1.27 JSONv2 compatibility
+    patch do
+      url "https://github.com/fullstorydev/grpcurl/commit/cfa6ff68868284de47db88318a835c00b36d8777.patch?full_index=1"
+      sha256 "e4efd7be56266b2665e88e92c4805691b6c540cc1973c786f0e1a922c777d678"
+      type :backport
+    end
   end
 
-  # TODO: unpin go@1.26 when grpcurl supports go 1.27
-  # ref: https://github.com/fullstorydev/grpcurl/issues/568
-  depends_on "go@1.26" => :build
+  bottle do
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "847022e00e458ffe5ce4f7a69305ac8096ae718ad2a4e78698237f1be248ad94"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "847022e00e458ffe5ce4f7a69305ac8096ae718ad2a4e78698237f1be248ad94"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "847022e00e458ffe5ce4f7a69305ac8096ae718ad2a4e78698237f1be248ad94"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "29c80db5f314866f97402a77d7d842e8834ca7bf187bea8ff5bb88ec227b6a93"
+    sha256 cellar: :any,                 x86_64_linux:      "05f07ff5a6eee550ad66048d0188c7e892fec3843255a21539d05879ef125e3b"
+  end
+
+  depends_on "go" => :build
 
   deny_network_access!
 

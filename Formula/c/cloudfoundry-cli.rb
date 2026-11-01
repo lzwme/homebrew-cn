@@ -19,10 +19,7 @@ class CloudfoundryCli < Formula
     sha256 cellar: :any,                 x86_64_linux:      "9728bb9b94400a5feba1dbbcbd3fbca8a904e22d962059af902946ccabd7a563"
   end
 
-  # TODO: unpin go@1.26 when go 1.27 is supported
-  # ref: https://github.com/cloudfoundry/cli/issues/3851
-  # `SermoDigital/jose` registers `crypto.Hash(0)`, which Go 1.27 `RegisterHash` panics on
-  depends_on "go@1.26" => :build
+  depends_on "go" => :build
 
   conflicts_with "cf", because: "both install `cf` binaries"
 

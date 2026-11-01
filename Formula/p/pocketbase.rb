@@ -1,16 +1,21 @@
 class Pocketbase < Formula
   desc "Open source backend for your next project in 1 file"
   homepage "https://pocketbase.io/"
-  url "https://ghfast.top/https://github.com/pocketbase/pocketbase/archive/refs/tags/v0.40.6.tar.gz"
-  sha256 "f5ed3d708d1598b9c8b2bbf07e0f1bfd9f4f6235a3157013a9a889d5081147e1"
+  url "https://ganigeorgiev.com/api/git/pocketbase/pocketbase/archive?rev=refs/tags/v0.41.1"
+  sha256 "fe1d9266eb1049977cda0dbf715b2114edc0f97690d825782f4c14f9fe0409c2"
   license "MIT"
 
+  livecheck do
+    url "https://ganigeorgiev.com/api/git/pocketbase/pocketbase/refs"
+    regex(%r{refs/tags/v?(\d+(?:\.\d+)+)"}i)
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "35d06fb2ae04f98eb65ee49f8a57dfcb1b68393b366bb5ec14043d3896b6fac9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "35d06fb2ae04f98eb65ee49f8a57dfcb1b68393b366bb5ec14043d3896b6fac9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "35d06fb2ae04f98eb65ee49f8a57dfcb1b68393b366bb5ec14043d3896b6fac9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "19ef7a7827899fb377ebce1cdf33f05fc7e23cc7f10b5a8a770fc19de8e8af21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f6386945e5d96c9734ed70c9d241ae40c082d5a7c9f80672f319e1808d2f6e96"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e6efa61e507ae66506060a79d819562b4e29acf210b1e7f9dc0287a845b23cd3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e6efa61e507ae66506060a79d819562b4e29acf210b1e7f9dc0287a845b23cd3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e6efa61e507ae66506060a79d819562b4e29acf210b1e7f9dc0287a845b23cd3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "56c71026ccf79c77f204a0599d9d6e7b6e2e36081f6918de9166114d81abf605"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "c09c633a1e87b01a60bb868d532b8151224dcc7bcc6fb0faba1a96c27b947ff5"
   end
 
   depends_on "go" => :build
@@ -24,7 +29,7 @@ class Pocketbase < Formula
   def install
     ENV["CGO_ENABLED"] = "0"
 
-    system "go", "build", *std_go_args(ldflags: "-X github.com/pocketbase/pocketbase.Version=#{version}"), "./examples/base"
+    system "go", "build", *std_go_args(ldflags: "-X ganigeorgiev.com/pocketbase/pocketbase.Version=#{version}"), "./examples/base"
   end
 
   test do

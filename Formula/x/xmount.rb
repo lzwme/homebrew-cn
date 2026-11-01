@@ -19,6 +19,8 @@ class Xmount < Formula
   depends_on :linux # on macOS, requires closed-source macFUSE
   depends_on "zlib-ng-compat"
 
+  deny_network_access!
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
     system "cmake", "--build", "build"

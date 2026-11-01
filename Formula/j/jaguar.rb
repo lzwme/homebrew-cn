@@ -1,8 +1,8 @@
 class Jaguar < Formula
   desc "Live reloading for your ESP32"
   homepage "https://toitlang.org/"
-  url "https://ghfast.top/https://github.com/toitlang/jaguar/archive/refs/tags/v1.72.0.tar.gz"
-  sha256 "716b61cd32e6759352fc41021e91fbc56e23b0960bb61d88b70253a55392308c"
+  url "https://ghfast.top/https://github.com/toitlang/jaguar/archive/refs/tags/v1.73.0.tar.gz"
+  sha256 "1bdc3171854c9fadb8c70e6809fd88faa90e1c0cd25cdeef1e331e87c3cde3ba"
   license "MIT"
   head "https://github.com/toitlang/jaguar.git", branch: "main"
 
@@ -12,11 +12,11 @@ class Jaguar < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "beafc9def8c6e8196fc4782e42cb9187c64f6464a17552696efcc9328a5a4397"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "beafc9def8c6e8196fc4782e42cb9187c64f6464a17552696efcc9328a5a4397"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "beafc9def8c6e8196fc4782e42cb9187c64f6464a17552696efcc9328a5a4397"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "6fdff8db3a7b7f9f40f9548eba09661882de70f35275f3317854282f5dc3f0d8"
-    sha256 cellar: :any,                 x86_64_linux:      "bfd08eb67fa8d99cf969f780647cf997aaf5451a0cbe3bdfbaccde4a8e2624cd"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6af74950badc64f04f8b664f2e08279b2df6890048688595ec0a1dd6b6697237"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6af74950badc64f04f8b664f2e08279b2df6890048688595ec0a1dd6b6697237"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "6af74950badc64f04f8b664f2e08279b2df6890048688595ec0a1dd6b6697237"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ed5b17f2de9870904c601c62aa4ee0cebd11fd98bdc69c3db0ecfc4a3aa8600a"
+    sha256 cellar: :any,                 x86_64_linux:      "de533d08baf9ded29eca33ed6be5b3156fa67d044b4fe22f2f5402df248b48f7"
   end
 
   depends_on "go" => :build

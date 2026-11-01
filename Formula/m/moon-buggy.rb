@@ -36,7 +36,7 @@ class MoonBuggy < Formula
     args = ["--mandir=#{man}", "--infodir=#{info}"]
     if build.head?
       system "./autogen.sh"
-    elsif OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    elsif OS.linux? && Hardware::CPU.arm64?
       args << "--build=aarch64-unknown-linux-gnu"
     end
     system "./configure", *args, *std_configure_args

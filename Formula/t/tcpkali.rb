@@ -31,7 +31,7 @@ class Tcpkali < Formula
     if OS.linux?
       inreplace "src/tcpkali_syslimits.c", "<sys/sysctl.h>", "<linux/sysctl.h>"
       # Help old config scripts identify arm64 linux
-      args << "--build=aarch64-unknown-linux-gnu" if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      args << "--build=aarch64-unknown-linux-gnu" if Hardware::CPU.arm64?
     end
 
     system "./configure", *args, *std_configure_args

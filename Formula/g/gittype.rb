@@ -1,18 +1,17 @@
 class Gittype < Formula
   desc "CLI code-typing game that turns your source code into typing challenges"
   homepage "https://github.com/unhappychoice/gittype"
-  url "https://ghfast.top/https://github.com/unhappychoice/gittype/archive/refs/tags/v0.10.3.tar.gz"
-  sha256 "49d734b079854549380e4048ac1894112736c5b8fb848957ab1e2d3d6cd4a534"
+  url "https://ghfast.top/https://github.com/unhappychoice/gittype/archive/refs/tags/v0.10.4.tar.gz"
+  sha256 "f8e26bf41a4b6408cf5289569056728924ce731a167dee4c76f0690a232bf59b"
   license "MIT"
   head "https://github.com/unhappychoice/gittype.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "122447327d07cc327fbdc1a1a65759d7cfb75c4558d692294f6c001281afbe38"
-    sha256 cellar: :any, arm64_tahoe:       "f89a171940d97deefdc9e419e680d517bef0c0639bd0e32e7f5bb473d37bc0ac"
-    sha256 cellar: :any, arm64_sequoia:     "f5d43b31ca93b2671a26963ebf5f14c3aede6657d04cfe8f4553c7514a25cc2f"
-    sha256 cellar: :any, arm64_linux:       "659e7ce53d7a96d7f17e2944ac34820e35b50a42f433e7ed0c2a38b33c2f7238"
-    sha256 cellar: :any, x86_64_linux:      "36a12d7085ae171a3130b5790fb243bcf20becb439f9a3119f7c24c299c0d75b"
+    sha256 cellar: :any, arm64_golden_gate: "d562588edff078de1bb355d44ffe28c6f684aad9ba81acfef8bed5bfcf0dbef7"
+    sha256 cellar: :any, arm64_tahoe:       "d72b8d80bc36127e2eadaa91f32febb6e01c1e60bc7ba1fba59742fd93c508d9"
+    sha256 cellar: :any, arm64_sequoia:     "d92c5b3d01a2b6407ce4b5061c29272f20e43e6e1f1d931216a0d283d36487b1"
+    sha256 cellar: :any, arm64_linux:       "e9de05b472bd883053e7b6fdf6c72872f288c8726926e3d6ae1b7daf5ee9ab71"
+    sha256 cellar: :any, x86_64_linux:      "2d3e7921fbfa069389f726fb04de18f0bc105d3d768877db4dc646663fa2300d"
   end
 
   depends_on "openssl@4" => :build

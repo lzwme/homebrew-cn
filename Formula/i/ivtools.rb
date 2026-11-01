@@ -49,7 +49,7 @@ class Ivtools < Formula
 
   def install
     # Workaround for ancient config files not recognizing aarch64 linux.
-    if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    if OS.linux? && Hardware::CPU.arm64?
       %w[config.guess config.sub].each do |fn|
         cp Formula["automake"].share/"automake-#{Formula["automake"].version.major_minor}"/fn, "src/scripts/#{fn}"
       end

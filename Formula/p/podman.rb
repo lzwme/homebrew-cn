@@ -194,7 +194,7 @@ class Podman < Formula
       ENV["BUILD_ORIGIN"] = "brew"
 
       # Workaround to avoid patchelf corruption when cgo is required
-      if Hardware::CPU.arch == :arm64
+      if Hardware::CPU.arm64?
         ENV["CGO_ENABLED"] = "1"
         ENV["GO_EXTLINK_ENABLED"] = "1"
         ENV.append "GOFLAGS", "-buildmode=pie -trimpath"

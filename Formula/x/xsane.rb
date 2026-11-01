@@ -70,6 +70,8 @@ class Xsane < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     if build.head?
       # Work around https://gitlab.com/sane-project/frontend/xsane/-/issues/74

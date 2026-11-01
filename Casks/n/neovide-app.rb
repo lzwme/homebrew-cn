@@ -2,10 +2,10 @@ cask "neovide-app" do
   arch arm: "aarch64", intel: "x86_64"
   os macos: "Neovide-#{arch}-apple-darwin.dmg", linux: "neovide.AppImage"
 
-  version "0.16.2"
-  sha256 arm:          "5eb745ea7f20cf00491a8ffd8d793c6169ef1c6e1a0f75ae8be40571e65c6b26",
-         intel:        "e84f7e585a688ac29073927fedeb1ff40419a558fffd9c021cb14a29db10bb41",
-         x86_64_linux: "ef617c743d7425267ac3ae2f1761ac8fc801683bd3e013758eb68247a53c6812"
+  version "0.17.1"
+  sha256 arm:          "4ca5df25a4e3d2a5fff63a4b7625c97bc9fd98c4ed359b22c0003c73eddc1c82",
+         intel:        "1a2f3d2d4dd46f9717cccc3d58f375324fda29953bc86bfa1d8b6766ac535eb6",
+         x86_64_linux: "18e975933eb3cc422e6cd0bcde169f4948490d37ef44892905d74e1c02d19eec"
 
   on_macos do
     app "Neovide.app"

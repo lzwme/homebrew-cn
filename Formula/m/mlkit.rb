@@ -1,8 +1,8 @@
 class Mlkit < Formula
   desc "Compiler for the Standard ML programming language"
   homepage "https://melsman.github.io/mlkit"
-  url "https://ghfast.top/https://github.com/melsman/mlkit/archive/refs/tags/v4.7.25.tar.gz"
-  sha256 "a39033eb870c477e7b121627311f433c5560fba431760be3bd810f4b07dff475"
+  url "https://ghfast.top/https://github.com/melsman/mlkit/archive/refs/tags/v4.7.26.tar.gz"
+  sha256 "2847a8218c08aad2a47d2ad88a96775fc08be16e8c0ede325be2ded3947ddc97"
   license "GPL-2.0-or-later"
   head "https://github.com/melsman/mlkit.git", branch: "master"
 
@@ -12,10 +12,10 @@ class Mlkit < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "964dfc49808f6df7510568f5d6128da910306efe85cdef8565bb348f1430bbf3"
-    sha256 arm64_tahoe:       "4c667ca3193cfb29a64847bc15f1ecc8d8902efd99cb22e7e6a3b47cce5dc8d5"
-    sha256 arm64_sequoia:     "0086c334a118c6e68db340c1b06f79fbb4cd3a8e506ff4111663ff1a4278c3d8"
-    sha256 x86_64_linux:      "9b3d8e3ddba6038547c25cd46dcb90bb738f8c71a5fe19dec5e6a5abd00f8aee"
+    sha256 arm64_golden_gate: "7f1ea92ced70ba0bb70db2e2607090b7c00b53069c7aca430ffb403af2b5b4fc"
+    sha256 arm64_tahoe:       "11ce0e32d1125849e7f67400211f529dd3cb45e0ee6162fb76765ac4db494450"
+    sha256 arm64_sequoia:     "6488cc157e360179fe024f12458503b018e5b993f9a5e74a2bec76bf3162a1b9"
+    sha256 x86_64_linux:      "24b42e215e685e70836854f8e9b4a73a72ed3d0ff2fdac8782fd4f6b5977f867"
   end
 
   depends_on "autoconf" => :build

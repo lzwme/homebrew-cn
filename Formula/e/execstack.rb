@@ -22,7 +22,7 @@ class Execstack < Formula
 
   def install
     args = ["--disable-silent-rules"]
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arch == :arm64
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     system "./configure", *args, *std_configure_args
     system "make", "-C", "src", "execstack"

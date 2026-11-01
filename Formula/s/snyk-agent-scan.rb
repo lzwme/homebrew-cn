@@ -3,16 +3,16 @@ class SnykAgentScan < Formula
 
   desc "Constrain, log and scan your MCP connections for security vulnerabilities"
   homepage "https://github.com/snyk/agent-scan"
-  url "https://files.pythonhosted.org/packages/a2/0f/b20da2f42bfc75250abff469dbc675dc3c32fd1cedd66c13332c2b2bb83f/snyk_agent_scan-0.6.9.tar.gz"
-  sha256 "86f50349ec209831e23f317d1521eeac19f6961a8be43c27cdb16357af32fcba"
+  url "https://files.pythonhosted.org/packages/c4/65/b229005211ec0008689d3753b8082204641244ad0f8926939ac63f7531f0/snyk_agent_scan-0.6.10.tar.gz"
+  sha256 "0d6ce5ddf05c320732464068ddca88836b06a15ef76c0551111695262ff41cea"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "108531e7ac9f8e06580054a64bb4a788c00d9ca3d734acba4c0bbd9c87098e1e"
-    sha256 cellar: :any, arm64_tahoe:       "20696b2fe0e4065ab9c28b31ced7ade238effb188dc70ab3e6321cf3c4fca42d"
-    sha256 cellar: :any, arm64_sequoia:     "bee06fe8ad0f185325376768c8fec7b304475a8f528b691d006c9aee3f8147bd"
-    sha256 cellar: :any, arm64_linux:       "041e5e40c0f13408f2f75588533449f0bd0bb3649e6b5da46e3a17637af3393b"
-    sha256 cellar: :any, x86_64_linux:      "0e19e20d16fd1dd5da6ae77251ba058b866578c4b36361675350bd87a5f88aeb"
+    sha256 cellar: :any, arm64_golden_gate: "ef10f6796ea62249df99d96db36a3460c6956b2c849315c8522055721b2d721e"
+    sha256 cellar: :any, arm64_tahoe:       "3e0a0a3b584443f9c03627450976b304249a0ebe1503fccccedcbe6306101cb4"
+    sha256 cellar: :any, arm64_sequoia:     "f1ee3769346c380977a58f81e45c0c60be2f0b41fd0154f658b0cf03c190e168"
+    sha256 cellar: :any, arm64_linux:       "02ded0b15d39da5463b19754218810bdaaa9b884db89bce02b01bcb23d8eb867"
+    sha256 cellar: :any, x86_64_linux:      "0d3e553d9c95719f03f3ad90d3eef0ac9f2fcdbbae7fb22742b8d083ef4f73c2"
   end
 
   depends_on "certifi" => :no_linkage
@@ -130,8 +130,8 @@ class SnykAgentScan < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/f9/79/84ddb5ba16c4eb2c69c71db76ae3c579fe546e511f7170c7e27eedbab7c1/multidict-7.1.0.tar.gz"
-    sha256 "61a4e5d81b8d4e4ad61964b230129e7a2b914793d96289029078fc9009f074ec"
+    url "https://files.pythonhosted.org/packages/7b/6b/29ef8e752f5854dcc267ded0652c475bec99b86f255957a0d4fcad657b18/multidict-7.2.1.tar.gz"
+    sha256 "e8af3e6f1bdbc31fd762b094133b478b89988eaebc63cbe82b1d9e3bbd15cede"
   end
 
   resource "propcache" do
@@ -145,8 +145,8 @@ class SnykAgentScan < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/05/ca/7817b4bf0c4b15c6a6ab8cdf4cb96c268335a8ca2f525de93b6ebe4c7d28/pydantic_settings-2.16.1.tar.gz"
-    sha256 "aff602a1886338c2df3d1e958e2193a8dc33cec75b91f202e83fd98484b4b0da"
+    url "https://files.pythonhosted.org/packages/d0/31/21d21e0e38a8f5f7a7f0cde22820117b6d17d6bc36f348129527f915d7f4/pydantic_settings-2.16.2.tar.gz"
+    sha256 "3dc08ffabed2bbd5dc2dd55ead7b78b4e4c5cd776aecd04310db5f1224caaf46"
   end
 
   resource "pygments" do
@@ -210,13 +210,13 @@ class SnykAgentScan < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/e4/be/0123026f719d1a7936f214a88b553bb5701e04ff2511147c1dab0c5035eb/sse_starlette-3.5.0.tar.gz"
-    sha256 "75de713aa8a9441513cc283220826da079d982770965b951e9437720e8bafdb2"
+    url "https://files.pythonhosted.org/packages/71/7f/3b8ec4f27833f7b8c270a3ef960b6d435e1065439847bc0fcd1e58ae898b/sse_starlette-3.6.0.tar.gz"
+    sha256 "623151d6c20dc0eebf1b3379c27faae91fff883bac7ab6665f16f46440a88b3a"
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/ad/eb/4e197bf26b023abafc5e9043ec8710d7de0fcb032d0969045236d72aa0b1/starlette-1.9.0.tar.gz"
-    sha256 "3d931de246ed870e35ce605974440816ef895e592f255d1396cfdf191d4c4318"
+    url "https://files.pythonhosted.org/packages/48/bb/3d8757f21e9a53d9035c9eb039a777047139a16bfdbedfc7a58241c3d914/starlette-1.10.0.tar.gz"
+    sha256 "b8399098d4c1e3522734f7235dc79b1fc967f96cf139c81e0fa30479e0685f9b"
   end
 
   resource "truststore" do

@@ -26,6 +26,8 @@ class Xnvme < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
 
+  deny_network_access!
+
   def install
     # We do not have SPDK nor libvfn on macOS, thus disabling these
     # The examples and tests are also a bit superfluous, so disable those as well

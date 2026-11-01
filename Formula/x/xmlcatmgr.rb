@@ -22,6 +22,8 @@ class Xmlcatmgr < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:      "52185546f22943c4a693619db91532acbac6e555e8d747156515af72542c0c43"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",

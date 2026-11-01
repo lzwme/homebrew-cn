@@ -69,7 +69,7 @@ class Juman < Formula
         mv "VERSION", "VERSION.txt"
         inreplace ["Makefile.in", "juman/Makefile.in"], /\bVERSION\b/, "VERSION.txt"
       end
-    elsif OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    elsif OS.linux? && Hardware::CPU.arm64?
       # Help old config scripts identify arm64 linux
       args << "--build=aarch64-unknown-linux-gnu"
     end

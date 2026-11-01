@@ -45,6 +45,8 @@ class Xonsh < Formula
     sha256 "dfe7cfbd4cb59db9fe0931bd6091ab4a95b3acc5d56bfb50fa9fef0ccba5dc5c"
   end
 
+  allow_network_access! :build
+
   def install
     virtualenv_install_with_resources
   end

@@ -32,7 +32,7 @@ class Pth < Formula
 
     args = []
     # Help old config scripts identify arm64 linux
-    if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    if OS.linux? && Hardware::CPU.arm64?
       args += ["--build=aarch64-unknown-linux-gnu", "--host=aarch64-unknown-linux-gnu"]
     end
 

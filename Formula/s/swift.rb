@@ -690,7 +690,7 @@ class Swift < Formula
       if OS.linux?
         # List of valid values in class StdlibDeploymentTarget in
         # utils/swift_build_support/swift_build_support/targets.py
-        arch = (Hardware::CPU.arm? && Hardware::CPU.is_64_bit?) ? "aarch64" : Hardware::CPU.arch
+        arch = Hardware::CPU.arm64? ? "aarch64" : Hardware::CPU.arch
 
         args += %W[
           --libcxx=0

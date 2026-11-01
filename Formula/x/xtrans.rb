@@ -14,6 +14,8 @@ class Xtrans < Formula
   depends_on "util-macros" => :build
   depends_on "xorgproto" => :test
 
+  deny_network_access!
+
   def install
     args = %W[
       --sysconfdir=#{etc}

@@ -21,6 +21,8 @@ class Xmodmap < Formula
 
   depends_on "libx11"
 
+  allow_network_access! :test
+
   def install
     system "./configure", *std_configure_args
     system "make"

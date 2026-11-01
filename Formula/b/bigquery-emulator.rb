@@ -34,7 +34,7 @@ class BigqueryEmulator < Formula
     ENV["CGO_ENABLED"] = "0"
 
     # Workaround to avoid patchelf corruption when cgo is required (for go-zetasql)
-    if OS.linux? && Hardware::CPU.arch == :arm64
+    if OS.linux? && Hardware::CPU.arm64?
       ENV["GO_EXTLINK_ENABLED"] = "1"
       ENV.append "GOFLAGS", "-buildmode=pie"
     end

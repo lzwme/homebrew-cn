@@ -1,23 +1,22 @@
 class C2patool < Formula
   desc "CLI for working with C2PA manifests and media assets"
   homepage "https://contentauthenticity.org"
-  url "https://ghfast.top/https://github.com/contentauth/c2pa-rs/archive/refs/tags/c2patool-v0.27.22.tar.gz"
-  sha256 "4f1a2823572a06debb4a1e41397d74582094c44bb6a189ebfa390aadb6264527"
+  url "https://ghfast.top/https://github.com/contentauth/c2patool/archive/refs/tags/v0.28.4.tar.gz"
+  sha256 "2ed01103cdcb65184dfcaa6f522beac4c715291b51a44e503b572fa9b5255aba"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https://github.com/contentauth/c2pa-rs.git", branch: "main"
+  head "https://github.com/contentauth/c2patool.git", branch: "main"
 
   livecheck do
     url :stable
-    regex(/^c2patool[._-]v?(\d+(?:\.\d+)+)$/i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6171ccf2c2929e0a89e0274740e09f8116b94d9f93513382349568de7706ae34"
-    sha256 cellar: :any, arm64_tahoe:       "222ef1b13cb240703c6362ee9b5b31fa0a825bfc9265f9eeee9c10d0896bd143"
-    sha256 cellar: :any, arm64_sequoia:     "256a0743049e86563941f9f9928cdd39b30bb1258fe195c79741076371f0d584"
-    sha256 cellar: :any, arm64_sonoma:      "733cc110645f5142f775d71634f98f58bab932c76adee580bce2890a31f66d0e"
-    sha256 cellar: :any, arm64_linux:       "d16a2994e1bf911677d67a41ca6398ca83feffb67ae77da1d897633895f99851"
-    sha256 cellar: :any, x86_64_linux:      "d3c3af8bd34c88c7ea0371a99483f86193b1fdacbd2e435a3b42f0fde904d00c"
+    sha256 cellar: :any, arm64_golden_gate: "6a605d8788d7402dc88b672bb7631dd868f1f91de98d2336077d1ad564e21bc8"
+    sha256 cellar: :any, arm64_tahoe:       "09bc2aa4c8a75a106a31df19a724d6c039fff72e9ada070e73b7a58af2647e87"
+    sha256 cellar: :any, arm64_sequoia:     "42e7ff50d9e86041c6ff83a9d8962769c768519b88c68c494bd96a85cdaeee2c"
+    sha256 cellar: :any, arm64_linux:       "9d4310c3c5ac480b625291c5625c5c3913808106a6205489ba5d9a4b354d45c9"
+    sha256 cellar: :any, x86_64_linux:      "d582fc428cc721371393950f111591ec5ad1e2a4c2c3c4d3d402dcf19d3c8079"
   end
 
   depends_on "pkgconf" => :build
@@ -32,7 +31,7 @@ class C2patool < Formula
 
   def install
     ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4")
-    system "cargo", "install", *std_cargo_args(path: "cli")
+    system "cargo", "install", *std_cargo_args
   end
 
   test do

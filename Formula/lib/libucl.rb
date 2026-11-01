@@ -1,18 +1,16 @@
 class Libucl < Formula
   desc "Universal configuration library parser"
   homepage "https://github.com/vstakhov/libucl"
-  url "https://ghfast.top/https://github.com/vstakhov/libucl/archive/refs/tags/0.9.4.tar.gz"
-  sha256 "319d8ff13441f55d91cd7f3708a54bd03779733e26958c2346c5109014520aaf"
+  url "https://ghfast.top/https://github.com/vstakhov/libucl/archive/refs/tags/0.10.0.tar.gz"
+  sha256 "3e27a97d48561aa262f93715ad5b483dceca02b033662b9a5a29c36f48b518e7"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "11ca11de7ebafd5ca56abf79cb68f74780639e164744c9ab8d0fd2dad492d9e8"
-    sha256 cellar: :any,                 arm64_tahoe:       "d558ba4973cfffdba49a2728ca9945ae938c9f8b18cb1170919e51fad82338d6"
-    sha256 cellar: :any,                 arm64_sequoia:     "91ed40ce3f7472550719d08c48b0cc9d54a34f971ce628b79ae73f2e23f766e8"
-    sha256 cellar: :any,                 arm64_sonoma:      "8764b8b400a7110ad55bac3f8e27ad987d1f2f64fd0de17e511200b1d77e94ff"
-    sha256 cellar: :any,                 sonoma:            "e5c65c529626b4433ad606574b842312534f05e049df186251955e55c66af882"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "00fd13ad0b9d87427f303f93466f006e14e9f5d2bc14b64aa87487c9d3f0320d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ba43e46b697f805c3908c81591fd5163703a51e8deebcf372fd01510041a02a8"
+    sha256 cellar: :any, arm64_golden_gate: "2c987363c2aa4194644eeaee384db8e018c6b550ecade0ee5c6236be4523640c"
+    sha256 cellar: :any, arm64_tahoe:       "3967d61a155c8377a6f9f8b38fc42d49df09eaa4ac1b24d418948d68d25d22c9"
+    sha256 cellar: :any, arm64_sequoia:     "d574d99deec33e5548162abd805e89a83310aa6e076724db43e9f1fcbea73767"
+    sha256 cellar: :any, arm64_linux:       "1dc23ca8e9340e7fd1df6e5e22b8dc98defe702fe4c5e65165a7d541b38792fe"
+    sha256 cellar: :any, x86_64_linux:      "538d5ff610d8ff0671f7a304a20d9f4f157afcc2e901d2fb487db32d7d59e872"
   end
 
   depends_on "autoconf" => :build

@@ -20,6 +20,8 @@ class Xorgrgb < Formula
   depends_on "util-macros" => :build
   depends_on "xorgproto" => :build
 
+  deny_network_access!
+
   def install
     args = %W[
       --sysconfdir=#{etc}

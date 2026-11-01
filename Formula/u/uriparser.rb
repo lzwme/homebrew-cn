@@ -1,20 +1,18 @@
 class Uriparser < Formula
   desc "URI parsing library (strictly RFC 3986 compliant)"
   homepage "https://uriparser.github.io/"
-  url "https://ghfast.top/https://github.com/uriparser/uriparser/releases/download/uriparser-1.0.2/uriparser-1.0.2.tar.bz2"
-  sha256 "dd2e4843f43de6f5aedf430e530f1e2d159eba8ca4d64c2787af1c20f707a9e4"
+  url "https://ghfast.top/https://github.com/uriparser/uriparser/releases/download/uriparser-1.0.3/uriparser-1.0.3.tar.bz2"
+  sha256 "5daa0757f9866af8535398e7a49278faa6af1ff81695c9280c3a5a424bb328c6"
   license "BSD-3-Clause"
   compatibility_version 1
   head "https://github.com/uriparser/uriparser.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_golden_gate: "c44565ea2ebfd792ea744c5f320ce60c487dd6d9cfa714d4eaad25fcd02b736b"
-    sha256 cellar: :any,                 arm64_tahoe:       "d65dd8ec22ad8983a030d28f0860ed787540977f63f54991a0c34f3af59ff54d"
-    sha256 cellar: :any,                 arm64_sequoia:     "c493b8bf01407748aee749e76282fd8d28b75609d0bc190d082de21c07195213"
-    sha256 cellar: :any,                 arm64_sonoma:      "f3bbbc62b739c550d0273b4a4f8cb6e0f613b812ee1be4268089963b59dd7ee3"
-    sha256 cellar: :any,                 sonoma:            "d88ca97e3db34d38a4ac3698da4fb1ce5de61cbb46b5c754407cbb5cc56332e4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "814a3e8a6d0c3970c05b91c41776b5e6c88ce0c75ddaf97f842c14beb109c423"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "92d362009241b6bb912579151fb98480863663a59f9bd586cee65485be998f0f"
+    sha256 cellar: :any, arm64_golden_gate: "1cbba70827516fa28a03266652737f8cfbee50df23c5181296de6e4c8aca46c9"
+    sha256 cellar: :any, arm64_tahoe:       "77cf4ecd0fc02cbf5ba23925ca64c34e7db3e176c959c9554255e1ceacf0967f"
+    sha256 cellar: :any, arm64_sequoia:     "dcba49e906d4c9f7cc18585a0f8613e2b5afbb23d14457b4eb75a0d6f67d312f"
+    sha256 cellar: :any, arm64_linux:       "13a3ec62e32a4e4e11b46009b3bff83a55ef37e4237c0616f0f84a34c004eaaa"
+    sha256 cellar: :any, x86_64_linux:      "8fc29f375d7eb876e062d50a2578012d91cf7330624cfacd8c175febef818d32"
   end
 
   depends_on "cmake" => :build

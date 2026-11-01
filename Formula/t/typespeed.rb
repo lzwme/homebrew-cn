@@ -35,7 +35,7 @@ class Typespeed < Formula
 
     args = %W[--with-highscoredir=#{HOMEBREW_PREFIX}/var/cache]
     # Help old config scripts identify arm64 linux
-    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     # Fix the hardcoded gcc.
     inreplace "src/Makefile.in", "gcc", ENV.cc

@@ -26,6 +26,8 @@ class Xmp < Formula
   depends_on "pkgconf" => :build
   depends_on "libxmp"
 
+  deny_network_access!
+
   def install
     if build.head?
       system "glibtoolize"

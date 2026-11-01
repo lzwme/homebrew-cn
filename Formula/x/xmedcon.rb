@@ -41,6 +41,8 @@ class Xmedcon < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
     system "autoreconf", "--force", "--install"
     system "./configure", "--disable-dependency-tracking", *std_configure_args
@@ -58,8 +60,7 @@ class Xmedcon < Formula
         return 0;
       }
     C
-    system ENV.cc, "test.c", "-L#{lib}",
-            "-lmdc", "-o", "test"
+    system ENV.cc, "test.c", "-L#{lib}", "-lmdc", "-o", "test"
     assert_match "(X)MedCon #{version} by Erik Nolf", shell_output("./test")
   end
 end

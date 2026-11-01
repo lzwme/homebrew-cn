@@ -33,7 +33,7 @@ class Scrub < Formula
     args = []
     if build.head?
       system "./autogen.sh"
-    elsif OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    elsif OS.linux? && Hardware::CPU.arm64?
       # Help old config scripts identify arm64 linux
       args << "--build=aarch64-unknown-linux-gnu"
     end

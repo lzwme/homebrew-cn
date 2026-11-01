@@ -30,6 +30,8 @@ class Xsel < Formula
   depends_on "pkgconf" => :build
   depends_on "libx11"
 
+  deny_network_access!
+
   def install
     system "./autogen.sh", *std_configure_args
     system "make", "install"

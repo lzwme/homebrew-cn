@@ -1,22 +1,18 @@
 class Mtools < Formula
   desc "Tools for manipulating MSDOS files"
   homepage "https://www.gnu.org/software/mtools/"
-  url "https://ftpmirror.gnu.org/mtools/mtools-4.0.49.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/mtools/mtools-4.0.49.tar.gz"
-  sha256 "10cd1111da87bf2400a380c1639a6cba8bfb937a24f9c51f5f88d393ae5f6f76"
+  url "https://ftpmirror.gnu.org/mtools/mtools-4.0.50.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/mtools/mtools-4.0.50.tar.gz"
+  sha256 "7f078accae7551c6b3a316ccd8296357329f7bbbc09583dcd1a2bbaeb081a7a4"
   license "GPL-3.0-or-later"
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "824aff5ad542e17394dc3ac0a67f46c7a34f877bf7d8a0bfd5d6599bb7b0355a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4d7abe94bc09a3ff5ecb64d9a6c0dc37799b5ddd51c993d2480b2cee0567bef8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a0f6aad93ce1be47de8f0d965033933a895f026caa8efc14e61431e6e5025d5f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d09e38ca2a390336c1ae74821b15f84c08cbe89da16864c1d722b723d6b981d0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:     "ea3820f4a0897055a525bb47089538e13021a432bd7d7b65ab730dcc3da91fca"
-    sha256 cellar: :any_skip_relocation, sonoma:            "befcc246e976f5f2669e27e33ef9a5b9a01745d5cf0dae4ed94e7f85d09c420d"
-    sha256 cellar: :any_skip_relocation, ventura:           "373f8d9fe58ac60117d60dc996720e2335db25cd2113f9239e6ce694a411ba83"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "86d4b01db4192dc7cff8f6b1f8ac4ce36bed68ed1cab50de953c56e5f6e1085b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5b35d3dda7886392a91cbfb237a7ab3c2f710ff6dc6875acedbbdec863d67c2b"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "00f0c85b01d488a9932455e5b7989191fad2c4839c889f2c934e21b901408bf7"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9abaf0b9f5a39215bf8891e55783246cc1cbd306d9301662a933f6987284c872"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "48e16e404b64817ba6b3339fb50b34dc90b22412b93e9f64958d97ded24ecd9b"
+    sha256 cellar: :any,                 arm64_linux:       "8f1281b90d2bc0e52afff3f096193e56c6b228eb7ff000a239fc8067d11c108d"
+    sha256 cellar: :any,                 x86_64_linux:      "375dec0bd49df495d77c90935b2536c4162a6f88274478431537f5a77a9b957c"
   end
 
   conflicts_with "mcat", because: "both install `mcat` binaries"

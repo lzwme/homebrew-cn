@@ -1,6 +1,6 @@
 cask "multitouch" do
-  version "2.0.1"
-  sha256 "8f488dd2e8d24d0e2d2dfda7447fa24365872e4e97e6230e8957628e73e09496"
+  version "2.0.2"
+  sha256 "b4020bf9dabbbf64c93aa5a6fff968dad4de451a1e3a1212e643e9d9f013711e"
 
   url "https://multitouch.app/downloads/multitouch#{version}.dmg"
   name "Multitouch"
@@ -20,6 +20,7 @@ cask "multitouch" do
   uninstall quit: "com.brassmonkery.Multitouch"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.brassmonkery.multitouch.sfl*",
     "~/Library/Application Support/Multitouch",
     "~/Library/Caches/com.brassmonkery.Multitouch",
     "~/Library/Cookies/com.brassmonkery.Multitouch.binarycookies",

@@ -43,7 +43,7 @@ class Tinysvm < Formula
 
     args = []
     # Help old config scripts identify arm64 linux
-    args << "--host=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    args << "--host=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm64?
 
     system "./configure", "--mandir=#{man}", "--disable-shared", *args, *std_configure_args
     system "make", "install"

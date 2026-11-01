@@ -36,6 +36,8 @@ class Xmlto < Formula
     depends_on "gnu-getopt"
   end
 
+  deny_network_access!
+
   def install
     # GNU getopt is keg-only, so point configure to it
     ENV["GETOPT"] = formula_opt_bin("gnu-getopt")/"getopt" if OS.mac?

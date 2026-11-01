@@ -92,7 +92,7 @@ class Ekg2 < Formula
       # Newer ncurses has opaque structures so old plugin code no longer works
       args << "--without-ncurses"
       # Help old config scripts identify arm64 linux
-      args << "--build=aarch64-unknown-linux-gnu" if Hardware::CPU.arm? && Hardware::CPU.is_64_bit? && build.stable?
+      args << "--build=aarch64-unknown-linux-gnu" if Hardware::CPU.arm64? && build.stable?
     end
 
     configure = build.head? ? "./autogen.sh" : "./configure"

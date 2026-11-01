@@ -4,12 +4,12 @@ cask "zoom" do
   url_file = on_system_conditional macos: "#{arch}zoomusInstallerFull.pkg",
                                    linux: "zoom_x86_64.tar.xz"
 
-  sha256 arm:          "ff15d926ef5a714c6683cc23ed628a7c2fc43d080a88ac54af4e200ba03a2456",
-         intel:        "492c91d78e5f6e2a4a4228f6e8c5a9e01103d10dbd3465ededc7284e13548e91",
-         x86_64_linux: "c2a492de44513d7533f4ddccea380248ca960a69b937327f647a536b88d6959b"
+  sha256 arm:          "4c26ebed8bd29ce258ac9dbe0f2b327fad0a0734246ea588339a2cc5fd10533e",
+         intel:        "1750c316d15ed69d8fc8bfd3720b2c366291bd29144d6cb7c0032cd9b92114cb",
+         x86_64_linux: "257ba8c65a92b12fd82a90a73da7859e48c3365ef71f74abb84361f087525f30"
 
   on_macos do
-    version "7.2.2.88465"
+    version "7.2.5.90525"
 
     livecheck do
       url "https://www.zoom.us/client/latest/zoomusInstallerFull.pkg#{livecheck_folder}"
@@ -52,34 +52,35 @@ cask "zoom" do
                 "/Library/PrivilegedHelperTools/us.zoom.ZoomDaemon",
               ]
 
-    zap trash: [
-      "~/.zoomus",
-      "~/Desktop/Zoom",
-      "~/Documents/Zoom",
-      "~/Library/Application Scripts/*.ZoomClient3rd",
-      "~/Library/Application Support/CloudDocs/session/containers/iCloud.us.zoom.videomeetings",
-      "~/Library/Application Support/CloudDocs/session/containers/iCloud.us.zoom.videomeetings.plist",
-      "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/us.zoom*.sfl*",
-      "~/Library/Application Support/CrashReporter/zoom.us*",
-      "~/Library/Application Support/zoom.us",
-      "~/Library/Application Support/ZoomUpdater",
-      "~/Library/Caches/us.zoom.xos",
-      "~/Library/Cookies/us.zoom.xos.binarycookies",
-      "~/Library/Group Containers/*.ZoomClient3rd",
-      "~/Library/HTTPStorages/us.zoom.xos",
-      "~/Library/HTTPStorages/us.zoom.xos.binarycookies",
-      "~/Library/Internet Plug-Ins/ZoomUsPlugIn.plugin",
-      "~/Library/Logs/zoom.us",
-      "~/Library/Logs/zoominstall.log",
-      "~/Library/Logs/ZoomPhone",
-      "~/Library/Preferences/us.zoom.*.plist",
-      "~/Library/Preferences/ZoomChat.plist",
-      "~/Library/Saved Application State/us.zoom.xos.savedState",
-      "~/Library/WebKit/us.zoom.xos",
-    ]
+    zap delete: "/Library/Logs/zoomusinstall.log",
+        trash:  [
+          "~/.zoomus",
+          "~/Desktop/Zoom",
+          "~/Documents/Zoom",
+          "~/Library/Application Scripts/*.ZoomClient3rd",
+          "~/Library/Application Support/CloudDocs/session/containers/iCloud.us.zoom.videomeetings",
+          "~/Library/Application Support/CloudDocs/session/containers/iCloud.us.zoom.videomeetings.plist",
+          "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/us.zoom*.sfl*",
+          "~/Library/Application Support/CrashReporter/zoom.us*",
+          "~/Library/Application Support/zoom.us",
+          "~/Library/Application Support/ZoomUpdater",
+          "~/Library/Caches/us.zoom.xos",
+          "~/Library/Cookies/us.zoom.xos.binarycookies",
+          "~/Library/Group Containers/*.ZoomClient3rd",
+          "~/Library/HTTPStorages/us.zoom.xos",
+          "~/Library/HTTPStorages/us.zoom.xos.binarycookies",
+          "~/Library/Internet Plug-Ins/ZoomUsPlugIn.plugin",
+          "~/Library/Logs/zoom.us",
+          "~/Library/Logs/zoominstall.log",
+          "~/Library/Logs/ZoomPhone",
+          "~/Library/Preferences/us.zoom.*.plist",
+          "~/Library/Preferences/ZoomChat.plist",
+          "~/Library/Saved Application State/us.zoom.xos.savedState",
+          "~/Library/WebKit/us.zoom.xos",
+        ]
   end
   on_linux do
-    version "7.2.1.5760"
+    version "7.2.5.6661"
 
     livecheck do
       url "https://www.zoom.us/client/latest/zoom_x86_64.tar.xz"

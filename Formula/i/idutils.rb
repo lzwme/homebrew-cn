@@ -51,7 +51,7 @@ class Idutils < Formula
     args = ["--disable-silent-rules", "--with-lispdir=#{elisp}"]
     if OS.linux?
       # Help old config scripts identify arm64 linux
-      args << "--build=aarch64-unknown-linux-gnu" if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      args << "--build=aarch64-unknown-linux-gnu" if Hardware::CPU.arm64?
       # Workaround to use outdated gnulib with glibc 2.28+ based on gnulib fix[^1].
       # Upstream updated to newer gnulib[^2] which should fix issue in next release.
       #

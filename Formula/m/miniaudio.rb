@@ -1,19 +1,16 @@
 class Miniaudio < Formula
   desc "Audio playback and capture library"
   homepage "https://miniaud.io"
-  url "https://ghfast.top/https://github.com/mackron/miniaudio/archive/refs/tags/0.11.25.tar.gz"
-  sha256 "b900edcffe979816e2560a0580b9b1216d674b4f17fbadeca8f777a7f8ab0274"
+  url "https://ghfast.top/https://github.com/mackron/miniaudio/archive/refs/tags/0.11.26.tar.gz"
+  sha256 "838ba55a21c9142adf7b76bdc4351e5cd8b7ae128f46b25ec25f94ae9969c600"
   license any_of: [:public_domain, "MIT-0"]
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_golden_gate: "85271689ca10a025265d4ce87bb00a250f248e3825e81eceacd6b9972d68d19b"
-    sha256 cellar: :any,                 arm64_tahoe:       "4116dff207a7fd4b5e6f2d2da3189df46f33397d09e4a06a2c074dd48f6441b6"
-    sha256 cellar: :any,                 arm64_sequoia:     "1ef0a99c6d5502c31c77b39d859c02adbb09b3d80eb441a85777dcf546c60858"
-    sha256 cellar: :any,                 arm64_sonoma:      "9e94a62aee3436dbc9d99faada5cce88bd76249c629798098306897041355ca7"
-    sha256 cellar: :any,                 sonoma:            "9a56208b00933d2bfc08b578cbbc0be50e2ac69d57103809b4e6ad48e092f084"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e3c96b371c8f6ef73cbf576dcf4a1be1c2f4e88a3f3b5354c987d3d7ef80b837"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5acba976aeb2cd0c39b26921c7788f0e4cd3ae721210bcdb6116ce8775756e2b"
+    sha256 cellar: :any, arm64_golden_gate: "35da367e53c5b09407e19cfa2c328cd043fdaf167926c6fbe3281c198d3c68c9"
+    sha256 cellar: :any, arm64_tahoe:       "69502d44ca9d5ef01d1e00ae6912cd9eb99278c27ec0927a53d123abef985aa1"
+    sha256 cellar: :any, arm64_sequoia:     "e498ec72443c3ceec337043699d48f4add0114803fef7ed1c79be7edd608c233"
+    sha256 cellar: :any, arm64_linux:       "ee09e86c9f13023461a571beb394fd1b780948bdd2ef6f651c3fe77fbe04f13e"
+    sha256 cellar: :any, x86_64_linux:      "93f9e07afff8e46ca8131cbdf092e469f19e3661fa5b3dff58b46bb99bdb5e63"
   end
 
   depends_on "cmake" => :build

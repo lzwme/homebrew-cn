@@ -1,20 +1,19 @@
 class Zookeeper < Formula
   desc "Centralized server for distributed coordination of services"
   homepage "https://zookeeper.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=zookeeper/zookeeper-3.9.6/apache-zookeeper-3.9.6.tar.gz"
-  mirror "https://archive.apache.org/dist/zookeeper/zookeeper-3.9.6/apache-zookeeper-3.9.6.tar.gz"
-  sha256 "9277edd177f795c68b3a92cb411a79076b12ad3184fbf900c0d7cec9a0a52e0a"
+  url "https://www.apache.org/dyn/closer.lua?path=zookeeper/zookeeper-3.9.7/apache-zookeeper-3.9.7.tar.gz"
+  mirror "https://archive.apache.org/dist/zookeeper/zookeeper-3.9.7/apache-zookeeper-3.9.7.tar.gz"
+  sha256 "43142998ccb71a65cb18a354d1086163da9217a71d39b7c0464be9de41a286b8"
   license "Apache-2.0"
   compatibility_version 1
   head "https://gitbox.apache.org/repos/asf/zookeeper.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "447c4ad9c04cc740775c7f17fa082acfb796f75184bf64c0b7b7510b6a256d1c"
-    sha256 cellar: :any, arm64_tahoe:       "01e35c9c5419bf3e424e5e77f716997ee3a70429a0e89c8c9e635533e8eb0836"
-    sha256 cellar: :any, arm64_sequoia:     "d5b9541184630771847908f13efa9cfa3555fd2b12391af97a2d0b1f5ec0cd87"
-    sha256 cellar: :any, arm64_linux:       "a4469e2e5d9b74b3ceaa804526c95cd2d96956d0a517f17e6685b224394768b5"
-    sha256 cellar: :any, x86_64_linux:      "637a632c6293ecfbc7e033583b2b73fa9497fcae439c9bc7714dcd758888a2d4"
+    sha256 cellar: :any, arm64_golden_gate: "1efde61644c462911189fc82e2021acea49fca8c8ab6e167ef2f8e4785f06fdf"
+    sha256 cellar: :any, arm64_tahoe:       "fc805bcac17a6dbeb9b4c6ea9972222a8b23d8e675b4bda5897b3ec5d7a8aa38"
+    sha256 cellar: :any, arm64_sequoia:     "bf1ef708334888ad6f50e75a4dd2da5a0b6c96f7f8032e58d9fff81fed9a3b51"
+    sha256 cellar: :any, arm64_linux:       "e247fe7ef875a324ed1fbe7e590aa12e8ad021b8461cff668d10964a67d65772"
+    sha256 cellar: :any, x86_64_linux:      "ca9587d2a981579c71d2181af0adce327e37281ecb9a10e864fe28f7393446c6"
   end
 
   depends_on "autoconf" => :build

@@ -39,6 +39,8 @@ class XmlSecurityC < Formula
     type :unofficial
   end
 
+  deny_network_access!
+
   def install
     system "./configure", "--with-openssl=#{formula_opt_prefix("openssl@4")}", *std_configure_args
     system "make", "install"

@@ -1,6 +1,6 @@
 cask "nvalt" do
-  version "3.0.15,144"
-  sha256 "2dfed31608d66a7dd5fee91c8339a9a4acc813df9899adbf656c6935c01d3a31"
+  version "3.0.18,147"
+  sha256 "f76f15792c319b8ca56e25d48f82a5dd8b2ebf13a833527c117eb143ecd67a72"
 
   url "https://updates.designheresy.com/nvalt/nvALT#{version.csv.first}#{version.csv.second}.zip"
   name "nvALT"

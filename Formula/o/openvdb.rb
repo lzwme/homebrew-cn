@@ -3,7 +3,7 @@ class Openvdb < Formula
   homepage "https://www.openvdb.org/"
   url "https://ghfast.top/https://github.com/AcademySoftwareFoundation/openvdb/archive/refs/tags/v14.0.0.tar.gz"
   sha256 "2c38592a42a9dc1f3e9749418cc9d286d88ed912232dafee954ce5156174e5b0"
-  license "MPL-2.0"
+  license "Apache-2.0"
   head "https://github.com/AcademySoftwareFoundation/openvdb.git", branch: "master"
 
   bottle do

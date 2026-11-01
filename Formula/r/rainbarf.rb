@@ -1,13 +1,13 @@
 class Rainbarf < Formula
   desc "CPU/RAM/battery stats chart bar for tmux (and GNU screen)"
   homepage "https://github.com/creaktive/rainbarf"
-  url "https://ghfast.top/https://github.com/creaktive/rainbarf/archive/refs/tags/v1.5.tar.gz"
-  sha256 "5fc96ffc16929e2158e82baf2a39f5573e6013a280ad66067e1eaee594be98df"
+  url "https://ghfast.top/https://github.com/creaktive/rainbarf/archive/refs/tags/v1.6.tar.gz"
+  sha256 "30d62e289177a99c07ca620dd20090caa44fc282cd1530f2383a0b4f4d37dcf8"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https://github.com/creaktive/rainbarf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "38468e83f62fd6e59c5647e82ce310682b08cf33b1bf9cb20275b6a078b7c53a"
+    sha256 cellar: :any_skip_relocation, all: "c31d17c562e591fd2a913a626d6a93b85674b8ca8b259495530d221eb37bac3d"
   end
 
   depends_on "pod2man" => :build

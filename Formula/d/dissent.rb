@@ -1,17 +1,17 @@
 class Dissent < Formula
   desc "GTK4 Discord client in Go"
   homepage "https://github.com/diamondburned/dissent"
-  url "https://ghfast.top/https://github.com/diamondburned/dissent/archive/refs/tags/v0.0.39.tar.gz"
-  sha256 "24b3423353ce7063cb36d0329141605e4f39ffb28e1be6745fddc16af0755de7"
+  url "https://ghfast.top/https://github.com/diamondburned/dissent/archive/refs/tags/v0.0.41.tar.gz"
+  sha256 "d31559e994798b47b3cf1440db3565fa0cfff7a9b1c67e49470509569cb8963e"
   license "GPL-3.0-or-later"
   head "https://github.com/diamondburned/dissent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "96eeba7970347016e0687e345d9eaf64603208b2bfaf5e314c30284e88f90722"
-    sha256 cellar: :any, arm64_tahoe:       "d8cffbc15932e6a4fb431aafb391ab9aedb93ab9fb466dc20a13c33034795777"
-    sha256 cellar: :any, arm64_sequoia:     "68202c2152588581b828bab53dad7252524cb10469c968127fd2c200e6abba3b"
-    sha256 cellar: :any, arm64_linux:       "ba689005e8e207e5527c256928e096d5ab02a58f22e59421876c0b16c6b3330d"
-    sha256 cellar: :any, x86_64_linux:      "5726fd2d4306e6b2c1dcd98574996d8a919450db89613f6341c5dedfea31e7db"
+    sha256 cellar: :any, arm64_golden_gate: "c664a0a6ef1090025b348fe7765f3edb1d5e5ceb1407230cef6682a5c919a571"
+    sha256 cellar: :any, arm64_tahoe:       "d9aeb502ce1e2a70103b671d396eb60e2c1372eae453b18d84068e858d8d5f96"
+    sha256 cellar: :any, arm64_sequoia:     "e953880852ef75e6144a10e3d0f13670bee8ca36c05c2b1c9603d96d81003317"
+    sha256 cellar: :any, arm64_linux:       "45b6f3b96547ba929b9f3850fee82d7b2f09e99beaf6cac602febed70f7b6a72"
+    sha256 cellar: :any, x86_64_linux:      "00261e8d590e87f040bd7186505747da3bc29f928a619174f39ea8d403c3f366"
   end
 
   depends_on "go" => :build

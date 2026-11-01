@@ -19,6 +19,8 @@ class Xwininfo < Formula
   depends_on "libx11"
   depends_on "libxcb"
 
+  deny_network_access!
+
   def install
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"

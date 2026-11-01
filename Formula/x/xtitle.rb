@@ -15,6 +15,8 @@ class Xtitle < Formula
     sha256 cellar: :any_skip_relocation, all: "62511b7ce2a8440cd64bdf6fb05a1015920d610f254f95d01fb020c1c58c819e"
   end
 
+  deny_network_access!
+
   def install
     bin.install "xtitle.sh" => "xtitle"
     bin.install "xtctl.sh" => "xtctl"

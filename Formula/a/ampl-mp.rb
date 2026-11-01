@@ -1,8 +1,8 @@
 class AmplMp < Formula
   desc "Open-source library for mathematical programming"
   homepage "https://ampl.com/"
-  url "https://ghfast.top/https://github.com/ampl/mp/archive/refs/tags/v4.2.0.tar.gz"
-  sha256 "4dc9e5e86e5b5c32764243e405f82b5168c300b85e3a5000485837cf0cfe3f69"
+  url "https://ghfast.top/https://github.com/ampl/mp/archive/refs/tags/v4.2.1.tar.gz"
+  sha256 "800c5f69a15f9e7bb543f429fcae02a917c1d9365e609a52ed80663b31a80cd9"
   license "MIT"
 
   livecheck do
@@ -11,11 +11,11 @@ class AmplMp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "166695612818fb39ea32b55fe4d58f7e89495faf99d008d35fe59ce6a290c232"
-    sha256 cellar: :any, arm64_tahoe:       "8f55048c9b2ea9a3501ea2f6c368651ecd3371325ea2f32f3b79216fe3067fc9"
-    sha256 cellar: :any, arm64_sequoia:     "6362a6b2e95c988449cb36a53599f4ea219752f7252edefd2a3566cfbe4736c3"
-    sha256 cellar: :any, arm64_linux:       "9a33fb40feeaba970f0fbbb2ff193be6b841a72dd9c8c29f551d3d488e7a4b64"
-    sha256 cellar: :any, x86_64_linux:      "606acadace4028e6846da525ceb2d568c0e75c5442c79137f20b9f18d520af23"
+    sha256 cellar: :any, arm64_golden_gate: "2694e480ea5f65152d17fb741aa6cae2095beeb7920ac5769d5744e2c1c0ba19"
+    sha256 cellar: :any, arm64_tahoe:       "edd7fd778c50bb9ba1c719fd00323f8560ff8e3adf0e3216a95215961117043f"
+    sha256 cellar: :any, arm64_sequoia:     "f000a45a16bf1a93b297689cc72879293db23e3928bad674fa1d4dcccda879f6"
+    sha256 cellar: :any, arm64_linux:       "6cb8595a71369176cefcf5e4131ec311e0984e0ab4578db23d92d89c6557bf76"
+    sha256 cellar: :any, x86_64_linux:      "f527f89fca9a3e455c435ddc76ec8e6a6009c009bbd30e0e99797691424aac22"
   end
 
   depends_on "cmake" => :build

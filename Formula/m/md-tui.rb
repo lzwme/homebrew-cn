@@ -1,16 +1,16 @@
 class MdTui < Formula
   desc "Markdown renderer in the terminal written in rust"
   homepage "https://github.com/henriklovhaug/md-tui"
-  url "https://ghfast.top/https://github.com/henriklovhaug/md-tui/archive/refs/tags/v0.11.1.tar.gz"
-  sha256 "8fbc544a08de290d2ff96265f79aeb035ac234c6937fe4fce910333ba275eae3"
+  url "https://ghfast.top/https://github.com/henriklovhaug/md-tui/archive/refs/tags/v0.11.2.tar.gz"
+  sha256 "64374823e6d3d8200063dff390088b5e7f3a5a6a3d4d19acf9bb5c29171ffff5"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "58f100463c4efa9df950e2e8361a48afdb4897248421efb9da8e4b730a8a5bce"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bf28a25802b60e2cc7e47d7f0d4a04febbc6178f562128cb5369fbc39b458340"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "37a2f1cc0b054a4fead28e6b4b796af209aa558034f76bdb2b37b1710caf3c27"
-    sha256 cellar: :any,                 arm64_linux:       "72c7f796f6a8dc14e629397e386332bd0e34a48bf36f2178d0434728169be5e9"
-    sha256 cellar: :any,                 x86_64_linux:      "ace0cd8f7f8cbd3d4b529eb2a1895cad00478e816fe95e61c2a230320a0f7bf5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e6417a5e0d0dea3f5abba25efef89532578143e368e23e8cf48e3db215fad25f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8ba0ea675bc87a1e9d226fde49a3f31ba913005b610ae335d0ba1cec08842207"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "65418b105f16e516dab80b928dcdf455142db734381bd500f6a8bfaa98fb04b0"
+    sha256 cellar: :any,                 arm64_linux:       "d025315fd1ef46f17080423db0b260e574d6f9fad17f83bf260d05a356bf6d87"
+    sha256 cellar: :any,                 x86_64_linux:      "4c5cf8470c42462846e31b4bc3cb08bed0877bd16a0bc0c12457102c74122454"
   end
 
   depends_on "rust" => :build

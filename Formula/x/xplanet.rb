@@ -62,6 +62,8 @@ class Xplanet < Formula
   # Backport https://sourceforge.net/p/xplanet/code/222/
   patch :p0, :DATA
 
+  deny_network_access!
+
   def install
     # Workaround for ancient config files not recognizing aarch64 macos.
     if Hardware::CPU.arm?

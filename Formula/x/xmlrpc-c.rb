@@ -21,6 +21,8 @@ class XmlrpcC < Formula
   uses_from_macos "curl"
   uses_from_macos "libxml2"
 
+  deny_network_access!
+
   def install
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403

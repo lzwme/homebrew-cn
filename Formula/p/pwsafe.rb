@@ -43,7 +43,7 @@ class Pwsafe < Formula
     args = ["--mandir=#{man}", "--without-x"]
     if build.head?
       system "autoreconf", "--force", "--install", "--verbose"
-    elsif OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    elsif OS.linux? && Hardware::CPU.arm64?
       # Help old config scripts identify arm64 linux
       args << "--build=aarch64-unknown-linux-gnu"
     end

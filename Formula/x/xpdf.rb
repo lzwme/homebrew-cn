@@ -33,6 +33,8 @@ class Xpdf < Formula
   conflicts_with "pdf2image", "pdftohtml", "poppler",
     because: "poppler, pdftohtml, pdf2image, and xpdf install conflicting executables"
 
+  deny_network_access!
+
   def install
     args = %W[-DSYSTEM_XPDFRC=#{etc}/xpdfrc]
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

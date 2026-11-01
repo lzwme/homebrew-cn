@@ -39,7 +39,7 @@ class Libdsk < Formula
     args = []
     if OS.linux?
       # Help old config scripts identify arm64 linux
-      args << "--build=aarch64-unknown-linux-gnu" if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      args << "--build=aarch64-unknown-linux-gnu" if Hardware::CPU.arm64?
       # Workaround for undefined reference to `major'. Remove in the next release
       ENV.append "CFLAGS", "-include sys/sysmacros.h"
       odie "Remove sys/sysmacros.h workaround!" if version >= "1.5"

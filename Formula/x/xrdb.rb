@@ -21,6 +21,8 @@ class Xrdb < Formula
   depends_on "libx11"
   depends_on "libxmu"
 
+  allow_network_access! :test
+
   def install
     system "./configure", "--with-cpp=/usr/bin/cpp", *std_configure_args
     system "make", "install"

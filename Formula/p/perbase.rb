@@ -1,18 +1,17 @@
 class Perbase < Formula
   desc "Fast and correct perbase BAM/CRAM analysis"
   homepage "https://github.com/sstadick/perbase"
-  url "https://ghfast.top/https://github.com/sstadick/perbase/archive/refs/tags/v1.4.0.tar.gz"
-  sha256 "fc0d08964950381969a1cf12e1e1e39eb8edde26794b8d653e7d80b08180fc43"
+  url "https://ghfast.top/https://github.com/sstadick/perbase/archive/refs/tags/v1.4.1.tar.gz"
+  sha256 "cd52449ef7ae4762effb577527a2f604f4ec20536b3550105104543535985949"
   license "MIT"
-  revision 1
   head "https://github.com/sstadick/perbase.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "53702bb86d29e3daab44e8e55c37d5e464ed13a7dfb32099f7472b18f0fd825b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "cce60fe3ecdecc42c1f32e50d8b2b92a2d7bc10c3db98672242e8dd899b32b35"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d554f19a1b85a4b7c80645c90aec890ede85b84339b8b377a4ae42f0fe97b130"
-    sha256 cellar: :any,                 arm64_linux:       "787079ab44a87f56b95c0899097aa0b3f8d2b97214087afca2bdb4e6af610ae4"
-    sha256 cellar: :any,                 x86_64_linux:      "828188f82f7f51c5e27838b65b1d140eaf008a7ac3abad455ee44dd4770a5900"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "740472180a309e41e7783ea1a76acacaac2f251d637c5da7c2e1dc397c4efa64"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d3625d6f7852bf15c3621948bbcd77c5d7a32b3b7e0a43a11efacff3aedc67b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "399f25725f74e47913e2cd73d8bc37572c3739eff8e6f6cb9af579c123f0d4c5"
+    sha256 cellar: :any,                 arm64_linux:       "80d11bb1187a0d1a508ab327d2548d69e687c32dcd2ea7bfc4a0370434df828e"
+    sha256 cellar: :any,                 x86_64_linux:      "363a70a57f3e3f421663d937bcc1a6580517b7b09cfac18b936c04ab5f045dda"
   end
 
   depends_on "cmake" => :build

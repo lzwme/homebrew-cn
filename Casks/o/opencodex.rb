@@ -1,6 +1,6 @@
 cask "opencodex" do
-  version "2.94.0"
-  sha256 "0f298a4bf467ffcebd2a3a5569eb1ba59716662a756303bb1eee03392bf09af3"
+  version "2.96.0"
+  sha256 "1d1d4339ae7be2ffc5c941018167ba9d3f57beaf544ffb4266f64c54cd1eb0b5"
 
   url "https://ghfast.top/https://github.com/lidge-jun/opencodex/releases/download/v#{version}/OpenCodex-#{version}-macos.dmg"
   name "OpenCodex"
@@ -24,6 +24,8 @@ cask "opencodex" do
             quit:      "com.opencodex.desktop"
 
   zap trash: [
+    "~/.opencodex",
+    "~/.opencodex-desktop",
     "~/Library/Application Scripts/com.opencodex.desktop.widget",
     "~/Library/Application Support/com.opencodex.desktop",
     "~/Library/Caches/com.opencodex.desktop",

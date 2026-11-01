@@ -3,24 +3,22 @@ class Reuse < Formula
 
   desc "Tool for copyright and license recommendations"
   homepage "https://reuse.software"
-  url "https://files.pythonhosted.org/packages/05/35/298d9410b3635107ce586725cdfbca4c219c08d77a3511551f5e479a78db/reuse-6.2.0.tar.gz"
-  sha256 "4feae057a2334c9a513e6933cdb9be819d8b822f3b5b435a36138bd218897d23"
+  url "https://files.pythonhosted.org/packages/13/d9/b8dd83a81030450e5eb11d337c3d362769b57c763b388bfc849bfa76bbd9/reuse-6.3.0.tar.gz"
+  sha256 "5a6ca437057c07ca22a67256520e2783ab03b5524d3a4535603c3d49e3d4b001"
   license all_of: [
     "GPL-3.0-or-later",
     "CC-BY-SA-4.0",
     "CC0-1.0",
     "Apache-2.0",
   ]
-  revision 1
   head "https://github.com/fsfe/reuse-tool.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fc573fb13b8eb2f85268bd5ffcbb48475fec9758d7c35cdd7a5820c0b9f34963"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8fa0fd4e4929623042f81e4cac6d3dca46710e5ad1d756272c4834ec724d2df4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1043b8bec8d72e602cf2dc7edfebd75f890aa83dc0eecd6e5df760793939a549"
-    sha256 cellar: :any,                 arm64_linux:       "77460fd9c6f8d9130cd3efe93b963395d172e6618f711882ed2b3de490fce67c"
-    sha256 cellar: :any,                 x86_64_linux:      "d0e660560105789f2492451ad2a562c190e49001a40a712ded0892ccfd98561e"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6b88cc8c60f14bdf43cc6bdc56713761a8dd940963ebb6f9bc423784a89f2170"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "256215501b5b7a067e28516b5a7a73dfaec134fb260621b028a7f1389adb4198"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2ba4231e7a1aef0c8723a5318bd97b4669b057e77096dda4edba52f02d337818"
+    sha256 cellar: :any,                 arm64_linux:       "7a44129f0726abf26dd364933513e441f9661049c1d89ed09fcafcfb1b555f6b"
+    sha256 cellar: :any,                 x86_64_linux:      "f9c4a64bf9996e0a2e62e96f81310b56eeb9fe51d82e1d02b9cda67fcb7c8049"
   end
 
   depends_on "python@3.15"
@@ -73,8 +71,8 @@ class Reuse < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/94/96/e07752635b98536177fa1f37671c8f3cdde2e724c6bcf6034b2cfb571565/tomlkit-0.15.1.tar.gz"
-    sha256 "e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97"
+    url "https://files.pythonhosted.org/packages/08/72/fc01563df95c189a9f65850096bdc205bc2fe37da6c740cd64afaf18d07e/tomlkit-0.15.2.tar.gz"
+    sha256 "83e32755ba1d20d9340bd069ee97e9f6232ba2346b63ffcba425de01f7e327a6"
   end
 
   def install

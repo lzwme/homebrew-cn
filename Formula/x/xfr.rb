@@ -1,17 +1,17 @@
 class Xfr < Formula
   desc "Modern network bandwidth testing with TUI"
   homepage "https://github.com/lance0/xfr"
-  url "https://ghfast.top/https://github.com/lance0/xfr/archive/refs/tags/v0.13.0.tar.gz"
-  sha256 "dabff0fffc4212b3a866c7c7f828ee6830deb4a37b5fade144eba84c3c806be7"
+  url "https://ghfast.top/https://github.com/lance0/xfr/archive/refs/tags/v0.14.0.tar.gz"
+  sha256 "3f4d5a6ad611713466c2e273bad33e0c3f6f6f455611f253027a5ee9d72bbbb0"
   license any_of: ["MIT", "Apache-2.0"]
   head "https://github.com/lance0/xfr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5bd21ba95952b15b46c0983c1153d471bac021d6d98aeeb0a8c054bf33114ecb"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4282978c3e67a03b19715cba6318033ce75161f4c957d722ad762b4aa02b8f53"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "874614e7c5ed469c6e8b210207abb03ad9cbc639f9adc4e8ff8bc52d42f2c452"
-    sha256 cellar: :any,                 arm64_linux:       "fee85d215832ef37d8aa71e6984bc02f562f7acb533134a5ed4f91407127d13b"
-    sha256 cellar: :any,                 x86_64_linux:      "a49019e596e1bf226fdaa7884da09141881e099d635a870fe7f0d7a124ae6978"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "14b1d5e65f6b817a72e9139575ab515169a920043810dded389468a3721de3d8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "03d1e69213b6e1befc2538df91865049bb91802165c84057f9c01373d1e9bdd6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "18b070985e2761816c635fc5c5f4c5eaf822b3db36974f66195f465323df8de6"
+    sha256 cellar: :any,                 arm64_linux:       "15f72584339bbb3fb306bd94645d3163f5679f4447d5e9361a16e46c8649725d"
+    sha256 cellar: :any,                 x86_64_linux:      "43a8d4a208671728c60c309c35bc106f812d1c6f20b5b604a3867c126ee83ef7"
   end
 
   depends_on "rust" => :build

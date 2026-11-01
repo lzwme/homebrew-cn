@@ -29,6 +29,8 @@ class Xvid < Formula
     patch :DATA
   end
 
+  deny_network_access!
+
   def install
     cd "build/generic" do
       system "./configure", "--disable-assembly", "--prefix=#{prefix}"
