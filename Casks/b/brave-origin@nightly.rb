@@ -2,24 +2,24 @@ cask "brave-origin@nightly" do
   arch arm: "arm64", intel: "x64"
   folder_arch = on_arch_conditional arm: "-arm64"
 
-  sha256 arm:   "aabd280edf9ab5b49f9200520861a3afd1483ffc92c3903baf89a895e5a1ff8b",
-         intel: "f885f49846512975250b932059f55009dde6dc41d3504049f4a1dd60849458f8"
+  sha256 arm:   "235d72ccd93eca88a0da099c4a262a38cce017237bbdeea09d4d9af9a61463eb",
+         intel: "4a2c28b2af8de762e3e899507099a0b1b9217ce4caac6a9e1ec2dc3a2209a741"
 
   on_arm do
-    version "1.100.41.0"
+    version "1.101.15.0,201.15"
   end
   on_intel do
-    version "1.100.37.0"
+    version "1.101.15.0,201.15"
   end
 
-  url "https://updates-cdn.bravesoftware.com/sparkle/Brave-Origin/nightly#{folder_arch}/#{version.major_minor_patch.sub(".", "")}/Brave-Origin-Nightly-#{arch}.dmg"
+  url "https://updates-cdn.bravesoftware.com/sparkle/Brave-Origin/nightly#{folder_arch}/#{version.csv.second}/Brave-Origin-Nightly-#{arch}.dmg"
   name "Brave Origin Nightly"
   desc "Privacy-focused web browser"
   homepage "https://brave.com/origin/#nightly"
 
   livecheck do
     url "https://updates.bravesoftware.com/sparkle/Brave-Origin/nightly#{folder_arch}/appcast.xml"
-    strategy :sparkle, &:short_version
+    strategy :sparkle
   end
 
   auto_updates true

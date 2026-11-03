@@ -19,6 +19,11 @@ cask "cursr" do
     depends_on arch: :x86_64
 
     app_image "Cursr.AppImage"
+
+    zap trash: [
+      "~/.config/autostart/cursr-autostart.desktop",
+      "~/.config/cursr",
+    ]
   end
 
   url "https://ghfast.top/https://github.com/bitgapp/Cursr/releases/download/v#{version}/Cursr#{url_end}"

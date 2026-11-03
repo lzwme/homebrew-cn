@@ -4,7 +4,7 @@ cask "zen@twilight" do
   livecheck_os = on_system_conditional macos: "Darwin", linux: "Linux"
   url_end = on_system_conditional macos: "dmg", linux: "AppImage"
 
-  version "1.25t,20261031100347"
+  version "1.25t,20261102012134"
   sha256 :no_check
 
   on_macos do
@@ -27,6 +27,12 @@ cask "zen@twilight" do
   end
   on_linux do
     app_image "zen-#{arch}.AppImage", target: "Zen Twilight.AppImage"
+
+    zap trash: [
+      "~/.cache/zen",
+      "~/.config/zen",
+      "~/.zen",
+    ]
   end
 
   url "https://ghfast.top/https://github.com/zen-browser/desktop/releases/download/twilight-1/zen#{os}.#{url_end}"

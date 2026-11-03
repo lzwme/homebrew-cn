@@ -1,7 +1,7 @@
 cask "monolingual" do
   on_arm do
-    version "2.0.3"
-    sha256 "39652bd791f1e1cdfcd7d2283c78e02f749037ff3587c0018a350822b65cebe9"
+    version "2.0.4"
+    sha256 "b68fabc5de75963287dbdc95eb3f618bb783e5e596e0b4460187fba053516d4a"
 
     depends_on macos: :golden_gate
   end
@@ -27,6 +27,9 @@ cask "monolingual" do
 
   zap trash: [
     "~/Library/Application Scripts/com.github.IngmarStein.Monolingual",
+    "~/Library/Caches/com.github.IngmarStein.Monolingual",
     "~/Library/Containers/com.github.IngmarStein.Monolingual",
+    "~/Library/HTTPStorages/com.github.IngmarStein.Monolingual",
+    "~/Library/Preferences/com.github.IngmarStein.Monolingual.plist",
   ]
 end

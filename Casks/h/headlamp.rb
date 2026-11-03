@@ -24,6 +24,8 @@ cask "headlamp" do
   end
   on_linux do
     app_image "Headlamp-#{version}-linux-#{arch}.AppImage", target: "Headlamp.AppImage"
+
+    zap trash: "~/.config/Headlamp"
   end
 
   url "https://ghfast.top/https://github.com/headlamp-k8s/headlamp/releases/download/v#{version}/Headlamp-#{version}-#{os}-#{arch}.#{url_end}"

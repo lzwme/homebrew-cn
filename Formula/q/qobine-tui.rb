@@ -1,8 +1,9 @@
 class QobineTui < Formula
   desc "Tui player for Qobuz"
   homepage "https://github.com/SofusA/qobine"
-  url "https://ghfast.top/https://github.com/sofusA/qobine/archive/refs/tags/v2026-10-31.tar.gz"
-  sha256 "ebb552dcd1e467873062d4a486fb0fe45f648b3ec279df36d60d6d34b807b8c3"
+  url "https://ghfast.top/https://github.com/sofusA/qobine/archive/refs/tags/v2026-11-02-2.tar.gz"
+  version "2026-11-02-2"
+  sha256 "019e18444e44d0831cfb7ef9ac0597c7cc7255aa2047cebb50a2a678e0257ca0"
   license "GPL-3.0-only"
   head "https://github.com/sofusa/qobine.git", branch: "main"
 
@@ -13,11 +14,11 @@ class QobineTui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9a6f5503f37880477283fd7e66d1ed584040854409b725a3156df4d5eec43d2c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3c286e2fbf270e880acf94eecb8d8474c56711fffa9a5e8815cca1981108ac87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ad7faf15b988992709104f886b111695ac7e00628f1951b598e885b64376aab1"
-    sha256 cellar: :any,                 arm64_linux:       "ce5a51f781f363570e386b5c1b76c25c951ae67a582465ea6c977372e2bcc86b"
-    sha256 cellar: :any,                 x86_64_linux:      "33aafda69b329df8109080082ba1d16b91675fe5876ace260bebf24758696210"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "aab1c15fa96ba81367596ee3fae1847c20f3ead4bb14b6f8293abc697e5b34b9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3b9d160c48589fcadae73d2482a12cde19c5466ad0bf73684ad286d8dbc0cf6d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "072eb657af1e3ddce1bd99cc036f310bdf92ef8af9eb670b23df8308162420cc"
+    sha256 cellar: :any,                 arm64_linux:       "8e1adf6afa87a8fe991deb664cfaac8e72af2d9cb256ddde1b870ad84d11e7e3"
+    sha256 cellar: :any,                 x86_64_linux:      "a0cb270069de9bcca442142c0a1dfdee12e988adcdadaa9df2d68bb8015eea92"
   end
 
   depends_on "pkgconf" => :build

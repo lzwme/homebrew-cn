@@ -18,6 +18,8 @@ cask "chrysalis" do
     depends_on arch: :x86_64
 
     app_image "Chrysalis-#{version}-x64.AppImage", target: "Chrysalis.AppImage"
+
+    zap trash: "~/.config/Chrysalis"
   end
 
   url "https://ghfast.top/https://github.com/keyboardio/Chrysalis/releases/download/v#{version}/Chrysalis-#{version}-#{url_end}"

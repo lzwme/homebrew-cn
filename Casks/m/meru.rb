@@ -1,9 +1,9 @@
 cask "meru" do
   arch arm: "-arm64"
 
-  version "3.63.2"
-  sha256 arm:   "c7f74b615bc4ea4dba22816ff6aeeeacd59cf358ff7e75204a7abd768d3bea0e",
-         intel: "34a69493a10fa5417bc2aebf735700bb3d894e06cba3bfe2a97fb1d36a955ca0"
+  version "3.64.1"
+  sha256 arm:   "7b712dee9a577abefbda3d8e8b59a93c655e61246bd51db04352e7295a1e71ab",
+         intel: "3dc2545c00cf17cbbb668284bc657a418f91fe7a7efae2ea9e2c55e471a9b055"
 
   url "https://ghfast.top/https://github.com/zoidsh/meru/releases/download/v#{version}/Meru-#{version}#{arch}.dmg"
   name "Meru"
@@ -17,6 +17,7 @@ cask "meru" do
   uninstall quit: "sh.zoid.meru"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/sh.zoid.meru.sfl*",
     "~/Library/Application Support/Meru",
     "~/Library/Caches/meru-updater",
     "~/Library/Caches/sh.zoid.meru",

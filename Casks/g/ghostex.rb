@@ -1,6 +1,6 @@
 cask "ghostex" do
-  version "10.42.1"
-  sha256 "8f80da301f81c1809afdea7b74863626089f29449f420b793656a72999611345"
+  version "10.44.0"
+  sha256 "e6a861111b34c143d3b56543a3cf0c506c525281dc80610bf86317b7e49e5f6a"
 
   url "https://ghfast.top/https://github.com/maddada/Ghostex/releases/download/v#{version}/ghostex-#{version}-arm64.dmg"
   name "Ghostex"
@@ -19,7 +19,10 @@ cask "ghostex" do
   app "Ghostex.app"
   binary "#{appdir}/Ghostex.app/Contents/Resources/CLI/ghostex"
 
-  uninstall launchctl: "com.madda.ghostex.gxserver",
+  uninstall launchctl: [
+              "com.madda.ghostex.gxserver",
+              "com.madda.ghostex.gxserver-login-recovery",
+            ],
             quit:      "com.madda.ghostex.gpui"
 
   zap trash: [
