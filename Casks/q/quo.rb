@@ -1,6 +1,6 @@
 cask "quo" do
-  version "5.6.15"
-  sha256 "10ee16f9fba72316d88e453e1bf77a50adec7b47bb492a2744e9f2c089a0fdfc"
+  version "5.7.4"
+  sha256 "6d4b7279a0d83aa5850740c4f610029989ab9aefa888254e9074c8c7738673ca"
 
   url "https://download.quo.com/Quo-#{version}-universal.dmg"
   name "Quo"
@@ -17,6 +17,7 @@ cask "quo" do
   app "Quo.app"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/ca.illusive.openphone.sfl*",
     "~/Library/Application Support/OpenPhone",
     "~/Library/Preferences/ca.illusive.openphone.plist",
     "~/Library/Saved Application State/ca.illusive.openphone.savedState",

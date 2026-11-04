@@ -1,17 +1,17 @@
 class Ntfy < Formula
   desc "Send push notifications to your phone or desktop via PUT/POST"
   homepage "https://ntfy.sh/"
-  url "https://ghfast.top/https://github.com/binwiederhier/ntfy/archive/refs/tags/v2.37.0.tar.gz"
-  sha256 "a73c12770086f884327ed133b869ccaffe182910873f0718f101cf78847ea957"
+  url "https://ghfast.top/https://github.com/binwiederhier/ntfy/archive/refs/tags/v2.37.2.tar.gz"
+  sha256 "4a61b0ddc74dacf386ed8f939bd59dfeab1091157d091285731fe3bd595cbcd2"
   license any_of: ["Apache-2.0", "GPL-2.0-only"]
   head "https://github.com/binwiederhier/ntfy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "000a27d7ef70994c8fa10f2459f48ba141de78939642665616b4b008efd1afc8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "000a27d7ef70994c8fa10f2459f48ba141de78939642665616b4b008efd1afc8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "000a27d7ef70994c8fa10f2459f48ba141de78939642665616b4b008efd1afc8"
-    sha256 cellar: :any,                 arm64_linux:       "82bfbf2c35907402cfb1716f044ba264238e501b34f060e3c87dd053dc94062d"
-    sha256 cellar: :any,                 x86_64_linux:      "e6860ff1f92717cd77fee2d6c4ba3e65c5fb8499dde8931da4ed9aba38080dee"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8346f31ef31a2bffa70c6405648f50a963128c73fe08d7a47143ebe9967332df"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8346f31ef31a2bffa70c6405648f50a963128c73fe08d7a47143ebe9967332df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8346f31ef31a2bffa70c6405648f50a963128c73fe08d7a47143ebe9967332df"
+    sha256 cellar: :any,                 arm64_linux:       "f42fc8f7fb54c4b774ee5dabb549fbda5668c9d0c5838724c43b40a9d13b81c7"
+    sha256 cellar: :any,                 x86_64_linux:      "e7b08b83e28ca69abbc0515e7586f1747434f2a791f8ca3890af1df1e5a0758d"
   end
 
   depends_on "go" => :build

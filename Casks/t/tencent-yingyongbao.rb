@@ -1,6 +1,6 @@
 cask "tencent-yingyongbao" do
-  version "0.8.4.2249,RqDwyWNl8agsyqWt"
-  sha256 "40f0286ecbee6ad2014856e5e78e91a5314c6a8c6e8778a142920caf8baaccd1"
+  version "0.8.5.2281,HBWV6BsyieF5c9Wm"
+  sha256 "b10822da3f008c0c632bc0d78ed37fb400d99fd19360181682303c8d802abc3f"
 
   url "https://downmac.yyb.qq.com/channel/formal/raw/#{version.csv.second}/mac_yyb_#{version.csv.first}.dmg"
   name "腾讯应用宝"
@@ -74,6 +74,7 @@ cask "tencent-yingyongbao" do
     "~/Library/Logs/com.tencent.yybmac",
     "~/Library/Preferences/com.tencent.yybmac.healthagent.plist",
     "~/Library/Preferences/com.tencent.yybmac.plist",
+    "~/Library/Preferences/com.tencent.yybmac.screenshot.plist",
     "~/Library/WebKit/com.tencent.yybmac",
   ]
 end
