@@ -1,17 +1,17 @@
 class Dtop < Formula
   desc "Terminal dashboard for Docker monitoring across multiple hosts"
   homepage "https://dtop.dev/"
-  url "https://ghfast.top/https://github.com/amir20/dtop/archive/refs/tags/v0.10.6.tar.gz"
-  sha256 "40914b0d87c8cab2a4f2e22bdc14c5df1f6731f2014e51b9c61ad95990280cc0"
+  url "https://ghfast.top/https://github.com/amir20/dtop/archive/refs/tags/v0.11.1.tar.gz"
+  sha256 "6dd06a35502cbb91db9a89d991d4db1e2cc536c5c21b8e54e08f86e8b4dcf638"
   license "MIT"
   head "https://github.com/amir20/dtop.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "cdd867327bb08c5317e229c3fdc0ec334013bf42b3fd0d488fcae07a1a286bb2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3a3fb1edb7feab85625bd5f0e5104724a6fde8faa6666d9282a2e4d624d9f30a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3fe1d062a751b3c26a6e13899df76ec97418b5c576383d4a06865a508cf5d664"
-    sha256 cellar: :any,                 arm64_linux:       "09d89699fa13e6cd14c684ef23c07298b1a7f2ab307cc013b3f8629a18be1cbb"
-    sha256 cellar: :any,                 x86_64_linux:      "953f6dab99b45653ecda4b79e61619248709fbcd95fc3a401cce80b7249276af"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fbf20888573102de41dc77f6bf2299a0af817242c4d327c6d2c368fb79a17c28"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0c9c0a363e15651dcc682505aa217362f2582b647130149de06cd155be906ecd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "45b0b3860969682356fcc122c55ca07501fab815fac4e7009725db93d2d87f8f"
+    sha256 cellar: :any,                 arm64_linux:       "e909ca1832c218427ef00dda225dacd9b87fcaceb652288709a092fe0ab2751d"
+    sha256 cellar: :any,                 x86_64_linux:      "e8995577c55d53f717828492b1df9223a59374c360762ef424ea7bbc8c72f2cd"
   end
 
   depends_on "rust" => :build
