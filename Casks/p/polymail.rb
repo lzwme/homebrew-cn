@@ -1,7 +1,7 @@
 cask "polymail" do
   arch arm: "arm", intel: "intel"
 
-  version "2.4.3006"
+  version "2.4.3007"
   sha256 :no_check
 
   url "https://builds.polymail.io/macos-#{arch}/current"
@@ -20,6 +20,7 @@ cask "polymail" do
   app "Polymail.app"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/io.polymail.osx.sfl*",
     "~/Library/Application Support/Polymail",
     "~/Library/Caches/io.polymail.osx*",
     "~/Library/HTTPStorages/io.polymail.osx",

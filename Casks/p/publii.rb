@@ -1,7 +1,7 @@
 cask "publii" do
   arch arm: "arm64", intel: "intel"
 
-  version "0.48.1,17565"
+  version "0.48.2,17583"
   sha256 :no_check # required as upstream package is updated in-place
 
   url "https://getpublii.com/download/Publii-#{version.csv.first}-#{arch}.dmg"
@@ -22,9 +22,10 @@ cask "publii" do
   app "Publii.app"
 
   zap trash: [
-    "~/Documents/Publii",
-    "~/Library/Application Support/Publii",
-    "~/Library/Logs/Publii",
-    "~/Library/Preferences/com.tidycustoms.publii.plist",
-  ]
+        "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.tidycustoms.publii.sfl*",
+        "~/Library/Application Support/Publii",
+        "~/Library/Logs/Publii",
+        "~/Library/Preferences/com.tidycustoms.publii.plist",
+      ],
+      rmdir: "~/Documents/Publii"
 end

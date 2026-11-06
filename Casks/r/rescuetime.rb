@@ -1,6 +1,6 @@
 cask "rescuetime" do
-  version "3.4.1.4"
-  sha256 "4c80f9e35ef59f1ff56f1f5fcc1b6c25025cacfc40f5116322b5e5c5aa23e417"
+  version "3.4.1.6"
+  sha256 "a8491b8a9eaa7ffc0ded24dd13af62b250c84898489519c1965b72acd41b3e68"
 
   url "https://assets.rescuetime.com/installers/RescueTimeInstaller_#{version}.app.zip"
   name "RescueTime"
@@ -17,9 +17,14 @@ cask "rescuetime" do
 
   app "RescueTime.app"
 
+  uninstall launchctl: "com.rescuetime.RescueTime-Helper"
+
   zap trash: [
+    "~/Library/Application Scripts/com.rescuetime.RescueTime-Helper",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.rescuetime.rescuetime-helper.sfl*",
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.rescuetime.rescuetime.sfl*",
     "~/Library/Caches/com.rescuetime.RescueTime",
+    "~/Library/Containers/com.rescuetime.RescueTime-Helper",
     "~/Library/HTTPStorages/com.rescuetime.RescueTime*",
     "~/Library/Preferences/com.rescuetime.RescueTime.plist",
     "~/Library/RescueTime.com",

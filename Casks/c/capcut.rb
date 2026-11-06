@@ -1,8 +1,8 @@
 cask "capcut" do
-  version "9.5.0.4590"
-  sha256 "93306fb16c46298c2c89e34017b5e1b5b6f4b4e330d676f01737a4fe5927e71f"
+  version "9.7.1.4778"
+  sha256 "ad939b4c113227808947757b3fcd1420636e7d411a0e9ff0ee34d330ff8a59c6"
 
-  url "https://sf16-web-tos-buz.capcutstatic.com/obj/capcut-web-buz-sg/packages/CapCut_#{version.dots_to_underscores}_capcutpc_0_creatortool.dmg"
+  url "https://sf16-web-tos-buz.capcutstatic.com/obj/capcut-web-buz-sg/packages/CapCut_#{version.dots_to_underscores}_capcutpc_0_creatortool_nosandbox.dmg"
   name "CapCut"
   desc "Video editing and image design platform"
   homepage "https://www.capcut.com/"
@@ -31,5 +31,8 @@ cask "capcut" do
     "~/Library/Application Scripts/com.lemon.lvoverseas",
     "~/Library/Containers/com.lemon.lvoverseas",
     "~/Library/Group Containers/22MMUN2RN5.lv",
+    "~/Library/HTTPStorages/com.lemon.lvoverseas",
+    "~/Library/Preferences/com.capcut.CapCut.plist",
+    "~/Library/Preferences/com.lemon.lvoverseas.plist",
   ]
 end

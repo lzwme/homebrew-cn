@@ -10070,6 +10070,7 @@ Homebrew-homebrew-cask/Casks/e/exo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/expandrive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/explorer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/expo-orbit.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/e/expose.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/expressions.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/expressscribe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/expressvpn.rb, Homebrew/homebrew-cask, 0
@@ -10189,7 +10190,6 @@ Homebrew-homebrew-cask/Casks/f/flirc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/flixtools.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/flock-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/floorp.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/f/flow-desktop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/flow5.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/flowdown.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/flowvision.rb, Homebrew/homebrew-cask, 1
@@ -10273,6 +10273,7 @@ Homebrew-homebrew-cask/Casks/f/freedom.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/freefilesync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/freelens.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freelens@nightly.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/f/freellmapi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freeorion.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freepdf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freeplane.rb, Homebrew/homebrew-cask, 0

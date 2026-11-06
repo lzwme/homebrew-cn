@@ -1,8 +1,8 @@
 class Rumbledb < Formula
   desc "JSONiq and XQuery query engine on Apache Spark"
   homepage "https://rumbledb.org/"
-  url "https://ghfast.top/https://github.com/RumbleDB/rumble/releases/download/v3.0.0/rumbledb-3.0.0-brew.zip"
-  sha256 "0662af94248c025c921aac56c16656be3d5e893800abb8f988bddb512ebea14c"
+  url "https://ghfast.top/https://github.com/RumbleDB/rumble/releases/download/v3.0.5/rumbledb-3.0.5-brew.zip"
+  sha256 "cac50cc7e2f3e4735e0ff6b4956cbae0e8f810dd009229333cf0a2a4f1d5796a"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class Rumbledb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ba9b5340ef5a80b94509e24898a9068ee51a28e9fc432b4c05fdf9a6da2910be"
+    sha256 cellar: :any_skip_relocation, all: "8a5c8487eefaebedaa26bf9fab9f1a01ee5e3a488d810019efadadccef33d964"
   end
 
   depends_on "apache-spark"
@@ -25,7 +25,6 @@ class Rumbledb < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}/rumbledb repl 2>&1")
     (testpath/"test.query").write "1+1"
     assert_equal "2", shell_output("#{bin}/rumbledb run test.query").strip
   end
