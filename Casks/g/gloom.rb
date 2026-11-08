@@ -1,6 +1,6 @@
 cask "gloom" do
-  version "0.20.2"
-  sha256 "f5f409315374103e04f80674340c29d96433c60c6c75fb6112c4dcfbaaf2c208"
+  version "0.20.5"
+  sha256 "bf0fae731220a2db06ebc465823f06a8cbb16dfaba4237a66054ef7fe3e68648"
 
   url "https://ghfast.top/https://github.com/gloom-sh/gloomberb/releases/download/v#{version}/stable-macos-arm64-Gloom.app.zip"
   name "Gloom"
@@ -25,6 +25,7 @@ cask "gloom" do
   zap trash: [
     "~/.gloomberb",
     "~/Library/Application Support/com.vincelwt.gloomberb",
+    "~/Library/Preferences/com.vincelwt.gloomberb.plist",
     "~/Library/WebKit/com.vincelwt.gloomberb",
   ]
 end

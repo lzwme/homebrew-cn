@@ -1,6 +1,6 @@
 cask "glyphs" do
-  version "4.2,4202"
-  sha256 "0017e5759b19a0b143ad1a3a8f3c4bb9fbf366fabc69d7e7b3d7fe01ca7aa9cf"
+  version "4.2,4203"
+  sha256 "421ddb92d16b4a11827fb83f86dacb43c13f9739a5eeb4bf97170b56d09bf66d"
 
   url "https://updates.glyphsapp.com/Glyphs#{version.csv.first}-#{version.csv.second}.zip"
   name "Glyphs"
@@ -20,10 +20,15 @@ cask "glyphs" do
   uninstall quit: "com.GeorgSeifert.Glyphs*"
 
   zap trash: [
+    "~/Library/Application Support/bugsnag-shared-com.GeorgSeifert.Glyphs#{version.major}",
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.georgseifert.glyphs#{version.major}.sfl*",
     "~/Library/Application Support/com.GeorgSeifert.Glyphs#{version.major}",
+    "~/Library/Application Support/Glyphs #{version.major}",
     "~/Library/Application Support/Glyphs",
+    "~/Library/Caches/bugsnag-shared-com.GeorgSeifert.Glyphs#{version.major}",
     "~/Library/Caches/com.apple.helpd/SDMHelpData/Other/English/HelpSDMIndexFile/com.GeorgSeifert.Glyphs#{version.major}.help*",
+    "~/Library/Caches/com.GeorgSeifert.Glyphs#{version.major}",
+    "~/Library/HTTPStorages/com.GeorgSeifert.Glyphs#{version.major}",
     "~/Library/Preferences/com.GeorgSeifert.Glyphs#{version.major}.plist",
   ]
 end

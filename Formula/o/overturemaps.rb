@@ -3,17 +3,17 @@ class Overturemaps < Formula
 
   desc "Python tools for interacting with Overture Maps data"
   homepage "https://overturemaps.org"
-  url "https://files.pythonhosted.org/packages/d9/21/6ac72a357c1fc68f9ed7aeb7f3918915a285aa5f751bad12e58594ef3687/overturemaps-1.0.3.tar.gz"
-  sha256 "cb194ddf8ad355952cf9f9b1b6cbceaede44c85ea7e7e84131c4ac182d64a267"
+  url "https://files.pythonhosted.org/packages/1f/c2/a360363af901739f18eec60315b5fa87fdce8ebfbfce3294f154a3ca3d27/overturemaps-2.1.0.tar.gz"
+  sha256 "41b3a1e324d3f0cfccf0212288b544f0965722c601261ee17b3f19124d7a23ad"
   license "MIT"
   head "https://github.com/OvertureMaps/overturemaps-py.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "75bac3d3ed8c3f02708f5daed997d231f5c3411950a6b3a32ff6a48b5bd122b1"
-    sha256 cellar: :any, arm64_tahoe:       "f899b79e6f53e45afd06821269b940e75ce069c981d84835d7ed57a495059299"
-    sha256 cellar: :any, arm64_sequoia:     "53102a1e2e563ef52d351d8b320d80d0b542d3ff584faea6992b461d2a4abe2d"
-    sha256 cellar: :any, arm64_linux:       "deb6b5d546bdba0af7ebe18a8777b2e59cfdc771bf74c8d4790fe2e570d51e66"
-    sha256 cellar: :any, x86_64_linux:      "e809b9117f2796abf4fcb6a1d8a930b5e1ed2d34a9e724df8d45439d037215e9"
+    sha256 cellar: :any, arm64_golden_gate: "22247f23d00f74ca67252325825c87ec4ca5d8bc7a330a3f721fbf4f95658ef6"
+    sha256 cellar: :any, arm64_tahoe:       "5aa4731d486c3106c1f4fbba49bed1da186f6d456908accae2ed074c3f57c548"
+    sha256 cellar: :any, arm64_sequoia:     "12f15d96b3624a5573eea7a274a0cd9a2c65f8ec4044d0eb887199e2608d26ba"
+    sha256 cellar: :any, arm64_linux:       "43e4a63b29b78f5081346b01b9c8842501f3654b0600246b1dac9f96f0ec59cf"
+    sha256 cellar: :any, x86_64_linux:      "bdf32c91fd009567d55253875f42666c30293b567b3433a299f416e39ecfaa2f"
   end
 
   depends_on "cmake" => :build  # for pyarrow
@@ -31,8 +31,8 @@ class Overturemaps < Formula
   pypi_packages exclude_packages: "numpy"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
-    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
+    url "https://files.pythonhosted.org/packages/45/37/edbf1b0707709013c0cf2e8317e03d97ed29bf4cac709fe328904ae92a38/click-8.5.1.tar.gz"
+    sha256 "9bbfada76703fd1d784b83eea012e3e8c6a001a876543ef104fa56aaaeb072b4"
   end
 
   resource "colorama" do

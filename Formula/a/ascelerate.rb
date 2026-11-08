@@ -1,15 +1,15 @@
 class Ascelerate < Formula
   desc "Command-line tool for the App Store Connect API"
   homepage "https://ascelerate.dev"
-  url "https://ghfast.top/https://github.com/keremerkan/ascelerate/archive/refs/tags/v0.32.1.tar.gz"
-  sha256 "48d6ebd0f32fd95d03cc6da29046ff6cd0d4475bc5aa9d9ec344b29bac6a843c"
+  url "https://ghfast.top/https://github.com/keremerkan/ascelerate/archive/refs/tags/v0.33.1.tar.gz"
+  sha256 "cbbb67ed4a41eb8b912b27816a5b2a111a5b106f41212de774418aeebef2463e"
   license "MIT"
   head "https://github.com/keremerkan/ascelerate.git", branch: "main"
 
   bottle do
-    sha256 arm64_golden_gate: "6d2e9c47ca973a8c4d39a1a874a81efd9c11ab117f083a0f263d5fbf32cb189b"
-    sha256 arm64_tahoe:       "7875e2df2c3027cd2304ed75d79cba04408890c27d54809e7a521958d6601447"
-    sha256 arm64_sequoia:     "928f34588f08daebe1799c42e2e95073a11bb92a190e8fa72d2e4b740ce7c06e"
+    sha256 arm64_golden_gate: "cac72eb8f5cded47fc0a28ea0a05fa7f4b37447c7257a89801e8a7eca42b7aae"
+    sha256 arm64_tahoe:       "7391b55ef23c9347aa9e96e46c3120f468e40dd275c740af49228d3861ee815d"
+    sha256 arm64_sequoia:     "804b59344b03f60fe787bfa2d54bf2a240c72b9a58eb06b58a70023497aff09b"
   end
 
   depends_on xcode: ["26.0", :build]

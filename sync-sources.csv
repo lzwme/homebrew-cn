@@ -3703,6 +3703,7 @@ Homebrew-homebrew-core/Formula/k/krane.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/krb5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/krep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/krew.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/krunkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ksh93.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ksops.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kstart.rb, Homebrew/homebrew-core, 0
@@ -4290,6 +4291,7 @@ Homebrew-homebrew-core/Formula/lib/libkeyfinder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libkiwix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libklvanc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libkml.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libkrun.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libkrunfw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libksba.rb, Homebrew/homebrew-core, 0
@@ -15791,6 +15793,7 @@ Homebrew-homebrew-cask/Casks/t/tex-live-utility.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/texifier.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/texmacs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/texmaker.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/texpile.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/texshop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/texstudio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/textadept.rb, Homebrew/homebrew-cask, 1
@@ -15955,6 +15958,7 @@ Homebrew-homebrew-cask/Casks/t/transmission@nightly.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/t/transmit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/transnomino.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/transocks.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/tree-outliner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/treesheets.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/treeviewer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tresorit.rb, Homebrew/homebrew-cask, 0
