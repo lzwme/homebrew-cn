@@ -1,5 +1,5 @@
 cask "resilio-sync" do
-  version "3.1.2.1076"
+  version "3.1.3.1080"
   sha256 :no_check
 
   url "https://download-cdn.resilio.com/stable/mac/osx/0/Resilio-Sync.dmg"
@@ -24,10 +24,13 @@ cask "resilio-sync" do
 
   zap trash: [
     "~/Library/Application Scripts/com.resilio.Sync.FinderExtension",
+    "~/Library/Application Scripts/group.com.resilio.Sync",
     "~/Library/Application Support/Resilio Sync",
     "~/Library/Caches/com.resilio.Sync",
     "~/Library/Containers/com.resilio.Sync.FinderExtension",
     "~/Library/Group Containers/group.com.resilio.Sync",
+    "~/Library/HTTPStorages/com.resilio.Sync",
     "~/Library/Preferences/com.resilio.Sync.plist",
+    "~/Library/WebKit/com.resilio.Sync",
   ]
 end

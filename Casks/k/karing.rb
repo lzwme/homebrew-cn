@@ -1,6 +1,6 @@
 cask "karing" do
-  version "1.2.25.2802"
-  sha256 "90aba8e17bdf15564710e84e6328ce9c9d3edcf45c79eccc1d33995d50c2f458"
+  version "1.2.26.2923"
+  sha256 "8a0dc94644e22e8b7a0b4f2dd23138add38c24f93d36f60b5ba8fe99959464cd"
 
   url "https://ghfast.top/https://github.com/KaringX/karing/releases/download/v#{version}/karing_#{version}_macos_universal.dmg"
   name "Karing"
@@ -21,6 +21,7 @@ cask "karing" do
   zap trash: [
     "~/Library/Application Scripts/com.nebula.karing",
     "~/Library/Application Scripts/group.com.nebula.karing",
+    "~/Library/Containers/com.nebula.karing",
     "~/Library/Containers/Karing",
     "~/Library/Group Containers/group.com.nebula.karing",
   ]

@@ -1,17 +1,17 @@
 class Dbmate < Formula
   desc "Lightweight, framework-agnostic database migration tool"
   homepage "https://github.com/amacneil/dbmate"
-  url "https://ghfast.top/https://github.com/amacneil/dbmate/archive/refs/tags/v2.37.0.tar.gz"
-  sha256 "31bfdb3e87dc706dcc87a7f6a6343819f288af8c5ff0152c5793551e3cad1847"
+  url "https://ghfast.top/https://github.com/amacneil/dbmate/archive/refs/tags/v2.38.1.tar.gz"
+  sha256 "2b89308a7e5ceda12b5919a77639addf0fc6ffda6f649fb2bccfa9a73944fd1a"
   license "MIT"
   head "https://github.com/amacneil/dbmate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "4e5f3e43334664bd29b284230008c6042e448e1401222cc9e81ba895d5ca18ec"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9f07aaacc670e1c1257364b260c0d51c0037438d7cd63ab2cf161a66f5b27c61"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c7d6eccb28ff6c1e19989989d9a24d32c36af142d932ec0ad1b1972431992edb"
-    sha256 cellar: :any,                 arm64_linux:       "c5920d16efc40a2d6187430556de77899c74685795c4b8ce675080f5c82128e0"
-    sha256 cellar: :any,                 x86_64_linux:      "a31f175631df9a1010bf61e34827ab2a43823856f51602176b127af671d26c74"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "783230fa82fa7d6733f45f4f51f7c5bd53ff69f25ce76b244089b679eaf08ba5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ec3f3498b4d6f6584138bbda9be0d5abdad3473ba71d5010d73bd12c28080901"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dc509d7351ccc7aa37e754a1c588223ce6755ee4f6e2337fe8be3543f5fbb1ec"
+    sha256 cellar: :any,                 arm64_linux:       "fd1427a1986f76473909b5427356539604ce20d5180d8d4636bcff4c0d835386"
+    sha256 cellar: :any,                 x86_64_linux:      "bfb59047395f24ee7ed44f4a7953bbbbea2efbadf7523b9cd36c8db1c789701d"
   end
 
   depends_on "go" => :build

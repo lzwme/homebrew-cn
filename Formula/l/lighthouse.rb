@@ -1,8 +1,8 @@
 class Lighthouse < Formula
   desc "Rust Ethereum 2.0 Client"
   homepage "https://lighthouse.sigmaprime.io/"
-  url "https://ghfast.top/https://github.com/sigp/lighthouse/archive/refs/tags/v8.3.2.tar.gz"
-  sha256 "a7c4923d2218c62f27ca8ad8dc5a99350d56671345b5dc29f8b9b5877fa808df"
+  url "https://ghfast.top/https://github.com/sigp/lighthouse/archive/refs/tags/v8.3.3.tar.gz"
+  sha256 "f0e693996e08bf3dc738bc96be76751140906b8e0cb3ac0215e5a3a95ce01c0c"
   license "Apache-2.0"
 
   livecheck do
@@ -11,11 +11,11 @@ class Lighthouse < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8cf12b361ef3c6726e77a7b85cca8d0e09b921bb65acbac5817faa9534a645ff"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "478c46b174a2f49b009aa298600689e74ee471040cafc53ad1b794068efe56bf"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c58e0f71fb9dbec43759cc4f43ba7f6b67986a8443e46d0ea48bf6724af09c4a"
-    sha256 cellar: :any,                 arm64_linux:       "db4eccc91d59207432b617235cf9917f23e43f198f97fb2c53e80aa7d578d2c5"
-    sha256 cellar: :any,                 x86_64_linux:      "edc3dd31c7bbb148cc96cbfde809337e4b3bf8aeed3e9e2b5fc13b937b0f046a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6616a49c8c67487a8897a8de4004a3e81ee36ff01c18486d4b22bc2d723a7c64"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7d17e60557e24a793fb98b82073ee59382227dc1b6f9253235504be20c9ddd30"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "482d0d0f52be6ea27302eb5a57665dd206c477aab4a1bc3e4b01175a69964a2e"
+    sha256 cellar: :any,                 arm64_linux:       "27d80a84cb988f89a8b9629c9998e62dac49b30d941274fd1981613d00e862be"
+    sha256 cellar: :any,                 x86_64_linux:      "19a64910051b64d22511941c5b7423e9cfd617bcdbf5a0d5f7ad6cdbea86d7cd"
   end
 
   depends_on "cmake" => :build
@@ -29,8 +29,38 @@ class Lighthouse < Formula
     depends_on "zlib-ng-compat"
   end
 
+  resource "specs" do
+    url "https://ghfast.top/https://raw.githubusercontent.com/ethereum/eth2.0-specs/v0.12.1/deposit_contract/contracts/validator_registration.json"
+    sha256 "66c9407b5c249a483c4ee6bf0269847c19a3a8c55c1888981f08be5acb04c1af"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/sigp/lighthouse/refs/tags/v#{LATEST_VERSION}/common/deposit_contract/build.rs"
+      regex(/const TAG: &str = "v(\d+(:?\.\d+)+)";/)
+    end
+  end
+
+  resource "deposit-contract" do
+    url "https://ghfast.top/https://raw.githubusercontent.com/sigp/unsafe-eth2-deposit-contract/v0.9.2.1/unsafe_validator_registration.json"
+    sha256 "69e4de1d14f742dc4145234c0884c85a6c7cf6f1ada31d8ecd27dff2f67e4586"
+
+    livecheck do
+      url "https://ghfast.top/https://raw.githubusercontent.com/sigp/lighthouse/refs/tags/v#{LATEST_VERSION}/common/deposit_contract/build.rs"
+      regex(/const UNSAFE_TAG: &str = "v(\d+(:?\.\d+)+)";/)
+    end
+  end
+
+  allow_network_access! :test
+
+  def fetch
+    system "cargo", "fetch", *std_cargo_fetch_args
+  end
+
   def install
+    resources.each { |r| r.stage buildpath/"resources" }
+
     ENV["PROTOC_NO_VENDOR"] = "1"
+    ENV["LIGHTHOUSE_DEPOSIT_CONTRACT_SPEC_URL"] = "file://#{buildpath}/resources/validator_registration.json"
+    ENV["LIGHTHOUSE_DEPOSIT_CONTRACT_TESTNET_URL"] ="file://#{buildpath}/resources/unsafe_validator_registration.json"
 
     system "cargo", "install", "--no-default-features", *std_cargo_args(path: "lighthouse")
   end

@@ -1,5 +1,5 @@
 cask "cavalry" do
-  version "2.8"
+  version "2.8.1"
   sha256 :no_check
 
   url "https://cavalry.studio/downloads/latest/Cavalry.dmg"
@@ -16,8 +16,12 @@ cask "cavalry" do
 
   app "Cavalry.app"
 
+  uninstall quit: "com.scenegroup.cavalry"
+
   zap trash: [
     "~/Library/Application Support/Cavalry",
+    "~/Library/Caches/com.scenegroup.cavalry",
+    "~/Library/HTTPStorages/com.scenegroup.cavalry*",
     "~/Library/Preferences/Cavalry",
   ]
 end

@@ -1,6 +1,6 @@
 cask "amp-app" do
-  version "1.0,1200"
-  sha256 "0b315b34be1f9ed9f3637e8ec458567e81fd75d0b94bb20bd960f69ca9b37170"
+  version "1.0,1220"
+  sha256 "9aec2c21f17db867e578302161d3c854a95b6f576e71bb9baf38667c49e385ea"
 
   url "https://static.ampcode.com/mac/Amp-#{version.csv.first}-#{version.csv.second}.dmg"
   name "Amp"
@@ -24,9 +24,11 @@ cask "amp-app" do
 
   zap trash: [
     "~/Library/Application Scripts/com.ampcode.amp.macos.share",
+    "~/Library/Application Scripts/com.ampcode.amp.macos.widgets",
     "~/Library/Application Scripts/group.com.ampcode.amp.macos",
     "~/Library/Caches/com.ampcode.amp.macos",
     "~/Library/Containers/com.ampcode.amp.macos.share",
+    "~/Library/Containers/com.ampcode.amp.macos.widgets",
     "~/Library/Group Containers/group.com.ampcode.amp.macos",
     "~/Library/HTTPStorages/com.ampcode.amp.macos",
     "~/Library/HTTPStorages/com.ampcode.amp.macos.binarycookies",

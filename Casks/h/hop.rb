@@ -3,10 +3,10 @@ cask "hop" do
   os macos: "macos", linux: "linux"
   url_end = on_system_conditional macos: "dmg", linux: "AppImage"
 
-  version "0.4.5"
-  sha256 arm:          "d66afe9b6837c2e49592501a5384e88c9fe1500faf4e8777e918325fa52991d5",
-         intel:        "89c543d71dcb9b76b68119443db1fdcc1c3f33126dab48e0a40de5fab64bf26a",
-         x86_64_linux: "72f5cc07f9a3884f138fe44d86fbca9dfd4b14bcd9aae9e2164047b841dd6195"
+  version "0.5.2"
+  sha256 arm:          "783878a2e65c19e286b0a042d5d3a09e54cd450ee32cc10b710045c9efc1d14d",
+         intel:        "62f2ddf1486e9a7e7a34adf7a6f4894ec46043c2ae5d241b8634bad1bae4e294",
+         x86_64_linux: "b69d5e2bd32839f341478f8ada14eaafd696aff3b0873119b9691a5e11f9493a"
 
   on_macos do
     depends_on macos: :monterey
@@ -35,4 +35,9 @@ cask "hop" do
   name "HOP"
   desc "View and edit HWP documents"
   homepage "https://golbin.github.io/hop/"
+
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
 end

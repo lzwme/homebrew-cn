@@ -2,9 +2,9 @@ cask "studio-3t" do
   arch arm: "-aarch64"
   livecheckarch = on_arch_conditional arm: "_aarch64"
 
-  version "2026.14.0"
-  sha256 arm:   "9f02a6048a6848e69cef508f1a85051284674bdf65fbfd0baf4c2a6f8efe80f3",
-         intel: "9763f9c5010cbc3238fe837b43e3449a158595fd1515ba06b880419bea29deb1"
+  version "2026.15.0"
+  sha256 arm:   "8fc6115cf765926b74a8f9ff5835f4d440215b6192c9e41491d6d4dab25e5c10",
+         intel: "947cb67f0acfcadd089f6ea69c9ab7db198b4e94a17bb84194d8e4038a2c1521"
 
   url "https://download.studio3t.com/studio-3t/mac#{arch}/#{version}/Studio-3T.dmg"
   name "Studio 3T"
@@ -26,9 +26,12 @@ cask "studio-3t" do
 
   zap trash: [
     "~/.3T/studio-3t",
+    "~/Library/Caches/com.install4j.0526-4458-1435-8154.837",
+    "~/Library/HTTPStorages/com.install4j.0526-4458-1435-8154.837",
     "~/Library/Preferences/3t.enterprise.mongochef.plist",
     "~/Library/Preferences/3t.mongochef.core.plist",
     "~/Library/Preferences/3t.mongochef.enterprise.plist",
     "~/Library/Preferences/3t.mongochef.pro.plist",
+    "~/Library/Preferences/com.install4j.0526-4458-1435-8154.837.plist",
   ]
 end

@@ -3,18 +3,17 @@ class McpAtlassian < Formula
 
   desc "MCP server for Atlassian tools (Confluence, Jira)"
   homepage "https://github.com/sooperset/mcp-atlassian"
-  url "https://files.pythonhosted.org/packages/d6/95/0447fe71406c95f7bbc2d0c762ea83b473c5e7b12f09caa47867068dcf0c/mcp_atlassian-0.23.1.tar.gz"
-  sha256 "6b57391928887f5334fe854073b09e3a49bb7dae0d55a1b1276f4d910607a0f1"
+  url "https://files.pythonhosted.org/packages/60/e7/853da9f38fd0f4d9d3193094ed1ca73a5c44bc27de3db6035191bd16a671/mcp_atlassian-0.24.1.tar.gz"
+  sha256 "15de5c115c85e51518086f2c0160af820d8e139cf2ae0f25e9e4c11c4d8dddc9"
   license "MIT"
-  revision 3
   head "https://github.com/sooperset/mcp-atlassian.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4928754b1764ab103fdd62aa2620d9a8549eadc889560462af875031436eda20"
-    sha256 cellar: :any, arm64_tahoe:       "dd9a60f0181992b4c1ed42b7e8f9e2b46b30ae38577c5b098ea052f40f57ec5b"
-    sha256 cellar: :any, arm64_sequoia:     "d2a43d7808e482ab50b1d9f337a77cb9d5e7bba5f5832de0b4cda1dfff580f8a"
-    sha256 cellar: :any, arm64_linux:       "c27498c316ed1de947cb8be2a29d2f6aee9049ef4306b73372cd9c82d5ed1d1e"
-    sha256 cellar: :any, x86_64_linux:      "17995fc7a83da0c51545e75a9c03d6e59639f83dd9150ba3fc35b0715ef30658"
+    sha256 cellar: :any, arm64_golden_gate: "199e2691e22a51e37e65ecc2897fab00731753f0f28604c08107f001d5d95243"
+    sha256 cellar: :any, arm64_tahoe:       "a69be43f02dd7428211bda669cbde724f88497120cef94a95836585d0330d591"
+    sha256 cellar: :any, arm64_sequoia:     "121e42ab2a98265a8556175248a81db42f38c109ab87df44dcd5851a16b5fd1b"
+    sha256 cellar: :any, arm64_linux:       "1741b77f3a6b07e78e10488860135eaae7f34d0ebc92e1eb96aab62bc06ec595"
+    sha256 cellar: :any, x86_64_linux:      "cfc029400da4b0bf1ba3209865c27ee75950cbe1e763aff14f3efdc4807dfd33"
   end
 
   depends_on "pkgconf" => :build
@@ -68,8 +67,8 @@ class McpAtlassian < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/5f/6b/6c1553e1e8f672f9423344a1915aad1537439ad3d14a3fbc1a02159cfd94/cachetools-7.3.0.tar.gz"
-    sha256 "3f63fc208410f0c3a3b37883c4903ecdacd6f0b259134e6d2e82debd5b2e01de"
+    url "https://files.pythonhosted.org/packages/e6/60/ac2d44dbfcca28a35151af27ad9c6236d913a67768b5bb88af90a8c02943/cachetools-8.0.0.tar.gz"
+    sha256 "5ed01bd676800d51f0025605e4fd8ad0891550513e7b0a4c3da478463764e5c3"
   end
 
   resource "caio" do
@@ -88,13 +87,13 @@ class McpAtlassian < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
-    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
+    url "https://files.pythonhosted.org/packages/45/37/edbf1b0707709013c0cf2e8317e03d97ed29bf4cac709fe328904ae92a38/click-8.5.1.tar.gz"
+    sha256 "9bbfada76703fd1d784b83eea012e3e8c6a001a876543ef104fa56aaaeb072b4"
   end
 
   resource "cyclopts" do
-    url "https://files.pythonhosted.org/packages/ae/af/8254627de20f769193afde3b4fdffd0f3b5c5c0e8a756b6088b6e308ec2c/cyclopts-5.3.3.tar.gz"
-    sha256 "86182ba223839686d52178c2b6151b28de8fe9d02cb64d290fbc86341a4a5b76"
+    url "https://files.pythonhosted.org/packages/47/ea/b4237c7955b11d529ac29fa5b55ce744c6e09514753725337c270aa4ae43/cyclopts-5.4.0.tar.gz"
+    sha256 "a853c9394fde3e3ec0a1b50c7e20b64bb49dfd71baef5f24eceb7bb397171a41"
   end
 
   resource "deprecated" do
@@ -328,8 +327,8 @@ class McpAtlassian < Formula
   end
 
   resource "pymdown-extensions" do
-    url "https://files.pythonhosted.org/packages/f3/fe/ac50ee24a80a1b344e643f6fb626063cc7041b978cd1dd9a7f9963ae1cd1/pymdown_extensions-12.3.tar.gz"
-    sha256 "a7f2a4e0bc60c6e6babfa7922cfb3b01cd640eb00fb208f3c582e12bae00ea67"
+    url "https://files.pythonhosted.org/packages/c6/ef/6496e7e9fb63427ace8636a481b3f8151e0dfaa6a76512e6b01f7c815a4b/pymdown_extensions-13.0.tar.gz"
+    sha256 "092524bea4fb3e62891204495de9e56b98603912df167ddd90d4f91bf2cd0414"
   end
 
   resource "pyperclip" do
@@ -423,8 +422,8 @@ class McpAtlassian < Formula
   end
 
   resource "sse-starlette" do
-    url "https://files.pythonhosted.org/packages/71/7f/3b8ec4f27833f7b8c270a3ef960b6d435e1065439847bc0fcd1e58ae898b/sse_starlette-3.6.0.tar.gz"
-    sha256 "623151d6c20dc0eebf1b3379c27faae91fff883bac7ab6665f16f46440a88b3a"
+    url "https://files.pythonhosted.org/packages/41/43/a232e3cd804293bd4f6d01e8895bc0f6f83ea148d712baf9d783c7d93d23/sse_starlette-3.7.0.tar.gz"
+    sha256 "326416da2ab52e9a41b3f409d3ff897eda45aa68c9f3b7b17d0913aab8d219c3"
   end
 
   resource "starlette" do

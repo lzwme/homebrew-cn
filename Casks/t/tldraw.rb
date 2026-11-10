@@ -4,22 +4,23 @@ cask "tldraw" do
   arch_end = on_system_conditional macos: "universal", linux: arch
   url_end = on_system_conditional macos: "dmg", linux: "AppImage"
 
-  version "1.23.1"
-  sha256 arm:          "d5a85d77165e594a0bdac10dce64079cac57c864aa17ff0f5a000fae5052c495",
-         intel:        "d5a85d77165e594a0bdac10dce64079cac57c864aa17ff0f5a000fae5052c495",
-         arm64_linux:  "6ef8b8639a722b0e5ab70f8f0799a614f6ef52c71e53483519f79adf6b6f4218",
-         x86_64_linux: "19499a0074f97f44235c7bffd3d0ff4474ace1312c0ea9695b965ca9060fbadf"
+  version "1.24.0"
+  sha256 arm:          "2cbde5be219f3530ea6ab09f435c75364882c2cc545a8f8aec1d2a13e4922b0b",
+         intel:        "2cbde5be219f3530ea6ab09f435c75364882c2cc545a8f8aec1d2a13e4922b0b",
+         arm64_linux:  "ade8374e1d87eb5b79a2d8509cb30372d2ad33367ad6d85cdf49d6ee89ff2d04",
+         x86_64_linux: "d47b5643c6035488d45659b4e8b9ec2225bf12804149f87a3a3baf7a5c2739da"
 
   on_macos do
     auto_updates true
     depends_on macos: :monterey
 
-    app "tldraw offline.app"
+    app "tldraw office.app"
 
     zap trash: [
       "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.tldraw.desktop.sfl*",
       "~/Library/Application Support/tldraw",
       "~/Library/Caches/@tldesktop-updater",
+      "~/Library/Caches/@tloffline-updater",
       "~/Library/Caches/com.tldraw.desktop",
       "~/Library/Caches/com.tldraw.desktop.ShipIt",
       "~/Library/HTTPStorages/com.tldraw.desktop",
@@ -27,16 +28,17 @@ cask "tldraw" do
     ]
   end
   on_linux do
-    app_image "tldraw-offline-linux-#{arch}.AppImage", target: "tldraw offline.AppImage"
+    app_image "tldraw-office-linux-#{arch}.AppImage", target: "tldraw office.AppImage"
 
     zap trash: [
       "~/.cache/@tldesktop-updater",
+      "~/.cache/@tloffline-updater",
       "~/.config/tldraw",
     ]
   end
 
-  url "https://ghfast.top/https://github.com/tldraw/tldraw-offline/releases/download/v#{version}/tldraw-offline-#{os}-#{arch_end}.#{url_end}"
-  name "tldraw offline"
+  url "https://ghfast.top/https://github.com/tldraw/tldraw-office/releases/download/v#{version}/tldraw-office-#{os}-#{arch_end}.#{url_end}"
+  name "tldraw office"
   desc "Editor for .tldr files"
-  homepage "https://github.com/tldraw/tldraw-offline"
+  homepage "https://github.com/tldraw/tldraw-office"
 end
