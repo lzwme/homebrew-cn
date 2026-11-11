@@ -1,5 +1,5 @@
 cask "chronoagent" do
-  version "12.0.3"
+  version "12.0.4"
   sha256 :no_check
 
   url "https://downloads.econtechnologies.com/CA_Mac_Download.dmg"
@@ -22,7 +22,10 @@ cask "chronoagent" do
 
   zap trash: [
     "~/Library/Caches/com.apple.helpd/Generated/ChronoAgent Help Center*",
+    "~/Library/Caches/com.econtechnologies.backgrounder.CAMonitorBackgrounder",
     "~/Library/Containers/com.apple.helpviewer/Data/com.econtechnologies.preference.chronoagent.*",
+    "~/Library/HTTPStorages/com.econtechnologies.backgrounder.CAMonitorBackgrounder",
+    "~/Library/Preferences/com.econtechnologies.backgrounder.CAMonitorBackgrounder.plist",
     "~/Library/Preferences/com.econtechnologies.chronoagent.prefPane.plist",
   ]
 end

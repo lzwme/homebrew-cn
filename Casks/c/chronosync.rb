@@ -1,5 +1,5 @@
 cask "chronosync" do
-  version "12.0.3"
+  version "12.0.4"
   sha256 :no_check
 
   url "https://downloads.econtechnologies.com/CS4_Download.dmg"
@@ -23,6 +23,10 @@ cask "chronosync" do
             pkgutil: "com.econtechnologies.pkg.ChronoSyncApplication"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.econtechnologies.backgrounder.chronosync.sfl*",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.econtechnologies.chronosync.sfl*",
+    "~/Library/Caches/com.econtechnologies.backgrounder.chronosync",
+    "~/Library/HTTPStorages/com.econtechnologies.backgrounder.chronosync",
     "~/Library/Logs/ChronoSync",
     "~/Library/Preferences/com.econtechnologies.backgrounder.chronosync.plist",
     "~/Library/Preferences/com.econtechnologies.chronosync.plist",

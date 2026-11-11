@@ -1,6 +1,6 @@
 cask "airsync" do
-  version "4.1.0"
-  sha256 "07974efe54944f8c6c84e81fc571283297e8197059a774b2fccc33d3e63d68fc"
+  version "4.2.0"
+  sha256 "2cd6d587ce39a590b571c1baa2ee2dec28578d637666306011571521b5171da2"
 
   url "https://ghfast.top/https://github.com/sameerasw/airsync-mac/releases/download/v#{version}/AirSync.dmg"
   name "AirSync"
@@ -19,8 +19,10 @@ cask "airsync" do
   uninstall quit: "sameerasw.airsync-mac"
 
   zap trash: [
+    "~/Library/Application Scripts/sameerasw.airsync-mac.share",
     "~/Library/Application Support/airsync-mac",
     "~/Library/Caches/sameerasw.airsync-mac",
+    "~/Library/Containers/sameerasw.airsync-mac.share",
     "~/Library/Preferences/sameerasw.airsync-mac.plist",
     "~/Library/Saved Application State/sameerasw.airsync-mac.savedState",
   ]

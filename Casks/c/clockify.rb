@@ -1,5 +1,5 @@
 cask "clockify" do
-  version "2.12.10"
+  version "2.12.11"
   sha256 :no_check
 
   url "https://clockify.me/downloads/ClockifyDesktop.zip"
@@ -22,6 +22,7 @@ cask "clockify" do
   zap trash: [
     "~/Library/Application Support/coing.ClockifyDesktop",
     "~/Library/Caches/coing.ClockifyDesktop",
+    "~/Library/HTTPStorages/coing.ClockifyDesktop",
     "~/Library/Preferences/coing.ClockifyDesktop.plist",
     "~/Library/Saved Application State/coing.ClockifyDesktop.savedState",
   ]

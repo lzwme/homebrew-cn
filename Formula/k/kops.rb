@@ -1,8 +1,8 @@
 class Kops < Formula
   desc "Production Grade K8s Installation, Upgrades, and Management"
   homepage "https://kops.sigs.k8s.io/"
-  url "https://ghfast.top/https://github.com/kubernetes/kops/archive/refs/tags/v1.36.2.tar.gz"
-  sha256 "1d6b92b045eae3bc7c9c49cd2a998bbcda239aaa3fc3cbca3bec63dfd749408e"
+  url "https://ghfast.top/https://github.com/kubernetes/kops/archive/refs/tags/v1.37.0.tar.gz"
+  sha256 "3e393baa5e8461429cca56118f4dd2c371735d7750429bf7792d4e83bb8feb93"
   license "Apache-2.0"
   head "https://github.com/kubernetes/kops.git", branch: "master"
 
@@ -12,13 +12,11 @@ class Kops < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "abcbe9645cbf7ce117e73e176e53f93b27308ebb658858d80d3942a2af06250c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5fd4945e3ea9125a5c00e9e9c5e9d9e74c793c5d193443a31b25c04f3e38638c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "79506564b9ca8dcb19709a83b5d3a628e7caf260f5d5c86be377e6b54e492ffa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "560659b0bca30058262b0de9be8e0c7093b8822c01d80794db42a3b7cc8c9a63"
-    sha256 cellar: :any_skip_relocation, sonoma:            "88c42e851da0024293a4af6f2ef3ed0f47d9228d43983c506a1200d8f267957d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "91a5c3878dcae16c39a63ec615d944fb1c5db3971b32aef1a86051a2a708ae6e"
-    sha256 cellar: :any,                 x86_64_linux:      "e1142c65dfd1c350fc1de56a676b18138b48096ad7eae04738109129b2a0aaf3"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "59f2d411bece11898d7e6b3de3cb6f7ff700a812092115de9f8a0ef917941243"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bff25d1a1bd1cdadf615009f0b960b3cad8ab2150a8b612f84fa88330cb2ae59"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "de9e2d5d71a8c18f7b93aa89dca40849e02bacb83e1508b52519d85e64a900cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "541e3d6000f7432e508f2ca36b8352bab14581169dca533b050fbba12f149325"
+    sha256 cellar: :any,                 x86_64_linux:      "5aa7257fd4ee9ce90b26694fdf54ee2d7d4634a8732a37595f8b5ae4e438d10a"
   end
 
   depends_on "go" => :build
