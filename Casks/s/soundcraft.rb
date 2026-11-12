@@ -4,11 +4,11 @@ cask "soundcraft" do
   os macos: "macos", linux: "linux"
   url_end = on_system_conditional macos: "dmg", linux: "AppImage"
 
-  version "0.19.0"
-  sha256 arm:          "94b649503b68c70b048f12e578e859bee51ca7d718db0b02f955a06b28a9696f",
-         intel:        "94b649503b68c70b048f12e578e859bee51ca7d718db0b02f955a06b28a9696f",
-         arm64_linux:  "c0b5d7cbd14e618e68983d5285e2d1f7ac0c4ac37c3c2bbc62930031e0db8320",
-         x86_64_linux: "aaded74e4f132c033acc1223c776a74e59a751dc908841b4c31572e38939198f"
+  version "0.20.1"
+  sha256 arm:          "eb1dd392d7c3867b569aa9e08c016427096800016ff33f8f4e0192e43d9e6c0b",
+         intel:        "eb1dd392d7c3867b569aa9e08c016427096800016ff33f8f4e0192e43d9e6c0b",
+         arm64_linux:  "7dad0ab5157b69e43c0c542665fd63c5570a6c28a135ec70f1a7f0efbcdbe503",
+         x86_64_linux: "4dbb402a413ec2a53103b9fa77d6356e6feeb086d94975c95e635c74b434daf8"
 
   on_macos do
     app "SoundCraft.app"
