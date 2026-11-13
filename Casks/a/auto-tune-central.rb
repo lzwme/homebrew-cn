@@ -1,6 +1,6 @@
 cask "auto-tune-central" do
-  version "2.0.3,7791"
-  sha256 "b5473911d210d0bac8c443ad94044131b595af6026a7ad3d5bcf85d6944293e7"
+  version "2.1.1,8020"
+  sha256 "fefeb1575a812e89eaa2914dd74c59494ca306a6677009cc7e85eb03993e4dfe"
 
   url "https://antares.sfo2.cdn.digitaloceanspaces.com/auto-tune-central/auto-update/mac/Auto_Tune_Central_#{version.csv.first}_universal_x#{version.csv.second}.dmg"
   name "Auto-Tune Central"
@@ -26,6 +26,7 @@ cask "auto-tune-central" do
 
   zap trash: [
     "~/Library/Application Support/Auto-Tune Central",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.antares.autotunecentral.sfl*",
     "~/Library/Application Support/CrashReporter/Auto-Tune Central_*.plist",
     "~/Library/Caches/com.Antares.AutoTuneCentral*",
     "~/Library/HTTPStorages/com.Antares.AutoTuneCentral",

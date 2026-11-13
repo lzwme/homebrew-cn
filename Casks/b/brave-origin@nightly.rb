@@ -2,14 +2,14 @@ cask "brave-origin@nightly" do
   arch arm: "arm64", intel: "x64"
   folder_arch = on_arch_conditional arm: "-arm64"
 
-  sha256 arm:   "24cc4322686a258497fc83c0be4d23672a655ae7647d17c65dd944daaf3e52e5",
-         intel: "455ccd071adf70ad1df8fa7668b38e57d352e58ad4862819424ac2dd196c0890"
+  sha256 arm:   "415d004c682e140d7b09ed98a30867d324ab2e01855aafcbaa12692ed840004b",
+         intel: "17a4cfcebc24ba73d9bb7b7a771d1e83ef98a1f0984f973a4cea5599ae52ee5e"
 
   on_arm do
-    version "1.101.40.0,201.40"
+    version "1.102.2.0,202.2"
   end
   on_intel do
-    version "1.101.40.0,201.40"
+    version "1.102.2.0,202.2"
   end
 
   url "https://updates-cdn.bravesoftware.com/sparkle/Brave-Origin/nightly#{folder_arch}/#{version.csv.second}/Brave-Origin-Nightly-#{arch}.dmg"

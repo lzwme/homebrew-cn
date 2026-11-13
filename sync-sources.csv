@@ -1481,7 +1481,7 @@ Homebrew-homebrew-core/Formula/d/darkice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/darklua.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/darkstat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dart-sass.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/dart-sdk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dart-sdk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dartaotruntime.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dartsim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dasel.rb, Homebrew/homebrew-core, 1
@@ -1742,7 +1742,6 @@ Homebrew-homebrew-core/Formula/d/dotdrop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dotenv-linter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotnet@10.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/dotnet@6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotnet@8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotnet@9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dotslash.rb, Homebrew/homebrew-core, 1
@@ -6509,6 +6508,7 @@ Homebrew-homebrew-core/Formula/r/rdkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/re-flex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/re2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/re2c.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rea.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/react-native-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/readerwriterqueue.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/readline.rb, Homebrew/homebrew-core, 0
@@ -6591,7 +6591,6 @@ Homebrew-homebrew-core/Formula/r/restview.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/resty.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/resvg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/retdec.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/r/rethinkdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/retire.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/retry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/reuse.rb, Homebrew/homebrew-core, 0
@@ -9805,6 +9804,7 @@ Homebrew-homebrew-cask/Casks/d/devonagent.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/devonsphere-express.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/devonthink.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/devpod.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/d/devtools.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/devtoys.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/devtunnel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/devutils.rb, Homebrew/homebrew-cask, 0
@@ -14741,6 +14741,7 @@ Homebrew-homebrew-cask/Casks/p/plex-htpc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/plex-media-server.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/plex.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/plexamp.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/plezy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pliim.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/plistedit-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/plotdigitizer.rb, Homebrew/homebrew-cask, 0
@@ -15195,6 +15196,7 @@ Homebrew-homebrew-cask/Casks/r/ruswitcher.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rwts-pdfwriter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/ryver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sabaki.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/sable.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sabnzbd.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sacnview.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/saega.rb, Homebrew/homebrew-cask, 0
