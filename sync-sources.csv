@@ -1421,6 +1421,7 @@ Homebrew-homebrew-core/Formula/c/cue.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cuetools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cunit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cups.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/curl-impersonate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/curl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/curlcpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/curlftpfs.rb, Homebrew/homebrew-core, 0
@@ -10206,6 +10207,7 @@ Homebrew-homebrew-cask/Casks/f/flame.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/flameshot.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/flashspace.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fldigi.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/fleet-desktop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fleet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/flexoptix.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/flic.rb, Homebrew/homebrew-cask, 0
@@ -13635,6 +13637,7 @@ Homebrew-homebrew-cask/Casks/l/lastpass.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/latest.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/latexdraw.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/latexit.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/lattice.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/launchbar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/launchcontrol.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/launchie.rb, Homebrew/homebrew-cask, 1
@@ -15346,6 +15349,7 @@ Homebrew-homebrew-cask/Casks/s/showmeyourhotkeys.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/showyedge.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/shureplus-motiv.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shutter-encoder.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/sidebarfavorites-manager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sidenotes.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sidequest.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sidex.rb, Homebrew/homebrew-cask, 1
@@ -16470,6 +16474,7 @@ Homebrew-homebrew-cask/Casks/y/yakit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yam-display.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yandex-cloud-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yandex-disk.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/y/yandex-document.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yandex-music-unofficial.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yandex-music.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yandex.rb, Homebrew/homebrew-cask, 0

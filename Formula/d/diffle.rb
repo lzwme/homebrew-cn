@@ -1,16 +1,16 @@
 class Diffle < Formula
   desc "Keyboard-first diff viewer with LSP support and GitHub integration"
   homepage "https://github.com/moritzwilksch/diffle"
-  url "https://ghfast.top/https://github.com/moritzwilksch/diffle/archive/refs/tags/v0.5.1.tar.gz"
-  sha256 "3c2d4abab0f381b7dab64dc04a7a1b834869c294cf6ce74f3dee50a34b4d541d"
+  url "https://ghfast.top/https://github.com/moritzwilksch/diffle/archive/refs/tags/v0.5.3.tar.gz"
+  sha256 "3acd6759e4c6c39c8c194e2943366ce930a554b688d2e6f057e12b45f4a9fbcc"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f32a2bc0bc0a1c63a0f496719c2ed4da225e76fa0d23131907865a20d0e87933"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "30f4838e1688b70821e9df86f64c2360e8863182c859885fa15e20b456783d54"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8208bd9db040a956e07405bf8f074d5c23812c0e4404aad2d297efef3e04f40e"
-    sha256 cellar: :any,                 arm64_linux:       "e844369e0b68863af7d497bb36d22c32dfeb87f0b5c1d7f4905d1f5292ce5983"
-    sha256 cellar: :any,                 x86_64_linux:      "7fde6bc824117644627f0fff09b8f994443cc136dc537d6f6bbb91d065c1f455"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "415565e83c464f718cbf2d1a8a8bdcaa0ec30254f28224e4456fb0257a92a9cf"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "275ce933d1ac2a62e81e8c44f7e5a0591bb7fd280098513f7ff4056e74d98fb0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "70da31392294a5269af86e32f9cb9e4d796a55480ee5a39107675c821144df1c"
+    sha256 cellar: :any,                 arm64_linux:       "11934f305377a5e590f2379d7bc5af1588cfdd8e7dd6b82a197561aff5bb3111"
+    sha256 cellar: :any,                 x86_64_linux:      "ecfb037455f7be3f3a59e19f61cd4fd78e8f3a62c388274a37a3f16d7da67807"
   end
 
   depends_on "node" => :build
