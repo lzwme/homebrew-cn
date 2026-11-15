@@ -1,6 +1,6 @@
 cask "mdrp" do
-  version "14.2.1"
-  sha256 "9c7044b2b26957d3877d3ad93933e8e72d14a15f89b4347ae71085712833b4f6"
+  version "15.0.0"
+  sha256 "69d4041911316098ffb3be452d9f5e74163a3b2b09db64c98c70471e6fe019b1"
 
   url "https://www.macdvdripperpro.com/MDRP_v#{version.csv.first.no_dots}#{"r#{version.csv.second}" if version.csv.second}.zip"
   name "Mac DVDRipper Pro"
@@ -20,7 +20,7 @@ cask "mdrp" do
     end
   end
 
-  depends_on :macos
+  depends_on macos: :monterey
 
   app "MDRP.app"
 
@@ -30,5 +30,6 @@ cask "mdrp" do
     "~/Library/Cookies/com.mdrp.MDRP.binarycookies",
     "~/Library/HTTPStorages/com.mdrp.MDRP.binarycookies",
     "~/Library/Preferences/com.mdrp.MDRP.plist",
+    "~/Library/WebKit/com.mdrp.MDRP",
   ]
 end

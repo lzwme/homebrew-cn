@@ -1,6 +1,6 @@
 cask "orcaslicer" do
-  version "2.5.0"
-  sha256 "061e0c6ff104c37655c83190725ac2420960f23c39b56aae9b546e6c542995d5"
+  version "2.5.1"
+  sha256 "ddf48a7f34785a4d5b4313e4dc4d7ad01769d48bc4c8d825f809da96593e6f46"
 
   url "https://ghfast.top/https://github.com/OrcaSlicer/OrcaSlicer/releases/download/v#{version}/OrcaSlicer_Mac_universal_V#{version}.dmg"
   name "Orca Slicer"

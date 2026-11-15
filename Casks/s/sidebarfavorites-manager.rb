@@ -1,6 +1,6 @@
 cask "sidebarfavorites-manager" do
-  version "1.3.0"
-  sha256 "dc50e55f4d9d59d6b4407f4cdb98582faf43b220695d6a3e27d73a26d002dedf"
+  version "1.3.1"
+  sha256 "f33115d32c17be8f89dc6e7bb7b0d3f595161500fb58b1225e3576b9605cb6f3"
 
   url "https://ghfast.top/https://github.com/ivg-design/SidebarFavorites/releases/download/v#{version}/SidebarFavorites-#{version}.dmg"
   name "SidebarFavorites Manager"

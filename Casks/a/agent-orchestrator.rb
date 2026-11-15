@@ -1,9 +1,9 @@
 cask "agent-orchestrator" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.15.0"
-  sha256 arm:   "59935adbe6c37b339ccee58fe056b2f0a9f641d6b32f4f87d3d152be04de196f",
-         intel: "c50d52b50fd559f3ce7cdc56ba72d218ed909dd4bb9eee855b6f85e9e5d6e96d"
+  version "0.15.1"
+  sha256 arm:   "7be6fb7b9b3c031525872c155542dcd19670c6d9b78e2e70e1aa2640a0851df9",
+         intel: "6d810d40be801104409d01ee50b3f685595708def8bace3f1c154f83c6781ddc"
 
   url "https://ghfast.top/https://github.com/OrchestratorInc/agent-orchestrator/releases/download/v#{version}/Agent.Orchestrator-darwin-#{arch}-#{version}.zip"
   name "Agent Orchestrator"
@@ -25,6 +25,7 @@ cask "agent-orchestrator" do
   uninstall quit: "dev.agent-orchestrator.desktop"
 
   zap trash: [
+        "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/dev.agent-orchestrator.desktop.sfl*",
         "~/Library/Caches/agent-orchestrator-updater",
         "~/Library/Preferences/dev.agent-orchestrator.desktop.plist",
         "~/Library/Saved Application State/dev.agent-orchestrator.desktop.savedState",

@@ -1,6 +1,6 @@
 cask "tinycast" do
-  version "0.12.11"
-  sha256 "7ddc5e92896770cd9144e175eeb8700da2cb4832c1c3ce18a51f650747780148"
+  version "0.12.15"
+  sha256 "e9915ddb7b8339428664e22c5ae1d16b506bb4baf7f71d496c37db06e7f44589"
 
   url "https://ghfast.top/https://github.com/abue-ammar/tinycast/releases/download/v#{version}/Tinycast-#{version}.dmg"
   name "Tinycast"
@@ -18,18 +18,22 @@ cask "tinycast" do
 
   app "Tinycast.app"
 
-  uninstall quit: "com.tinycast.app"
+  uninstall quit: "com.abueammar.tinycast"
 
   zap trash: [
     "~/.config/tinycast",
+    "~/Library/Application Support/com.abueammar.tinycast",
     "~/Library/Application Support/com.tinycast.app",
     "~/Library/Application Support/CrashReporter/ClipboardTextHelper_*.plist",
     "~/Library/Application Support/CrashReporter/FileIndexHelper_*.plist",
     "~/Library/Application Support/CrashReporter/Tinycast Dictation_*.plist",
     "~/Library/Application Support/CrashReporter/Tinycast_*.plist",
     "~/Library/Caches/ClipboardTextHelper",
+    "~/Library/Caches/com.abueammar.tinycast",
+    "~/Library/Caches/com.abueammar.tinycast.dictation",
     "~/Library/Caches/com.tinycast.app",
     "~/Library/Caches/com.tinycast.app.dictation",
+    "~/Library/Preferences/com.abueammar.tinycast.plist",
     "~/Library/Preferences/com.tinycast.app.plist",
   ]
 end

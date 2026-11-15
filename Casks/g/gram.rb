@@ -3,11 +3,11 @@ cask "gram" do
   os macos: "Gram", linux: "gram-linux"
   url_end = on_system_conditional macos: "dmg", linux: "tar.gz"
 
-  version "3.5.0"
-  sha256 arm:          "594f99587dc6e2203a97b3029c8c0fdafe5393150f2fa185e6915a389b1665c2",
-         intel:        "88e69eb1519941c630d3355539c30c22bab8bc850722e1cd4b74fc0b01e975ee",
-         arm64_linux:  "51fa6b44454837a7459ff8d85342cf01f9e70d665d62ecc348b46008f224b447",
-         x86_64_linux: "8312953038dda492086db519d2a8fcfd97b8e1b2c0d7a371c0e30259f2259e0e"
+  version "3.5.2"
+  sha256 arm:          "4007fbf84a1c2530afada3d5cae1db6b1f0e349bf07af289187abcaf4589022a",
+         intel:        "f14e7be768e4f3f618424e739419d1ea429f85096e48a99691421fac054ed8fd",
+         arm64_linux:  "0185af573f5dea292325a7ff47e1223423a5d2dd7d8e1cd9d0b0eba4cb3f7dd2",
+         x86_64_linux: "ed285b801f5963fa85a7573820131f42b2f33354b7151d35ffa70fdcc74484bf"
 
   on_macos do
     app "Gram.app"

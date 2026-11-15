@@ -1,9 +1,9 @@
 cask "pluralplay-flclashx" do
   arch arm: "arm64", intel: "amd64"
 
-  version "0.5.3"
-  sha256 arm:   "3bf01c65896bc4abf07aeb6291d81646d145ff2e34bc8e7d458bff65592eb10a",
-         intel: "c4000737a83ac8e1ae5062f84f111c51e9d9f3d5a042fbde4321e73fbc2ac822"
+  version "0.5.6"
+  sha256 arm:   "6976ad2731a9efde1ee34e5c9f8ba535644551dcc047374cbeff0c51ffb09d97",
+         intel: "02c33493bdd4552f1a6c3134710227d7792b5a1525e025131c45a016bd589d66"
 
   url "https://ghfast.top/https://github.com/pluralplay/FlClashX/releases/download/v#{version}/FlClashX-macos-#{arch}.dmg"
   name "FlClashX"
@@ -20,8 +20,9 @@ cask "pluralplay-flclashx" do
   app "FlClashX.app"
 
   zap trash: [
+    "~/Library/Application Support/com.follow.clashx",
     "~/Library/Application Support/FlClashX",
-    "~/Library/Caches/com.pluralplay.FlClashX",
-    "~/Library/Preferences/com.pluralplay.FlClashX.plist",
+    "~/Library/Caches/com.follow.clashx",
+    "~/Library/Preferences/com.follow.clashx.plist",
   ]
 end

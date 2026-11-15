@@ -1,17 +1,17 @@
 class Ty < Formula
   desc "Extremely fast Python type checker, written in Rust"
   homepage "https://docs.astral.sh/ty/"
-  url "https://files.pythonhosted.org/packages/34/6c/22c0680e71f529e084ee2e308a51f04317298248ee699f4914c02129c351/ty-0.0.101.tar.gz"
-  sha256 "dbb43374b49fe30ea49e244da63aa90098dff1257a49ae4351b44881ccef724f"
+  url "https://files.pythonhosted.org/packages/a9/23/e7e960c518df4fe79c38154469f500ebc54631c1e8724a44c28ea052b7ef/ty-0.0.104.tar.gz"
+  sha256 "8aa1330e722a5a56336d8d1938d8897cb5dfc0841fffd8ed0627fdea177a9bdb"
   license "MIT"
   head "https://github.com/astral-sh/ty.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0a18679d8869e3d190aede79550fcb8e381f19e1f4e4599b44ff6e36f63f7539"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dcd8606e25774b2ee0d1003b3ec60bc5eca0ee9087cbfd5ab445c7f98c683b9b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5a4e11d1f4091f42ff31ce8e294bb0aa74828b3e21da02ef1307cf543955ed69"
-    sha256 cellar: :any,                 arm64_linux:       "8f6273a2fc8f176415cad8edbc26263949f3bbefb732af1060bea8ce6c3a6b90"
-    sha256 cellar: :any,                 x86_64_linux:      "b3549f8d157e59f7494ce2e385108d8003c664fa101a435c9a8b6f55716330e4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "137ed9b354db90f0eb34e2ff50c0e725d6dbbb3ae279436746d2a5277f50e873"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f5924ff2d0ced8a12027af07aa03b1f5c2ebc7d238ab3df2133cc49d863480bc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "05619b7e5e5ba818f9e289e064b978a2888c233d38418202d5c42963d5feef19"
+    sha256 cellar: :any,                 arm64_linux:       "977b7c453788d9b04878b375816b6622bfb0429ae437072903708891bf1e9b94"
+    sha256 cellar: :any,                 x86_64_linux:      "b2eb7d0a6b97656ef77b60393d675ce2bc449a8bdd53abaca479720ea4c8e667"
   end
 
   depends_on "rust" => :build
@@ -39,7 +39,12 @@ class Ty < Formula
           return x
     PYTHON
 
-    output = shell_output("#{bin}/ty check #{testpath} 2>&1", 1)
-    assert_match "error[invalid-return-type]: Return type does not match returned value", output
+    shell_output("#{bin}/ty check #{testpath} 2>&1", 1)
+
+    (testpath/"good.py").write <<~PYTHON
+      def f(x: int) -> str:
+          return str(x)
+    PYTHON
+    system bin/"ty", "check", testpath/"good.py"
   end
 end

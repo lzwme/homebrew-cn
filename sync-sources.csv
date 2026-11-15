@@ -2704,6 +2704,7 @@ Homebrew-homebrew-core/Formula/g/global-arrays.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/global.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/globjects.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/globstar.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/globus-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/glog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glom.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/glooctl.rb, Homebrew/homebrew-core, 1
@@ -2835,6 +2836,7 @@ Homebrew-homebrew-core/Formula/g/google-sparsehash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/googletest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/googleworkspace-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goolabs.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/goose-lang.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goose.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gopass-jsonapi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gopass.rb, Homebrew/homebrew-core, 1
@@ -6085,7 +6087,6 @@ Homebrew-homebrew-core/Formula/p/postgis.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgraphile.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgres-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgresql-hll.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/postgresql@12.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgresql@13.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgresql@14.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgresql@15.rb, Homebrew/homebrew-core, 0
@@ -8998,6 +8999,7 @@ Homebrew-homebrew-cask/Casks/a/archivewebpage.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/archy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/arctic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/arctype.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/ardia.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/arduino-ide.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/arduino-ide@nightly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ares-emulator.rb, Homebrew/homebrew-cask, 1
@@ -9894,6 +9896,7 @@ Homebrew-homebrew-cask/Casks/d/dotnet-reactor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dotnet-runtime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dotnet-runtime@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dotnet-sdk.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dotnet-sdk@10.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dotnet-sdk@8.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dotnet-sdk@9.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dotnet-sdk@preview.rb, Homebrew/homebrew-cask, 0

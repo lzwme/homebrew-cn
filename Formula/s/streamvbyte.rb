@@ -1,17 +1,17 @@
 class Streamvbyte < Formula
   desc "Fast integer compression in C"
   homepage "https://fast-pack.github.io/streamvbyte/"
-  url "https://ghfast.top/https://github.com/fast-pack/streamvbyte/archive/refs/tags/v3.1.0.tar.gz"
-  sha256 "b5603f138150b60a165e669f4c53c3ee9176a48a201976812eff8f9cf87b0f02"
+  url "https://ghfast.top/https://github.com/fast-pack/streamvbyte/archive/refs/tags/v3.2.1.tar.gz"
+  sha256 "838195fd3347c52735f9c44922fb6e2a509fd31db40fdf892b42347548a1fe3a"
   license "Apache-2.0"
   head "https://github.com/fast-pack/streamvbyte.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fec5e86afd20837abdc1364867a34c9f7f7f7ffb862374a703762da93975c351"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "353e3a7f646d910663bb267f54da58b91b7102ea736989d01d48ea806b0c43df"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3f13e3e2d0e234232e237c51dbdf439b9df2cab4c2215dada0f985d3198b3cd4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "3cc0107f479b10da0e5a1a481995105b24ed53d6996bcc320c60844ba62da388"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "b280e61ed8af73f55b2ee46913e838a491d0c4d0aeda2ab973666c9daa234796"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "03c10418da8dfd646123f4764a6ef8e0a73ccdce992d5b41ccea5da4901737e0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dc1360bb97ba6c24aa88f363917d57d3e5871de85473038aaf14416ecc8e827e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ae894655b86b7fdabd395ad63690fc938afa2610f7f9e493cf52b2b831fc4185"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "3551f4fab64322dfb3f0ed6020cf5cf179cd65d1e7a73f3879b88275768b1081"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "fd4f324d2c87100f49b18bfc3fce64085d63433c4ae6fe16ee75a474d32ee6be"
   end
 
   depends_on "cmake" => :build
