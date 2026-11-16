@@ -1,5 +1,5 @@
 cask "dockfix" do
-  version "5.3.0"
+  version "5.4.0-beta"
   sha256 :no_check
 
   url "https://www.dockfix.app/downloads/DockFix.dmg"
@@ -18,6 +18,7 @@ cask "dockfix" do
   app "DockFix.app"
 
   zap trash: [
+    "~/Library/Application Support/DockFix",
     "~/Library/Caches/dk.FIrstForm.DockFix",
     "~/Library/HTTPStorages/dk.FIrstForm.DockFix",
     "~/Library/Preferences/dk.FIrstForm.DockFix.plist",

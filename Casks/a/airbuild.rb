@@ -1,6 +1,6 @@
 cask "airbuild" do
-  version "1.7.15"
-  sha256 "23cdb40d8d0605aa76ef6bf67ea1abddce0247d7d39a51a3e829c8b4331431e1"
+  version "1.7.23"
+  sha256 "fdb57e8bfde1bfeb573164dd2ebae0ed17ab54e1edcb728bb91350cad1e06af9"
 
   url "https://release.air.build/macos/AirBuild-macOS-#{version.major_minor}-#{version.patch}.zip"
   name "AirBuild"

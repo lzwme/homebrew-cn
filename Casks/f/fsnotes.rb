@@ -1,6 +1,6 @@
 cask "fsnotes" do
-  version "7.5.1"
-  sha256 "2605aa41b3cd37d7181d7493a0c6f060a9e6a3cbe15f6e19e3dc4cec4ab66904"
+  version "7.6.0"
+  sha256 "4f1ba04ff305f0326c60fb5efb47f8c9992e0f3e21b240bcc35d883b52da5d37"
 
   url "https://ghfast.top/https://github.com/glushchenko/fsnotes/releases/download/v#{version}/FSNotes_v#{version}.zip"
   name "FSNotes"
@@ -17,7 +17,9 @@ cask "fsnotes" do
   app "FSNotes.app"
 
   zap trash: [
+    "~/Library/Application Scripts/866P6MTE92.co.fluder.FSNotes.Share",
     "~/Library/Application Scripts/co.fluder.FSNotes",
     "~/Library/Containers/co.fluder.FSNotes",
+    "~/Library/Group Containers/866P6MTE92.co.fluder.FSNotes.Share",
   ]
 end
