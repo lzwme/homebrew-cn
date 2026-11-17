@@ -1,8 +1,8 @@
 class Rabbitmq < Formula
   desc "Messaging and streaming broker"
   homepage "https://www.rabbitmq.com"
-  url "https://ghfast.top/https://github.com/rabbitmq/rabbitmq-server/releases/download/v4.4.0/rabbitmq-server-generic-unix-4.4.0.tar.xz"
-  sha256 "68c22d5dafa15c0911463aeca73c362d638cd6fb8e407ad39512959c6cc37f0f"
+  url "https://ghfast.top/https://github.com/rabbitmq/rabbitmq-server/releases/download/v4.4.1/rabbitmq-server-generic-unix-4.4.1.tar.xz"
+  sha256 "667c652c1cb272c02f8a25b1ef32e981661f358b399a9d5c227982cc2101390f"
   license "MPL-2.0"
 
   livecheck do
@@ -12,7 +12,7 @@ class Rabbitmq < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5ffb37a8f76494407f5ac2e4bd0541031d8ffa9eacaff241cc29416cbb73ced1"
+    sha256 cellar: :any_skip_relocation, all: "08b4a8490b9223cf492ad11de28fb50e657e57af7d6fc482ac1b3e7fd3fc1136"
   end
 
   depends_on "erlang"
@@ -44,7 +44,13 @@ class Rabbitmq < Formula
 
     # Create the rabbitmq-env.conf file
     rabbitmq_env_conf = etc/"rabbitmq/rabbitmq-env.conf"
-    rabbitmq_env_conf.write rabbitmq_env unless rabbitmq_env_conf.exist?
+    rabbitmq_env_conf.write <<~ENV unless rabbitmq_env_conf.exist?
+      CONFIG_FILE=#{etc}/rabbitmq/rabbitmq
+      NODE_IP_ADDRESS=127.0.0.1
+      NODENAME=rabbit@localhost
+      RABBITMQ_LOG_BASE=#{var}/log/rabbitmq
+      PLUGINS_DIR="#{opt_prefix}/plugins:#{HOMEBREW_PREFIX}/share/rabbitmq/plugins"
+    ENV
 
     # Enable plugins - management web UI; STOMP, MQTT, AMQP 1.0 protocols
     enabled_plugins_path = etc/"rabbitmq/enabled_plugins"
@@ -59,16 +65,6 @@ class Rabbitmq < Formula
       Management UI: http://localhost:15672
       Homebrew-specific docs: https://rabbitmq.com/install-homebrew.html
     EOS
-  end
-
-  def rabbitmq_env
-    <<~ENV
-      CONFIG_FILE=#{etc}/rabbitmq/rabbitmq
-      NODE_IP_ADDRESS=127.0.0.1
-      NODENAME=rabbit@localhost
-      RABBITMQ_LOG_BASE=#{var}/log/rabbitmq
-      PLUGINS_DIR="#{opt_prefix}/plugins:#{HOMEBREW_PREFIX}/share/rabbitmq/plugins"
-    ENV
   end
 
   service do

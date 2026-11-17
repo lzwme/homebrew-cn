@@ -1,6 +1,6 @@
 cask "telegram@beta" do
-  version "13.2.0,283513"
-  sha256 "da3c52f822df0cec71c91078f1d9bdddabbb1e3421e3418e807cf37b79aa822f"
+  version "13.2.0,283547"
+  sha256 "a277a2c6e006d430172b4fe6ef65916f945942e12d17c03067db32c298b559e3"
 
   url "https://mac-updates.telegram.org/beta/Telegram-#{version.csv.first}.#{version.csv.second}.app.zip"
   name "Telegram for macOS"
@@ -27,13 +27,11 @@ cask "telegram@beta" do
   zap trash: [
     "~/Library/Application Scripts/*.ru.keepcoder.Telegram",
     "~/Library/Application Scripts/*.ru.keepcoder.Telegram.TelegramShare",
-    "~/Library/Application Scripts/ru.keepcoder.Telegram",
-    "~/Library/Application Scripts/ru.keepcoder.Telegram.TelegramShare",
+    "~/Library/Application Scripts/ru.keepcoder.Telegram*",
     "~/Library/Application Support/ru.keepcoder.Telegram",
     "~/Library/Caches/com.plausiblelabs.crashreporter.data/ru.keepcoder.Telegram",
     "~/Library/Caches/ru.keepcoder.Telegram",
-    "~/Library/Containers/ru.keepcoder.Telegram",
-    "~/Library/Containers/ru.keepcoder.Telegram.TelegramShare",
+    "~/Library/Containers/ru.keepcoder.Telegram*",
     "~/Library/Cookies/ru.keepcoder.Telegram.binarycookies",
     "~/Library/Group Containers/*.ru.keepcoder.Telegram",
     "~/Library/Group Containers/*.ru.keepcoder.Telegram.TelegramShare",

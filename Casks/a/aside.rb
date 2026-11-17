@@ -1,9 +1,9 @@
 cask "aside" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.0.1022.1"
-  sha256 arm:   "0ecd3f192482dcf76c72b7488d01fc33dd989fc766e86e0c832b9742bbbc650e",
-         intel: "fd9bbe633da1898e360f261a815cb70148be8da40166843cfc658830b0b83fa5"
+  version "1.0.1116.2"
+  sha256 arm:   "2c1f9a8d67e81f84d6aac803d6fdc08e62b78dd9f0c2bc8bd9e83181a8f1cd71",
+         intel: "c880a1e51e223f31f0da36fc1505002d84f41b2e53406151627c2df0208c9dd3"
 
   url "https://releases.aside.com/dev-updater/Aside-#{version}-#{arch}.dmg"
   name "Aside"
@@ -23,6 +23,7 @@ cask "aside" do
   app "Aside.app"
 
   uninstall launchctl: [
+              "application.at.studio.AsideBrowser.daemon.*",
               "at.studio.AsideBrowser.UpdaterPrivilegedHelper",
               "at.studio.AsideKeystone.agent",
               "at.studio.asidekeystone.agent",

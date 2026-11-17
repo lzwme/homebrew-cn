@@ -2,9 +2,9 @@ cask "djstudio" do
   arch arm: "-arm64"
   livecheck_arch = on_arch_conditional arm: "-apple"
 
-  version "4.2.15"
-  sha256 arm:   "34b1344985203bd4e881d966a136130a3cce2e09477bb8bdae467cca393605af",
-         intel: "30c80d5c94cc38433a066593ceb9bd3b2e6b1ecf4049b8dc0fee21bc690bc321"
+  version "5.0.11"
+  sha256 arm:   "78660abd977da3eac22a6d73d59f90759a567b77d5a21ab7c877778af474ec9e",
+         intel: "ae062cca17478b727337a53fe95f6fa5e409bb1cc4bdd418fb5572372501db73"
 
   url "https://download.dj.studio/DJ.Studio-#{version}#{arch}.dmg"
   name "DJ.Studio"
@@ -25,6 +25,8 @@ cask "djstudio" do
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/dj.studio.app.sfl*",
     "~/Library/Application Support/DJ.Studio",
     "~/Library/Application Support/dj.studio.app",
+    "~/Library/Caches/DJ.Studio",
+    "~/Library/Logs/DJ.Studio",
     "~/Library/Preferences/dj.studio.app.plist",
     "~/Library/Saved Application State/dj.studio.app.savedState",
   ]
