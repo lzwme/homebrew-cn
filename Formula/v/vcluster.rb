@@ -1,8 +1,8 @@
 class Vcluster < Formula
   desc "Creates fully functional virtual k8s cluster inside host k8s cluster's namespace"
   homepage "https://www.vcluster.com"
-  url "https://ghfast.top/https://github.com/loft-sh/vcluster/archive/refs/tags/v0.37.6.tar.gz"
-  sha256 "1b93bd26ad5f707f4b5b2429eb984e2c76ac52c753fdc686c37784dc44683a81"
+  url "https://ghfast.top/https://github.com/loft-sh/vcluster/archive/refs/tags/v0.38.0.tar.gz"
+  sha256 "d2637e403b183d9aeeec795fbfbc71aa2bd64cc35bf5792dbd069e219123e7e8"
   license "Apache-2.0"
   head "https://github.com/loft-sh/vcluster.git", branch: "main"
 
@@ -15,11 +15,11 @@ class Vcluster < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ec45cdbc866eadb4a96da285e5d797d0ddc39c89b86f2572922b3032ac8eea0d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fde22122a56146e147551b4136a2b16b70f809e2a6dba5b4529a8d50fc89a9e5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "48e0b4f9e2aa4fe29d2ee5ce8258738610f5bb805c494ce32e054c15b3daf8df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "28ffd0804515fd108d7763c56a70bc5ca5e2e9b4db548d4cc81caa8a55d2a19b"
-    sha256 cellar: :any,                 x86_64_linux:      "4b64bbe7566f4051b184c7174677ff92633574dd6c0c7a4b36b73435ef159c58"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "33e718110c9cb2e37b2706a15350971ba6b986d8ad8f1777e01334ecb3e001f0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b9b236ae64c497f8d83537c096f959e87aacc81157982f48f81a1ea2b7d4ccf5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d43a62d4d47a5cd898ed7ed66e714961fe2d1fd5793cea32747e51fb3572aa3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "13b5a404cb2b75c5a1aa15b13640a61dcefd5d915c7f827078e5c58e70a704fa"
+    sha256 cellar: :any,                 x86_64_linux:      "e4a99cb5acabd972031ce98652df83f27edb53a29c65aff91742da054ba564a0"
   end
 
   depends_on "go" => :build

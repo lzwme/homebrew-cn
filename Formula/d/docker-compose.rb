@@ -1,8 +1,8 @@
 class DockerCompose < Formula
   desc "Isolated development environments using Docker"
   homepage "https://docs.docker.com/compose/"
-  url "https://ghfast.top/https://github.com/docker/compose/archive/refs/tags/v5.7.1.tar.gz"
-  sha256 "bd108789759d3e17ae5532dd6eee67b427dade4c85089daa2f85d6c8f3e3ccb6"
+  url "https://ghfast.top/https://github.com/docker/compose/archive/refs/tags/v5.8.0.tar.gz"
+  sha256 "1836019594ad054f8459cea7efc1d52eae7d05c64217c4efffe02d0d2930c44b"
   license "Apache-2.0"
   head "https://github.com/docker/compose.git", branch: "main"
 
@@ -15,11 +15,11 @@ class DockerCompose < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1efadfdd1e58bf24cf4d80538081fdbdfac8b2d1bd2c8e6a973ad480763cb629"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1d07dd8d1ca4057f5b1cf673167662e52f53f4bea3d607192ab94174f3261f94"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fd810cd786f387886e463a7c17c3dd3d1930c9efb76ddb3faf8f1399acd845c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8f6bfde123bd661bf9bdaadecbbfec3ce2e076b0f64041f2f805eb56e62aabf3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8a603a07277cd91c3b24c7c9906578288aebd74977fba66f8c6ba652a879d508"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b73adf4f57aec759bcb75773b345847572a148b552913963e129e75fbbf189d6"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1b79facc573a02e8f9ab604cc66cc7bb54825935eae75a1e3b0c9c00fcfd60fd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "976e20425fb22d0f3f5070b506c80a761807aa342ae7231209c694ddc6c2866e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "01293f8ce1a37d92f4d34f2b068dfe2ccbcb5c62e2883700027c8829b4622667"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a092ee9c21bd6688915feffadd53346950389e1647ec44d12f2faddc09b631fc"
   end
 
   depends_on "go" => :build

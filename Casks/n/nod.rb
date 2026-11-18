@@ -1,9 +1,9 @@
 cask "nod" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.8.2"
-  sha256 arm:   "c94e97b3451bb1a19a4cf896afa53c344388e1fbb9d2b05e46bcccfbd85011b9",
-         intel: "725791b70ec6b0353d959809f0b1586ef1970128e86477aabfc0b22cc9a3a106"
+  version "0.8.4"
+  sha256 arm:   "9bf70f9c3c8686fb5a6397497005c255bffbfdf4ad01acf5cc294ccb4acb4613",
+         intel: "14eeb52663a5f611e3815fb5ea119152c001c485c64581f3ddd76b7231e4196f"
 
   url "https://ghfast.top/https://github.com/n8n-io/nod/releases/download/nod-v#{version}/nod-#{arch}.dmg"
   name "Nod"
