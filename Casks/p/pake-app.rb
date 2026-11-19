@@ -1,6 +1,6 @@
 cask "pake-app" do
-  version "1.9.1"
-  sha256 "344e7f30703dc234869fdee3900c63d67f8b14f826ae0aa39d31970f223fceb6"
+  version "1.9.6"
+  sha256 "95e0c3186739dcaa56be90cbee1cfaf6ee3a7f6b281931d13e52ccd24dffb628"
 
   url "https://pake.run/updates/mac/Pake-#{version}.dmg"
   name "Pake"

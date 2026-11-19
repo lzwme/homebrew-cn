@@ -1,5 +1,5 @@
 cask "box-tools" do
-  version "4.32"
+  version "4.33"
   sha256 :no_check
 
   url "https://e3.boxcdn.net/box-installers/boxedit/mac/currentrelease/BoxToolsInstaller.dmg"
@@ -40,6 +40,9 @@ cask "box-tools" do
               "com.box.Box-Local-Com-Server",
             ]
 
-  zap trash: "~/Library/Application Support/Box/Box Edit",
+  zap trash: [
+        "~/Library/Application Support/Box/Box Edit",
+        "~/Library/Preferences/com.box.Box-Device-Trust.plist",
+      ],
       rmdir: "~/Library/Application Support/Box"
 end
