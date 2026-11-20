@@ -1,6 +1,6 @@
 cask "ssh-config-editor" do
-  version "2.6.12,113"
-  sha256 "e0a08ced142dba1ade25fbea3d65c14833fad7b8999d579ff0af105be7a7d01d"
+  version "2.6.13,114"
+  sha256 "f5a6f2b96570842029ace90fd7c1171a7167f9cac4021ce666a71b1c98f0aec8"
 
   url "https://hejki.org/download/ssheditor/SSHConfigEditor-#{version.csv.second}.dmg"
   name "SSH Config Editor"
@@ -20,7 +20,10 @@ cask "ssh-config-editor" do
   app "SSH Config Editor.app"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.hejki.osx.sshce.sfl*",
     "~/Library/Application Support/SSH Config Editor",
+    "~/Library/Caches/org.hejki.osx.sshce",
+    "~/Library/HTTPStorages/org.hejki.osx.sshce*",
     "~/Library/Preferences/org.hejki.osx.sshce.plist",
     "~/Library/Saved Application State/org.hejki.osx.sshce.savedState",
   ]

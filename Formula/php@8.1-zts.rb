@@ -1,9 +1,9 @@
 class PhpAT81Zts < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
-  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/ae65ef4b9ede39ef9923643b741a89c23a2e1c7a.tar.gz"
+  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/f18ec01d770266c3d651df5fddfc26003da0d1e4.tar.gz"
   version "8.1.34"
-  sha256 "a13bdcef3787515a9cd300aa3643d4240e2bfc701abbc782734a02b25e470169"
+  sha256 "4b882ac5152e50005d9629428f5070577743a54b1246b3d93fb8ae757e1e1186"
   license all_of: [
     "PHP-3.01",
 
@@ -27,16 +27,15 @@ class PhpAT81Zts < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
-  revision 4
+  revision 6
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 2
-    sha256 arm64_golden_gate: "8bcc5819de1fa8c8c9de93599f752a5925f341d1ed496fcae42e0b43db8c6e22"
-    sha256 arm64_tahoe:       "2a0d23b3eba16f40e3363c4fc7053d23c0e6b23c25dccd10d4f4e8f33c34769a"
-    sha256 arm64_sequoia:     "86a60e03e81a9082b8b96f25de39a68d06e1a9dce82df7577cc2e89ff744678d"
-    sha256 arm64_linux:       "718620de87828cb2883910141a3ba13d8bad5bc8561963a509d949b6b7f26aee"
-    sha256 x86_64_linux:      "0bb6246a7ec63764b9364e6a47d3fda050a6277fe9fb22874fa3bc10842e3b56"
+    sha256 arm64_golden_gate: "e6665d7f484806d1f3dee9ee23ef03cf21e2cbf27a9855ea2ff4680b19fedf6b"
+    sha256 arm64_tahoe:       "7bcfd703887e38baafbee31ecd6781e3472e7851e737bb8a450b733b75007e54"
+    sha256 arm64_sequoia:     "a03f9fb46827d96b6db04170344851eb7e83ebb64d261ab0546080fe074115fd"
+    sha256 arm64_linux:       "2ce7471de00fa3f1cd2c7fb6fd6664ccaa2f6a8bcc7b7b281124aac444d31dae"
+    sha256 x86_64_linux:      "2800cd9a4b5f8c7f6d2688a9633418d50defbd195f7e8604c519ad52e55fb5e5"
   end
 
   keg_only :versioned_formula
@@ -58,7 +57,7 @@ class PhpAT81Zts < Formula
   depends_on "freetds"
   depends_on "gd"
   depends_on "gmp"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "krb5"
   depends_on "libpq"
   depends_on "libsodium"

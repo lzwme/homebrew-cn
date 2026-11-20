@@ -1,20 +1,19 @@
 class PhpAT56DebugZts < Formula
   desc "General-purpose scripting language"
   homepage "https://secure.php.net/"
-  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/31b896540a30a5d170797a1171b04dd872b88c5b.tar.gz"
+  url "https://ghfast.top/https://github.com/shivammathur/php-src-backports/archive/048228913b6eeda72b784c59c43a7bfe8eb05f34.tar.gz"
   version "5.6.40"
-  sha256 "8fabdeb0a133ab8ea9cb5e590030d824e7ae9ca7703c19a958c9628938d185d6"
+  sha256 "98d0d858dad033b092e48d5f65b12db4d182ca2031916c2579f31fa74311803e"
   license "PHP-3.01"
-  revision 9
+  revision 11
 
   bottle do
     root_url "https://ghcr.io/v2/shivammathur/php"
-    rebuild 2
-    sha256 arm64_golden_gate: "5da195b31a1ba232baa0ff40af317919ffd88eb1a0f5bdc1b3ea473055b6625f"
-    sha256 arm64_tahoe:       "601cf0bd48e2f0531bfbc42f2980b5a425bce7213272b4b7590760ef7d4fcc12"
-    sha256 arm64_sequoia:     "93b99e54ece399bffe4b4e174e239ba19ee5cbd12d79ba44ea98ab1c27bd6104"
-    sha256 arm64_linux:       "a21c6d5e0c214e419cbe14b46667bdaba5e156a74fec7e3cdaa633c306a5d470"
-    sha256 x86_64_linux:      "de46c63bc46dab86416e7b7cf2f9be7373bbc8f751b07a61e294b01ce97fbf8d"
+    sha256 arm64_golden_gate: "f2f8332d15dd4610b69aa741e5864e19651d1997fae031c8a13a9c27756200be"
+    sha256 arm64_tahoe:       "5a24fd51b993cbf09cb720e52aa8150db6139332912a5cc632c92f29d52e96bc"
+    sha256 arm64_sequoia:     "ddfa0de2a2f3d92cd0d500db9dcadb14c250b700b9d63319c346768c3d7089f8"
+    sha256 arm64_linux:       "f6db5fc4b6f09fb005fc7bc7e0fed981507bd79f9086f74fe8da924199fd800e"
+    sha256 x86_64_linux:      "738e7b22701bdb1c28ec7c98d932ae25f2dec5cb7009bdf7b033b9e1aaececce"
   end
 
   keg_only :versioned_formula
@@ -37,7 +36,7 @@ class PhpAT56DebugZts < Formula
   depends_on "freetype"
   depends_on "gd"
   depends_on "gmp"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "jpeg"
   depends_on "krb5"
   depends_on "libpng"
@@ -193,7 +192,7 @@ class PhpAT56DebugZts < Formula
       --with-gettext#{gettext_path}
       --with-gmp=#{formula_opt_prefix("gmp")}
       --with-iconv#{headers_path}
-      --with-icu-dir=#{formula_opt_prefix("icu4c@78")}
+      --with-icu-dir=#{formula_opt_prefix("icu4c@79")}
       --with-jpeg-dir=#{formula_opt_prefix("jpeg")}
       --with-kerberos#{headers_path}
       --with-layout=GNU

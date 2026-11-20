@@ -1,7 +1,7 @@
 cask "songkong" do
   arch arm: "-m1"
 
-  version "12.10"
+  version "12.11"
   sha256 :no_check
 
   url "https://www.jthink.net/songkong/downloads/current/songkong-osx#{arch}.dmg"
@@ -19,6 +19,7 @@ cask "songkong" do
   app "SongKong.app"
 
   zap trash: [
+    "~/Library/Application Support/SongKong",
     "~/Library/Logs/SongKong",
     "~/Library/Preferences/com.jthink.songkong.plist",
     "~/Library/Preferences/SongKong",

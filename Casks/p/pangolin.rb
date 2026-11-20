@@ -1,6 +1,6 @@
 cask "pangolin" do
-  version "0.12.2"
-  sha256 "16818b85203270915d940bbcc217da4cfc91efc0ef6ac09f4a4de66aa56e8e7f"
+  version "0.14.0"
+  sha256 "ef65bc2e6be466d33247ec452450bb3a814f791283ff446cf5c347e0a24ae003"
 
   url "https://pangolin.net/api/downloads/proxy?url=https%3A%2F%2Fgithub.com%2Ffosrl%2Fapple%2Freleases%2Fdownload%2Fmac-#{version}%2FPangolin_Installer_#{version}.dmg"
   name "Pangolin"
@@ -19,6 +19,7 @@ cask "pangolin" do
 
   zap trash: [
     "~/Library/Application Support/Pangolin",
+    "~/Library/Logs/Pangolin",
     "~/Library/Preferences/net.pangolin.Pangolin.plist",
   ]
 end

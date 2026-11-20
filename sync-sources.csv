@@ -1968,7 +1968,7 @@ Homebrew-homebrew-core/Formula/e/envv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/enzyme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eot-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/epeg.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/e/ephemeralpg.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/e/ephemeralpg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/epic5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/epics-base.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/epinio.rb, Homebrew/homebrew-core, 1
@@ -3144,7 +3144,6 @@ Homebrew-homebrew-core/Formula/h/himalaya.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hindent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hiredis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hishtory.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/h/hister.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/historian.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hive.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hivemind.rb, Homebrew/homebrew-core, 1
@@ -5335,6 +5334,7 @@ Homebrew-homebrew-core/Formula/n/node_exporter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nodebrew.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nodeenv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nodenv.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/nogon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/noir.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nom.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nomad-pack.rb, Homebrew/homebrew-core, 1
@@ -6094,6 +6094,7 @@ Homebrew-homebrew-core/Formula/p/postgresql@15.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgresql@16.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgresql@17.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgresql@18.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/postgresql@19.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgrest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/posting.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/potrace.rb, Homebrew/homebrew-core, 0
@@ -10786,6 +10787,7 @@ Homebrew-homebrew-cask/Casks/font/font-c/font-chocolate-classical-sans.rb, Homeb
 Homebrew-homebrew-cask/Casks/font/font-c/font-chokokutai.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-chomsky.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-chonburi.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-c/font-chunkfive.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-church-slavonic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-cica-without-emoji.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-cica.rb, Homebrew/homebrew-cask, 1
@@ -13633,6 +13635,7 @@ Homebrew-homebrew-cask/Casks/l/langflow.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/langgraph-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/languagetool-desktop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lantern.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/lap.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lapce.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/laravel-kit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lark.rb, Homebrew/homebrew-cask, 0
@@ -13789,6 +13792,7 @@ Homebrew-homebrew-cask/Casks/l/lulu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lumen.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lumide.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/luminance-hdr.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/lumo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/luna-display.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/luna-secondary.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lunacy.rb, Homebrew/homebrew-cask, 0
@@ -15678,6 +15682,7 @@ Homebrew-homebrew-cask/Casks/s/suuntodm5.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/svp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/swama.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sweet-home3d.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/swi-prolog-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/swift-im.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/swift-publisher.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/swift-quit.rb, Homebrew/homebrew-cask, 1
@@ -16733,10 +16738,10 @@ shivammathur-homebrew-php/Formula/php@8.4-debug-zts.rb, shivammathur/homebrew-ph
 shivammathur-homebrew-php/Formula/php@8.4-debug.rb, shivammathur/homebrew-php, 0
 shivammathur-homebrew-php/Formula/php@8.4-zts.rb, shivammathur/homebrew-php, 0
 shivammathur-homebrew-php/Formula/php@8.4.rb, shivammathur/homebrew-php, 0
-shivammathur-homebrew-php/Formula/php@8.6-debug-zts.rb, shivammathur/homebrew-php, 1
-shivammathur-homebrew-php/Formula/php@8.6-debug.rb, shivammathur/homebrew-php, 1
-shivammathur-homebrew-php/Formula/php@8.6-zts.rb, shivammathur/homebrew-php, 1
-shivammathur-homebrew-php/Formula/php@8.6.rb, shivammathur/homebrew-php, 1
+shivammathur-homebrew-php/Formula/php@8.5-debug-zts.rb, shivammathur/homebrew-php, 0
+shivammathur-homebrew-php/Formula/php@8.5-debug.rb, shivammathur/homebrew-php, 0
+shivammathur-homebrew-php/Formula/php@8.5-zts.rb, shivammathur/homebrew-php, 0
+shivammathur-homebrew-php/Formula/php@8.5.rb, shivammathur/homebrew-php, 0
 shivammathur-homebrew-php/Formula/php@8.7-debug-zts.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.7-debug.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php@8.7-zts.rb, shivammathur/homebrew-php, 1

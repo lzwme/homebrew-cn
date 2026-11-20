@@ -1,5 +1,5 @@
 cask "kmeet" do
-  version "2.0.2"
+  version "2.1.0"
   sha256 :no_check
 
   url "https://download.storage5.infomaniak.com/meet/kMeet.dmg"
@@ -21,6 +21,7 @@ cask "kmeet" do
 
   zap trash: [
     "~/Library/Application Support/Caches/kmeet-electron-updater",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.infomaniak.meet.sfl*",
     "~/Library/Application Support/kMeet",
     "~/Library/Caches/com.infomaniak.meet*",
     "~/Library/HTTPStorages/com.infomaniak.meet",
