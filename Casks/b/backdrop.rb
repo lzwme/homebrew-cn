@@ -1,6 +1,6 @@
 cask "backdrop" do
-  version "3.0,9700"
-  sha256 "2a234482c09f57ad0158de369ce3df61ace1c8b0735dd6a0a82e8c37fc2f683d"
+  version "3.0,9802"
+  sha256 "a4511fd53da3dd36b93663a901bf3a722d8732608ba96a8904640ee3dd01a01c"
 
   url "https://cdn.cindori.com/apps/backdrop/updates/#{version.csv.first}-#{version.csv.second}/Backdrop.dmg"
   name "Backdrop"
@@ -29,11 +29,13 @@ cask "backdrop" do
   zap trash: [
     "~/Library/Application Scripts/*.group.com.cindori.Backdrop",
     "~/Library/Application Scripts/com.cindori.Backdrop.WallpaperExtension",
+    "~/Library/Application Scripts/com.cindori.BackdropMetal",
     "~/Library/Application Support/Backdrop",
     "~/Library/Application Support/BackdropWallpaper",
     "~/Library/Application Support/com.cindori.Backdrop*",
     "~/Library/Caches/com.cindori.Backdrop*",
     "~/Library/Containers/com.cindori.Backdrop.WallpaperExtension",
+    "~/Library/Containers/com.cindori.BackdropMetal",
     "~/Library/Group Containers/*.group.com.cindori.Backdrop",
     "~/Library/HTTPStorages/com.cindori.Backdrop",
     "~/Library/HTTPStorages/com.cindori.Backdrop.Wallpaper",

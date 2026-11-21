@@ -1,6 +1,6 @@
 cask "taskade" do
-  version "4.7.0"
-  sha256 "6e3bab8969deb74b4f1b201954bef277a265172460fdf30ff3d9d05faec68aef"
+  version "4.7.3"
+  sha256 "fb0d38802ab42bc54c8ac4e7746f3cc8ebbe0208dba9d36bfcefed744f3ee102"
 
   url "https://apps.taskade.com/updates/Taskade-#{version}-universal.dmg"
   name "Taskade"
@@ -17,6 +17,7 @@ cask "taskade" do
   app "Taskade.app"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.taskade.sfl*",
     "~/Library/Application Support/taskade",
     "~/Library/Preferences/com.taskade.plist",
     "~/Library/Saved Application State/com.taskade.savedState",

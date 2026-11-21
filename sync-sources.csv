@@ -5902,6 +5902,7 @@ Homebrew-homebrew-core/Formula/p/php@8.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/php@8.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/php@8.3.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/php@8.4.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/php@8.5.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/phpantom-lsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/phpbrew.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/phpmyadmin.rb, Homebrew/homebrew-core, 0
@@ -6910,7 +6911,7 @@ Homebrew-homebrew-core/Formula/s/sdl3_mixer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdl3_net.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdl3_sound.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdl3_ttf.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/sdl_gfx.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/sdl_gfx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdlpop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdrmm.rb, Homebrew/homebrew-core, 1
@@ -10196,7 +10197,6 @@ Homebrew-homebrew-cask/Casks/f/firefly-iota-desktop.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/f/firefly-shimmer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/firefox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/firefox@beta.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/f/firefox@cn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/firefox@developer-edition.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/firefox@esr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/firefox@nightly.rb, Homebrew/homebrew-cask, 0
@@ -13269,6 +13269,7 @@ Homebrew-homebrew-cask/Casks/h/hyperconnect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hyperframes.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hyperkey.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hyperwhisper.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/h/hyprmac.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hytale.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/i1profiler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ia-markdown-dictionary.rb, Homebrew/homebrew-cask, 0
@@ -13451,6 +13452,7 @@ Homebrew-homebrew-cask/Casks/j/jdownloader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jedit-omega.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jedit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jellybeansoup-netflix.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/j/jellybox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jellyfin-media-player.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jellyfin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jet-pilot.rb, Homebrew/homebrew-cask, 1
@@ -15666,6 +15668,7 @@ Homebrew-homebrew-cask/Casks/s/supermjograph.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/supernotes.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/superset.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/superslicer.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/supertab.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/supertuxkart.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/superwhisper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/support.rb, Homebrew/homebrew-cask, 1

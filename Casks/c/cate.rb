@@ -2,10 +2,10 @@ cask "cate" do
   arch arm: "-arm64"
   url_end = on_system_conditional macos: "#{arch}.dmg", linux: ".AppImage"
 
-  version "2.0.5"
-  sha256 arm:          "a624da0fb2739a12386038d3f19fd563d461d4fad9e9e2239e97e63976144740",
-         intel:        "277ed4e69af5050c6e13c8db642b429aafc5bc85ca8984c3f75ed25794f8e43e",
-         x86_64_linux: "831cb742ebfa03224fc80081698d7a15fb1321cadef6d106ea1adf9a52756b9e"
+  version "2.1.1"
+  sha256 arm:          "9c3f51e7ed776fadad002d34bd10acc65c130ba97ca171372988425c71c1d798",
+         intel:        "6d3218cf542adfa137f42cfb1bb189bfded317fb25ece1c01cdc0abc5da608a2",
+         x86_64_linux: "cbe4416be6d9260568deec3cf1fd7dc352701cb32e209ab2dfc1068cc756c807"
 
   on_macos do
     depends_on macos: :monterey
@@ -15,6 +15,7 @@ cask "cate" do
     zap trash: [
       "~/.cate",
       "~/Library/Application Support/Cate",
+      "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.cate.app.sfl*",
       "~/Library/Application Support/CrashReporter/Cate Helper_*.plist",
       "~/Library/Caches/cate-updater",
       "~/Library/Caches/com.cate.app",
