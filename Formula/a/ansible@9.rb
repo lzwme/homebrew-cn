@@ -611,6 +611,8 @@ class AnsibleAT9 < Formula
     sha256 "627ad26769b6831130239182afcb195f64fbf494626bc9eb4b2ac8170de5b775"
   end
 
+  allow_network_access!
+
   def install
     venv = virtualenv_install_with_resources without: "ansible-core"
     venv.pip_install_and_link resource("ansible-core")
@@ -626,7 +628,8 @@ class AnsibleAT9 < Formula
         - name: ping
           ping:
     YAML
-    python3 = "python#{Language::Python.major_minor_version libexec/"bin/python"}"
+    python_version = Language::Python.major_minor_version libexec/"bin/python"
+    python3 = "python#{python_version}"
     (testpath/"hosts.ini").write [
       "localhost ansible_connection=local",
       " ansible_python_interpreter=#{which(python3)}",

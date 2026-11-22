@@ -12,6 +12,7 @@ class PythonAT315 < Formula
   end
 
   bottle do
+    manifest_sha256 "625dc15badb74fc019db93e64603b07c38ac842494865436980812cf90346a1f"
     sha256 arm64_golden_gate: "3b1247250932fb08290f3dd05f2e476a958b09600ac9a6e18ff6ab3695cab4ba"
     sha256 arm64_tahoe:       "f8927deb45d5d8d6261b514879d9a9750ddaa74ad034514cfd8f89fd8d03dd71"
     sha256 arm64_sequoia:     "3b82ce3572a5aa75a3c0c33da828c1ede71812d7078b9752ed2224c8b02fa871"
@@ -108,8 +109,10 @@ class PythonAT315 < Formula
     # Override the auto-detection of libmpdec, which assumes a universal build.
     # This is currently an inreplace due to https://github.com/python/cpython/issues/98557.
     if OS.mac?
+      machine = Hardware::CPU.arm? ? "uint128" : "x64"
+      ENV["PYTHON_DECIMAL_WITH_MACHINE"] = machine
       inreplace "configure", "libmpdec_machine=universal",
-                "libmpdec_machine=#{ENV["PYTHON_DECIMAL_WITH_MACHINE"] = Hardware::CPU.arm? ? "uint128" : "x64"}"
+                "libmpdec_machine=#{machine}"
     end
 
     # The --enable-optimization and --with-lto flags diverge from what upstream
@@ -189,7 +192,7 @@ class PythonAT315 < Formula
       #   https://github.com/python/cpython#installing-multiple-versions
       #
       # Tell Python not to install into /Applications (default for framework builds)
-      target = "#{"alt" if altinstall?}install"
+      target = altinstall? ? "altinstall" : "install"
       system "make", target, "PYTHONAPPSDIR=#{prefix}"
       system "make", "frameworkinstallextras", "PYTHONAPPSDIR=#{pkgshare}" if OS.mac?
     end
@@ -269,25 +272,30 @@ class PythonAT315 < Formula
     end
 
     # Patch ensurepip to bootstrap our updated version of pip
+    pip_version = resource("pip").version
     inreplace lib_cellar/"ensurepip/__init__.py" do |s|
-      s.gsub!(/_PIP_VERSION = .*/, "_PIP_VERSION = \"#{resource("pip").version}\"")
+      s.gsub!(/_PIP_VERSION = .*/, "_PIP_VERSION = \"#{pip_version}\"")
     end
 
     # Ensure that our new pip wheel is globally readable.
     chmod "ugo+r", lib_cellar.glob("ensurepip/_bundled/pip-*.whl")
 
     # Install unversioned (and for an altinstall, major-versioned) symlinks in libexec/bin.
-    {
+    links = {
       "idle"          => "idle#{version.major_minor}",
       "pydoc"         => "pydoc#{version.major_minor}",
       "python"        => "python#{version.major_minor}",
       "python-config" => "python#{version.major_minor}-config",
-    }.merge(altinstall? ? {
-      "idle3"          => "idle#{version.major_minor}",
-      "pydoc3"         => "pydoc#{version.major_minor}",
-      "python3"        => "python#{version.major_minor}",
-      "python3-config" => "python#{version.major_minor}-config",
-    } : {}).each do |short_name, long_name|
+    }
+    if altinstall?
+      links.merge!({
+        "idle3"          => "idle#{version.major_minor}",
+        "pydoc3"         => "pydoc#{version.major_minor}",
+        "python3"        => "python#{version.major_minor}",
+        "python3-config" => "python#{version.major_minor}-config",
+      })
+    end
+    links.each do |short_name, long_name|
       (libexec/"bin").install_symlink (bin/long_name).realpath => short_name
     end
 
@@ -307,7 +315,7 @@ class PythonAT315 < Formula
            "--upgrade",
            "--isolated",
            "--target=#{root_site_packages}",
-           bundled/"pip-#{resource("pip").version}-py3-none-any.whl"
+           bundled/"pip-#{pip_version}-py3-none-any.whl"
 
     # Use brewed ca-certificates PEM file instead of the bundled copy
     certifi = root_site_packages/"pip/_vendor/certifi"

@@ -94,6 +94,8 @@ class PythonAT39 < Formula
     bin/"python#{version.major_minor}"
   end
 
+  allow_network_access!
+
   def install
     # Unset these so that installing pip and setuptools puts them where we want
     # and not into some other Python the user has installed.
@@ -159,7 +161,7 @@ class PythonAT39 < Formula
     # superenv makes cc always find includes/libs!
     inreplace "setup.py",
       "do_readline = self.compiler.find_library_file(self.lib_dirs, 'readline')",
-      "do_readline = '#{formula_opt_lib("readline")/shared_library("libhistory")}'"
+      "do_readline = '#{formula_opt_lib("readline")}/#{shared_library("libhistory")}'"
 
     inreplace "setup.py" do |s|
       s.gsub! "sqlite_setup_debug = False", "sqlite_setup_debug = True"
@@ -289,8 +291,10 @@ class PythonAT39 < Formula
 
     # Patch ensurepip to bootstrap our updated versions of setuptools/pip
     inreplace lib_cellar/"ensurepip/__init__.py" do |s|
-      s.gsub!(/_SETUPTOOLS_VERSION = .*/, "_SETUPTOOLS_VERSION = \"#{resource("setuptools").version}\"")
-      s.gsub!(/_PIP_VERSION = .*/, "_PIP_VERSION = \"#{resource("pip").version}\"")
+      setuptools_version = resource("setuptools").version
+      s.gsub!(/_SETUPTOOLS_VERSION = .*/, "_SETUPTOOLS_VERSION = \"#{setuptools_version}\"")
+      pip_version = resource("pip").version
+      s.gsub!(/_PIP_VERSION = .*/, "_PIP_VERSION = \"#{pip_version}\"")
     end
 
     # Write out sitecustomize.py

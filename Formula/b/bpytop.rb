@@ -18,6 +18,7 @@ class Bpytop < Formula
     sha256 cellar: :any,                 x86_64_linux:      "e5c2fa1e7c99d34c0000207b7d95b3607bdbcc61a294c402f50a2724c5c0c492"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "python@3.15"
 
   on_macos do
@@ -37,9 +38,11 @@ class Bpytop < Formula
     resolves "https://github.com/aristocratos/bpytop/pull/405"
   end
 
+  allow_network_access! :test
+
   def install
     venv = virtualenv_create(libexec, python3)
-    venv.pip_install resources
+    venv.pip_install resources, build_isolation: false
     system "make", "install", "PREFIX=#{prefix}"
     pkgshare.install "themes"
 
@@ -52,12 +55,13 @@ class Bpytop < Formula
     config = (testpath/".config/bpytop")
     mkdir config/"themes"
     # Disable cpu_freq on arm due to missing support: https://github.com/giampaolo/psutil/issues/1892
+    show_cpu_freq = !Hardware::CPU.arm?
     (config/"bpytop.conf").write <<~EOS
       #? Config file for bpytop v. #{version}
 
       update_ms=2000
       log_level=DEBUG
-      show_cpu_freq=#{!Hardware::CPU.arm?}
+      show_cpu_freq=#{show_cpu_freq}
     EOS
 
     require "pty"

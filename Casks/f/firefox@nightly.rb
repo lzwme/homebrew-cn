@@ -1,76 +1,79 @@
 cask "firefox@nightly" do
-  version "163.0a1,2026-11-20-21-34-02"
+  version "163.0a1,2026-11-21-20-02-50"
 
   language "ca" do
-    sha256 "0a94a63a9466f0e9aa91052957d6d3dbcc9dae06df850a0aec7864bc22626374"
+    sha256 "d7a8354206d9758336f1231a4ffe7bf9d86a29e711c4d875faf3d46087270f45"
     "ca"
   end
   language "cs" do
-    sha256 "dff83cef68a35ada1569effcb36a4bebeee25fac5408dfb78dd1b976ed2632f6"
+    sha256 "7521535dfd7df919e4f344104a149cdbd104c277d00dbcc5628889723559929e"
     "cs"
   end
   language "de" do
-    sha256 "6c28f2ba1113c7f34c82d2a462effc3f5be60a927f4ddc2808f6f0a6c0bfbcad"
+    sha256 "245c1aa11f72b70efac047b348761acf9573584376a34565ba2913d80cca8b6b"
     "de"
   end
   language "en-CA" do
-    sha256 "b857dd5ae9fda2831a8fcca8289cbca24624323658c24d139b4fba379b9c7c91"
+    sha256 "115dfd25eebc8a6ed321164d52fe391c13f70087b88e38e855e9f58729cc6ae0"
     "en-CA"
   end
   language "en-GB" do
-    sha256 "2962c10b988502a47725ac908ee6aa4081436b232abd8b33bebc0d7feb462e34"
+    sha256 "4ec212292c29d82fb855eca4c7d2d17aea5190686455a917f5038fe58a88a5a4"
     "en-GB"
   end
   language "en", default: true do
-    sha256 "bb2319f2809d998d4962e2babad4f28162d40a3b87bf38e1344866c086457395"
+    sha256 "d5452dfd2a477c3883efdf7af393820040160db09fb8e8f863f57599a0843bc1"
     "en-US"
   end
   language "es" do
-    sha256 "2fb38b160aefa04388f1cb50c2cf98e4d6e4a18f44e71a7f7c324e6c188a75f6"
+    sha256 "a2fad482c18e5e742b63b5d57be7d3208a05fec8e2a07e9a02cfdcdd1ec4e9a5"
     "es-ES"
   end
   language "fr" do
-    sha256 "b36b369d246e3289f82040865bdf80e793b4898a9e8da2915c7d90b2ed337556"
+    sha256 "4e9defb20c76a7ef18a3c522bdf26e1fba861a0156bf021cb7447d2a6f46eec8"
     "fr"
   end
   language "it" do
-    sha256 "be0a87246e693e961c2d9d8377e9d3dc2d1755702108cf3bc8b95ad5029ed45b"
+    sha256 "e1259a431a9ffe62843345059b765de6a8fdeb5fe7136a99531f52078abfa01f"
     "it"
   end
   language "ja" do
-    sha256 "efb50b15715cc2a1cf0ebd84d004d4f68274e70862421317e731ad5d820439d1"
+    sha256 "a5b6b3adb2787600ede288935bb9bd17a878527682b352cb5e9f79944830a7c2"
     "ja-JP-mac"
   end
   language "ko" do
-    sha256 "589c31aaef9d856be12f099dbc4f2f745aaceda3836619f43e6d37d17ab902e3"
+    sha256 "76136af14569afac798547d48e2d2c181e9f794cc9bada837f9081fb3c3d1640"
     "ko"
   end
   language "nl" do
-    sha256 "be58f2fe533204527158311ac427602cf357acfeb024d4a5383dc4a17acc78b4"
+    sha256 "477ea5f022fb301c62896e58b8e327d1c9578ed9f7bef19105d5fea6e0707426"
     "nl"
   end
   language "pt-BR" do
-    sha256 "b0a1e7cacce82018fd691a99a4f83d228bc15c14ddee124b986d51fe21961d37"
+    sha256 "64eb5ed076257f827e79b592cf38b93dcfe12e7800cd2da179309fd06de8801f"
     "pt-BR"
   end
   language "ru" do
-    sha256 "c0fb819017c567eac0ca4702cf5431a81fb0279d7a4adca4c5997c70b6b64883"
+    sha256 "a043439af582350cc4e46c17111d3039c84dfc16a27692ca9e46f012af451954"
     "ru"
   end
   language "uk" do
-    sha256 "85ae823f1de0092477d7f6803a8e58f63465f9f371f346242bc93937a9cc8688"
+    sha256 "829ba30c0bf89bc9db33a2517c890dbae1dea963bdb9506e047289bfff25e20b"
     "uk"
   end
   language "zh-TW" do
-    sha256 "a1c06fe6a11470262d57b82b6347d65cf0448f7991adfdce03697c666d60c88c"
+    sha256 "dfe36a07c2d22b1cdddb4cfc5e49cf5ca9d73c77015ed01115caa84ec66ec94e"
     "zh-TW"
   end
   language "zh" do
-    sha256 "9d0c0a84611746ab77029bdfd830a5ebc899557e7859fe68294c323e8430c040"
+    sha256 "433f06b93521e5eabf11d0567b574bdea6a71c930dd046322a6e99ce394ce59c"
     "zh-CN"
   end
 
-  url "https://ftp.mozilla.org/pub/firefox/nightly/#{version.csv.second.split("-").first}/#{version.csv.second.split("-").second}/#{version.csv.second}-mozilla-central#{"-l10n" if language != "en-US"}/firefox-#{version.csv.first}.#{language}.mac.dmg"
+  year = version.csv.second.split("-").first
+  month = version.csv.second.split("-").second
+  locale_suffix = "-l10n" if language != "en-US"
+  url "https://ftp.mozilla.org/pub/firefox/nightly/#{year}/#{month}/#{version.csv.second}-mozilla-central#{locale_suffix}/firefox-#{version.csv.first}.#{language}.mac.dmg"
   name "Mozilla Firefox Nightly"
   desc "Web browser"
   homepage "https://www.mozilla.org/firefox/channel/desktop/#nightly"

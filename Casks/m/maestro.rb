@@ -4,12 +4,13 @@ cask "maestro" do
   name_prefix = on_system_conditional macos: "Maestro", linux: "maestro"
   url_end = on_system_conditional macos: "-mac.dmg", linux: ".AppImage"
 
-  version "1.0.3"
-  sha256 arm:          "757e3bb9c6645cb291769cf4f962e91177c5947e69fd46245203a05454abebde",
-         intel:        "4551e46dd8f7c1fcd363f34e3e689f4796b8a11bd20b6346afcada381a99a8e5",
-         arm64_linux:  "3931a37c138fe27276008cac969717f5e5855849ef2753b7aa929d4c5513016c",
-         x86_64_linux: "65edf56ba017d8b595422609fd0fefdd76ea6179b880b3d102b9def91ef2fd15"
+  version "1.0.4"
+  sha256 arm:          "8a310b42fafe27552a60e72f299ff440c4c93606d2337f06046c9ece21c66515",
+         intel:        "7e05ea695633ec9caa072777d73a4a8e3887008572f7d9869f3424c8fd81705e",
+         arm64_linux:  "cbc575882d1f3ea3ac1f44b37328e7e68885fe1a5b313578dbac185d0b7a6c7b",
+         x86_64_linux: "a409669feb51f0145278423618c9f71f35123e0ba30c2657930e640ce631f5ce"
 
+  release_version = version.csv.second || version.csv.first
   on_macos do
     depends_on macos: :monterey
 
@@ -22,12 +23,12 @@ cask "maestro" do
     ]
   end
   on_linux do
-    app_image "maestro-#{version.csv.second || version.csv.first}-#{arch}.AppImage", target: "Maestro.AppImage"
+    app_image "maestro-#{release_version}-#{arch}.AppImage", target: "Maestro.AppImage"
 
     zap trash: "~/.config/maestro"
   end
 
-  url "https://ghfast.top/https://github.com/pedramamini/Maestro/releases/download/v#{version.csv.second || version.csv.first}/#{name_prefix}-#{version.csv.second || version.csv.first}-#{arch}#{url_end}"
+  url "https://ghfast.top/https://github.com/pedramamini/Maestro/releases/download/v#{release_version}/#{name_prefix}-#{release_version}-#{arch}#{url_end}"
   name "Maestro"
   desc "AI agent command center"
   homepage "https://runmaestro.ai/"
@@ -40,7 +41,7 @@ cask "maestro" do
       tag_version = json["tag_name"]&.[](regex, 1)
       next if version.blank? || tag_version.blank?
 
-      (version == tag_version) ? tag_version : "#{version},#{tag_version}"
+      [version, tag_version].uniq.join(",")
     end
   end
 

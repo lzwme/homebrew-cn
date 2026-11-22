@@ -26,6 +26,8 @@ class BoostMpi < Formula
   depends_on "boost"
   depends_on "open-mpi"
 
+  allow_network_access! :test
+
   def install
     # "layout" should be synchronized with boost
     args = %W[
@@ -46,8 +48,9 @@ class BoostMpi < Formula
     # Issue ref: https://github.com/boostorg/boost/issues/985
     args << "linkflags=-Wl,-dead_strip_dylibs" if OS.mac?
 
+    toolset = OS.mac? ? "darwin" : "gcc"
     (buildpath/"user-config.jam").write <<~JAM
-      using #{OS.mac? ? "darwin" : "gcc"} : : #{ENV.cxx} ;
+      using #{toolset} : : #{ENV.cxx} ;
       using mpi ;
     JAM
 

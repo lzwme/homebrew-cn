@@ -1,6 +1,6 @@
 cask "font-mengshen-handwritten" do
-  version "2.0.0,20261119-165248"
-  sha256 "ce84cc18a308daf7eebcd3810d672e8e9375db3ff091f6c8e46be809cb0fac46"
+  version "2.0.0,20261122-035412"
+  sha256 "29b23ce6f743972ce8db4f8aa6bd3f26564e9c469c5d3d742e5178f694e88ca2"
 
   url "https://ghfast.top/https://github.com/MaruTama/Mengshen-pinyin-font/releases/download/v#{version.csv.second}/Mengshen-Handwritten.ttf"
   name "Mengshen Pinyin Handwritten"
@@ -17,7 +17,8 @@ cask "font-mengshen-handwritten" do
         version = release["name"]&.[](regex, 1)
         next if version.blank?
 
-        "#{version},#{release["tag_name"]&.tr("v", "")}"
+        release_tag = release["tag_name"]&.tr("v", "")
+        "#{version},#{release_tag}"
       end
     end
   end

@@ -14,6 +14,7 @@ class Pkgconf < Formula
   end
 
   bottle do
+    manifest_sha256 "c1445e36a170f35a5317ac52d7f51e9f1196b3962333ce1903f53be3fe8c3273"
     sha256 arm64_golden_gate: "f5da9ea7e060cd8a7d06e31bdb76dbf74e5d46d77b6657d0573ba1d548216d33"
     sha256 arm64_tahoe:       "84d9b76f2382bca438590bb86a0e1d464147ec70d0bc9a20c25b665c29535aa3"
     sha256 arm64_sequoia:     "984325551072d74b5c32e4c0a48464250612eaf835c39f8b23425fbaf7d3cbc1"
@@ -56,6 +57,7 @@ class Pkgconf < Formula
       ["#{HOMEBREW_LIBRARY}/Homebrew/os/linux/pkgconfig"]
     end
 
+    sdk_root = MacOS.sdk_path if OS.mac?
     if build.head?
       # Autotools build is planned for removal in pkgconf 3.1
       resource("muon").stage do
@@ -69,7 +71,7 @@ class Pkgconf < Formula
 
       args = %W[
         -Dwith-pkg-config-dir=#{pc_path.uniq.join(File::PATH_SEPARATOR)}
-        -Dwith-system-includedir=#{MacOS.sdk_path if OS.mac?}/usr/include
+        -Dwith-system-includedir=#{sdk_root}/usr/include
         -Dwith-system-libdir=/usr/lib
       ]
 
@@ -80,7 +82,7 @@ class Pkgconf < Formula
       args = %W[
         --disable-silent-rules
         --with-pkg-config-dir=#{pc_path.uniq.join(File::PATH_SEPARATOR)}
-        --with-system-includedir=#{MacOS.sdk_path if OS.mac?}/usr/include
+        --with-system-includedir=#{sdk_root}/usr/include
         --with-system-libdir=/usr/lib
       ]
 

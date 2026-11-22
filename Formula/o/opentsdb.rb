@@ -38,6 +38,8 @@ class Opentsdb < Formula
     depends_on arch: :x86_64 # openjdk@8 (needed to build) is not supported on ARM
   end
 
+  allow_network_access!
+
   def install
     with_env(JAVA_HOME: Language::Java.java_home("1.8")) do
       ENV.prepend_path "PATH", formula_opt_libexec("python@3.13")/"bin"
@@ -57,7 +59,11 @@ class Opentsdb < Formula
     env["PATH"] = "$JAVA_HOME/bin:$PATH"
     env["HBASE_HOME"] = formula_opt_libexec("hbase")
     # We weren't able to get HBase native LZO compression working in Monterey
-    env["COMPRESSION"] = (OS.mac? && MacOS.version >= :monterey) ? "NONE" : "LZO"
+    env["COMPRESSION"] = if OS.mac? && MacOS.version >= :monterey
+      "NONE"
+    else
+      "LZO"
+    end
 
     create_table = pkgshare/"tools/create_table_with_env.sh"
     create_table.write_env_script pkgshare/"tools/create_table.sh", env

@@ -4,13 +4,15 @@ cask "moose" do
 
   url "https://ghfast.top/https://github.com/ritz078/moose/releases/download/v#{version}/moose-#{version}-mac.zip"
   name "moose"
-  homepage "https://getmoose.in/"
+  desc "Torrent client to download, stream and cast torrents"
+  homepage "https://moose.riteshkr.com/"
 
   depends_on :macos
 
   app "moose.app"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.riteshkr.moose.sfl*",
     "~/Library/Application Support/moose",
     "~/Library/Logs/moose",
     "~/Library/Preferences/com.riteshkr.moose.plist",

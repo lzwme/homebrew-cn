@@ -24,6 +24,8 @@ class BoostPython3 < Formula
   depends_on "boost"
   depends_on "python@3.15"
 
+  deny_network_access!
+
   def install
     # "layout" should be synchronized with boost
     args = %W[
@@ -57,8 +59,9 @@ class BoostPython3 < Formula
     end
 
     # Force boost to compile with the desired compiler
+    toolset = OS.mac? ? "darwin" : "gcc"
     (buildpath/"user-config.jam").write <<~EOS
-      using #{OS.mac? ? "darwin" : "gcc"} : : #{ENV.cxx} ;
+      using #{toolset} : : #{ENV.cxx} ;
       using python : #{pyver}
                    : #{python3}
                    : #{py_prefix}/include/python#{pyver}

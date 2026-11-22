@@ -1,17 +1,17 @@
 class BacklogMd < Formula
   desc "Markdown‑native Task Manager & Kanban visualizer for any Git repository"
   homepage "https://github.com/MrLesk/Backlog.md"
-  url "https://ghfast.top/https://github.com/MrLesk/Backlog.md/archive/refs/tags/v1.55.3.tar.gz"
-  sha256 "d61d27116a36e01ce368d014a2717c792cb592d4aee6081e265cd8d543ce3b2d"
+  url "https://ghfast.top/https://github.com/MrLesk/Backlog.md/archive/refs/tags/v1.57.2.tar.gz"
+  sha256 "773eef102659638d3364684c4b34f13b2fdf0918a2ca6009b91bc404b84638ab"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "b8f9828e88cf7a8a6bafb301e54e06eb683a3b8876815482587198c8b8349005"
-    sha256 arm64_tahoe:       "0a60f582649988e0b436d10ef49781d1766670d2f7a0968eaa47bc5c8b12912c"
-    sha256 arm64_sequoia:     "6129eda92ccd3efabbe43dc7bc808a23a1ba0a665e0580798c281b02fb1ff8d5"
-    sha256 arm64_linux:       "03a16a2123fe8dcecd7923ca02ae9c99cec9733361dd0558caf4af0fc7422a19"
-    sha256 x86_64_linux:      "fd4a66d504867e9c3fb1b390367e4b928d3f681249bb963e7d5a46c7a8e72cb7"
+    manifest_sha256 "b65e1919b03da57293fb6af68e9e181aa0b2e5a32e41cd0b8566186f37b10a00"
+    sha256 arm64_golden_gate: "0f926d8f920c1f3ef4c4fe01cdbbf24b067a800d1a992edcf635675238d7d250"
+    sha256 arm64_tahoe:       "5175fdbda9387d76ff7d8e3b2fa6ceabf9e46c9b2aa7848116a86e72538c9348"
+    sha256 arm64_sequoia:     "049e6c654a8a15e5d651b06bd6db1c63621b57941ec88ab5ef0a87c8ff3e435a"
+    sha256 arm64_linux:       "5444b54e8b925539b772f35ff29b5254729bfdbc88298c117e8e3bd5f1d902c3"
+    sha256 x86_64_linux:      "4bd36d53f39e598ba5658a27859d14a8b5eadfbe9a2ec7ae6fe24baf92922f98"
   end
 
   depends_on "bun" => :build

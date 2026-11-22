@@ -203,6 +203,7 @@ Homebrew-homebrew-core/Formula/a/apgdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/api-linter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apibuilder-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/apicula.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apify-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apigeecli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apkeep.rb, Homebrew/homebrew-core, 1
@@ -3847,7 +3848,7 @@ Homebrew-homebrew-core/Formula/l/ldapvi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldcli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldeep.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/l/ldid-procursus.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/ldid-procursus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ldid.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ldns.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/ldpl.rb, Homebrew/homebrew-core, 1
@@ -11583,6 +11584,7 @@ Homebrew-homebrew-cask/Casks/font/font-l/font-love-light.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/font/font-l/font-love-ya-like-a-sister.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-loved-by-the-king.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-lovers-quarrel.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-l/font-lucide.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-luciole.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-luckiest-guy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-luculent.rb, Homebrew/homebrew-cask, 0
@@ -14397,6 +14399,7 @@ Homebrew-homebrew-cask/Casks/o/obsidian.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/ocenaudio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oclint.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/octarine.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/octo-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/october.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/odbc-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/odrive.rb, Homebrew/homebrew-cask, 0
@@ -14432,7 +14435,7 @@ Homebrew-homebrew-cask/Casks/o/onekey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onexrayse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onionshare.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/onit-sidekick.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/o/onlook.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/onlook.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/only-switch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onlyoffice.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/ontime.rb, Homebrew/homebrew-cask, 1
@@ -15345,6 +15348,7 @@ Homebrew-homebrew-cask/Casks/s/sharepod.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shattered-pixel-dungeon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/shearwater-cloud.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shell360.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/shellrs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sherlock-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/shichizip-zs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/shichizip.rb, Homebrew/homebrew-cask, 1
@@ -15444,6 +15448,7 @@ Homebrew-homebrew-cask/Casks/s/sloth.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smallstepagent.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smart-converter-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smartgit.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/smartgit@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smartreporter-free.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smartsheet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/smartsvn.rb, Homebrew/homebrew-cask, 0
