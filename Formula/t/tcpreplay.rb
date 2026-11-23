@@ -1,21 +1,24 @@
 class Tcpreplay < Formula
   desc "Replay saved tcpdump files at arbitrary speeds"
   homepage "https://tcpreplay.appneta.com/"
-  url "https://ghfast.top/https://github.com/appneta/tcpreplay/releases/download/v4.6.2/tcpreplay-4.6.2.tar.gz"
-  sha256 "ac4cbc58b4121edb273bc7d4603dfd6a762e7d344981233c8a253425d9dddd8f"
+  url "https://ghfast.top/https://github.com/appneta/tcpreplay/archive/refs/tags/v4.6.4.tar.gz"
+  sha256 "e6aa11c8b948f1a9e4b682d9f083a6f4874b4269a37ef09151f76634f726e400"
   license all_of: ["BSD-2-Clause", "BSD-3-Clause", "BSD-4-Clause", "GPL-3.0-or-later", "ISC"]
+  head "https://github.com/appneta/tcpreplay.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9f3959451fd95fd2300d7c5389ffe810484fb38b9577cefa4b1c7accbbddf023"
-    sha256 cellar: :any, arm64_tahoe:       "9c83ac7509ff1ffc75ebda9f16404a461b5ce52ed96543ca17e5eaaaf6384e93"
-    sha256 cellar: :any, arm64_sequoia:     "2eccecfe49e18611db2e13388984529e50a94d1ad52058a81acf0118662491cb"
-    sha256 cellar: :any, arm64_linux:       "e66b9c71d410a403ea26f83206b70a5f0c52725b27a5907c404dc2db7fe9c7e6"
-    sha256 cellar: :any, x86_64_linux:      "1b4286a1196a6ea188b35e5d4fa8f576f6186f9dd4c471d0bf08e1bc06062acf"
+    manifest_sha256 "de44b79d89a70c7aab70042997d34924b1836e9e0fb8b8cab24702ae5b4e72ec"
+    sha256 cellar: :any, arm64_golden_gate: "e3b3da2dbff74e922cbc50621b5d54dd06f6b741d91ba5f2ff475c1702a58ef9"
+    sha256 cellar: :any, arm64_tahoe:       "c2628b0363bea16ac99b22f8a58439f607d49533c215c71d77b7d991418a1955"
+    sha256 cellar: :any, arm64_sequoia:     "b72e6ffa300c51971f8e3947a00bbd8101b73338669cbc81c3573a505f53806c"
+    sha256 cellar: :any, arm64_linux:       "54c2e898c04c6a20fe162ad98e4495d0c8093bd8dbaa25465f14ea9a037fe1de"
+    sha256 cellar: :any, x86_64_linux:      "4d62ef82f4d34ac32ca4e5a36aaaed520f89dfe30c9a54de44be7d9f0a380f6a"
   end
 
   depends_on "cmake" => :build
   depends_on "libdnet"
 
+  uses_from_macos "python" => :build
   uses_from_macos "libpcap"
 
   deny_network_access!

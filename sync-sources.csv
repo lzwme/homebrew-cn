@@ -47,6 +47,7 @@ Homebrew-homebrew-core/Formula/a/adb-enhanced.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/add-determinism.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/addlicense.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/addons-linter.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/ade.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adios2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/admesh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adns.rb, Homebrew/homebrew-core, 0
@@ -238,7 +239,6 @@ Homebrew-homebrew-core/Formula/a/arcade-learning-environment.rb, Homebrew/homebr
 Homebrew-homebrew-core/Formula/a/arcadedb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arcane-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/archey4.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/a/archgw.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/archi-steam-farm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/archivemount.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/archiver.rb, Homebrew/homebrew-core, 1
@@ -1586,6 +1586,7 @@ Homebrew-homebrew-core/Formula/d/dex2jar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dexidp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dexter-lsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dexter.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dezoomify-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dezoomify-rs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dfc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dfmt.rb, Homebrew/homebrew-core, 0
@@ -2985,6 +2986,7 @@ Homebrew-homebrew-core/Formula/g/gtk-doc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gtk-gnutella.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gtk-mac-integration.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gtk-vnc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gtk4-layer-shell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gtk4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gtkdatabox.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gtkglext.rb, Homebrew/homebrew-core, 0
@@ -5279,6 +5281,7 @@ Homebrew-homebrew-core/Formula/n/newsraft.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/newt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nextdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nextflow.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nextpnr-himbaechel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nextpnr-ice40.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nexttrace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nexus.rb, Homebrew/homebrew-core, 0
@@ -5652,6 +5655,7 @@ Homebrew-homebrew-core/Formula/o/ortp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/ory-hydra.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/osc-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/osc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/oscar64.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oscats.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/osctrl-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/osctrl-mcp.rb, Homebrew/homebrew-core, 1
@@ -5994,6 +5998,7 @@ Homebrew-homebrew-core/Formula/p/plakar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/planck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/planetiler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plank.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/planoai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plantuml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/planus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/platformio.rb, Homebrew/homebrew-core, 0
