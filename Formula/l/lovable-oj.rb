@@ -1,18 +1,18 @@
 class LovableOj < Formula
   desc "Experimental next generation frontend tooling"
   homepage "https://github.com/lovablelabs/oj"
-  url "https://ghfast.top/https://github.com/lovablelabs/oj/archive/refs/tags/v0.4.18.tar.gz"
-  sha256 "b0bc52dee1517bdea09b06d51ca70d894138ed8206c6c79d1e88a852f0537846"
+  url "https://ghfast.top/https://github.com/lovablelabs/oj/archive/refs/tags/v0.4.20.tar.gz"
+  sha256 "a26ca210cab88b0565c49af59512e0a01a504e948f004c658d91503b621e8d18"
   license "MIT"
   head "https://github.com/lovablelabs/oj.git", branch: "main"
 
   bottle do
-    manifest_sha256 "83702f7847e8b7de7df9ebfe98b78595b67873237bb73bb9ef0796b82854205c"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a9e9c8284794cff18770c82ae9b035abb6d0fedae0742510cb17895294357cd0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "99f749a9973a7e5475f3d1cd4ee68b809fc977fe49a9dbfcc794f23e68184669"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "db88e044b3f9471fe901be67d36efe2673fd6cbc0bb84a25de262d52dd941b78"
-    sha256 cellar: :any,                 arm64_linux:       "7141d419933d0efa0f3912f2c204d852182c26259e2f8fc7e88a7a29d1519441"
-    sha256 cellar: :any,                 x86_64_linux:      "ea9ba17e1387fb0b9bbae0734d5b636604207fe4c2d1ded49f4f4ba3e144cf42"
+    manifest_sha256 "1604c9e1b5dcc1c1dc81a7742c324e736b7d8b646c941cb1e025982f3e705498"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9665f81fc747947e91551b7882c32c242b9fea1190ca8523f811567c93409fb8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2fd77a3c48a425dfcf355d1302d23d54e7cbc8a4212cb37217936535f918751a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a2ccadde98ad8418212370c1678cb513d8d45684a4cbc9fbc1848adb719380dc"
+    sha256 cellar: :any,                 arm64_linux:       "2b618057b5aaf2f8c0eb5f8c8c535f368bbf4e5fe6e93d45d2f37eaff90f47cc"
+    sha256 cellar: :any,                 x86_64_linux:      "c3c7fe80449de5fc8c4fa961886dfac0982c39f3439e5460e1727287e99f6b47"
   end
 
   depends_on "cmake" => :build

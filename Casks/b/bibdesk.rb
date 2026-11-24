@@ -1,6 +1,6 @@
 cask "bibdesk" do
-  version "1.9.13"
-  sha256 "0435887d5f3fc7ae7ed735515a1290cf6efc479afeae755c1d1d0693c008004b"
+  version "1.9.14"
+  sha256 "4914bf0b282fbb492e414a49c87611270d60b21907237b314b458bb84657353f"
 
   url "https://downloads.sourceforge.net/bibdesk/BibDesk/BibDesk-#{version.csv.first}/BibDesk-#{version.csv.first}.dmg"
   name "BibDesk"
@@ -23,6 +23,7 @@ cask "bibdesk" do
     "~/Library/Caches/com.apple.helpd/SDMHelpData/Other/English/HelpSDMIndexFile/edu.ucsd.cs.mmccrack.bibdesk.help*",
     "~/Library/Caches/edu.ucsd.cs.mmccrack.bibdesk",
     "~/Library/Cookies/edu.ucsd.cs.mmccrack.bibdesk.binarycookies",
+    "~/Library/HTTPStorages/edu.ucsd.cs.mmccrack.bibdesk",
     "~/Library/Preferences/edu.ucsd.cs.mmccrack.bibdesk.plist",
   ]
 end

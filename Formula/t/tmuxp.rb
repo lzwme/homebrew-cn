@@ -3,17 +3,17 @@ class Tmuxp < Formula
 
   desc "Tmux session manager. Built on libtmux"
   homepage "https://tmuxp.git-pull.com/"
-  url "https://files.pythonhosted.org/packages/8c/ab/a6d4bb9611dfb68367b406465022f3da21a1e5819dab870e4c6fe32ea09f/tmuxp-1.78.0.tar.gz"
-  sha256 "3a4331b48ce455becd34a8c3cd24eea2879dd4533cb9606b9bf808d924be6736"
+  url "https://files.pythonhosted.org/packages/46/f0/df58a3fc9bd0cae8b3a2b1ddd16aa0c7d47be73acd5318a00e85d924783c/tmuxp-1.81.0.tar.gz"
+  sha256 "70f8d0d567790903acb64967ba9caaeffccd6ebb2fd047a6028f4ef0aaa22ffa"
   license "MIT"
 
   bottle do
-    manifest_sha256 "ffd1a4455e89994b70b37a38e8f46efea604a7fed77d235bd75bad51562e77de"
-    sha256 cellar: :any, arm64_golden_gate: "412d874e0dac5233f90912fde728441f59bce5de062d636c706cc28ba3718119"
-    sha256 cellar: :any, arm64_tahoe:       "2c2e1541cdc710c52d9cd7af113ebe72a4ae0da583b3ad68b3e838e0c0a70fd7"
-    sha256 cellar: :any, arm64_sequoia:     "644e6a5b3f7bbe75341ae003877e7d7c87a75e430745597ebfeb83aedb5b6680"
-    sha256 cellar: :any, arm64_linux:       "9d6b442f18c785a6747e4039e9c2f41da3140a7f49c383fb397ceb3587ec98b7"
-    sha256 cellar: :any, x86_64_linux:      "549d8456f761970d63af7e0b6139f3e293e1b992e93bae1e8bfc934b2f8c3949"
+    manifest_sha256 "559b9f9cdd768615418b123a1ed43fad4bb00082ff484aac97c21b4d23c0dbed"
+    sha256 cellar: :any, arm64_golden_gate: "f11875a5cbcc043c13e2eaf3604356e86c304cd511e880be9a3be42dd218c34d"
+    sha256 cellar: :any, arm64_tahoe:       "ebd417c88777fbe25d686a8f811faa928f8949e43162ab4a73cd370bf22aeeef"
+    sha256 cellar: :any, arm64_sequoia:     "c1f5eb37310f68be497272b8c19a0e46e3bb5293e02c135d0547f84c3e37ff02"
+    sha256 cellar: :any, arm64_linux:       "18dbf149d533a93c947574fff523fdc9f3dc4efe4897ae9b83bf78ac6af2f9a7"
+    sha256 cellar: :any, x86_64_linux:      "987f8054158eedd170332b6246134dcb84cfd8ad93acb2c950c231b69b6319c3"
   end
 
   depends_on "libyaml"
@@ -21,8 +21,8 @@ class Tmuxp < Formula
   depends_on "tmux"
 
   resource "libtmux" do
-    url "https://files.pythonhosted.org/packages/63/e7/f59c1f249f5c8efe6fdb03b90e3198c882d14aefe4da9f59ce448e209d83/libtmux-0.64.0.tar.gz"
-    sha256 "f0dac5673c60dac3d596b505734e9ac953f6516a64b9eea6d437ab348019e23d"
+    url "https://files.pythonhosted.org/packages/72/f3/d33065929a6fe8c1005f34ebd8efc07be6fce4f068adfa3569005668b205/libtmux-0.67.1.tar.gz"
+    sha256 "4de44cc40e35aed07cdf75f6f8d4062efa16731234ce8e2658d2f3b8edc20341"
   end
 
   resource "pyyaml" do

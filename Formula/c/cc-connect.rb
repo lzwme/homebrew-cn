@@ -16,12 +16,19 @@ class CcConnect < Formula
   depends_on "go" => :build
   depends_on "node" => :build
 
-  def install
+  deny_network_access!
+
+  def fetch
     cd "web" do
       system "npm", "install", *std_npm_args(prefix: false)
+    end
+    system "go", "mod", "download"
+  end
+
+  def install
+    cd "web" do
       system "npm", "run", "build"
     end
-
     system "go", "build", *std_go_args(ldflags: :goreleaser), "./cmd/cc-connect"
 
     pkgetc.install "config.example.toml" => "config.toml"
@@ -57,12 +64,10 @@ class CcConnect < Formula
 
     output = testpath/"output.txt"
 
-    pid = spawn bin/"cc-connect", "--config", testpath/"config.toml", [:out, :err] => output.to_s
-    sleep 1
+    with_test_process(bin/"cc-connect", "--config", testpath/"config.toml", [:out, :err] => output.to_s) do
+      sleep 1
 
-    assert_match "failed to create agent", output.read
-  ensure
-    Process.kill("SIGTERM", pid)
-    Process.wait(pid)
+      assert_match "failed to create agent", output.read
+    end
   end
 end

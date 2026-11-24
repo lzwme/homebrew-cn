@@ -1,18 +1,18 @@
 class Ktop < Formula
   desc "Top-like tool for your Kubernetes clusters"
   homepage "https://ktop.app/"
-  url "https://ghfast.top/https://github.com/vladimirvivien/ktop/archive/refs/tags/v0.7.5.tar.gz"
-  sha256 "e5ef61e0d45628295d994464ba732403e006d884a8415c2b234cb6bd16e5f0a7"
+  url "https://ghfast.top/https://github.com/vladimirvivien/ktop/archive/refs/tags/v0.7.7.tar.gz"
+  sha256 "244fcda930606bc4e22275c3144772234e533325f19db6ada1623b2d4e3dbc95"
   license "Apache-2.0"
   head "https://github.com/vladimirvivien/ktop.git", branch: "main"
 
   bottle do
-    manifest_sha256 "25d0d02c9682051d13377a8a8fdd04448909824eb6febb2f5c312b6126e1474b"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c0129c1679649fb49f9cfece821c5245ddac0ef27a38d6d6dd5f63811d0a63d8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "effa8db2912b7c29969e132ded94e68cd48db95726d95a079fac9d5b7f3c6bbd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c50bcbb4434bd869418f7d07742380a439cd8838280527d564a4f6ec59d85bc8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a53450fb6a94424c19ca4289e751a7c1eebb828437a194ce2f2bfe1e74449c4a"
-    sha256 cellar: :any,                 x86_64_linux:      "554b372a851fa077cbbe1ae657d2da167cbbdd9f3f1b3693255db9bf6af4779b"
+    manifest_sha256 "2329ed5ac2512564bbb962e8f43003c329b2e2313ebb9f6d4a72ae17e732d15a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c5d914ba55d316ca42dda14a9cda34cb7d355285f068b2f56e9924d647fccc5f"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ca11ccfad3b9ea2c8ac8d2af4b8bdacbee63ef42fe4af097f44c850239e69615"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "02906b53d93cc1fbf5b5bdfcd785295b08c87b2940eca0aef17e1bebbbad26ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "1a77bd2da938d6082477f03af853de99b78ac136246366c083718955fd32a20e"
+    sha256 cellar: :any,                 x86_64_linux:      "ba1b15be2dccc1a99ef6311f9b8495a905e8e91f9e4f90b3f0aaf50f57451e23"
   end
 
   depends_on "go" => :build
