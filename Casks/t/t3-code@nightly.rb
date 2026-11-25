@@ -1,25 +1,26 @@
 cask "t3-code@nightly" do
   arch arm: "arm64", intel: on_system_conditional(macos: "x64", linux: "x86_64")
 
-  version "0.1.12-nightly.20261124.5178"
-  sha256 arm:          "bca8eeaad5ea7665029a2622c5aa479ed71e88f515a7f5e7e78f910270b2100a",
-         intel:        "50e2fc08050643fcb3c02411b5b7c2db20a9213a36db5727014b4aa3dd3aef89",
-         x86_64_linux: "fc02abd112fcdf73cf60435ba20eb91684648cd2023b1a4aea4ba59861f366fe"
+  version "0.1.12-nightly.20261125.5230"
+  sha256 arm:          "ed812da44efa51255e356893119a35343ea4c2a552f99b1ca75ea8c307c42893",
+         intel:        "89777738608c28b09997e1f6aa930d7a110404ce2ebb4c29052d7434d054109d",
+         arm64_linux:  "d9271612d2ed32ca0f4868847fe9ddd62db48f821b24fc918281803fafd37ab1",
+         x86_64_linux: "4a13cf6ed9ba9516ff19539154d1dd84f163e2ce0c11313054b2f587398f9e66"
 
   on_macos do
     url "https://ghfast.top/https://github.com/pingdotgg/t3code/releases/download/v#{version}/T3-Code-#{version}-#{arch}.dmg"
 
-    auto_updates true
     depends_on macos: :ventura
 
     app "T3 Code (Nightly).app"
 
     zap trash: [
-      "~/.t3/userdata",
       "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.t3tools.t3code.sfl*",
       "~/Library/Application Support/T3 Code (Alpha)",
       "~/Library/Application Support/t3code",
+      "~/Library/Application Support/t3code-v2",
       "~/Library/Caches/com.t3tools.t3code",
+      "~/Library/Caches/t3code-updater",
       "~/Library/HTTPStorages/com.t3tools.t3code",
       "~/Library/Preferences/com.t3tools.t3code.plist",
       "~/Library/Saved Application State/com.t3tools.t3code.savedState",
@@ -28,11 +29,12 @@ cask "t3-code@nightly" do
   on_linux do
     url "https://ghfast.top/https://github.com/pingdotgg/t3code/releases/download/v#{version}/T3-Code-Nightly-#{arch}.AppImage"
 
-    depends_on arch: :x86_64
+    conflicts_with cask: "t3-code"
 
     app_image "T3-Code-Nightly-#{arch}.AppImage", target: "T3 Code Nightly.AppImage"
 
     zap trash: [
+      "~/.cache/t3code-updater",
       "~/.config/T3 Code (Alpha)",
       "~/.config/t3code",
       "~/.config/t3code-v2",
@@ -40,10 +42,6 @@ cask "t3-code@nightly" do
       "~/.local/share/icons/com.t3tools.T3Code.desktop.png",
       "~/.local/share/icons/hicolor/256x256/apps/com.t3tools.T3Code.png",
       "~/.local/share/icons/hicolor/256x256/apps/com.t3tools.t3code.png",
-      "~/.t3/bin",
-      "~/.t3/caches",
-      "~/.t3/usage-host-id",
-      "~/.t3/userdata",
     ]
   end
 
@@ -65,4 +63,6 @@ cask "t3-code@nightly" do
       end
     end
   end
+
+  auto_updates true
 end
