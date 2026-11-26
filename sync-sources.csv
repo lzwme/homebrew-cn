@@ -3618,7 +3618,7 @@ Homebrew-homebrew-core/Formula/k/karchive.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kargo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/karmadactl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/karn.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/k/kaskade.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kaskade.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kata.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/katago.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/katana.rb, Homebrew/homebrew-core, 1
@@ -4613,9 +4613,9 @@ Homebrew-homebrew-core/Formula/lib/libxls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libxlsxwriter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libxmi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxml++.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libxml++@2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libxml++@3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libxml++@4.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libxml++@5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libxml2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libxmlb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libxmlsec1.rb, Homebrew/homebrew-core, 1
@@ -13359,6 +13359,7 @@ Homebrew-homebrew-cask/Casks/i/insomnia@alpha.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/inssider.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/insta360-link-controller.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/insta360-studio.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/insta360-wave-controller.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/install-disk-creator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/instantview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/instatus-out.rb, Homebrew/homebrew-cask, 1

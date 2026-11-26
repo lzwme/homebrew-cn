@@ -1,17 +1,17 @@
 class Io < Formula
   desc "Small prototype-based programming language"
   homepage "http://iolanguage.com/"
-  url "https://ghfast.top/https://github.com/IoLanguage/io/archive/refs/tags/2026.11.20.tar.gz"
-  sha256 "62aa86656e65414ece414ef3a6ff5adbaf2bbe06e9847505d57628addc965e11"
+  url "https://ghfast.top/https://github.com/IoLanguage/io/archive/refs/tags/2026.11.25.tar.gz"
+  sha256 "a4e28b32e1fd9555eab1b1b082a500da11662a04404fcfef21f71536058167cc"
   license "BSD-3-Clause"
 
   bottle do
-    manifest_sha256 "e2adeb8a503d63e222798229921ba84b99569c6c7bd0b8cd4d9572af95cd84d1"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1989a50d79580ba93dac2e907adf072a34540d82de032e3d04fca107b6c086d5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1989a50d79580ba93dac2e907adf072a34540d82de032e3d04fca107b6c086d5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1989a50d79580ba93dac2e907adf072a34540d82de032e3d04fca107b6c086d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a23c2bc844e818733def8868f7c89ecc4a471de6e77798d2723e157c3bf246cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a23c2bc844e818733def8868f7c89ecc4a471de6e77798d2723e157c3bf246cf"
+    manifest_sha256 "328ee0be80bd91a839a883d99cb9707680cba18ab7d78b5af299ca90d633574d"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "dd53319ad43fbcede559cfabb40d6dc86b53b7ab2ce68a15f1ace4ee40de8951"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "dd53319ad43fbcede559cfabb40d6dc86b53b7ab2ce68a15f1ace4ee40de8951"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "dd53319ad43fbcede559cfabb40d6dc86b53b7ab2ce68a15f1ace4ee40de8951"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "463a088270d38b1281813571dc277704a37bb0c7126013770312623785061e65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "463a088270d38b1281813571dc277704a37bb0c7126013770312623785061e65"
   end
 
   depends_on "lld" => :build

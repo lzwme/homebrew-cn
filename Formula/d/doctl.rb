@@ -1,18 +1,18 @@
 class Doctl < Formula
   desc "Command-line tool for DigitalOcean"
   homepage "https://docs.digitalocean.com/reference/doctl/"
-  url "https://ghfast.top/https://github.com/digitalocean/doctl/archive/refs/tags/v2.8.0.tar.gz"
-  sha256 "3211c0a20919173152da5d06753826dcc9cc23dfb75a761488de542c0a04161e"
+  url "https://ghfast.top/https://github.com/digitalocean/doctl/archive/refs/tags/v2.10.0.tar.gz"
+  sha256 "ea902efc3f02f75af78424ff76b12b422efbf4da13c018f54420a73712bfe6b1"
   license "Apache-2.0"
   head "https://github.com/digitalocean/doctl.git", branch: "main"
 
   bottle do
-    manifest_sha256 "3aa54bf4192640d88a8088deb53555750d3a79cb6d3a8b71d6f3b99ee5c80d70"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8bee2ba862bb15d249c7722900ec75bcc04c2ede554ec3ed73c6b32b72cdd8c7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8bee2ba862bb15d249c7722900ec75bcc04c2ede554ec3ed73c6b32b72cdd8c7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8bee2ba862bb15d249c7722900ec75bcc04c2ede554ec3ed73c6b32b72cdd8c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b019ba54b0d981639d27e671983a0ad0b96c3d85f6806842fb1abe9df654944b"
-    sha256 cellar: :any,                 x86_64_linux:      "8c19c6d0966960b6ac2921fdf9df56c03bd6ef0e68cb3441b0704175af760320"
+    manifest_sha256 "1098f45be886a5a2b4886a0734a7fa70aeb065a6c52cd0b452cb835e897df955"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5ae3c8d3d4ee6f61e601f6cb6af6db67a495ff2120f8ac47885f4b6e239d9b0b"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5ae3c8d3d4ee6f61e601f6cb6af6db67a495ff2120f8ac47885f4b6e239d9b0b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5ae3c8d3d4ee6f61e601f6cb6af6db67a495ff2120f8ac47885f4b6e239d9b0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "5c08a45af7118f92c1c8ed21321755afc5023b84fe8615ca920e9e97c78f875a"
+    sha256 cellar: :any,                 x86_64_linux:      "0616ac505ab4b1e0fa2e170494315633a30b680a7f11cff0896f8f74f676510b"
   end
 
   depends_on "go" => :build

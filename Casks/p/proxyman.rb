@@ -1,6 +1,6 @@
 cask "proxyman" do
-  version "26.5.1,260501"
-  sha256 "31a02c184a440aec11a13d971a32e5fd98aff62b058cac4e6756887452c4b6a0"
+  version "26.6.1,260601"
+  sha256 "9c1f7b63f8cc7f1dc691fc8918f850c7d920ad6b75fe7b2801f0c41b5d8dc03c"
 
   url "https://download.proxyman.com/#{version.csv.second}/Proxyman_#{version.csv.first}.dmg"
   name "Proxyman"
@@ -17,6 +17,8 @@ cask "proxyman" do
 
   app "Proxyman.app"
   binary "#{appdir}/Proxyman.app/Contents/MacOS/proxyman-cli"
+  generate_completions_from_executable "#{appdir}/Proxyman.app/Contents/MacOS/proxyman-cli",
+                                       "--generate-completion-script"
 
   uninstall_postflight_steps do
     delete_keychain_certificates "Proxyman"

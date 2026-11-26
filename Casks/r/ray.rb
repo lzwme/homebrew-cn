@@ -1,15 +1,9 @@
 cask "ray" do
   arch arm: "arm64", intel: "x64"
 
-  sha256 arm:   "77c3b3f2599c9ac98b13cdba67438b56fd61d55b9aff39775da1b219144a09cf",
-         intel: "fac4b1cafcd929401f888628b303f79960cbfc2b8f764f1b40ab0eef19fb785b"
-
-  on_arm do
-    version "3.2.15"
-  end
-  on_intel do
-    version "3.2.15"
-  end
+  version "3.3.0"
+  sha256 arm:   "2713727a0ca61a306251e0cb660478928978897e721702b57e16d3e55f09bbfd",
+         intel: "2d012da32df84b254a160c8245ddbc10d1fa2387075b99580c8ab81671cd3e8d"
 
   url "https://ray-app.s3.eu-west-1.amazonaws.com/ray-app-updates-v#{version.major}/stable/ray-#{version}-latest-darwin-#{arch}.dmg"
   name "Ray"
@@ -30,6 +24,7 @@ cask "ray" do
   uninstall quit: "be.spatie.ray"
 
   zap trash: [
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/be.spatie.ray.sfl*",
     "~/Library/Application Support/Ray",
     "~/Library/Caches/be.spatie.ray",
     "~/Library/Caches/be.spatie.ray.ShipIt",

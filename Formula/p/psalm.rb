@@ -1,8 +1,8 @@
 class Psalm < Formula
   desc "PHP Static Analysis Tool"
   homepage "https://psalm.dev"
-  url "https://ghfast.top/https://github.com/vimeo/psalm/releases/download/7.19.0/psalm.phar"
-  sha256 "6b3103b57b1a94d9933c5c8c55336f82f0f6280085c35c9598da319cf1409c73"
+  url "https://ghfast.top/https://github.com/vimeo/psalm/releases/download/7.21.1/psalm.phar"
+  sha256 "9f8c5764490e9fc1b572b1d0e47c2f2677b65f3d5abb613afd5385f51967c5a3"
   license "MIT"
 
   livecheck do
@@ -11,8 +11,8 @@ class Psalm < Formula
   end
 
   bottle do
-    manifest_sha256 "bef8801cc81a6b5eb29d31816d84182d23849a59e408259744c985eb53c7e784"
-    sha256 cellar: :any_skip_relocation, all: "854dfdcdc84700b6589422a2320b22f52ef4fb1352a9f1e451fca40247dc406e"
+    manifest_sha256 "0c19bc7bd7ef2d704b77c75877a6e4a48b042ffcc9e2a0f7fccd40e02137e31c"
+    sha256 cellar: :any_skip_relocation, all: "55f71dedb08e6d5331129eaf6b98e1c10a88592058d0dfaa607d8b5a51668235"
   end
 
   depends_on "composer" => :test

@@ -1,9 +1,9 @@
 cask "mathcha-notebook" do
   arch arm: "-arm64"
 
-  version "1.0.468"
-  sha256 arm:   "5d9fc8d15158ca74e5154c6a2277aa7e0d3dc436d2b4381ee0cd2316d53d7193",
-         intel: "d626cd5e4429af1e37f0243921e35ba887f9508670f9f20a60dbaa13a99f4a43"
+  version "1.0.470"
+  sha256 arm:   "0312e9a948fc887757a81a729ea1c97b89ed14f0187b57d4331cdc331155aa39",
+         intel: "95a4fe1ef51e0a4aa300d5b7f68198195632c74a9afefc8455ec7e58b0a092ea"
 
   url "https://notebook-downloads.mathcha.io/public/Mathcha%20Notebook-#{version}#{arch}-mac.zip"
   name "Mathcha Notebook"
@@ -19,6 +19,8 @@ cask "mathcha-notebook" do
   depends_on macos: :monterey
 
   app "Mathcha Notebook.app"
+
+  uninstall quit: "mathcha.com.mathnotebook"
 
   zap trash: [
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/mathcha.com.mathnotebook.sfl*",

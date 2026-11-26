@@ -1,8 +1,8 @@
 cask "keymapp" do
   version "2.1.0"
-  sha256 :no_check
+  sha256 "d8885edb250393ce106d96e89689c7d4236eb867612c2c1d4acc9869d759b73f"
 
-  url "https://oryx.nyc3.cdn.digitaloceanspaces.com/keymapp/keymapp-latest.dmg"
+  url "https://downloads.zsa.io/files/keymapp/#{version}/Keymapp_#{version}_universal.dmg"
   name "Keymapp"
   desc "ZSA keyboard firmware flasher"
   homepage "https://www.zsa.io/flash"
@@ -21,8 +21,12 @@ cask "keymapp" do
 
   zap trash: [
     "~/Library/Application Support/.keymapp",
+    "~/Library/Application Support/keymapp",
     "~/Library/Caches/com.zsa.io.Keymapp",
+    "~/Library/Caches/io.zsa.keymapp",
     "~/Library/Preferences/com.zsa.io.Keymapp.plist",
+    "~/Library/Preferences/io.zsa.keymapp.plist",
     "~/Library/WebKit/com.zsa.io.Keymapp",
+    "~/Library/WebKit/io.zsa.keymapp",
   ]
 end
