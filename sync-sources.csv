@@ -78,6 +78,7 @@ Homebrew-homebrew-core/Formula/a/age-plugin-yubikey.rb, Homebrew/homebrew-core, 
 Homebrew-homebrew-core/Formula/a/age.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/agedu.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/agent-browser.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/agent-deck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/agent-desktop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/agent-manager.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/agg.rb, Homebrew/homebrew-core, 1
@@ -1631,6 +1632,7 @@ Homebrew-homebrew-core/Formula/d/direnv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/direvent.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/direwolf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dirt.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/discordchatexporter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/discount.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/diskonaut.rb, Homebrew/homebrew-core, 1
@@ -2465,6 +2467,7 @@ Homebrew-homebrew-core/Formula/g/gegl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gem-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gemgen.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gemini-api-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gemini-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gemmi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/genact.rb, Homebrew/homebrew-core, 1
@@ -4850,6 +4853,7 @@ Homebrew-homebrew-core/Formula/m/mender-artifact.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mender-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/menhir.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mentat.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/meow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mercurial.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mercury-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mercury.rb, Homebrew/homebrew-core, 0
@@ -9427,6 +9431,7 @@ Homebrew-homebrew-cask/Casks/c/chainner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chalk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/changes.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/channel-works.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/chapar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/charles.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/charles@4.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/charmstone.rb, Homebrew/homebrew-cask, 0
@@ -14628,6 +14633,7 @@ Homebrew-homebrew-cask/Casks/p/paperpile.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/papers.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/paperspace.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/papyrus.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/paradev.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/paragon-camptune.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/paragon-extfs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/paragon-extfs@11.rb, Homebrew/homebrew-cask, 0
@@ -15679,7 +15685,6 @@ Homebrew-homebrew-cask/Casks/s/superkey.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/superlist.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/supermjograph.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/supernotes.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/superset.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/superslicer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/supertab.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/supertuxkart.rb, Homebrew/homebrew-cask, 1
