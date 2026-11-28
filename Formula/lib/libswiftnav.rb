@@ -11,6 +11,7 @@ class Libswiftnav < Formula
   end
 
   bottle do
+    manifest_sha256 "a8e8f2b8b9cd691e6905e9a664c82b1978f0a913d730dc8e3435b9471237f0f6"
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6abe8c7b6678ea3c99479b3a75283dbecc9c6a70488d2b0939052ac941dbddb7"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "33463f96c4b94f36447f45dcd3fb5c039e374a1ccbf8e3ca7b5f8cddf2627d68"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1ddd75cc7bfb08208ea88e3bbc3f3d5549c9c72511dc9378ab31101d50591c48"
@@ -33,7 +34,15 @@ class Libswiftnav < Formula
   # to identify the referenced commit hash in the swift-nav/cmake repository.
   resource "swift-nav/cmake" do
     url "https://ghfast.top/https://github.com/swift-nav/cmake/archive/fd8c86b87d2b18261691ef8db1f6fd9906911b82.tar.gz"
+    version "fd8c86b87d2b18261691ef8db1f6fd9906911b82"
     sha256 "7b6995bcc97d001cfe5c4741a8fa3637bc4dc2c3460b908585aef5e7af268798"
+
+    livecheck do
+      url "https://api.github.com/repos/swift-nav/libswiftnav/contents/cmake/common?ref=v#{LATEST_VERSION}"
+      strategy :json do |json|
+        json["sha"]
+      end
+    end
   end
 
   deny_network_access!

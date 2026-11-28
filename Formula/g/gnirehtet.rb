@@ -7,6 +7,7 @@ class Gnirehtet < Formula
   head "https://github.com/Genymobile/gnirehtet.git", branch: "master"
 
   bottle do
+    manifest_sha256 "dca834d9dfc99d61a42a3ab97edf1833e238d42753c41f727e8190361fa47ccc"
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6d5647f87950e4651ed0c7cc827d6afbc8e61c1c08c26dc0970e8f3e4d6a5b2f"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "3f10f0ff297c3164e291d2c42c572d826515052a4f764688ee9d4a93ce8c8d85"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5f0e5fbe1add7c5624e860f5301ff482236f9730fd5d9fa3d563a961bc54e22b"
@@ -28,6 +29,10 @@ class Gnirehtet < Formula
   resource "java_bundle" do
     url "https://ghfast.top/https://github.com/Genymobile/gnirehtet/releases/download/v2.5.1/gnirehtet-java-v2.5.1.zip"
     sha256 "816748078fa6a304600a294a13338a06ac778bcc0e57b62d88328c7968ad2d3a"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   allow_network_access! :test

@@ -82,6 +82,7 @@ Homebrew-homebrew-core/Formula/a/agent-deck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/agent-desktop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/agent-manager.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/agg.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/agrum.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aha.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ahcpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ahoy.rb, Homebrew/homebrew-core, 1
@@ -1149,7 +1150,6 @@ Homebrew-homebrew-core/Formula/c/cloud-sql-proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudflare-cli4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cloudflare-quiche.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cloudflare-speed-cli.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/cloudflare-wrangler.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cloudflared.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudformation-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cloudformation-guard.rb, Homebrew/homebrew-core, 1
@@ -3301,6 +3301,7 @@ Homebrew-homebrew-core/Formula/i/ii.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/iir1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ijq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ike-scan.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/ikea-availability-checker.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/imagejs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imagemagick-full.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imagemagick.rb, Homebrew/homebrew-core, 1
@@ -6022,7 +6023,7 @@ Homebrew-homebrew-core/Formula/p/plutoprint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/plutosvg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plutovg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/plz-cli.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/plzip.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/plzip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pmccabe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pmd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pmdmini.rb, Homebrew/homebrew-core, 1
@@ -8404,6 +8405,7 @@ Homebrew-homebrew-core/Formula/w/wp-cli-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wp-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wpebackend-fdo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wput.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/wrangler.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wren-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wren.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/write-good.rb, Homebrew/homebrew-core, 0
@@ -15606,6 +15608,7 @@ Homebrew-homebrew-cask/Casks/s/ssl-360.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/ssl-download-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/ssokit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stability-matrix.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/stablebar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stack.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stand.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/standard-notes.rb, Homebrew/homebrew-cask, 1

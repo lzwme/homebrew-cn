@@ -1,17 +1,18 @@
 class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https://sing-box.sagernet.org"
-  url "https://ghfast.top/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.14.4.tar.gz"
-  sha256 "0958ccd23b1ea9a141d715d15478b1e040fd04bcca19d8ff5529636b1b753e18"
+  url "https://ghfast.top/https://github.com/SagerNet/sing-box/archive/refs/tags/v1.14.6.tar.gz"
+  sha256 "46ba93259c6e3301f85a7b492aa9c061157ed215da52f1b7d73b0f4cdf9c809d"
   license "GPL-3.0-or-later"
   head "https://github.com/SagerNet/sing-box.git", branch: "testing"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "db6f00ae1349bcfcce6320fd1f97b970f378efbe06b1dc977b6281e668ef83d6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b691c04cf8b6810a5a542e3d56f3523bc2572bac264e508fb6ebcf1ee28cb239"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2158055f2f9a71aa16e3899a7511a5eb8d99d8a79bc0ee075de9bee37db5ad96"
-    sha256 cellar: :any,                 arm64_linux:       "73121a57707a046a8a459253e6ef13ef787705a36b261c5a67e4d8176af70c13"
-    sha256 cellar: :any,                 x86_64_linux:      "1f0de4a7e86f79e6b04552a9a1e586de03d9d73c402667f6d54a092107c9479a"
+    manifest_sha256 "cbb768f220f0a404e5e82b8412aba50bbcce24ca8b54ed9a019cab6809ed2233"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2605eafae62527608af04bd426f97c29e0ab5f158a5c2648e0c4eb6712d6f0e9"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4af2ee0af9940336479adad4aa400901dd1b2454e5b3af9d60750d141afbcbd8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ae172b1d376c1e553acfd7fbfc7aab96a66942d433932f0a2f18f929cf5e1624"
+    sha256 cellar: :any,                 arm64_linux:       "ae4f1b7f33bbe9fa1b79eb5f27bb444cdd6a70d6a913dca3be501c3b48edbb99"
+    sha256 cellar: :any,                 x86_64_linux:      "276a83e83a026faf16a8fc7c9eb8847f9392d33aca7a4bf228ebb007048fd5cf"
   end
 
   # TODO: unpin go@1.26 when sing-box supports go 1.27
@@ -32,8 +33,8 @@ class SingBox < Formula
   resource "cronet-go" do
     # Using git checkout for submodules
     url "https://github.com/sagernet/cronet-go.git",
-        revision: "0d28acc44093df24b2526dea3d6ffefd6b0a54f0"
-    version "0d28acc44093df24b2526dea3d6ffefd6b0a54f0"
+        revision: "ccefd17767e7b91299e0d54a6b1bb0468cf9173f"
+    version "ccefd17767e7b91299e0d54a6b1bb0468cf9173f"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/SagerNet/sing-box/v#{LATEST_VERSION}/.github/CRONET_GO_VERSION"
@@ -51,8 +52,8 @@ class SingBox < Formula
 
   resource "gn" do
     url "https://gn.googlesource.com/gn.git",
-        revision: "3357c4f51b1a9e676378c695dd9c7e9911c35ee6"
-    version "3357c4f51b1a9e676378c695dd9c7e9911c35ee6"
+        revision: "150a9d6ba0aa7f407aa4feeabc5f03ce9aa7e04b"
+    version "150a9d6ba0aa7f407aa4feeabc5f03ce9aa7e04b"
 
     livecheck do
       url "https://ghfast.top/https://raw.githubusercontent.com/SagerNet/sing-box/v#{LATEST_VERSION}/.github/CRONET_GO_VERSION"

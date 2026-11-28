@@ -16,6 +16,7 @@ class DocbookXsl < Formula
 
   bottle do
     rebuild 2
+    manifest_sha256 "66a623014d928e680c32c778c4ba60852c3b27af6cb6b8e3500a57fc185c4c7a"
     sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b673b7927804220e5e5864ebadb17a5f30ad62140cbba3aeb413417347bb9c77"
     sha256 cellar: :any_skip_relocation, arm64_tahoe:       "97d7b10fee85c4ad08218efa4b9527b40a412d1e6b439612a76c5eb9c3fe22cd"
     sha256 cellar: :any_skip_relocation, arm64_sequoia:     "97d7b10fee85c4ad08218efa4b9527b40a412d1e6b439612a76c5eb9c3fe22cd"
@@ -32,11 +33,19 @@ class DocbookXsl < Formula
   resource "ns" do
     url "https://ghfast.top/https://github.com/docbook/xslt10-stylesheets/releases/download/release%2F1.79.2/docbook-xsl-1.79.2.tar.bz2"
     sha256 "316524ea444e53208a2fb90eeb676af755da96e1417835ba5f5eb719c81fa371"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   resource "doc" do
     url "https://ghfast.top/https://github.com/docbook/xslt10-stylesheets/releases/download/release%2F1.79.2/docbook-xsl-doc-1.79.2.tar.bz2"
     sha256 "9bc38a3015717279a3a0620efb2d4bcace430077241ae2b0da609ba67d8340bc"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   # see https://www.linuxfromscratch.org/blfs/view/9.1/pst/docbook-xsl.html for this patch

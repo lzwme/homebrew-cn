@@ -1,18 +1,18 @@
 class Railway < Formula
   desc "Develop and deploy code with zero configuration"
   homepage "https://railway.com/"
-  url "https://ghfast.top/https://github.com/railwayapp/cli/archive/refs/tags/v5.76.0.tar.gz"
-  sha256 "ad0e0e01a3e166f8aaddfdced1fd2c681de5adb9c722866893a6ead588c98430"
+  url "https://ghfast.top/https://github.com/railwayapp/cli/archive/refs/tags/v5.77.0.tar.gz"
+  sha256 "eada3042d4fce8092324e051b4beb8425054c29b35f25d31b1668b0b05576c65"
   license "MIT"
   head "https://github.com/railwayapp/cli.git", branch: "master"
 
   bottle do
-    manifest_sha256 "552a7107ec65ff15fd038e30fca225e669c8b99888cd8079f326f20055e9b73d"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f2b113d1b4e29748bde6fa7a2f378a61a0535dec4d3b92c961a6404624d67e90"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c02d99ed885f437997ec624c1013a4797929916b5bd37b01351f4cd88624d1c4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "cf2c6ed1593651df58db32f49be66cceb10da575199a162acb403a8604bc629b"
-    sha256 cellar: :any,                 arm64_linux:       "a07588597c429832eab324cc1819548146b257fdd59eeb402608dd35ae00162b"
-    sha256 cellar: :any,                 x86_64_linux:      "629384dc2c4852c81d8c16a3dc5ef4e9e46391484984b4bd95679de9478a5d6a"
+    manifest_sha256 "efcb85ff660495c5ec9721ecdd74352662b4daea22bc89d5327cb6c1038995f4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ce0ec16d585483ab0110f0a5a97420c19cfc2f9df2527bfdd5cdf413359601f8"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f9216adc16e8bc2c8a058b4e914adb2700b07ea35a123846f9379a73450964b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "bde37b6aaab0e58fc2c6213165472045009355fd9f95e899d86e5685170ca5cf"
+    sha256 cellar: :any,                 arm64_linux:       "da9141083b2d9b4cc5ba00095548b2b8e9efa3e582df1df33ab22a722b180e2b"
+    sha256 cellar: :any,                 x86_64_linux:      "8aa13e6f64247e0c4ebb10dc6b6a1a122c71a27d5eb1adbc89475a22ec90bd44"
   end
 
   depends_on "rust" => :build

@@ -8,6 +8,7 @@ class Coacd < Formula
   head "https://github.com/SarahWeiii/CoACD.git", branch: "main"
 
   bottle do
+    manifest_sha256 "35fdcd4046e6aee21444ce5955654f6082db1b22cbadf0308a16cc5662b6dd52"
     sha256 cellar: :any, arm64_golden_gate: "dee50cf0d994ff0fc85f41ec380819e93bb40d1da34b3753589791ab788146c6"
     sha256 cellar: :any, arm64_tahoe:       "d194038c80355410a913ceb685c0544b07ff4f77fe2251361b18bb8a8835ffdd"
     sha256 cellar: :any, arm64_sequoia:     "bffec5d5531cfe9ae7a130b058d4e115af8b65db76a55413ccb1c88e61d53706"
@@ -21,6 +22,14 @@ class Coacd < Formula
   resource "cdt" do
     url "https://github.com/artem-ogre/CDT.git",
         revision: "ec03b309fd18102ab1da069f2edf3b37be5d1fb3"
+    version "ec03b309fd18102ab1da069f2edf3b37be5d1fb3"
+
+    livecheck do
+      url "https://api.github.com/repos/SarahWeiii/CoACD/contents/3rd/cdt?ref=#{LATEST_VERSION}"
+      strategy :json do |json|
+        json["sha"]
+      end
+    end
   end
 
   deny_network_access!
